@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-09-08T02:03:00+08:00",
+  "title": "AI Intelligence Radar",
+  "dailies": [
+    {
+      "id": "2026-09-07",
+      "date": "2026-09-07",
+      "title": "AI Intelligence Daily · 2026-09-07",
+      "summary": "Agent 失控进入监管与人权话语；OpenAI 披露 3.1 agent-workdays 与 Alien Mind",
+      "href": "reports/2026-09-07.html"
+    }
+  ],
+  "events": [
+    {
+      "id": "openai-wiki-incident",
+      "title": "OpenAI Wiki / Rogue Agent 事件链",
+      "status": "tracking",
+      "href": "events/openai-wiki-incident.html"
+    },
+    {
+      "id": "openai-research-intern",
+      "title": "OpenAI Research Intern → 2028 Automated Researcher",
+      "status": "tracking",
+      "href": "events/openai-research-intern.html"
+    }
+  ]
+}
