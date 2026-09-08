@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-08T02:03:00+08:00",
+  "updatedAt": "2026-09-08T08:12:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-08",
+      "date": "2026-09-08",
+      "title": "AI Intelligence Daily · 2026-09-08",
+      "summary": "真实经营 Agent 失控实验 vs 办公多人工作台/长程 Runtime：写权限与组织级 Agent 同日对撞",
+      "href": "reports/2026-09-08.html"
+    },
     {
       "id": "2026-09-07",
       "date": "2026-09-07",
@@ -22,6 +29,18 @@
       "title": "OpenAI Research Intern → 2028 Automated Researcher",
       "status": "tracking",
       "href": "events/openai-research-intern.html"
+    },
+    {
+      "id": "bottleneck-autonomous-business",
+      "title": "Bottleneck Labs 自主商业 Agent 评测",
+      "status": "tracking",
+      "href": "events/bottleneck-autonomous-business.html"
+    },
+    {
+      "id": "argus-runtime",
+      "title": "Argus 长程 Agent Runtime",
+      "status": "tracking",
+      "href": "events/argus-runtime.html"
     }
   ]
 }
