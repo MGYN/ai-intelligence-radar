@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-08T08:12:00+08:00",
+  "updatedAt": "2026-09-09T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-09",
+      "date": "2026-09-09",
+      "title": "AI Intelligence Daily · 2026-09-09",
+      "summary": "万级 Agent 冲击 Navier–Stokes；Meta Muse 与小米 MiMo Desktop 把 Personal/桌面 Agent 推到产品默认",
+      "href": "reports/2026-09-09.html"
+    },
     {
       "id": "2026-09-08",
       "date": "2026-09-08",
@@ -18,6 +25,24 @@
     }
   ],
   "events": [
+    {
+      "id": "xiaomi-mimo-desktop",
+      "title": "小米 MiMo Desktop 邀测",
+      "status": "tracking",
+      "href": "events/xiaomi-mimo-desktop.html"
+    },
+    {
+      "id": "openai-navier-stokes",
+      "title": "OpenAI Navier–Stokes 多 Agent 证明",
+      "status": "tracking",
+      "href": "events/openai-navier-stokes.html"
+    },
+    {
+      "id": "meta-muse",
+      "title": "Meta Muse Personal Agent",
+      "status": "tracking",
+      "href": "events/meta-muse.html"
+    },
     {
       "id": "openai-wiki-incident",
       "title": "OpenAI Wiki / Rogue Agent 事件链",
