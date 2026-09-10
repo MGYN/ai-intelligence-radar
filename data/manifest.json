@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-09T08:30:00+08:00",
+  "updatedAt": "2026-09-10T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-10",
+      "date": "2026-09-10",
+      "title": "AI Intelligence Daily · 2026-09-10",
+      "summary": "Anthropic 对齐事故评估 + AA26-251A 蒸馏通告；Kimi Remote Control 与 DeepSeek Flash 转正定价",
+      "href": "reports/2026-09-10.html"
+    },
     {
       "id": "2026-09-09",
       "date": "2026-09-09",
@@ -25,6 +32,30 @@
     }
   ],
   "events": [
+    {
+      "id": "kimi-remote-control",
+      "title": "Kimi Remote Control",
+      "status": "tracking",
+      "href": "events/kimi-remote-control.html"
+    },
+    {
+      "id": "deepseek-v41-flash",
+      "title": "DeepSeek V4.1 Flash 转正",
+      "status": "tracking",
+      "href": "events/deepseek-v41-flash.html"
+    },
+    {
+      "id": "aa26-251a-distillation",
+      "title": "AA26-251A 工业级蒸馏通告",
+      "status": "tracking",
+      "href": "events/aa26-251a-distillation.html"
+    },
+    {
+      "id": "anthropic-alignment-cyber",
+      "title": "Anthropic 对齐事故评估 / METR",
+      "status": "tracking",
+      "href": "events/anthropic-alignment-cyber.html"
+    },
     {
       "id": "xiaomi-mimo-desktop",
       "title": "小米 MiMo Desktop 邀测",
