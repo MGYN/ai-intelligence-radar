@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-11</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-11</h1>
+    <div class="meta">统计窗口：2026-09-10 08:00 → 2026-09-11 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>Harness 正在变成可采购的托管服务——OpenAI Agents API 把 Codex harness 公测开放并给出三类沙箱；同日 DeepSeek Flash GA + Harness、OpenRouter 模型无关 Shell，把编排与执行环境解耦写成三条产品线。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. OpenAI：Agents API 公测——Codex harness 托管化 + OpenAI-hosted sandboxes</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/B/E/D</span><span class="chip">2026-09-10 ≈03:24+1 SH</span>
+      </div>
+      <h4>事实</h4>
+      <p>面向全体开发者的 public beta：一次 API 调用创建云端 Agent；OpenAI 托管 Codex harness（会话、编排、compaction、恢复）。环境三选：OpenAI-hosted sandbox、self_hosted、九家伙伴（Blaxel/Cloudflare/Daytona/DigitalOcean/E2B/Modal/Oracle/Runloop/Vercel）。支持 MCP、tool search、programmatic tool calling、multi_agent 子 Agent、steer。API 本身无额外平台费；hosted sandbox 走 Containers 价。目前仅美国数据驻留、不支持 ZDR。</p>
+      <h4>判断</h4>
+      <p>对 Work/Agent 引擎是当日最强信号：编排契约与环境插槽直接卖给开发者，而不只是桌面/聊天产品。</p>
+      <img src="../assets/2026-09-11/openai-agents-og.png" alt="OpenAI Agents API 官方配图" />
+      <div class="caption">图 1 · 配图来自 OpenAI 官网 OG</div>
+      <img src="../assets/2026-09-11/openai-agents-arch.png" alt="Agents API 架构示意" />
+      <div class="caption">图 2 · 来自 @OpenAIDevs 官方帖</div>
+      <img src="../assets/2026-09-11/openai-agents-sandbox.jpg" alt="沙箱伙伴示意" />
+      <div class="caption">图 3 · 来自 @OpenAIDevs 官方帖</div>
+      <h4>对你两条主线</h4>
+      <ul>
+        <li>智能体互联网：MCP + 可替换执行环境 ≈ 共享编排节点。</li>
+        <li>Work/Agent 引擎：直接对表 session/compaction/steer/subagent/环境抽象。</li>
+      </ul>
+      <p class="sources"><a href="https://openai.com/index/introducing-the-agents-api/" target="_blank" rel="noopener">官网</a> · <a href="https://developers.openai.com/api/docs/guides/agents-api/overview" target="_blank" rel="noopener">文档</a> · <a href="https://x.com/OpenAIDevs/status/2098130570048045453" target="_blank" rel="noopener">官方 X</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. DeepSeek：V4.1-Flash 正式 GA；价目生效；Pro→Flash 改 9/14；Harness 预览</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">A/B/C/I</span><span class="chip">2026-09-10 14:10 SH</span>
+      </div>
+      <h4>事实</h4>
+      <p>官网 News + X + changelog 同步：<code>deepseek-flash</code>；552B MoE；Causal Encoder–Decoder；KV 约 1/4 HBM、1/8 SSD。新价自 9/10 04:00 UTC；Pro 兼容路由改至 <strong>9/14 12:00 北京时间</strong>。Harness 开发者预览；媒体报 0.1.5 文件上传/Sidebar/插件。GitHub <code>deepseek-ai/deepseek-harness</code> 本轮约 ⭐219k。</p>
+      <img src="../assets/2026-09-11/deepseek-v41-flash.jpg" alt="DeepSeek V4.1-Flash 官方封面" />
+      <div class="caption">图 4 · 配图来自 DeepSeek 官网 News</div>
+      <p class="sources"><a href="https://www.deepseek.com/en/news/deepseek-v4-1-flash/" target="_blank" rel="noopener">官网 News</a> · <a href="https://x.com/deepseek_ai/status/2097930608790167907" target="_blank" rel="noopener">官方 X</a> · <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">Harness 仓</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. OpenRouter：任意模型托管 Shell + Files API（beta）</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/B/E</span><span class="chip">X 放大 22:58 SH</span>
+      </div>
+      <h4>事实</h4>
+      <p>模型无关 Linux 沙箱；兼容 OpenAI shell / Anthropic bash；出站默认关 + allowlist；$0.0001/active second；beta 仅 global endpoint。与 Agents API「托管 harness」形成对照：这里卖的是可互换执行面。</p>
+      <img src="../assets/2026-09-11/openrouter-shell.png" alt="OpenRouter Shell 博文配图" />
+      <div class="caption">图 5 · 配图来自 OpenRouter 博文</div>
+      <p class="sources"><a href="https://openrouter.ai/blog/announcements/shell-tool/" target="_blank" rel="noopener">博文</a> · <a href="https://x.com/OpenRouter/status/2098063468759027725" target="_blank" rel="noopener">官方 X</a></p>
+    </section>
+
+    <section class="card">
+      <h3>4. 商务部回应 AA26-251A（对 09-10 早报 CORRECTION）</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">UPDATE</span><span class="chip">双边</span>
+        <span class="chip">G/F/E</span>
+      </div>
+      <h4>事实</h4>
+      <p>商务部 09-09 21:28 答问：称美方指控于事无凭、于法无据；蒸馏为通行手段；遏压将反制。本报不作事实裁判。六家被点名企业仍无专稿。</p>
+      <p class="sources"><a href="https://www.mofcom.gov.cn/syxwfb/art/2026/art_1d982b77535347f1bdebc1e5f59a9b4e.html" target="_blank" rel="noopener">商务部</a> · <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a" target="_blank" rel="noopener">CISA</a></p>
+    </section>
+
+    <section class="card">
+      <h3>5. OpenAI：GPT‑Live‑1 进入 API（全双工语音层）</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C/K</span>
+      </div>
+      <h4>事实</h4>
+      <p>全双工听/说；可向后端文本模型委托推理与工具；telephony、打断与噪声处理。语音成为 Agent 入口层。</p>
+      <img src="../assets/2026-09-11/openai-gpt-live.png" alt="GPT-Live-1 官方配图" />
+      <div class="caption">图 6 · 配图来自 OpenAI 官网 OG</div>
+      <p class="sources"><a href="https://openai.com/index/introducing-gpt-live-1-in-the-api/" target="_blank" rel="noopener">官网</a></p>
+    </section>
+
+    <section class="card">
+      <h3>6. Cognition：SWE-2 + Devin Voice</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/A/C</span>
+      </div>
+      <h4>事实</h4>
+      <p>SWE-2 官方自报 FrontierCode 1.1 Main 50.0%、DeepSWE 1.1 73.0% 等；称从 Kimi K3 后训练；Desktop/CLI 可用。Devin Voice 官方 X 称由 GPT-Live + SWE-2 驱动。</p>
+      <img src="../assets/2026-09-11/cognition-swe2.jpg" alt="Cognition SWE-2 封面" />
+      <div class="caption">图 7 · 配图来自 Cognition SWE-2 博文</div>
+      <p class="sources"><a href="https://cognition.ai/blog/swe-2" target="_blank" rel="noopener">SWE-2 博文</a> · <a href="https://x.com/cognition/status/2098142686486356185" target="_blank" rel="noopener">Devin Voice</a></p>
+    </section>
+
+    <section class="card">
+      <h3>7. OpenRouter：US In-Region Routing（端到端驻留）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">F/G/I</span><span class="chip">博文 9/9 补录</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>us.openrouter.ai</code> / <code>eu.openrouter.ai</code>：区域内解密、失败关闭不跨区；Business/Enterprise；区域端禁用会送出数据的 server tools。</p>
+      <img src="../assets/2026-09-11/openrouter-irr.png" alt="OpenRouter In-Region Routing 配图" />
+      <div class="caption">图 8 · 配图来自 OpenRouter 博文</div>
+      <p class="sources"><a href="https://openrouter.ai/blog/announcements/us-in-region-routing/" target="_blank" rel="noopener">博文</a></p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <h3>T1–T4 摘要</h3>
+      <ul>
+        <li><strong>Agents API</strong>：开发者热议「不用自建编排」——<a href="https://x.com/i/trending/2098150403410174041" target="_blank" rel="noopener">X 故事</a></li>
+        <li><strong>DeepSeek Flash</strong>：成本与 Pro 退场——官方发布驱动</li>
+        <li><strong>GPT-Live / Devin Voice</strong>：语音入口共振</li>
+        <li><strong>AA26 ↔ 商务部</strong>：蒸馏叙事双边对撞（不作事实裁判）</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <ul>
+        <li><code>deepseek-ai/deepseek-harness</code> ⭐219,132 — Harness 官方仓</li>
+        <li><code>openai/codex</code> ⭐123,109 — Agents API 开源基础</li>
+        <li><code>pascalorg/editor</code> ⭐23,253 · <code>tigerless-labs/agent-memory</code> ⭐840</li>
+        <li><code>Tencent/teamai-cli</code> ⭐3,773 · <code>ayghri/i-have-adhd</code> ⭐38,247</li>
+        <li>Argus：lbx154/Argus ⭐296 · microsoft/ArgusAgent ⭐121</li>
+      </ul>
+      <p>星数为 <code>gh api</code> 本轮核验，禁止把社区口头「很火」当数据。</p>
+    </section>
+
+    <h2 class="section-title">趋势 · 吸收 · 跟踪</h2>
+    <section class="card">
+      <h4>趋势</h4>
+      <ol>
+        <li>Harness 产品化三分天下（OpenAI 托管 / DeepSeek 自有 / OpenRouter 执行面）</li>
+        <li>编排与执行环境解耦成为默认架构问题</li>
+        <li>语音入口叠到 Coding/Cloud Agent</li>
+        <li>Flash / SWE 自研模型继续打 Pareto</li>
+        <li>地缘合规与驻留工程化并行</li>
+      </ol>
+      <h4>对智能体互联网</h4>
+      <p>编排节点与执行节点可发现可替换；驻留要问解密点与工具管辖权；MCP 仍是默认插槽。</p>
+      <h4>对 Work / Agent 引擎</h4>
+      <p>优先对表 Agents API 契约；环境抽象与出站策略；模型—Harness 联合优化。</p>
+      <h4>继续跟踪</h4>
+      <p>Agents API GA · DeepSeek 9/14 路由 · OpenRouter beta→GA · AA26 双边 · GPT-Live/SWE-2 · METR/Muse/MiMo/Kimi/NS</p>
+    </section>
+
+    <h2 class="section-title">价格雷达</h2>
+    <section class="card">
+      <ul>
+        <li>DeepSeek Flash 新价 + 9/14 Pro→Flash</li>
+        <li>Agents API 无平台费；Containers 价目适用于 hosted sandbox</li>
+        <li>OpenRouter Shell $0.0001/active sec</li>
+      </ul>
+    </section>
+  </article>
+</body>
+</html>

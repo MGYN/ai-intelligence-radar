@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-10T08:20:00+08:00",
+  "updatedAt": "2026-09-11T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-11",
+      "date": "2026-09-11",
+      "title": "AI Intelligence Daily · 2026-09-11",
+      "summary": "OpenAI Agents API 把 Codex harness 托管化；DeepSeek Flash GA + Harness；OpenRouter Shell；商务部回应 AA26",
+      "href": "reports/2026-09-11.html"
+    },
     {
       "id": "2026-09-10",
       "date": "2026-09-10",
@@ -32,6 +39,18 @@
     }
   ],
   "events": [
+    {
+      "id": "openai-agents-api",
+      "title": "OpenAI Agents API 公测",
+      "status": "tracking",
+      "href": "events/openai-agents-api.html"
+    },
+    {
+      "id": "openrouter-shell",
+      "title": "OpenRouter Shell / Files / In-Region",
+      "status": "tracking",
+      "href": "events/openrouter-shell.html"
+    },
     {
       "id": "kimi-remote-control",
       "title": "Kimi Remote Control",
