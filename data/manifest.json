@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-11T08:30:00+08:00",
+  "updatedAt": "2026-09-12T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-12",
+      "date": "2026-09-12",
+      "title": "AI Intelligence Daily · 2026-09-12",
+      "summary": "RubyGems/Hawley/Anthropic 把 Agent 安全推上国会与供应链；Cursor Projects、Quick、Fusion、MCP Apps 产品化",
+      "href": "reports/2026-09-12.html"
+    },
     {
       "id": "2026-09-11",
       "date": "2026-09-11",
@@ -39,6 +46,42 @@
     }
   ],
   "events": [
+    {
+      "id": "aws-mcp-apps",
+      "title": "AWS MCP Apps / AgentCore",
+      "status": "tracking",
+      "href": "events/aws-mcp-apps.html"
+    },
+    {
+      "id": "cognition-fusion",
+      "title": "Cognition Fusion",
+      "status": "tracking",
+      "href": "events/cognition-fusion.html"
+    },
+    {
+      "id": "amazon-quick-desktop",
+      "title": "Amazon Quick Desktop GA",
+      "status": "tracking",
+      "href": "events/amazon-quick-desktop.html"
+    },
+    {
+      "id": "cursor-projects",
+      "title": "Cursor Projects",
+      "status": "tracking",
+      "href": "events/cursor-projects.html"
+    },
+    {
+      "id": "hawley-openai-hf",
+      "title": "Hawley 调查 OpenAI×HF",
+      "status": "tracking",
+      "href": "events/hawley-openai-hf.html"
+    },
+    {
+      "id": "rubygems-openai-agents",
+      "title": "RubyGems × OpenAI Agent 复盘",
+      "status": "tracking",
+      "href": "events/rubygems-openai-agents.html"
+    },
     {
       "id": "openai-agents-api",
       "title": "OpenAI Agents API 公测",
