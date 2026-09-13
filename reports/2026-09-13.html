@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-13</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-13</h1>
+    <div class="meta">统计窗口：2026-09-12 08:00 → 2026-09-13 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>「Pace the frontier」24 小时内从 Anthropic 单方承诺变成跨实验室口头同盟（Altman 跟进嵌入评估、Musk/Hassabis 背书、HF Open Alignment 申请入场）；同日 Real-SWE 把 Coding Agent 评到私有企业代码，DeepSeek 技术报告写透 Flash 的 KV 压缩。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. Amodei《We Must Pace the Frontier》：Anthropic 单方面承诺 Embedded Evaluators</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">G/J/F</span><span class="chip">2026-09-12 22:01 SH</span>
+      </div>
+      <h4>事实</h4>
+      <p>Amodei 提出 pacing 三步：① 嵌入式第三方评估员（员工级权限 + 有限脱敏下公开发表权，Anthropic 单方面承诺）；② 民主国家内协调与反垄断豁免；③ 全球可核验协调。论据含 RSI 加速与 OAI-HF Agent 群失控。CEO 主帖 + Anthropic RT；HN 约 512 分 / 704 评。</p>
+      <h4>判断</h4>
+      <p>把治理从白皮书推进到组织设计，并把 OAI-HF 写成行业基准事故。</p>
+      <img src="../assets/2026-09-13/og_pace_frontier.jpg" alt="We Must Pace the Frontier OG" />
+      <div class="caption">图 1 · darioamodei.com OG</div>
+      <p class="sources"><a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">原文</a> · <a href="https://x.com/DarioAmodei/status/2098773920774074715" target="_blank" rel="noopener">CEO 帖</a> · <a href="https://news.ycombinator.com/item?id=49672510" target="_blank" rel="noopener">HN</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. 同日级联：Altman 承诺跟进；Musk / Hassabis 背书；HF Open Alignment Initiative</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">G/F/J</span><span class="chip">2026-09-12</span>
+      </div>
+      <h4>事实</h4>
+      <p>Altman：同意 pace，并将为独立评估员提供 employee-like access，「more to share soon」。Musk：「Dario is right」。Hassabis：方向正确，并指向行业标准机构提案。Delangue：启动 Open Alignment Initiative（Thomas Wolf），申请加入 embedded evaluators——属申请，非已接纳。</p>
+      <h4>判断</h4>
+      <p>口头同盟形成；真正增量看合同与 OpenAI 后续文件。</p>
+      <img src="../assets/2026-09-13/bbc-amodei.jpg" alt="BBC Amodei" />
+      <div class="caption">图 2 · BBC 报道配图</div>
+      <p class="sources"><a href="https://x.com/sama/status/2098811563415150910" target="_blank" rel="noopener">Altman</a> · <a href="https://x.com/elonmusk/status/2098789109980332057" target="_blank" rel="noopener">Musk</a> · <a href="https://x.com/ClementDelangue/status/2098790988034580852" target="_blank" rel="noopener">HF</a> · <a href="https://www.bbc.com/news/articles/c14dpgm0rg4o" target="_blank" rel="noopener">BBC</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. Real-SWE：私有企业代码上的模型 × 原生 Harness 评测</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C/H</span><span class="chip">Sep 2026 / HN 09-12</span>
+      </div>
+      <h4>事实</h4>
+      <p>Specific Labs 发布 Real-SWE：任务来自许可的生产私仓；用 Claude Code / Codex / Gemini CLI 等原生 Harness。官方自报榜：Fable 5.1 38.8%、GPT-6 Astra 33.8%、Gemini 3.8 Flash 31.2%… Kimi K3 18.8%。失败主因漏需求/未核验假设/集成错误。</p>
+      <h4>判断</h4>
+      <p>评测迁向私有分布外 + Harness 一等公民——对 Work/Agent 引擎评测体系是直接模板。</p>
+      <p class="sources"><a href="https://withspecific.com/benchmarks/real-swe" target="_blank" rel="noopener">Real-SWE</a> · <a href="https://news.ycombinator.com/item?id=49676820" target="_blank" rel="noopener">HN</a></p>
+    </section>
+
+    <section class="card">
+      <h3>4. DeepSeek V4.1-Flash 技术报告：把 KV 压缩写到极限；Pro 路由口径存疑</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">A/B/C/H</span><span class="chip">报告随 9/10；解读 09-12</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方报告/模型卡：CED + CSA2 + FP4 KV（约 890 B/token）、Engram、effort 1–100；并开源 deepseek-recipe / DeepJIT。机器之心 09-12 深度解读 AA 分数与架构；并称 Pro「下线并路由」口径曾反复——须以官方终裁为准。</p>
+      <h4>判断</h4>
+      <p>Agent 长轨迹成本的胜负手继续落在「存与搬」。</p>
+      <img src="../assets/2026-09-13/deepseek-report-01.png" alt="DeepSeek V4.1 Flash tech report" />
+      <div class="caption">图 3 · 技术报告 PDF 首页</div>
+      <p class="sources"><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash" target="_blank" rel="noopener">HF 模型卡</a> · <a href="https://www.163.com/dy/article/L6LM2P520511AQHO.html" target="_blank" rel="noopener">机器之心</a></p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <h3>T1. HN 置顶讨论 pacing</h3>
+      <p>约 512 分 / 704 评。焦点：可核验性、监管俘获质疑、对华不可核验、口头同盟能否变发版门禁。</p>
+      <p class="sources"><a href="https://news.ycombinator.com/item?id=49672510" target="_blank" rel="noopener">HN</a></p>
+    </section>
+    <section class="card">
+      <h3>T2. 跨实验室「罕见同框」与政治放大</h3>
+      <p>当事人原帖互动量级可核验（Amodei 帖 impressions 约 3.3e7 量级）。Sanders 等转发「同意放慢」话术——政治放大 ≠ 政策落地。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <h3>O1. deepseek-recipe / DeepJIT</h3>
+      <p>协议编码与 xPU JIT；本轮约 ⭐313 / ⭐289。建议拆源码。</p>
+      <p class="sources"><a href="https://github.com/deepseek-ai/deepseek-recipe" target="_blank" rel="noopener">recipe</a> · <a href="https://github.com/deepseek-ai/DeepJIT" target="_blank" rel="noopener">DeepJIT</a></p>
+    </section>
+    <section class="card">
+      <h3>O2. openai/codex · deepseek-harness</h3>
+      <p>codex 约 ⭐123.6k（持续 push）；harness 约 ⭐221.6k（仍 rc）。</p>
+    </section>
+
+    <h2 class="section-title">趋势 · 启示 · 跟踪</h2>
+    <section class="card">
+      <h4>趋势</h4>
+      <ul>
+        <li>治理话术单位变为「嵌入评估员」</li>
+        <li>口头同盟 ≠ 可执行门禁</li>
+        <li>Coding 评测迁向私有分布外 + Harness 组合</li>
+        <li>Agent 成本继续 KV/缓存化</li>
+      </ul>
+      <h4>智能体互联网</h4>
+      <p>旁路审计接口；评估方或成网络节点；OAI-HF 基准事故入威胁模型。</p>
+      <h4>Work / Agent 引擎</h4>
+      <p>私仓评测 + 钉死 Harness；失败 taxonomy；effort/KV 写入调度。</p>
+      <h4>继续跟踪</h4>
+      <p>Evaluators 合同落地 · Open Alignment · DeepSeek Pro 终裁 · Real-SWE · Hawley Oct 1</p>
+    </section>
+
+    <p class="meta" style="margin-top:1.5rem">完整 Markdown 归档：reports/2026-09-13.md · 公网同步 GitHub Pages</p>
+  </article>
+</body>
+</html>

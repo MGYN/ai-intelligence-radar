@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-12T08:30:00+08:00",
+  "updatedAt": "2026-09-13T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-13",
+      "date": "2026-09-13",
+      "title": "AI Intelligence Daily · 2026-09-13",
+      "summary": "Pace the frontier：Amodei 嵌入评估 + Altman/Musk/HF 级联；Real-SWE 私仓评测；DeepSeek KV 报告",
+      "href": "reports/2026-09-13.html"
+    },
     {
       "id": "2026-09-12",
       "date": "2026-09-12",
@@ -46,6 +53,12 @@
     }
   ],
   "events": [
+    {
+      "id": "pace-the-frontier",
+      "title": "Pace the Frontier / Embedded Evaluators",
+      "status": "tracking",
+      "href": "events/pace-the-frontier.html"
+    },
     {
       "id": "aws-mcp-apps",
       "title": "AWS MCP Apps / AgentCore",
