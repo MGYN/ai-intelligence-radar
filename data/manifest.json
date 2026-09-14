@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-13T08:30:00+08:00",
+  "updatedAt": "2026-09-14T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-14",
+      "date": "2026-09-14",
+      "title": "AI Intelligence Daily · 2026-09-14",
+      "summary": "Pace 被 Sacks/特朗普政治拆解；MCP SEP-2640 Skills；DeepSeek Pro 9/14 续供；Perplexity×Astra 客户文",
+      "href": "reports/2026-09-14.html"
+    },
     {
       "id": "2026-09-13",
       "date": "2026-09-13",
@@ -53,6 +60,12 @@
     }
   ],
   "events": [
+    {
+      "id": "mcp-skills-sep-2640",
+      "title": "MCP Skills Extension (SEP-2640)",
+      "status": "tracking",
+      "href": "events/mcp-skills-sep-2640.html"
+    },
     {
       "id": "pace-the-frontier",
       "title": "Pace the Frontier / Embedded Evaluators",

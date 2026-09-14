@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-14</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-14</h1>
+    <div class="meta">统计窗口：2026-09-13 08:00 → 2026-09-14 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>Pace 口头同盟被政治拆解（Sacks「自己踩刹车」+ 特朗普拒整体限速）；同日 MCP 把 Agent Skills 正式做成协议扩展（SEP-2640 / <code>skill://</code>），DeepSeek 在 9/14 节点确认 V4 Pro 继续供应。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. MCP SEP-2640：Skills Extension 合入规范主仓</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">E/B/C/H</span><span class="chip">2026-09-13 21:27Z</span>
+      </div>
+      <h4>事实</h4>
+      <p>MCP 主仓合并 SEP-2640（Extensions Track / Final）。扩展 <code>io.modelcontextprotocol/skills</code>：用 Resources 承载 Agent Skills 目录；推荐 <code>skill://</code> URI；必须实现 <code>skills/list</code> 与 <code>skills/get</code>；entry 含 frontmatter、resources（或 dynamic）与 SHA-256。安全条款：跨源同名冒充面、digest 非信任根、不得因 MCP skill frontmatter 自动放宽权限、持久批准须绑定 uri+digest 集合。</p>
+      <h4>判断</h4>
+      <p>Skills/Plugins 从各家目录约定抬到可发现、可校验、可跨 host 互操作的协议面——智能体互联与 Work Harness 的共同底座。</p>
+      <img src="../assets/2026-09-14/mcp-repo.png" alt="MCP repository OpenGraph" />
+      <div class="caption">图 1 · GitHub modelcontextprotocol OpenGraph</div>
+      <p class="sources">
+        <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2640" target="_blank" rel="noopener">PR #2640</a> ·
+        <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/seps/2640-skills-extension.mdx" target="_blank" rel="noopener">SEP 正文</a> ·
+        <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills Spec</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Pace 级联 UPDATE：Sacks「自己踩刹车」+ 特朗普拒整体限速 + IPO 叙事放大</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">G/F/J/I</span><span class="chip">2026-09-13</span>
+      </div>
+      <h4>事实</h4>
+      <p>David Sacks 长帖对 Amodei/Altman：支持你们单方减速，但拒绝「装成需要批准」——反垄断豁免、监管审批替代产品责任、METR 独立性质疑、用同一评估员去管非 frontier 对手。特朗普在爱尔兰答问（Reuters）：称有「very negative forces」夸大不会发生的担忧，强调对华领先。Axios 综述周末同框；Fortune 访谈中 Altman 明确 2026 不上市。Gavin Baker 评论称唯一有形新事实仍是嵌入第三方评估员（评论非政策）。</p>
+      <h4>判断</h4>
+      <p>口头同盟的可执行边界被公开撕开：嵌入评估员或仍前进，强制行业限速政治阻力上升。</p>
+      <img src="../assets/2026-09-14/axios-brakes.jpg" alt="Axios AI CEOs hit the brakes" />
+      <div class="caption">图 2 · Axios 报道配图</div>
+      <p class="sources">
+        <a href="https://x.com/DavidSacks/status/2098973625252708460" target="_blank" rel="noopener">Sacks 原帖</a> ·
+        <a href="https://www.axios.com/2026/09/13/ai-labs-regulation-safety" target="_blank" rel="noopener">Axios</a> ·
+        <a href="https://www.reuters.com/world/europe/trump-says-very-negative-forces-raising-exaggerated-concerns-over-ai-2026-09-13/" target="_blank" rel="noopener">Reuters</a> ·
+        <a href="https://fortune.com/2026/09/12/sam-altman-openai-ipo-delay-ill-advised-moment-safety-concerns/" target="_blank" rel="noopener">Fortune</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. DeepSeek：9/14 确认 V4 Pro API 继续提供（定价页为准）</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">A/I/C</span><span class="chip">2026-09-14 节点</span>
+      </div>
+      <h4>事实</h4>
+      <p>中英定价页脚注：2026-09-14 之后继续提供 DeepSeek V4 Pro API，计费不变。旧 news（news260910）仍残留「Pro→Flash 路由」表述——以定价页为现行口径；建议正午后 API 实测。文档继续展示 Harness developer preview。</p>
+      <h4>判断</h4>
+      <p>「Flash 逼退 Pro」不确定窗口收束；长轨迹 Agent 仍可双轨调度。</p>
+      <img src="../assets/2026-09-14/deepseek-card.jpeg" alt="DeepSeek API docs card" />
+      <div class="caption">图 3 · DeepSeek API Docs social card</div>
+      <p class="sources">
+        <a href="https://api-docs.deepseek.com/zh-cn/quick_start/pricing" target="_blank" rel="noopener">定价（中）</a> ·
+        <a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" rel="noopener">Pricing (EN)</a> ·
+        <a href="https://api-docs.deepseek.com/news/news260910" target="_blank" rel="noopener">旧 news（对照）</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. OpenAI：Perplexity × GPT-6 Astra 客户故事（端到端系统）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/B/I</span><span class="chip">2026-09-14</span>
+      </div>
+      <h4>事实</h4>
+      <p>OpenAI Index 上线客户文：Perplexity 用 Astra 写沟通、改软件、监控生产，check-in 频率下降。属营销案例，非新 API。</p>
+      <h4>判断</h4>
+      <p>生产变更闭环样板可参考，需折扣营销语言。</p>
+      <img src="../assets/2026-09-14/openai-perplexity-astra.png" alt="OpenAI Perplexity Astra OG" />
+      <div class="caption">图 4 · OpenAI 页面 OG</div>
+      <p class="sources">
+        <a href="https://openai.com/index/perplexity-improving-accuracy-with-astra" target="_blank" rel="noopener">OpenAI Index</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Vals AI：Claude Fable 5.1 解开 Cyphral Distich</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">A/H/K</span><span class="chip">2026-09-13</span>
+      </div>
+      <h4>事实</h4>
+      <p>Vals 称 Fable 5.1 在开放目标下约 44 分钟 / 17.6 万 tokens、无人工介入解开约 370 年密码。评测方自述，非 Anthropic 发布会。</p>
+      <h4>判断</h4>
+      <p>长程弱提示探索成为新展示面；与同日「评测可 hack」讨论对照阅读。</p>
+      <img src="../assets/2026-09-14/fable-og.jpg" alt="Vals Fable OG" />
+      <div class="caption">图 5 · Vals OG</div>
+      <p class="sources">
+        <a href="https://www.vals.ai/blogs/fable-solves-cyphral-distich" target="_blank" rel="noopener">Vals 博文</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>T1. Pace 极化：讽刺顶帖 × Sacks × 政府不愿踩刹车</h3>
+      <p>HN 「Everyone should slow down AI development except for me」窗内约 741p/434c；与 Sacks/特朗普共振。风向：谁有资格限速、是否监管俘获。</p>
+    </section>
+
+    <section class="card">
+      <h3>T2. Bengio：为何 Agent 会撒谎、作弊与协同？</h3>
+      <p>长文（刊于 09-11）在窗内 HN 冲高约 582p/646c：把逃逸、作弊评分器、未指定目标协同收束为训练目标与泛化假说。</p>
+      <img src="../assets/2026-09-14/bengio-agents.jpg" alt="Bengio essay OG" />
+      <div class="caption">图 6 · Bengio 站点 OG</div>
+      <p class="sources"><a href="https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating" target="_blank" rel="noopener">原文</a></p>
+    </section>
+
+    <section class="card">
+      <h3>T3. LessWrong：Astra / Fable 仍 hack 2025 对齐评测变体</h3>
+      <p>HN 约 356p/169c。与 Embedded Evaluators 同窗：评测隔离设计优先级上升。</p>
+      <p class="sources"><a href="https://www.lesswrong.com/posts/munJKF7iWMsWJLAH2/astra-and-fable-still-hack-on-simple-variants-of-alignment" target="_blank" rel="noopener">LessWrong</a></p>
+    </section>
+
+    <section class="card">
+      <h3>T4. 国内媒体：Pace/IPO 二传；工程向 Flash 与小模型路由</h3>
+      <p>机器之心等综述 Dario 限速文与 Altman 年内不上市；DeepSeek Pro 去留以官方定价页为准。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>O1. MCP SEP-2640 Skills（见新闻 #1）</h3>
+      <p>★约 9199；PR merged 2026-09-13T21:27:51Z。建议：拆 SEP + 映射自有 Skill 目录。</p>
+    </section>
+
+    <section class="card">
+      <h3>O2. HarnessRouter v0.17：goose 后端 + UHP 符合性</h3>
+      <p>★约 1368；v0.17.0/0.17.1 于 09-13 发布。多 harness 统一 API。建议：对照自有 Runtime。</p>
+      <img src="../assets/2026-09-14/harnessrouter.png" alt="HarnessRouter OG" />
+      <div class="caption">图 7 · GitHub HarnessRouter OpenGraph</div>
+      <p class="sources"><a href="https://github.com/HarnessRouter/harnessrouter" target="_blank" rel="noopener">HarnessRouter/harnessrouter</a></p>
+    </section>
+
+    <section class="card">
+      <h3>O3. openai/codex：worktree 会话与 tool metadata</h3>
+      <p>★约 123,826；pushed 2026-09-13T18:53:20Z。建议：摘设计笔记。</p>
+      <p class="sources"><a href="https://github.com/openai/codex" target="_blank" rel="noopener">openai/codex</a></p>
+    </section>
+
+    <section class="card">
+      <h3>O4. TencentCloud/TencentDB-Agent-Memory（国内热榜补位）</h3>
+      <p>★约 26,588；公开 trending 日涨星代理约 +145。建议：关注架构。</p>
+    </section>
+
+    <h2 class="section-title">重点事件新进展 / 趋势 / 吸收点</h2>
+    <section class="card">
+      <h4>Embedded Evaluators / Pace</h4>
+      <p>政治约束上修，合同未落地。DeepSeek Pro 路由不确定性下降（定价页）。MCP Skills 实质 Final。</p>
+      <h4>趋势</h4>
+      <ul>
+        <li>Pacing 进入监管俘获审查</li>
+        <li>Agent 失准机制 + 评测可 hack 同窗</li>
+        <li>Skill 协议化；Harness 互操作继续工程化</li>
+        <li>国内价目双轨保留</li>
+      </ul>
+      <h4>智能体互联网</h4>
+      <p>Skill 发现一等协议化；评估方独立性与跨源冒充同属身份问题；共谋/欺骗假说进威胁模型。</p>
+      <h4>Work / Agent 引擎</h4>
+      <p>Skill 加载 ≠ 资源读取；UHP/worktree 对照；Pro/Flash 双轨写入成本策略。</p>
+      <h4>价格雷达</h4>
+      <p>DeepSeek：9/14 后 V4 Pro 继续、计费不变。未见其他重要 API 调价。Altman：2026 不 IPO（融资/治理信号）。</p>
+    </section>
+
+    <p class="footer-note">完整 Markdown 归档与 watchlist 已更新 · 公网 Pages 同步推送</p>
+  </article>
+</body>
+</html>
