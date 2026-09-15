@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-14T08:30:00+08:00",
+  "updatedAt": "2026-09-15T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-15",
+      "date": "2026-09-15",
+      "title": "AI Intelligence Daily · 2026-09-15",
+      "summary": "Portable Computer Windows；豆包 SAEP；Pace 遇中国外交部与 Huang×Trump；Andon Pion",
+      "href": "reports/2026-09-15.html"
+    },
     {
       "id": "2026-09-14",
       "date": "2026-09-14",
