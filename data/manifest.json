@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-15T08:30:00+08:00",
+  "updatedAt": "2026-09-16T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-16",
+      "date": "2026-09-16",
+      "title": "AI Intelligence Daily · 2026-09-16",
+      "summary": "飞书团队智能体；讯飞 AStudio；Gemini 3.8 Live；HP×Perplexity；CobbleDB agents；Cline Desktop；Claude Mods",
+      "href": "reports/2026-09-16.html"
+    },
     {
       "id": "2026-09-15",
       "date": "2026-09-15",
