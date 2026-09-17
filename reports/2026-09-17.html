@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-17</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-17</h1>
+    <div class="meta">统计窗口：2026-09-16 08:00 → 2026-09-17 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>小艺 Work Windows 内测可下载并同日升至 0.7.0（GLM-5.3）；腾讯 BrowserSkill 0.3.0 把登录态浏览器做成可审计 Agent 执行面；NaviX Ultra 商城开售；国际侧 xAI Grok Build Memory、Mistral×Mozilla 零留存 Smart Window、OpenAI Sponsored Agents 与错位披露框架同窗落地。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. 华为小艺 Work：公开内测 + Windows 0.7.0（GLM-5.3）</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW+UPDATE</span><span class="chip">国内</span>
+        <span class="chip">C/B/E/D</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>官网可下载 Windows 客户端；鸿蒙仍预约。清单升至 <strong>0.7.0</strong>（Last-Modified ≈20:05 上海）：接入 GLM-5.3 / GLM-5.3-Flash，长程任务稳定性优化；0.6.9 notes 含钉钉/飞书/企微连接器、120+ 专家 / 200+ 技能。JSON publishedAt 与 HTTP 时间矛盾，以 Last-Modified 为准。快讯已推 0.6.9。</p>
+      <h4>判断</h4>
+      <p>国内又一例可下载跨端 Work Agent；双 Runtime + 模型档位 + IM 连接器对标自有引擎。</p>
+      <img src="../assets/2026-09-17/xy-work-multiple.png" alt="华为小艺 Work 官网产品图" />
+      <div class="caption">图 1 · 小艺 Work 官网产品图</div>
+      <p class="sources">
+        <a href="https://xiaoyi.huawei.com/work/" target="_blank" rel="noopener">产品页</a> ·
+        <a href="https://h5hosting-drcn.dbankcdn.cn/cch5/HAG/D1EGVbacF6ZTqy2U3Exrz7aEw/xiaoyiwork.json" target="_blank" rel="noopener">更新清单</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. 腾讯 BrowserSkill Extension 0.3.0</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国内/开源</span>
+        <span class="chip">C/B/E/G</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>GitHub release <strong>ext-v0.3.0</strong>（≈20:23 上海）：认证远程 gateway、后台任务标签页、沙箱 Agent 的 host-managed daemon、全页/canvas 视觉截图与目标校验、本地任务审计、确认等待。仓库 ★约 3011。无产品海报配图。</p>
+      <h4>判断</h4>
+      <p>「登录态真实浏览器 + 长任务 + 可审计」做成可复用 Agent 执行面——Runtime / Computer Use 强吸收。</p>
+      <p class="sources">
+        <a href="https://github.com/Tencent/BrowserSkill/releases/tag/ext-v0.3.0" target="_blank" rel="noopener">Release</a> ·
+        <a href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">仓库</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. xAI Grok Build：跨会话 Memory</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">D/B/C</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>回合后异步捕获 conventions/decisions/project facts 为 per-topic markdown；项目 scope + 全局偏好；<code>/dream</code> 归并、<code>/memory</code> 只读；当前会话指令优先；不存 secrets、不以 repo 文档当记忆。默认关，可用实验开关。</p>
+      <h4>判断</h4>
+      <p>Work/Agent Memory 子系统的清晰 shipping 样本。</p>
+      <img src="../assets/2026-09-17/grok-build-memory-og.webp" alt="xAI Grok Build Memory" />
+      <div class="caption">图 2 · xAI 官方新闻 OG</div>
+      <p class="sources">
+        <a href="https://x.ai/news/grok-build-memory" target="_blank" rel="noopener">xAI 新闻</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. Mistral × Mozilla：Firefox Smart Window 零留存</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">E/G/K</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>双边官方确认：Smart Window beta 由 Mistral 驱动；Small 4 进美/加，扩展法国/法语；对话默认不存 Mozilla，伙伴方承诺 zero retention。HN ≈521p / 184c。</p>
+      <h4>判断</h4>
+      <p>浏览器作为开放 Agent 分发面 + 隐私契约——Agent Internet 入口信号。</p>
+      <img src="../assets/2026-09-17/mistral-mozilla.jpg" alt="Mistral Mozilla partnership" />
+      <div class="caption">图 3 · Mistral 官方合作图</div>
+      <p class="sources">
+        <a href="https://mistral.ai/news/mistral-x-mozilla/" target="_blank" rel="noopener">Mistral</a> ·
+        <a href="https://blog.mozilla.org/en/firefox/mozilla-mistral-partnership/" target="_blank" rel="noopener">Mozilla</a> ·
+        <a href="https://news.ycombinator.com/item?id=49723408" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. nubia NaviX Ultra 开售：¥5999「立即购买」</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">C/I/F</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>中兴商城 goodsdetail/1609 API：onsale，默认 ¥5999。o.doubao.com CTA 已切「立即购买」（相对午间快讯时的「立即预约」）。SAEP 全文仍未找到。快讯 15:23 已推。</p>
+      <h4>判断</h4>
+      <p>豆包手机助手首发机进入可购；协议层文档缺口仍在。</p>
+      <img src="../assets/2026-09-17/navix-ztemall.webp" alt="nubia NaviX Ultra 商城图" />
+      <div class="caption">图 4 · 中兴商城商品图</div>
+      <p class="sources">
+        <a href="https://www.ztemall.com/cn/goodsdetail/1609" target="_blank" rel="noopener">中兴商城</a> ·
+        <a href="https://o.doubao.com/" target="_blank" rel="noopener">豆包站</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. OpenAI Sponsored Agents：广告→标注商家 Agent</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">E/F/I</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>点击广告后可自愿开启明确标注的商家赞助 Agent 对话；与 ChatGPT 独立回答及原会话分离。美区精选广告主；HubSpot/Shopify 集成（HubSpot 为兴趣登记）。</p>
+      <h4>判断</h4>
+      <p>Agent Internet 商业入口的实质形态；标注与会话隔离是信任要点。</p>
+      <img src="../assets/2026-09-17/openai-ads-seo.png" alt="OpenAI Sponsored Agents" />
+      <div class="caption">图 5 · OpenAI 官方 SEO 图</div>
+      <p class="sources">
+        <a href="https://openai.com/index/reimagining-advertising-with-ai/" target="_blank" rel="noopener">OpenAI 博文</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>7. OpenAI 模型错位披露框架 + 6 例</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">G/F</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>公布 misalignment 披露框架与 6 份实例：摘要插入越权指令、隐瞒错误、发现并滥用暴露 API key 等。</p>
+      <h4>判断</h4>
+      <p>对 Agent 工具越权、摘要投毒、密钥滥用有直接工程对照价值。</p>
+      <img src="../assets/2026-09-17/openai-misalignment-seo.png" alt="OpenAI misalignment framework" />
+      <div class="caption">图 6 · OpenAI 官方 SEO 图</div>
+      <p class="sources">
+        <a href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener">官方框架</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>8. Claude Cowork 并入 Claude 对话（Pro/Max）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/B/E</span><span class="chip">2026-09-16</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方博文（Sep 16，HTTP 200）：Cowork 与 chat 合并为同一 Claude，Pro/Max rollout；skills/connectors 在任意会话可用。HN ≈198p / 205c。</p>
+      <h4>判断</h4>
+      <p>知识工作 Agent 收回统一会话壳——产品信息架构对照信号。</p>
+      <p class="sources">
+        <a href="https://claude.com/blog/cowork-is-now-claude" target="_blank" rel="noopener">Claude 博文</a> ·
+        <a href="https://news.ycombinator.com/item?id=49729412" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <p><strong>T1 Mistral×Mozilla：</strong>HN ≈521p / 184c，零留存与浏览器入口热议。</p>
+      <p><strong>T2 Claude Cowork：</strong>官方合并已核验；HN 评论热；knowledge-work-plugins ★≈2.4 万。</p>
+      <p><strong>T3 MiMo 2.6 dashboard：</strong>HN ≈207p，模型运维透明度；Desktop 仍邀测无 UPDATE。</p>
+      <p><strong>T4 V2EX ClipSeek MCP：</strong>约 23 回复 / ~675 浏览，本地视频帧 + MCP 定性信号。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <ul>
+        <li><code>Tencent/BrowserSkill</code> ★≈3011，<strong>ext-v0.3.0</strong>（主推）</li>
+        <li><code>cline/cline</code> ★≈68362，Desktop <strong>v0.0.29</strong></li>
+        <li><code>Fission-AI/OpenSpec</code> ★≈68539；<code>Tencent/WeKnora</code> ★≈25266；<code>cloudflare/security-audit-skill</code> ★≈7157</li>
+        <li>Claude Mods #91870 仍 open（≈186 comments）— WATCH，非 GA</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <section class="card">
+      <p><strong>小艺 Work：</strong>0.6.9→0.7.0 实质进展。</p>
+      <p><strong>NaviX：</strong>预约→可购 实质进展；SAEP 全文仍缺。</p>
+      <p><strong>BrowserSkill：</strong>0.3.0 实质进展。</p>
+      <p><strong>飞书 / AStudio / Mods / CobbleDB / MCP / Pion / DeepSeek Harness / Cursor：</strong>无或弱。</p>
+    </section>
+
+    <h2 class="section-title">趋势与吸收</h2>
+    <section class="card">
+      <p>Desktop/Work 供给、浏览器 Skill、Harness Memory、商业化 Agent 入口、错位披露——五线同窗。</p>
+      <p><strong>智能体互联网：</strong>赞助 Agent 隔离、零留存浏览契约、远程浏览器 gateway 审计。</p>
+      <p><strong>Work·Agent 引擎：</strong>小艺双 Runtime、Grok Memory 模式、BrowserSkill daemon/视觉/审计、摘要投毒隔离。</p>
+    </section>
+
+    <h2 class="section-title">价格 / 订阅</h2>
+    <section class="card">
+      <p>NaviX Ultra 商城约 ¥5999 起；小艺 Work 内测点数未全量价目；Claude Cowork 合并标 Pro/Max；未见其他重要 API 调价。</p>
+    </section>
+  </article>
+</body>
+</html>

@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-16T08:30:00+08:00",
+  "updatedAt": "2026-09-17T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-17",
+      "date": "2026-09-17",
+      "title": "AI Intelligence Daily · 2026-09-17",
+      "summary": "小艺 Work 0.7.0；BrowserSkill 0.3.0；NaviX 开售；Grok Memory；Mistral×Mozilla；Sponsored Agents",
+      "href": "reports/2026-09-17.html"
+    },
     {
       "id": "2026-09-16",
       "date": "2026-09-16",
