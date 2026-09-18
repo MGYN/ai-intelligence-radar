@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-18</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-18</h1>
+    <div class="meta">统计窗口：2026-09-17 08:00 → 2026-09-18 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>Copilot Agent Runtime 迁 Rust（进程内共享 Harness）是当日最强工程信号；BrowserSkill CLI 0.3.0 补齐与 Extension 同代浏览器执行面；国际侧 Astra for Law、GitLab Duo <code>/goal</code>+MCP、Computer effort 产品化垂直工作台与成本档位。国内一线 Desktop（小艺/飞书/AStudio/MiMo）本窗无实质 UPDATE。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. GitHub Copilot Agent Runtime → Rust（进程内 Harness）</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C</span><span class="chip">2026-09-17 ≈08:26 上海</span>
+        <span class="chip">已闪讯 09:25</span>
+      </div>
+      <h4>事实</h4>
+      <p>GitHub Blog（<code>article:published_time</code> <strong>2026-09-17T00:26:43Z</strong>）：Copilot agent runtime 自 TypeScript/Node 原地迁至约 <strong>832,378</strong> 行生产 Rust；128 PR / ~14.5 周 / ~135 次发布；2026-08-21 起生产路径 100% Rust。Runtime 以 C ABI <strong>进程内嵌入</strong>，六语言 SDK 可 FFI；仍保留 JSON-RPC 进程外。性能（C# SDK）：建连+会话+一轮约 <strong>5.25s → 1.33s（进程外）/ 292ms（进程内）</strong>。本窗未见 in-process 默认化或公开 SDK follow-up。</p>
+      <h4>判断</h4>
+      <p>一线 Work/Agent <strong>共享 Runtime / 进程内密度</strong> 工程一手信号——harness 选型与性能预算级；09:25 已闪讯，日报完整收录。</p>
+      <img src="../assets/2026-09-18/copilot-runtime-arch.svg" alt="Copilot Runtime architecture before/after" />
+      <div class="caption">图 1 · GitHub Blog 架构前后对比 SVG</div>
+      <img src="../assets/2026-09-18/copilot-perf.svg" alt="Copilot Runtime performance" />
+      <div class="caption">图 2 · GitHub Blog 性能对比 SVG</div>
+      <p class="sources">
+        <a href="https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/" target="_blank" rel="noopener">GitHub Blog</a> ·
+        快讯 flashes/2026-09-17-0925.md
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. 腾讯 BrowserSkill CLI 0.3.0</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国内/开源</span>
+        <span class="chip">C/B/E/G</span><span class="chip">2026-09-17 ≈10:22 上海</span>
+      </div>
+      <h4>事实</h4>
+      <p>GitHub release <strong>cli-v0.3.0</strong>：与昨日报 <strong>ext-v0.3.0</strong> 同代能力对齐——跨 frame/视觉校验、host-managed daemon、本地任务审计、全页截图、远程 gateway / 后台任务等。仓库 ★约 <strong>4107</strong>。无产品海报配图。</p>
+      <h4>判断</h4>
+      <p>CLI 侧执行面追上 Extension——登录态浏览器 + 沙箱 + 审计成套，利于 Agent Harness 落地。勿写成第二次「全新产品」。</p>
+      <p class="sources">
+        <a href="https://github.com/Tencent/BrowserSkill/releases/tag/cli-v0.3.0" target="_blank" rel="noopener">Release</a> ·
+        <a href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">仓库</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. OpenAI Astra for Law</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/E/I/D</span><span class="chip">公开日 2026-09-17</span>
+      </div>
+      <h4>事实</h4>
+      <p>GPT-6 Astra + Legal Search Index（文称 <strong>&gt;230M URLs</strong>）+ plugins（X 称 26 partner + 47 community）；Trusted Access（ChatGPT+Codex）对精选律所；API soon。meta published_time 为 Sep 9，以<strong>公开宣布日</strong>为准。HN ≈259p / 291c；X 主帖 ≈8660 likes / ~1.60M imp。</p>
+      <h4>判断</h4>
+      <p>垂直领域 Agent 工作台 + 检索索引 + 插件生态——Agent Internet 与专业 Work Agent 双相关。</p>
+      <img src="../assets/2026-09-18/astra-for-law.png" alt="OpenAI Astra for Law" />
+      <div class="caption">图 3 · OpenAI 官方 SEO 图</div>
+      <p class="sources">
+        <a href="https://openai.com/index/astra-for-law" target="_blank" rel="noopener">OpenAI</a> ·
+        <a href="https://news.ycombinator.com/item?id=49745940" target="_blank" rel="noopener">HN</a> ·
+        <a href="https://x.com/OpenAI/status/2100679992720142459" target="_blank" rel="noopener">X</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. GitLab 19.4：Duo CLI /goal + MCP + 托管开源权重</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C/E</span><span class="chip">2026-09-17</span>
+      </div>
+      <h4>事实</h4>
+      <p><strong>/goal</strong>（public beta）：目标驱动至完成或报告未解决项，并<strong>独立模型验证</strong>。MCP tools public beta：只读默认 Always Allow，写/合并需评审。托管开源权重：<strong>Kimi K3 / GLM 5.3 / MiniMax M3</strong>；文称最高约 4× calls / GitLab Credit。</p>
+      <h4>判断</h4>
+      <p>Agent Loop（goal+verify）+ MCP 治理 + 多模型路由——Work/Agent 引擎高相关。</p>
+      <img src="../assets/2026-09-18/gitlab-duo-mcp-og.png" alt="GitLab Duo MCP" />
+      <div class="caption">图 4 · GitLab 官方 OG</div>
+      <p class="sources">
+        <a href="https://about.gitlab.com/blog/gitlab-duo-cli-drives-automation/" target="_blank" rel="noopener">Duo CLI</a> ·
+        <a href="https://about.gitlab.com/blog/new-mcp-tools-for-automation/" target="_blank" rel="noopener">MCP</a> ·
+        <a href="https://about.gitlab.com/blog/optimize-with-open-weight-models/" target="_blank" rel="noopener">Open weights</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Perplexity Computer：effort 档位</h3>
+      <div class="chips">
+        <span class="chip b">B+/弱A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/B</span><span class="chip">2026-09-17</span>
+      </div>
+      <h4>事实</h4>
+      <p>Light / Standard / High / Ultra 四档：预设 orchestrator 模型 + reasoning depth。官方：web 可用；mobile/desktop soon。X ≈353 likes / ~94k imp。HP/CobbleDB 无 UPDATE。</p>
+      <h4>判断</h4>
+      <p>Work Agent「成本-深度」控制面产品化；Desktop 仍 soon，未到强 A Desktop 条。</p>
+      <img src="../assets/2026-09-18/perplexity-computer-effort.jpg" alt="Perplexity Computer effort mode" />
+      <div class="caption">图 5 · Perplexity 官方博文配图</div>
+      <p class="sources">
+        <a href="https://www.perplexity.ai/hub/blog/computer-adds-effort-mode-for-model-selection" target="_blank" rel="noopener">Hub 博文</a> ·
+        <a href="https://x.com/perplexity_ai/status/2100617849677176992" target="_blank" rel="noopener">X</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. Anthropic LSVP（生命科学验证准入）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">G/F</span><span class="chip">≈15:56Z</span>
+      </div>
+      <h4>事实</h4>
+      <p>Life Sciences Verification Program beta 开放申请；首次含 Mythos；经 Claude Science / Claude.ai / Claude Code / API。Cowork/Mods 无 UPDATE。</p>
+      <h4>判断</h4>
+      <p>安全/准入产品化——对 Agent 权限分级有间接启示，非 IDE harness shipping。</p>
+      <img src="../assets/2026-09-18/anthropic-lsvp-og.png" alt="Anthropic LSVP" />
+      <div class="caption">图 6 · Anthropic OG illustration</div>
+      <p class="sources">
+        <a href="https://www.anthropic.com/news/life-sciences-verification-program" target="_blank" rel="noopener">Newsroom</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>7.（交叉）Cline Desktop v0.0.31 SSH remote</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际/开源</span>
+        <span class="chip">C</span><span class="chip">2026-09-17</span>
+      </div>
+      <h4>事实</h4>
+      <p>Desktop <strong>v0.0.31</strong>：SSH remote（agent tools/Git/session 远程，UI 本地）。★约 68551。详见开源雷达。</p>
+      <p class="sources">
+        <a href="https://github.com/cline/cline/releases" target="_blank" rel="noopener">Releases</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <p><strong>T1 Astra for Law：</strong>HN ≈259p / 291c；X ≈8660 likes / ~1.60M imp——垂直法律 Agent 双热。</p>
+      <p><strong>T2 Skillsync Launch HN：</strong>≈42p / 46c；旁证 <code>skillsynchq/txcript</code> ★≈103——可移植会话 / harness 可移植性。</p>
+      <p><strong>T3 Fowler「I Don't Like LLMs」：</strong>HN ≈203p / 234c——观点栏短记，非 shipping。</p>
+      <p><strong>T4 V2EX 上下文窗口：</strong>t/1242828，约 2 回复——国内弱信号。</p>
+      <p><strong>T5 MiMo RL notices：</strong>窗内 2 条 infra 重启；训练透明度 near-miss，非 Desktop shipping。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <ul>
+        <li><code>Tencent/BrowserSkill</code> ★≈4107，<strong>cli-v0.3.0</strong>（主推；+昨日报 ext 0.3.0）</li>
+        <li><code>cline/cline</code> ★≈68551，Desktop <strong>v0.0.30 / v0.0.31 SSH</strong></li>
+        <li><code>HarnessRouter/harnessrouter</code> ★≈1458，<strong>v0.18.1</strong> + Kimi Code CLI base</li>
+        <li><code>Fission-AI/OpenSpec</code> ★≈68920，<strong>v1.13.1</strong> 安全加固</li>
+        <li><code>Tencent/WeKnora</code> ★≈26180，热无新 tag（仍 v0.8.0）</li>
+        <li>Claude Mods #91870 仍 open（195 comments）— UPDATE-only，非 GA</li>
+        <li>旁证：<code>cloudflare/security-audit-skill</code> ★≈10589；<code>alibaba/open-code-review</code> ★≈34687（勿夸大）</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <section class="card">
+      <p><strong>Copilot Rust：</strong>快讯→日报完整收录；follow-up SDK/in-process 默认未见。</p>
+      <p><strong>BrowserSkill：</strong>ext 0.3.0 → CLI 0.3.0 配套。</p>
+      <p><strong>小艺 Work：</strong>仍 0.7.0，manifest 未变。</p>
+      <p><strong>飞书 / AStudio / NaviX / SAEP / DeepSeek Harness / MiMo Desktop：</strong>无实质 UPDATE。</p>
+      <p><strong>Claude Mods：</strong>仍 open。· <strong>Cursor changelog：</strong>仍 Projects Sep 10。</p>
+    </section>
+
+    <h2 class="section-title">趋势与吸收</h2>
+    <section class="card">
+      <p>共享 Runtime 工程化、浏览器 CLI/扩展同代、垂直工作台、goal+verify、effort 成本档——五线同窗。</p>
+      <p><strong>智能体互联网：</strong>Astra 插件/Trusted Access；GitLab MCP 只读默认；BrowserSkill gateway 审计。</p>
+      <p><strong>Work·Agent 引擎：</strong>Copilot 进程内 harness；GitLab /goal 校验循环；BrowserSkill daemon/视觉/审计；Computer effort；Cline SSH remote。</p>
+    </section>
+
+    <h2 class="section-title">跟踪 / 价格</h2>
+    <section class="card">
+      <p>继续盯：Copilot in-process/SDK；BrowserSkill gateway；Astra API；GitLab beta→GA；effort→desktop；小艺/飞书/AStudio/MiMo；SAEP；Mods；Cursor；DeepSeek Harness。</p>
+      <p><strong>价格：</strong>今日未见重要新促销。NaviX 仍 ¥5999；GitLab open-weight「约 4× calls/Credit」属平台 credits 叙事，非终端调价。</p>
+    </section>
+  </article>
+</body>
+</html>

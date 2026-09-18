@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-17T08:20:00+08:00",
+  "updatedAt": "2026-09-18T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-18",
+      "date": "2026-09-18",
+      "title": "AI Intelligence Daily · 2026-09-18",
+      "summary": "Copilot Runtime→Rust；BrowserSkill CLI 0.3.0；Astra for Law；GitLab Duo /goal+MCP；Computer effort",
+      "href": "reports/2026-09-18.html"
+    },
     {
       "id": "2026-09-17",
       "date": "2026-09-17",
