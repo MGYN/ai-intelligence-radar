@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-18T08:30:00+08:00",
+  "updatedAt": "2026-09-19T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-19",
+      "date": "2026-09-19",
+      "title": "AI Intelligence Daily · 2026-09-19",
+      "summary": "Muse Mac+connectors；Claude Projects+AGENTS.md；MiniMax Code 开源；Qwen Omni；华为云 Agentic Cloud；Accenture 评估；Copilot CCR",
+      "href": "reports/2026-09-19.html"
+    },
     {
       "id": "2026-09-18",
       "date": "2026-09-18",

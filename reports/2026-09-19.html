@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-19</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-19</h1>
+    <div class="meta">统计窗口：2026-09-18 08:00 → 2026-09-19 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>Muse 在 Mac shipping 后同窗开放开发者 connectors（+Canada / Notion·Granola）；Claude Code Projects 做成 Coordinator+并行云线程+共享记忆，并接入 <code>AGENTS.md</code>；国内 MiniMax Code CLI 开源、Qwen Omni+MM-Plugins 把全模态塞进 Harness；华为云官宣 Agentic Cloud。Copilot 审查闭环与 Anthropic×Accenture 嵌入式评估并行加码。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. Meta Muse：Mac + 开发者 connectors + Canada</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW+UPDATE</span><span class="chip">国际</span>
+        <span class="chip">C/E/F/K</span><span class="chip">Mac ≈09-18 06:27 · connectors ≈09-19 07:03 上海</span>
+      </div>
+      <h4>事实</h4>
+      <p>@finkd 宣布 Muse for Mac 上线（下载页 <em>Free AI Agent for Mac &amp; Mobile</em>）。同窗 @finkd 再宣布 <strong>开发者可构建 Muse connectors</strong>（约 1650 likes / ~87k impressions）；@Muse 上线 <strong>Granola + Notion</strong> connectors，并确认 <strong>Canada</strong>（iOS+Web）。注：<code>ai.meta.com/muse/connectors</code> 本轮 404，细节以官方 X 为准。</p>
+      <h4>判断</h4>
+      <p>Personal Agent 从客户端 shipping 进入 <strong>连接器生态</strong>——Agent Internet 委托/发现与 Desktop Runtime 双相关。09-18 日报漏收 Mac，本报完整收录并叠加 connectors UPDATE。</p>
+      <img src="../assets/2026-09-19/muse-mac.jpg" alt="Muse for Mac" />
+      <div class="caption">图 1 · Muse 官方相关发布图（快讯归档）</div>
+      <img src="../assets/2026-09-19/muse-download-og.webp" alt="Muse download" />
+      <div class="caption">图 2 · 下载页 OG</div>
+      <p class="sources">
+        <a href="https://x.com/finkd/status/2101084678640066765" target="_blank" rel="noopener">connectors</a> ·
+        <a href="https://ai.meta.com/muse/download/" target="_blank" rel="noopener">Download</a> ·
+        <a href="https://x.com/Muse/status/2101079336485007550" target="_blank" rel="noopener">Granola/Notion</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Claude Code Projects：Coordinator + 并行云线程 + 共享记忆</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C/D</span><span class="chip">≈09-18 01:07 上海</span>
+      </div>
+      <h4>事实</h4>
+      <p>Projects 从文件夹改为对话驱动：Claude 作 coordinator，并行 threads（各为独立 cloud Claude Code 会话，自有 branch），开 PR/跑测，<strong>shared memory</strong> + library；合上笔记本仍继续。Public beta：select Pro/Max + cloud sessions；本地执行 soon。</p>
+      <h4>判断</h4>
+      <p>多 Agent 编排产品化——与 Cursor Projects、GitLab <code>/goal</code> 对照三角。</p>
+      <img src="../assets/2026-09-19/claude-projects.jpg" alt="Claude Projects" />
+      <div class="caption">图 3 · @claudeai 发布相关图</div>
+      <img src="../assets/2026-09-19/claude-projects-overview.svg" alt="Projects architecture" />
+      <div class="caption">图 4 · 官方 docs 架构 SVG</div>
+      <p class="sources">
+        <a href="https://claude.com/blog/projects-redesigned" target="_blank" rel="noopener">Blog</a> ·
+        <a href="https://code.claude.com/docs/en/claude-projects" target="_blank" rel="noopener">Docs</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. MiniMax Code CLI 开源</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内/开源</span>
+        <span class="chip">B/C/E</span><span class="chip">≈20:50 上海</span><span class="chip">已闪讯 21:25</span>
+      </div>
+      <h4>事实</h4>
+      <p>仓库 <code>MiniMax-AI/minimax-code</code>（MIT）：TUI / Headless / ACP；权限、Goals、MCP、BYOK。明确不含 Desktop 源码。★721；开源后密集安全/权限 commit；尚无 GitHub Release tag。npm latest 0.4.12。</p>
+      <h4>判断</h4>
+      <p>国内一线可审计 Coding Harness 样本——OSS 可用性跃迁，非二进制首次出现。</p>
+      <img src="../assets/2026-09-19/minimax-code-tui.png" alt="MiniMax Code TUI" />
+      <div class="caption">图 5 · 仓库 README TUI 演示</div>
+      <p class="sources">
+        <a href="https://github.com/MiniMax-AI/minimax-code" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://x.com/MiniMax_AI/status/2100930515058753830" target="_blank" rel="noopener">X</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. Qwen3.8-Omni-Flash + MM-Plugins</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内/双边</span>
+        <span class="chip">A/B/C/E</span><span class="chip">≈11:16 上海</span><span class="chip">已闪讯 13:00</span>
+      </div>
+      <h4>事实</h4>
+      <p>Agentic 原生全模态 + tool use；QwenCloud 可调；开源 Qwen-MM-Plugins（任意 Harness 多模态化）。Live Harness 仍 404。HN ≈327p/126c。</p>
+      <h4>判断</h4>
+      <p>全模态基座 + 插件层插入现有 Coding/Work Harness——短期可试。</p>
+      <img src="../assets/2026-09-19/qwen38-omni.jpg" alt="Qwen3.8 Omni" />
+      <div class="caption">图 6 · @Alibaba_Qwen 官方附图</div>
+      <p class="sources">
+        <a href="https://qwen.ai/blog?id=qwen3.8-omni-flash" target="_blank" rel="noopener">Blog</a> ·
+        <a href="https://github.com/QwenLM/Qwen-MM-Plugins" target="_blank" rel="noopener">MM-Plugins</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Claude Code 2.1.277：AGENTS.md</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/E</span><span class="chip">2026-09-18</span>
+      </div>
+      <h4>事实</h4>
+      <p>无 <code>CLAUDE.md</code> 时回退读 <code>AGENTS.md</code>（Bedrock/Vertex/Foundry 尚未）。HN ≈453p/164c。</p>
+      <h4>判断</h4>
+      <p>项目说明书文件名向社区约定收敛——跨 Harness 弱互通标准。</p>
+      <p class="sources">
+        <a href="https://code.claude.com/docs/en/changelog#2-1-277" target="_blank" rel="noopener">Changelog</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. 华为云 Agentic Cloud / 智果 AgentArts</h3>
+      <div class="chips">
+        <span class="chip b">B+/弱A</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">A/C/I</span><span class="chip">2026-09-18</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方文：昇腾950集群全球上线、Agentic MaaS、智果 AgentArts（文称 100+ 企业）。昇腾950 <strong>9/30 国内、11/30 海外</strong>商用——今日非全面商用。</p>
+      <h4>判断</h4>
+      <p>企业 Agentic 底座叙事；非消费级 Desktop shipping。</p>
+      <img src="../assets/2026-09-19/huawei-agentic.jpg" alt="Huawei Agentic Cloud" />
+      <div class="caption">图 7 · 华为云官方新闻附图</div>
+      <p class="sources">
+        <a href="https://www.huaweicloud.com/news/2026/20260918105927245.html" target="_blank" rel="noopener">华为云新闻</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>7. Anthropic × Accenture 嵌入式评估</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">G/I</span><span class="chip">2026-09-18</span>
+      </div>
+      <h4>事实</h4>
+      <p>Faculty 牵头 embedded evaluation；双方各预计五年至少 <strong>$1B</strong> 投入该能力。细节仍在形成。</p>
+      <h4>判断</h4>
+      <p>frontier 治理基础设施重量级动作——审计/发布门槛信号。</p>
+      <p class="sources">
+        <a href="https://www.anthropic.com/news/accenture-embedded-evaluation" target="_blank" rel="noopener">Anthropic</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>8. GitHub Copilot Code Review 体验改进（GA）</h3>
+      <div class="chips">
+        <span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C</span><span class="chip">≈09-19 04:17 上海</span>
+      </div>
+      <h4>事实</h4>
+      <p>Review 进度分组（Open / Resolved / Previously missed）；更智能 auto-resolve；批量采纳生成 commit message。同日 Agents 周更含 Dev Container、直开 PR、model selection 三档等。</p>
+      <h4>判断</h4>
+      <p>Agent Loop「审查→提交→会话回收」产品化，非新模型。</p>
+      <img src="../assets/2026-09-19/copilot-ccr.jpg" alt="Copilot code review" />
+      <div class="caption">图 8 · GitHub Changelog 官方图</div>
+      <p class="sources">
+        <a href="https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience" target="_blank" rel="noopener">Changelog</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <h3>AGENTS.md · Muse connectors · Qwen Omni</h3>
+      <p><strong>AGENTS.md</strong> HN ≈453p——互通约定讨论热过功能本身。<strong>Muse connectors</strong> 官方帖高互动。<strong>Qwen Omni</strong> HN ≈327p。国内媒体首页本窗无独立升格热议主条。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <ul>
+        <li><strong>MiniMax-AI/minimax-code</strong> ★721 · 开源 + 安全/权限 commits · 无 Release tag</li>
+        <li><strong>Tencent/BrowserSkill</strong> ★5285（短窗大涨）· 窗内 commits · 仍 0.3.0 tag</li>
+        <li><strong>QwenLM/Qwen-MM-Plugins</strong> ★2907 · Omni 相关 commits · Live Harness 404</li>
+        <li><strong>cline Desktop v0.0.32</strong> · Hub/app 构建身份修复 · ★68695</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">趋势与启示</h2>
+    <section class="card">
+      <p><strong>趋势：</strong>Personal Agent connector 生态；多 Agent 编排产品化（Projects / Cursor / GitLab）；<code>AGENTS.md</code> 弱标准；国内开源 Harness + 全模态插件 + 企业 Agentic Cloud；审查闭环与嵌入式评估并行。</p>
+      <p><strong>智能体互联网：</strong>Muse connectors 委托叙事；AGENTS.md 互通；MM-Plugins 跨 Harness 安装面。</p>
+      <p><strong>Work/Agent 引擎：</strong>Claude Projects coordinator 样板；MiniMax OSS 对照；Copilot review 生命周期；Muse Desktop 权限+连接器。</p>
+    </section>
+
+    <h2 class="section-title">价格 / 订阅</h2>
+    <section class="card">
+      <p>今日未见可核实的重要新促销或终端 API 调价。</p>
+    </section>
+
+    <p class="meta" style="margin-top:2rem">完整 Markdown 归档：reports/2026-09-19.md · 公网 GitHub Pages 同步</p>
+  </article>
+</body>
+</html>
