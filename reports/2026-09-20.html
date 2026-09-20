@@ -12,7 +12,7 @@
     <div class="meta">统计窗口：2026-09-19 08:00 → 2026-09-20 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
 
     <div class="lede">
-      <strong>今日一句话：</strong>ZCode 完成「致歉 → 3.14.0 changelog 修复仓库百科异常上传 + 动态多 Agent 工作流」；AIR 披露 Plugin4Shell（主流 Coding Agent 插件市场零点击 RCE）；Qwen 推 LiveTranslate，Qoder 对 Flash 两周 0 费率。开源侧 MiniMax Code / BrowserSkill 星标短窗大涨，CUA-S1 试水 Computer Use System-1 小模型。
+      <strong>今日一句话：</strong>ZCode 完成「致歉 → 3.14.0 changelog 修复仓库百科异常上传 + 动态多 Agent 工作流」；AIR 披露 Plugin4Shell（主流 Coding Agent 插件市场零点击 RCE）；Qwen 推 LiveTranslate，Qoder 对 Flash 两周 0 费率。Claude Code 2.1.278 auto mode 分类器默认迁服务端；开源侧 MiniMax/BrowserSkill 星标续涨，CUA-S1 试水 System-1 小模型。
     </div>
 
     <h2 class="section-title">专栏一｜新闻</h2>
@@ -98,6 +98,24 @@
       <p class="sources">
         <a href="https://docs.qoder.com/events/flashoffer" target="_blank" rel="noopener">国际活动页</a> ·
         <a href="https://docs.qoder.cn/events/flashoffer" target="_blank" rel="noopener">CN 活动页</a>
+      </p>
+    </section>
+
+    
+    <section class="card">
+      <h3>6. Claude Code 2.1.278：Auto mode 默认服务端 classifier</h3>
+      <div class="chips">
+        <span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C/G</span><span class="chip">≈11:10 上海</span>
+      </div>
+      <h4>事实</h4>
+      <p>v2.1.278：Claude API/Enterprise 与 Bedrock/Vertex/Foundry/gateway 上，auto mode <strong>默认改走 server-side classifier</strong>（不收 classifier overhead；可用 <code>CLAUDE_CODE_AUTO_MODE_SERVER=0</code> 退出）。<code>/status</code> 新增 Auto mode server 行。</p>
+      <h4>判断</h4>
+      <p>自动批准闸门的信任边界与计费路径服务端化——Harness 级配置信号。</p>
+      <p class="sources">
+        <a href="https://code.claude.com/docs/en/changelog" target="_blank" rel="noopener">Changelog</a> ·
+        <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.278" target="_blank" rel="noopener">Release</a> ·
+        <a href="https://code.claude.com/docs/en/auto-mode-classifier-billing" target="_blank" rel="noopener">Billing docs</a>
       </p>
     </section>
 
