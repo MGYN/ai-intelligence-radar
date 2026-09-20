@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-20</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-20</h1>
+    <div class="meta">统计窗口：2026-09-19 08:00 → 2026-09-20 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>ZCode 完成「致歉 → 3.14.0 changelog 修复仓库百科异常上传 + 动态多 Agent 工作流」；AIR 披露 Plugin4Shell（主流 Coding Agent 插件市场零点击 RCE）；Qwen 推 LiveTranslate，Qoder 对 Flash 两周 0 费率。开源侧 MiniMax Code / BrowserSkill 星标短窗大涨，CUA-S1 试水 Computer Use System-1 小模型。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. 智谱 ZCode：静默工作区上传争议 + 社群致歉</h3>
+      <div class="chips">
+        <span class="chip s">S/强A</span><span class="chip">NEW·漏扫补发</span><span class="chip">国内</span>
+        <span class="chip">G/B/C/F</span><span class="chip">事件日 09-18 · 快讯 11:38</span>
+      </div>
+      <h4>事实</h4>
+      <p>社区逆向称 Desktop 后台打包工作区（含 <code>.git</code> 等）加密上传 OSS；官方社群承认为代码库索引 / Repo Wiki，默认开启，称已修复并将开源 + 第三方审计，另有周额度重置致歉。官网未见独立致歉页。</p>
+      <h4>判断</h4>
+      <p>一线 Coding Desktop 的数据最小必要与委托边界硬信号；开源仓与审计报告仍未落地，未结案。</p>
+      <p class="sources">
+        <a href="https://blog.ferstar.org/posts/zcode-silent-workspace-snapshot-upload/" target="_blank" rel="noopener">社区逆向</a> ·
+        <a href="https://www.donews.com/news/detail/1/6716076.html" target="_blank" rel="noopener">DoNews</a> ·
+        <a href="https://zcode.z.ai/cn/docs/repo-wiki" target="_blank" rel="noopener">Repo Wiki 文档</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. ZCode Desktop 3.14.0：动态多 Agent + 修复异常上传</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C/G/E</span><span class="chip">changelog 署 09-19 · 快讯 19:11</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方 changelog 发布 <strong>3.14.0</strong>：脚本化多子代理工作流、办公/编程模式、CUA 优化、审批可授完全访问；修复首条写明「仓库百科异常上传」。下载页标 v3.14.0；开源/审计仍未见。</p>
+      <h4>判断</h4>
+      <p>安全事件的版本落盘 + 多 Agent 编排产品化——Work 引擎即时对照样本。</p>
+      <p class="sources">
+        <a href="https://zcode.z.ai/cn/changelog" target="_blank" rel="noopener">中文 changelog</a> ·
+        <a href="https://zcode.z.ai/en/changelog" target="_blank" rel="noopener">EN changelog</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. Plugin4Shell：插件市场零点击供应链 RCE</h3>
+      <div class="chips">
+        <span class="chip s">S/强A</span><span class="chip">NEW·漏扫补发</span><span class="chip">国际</span>
+        <span class="chip">G/E/B</span><span class="chip">公开 ≈09-17</span>
+      </div>
+      <h4>事实</h4>
+      <p>AIR 披露：Claude Code / Codex / Copilot / Gemini CLI 在 marketplace <strong>pin SHA</strong> 检出时未校验是否真落在该 commit；同名 branch + 后台 auto-update 可零点击替换插件致宿主 RCE。文称 Claude Code <strong>2.1.179</strong> 已确认修复。</p>
+      <h4>判断</h4>
+      <p>Skill/Plugin 分发层升格为供应链一等公民——与 Agent 能力生态、Harness 自动更新直接同构。</p>
+      <p class="sources">
+        <a href="https://www.air.security/blog-posts/plugin4shell" target="_blank" rel="noopener">AIR 原文</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. Qwen3.8-LiveTranslate：实时同传</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国内/双边</span>
+        <span class="chip">A/K</span><span class="chip">≈15:08 上海</span>
+      </div>
+      <h4>事实</h4>
+      <p>@Alibaba_Qwen 宣布 LiveTranslate：Interleave 架构；宣称 LAAL 2.8s→2.3s、60 语种。官网 blog 本轮 CSR，一手以官方 X 为准。互动约 1742 likes / ~190k impressions。</p>
+      <h4>判断</h4>
+      <p>全模态线后的低延迟流式专用档；对实时 Agent 有信号，协议/Harness 撞击弱于 Desktop 事故线。</p>
+      <img src="../assets/2026-09-20/qwen-livetranslate.jpg" alt="Qwen3.8 LiveTranslate" />
+      <div class="caption">图 1 · @Alibaba_Qwen 官方发布图</div>
+      <img src="../assets/2026-09-20/qwen-lt-perf.jpg" alt="LiveTranslate performance" />
+      <div class="caption">图 2 · 官方 Performance 附图</div>
+      <p class="sources">
+        <a href="https://x.com/Alibaba_Qwen/status/2101206705111757253" target="_blank" rel="noopener">官宣帖</a> ·
+        <a href="https://x.com/Alibaba_Qwen/status/2101206708202987709" target="_blank" rel="noopener">Performance</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Qoder：Qwen3.8-Flash 限时 0 费率（至 9/30）</h3>
+      <div class="chips">
+        <span class="chip b">B/A-</span><span class="chip">NEW·漏扫</span><span class="chip">国内/双边</span>
+        <span class="chip">I/B</span><span class="chip">09-18→09-30 23:59:59 +08</span>
+      </div>
+      <h4>事实</h4>
+      <p>个人用户 Flash 档系数 0.1×→0.0×，不耗 Credits；团队/企业除外；覆盖 IDE/CLI/Wake/Cloud Agents 等。</p>
+      <h4>判断</h4>
+      <p>成本与模型菜单竞争信号，非 Runtime 级 shipping。</p>
+      <p class="sources">
+        <a href="https://docs.qoder.com/events/flashoffer" target="_blank" rel="noopener">国际活动页</a> ·
+        <a href="https://docs.qoder.cn/events/flashoffer" target="_blank" rel="noopener">CN 活动页</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>Muse 周复盘 + connectors 案例串</h3>
+      <div class="chips"><span class="chip b">B</span><span class="chip">国际</span><span class="chip">无新能力面</span></div>
+      <p>@Muse 汇总 Mac / Canada / connectors / developer platform；社区使用案例密集。connectors 文档仍 404。</p>
+      <p class="sources"><a href="https://x.com/Muse/status/2101422963392147747" target="_blank" rel="noopener">周复盘帖</a></p>
+    </section>
+
+    <section class="card">
+      <h3>Hacktron「Hacking OpenAI」HN 高热</h3>
+      <div class="chips"><span class="chip b">B</span><span class="chip">国际·G</span><span class="chip">披露发酵</span></div>
+      <p>论坛 RCE + SSO 误配链条（发现于 7 月）在 HN 约 483p/206c。作热议；Agent 连接器扩大爆炸半径的讨论素材。</p>
+      <p class="sources"><a href="https://www.hacktron.ai/blog/hacking-openai" target="_blank" rel="noopener">Hacktron</a></p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>MiniMax-code：★≈721→1224，无 Release tag</h3>
+      <div class="chips"><span class="chip">国内</span><span class="chip">B/C/E</span></div>
+      <p>开源次日星标接近翻倍；npm 仍 0.4.12。建议拆权限/ACP，Watch 首 tag。</p>
+      <img src="../assets/2026-09-20/minimax-code-tui.jpg" alt="MiniMax Code TUI" />
+      <div class="caption">图 3 · 仓库 README TUI</div>
+      <p class="sources"><a href="https://github.com/MiniMax-AI/minimax-code" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section class="card">
+      <h3>BrowserSkill：★≈4107→5724</h3>
+      <div class="chips"><span class="chip">国内</span><span class="chip">热度延续</span></div>
+      <p>无新于 cli-v0.3.0 的 tag；关注下一 release 与 remote gateway 安全模型。</p>
+      <p class="sources"><a href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section class="card">
+      <h3>CUA-S1（trycua/cua）：Computer Use System-1 小模型</h3>
+      <div class="chips"><span class="chip">国际</span><span class="chip">C/B/H/K</span><span class="chip">Show HN ≈57p</span></div>
+      <p>窄域 GUI 决策小模型族；源码 MIT，权重在 HF。对照「规划模型 + 动作小模型」双环。</p>
+      <img src="../assets/2026-09-20/cua-s1.jpg" alt="CUA-S1" />
+      <div class="caption">图 4 · 仓库 README 卡片帧</div>
+      <p class="sources">
+        <a href="https://github.com/trycua/cua" target="_blank" rel="noopener">trycua/cua</a> ·
+        <a href="https://huggingface.co/cua-ai/cua-s1-forms" target="_blank" rel="noopener">HF weights</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">趋势与启示</h2>
+    <section class="card">
+      <h4>趋势</h4>
+      <ul>
+        <li>Desktop 信任审计进入「带日期 changelog」时代，但仍缺开源/第三方审计闭环。</li>
+        <li>插件市场 pin + auto-update = 新供应链根（Plugin4Shell）。</li>
+        <li>Computer Use 分层：产品 CUA 优化 ∥ 研究 S1 专用小模型。</li>
+        <li>国内 Coding Agent 用价格与开源抢个人开发者。</li>
+      </ul>
+      <h4>智能体互联网</h4>
+      <p>能力挂载信任根（checkout 校验）；仓库快照与全量 Git 上云拆权。</p>
+      <h4>Work / Agent 引擎</h4>
+      <p>多子代理 workflow DSL；插件自动更新回归；评估 CUA-S1 是否入环。</p>
+    </section>
+
+    <h2 class="section-title">价格雷达</h2>
+    <section class="card">
+      <p>Qoder × Qwen3.8-Flash 个人用户 0.0× 至 <strong>2026-09-30 23:59:59 +08</strong>；团队/企业除外。其余未见重要新调价。</p>
+    </section>
+
+    <p class="meta" style="margin-top:2rem">公网：<a href="https://mgyn.github.io/ai-intelligence-radar/reports/2026-09-20.html">mgyn.github.io/.../2026-09-20</a></p>
+  </article>
+</body>
+</html>

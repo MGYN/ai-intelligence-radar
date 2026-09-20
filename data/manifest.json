@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-19T08:30:00+08:00",
+  "updatedAt": "2026-09-20T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-20",
+      "date": "2026-09-20",
+      "title": "AI Intelligence Daily · 2026-09-20",
+      "summary": "ZCode 致歉→3.14.0；Plugin4Shell；Qwen LiveTranslate；Qoder Flash 限免；MiniMax/BrowserSkill 星标；CUA-S1",
+      "href": "reports/2026-09-20.html"
+    },
     {
       "id": "2026-09-19",
       "date": "2026-09-19",
