@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-21</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-21</h1>
+    <div class="meta">统计窗口：2026-09-20 08:00 → 2026-09-21 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>阶跃星辰推出 agentic 旗舰 Step 5 Preview（10/15 开源权重）；Google <code>ax</code> v0.3.0 重构为通用 agentic 编排层（Task/Workspace/Gateway/Model）；Qwen-Image-2.1 开源权重双热；MiniMax Code 首发 v0.5.0；Qoder Credits 参考系数校准（Auto↓ / Ultimate↑）。ZCode 开源/审计、Cursor、Muse connectors 仍无突破。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. 阶跃星辰 Step 5 Preview：agentic 旗舰预览，10/15 开源权重</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">A/B/I</span><span class="chip">11:15 CST · 快讯 13:18</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方 X 宣布 Step 5 Preview：600B/27B MoE、1M 上下文+Vision、面向软件工程与专业知识工作；模型 ID <code>step-5-preview</code>；承诺 <strong>Oct 15</strong> 开源权重；开放平台可试用。AA Index 44、约 $1/$2.70 per 1M（第三方）。互动约 1681 likes / ~351k impressions。</p>
+      <h4>判断</h4>
+      <p>国内 P0 旗舰明确打向 agentic/SWE，对 Work 引擎选型有即时对照；开源日是硬观察点。</p>
+      <img src="../assets/2026-09-21/step5-hero.jpg" alt="Step 5 Preview hero" />
+      <div class="caption">图 1 · @StepFun_ai 官方发布图</div>
+      <img src="../assets/2026-09-21/step5-card.jpg" alt="Step 5 Preview card" />
+      <div class="caption">图 2 · @StepFun_ai 官方发布图</div>
+      <p class="sources">
+        <a href="https://x.com/StepFun_ai/status/2101510462685003786" target="_blank" rel="noopener">官方 X</a> ·
+        <a href="https://platform.stepfun.ai/" target="_blank" rel="noopener">开放平台</a> ·
+        <a href="https://artificialanalysis.ai/models/step-5" target="_blank" rel="noopener">Artificial Analysis</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Google AX v0.3.0：通用 agentic 编排层重构</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">C/B/E</span><span class="chip">11:33 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>google/ax</code> 发布 v0.3.0：控制面拆为 ax-server / Redis Streams / ax-controller / ax-task-runner；原语 Task、Workspace（Git+MCP+skills）、Gateway（出站 allowlist）、Model。官网 agentexecutor.io。相对 May 2026 GCP 首发为架构级 UPDATE；README 仍警告破坏性变更。HN 晚间约 97 points。</p>
+      <h4>判断</h4>
+      <p>Cloud Agent 控制面声明式化的公开参考实现——与用户 Runtime/Sandbox/多租户主线同构。</p>
+      <p class="sources">
+        <a href="https://github.com/google/ax/releases/tag/v0.3.0" target="_blank" rel="noopener">GH Release</a> ·
+        <a href="https://agentexecutor.io/" target="_blank" rel="noopener">agentexecutor.io</a> ·
+        <a href="https://github.com/google/ax" target="_blank" rel="noopener">仓库</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. Qwen-Image-2.1：统一生成+编辑开源权重</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国内/双边</span>
+        <span class="chip">A/H</span><span class="chip">21:06 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方 X 宣布 open weights：约 7B 视觉组件、原生 RGBA、最多 10 参考图；HF/GH/ModelScope 可核验；同晚 ComfyUI 与 vLLM day-0。X ~939k impressions；HN ~471 points。</p>
+      <h4>判断</h4>
+      <p>多模态工具链供给信号强，对 Agent Runtime 主线即时撞击弱于 Desktop/编排层，故取 A。</p>
+      <img src="../assets/2026-09-21/qwen-image-21.jpg" alt="Qwen-Image-2.1" />
+      <div class="caption">图 3 · @Alibaba_Qwen 官方发布图</div>
+      <img src="../assets/2026-09-21/qwen-image-example.png" alt="Qwen-Image-2.1 examples" />
+      <div class="caption">图 4 · HF README 官方示例图</div>
+      <p class="sources">
+        <a href="https://x.com/Alibaba_Qwen/status/2101659302792679789" target="_blank" rel="noopener">官方 X</a> ·
+        <a href="https://huggingface.co/Qwen/Qwen-Image-2.1" target="_blank" rel="noopener">Hugging Face</a> ·
+        <a href="https://github.com/QwenLM/Qwen-Image-2.1" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. MiniMax Code：首个 GH Release v0.5.0 + npm 0.5.0</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C/E</span><span class="chip">20:14 / 23:02 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>仓库首个正式 tag v0.5.0（tar.gz+sha256）；npm <code>@minimax-ai/code@0.5.0</code>；#244 ACP Skills 进 slash 菜单；★约 1224→1513。官方 X 本窗无根帖，以 GH/npm 为准。</p>
+      <h4>判断</h4>
+      <p>开源 Coding Agent 的发布工程成熟度跃迁；ACP Skills 宿主面值得对照。</p>
+      <img src="../assets/2026-09-21/minimax-code-tui.png" alt="MiniMax Code TUI" />
+      <div class="caption">图 5 · 仓库 README TUI 截图</div>
+      <p class="sources">
+        <a href="https://github.com/MiniMax-AI/minimax-code/releases/tag/v0.5.0" target="_blank" rel="noopener">GH Release</a> ·
+        <a href="https://www.npmjs.com/package/@minimax-ai/code" target="_blank" rel="noopener">npm</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Qoder：Credits 参考系数校准（Auto 0.5x / Ultimate 2x）</h3>
+      <div class="chips">
+        <span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国内/双边</span>
+        <span class="chip">I/B</span><span class="chip">生效 09-21 00:00 SGT</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方文档：Auto 1.0→0.5、Ultimate 1.6→2；Kimi-K3 0.8→1.4 等；Flash 限免至 9/30 仍有效。FAQ：校准不直接改余额，实际按路由实耗。覆盖全系含 Cloud Agents。</p>
+      <h4>判断</h4>
+      <p>「默认更省 + 顶档更贵 + 限免拉新」组合拳；成本面板设计样本。</p>
+      <img src="../assets/2026-09-21/qoder-auto-05x.jpg" alt="Qoder Auto 0.5x" />
+      <div class="caption">图 6 · @qoder_ai_ide 官方配图</div>
+      <p class="sources">
+        <a href="https://docs.qoder.com/release-notes/model-consumption-reference-update" target="_blank" rel="noopener">官方公告（EN）</a> ·
+        <a href="https://docs.qoder.com/zh/release-notes/model-consumption-reference-update" target="_blank" rel="noopener">中文</a> ·
+        <a href="https://x.com/qoder_ai_ide/status/2101695766989615141" target="_blank" rel="noopener">官方 X</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>1. Qwen-Image-2.1 开源双热</h3>
+      <div class="chips"><span class="chip b">B</span><span class="chip">双边</span><span class="chip">X+HN</span></div>
+      <p>官方 X ~939k impressions；HN ~471 points / 150 comments。热度真实，叙事中心在图像栈而非 Agent Runtime。</p>
+    </section>
+
+    <section class="card">
+      <h3>2. Step 5 Preview 社区共振</h3>
+      <div class="chips"><span class="chip b">B</span><span class="chip">国内</span></div>
+      <p>官方 Introducing ~351k impressions；社区 thank-you 回复属噪音。核心是 agentic 旗舰与 10/15 开源承诺。</p>
+    </section>
+
+    <section class="card">
+      <h3>3. HN：ChatGPT × ad collector 隐私争议</h3>
+      <div class="chips"><span class="chip b">B</span><span class="chip">国际</span><span class="chip">G/F</span></div>
+      <p>~543 points / 302 comments。联网助手遥测同意面舆论，与 Desktop Agent consent 同构；非新洞。</p>
+      <p class="sources"><a href="https://news.ycombinator.com/item?id=49776729" target="_blank" rel="noopener">HN</a></p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>1. MiniMax Code / google/ax（见新闻栏）</h3>
+      <p>v0.5.0 首发；ax v0.3.0 架构重构。建议拆源码 / PoC。</p>
+    </section>
+
+    <section class="card">
+      <h3>2. BrowserSkill ★≈6040；cua ★≈25137</h3>
+      <div class="chips"><span class="chip">国内/国际</span></div>
+      <p>相对昨日快照短窗续涨；本窗无新正式产品 tag（BrowserSkill 仍 cli-v0.3.0）。</p>
+    </section>
+
+    <section class="card">
+      <h3>3. Trending 线索：security-audit-skill 等</h3>
+      <p>cloudflare/security-audit-skill 等 agent security skill 上榜（HTML stars today）——供应链焦虑未退。</p>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <ul>
+      <li><strong>MiniMax Code</strong>：首个 Release+npm → <em>是</em></li>
+      <li><strong>Qoder 定价</strong>：系数校准生效；Flash 限免仍在 → <em>是</em></li>
+      <li><strong>ZCode / Plugin4Shell / Muse connectors / Cursor</strong>：无实质 UPDATE → <em>否</em></li>
+      <li><strong>小艺 0.7.0 / MiMo Desktop</strong>：版本钉死 → <em>否</em></li>
+    </ul>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <ol>
+      <li>Agent Runtime 控制面声明式化（AX 式 Task/Workspace/Gateway）。</li>
+      <li>国内旗舰叙事全面转向 agentic / SWE，开源日成可执行观察点。</li>
+      <li>Coding Agent 成本面板：「默认更省、顶档更贵、限免拉新」。</li>
+      <li>开源 Coding Agent 的第二战场是发布工程（可 pin、可复现）。</li>
+      <li>能力生态信任议题持续（Plugin4Shell 后安全 Skill 热）。</li>
+    </ol>
+
+    <h2 class="section-title">对智能体互联网最值得吸收</h2>
+    <ol>
+      <li>Workspace = Git + MCP + Skills 预挂载契约（AX）。</li>
+      <li>Gateway 出站 allowlist 与沙箱、凭证同级配置。</li>
+    </ol>
+
+    <h2 class="section-title">对 Work / Agent 引擎最值得吸收</h2>
+    <ol>
+      <li>控制面三件套：API / reconciler / sandbox runner + 外部化状态。</li>
+      <li>ACP Skills 进入 slash 菜单（MiniMax 0.5.0）。</li>
+      <li>参考系数与真实消耗拆开讲（Qoder FAQ）。</li>
+    </ol>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <ul>
+      <li>Step 5 · <strong>10/15</strong> 开源 · API 回归</li>
+      <li>google/ax v0.3.x · Substrate · 自有 PoC</li>
+      <li>ZCode 开源/审计 · Plugin4Shell 补丁</li>
+      <li>Qoder 系数 + Flash 限免至 <strong>09-30</strong></li>
+      <li>MiniMax Desktop · Muse connectors 文档 · Cursor 下一 changelog</li>
+    </ul>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <ul>
+      <li>Qoder：Auto <strong>0.5x</strong> / Ultimate <strong>2x</strong> 自 09-21 00:00 SGT；Flash <strong>0.0×</strong> 至 09-30。</li>
+      <li>Step 5：AA 约 $1 / $2.70 per 1M（第三方）。</li>
+    </ul>
+
+    <p class="meta" style="margin-top:2rem">完整 Markdown 归档：reports/2026-09-21.md · 公网站点同步 GitHub Pages</p>
+  </article>
+</body>
+</html>

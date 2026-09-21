@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-20T08:30:00+08:00",
+  "updatedAt": "2026-09-21T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-21",
+      "date": "2026-09-21",
+      "title": "AI Intelligence Daily · 2026-09-21",
+      "summary": "Step 5 Preview；Google AX v0.3.0；Qwen-Image-2.1；MiniMax Code 0.5.0；Qoder Credits 系数校准",
+      "href": "reports/2026-09-21.html"
+    },
     {
       "id": "2026-09-20",
       "date": "2026-09-20",
