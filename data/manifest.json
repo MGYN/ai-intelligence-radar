@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-21T08:20:00+08:00",
+  "updatedAt": "2026-09-22T08:36:32+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-22",
+      "date": "2026-09-22",
+      "title": "AI Intelligence Daily · 2026-09-22",
+      "summary": "MiMo-V2.6 开源+Desktop；Grok 4.7；Kimi Code Desktop；MiniMax 0.5.1；ZCode 3.14.1",
+      "href": "reports/2026-09-22.html"
+    },
     {
       "id": "2026-09-21",
       "date": "2026-09-21",

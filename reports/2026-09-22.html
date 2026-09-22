@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-22</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-22</h1>
+    <div class="meta">统计窗口：2026-09-21 08:00 → 2026-09-22 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>窗内双旗舰同发——小米 <strong>MiMo-V2.6</strong>（开源权重 + RL/harness + Desktop/会员同发）与 xAI <strong>Grok 4.7</strong>（Cursor/API/coding harness 当日可用）；补录 <strong>Kimi Code Desktop</strong>；MiniMax Code <code>0.5.1</code>、ZCode <code>3.14.1</code> 跟进。Cursor 仍 Sep10；Muse connectors 仍 404。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. 小米 MiMo-V2.6：旗舰全模态开源 + Desktop/会员同发</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国内/双边</span>
+        <span class="chip">A/B/C/H/I</span><span class="chip">04:51 CST · 模型日志 09-22</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方 X 宣布 MiMo-V2.6 Pro &amp; Flash：全模态、scaled RL；文称 Pro 可比 Claude Opus 5 / GPT-5.6 Sol，AA Index 约 46（开源最高档口径）。同串开源 Pro/Flash 权重、Distill-Qwen-9B、技术报告、7K+ RL 环境与 mini-harnesses。HF 集合可核验；架构约 1.02T/42B MoE、1M 上下文。Desktop「Now Live」与会员同发；UltraSpeed 宣称最高约 20×；API 定价相对 V2.5 不变。互动约 3708 likes / ~249k impressions；HN ~473 points。</p>
+      <h4>判断</h4>
+      <p>国内一线把旗舰开源、RL/harness 资产与 Desktop 商业化绑在同一日——对 Agent 引擎与能力供给双线撞击。</p>
+      <img src="../assets/2026-09-22/mimo-v26-intro.jpg" alt="MiMo-V2.6 intro" />
+      <div class="caption">图 1 · @XiaomiMiMo 官方 Introducing 配图</div>
+      <img src="../assets/2026-09-22/mimo-v26-oss.jpg" alt="MiMo-V2.6 open source" />
+      <div class="caption">图 2 · 开源权重 / RL / harness 官方配图</div>
+      <img src="../assets/2026-09-22/mimo-v26-pareto.jpg" alt="MiMo-V2.6 price performance" />
+      <div class="caption">图 3 · 智能–成本 Pareto 官方配图</div>
+      <p class="sources">
+        <a href="https://x.com/XiaomiMiMo/status/2102138559952290106" target="_blank" rel="noopener">官方 X</a> ·
+        <a href="https://mimo.mi.com/" target="_blank" rel="noopener">官网</a> ·
+        <a href="https://huggingface.co/collections/XiaomiMiMo/mimo-v26" target="_blank" rel="noopener">HF 集合</a> ·
+        <a href="https://mimo.mi.com/docs/en-US/updates/model" target="_blank" rel="noopener">Model Release</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. xAI Grok 4.7：Cursor / API / Coding Harness 当日可用</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">A/B/C/G/I</span><span class="chip">快讯 23:46 · X 00:17 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方新闻稿：coding/knowledge work 旗舰；同价同速档相对 4.6（$2/$6）；fast variant 约 2× 速/价。明确 available today 于 Cursor、Grok Build、Grok API、第三方 coding harness 与 routers/cloud。@SpaceXAI 补发「Grok 4.7 is here」（约 2.4 万 likes / ~900 万 impressions）；HN ~480 points。</p>
+      <h4>判断</h4>
+      <p>coding-first 旗舰以「进 Cursor/harness 当日可用」为发布定义——立即改写模型对照表。</p>
+      <img src="../assets/2026-09-22/grok-4-7-og.jpg" alt="Grok 4.7 OG" />
+      <div class="caption">图 4 · x.ai 官方 OG 图</div>
+      <img src="../assets/2026-09-22/grok-4-7-x.png" alt="Grok 4.7 X" />
+      <div class="caption">图 5 · @SpaceXAI 官方配图</div>
+      <p class="sources">
+        <a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener">官方新闻稿</a> ·
+        <a href="https://x.com/SpaceXAI/status/2102069815225586149" target="_blank" rel="noopener">@SpaceXAI</a> ·
+        <a href="https://news.ycombinator.com/item?id=49788838" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. Kimi Code Desktop 正式可用（漏扫补发）</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">B/C/E/F</span><span class="chip">1.0.0@09-17 · 1.0.2@09-19</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方文档：图形客户端承载 CLI Agent 核心；mac/Win；Goal/Plan/Swarm、权限三态、Changes、内置终端与浏览器（1.0.2 大改）。无会员则官方模型不可直用，可 BYOK。此前因未钉 Desktop changelog 漏收，今日补专栏。</p>
+      <h4>判断</h4>
+      <p>Work/Desktop Agent 标准骨架样本——与引擎主线高度同构。</p>
+      <img src="../assets/2026-09-22/kimi-desktop-home.jpg" alt="Kimi Code Desktop" />
+      <div class="caption">图 6 · 官方 Getting Started 附图</div>
+      <p class="sources">
+        <a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html" target="_blank" rel="noopener">Changelog</a> ·
+        <a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/getting-started.html" target="_blank" rel="noopener">Getting Started</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. MiniMax Code：跟进至 v0.5.1</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C/E</span><span class="chip">19:01 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>GH Release v0.5.1 + npm <code>@minimax-ai/code@0.5.1</code>；★约 1693。属发布工程小版本，非 Desktop 开源。</p>
+      <h4>判断</h4>
+      <p>pin/复现通道继续硬化。</p>
+      <img src="../assets/2026-09-22/minimax-code-tui.png" alt="MiniMax Code TUI" />
+      <div class="caption">图 7 · 仓库 README TUI</div>
+      <p class="sources">
+        <a href="https://github.com/MiniMax-AI/minimax-code/releases/tag/v0.5.1" target="_blank" rel="noopener">GH Release</a> ·
+        <a href="https://www.npmjs.com/package/@minimax-ai/code" target="_blank" rel="noopener">npm</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. 智谱 ZCode 3.14.1：电脑控制启动修复</h3>
+      <div class="chips">
+        <span class="chip b">B+</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C/G</span><span class="chip">changelog 09-21</span>
+      </div>
+      <h4>事实</h4>
+      <p>官方 changelog 3.14.1：修复 Computer Control 可能无法启动；开源/审计仍未见。</p>
+      <h4>判断</h4>
+      <p>信任事故后的小版本修补节奏；闭环仍 outstanding。</p>
+      <p class="sources">
+        <a href="https://zcode.z.ai/cn/changelog" target="_blank" rel="noopener">中文 changelog</a> ·
+        <a href="https://zcode.z.ai/en/changelog" target="_blank" rel="noopener">EN</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <h3>1. MiMo-V2.6 与 Grok 4.7 双热</h3>
+      <div class="chips"><span class="chip b">B+</span><span class="chip">双边</span><span class="chip">X+HN</span></div>
+      <p>MiMo Introducing ~249k impressions / HN ~473；Grok @SpaceXAI ~900 万 impressions / HN ~480。与官方 shipping 同日，非纯情绪噪音。</p>
+    </section>
+    <section class="card">
+      <h3>2. Step 5 Preview 社区体感（近失）</h3>
+      <div class="chips"><span class="chip">近失</span><span class="chip">国内</span></div>
+      <p>窗内多为试用体感与官方 thank-you，无新 shipping；继续盯 10/15 开源。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <h3>1. XiaomiMiMo MiMo-V2.6（HF + RL/Harness）</h3>
+      <p>集合 <code>mimo-v26</code>：Pro-RL / Flash-RL / Distill；宣称 7K+ RL 环境与 mini-harnesses。建议拆源码 / 读报告 / PoC。</p>
+    </section>
+    <section class="card">
+      <h3>2. MiniMax Code v0.5.1 · BrowserSkill / cua 热度延续</h3>
+      <p>MiniMax ★≈1693；BrowserSkill ★≈6338（仍 cli-v0.3.0）；cua ★≈25689——无新于已报的正式产品 Release。</p>
+    </section>
+
+    <h2 class="section-title">趋势与吸收</h2>
+    <section class="card">
+      <ul>
+        <li>开源开始附带 harness/RL 资产包（MiMo）。</li>
+        <li>Coding 旗舰以「进 Cursor/harness 当日可用」为发布定义（Grok 4.7）。</li>
+        <li>国内 Desktop Agent 产品面密集补齐（Kimi + MiMo Desktop）。</li>
+        <li>信任修复进入小版本节奏（ZCode 3.14.1）；开源审计仍未闭环。</li>
+      </ul>
+      <p><strong>智能体互联网：</strong>harness/RL 环境作为一等公民；Desktop 浏览器+审批卡的委托边界。</p>
+      <p><strong>Work/Agent 引擎：</strong>多 harness 混训；发布即进 Cursor；Goal/Plan/Swarm+权限三态。</p>
+    </section>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <section class="card">
+      <ul>
+        <li>MiMo-V2.6：相对 V2.5 同价口径；Claw 限时 ¥14.9/月（以官网为准）。</li>
+        <li>Grok 4.7：$2/$6；fast 约 2×；Vercel Gateway 至 9/27 四折。</li>
+        <li>Qoder Sonus：9/21–9/25 每日 4000 Credits；Flash 限免至 9/30。</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <section class="card">
+      <ol>
+        <li>MiMo-V2.6 权重/harness/Desktop</li>
+        <li>Grok 4.7 Cursor/API A/B</li>
+        <li>Kimi Code Desktop 实机</li>
+        <li>ZCode 开源与审计</li>
+        <li>Qoder Sonus→09-25 · Flash→09-30</li>
+        <li>Step 5 → 10/15 开源</li>
+        <li>ax / Muse 404 / Cursor Sep10 / MiniMax Desktop / 小艺 0.7.0</li>
+      </ol>
+    </section>
+  </article>
+</body>
+</html>
