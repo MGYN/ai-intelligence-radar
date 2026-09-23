@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-22T08:36:32+08:00",
+  "updatedAt": "2026-09-23T08:34:34+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-23",
+      "date": "2026-09-23",
+      "title": "AI Intelligence Daily · 2026-09-23",
+      "summary": "Opus 5.5；GPT-6 Sol/Luna；Kimi Browser Extension；JetBrains Air；Step Code 0.1.0；小艺 0.7.1",
+      "href": "reports/2026-09-23.html"
+    },
     {
       "id": "2026-09-22",
       "date": "2026-09-22",

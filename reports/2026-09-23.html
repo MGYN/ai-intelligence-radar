@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-23</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-23</h1>
+    <div class="meta">统计窗口：2026-09-22 08:00 → 2026-09-23 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>过夜双旗舰同窗落地——Anthropic <strong>Claude Opus 5.5</strong>（Claude 5.5 家族首发；多数工作对标 Fable 5.1 级、相对 Opus 5 约 40% 更便宜，$4/$20 + cache $0.20）与 OpenAI <strong>GPT-6 Sol &amp; Luna</strong>（Astra 能力下沉到更便宜档，相对 GPT-5.6 同档约 50% cheaper；ChatGPT Work/Codex 当日可用）。白天已推：<strong>Kimi Browser Extension</strong>、<strong>JetBrains Air/ACP</strong>、小艺 Work <code>0.7.1</code>、ZCode <code>3.14.3</code>、MiniMax Code <code>0.5.2</code>；过夜国内补 <strong>Step Code v0.1.0</strong>（MIT 开源 CLI）。Cursor 仍 Sep10；Muse connectors 仍 404；Step 5 仍 Preview。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. Anthropic 发布 Claude Opus 5.5（Claude 5.5 家族首发）</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">A/B/C/G/I</span><span class="chip">overnight · 00:31 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>Anthropic 发布 <em>Introducing Claude Opus 5.5</em>：Claude 5.5 家族首发；官方称多数工作对标 <strong>Claude Fable 5.1</strong>，相对 Opus 5 典型负载约 <strong>40% 更便宜</strong>，输出速度文案 &gt;30% faster。API id：<code>claude-opus-5-5</code>。定价（per 1M）：Input <strong>$4</strong>、Output <strong>$20</strong>（较 Opus 5 的 $5/$25 低 20%）；Cache reads <strong>$0.20</strong>（较 $0.50 低 60%）；文案提及 1M context。可用性：Claude 产品线 + AWS / Google Cloud / Microsoft Azure。同日集成：Claude Code <strong>v2.1.280</strong>（默认 Opus=5.5）、Bedrock、Foundry、Copilot、Cursor、OpenRouter、Perplexity、JetBrains Air/Junie。@AnthropicAI 主帖 like <strong>13483</strong> / impression ~706k；HN 约 <strong>1145–1147</strong> points。</p>
+      <h4>判断</h4>
+      <p>一线厂把新旗舰家族首模与当日多云 / IDE / coding harness 可用绑在同一发布窗——对 Work·Agent 引擎的默认 frontier 路由与成本曲线同时撞击。Fable 5.1 级对标与价绩属官方口径，以可调用 API 与自有回归为准。</p>
+      <img src="../assets/2026-09-23/opus55-og.jpg" alt="Claude Opus 5.5 OG" />
+      <div class="caption">图 1 · Anthropic 官网 OG：claude-opus-5-5</div>
+      <p class="sources">
+        <a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener">官方发布页</a> ·
+        <a href="https://x.com/AnthropicAI/status/2102435703535939725" target="_blank" rel="noopener">@AnthropicAI</a> ·
+        <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">Claude Code 2.1.280</a> ·
+        <a href="https://news.ycombinator.com/item?id=49803892" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. OpenAI 发布 GPT-6 Sol &amp; Luna（Astra 能力下沉）</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">A/B/C/G/I</span><span class="chip">overnight · 02:00 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>OpenAI 发布 <em>Introducing GPT-6 Sol and Luna</em>：在 GPT-6 Astra（月初已发，不另开 NEW）之下扩展 <strong>Sol</strong>（均衡/专业与 agentic）与 <strong>Luna</strong>（轻量低成本）。API：<code>gpt-6-sol</code> / <code>gpt-6-luna</code>。定价：Sol <strong>$2 / $10</strong>（自 GPT-5.6 Sol $4/$20，50% cheaper）；Luna <strong>$0.10 / $0.50</strong>（自 $0.20/$1.20，50% cheaper）。可用性：ChatGPT Work and Codex 今日起对 Plus/Pro/Business/Enterprise/Edu；Free/Go 可在 desktop 用 Luna；尚未进 Chat。配套 Better prompt caching（缓存读最高约 90% 折扣）并入本条。同日集成：Bedrock、Foundry、Copilot、OpenRouter、Perplexity、JetBrains Air/Junie。@OpenAI 主帖 like <strong>41324</strong> / impression ~4.66M；HN 约 <strong>1105–1107</strong> points。</p>
+      <h4>判断</h4>
+      <p>同日双档位量产模型 + 半价 + Work/Codex 默认可达，直接改写 Agent Loop 的成本结构。本条是把 Astra-class 能力推到更便宜、更高用量档，不是又一次「只发旗舰」。</p>
+      <img src="../assets/2026-09-23/gpt6-sol-luna-og.png" alt="GPT-6 Sol and Luna OG" />
+      <div class="caption">图 2 · OpenAI 官网 OG：gpt-6-sol-luna</div>
+      <p class="sources">
+        <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">Sol &amp; Luna</a> ·
+        <a href="https://openai.com/index/better-prompt-caching-for-gpt-6/" target="_blank" rel="noopener">Prompt caching</a> ·
+        <a href="https://x.com/OpenAI/status/2102460975790137662" target="_blank" rel="noopener">@OpenAI</a> ·
+        <a href="https://news.ycombinator.com/item?id=49805509" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. 月之暗面 Kimi Browser Extension：侧栏 + Skill + 多 Agent CDP</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">C/B/E/D/G</span><span class="chip">快讯 19:21 · Store 2.0.17</span>
+      </div>
+      <h4>事实</h4>
+      <p>月之暗面官宣 <strong>Kimi Browser Extension</strong>（原 WebBridge）：工具栏侧栏登录后可对话驱动当前页导航、填表与操作；重复流程可录制步骤并保存为 Skill。第二条路径：本地 Agent（Kimi Work/Desktop、Claude Code、Codex、Cursor、Kimi Code、Hermes Claw 等）经 <strong>Chrome DevTools Protocol（CDP）</strong> 遥控本机浏览器；登录态与页面内容留在本机。Chrome Web Store <strong>2.0.17</strong>（Updated Sep 21）。@Kimi_Moonshot like <strong>736</strong> / impression <strong>44185</strong>。Kimi Desktop changelog 仍置顶 1.0.2（09-19）。</p>
+      <h4>判断</h4>
+      <p>把 Browser Computer Use、Skill 产物化、跨 Harness 共用同一浏览器执行面绑在同一官方 shipping——对 Desktop/Work Agent 与智能体互联网的「共享执行面」同时撞击。</p>
+      <img src="../assets/2026-09-23/kimi-browser-ext.jpg" alt="Kimi Browser Extension" />
+      <div class="caption">图 3 · 官 X / 产品页封面</div>
+      <img src="../assets/2026-09-23/kimi-browser-ext-product.png" alt="Kimi Browser Extension product UI" />
+      <div class="caption">图 4 · Kimi 产品页 UI</div>
+      <p class="sources">
+        <a href="https://www.kimi.com/en/products/kimi-browser-extension" target="_blank" rel="noopener">产品页</a> ·
+        <a href="https://chromewebstore.google.com/detail/kimi-webbridge/fldmhceldgbpfpkbgopacenieobmligc" target="_blank" rel="noopener">Chrome Store</a> ·
+        <a href="https://x.com/Kimi_Moonshot/status/2102372557190230244" target="_blank" rel="noopener">@Kimi_Moonshot</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. JetBrains Air / ACP：IDE Agent + Teams + Governance</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW+UPDATE</span><span class="chip">国际</span>
+        <span class="chip">C/B/E/F/G/I</span><span class="chip">快讯 19:21 · overnight 模型上架</span>
+      </div>
+      <h4>事实</h4>
+      <p>JetBrains 发布 <em>Introducing JetBrains Air</em>：将既有 agentic 工作收束为 Air 体系——<strong>Air in JetBrains IDEs</strong>（IDE 内编排/核验）、<strong>Air Teams</strong>（开发者与自治 agents 协作）、<strong>Air Governance</strong>（原 Central 更名：策略、可见性、审计、成本与问责）。经 <strong>Agent Client Protocol（ACP）</strong> 连接 IDE 与完整 harness，经 <strong>ACP Registry</strong> 发现/运行兼容 agents；自有 coding agent <strong>Junie</strong> 跨 Air 表面支持。主叙事是体系化品牌与多表面系统，非全新桌面端首次 GA。overnight 官方 X 宣布 Claude Opus 5.5 与 GPT-6 Sol 可用于 Air and Junie → UPDATE。CEO @kskrygan like <strong>372</strong> / impression <strong>159736</strong>；HN 约 66 points。</p>
+      <h4>判断</h4>
+      <p>一线 IDE 厂商把 ACP + Registry + 跨厂商治理写进战略正文，是协议/发现层被产业认领的强信号；overnight 双旗舰上架说明 Air 已是即时可用的多模型 harness 面。</p>
+      <img src="../assets/2026-09-23/jetbrains-air-og.jpg" alt="JetBrains Air OG" />
+      <div class="caption">图 5 · JetBrains Blog OG</div>
+      <p class="sources">
+        <a href="https://blog.jetbrains.com/blog/2026/09/22/introducing-jetbrains-air/" target="_blank" rel="noopener">官方 Blog</a> ·
+        <a href="https://x.com/kskrygan/status/2102349426857578994" target="_blank" rel="noopener">@kskrygan</a> ·
+        <a href="https://x.com/jetbrains/status/2102358706138525873" target="_blank" rel="noopener">@jetbrains</a> ·
+        <a href="https://news.ycombinator.com/item?id=49799287" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. 阶跃 Step Code v0.1.0：MIT 开源 Coding Agent CLI</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">B/C/E/H</span><span class="chip">overnight · 00:23 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>@StepFun_ai 发布 <strong>Step Code v0.1.0</strong>：终端 Coding Agent CLI，<strong>MIT</strong> 开源；宣称覆盖读改代码→跑测→交付；支持 MCP / Agent Skills / 多 Agent / <code>/goal</code> 长程委托 / 内置 StepPage 静态站发布。GitHub <code>stepfun-ai/Step-Code</code> ★<strong>293</strong>；CDN latest.json 钉 version=<strong>0.1.0</strong>。官方 X like <strong>330</strong> / impression <strong>18788</strong>。平台 Step 5 仍 Preview（正式日盯 Oct 15）——本条是 CLI 开源，非 Step 5 GA。</p>
+      <h4>判断</h4>
+      <p>国内又一条开源 coding CLI 进入与 MiniMax Code / Kimi Code / Claude Code 同赛道；MIT + MCP/Skills/多 Agent 叙事对 Harness 对照有即时价值。v0.1.0 早期，需验证可复现性。</p>
+      <img src="../assets/2026-09-23/step-code-x.jpg" alt="Step Code v0.1.0" />
+      <div class="caption">图 6 · @StepFun_ai 官方 X 附图</div>
+      <p class="sources">
+        <a href="https://x.com/StepFun_ai/status/2102433493410345273" target="_blank" rel="noopener">@StepFun_ai</a> ·
+        <a href="https://github.com/stepfun-ai/Step-Code" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://platform.stepfun.ai/docs/en/step-code" target="_blank" rel="noopener">文档</a> ·
+        <a href="https://static-openapi.stepfun.com/stepcode/latest.json" target="_blank" rel="noopener">CDN latest.json</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. 华为小艺 Work 0.7.1：文件·云空间 + 多端全局记忆同步</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">C/D/A/B</span><span class="chip">快讯 11:10 · 清单 17:00 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>小艺 Work 官方 Win 清单由 0.7.0 升至 <strong>0.7.1</strong>（forceUpdate: optional）。更新说明：重磅上线 <strong>[文件·云空间]</strong>（任务产物收纳/上传/引用发起任务）；<strong>多端全局记忆同步</strong>；接入 DeepSeek V4.1 Flash（模型本身约 09-10 已发，本条是小艺侧接入）；任务完成后 AI 点数实时呈现。安装包 <code>xiaoyiWork-Setup-0.7.1.exe</code>。</p>
+      <h4>判断</h4>
+      <p>云端产物持久化 + 跨端 Memory 同步，是 Work Agent 从「单机会话交付」走向「可引用的持久 Workspace / 长期状态」的实质一步。</p>
+      <p class="sources">
+        <a href="https://xiaoyi.huawei.com/work/" target="_blank" rel="noopener">产品页</a> ·
+        <a href="https://h5hosting-drcn.dbankcdn.cn/cch5/HAG/D1EGVbacF6ZTqy2U3Exrz7aEw/xiaoyiwork.json" target="_blank" rel="noopener">Win 清单 JSON</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>7. 智谱 ZCode Desktop 3.14.3：运行中工作流可调并发</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C/E</span><span class="chip">快讯 19:21 · changelog 09-22</span>
+      </div>
+      <h4>事实</h4>
+      <p>ZCode changelog 置顶 <strong>3.14.3</strong>：运行中工作流可直接调整并发上限而无需停止任务；优化复用/大型工作流状态/脚本提交 token；修复崩溃与上下文占用等。相对昨日日报钉 3.14.1 为实质 runtime 增量。开源/第三方审计仍无公开闭环。</p>
+      <h4>判断</h4>
+      <p>一线厂 Coding/Desktop Agent 在「动态多 Agent 工作流」上的 runtime 增量——不停机调并发与上下文预算，对 Harness 有即时对照价值。</p>
+      <p class="sources">
+        <a href="https://zcode.z.ai/cn/changelog" target="_blank" rel="noopener">中文 changelog</a> ·
+        <a href="https://zcode.z.ai/en/changelog" target="_blank" rel="noopener">EN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>8. MiniMax Code CLI 0.5.2：主题面板 + 子 Agent 进度</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C</span><span class="chip">快讯 19:21 · npm/GH 18:27–20:02 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>@minimax-ai/code</code> / GH MiniMax-AI/minimax-code 升至 <strong>v0.5.2</strong>（昨日钉 0.5.1）。包内 changelog：<code>/theme</code> 主题面板；session send 准入/排队/steer；后台 task 默认；子 Agent 进度与角色分流；多项终端修复。官方 Agent 下载页静态资源仍含 <strong>0.1.188</strong>，未见 Desktop 升版。官方 X 对本窗 0.5.2 静默（以 GH+npm 为一手）。仓 ★<strong>1764</strong>（昨 ★1693，≈+71）。</p>
+      <h4>判断</h4>
+      <p>watchlist 点名的 CLI 功能档落地；勿夸大成 Desktop shipping。</p>
+      <p class="sources">
+        <a href="https://github.com/MiniMax-AI/minimax-code/releases/tag/v0.5.2" target="_blank" rel="noopener">GH Release</a> ·
+        <a href="https://www.npmjs.com/package/@minimax-ai/code" target="_blank" rel="noopener">npm</a> ·
+        <a href="https://agent.minimax.io/download" target="_blank" rel="noopener">Desktop 下载页</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <h3>1. Claude Opus 5.5 强热（官方 X + HN + Cursor/OpenRouter）</h3>
+      <div class="chips"><span class="chip s">S</span><span class="chip">强热</span><span class="chip">国际</span><span class="chip">shipping</span></div>
+      <p>官方 X like 13483 / ~706k impressions；Cursor 接入帖 like 3489；OpenRouter like 237；HN 约 1145–1147 points / ~784 comments。时序落在 23:25 闪讯之后 → overnight S。热度与产品 shipping 同窗，非纯情绪噪音。</p>
+    </section>
+    <section class="card">
+      <h3>2. GPT-6 Sol &amp; Luna 强热</h3>
+      <div class="chips"><span class="chip s">S</span><span class="chip">强热</span><span class="chip">国际</span><span class="chip">shipping</span></div>
+      <p>官方主帖 like 41324 / ~4.66M impressions / quote 2360；HN 约 1105–1107 points / ~574 comments。半价 + Work/Codex 可达驱动社区密度；Astra「Earlier this month」勿再写成今日首发。</p>
+    </section>
+    <section class="card">
+      <h3>3. JetBrains Air / ACP 社区共振</h3>
+      <div class="chips"><span class="chip a">强A</span><span class="chip">热</span><span class="chip">双边/国际</span><span class="chip">已闪讯</span></div>
+      <p>CEO 帖 impression 159736 / like 372；HN 约 66 points / 104 comments；OSS 旁证 agentclientprotocol ★4303。IDE↔Agent 协议面讨论真实，勿写成「Air 桌面端今日首发」。</p>
+    </section>
+    <section class="card">
+      <h3>4. Kimi Browser Extension · Step Code · 近失脚注</h3>
+      <div class="chips"><span class="chip">热/中热</span><span class="chip">国内</span><span class="chip">近失</span></div>
+      <p>Kimi Extension：like 736 / 44185；HN「Kimi Browser」窗内 0 帖（弱国际共振）。Step Code：like 330 / ★293，开源 CLI 初发热度中等。Meta Muse filesystem/0-day 社区讨论（HN ~289p / ~112p）无 Meta 官方安全稿、connectors 仍 404 → 仅作 Trust 脚注，不进主新闻。MiMo-V2.6 / Grok 4.7 共振衰减，无新官方发版。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <ul>
+        <li><strong>google/ax</strong> 续爆：★5977→7575（≈+1598）；Trending「stars today」页原文 2,305；latest 仍 v0.3.0（09-20）— 非新 shipping。</li>
+        <li><strong>stepfun-ai/Step-Code</strong> ★293：MIT CLI v0.1.0 NEW（见专栏一第 5 条）。</li>
+        <li><strong>MiniMax-AI/minimax-code</strong> ★1764（v0.5.2，昨 ★1693 ≈+71）。</li>
+        <li><strong>ACP 生态旁证</strong>：agentclientprotocol ★4303；openclaw/acpx ★3273。</li>
+        <li><strong>BrowserSkill / cua</strong>：★6631（≈+293）/ ★25988（≈+299）；本窗无新正式 Release。</li>
+        <li>其他：Qwen-Image-2.1 ★1252；MiMo-Code ★13386；kimi-code ★7612；kimi-cli 1.52.0（legacy）。</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">趋势与吸收</h2>
+    <section class="card">
+      <ul>
+        <li><strong>Frontier 成本曲线竞赛白热化</strong>：Opus 5.5（约 40% 更便宜 + cache $0.20）与 GPT-6 Sol/Luna（约 50% cheaper）同窗过夜落地。</li>
+        <li><strong>ACP / 多 harness IDE 成为一线叙事</strong>：JetBrains Air 把 ACP Registry + Governance 写成体系；双旗舰 overnight 上架。</li>
+        <li><strong>浏览器 Skill 作为共享执行面</strong>：Kimi Extension（侧栏 + 录制 Skill + CDP）与 BrowserSkill/cua 星标续涨同向。</li>
+        <li><strong>Work Agent Memory / Artifact 上云</strong>：小艺 0.7.1 文件·云空间 + 多端全局记忆。</li>
+        <li><strong>开源 Coding CLI 浪潮延续</strong>：Step Code v0.1.0 MIT 入场，叠 MiniMax 0.5.2。</li>
+      </ul>
+      <p><strong>智能体互联网：</strong>ACP + Registry 被一线 IDE 认领；浏览器扩展作为多 Local Agent 共享执行面；Skill 录制 = 可分发操作资产雏形。</p>
+      <p><strong>Work/Agent 引擎：</strong>默认 frontier 路由与半价档重算；运行中调并发 + 子 Agent 进度（ZCode/MiniMax）；Artifact store + Cross-device Memory（小艺）；开源 coding CLI 对照集扩编（Step Code）。</p>
+    </section>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <section class="card">
+      <ul>
+        <li><strong>Claude Opus 5.5</strong>：Input $4 / Output $20 per 1M；Cache reads $0.20（相对 Opus 5 的 $5/$25 与 $0.50 cache 下调）。</li>
+        <li><strong>GPT-6 Sol</strong>：$2 / $10；<strong>Luna</strong>：$0.10 / $0.50（相对 GPT-5.6 同档约 50% cheaper）；prompt caching 缓存读最高约 90% 折扣。</li>
+        <li><strong>Qoder</strong>：Flash 限免至 2026-09-30 23:59:59 SGT；SOTA pack 至 Sep 25 SGT；Efficient End TBD。</li>
+        <li>既有钉：MiMo-V2.6 相对 V2.5 同价；Grok 4.7 $2/$6；Vercel×Grok 4.7 四折至 09-27（昨已报）。</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <section class="card">
+      <ol>
+        <li>Claude Opus 5.5 — 默认路由；cache/1M context；Claude Code / Cursor / Copilot / Bedrock modelId</li>
+        <li>GPT-6 Sol / Luna / Astra — Work/Codex 默认；cache；勿把 Astra 再升 NEW</li>
+        <li>Kimi Browser Extension — Skill 导出/互通；CDP 多 Agent；Store 版本</li>
+        <li>JetBrains Air / ACP Registry — 可对接 agents；Teams/Governance；Junie 默认模型</li>
+        <li>Step Code 成熟度 — 评测可复现；MCP/Skills；与 Step 5 绑定</li>
+        <li>小艺 Work 0.7.1 — 云空间权限；多端记忆冲突；DeepSeek Flash 额度</li>
+        <li>ZCode 开源 + 第三方审计 + 3.14.3 复测</li>
+        <li>MiniMax Desktop — 是否跟 CLI；钉 npm 0.5.2 / Desktop 0.1.188</li>
+        <li>Qoder Flash→09-30 · SOTA→09-25；Step 5 → 10/15；Cursor Sep10；Muse 404；google/ax ★暴涨；Plugin4Shell</li>
+      </ol>
+    </section>
+
+    <h2 class="section-title">信源摘要</h2>
+    <section class="card">
+      <p>窗口 2026-09-22 08:00 → 2026-09-23 08:00 CST；吸收快讯 11:10 / 19:21；overnight 新发 Opus 5.5、GPT-6 Sol/Luna、Step Code 0.1.0。P0 国际：anthropic / openai / jetbrains-air NEW；cursor 仍 Sep10；muse 404。P0 国内：moonshot Extension、小艺 0.7.1、ZCode 3.14.3、MiniMax 0.5.2、Step Code 0.1.0。X credits 约 $5.07 → $4.56。媒体仅作线索，升格须官方一手。</p>
+    </section>
+  </article>
+</body>
+</html>
