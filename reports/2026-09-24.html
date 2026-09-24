@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-24</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-24</h1>
+    <div class="meta">统计窗口：2026-09-23 08:00 → 2026-09-24 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>Coding Agent「最后一公里」与本地/云端信任面同日加压——<strong>Cursor Rollouts + Security Review</strong>（部署健康与 PR 可利用漏洞审查；Teams/Enterprise 当日可用，打破 Sep10 钉）；<strong>GitHub Copilot app Local sandboxing</strong> 公共预览（FS/Network/Credentials，fail-closed）；国内 <strong>Qwen Intelligence / Qwen-UI-Agent</strong> 捆成 Personal + 跨端 GUI Agent 产品线；<strong>Kimi Code Desktop 1.0.3</strong> 修补本地嵌入服务器任意命令漏洞；<strong>DeepMind Private AI Compute</strong> 公布设备持钥的服务端持久 Memory 架构。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+
+    <section class="card">
+      <h3>1. Cursor 发布 Rollouts + Security Review</h3>
+      <div class="chips">
+        <span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/B/G/F/E</span><span class="chip">Sep 23 · overnight</span>
+      </div>
+      <h4>事实</h4>
+      <p>Cursor Changelog/Blog 宣布两款「shipping 最后一公里」机器人，<strong>Teams/Enterprise 当日可用</strong>。<strong>Rollouts</strong>：挂在每个 PR，写 monitoring plan，按环境对照日志/指标/traces，报告健康/回归/不确定；回归时可通知作者、开 revert PR 或交给 cloud agent——<strong>今天不自行 merge/rollback</strong>。对接 Origin/GitHub、CD、Datadog 等。<strong>Security Review</strong>：非 draft PR 上审查可利用漏洞（注入、鉴权绕过、密钥、SSRF、反序列化、CVE 依赖等），给出 severity/attack path/修复建议；风格质量仍归 Bugbot。未来 10 天试用额度（Teams≈50 / Enterprise≈500 changes）。</p>
+      <h4>判断</h4>
+      <p>竞争从「写代码」延伸到「安全地发布并看住生产」。相对 Sep10 Projects，本条补上 merge 之后的自主运维面——对 Work·Agent 引擎的 ship loop / Trust 是路线信号。</p>
+      <img src="../assets/2026-09-24/cursor-rollouts-og.png" alt="Cursor Rollouts and Security Review" />
+      <div class="caption">图 1 · Cursor Blog OG</div>
+      <p class="sources">
+        <a href="https://cursor.com/changelog/rollouts-and-security-reviewer" target="_blank" rel="noopener">Changelog</a> ·
+        <a href="https://cursor.com/blog/rollouts-and-security-reviewer" target="_blank" rel="noopener">Blog</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. 阿里通义 Qwen Intelligence / Qwen-UI-Agent / Mobile Planner</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">B/C/D/E/H/K</span><span class="chip">快讯 21:37 · 19:50 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>官宣 <strong>Qwen Intelligence</strong>：Mobile Planner（Harness+Memory+Skills+Sub-agent；仓为报告站非权重实现）、Mobile-Use（<strong>Qwen-UI-Agent</strong>：Mobile/Computer/Browser 跨端 GUI Agent；MobileWorld 82.1 / Real 92.2 等作者环境分）、Mobile Creative。配套 MobilePA-Bench / MobileWorld 等；arXiv 2607.28227。</p>
+      <h4>判断</h4>
+      <p>Personal Agent 产品壳与跨端 GUI Agent、Planner Harness、可核对评测站捆在同一天——Harness/CUA/Skill/Memory 对照即时基线。</p>
+      <img src="../assets/2026-09-24/qwen-intelligence.jpg" alt="Qwen Intelligence" />
+      <div class="caption">图 2 · 官 X / 产品发布附图</div>
+      <img src="../assets/2026-09-24/qwen-ui-agent-og.png" alt="Qwen-UI-Agent OG" />
+      <div class="caption">图 3 · Qwen-UI-Agent 官方站 OG</div>
+      <img src="../assets/2026-09-24/qwen-ui-hero-mobile.png" alt="Qwen-UI-Agent MobileWorld" />
+      <div class="caption">图 4 · Qwen-UI-Agent 官方站评测图</div>
+      <p class="sources">
+        <a href="https://www.qwenintelligence.com/" target="_blank" rel="noopener">Qwen Intelligence</a> ·
+        <a href="https://tongyi-mai.github.io/Qwen-UI-Agent/" target="_blank" rel="noopener">UI-Agent</a> ·
+        <a href="https://github.com/Tongyi-MAI/MobileWorld" target="_blank" rel="noopener">MobileWorld</a> ·
+        <a href="https://x.com/Alibaba_Qwen/status/2102727405198876753" target="_blank" rel="noopener">@Alibaba_Qwen</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. DeepMind：Private AI Compute 安全服务端持久 Memory</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">D/F/G/C</span><span class="chip">00:00 CST Sep24</span>
+      </div>
+      <h4>事实</h4>
+      <p>在 stateless Private AI Compute 之上增加<strong>持久、跨设备</strong>服务端记忆：数据封存在专用加密存储，<strong>密钥只在用户设备</strong>；经 E2E 通道在云端 secure enclave 短暂解密处理后再加密。配套技术 brief、可公开核验的服务器软件记录与独立审计更新。</p>
+      <h4>判断</h4>
+      <p>把 Personal Agent 长期记忆与云端算力/隐私矛盾写成可审计架构——Memory/Trust/多端 Runtime 路线图级信号。</p>
+      <img src="../assets/2026-09-24/deepmind-private-ai-memory.jpg" alt="Private AI Compute memory" />
+      <div class="caption">图 5 · DeepMind 原文配图</div>
+      <p class="sources">
+        <a href="https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/" target="_blank" rel="noopener">DeepMind Blog</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. GitHub Copilot app Local sandboxing（公共预览）</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/G/F/B</span><span class="chip">快讯 23:37 · 23:00 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>按项目配置本地会话的 <strong>Filesystem / Network / Credentials</strong>；企业策略可更严；OS 无法强制则<strong>失败而非无沙箱继续</strong>（fail-closed）。默关；不适用 cloud/remote；与 Copilot CLI 分列。</p>
+      <h4>判断</h4>
+      <p>本地 Coding Agent 最小权限做成可运维策略——Runtime/Sandbox/企业策略对照即时信号。</p>
+      <img src="../assets/2026-09-24/gh-copilot-sandbox-og.jpg" alt="Copilot local sandboxing" />
+      <div class="caption">图 6 · GitHub Changelog OG</div>
+      <p class="sources">
+        <a href="https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app" target="_blank" rel="noopener">Changelog</a> ·
+        <a href="https://docs.github.com/en/copilot/how-tos/github-copilot-app/configure-local-sandboxing" target="_blank" rel="noopener">Docs</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Kimi Code Desktop 1.0.3：嵌入服务器任意命令漏洞修复</h3>
+      <div class="chips">
+        <span class="chip a">强A</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">C/G/B</span><span class="chip">2026-09-23</span>
+      </div>
+      <h4>事实</h4>
+      <p>Changelog <strong>1.0.3</strong>：内置浏览器打开本地 HTML、下载控制、斜杠命令提示等；安全项明确修复 <em>malicious web pages run arbitrary commands through the local embedded server</em>。Extension 仍 2.0.17。</p>
+      <h4>判断</h4>
+      <p>Desktop 内置浏览器 + 本地嵌入服务器是典型攻击面；官方点名修复对本地 Runtime 安全基线是硬信号。</p>
+      <p class="sources">
+        <a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html" target="_blank" rel="noopener">Changelog 1.0.3</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. MiniMax Code CLI npm 0.5.3</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">UPDATE</span><span class="chip">国内</span>
+        <span class="chip">B/C/E</span><span class="chip">22:19 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>npm <code>@minimax-ai/code@0.5.3</code>：Plugin <code>@</code> 提及保留来源身份、OpenRouter 预设、Skill 目录符号链接等。GH Releases 本轮仍见最高 v0.5.2（tag 0.5.3 404）——以 npm+CHANGELOG 为准。Desktop 仍 <strong>0.1.188</strong>。</p>
+      <h4>判断</h4>
+      <p>开源 CLI 小步迭代；供应链核验要以 registry 为准。</p>
+      <p class="sources">
+        <a href="https://www.npmjs.com/package/@minimax-ai/code" target="_blank" rel="noopener">npm</a> ·
+        <a href="https://github.com/MiniMax-AI/minimax-code/releases" target="_blank" rel="noopener">GitHub Releases</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+    <section class="card">
+      <h3>官方 shipping 密集，社交热度滞后</h3>
+      <p>本窗 Cursor Rollouts / Copilot sandbox / Qwen Intelligence 尚未形成 HN 高分主帖；讨论仍更接近前一日双旗舰余波。媒体有 OpenAI agent × 澳卫生相关标题，<strong>缺官方一手，不升格新闻</strong>。Gemini Connected Apps 与 3.8 TTS 作旁证/近失。</p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+    <section class="card">
+      <ul>
+        <li><strong>Tongyi-MAI/MobileWorld</strong> ★280；<strong>Qwen-Planner-Agent</strong> ★40（报告仓）</li>
+        <li><strong>minimax-code</strong> ★1806（≈+42）；npm 0.5.3</li>
+        <li><strong>cua</strong> ★26129（≈+141）；<strong>google/ax</strong> ★9038；<strong>ACP</strong> ★4313</li>
+        <li><strong>claude-code</strong> v2.1.281（09-23 19:19Z）小版本</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <section class="card">
+      <ul>
+        <li><strong>Cursor</strong>：Sep10 → <strong>Sep23 Rollouts/Security</strong>（是）</li>
+        <li><strong>MiniMax CLI</strong>：0.5.2 → <strong>0.5.3</strong>；Desktop 仍 0.1.188</li>
+        <li><strong>Kimi Desktop</strong>：1.0.2 → <strong>1.0.3</strong>；Extension 仍 2.0.17</li>
+        <li><strong>Claude Code</strong>：2.1.280 → <strong>2.1.281</strong></li>
+        <li>未变：小艺 0.7.1 / ZCode 3.14.3 / Step5 Preview / Qoder 促销钉 / Muse 不可用 / Opus·Sol 无新 shipping</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <section class="card">
+      <ol>
+        <li>Ship loop 产品化（Rollouts + 本地沙箱）</li>
+        <li>Trust 分层：本地最小权限 × 云端可验证 Memory</li>
+        <li>Personal / GUI Agent 产品线化（Qwen Intelligence）</li>
+        <li>开源 coding CLI 高频小步迭代</li>
+        <li>社交热度滞后于官方 shipping</li>
+      </ol>
+    </section>
+
+    <h2 class="section-title">对智能体互联网 / Work·Agent 引擎</h2>
+    <section class="card">
+      <p><strong>互联：</strong>可验证云端私密 Memory；Planner↔GUI 人机确认；多 bot 授权边界（revert/cloud agent）。</p>
+      <p><strong>引擎：</strong>Monitoring plan 中间产物；项目级 FS/Network/Credentials fail-closed；内置浏览器威胁模型；API-first + GUI fallback 动作空间。</p>
+    </section>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <section class="card">
+      <ol>
+        <li>Cursor Rollouts/Security 实机与定价</li>
+        <li>Qwen Intelligence 权重/SDK/评测复现</li>
+        <li>DeepMind Private Memory brief/产品接通</li>
+        <li>Copilot sandbox preview→GA</li>
+        <li>Kimi 1.0.3 安全细节；MiniMax GH tag；Qoder 限免临期；Step5 10/15；Muse；澳卫生媒体线索等官方一手</li>
+      </ol>
+    </section>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <section class="card">
+      <p>Cursor Rollouts 10 天试用额度；Qoder Flash→09-30、SOTA→09-25；Opus 5.5 $4/$20 + cache $0.20；GPT-6 Sol $2/$10、Luna $0.10/$0.50 等既有钉仍有效。今日未见其他重要新 API 标价表改动。</p>
+    </section>
+
+    <p class="meta" style="margin-top:2rem">归档：reports/2026-09-24.md · 站点生成 2026-09-24 08:33 UTC+08:00</p>
+  </article>
+</body>
+</html>
