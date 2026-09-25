@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-24T08:33:27+08:00",
+  "updatedAt": "2026-09-25T08:29:26+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-25",
+      "date": "2026-09-25",
+      "title": "AI Intelligence Daily · 2026-09-25",
+      "summary": "Muse Mac CUA 现已可用；Gemini Live Avatar；小艺 Work 0.7.2；GitHub proof of presence；Claude Code 2.1.282",
+      "href": "reports/2026-09-25.html"
+    },
     {
       "id": "2026-09-24",
       "date": "2026-09-24",
