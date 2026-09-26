@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-25T08:29:26+08:00",
+  "updatedAt": "2026-09-26T08:24:48+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-26",
+      "date": "2026-09-26",
+      "title": "AI Intelligence Daily · 2026-09-26",
+      "summary": "OpenAI misalignment 53图/agent spam；Claude Code 2.1.283；GH Memory×autofix；Copilot 默认启用；MiniMax 0.5.5",
+      "href": "reports/2026-09-26.html"
+    },
     {
       "id": "2026-09-25",
       "date": "2026-09-25",
