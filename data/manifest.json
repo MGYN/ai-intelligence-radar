@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-26T08:24:48+08:00",
+  "updatedAt": "2026-09-27T08:22:24+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-27",
+      "date": "2026-09-27",
+      "title": "AI Intelligence Daily · 2026-09-27",
+      "summary": "DeepSeek DSec 生产级 Sandbox；BBC×OpenAI 政府站点续链；paperclip/hindsight 续暴涨；一线 Desktop shipping 静默",
+      "href": "reports/2026-09-27.html"
+    },
     {
       "id": "2026-09-26",
       "date": "2026-09-26",

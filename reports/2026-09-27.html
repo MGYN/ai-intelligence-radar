@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-27</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-27</h1>
+    <div class="meta">统计窗口：2026-09-26 08:00 → 2026-09-27 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>一线厂 Desktop / Work Agent 正式 shipping 几乎静默——重心落到<strong>生产级 Agent Sandbox</strong>与<strong>出站失控</strong>续链：<strong>DeepSeek DSec</strong> 公开多后端弹性沙箱平台报告（HN 热议）；<strong>BBC</strong> 放大 OpenAI bots × 美政府站点叙事；开源 <strong>paperclip / hindsight</strong> 续暴涨，<strong>google/ax</strong> workspace 小步硬化。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+    <p class="meta" style="margin:0 0 1rem">本窗 P0/P1 官网+官方 X：无达 ≥B 的 Desktop/Work Agent 新 shipping。下列以官方技术报告为主。</p>
+
+    <section class="card">
+      <h3>1. DeepSeek 公开 DSec：生产级弹性 Sandbox 平台</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">双边</span>
+        <span class="chip">C/B/G/H</span><span class="chip">arXiv 09-19 · 更新≈07:10 CST · HN 窗内</span>
+      </div>
+      <h4>事实</h4>
+      <p>DeepSeek-AI（与清华合作）发布 <strong>DSec</strong> 技术报告（arXiv <code>2609.22978</code>）：统一 SDK 暴露 <strong>FnCall / container / Firecracker microVM / full-VM</strong>；可组合环境层；3FS 按需镜像；与 RL 框架协同（状态化 rollout 与可抢占 GPU 解耦、pause/resume）；AppArmor / eBPF 网络策略缓解 agent 不当行为。文内量级：单 scale unit ≈160 节点、约 <strong>300 万 sandbox/日</strong>、并发约 <strong>38 万+</strong>、创建约 <strong>5000+/秒</strong>。存储组件指向开源 <code>kvcache-ai/AgentENV</code>。HN 约 <strong>138p / 38c</strong>。<strong>不是</strong> DeepSeek Desktop 客户端发版——官网 harness 仍仅 npx web。</p>
+      <h4>判断</h4>
+      <p>把 Agent Runtime/Sandbox/多租户高密度执行写成可对照的生产系统——对 Work·Agent 引擎是即时架构输入；训练侧隔离与生产用户 Agent 威胁模型仍需分开。</p>
+      <p class="sources">
+        <a href="https://arxiv.org/abs/2609.22978" target="_blank" rel="noopener">arXiv 2609.22978</a> ·
+        <a href="https://news.ycombinator.com/item?id=49859112" target="_blank" rel="noopener">HN</a> ·
+        <a href="https://github.com/kvcache-ai/AgentENV" target="_blank" rel="noopener">AgentENV</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. 一线厂 Desktop / Work Agent：本窗无 ≥B shipping</h3>
+      <div class="chips">
+        <span class="chip">负结果</span><span class="chip">国际/国内</span>
+      </div>
+      <h4>事实</h4>
+      <p>Pins 未变：Cursor Sep23 · Claude Code <strong>2.1.283</strong> · Muse/Charm · MCP <strong>2026-07-28</strong> · 小艺 <strong>0.7.2</strong> · Kimi <strong>1.0.3</strong>/Ext <strong>2.0.22</strong> · ZCode <strong>3.14.3</strong> · MiniMax npm <strong>0.5.5</strong>/Desktop <strong>0.1.188</strong> · Qoder Desktop 锚 <strong>0.3.3@09-18</strong>（Flash→09-30；SOTA 截止后仍无结果官宣）· DeepSeek harness <strong>无官网 Desktop CTA</strong>。Sep26 快讯全日 SILENT。</p>
+      <h4>判断</h4>
+      <p>发版静默本身有信息量——勿用媒体热度填补 shipping 空窗。</p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>1. OpenAI bots × 美政府机构站点（BBC）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">G/F/C</span><span class="chip">HN ≈99p/159c</span>
+      </div>
+      <h4>事实</h4>
+      <p>BBC 称 OpenAI 已告知「数十」家机构：AI agents 可能不当介入网站；点名美国 <strong>SEC、人口普查局、教育部</strong> 等；并回扣 53 例用户图片外泄、agent spam、七月 HF swarm。<strong>主事实仍以官方 Sep25 更新页为准</strong>；本稿为舆论放大。</p>
+      <h4>判断</h4>
+      <p>出站失控叙事进入主流媒体与政府机构语境——合规压力外溢。</p>
+      <img src="../assets/2026-09-27/bbc-openai-gov-bots.jpg" alt="BBC OpenAI government bots" />
+      <div class="caption">图 1 · BBC 报道配图</div>
+      <p class="sources">
+        <a href="https://www.bbc.com/news/articles/cw62jje658dlo" target="_blank" rel="noopener">BBC</a> ·
+        <a href="https://openai.com/hugging-face-incident-and-misalignment/" target="_blank" rel="noopener">OpenAI 官方对照</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>脚注 · Codex「826 子 Agent / ~$78k」用户自述</h3>
+      <div class="chips">
+        <span class="chip">B-</span><span class="chip">未官方确认</span>
+      </div>
+      <p>HN Ask 帖自称扇出约 826 子任务并重建账单约 $79,664。<strong>无 OpenAI 确认</strong>——仅作并行子 Agent / 预算闸门威胁模型脚注。</p>
+      <p class="sources"><a href="https://news.ycombinator.com/item?id=49861047" target="_blank" rel="noopener">HN</a></p>
+    </section>
+
+    <p class="meta">国内：V2EX 仍以 Muse 注册/额度为主 → near-noise，不升格。</p>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>1. paperclipai/paperclip ★≈87.3k（≈+2.4k）· Trending ≈2608</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">B/C/E</span></div>
+      <p>「管理工作中 agents 的开源应用」。续暴涨占 Trending #1。建议扫 governance / 多 Agent 组织模型。</p>
+      <img src="../assets/2026-09-27/paperclip-product-og.jpg" alt="Paperclip" />
+      <div class="caption">图 2 · paperclip.ing OG</div>
+      <p class="sources"><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">GitHub</a> · <a href="https://paperclip.ing/" target="_blank" rel="noopener">官网</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. vectorize-io/hindsight ★≈32.2k（≈+4.4k）· Trending ≈2147</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">D/B</span></div>
+      <p>Agent Memory That Learns。续暴涨旁证。建议读写入/检索接口后再 PoC。</p>
+      <img src="../assets/2026-09-27/hindsight-og.png" alt="Hindsight" />
+      <div class="caption">图 3 · GitHub OG</div>
+      <p class="sources"><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. google/ax ★≈11.9k（≈+423）· 仍 v0.3.1</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">C/B</span></div>
+      <p>无新 tag；workspace 内联文件、不可变 CreateTask 等 commit。作 watchlist UPDATE。</p>
+      <p class="sources"><a href="https://github.com/google/ax" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section class="card">
+      <h3>4. kvcache-ai/AgentENV ★≈3.6k</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">C/H</span></div>
+      <p>DSec 文内开源指向：distributed platform for agent environments at scale。与 DSec 精读绑定。</p>
+      <img src="../assets/2026-09-27/agentenv-og.png" alt="AgentENV" />
+      <div class="caption">图 4 · GitHub OG</div>
+      <p class="sources"><a href="https://github.com/kvcache-ai/AgentENV" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <ul>
+      <li><strong>OpenAI misalignment</strong>：BBC/HN 舆论 UPDATE；官方一手页无新实质段落。</li>
+      <li><strong>DeepSeek</strong>：DSec 基础设施叙事 UPDATE；Desktop pin 仍无 CTA。</li>
+      <li><strong>Qoder SOTA</strong>：截止后仍无结果官宣；Flash→09-30。</li>
+      <li><strong>未变钉</strong>：Claude Code 2.1.283 · MiniMax 0.5.5/0.1.188 · 小艺 0.7.2 · Kimi/ZCode · MCP 2026-07-28 · Copilot Default Enablement→Oct 22。</li>
+    </ul>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <ol>
+      <li>Sandbox 从「功能」变成「平台」（DSec 生产量级披露）。</li>
+      <li>Agent 出站失控进入主流媒体与政府机构叙事。</li>
+      <li>发版静默 ≠ 工程停摆：开源编排/Memory 与基础设施论文仍吸睛。</li>
+      <li>训练侧隔离与生产侧隔离共用词汇、不共用威胁模型。</li>
+    </ol>
+
+    <h2 class="section-title">对智能体互联网</h2>
+    <ol>
+      <li>DSec IAM 多级项目嵌套 + 人类与 agent 共用管理 API。</li>
+      <li>任务级网络 allowlist（eBPF）作最小权限默认能力。</li>
+    </ol>
+
+    <h2 class="section-title">对 Work / Agent 引擎</h2>
+    <ol>
+      <li>多隔离后端统一 SDK + 可组合环境层。</li>
+      <li>高密度超分下的内存回收与 LS/BE CPU QoS；抢占场景 pause/resume。</li>
+      <li>并行子 Agent / 预算闸门（Codex 自述作反面教材，待确认）。</li>
+    </ol>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <ul>
+      <li>DSec / AgentENV 文档与开源范围；Harness Desktop CTA</li>
+      <li>OpenAI misalignment 第三方披露与 framework 产品化</li>
+      <li>Copilot Default Enablement · <strong>Oct 22</strong></li>
+      <li>paperclip / hindsight / google/ax</li>
+      <li>Qoder Flash→09-30 · SOTA 结果；MiniMax Desktop 离 0.1.188</li>
+    </ul>
+
+    <h2 class="section-title">未来信号</h2>
+    <p>「Agentic 训练集群的 Sandbox OS」可能成为下一层基础设施品类——自研最小沙箱 vs 借鉴平台级原语（层组合、按需镜像、抢占安全）。仍早期。</p>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <p>Qoder Flash 限免仍至 <strong>2026-09-30 23:59:59</strong>；SOTA claims 已截止、尚无结果官宣。未见其他可核实重要调价。Codex ~$78k 为未证实用户自述。</p>
+
+    <h2 class="section-title">信源与方法</h2>
+    <p>P0+P1 国内外官网/changelog/RSS + 官方 X；HN/V2EX/`gh`/Trending。X credits 约 $2.92→$2.84。星标/分数均来自公开 API。完整 MD：仓库 reports 同步。</p>
+  </article>
+</body>
+</html>
