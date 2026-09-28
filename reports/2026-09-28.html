@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-09-28</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-09-28</h1>
+    <div class="meta">统计窗口：2026-09-27 08:00 → 2026-09-28 08:00（上海）· 事实与判断分区 · 国内/国际双轨</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>一线厂 Desktop / Work Agent 版本钉继续静默；重心落到<strong>Coding 模型档进既有 Agent 产品</strong>与<strong>Agent 问责话语</strong>——<strong>MiniMax M3.1-Flash-Preview</strong> 进 Code + Token Plan（客户端仍 0.1.188 / CLI 0.5.5）；Authors Guild 解封简报与「There are no rogue AI agents」把合规与 Trust 推到前台；开源 <strong>paperclip / hindsight</strong> 续占 Trending 前二，<strong>stablyai/orca</strong> 进入观察表。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+    <p class="meta" style="margin:0 0 1rem">本窗 P0/P1 官网+官方 X：无达 ≥B 的 Desktop/CLI shipping。下列以可核验模型档上线为主。</p>
+
+    <section class="card">
+      <h3>1. MiniMax-M3.1-Flash-Preview 登陆 MiniMax Code + Token Plan</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">双边</span>
+        <span class="chip">A/B/I</span><span class="chip">X debut ≈13:24 CST · docs ≈22:35 · Token Plan ≈01:06 CST Sep28</span>
+      </div>
+      <h4>事实</h4>
+      <p>MiniMax 宣布文本/多模态 Coding 模型 <strong>MiniMax-M3.1-Flash-Preview</strong> 可在 <strong>MiniMax Code</strong> 与 <strong>Token Plan</strong> 使用。官方 API 文档写明「暂时仅通过 Token Plan 和 MiniMax Code 提供」，并描述为 Frontier multimodal coding、<strong>1M context</strong>、可调 thinking depth。<code>@MiniMaxAgent</code> 于 <strong>2026-09-27T05:24:55Z</strong> 发帖；文档 <code>dateModified=2026-09-27T14:35:53Z</code>；<code>@MiniMax_AI</code> 于 <strong>2026-09-27T17:06:37Z</strong> 宣布 Token Plan 可用。<strong>重要钉：</strong> npm <code>@minimax-ai/code</code> 仍 <strong>0.5.5</strong>，Desktop 仍 <strong>0.1.188</strong>——这是<strong>模型档进既有产品</strong>，不是客户端发版。营销站 <code>/news</code> 首页仍未见 M3.1 标题卡，以 API docs + 官方 X 为准。</p>
+      <h4>判断</h4>
+      <p>对 AI Coding / Harness：新档位直接进可测渠道。快讯阶段曾因官网/版本未回钉记 near；本轮有可持续文档 URL + docs 时间钉 + Token Plan 官宣，才升格 ≥B，且<strong>仍不作强 A Desktop</strong>。</p>
+      <img src="../assets/2026-09-28/minimax-m31-flash.jpg" alt="MiniMax M3.1-Flash-Preview" />
+      <div class="caption">图 1 · 官方 X 原帖配图</div>
+      <p class="sources">
+        <a href="https://x.com/MiniMaxAgent/status/2104079819881517400" target="_blank" rel="noopener">@MiniMaxAgent</a> ·
+        <a href="https://platform.minimax.io/docs/guides/models-intro" target="_blank" rel="noopener">API docs</a> ·
+        <a href="https://x.com/MiniMax_AI/status/2104256406786547800" target="_blank" rel="noopener">@MiniMax_AI</a> ·
+        <a href="https://platform.minimax.io/subscribe/token-plan" target="_blank" rel="noopener">Token Plan</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. 一线厂 Desktop / Work Agent：本窗无 ≥B shipping</h3>
+      <div class="chips">
+        <span class="chip">负结果</span><span class="chip">国际/国内</span>
+      </div>
+      <h4>事实</h4>
+      <p>Pins 未变：Cursor Sep23 · Claude Code <strong>2.1.283</strong> · Muse/Charm · MCP <strong>2026-07-28</strong> · 小艺 <strong>0.7.2</strong> · Kimi <strong>1.0.3</strong>/Ext <strong>2.0.22</strong> · ZCode <strong>3.14.3</strong> · MiniMax npm <strong>0.5.5</strong>/Desktop <strong>0.1.188</strong> · Qoder Desktop 锚 <strong>0.3.3@09-18</strong>（Flash→09-30；SOTA 截止后仍无结果官宣）· DeepSeek harness <strong>无官网 Desktop CTA</strong>（download rc.2 Last-Mod 仍 09-24；npm <code>latest</code> overnight 重钉 <strong>0.1.7-rc.2</strong>，无 CTA → near）。Sep27 快讯全日 SILENT。</p>
+      <h4>判断</h4>
+      <p>负结果有信息量——勿用社区热度或模型 Preview 填补 Desktop 空窗。</p>
+    </section>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>1. Authors Guild 解封简报 × OpenAI/Microsoft</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">I/G</span><span class="chip">HN 600p / 575c</span>
+      </div>
+      <h4>事实</h4>
+      <p>Authors Guild 新闻稿称解封文件显示 OpenAI/Microsoft 高管知悉大规模图书盗版训练风险仍推进。HN 讨论 <strong>600p / 575c</strong>（相对 23:13 快讯 ≈525p 续涨）。文件披露本身约 Sep 21 量级——<strong>本窗新增的是社区爆发讨论</strong>，不是新产品 ship。</p>
+      <h4>判断</h4>
+      <p>训练数据治理与产业合规舆论升温。与双主线弱直接，但对采购/合规侧叙事有外溢。</p>
+      <img src="../assets/2026-09-28/authors-guild-openai.jpg" alt="Authors Guild OpenAI" />
+      <div class="caption">图 2 · Authors Guild 原文配图</div>
+      <p class="sources">
+        <a href="https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/" target="_blank" rel="noopener">Authors Guild</a> ·
+        <a href="https://news.ycombinator.com/item?id=49863864" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. 「There are no rogue AI agents」——问责叙事反驳</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">F/G/C</span><span class="chip">HN 324p / 240c</span>
+      </div>
+      <h4>事实</h4>
+      <p>Eoin Higgins 一文反对把越界行为拟人化为「rogue agents」，称该框架便于厂商卸责，主张回到公司控制与责任。HN <strong>324p / 240c</strong>。与昨报 OpenAI Sep25 官方更新、BBC 政府站点续链、UNCTAD 出站叙事同链，但是<strong>新讨论框架</strong>，非官方 incident。</p>
+      <h4>判断</h4>
+      <p>对 Trust：<strong>「谁负责」比「agent 变坏了」更可产品化</strong>——egress allowlist、委托边界、审计与上报才是工程抓手。</p>
+      <img src="../assets/2026-09-28/no-rogue-agents.jpg" alt="There are no rogue AI agents" />
+      <div class="caption">图 3 · 原文 Substack 配图</div>
+      <p class="sources">
+        <a href="https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents" target="_blank" rel="noopener">Substack</a> ·
+        <a href="https://news.ycombinator.com/item?id=49868083" target="_blank" rel="noopener">HN</a> ·
+        <a href="https://openai.com/hugging-face-incident-and-misalignment/" target="_blank" rel="noopener">OpenAI 对照</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>脚注 · 续热不升格</h3>
+      <div class="chips"><span class="chip">脚注</span></div>
+      <p>DeepSeek DSec ≈315p/104c（昨主条热度 UPDATE）；BBC×OpenAI ≈127p/191c；UNCTAD ≈83p/83c；Codex「826 子 Agent / ~$78k」≈80p/31c（<strong>仍无官方确认</strong>）；Ember-1 ≈315p/168c（博文 09-23，模型雷达脚注）。</p>
+    </section>
+
+    <p class="meta">国内：V2EX 仍以 Muse 注册/额度为主 → near-noise，不升格。</p>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>1. paperclipai/paperclip ★≈89.8k（≈+2.5k）· Trending #1</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">B/C/E</span></div>
+      <p>「管理工作中 agents 的开源应用」。续暴涨占 Trending #1；release 仍 <strong>v2026.916.1</strong>，无新 tag。建议扫 governance / 多 Agent 组织模型；对照 orca ADE。</p>
+      <img src="../assets/2026-09-28/paperclip-og.jpg" alt="Paperclip" />
+      <div class="caption">图 4 · paperclip.ing OG</div>
+      <p class="sources"><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">GitHub</a> · <a href="https://paperclip.ing/" target="_blank" rel="noopener">官网</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. vectorize-io/hindsight ★≈37.2k（≈+5.1k）· Trending #2</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">D/B</span></div>
+      <p>Agent Memory That Learns。今日 stars today 增量高于 paperclip；仍 <strong>v0.10.1</strong>。建议读写入/检索接口后再 PoC。</p>
+      <img src="../assets/2026-09-28/hindsight-og.png" alt="Hindsight" />
+      <div class="caption">图 5 · GitHub OG</div>
+      <p class="sources"><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. stablyai/orca ★≈79.6k · NEW 观察 · v1.4.215@09-27</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">NEW观察</span><span class="chip">B/C</span></div>
+      <p>ADE（Agent Development Environment）：用自有订阅并行跑多 coding agent；desktop / mobile / remote runtime。窗内有 <code>agent-launch</code> / <code>agent-trust</code> 相关修复。建议列入 watchlist；对照 Cloud Agent 多会话、并行闸门与 trust 写入边界。</p>
+      <img src="../assets/2026-09-28/orca-og.png" alt="Orca ADE" />
+      <div class="caption">图 6 · 产品 OG</div>
+      <p class="sources"><a href="https://github.com/stablyai/orca" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.onorca.dev/" target="_blank" rel="noopener">官网</a></p>
+    </section>
+
+    <section class="card">
+      <h3>4. google/ax ★≈12.2k（≈+249）· 仍 v0.3.1</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">C/B</span></div>
+      <p>无新 tag；窗内 <code>fix(substrate): revert crashed actors instead of recreating</code>。作 watchlist 小步 UPDATE（actor 崩溃恢复）。</p>
+      <p class="sources"><a href="https://github.com/google/ax" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <p class="meta">静默：Claude Code 2.1.283 · MiniMax npm 0.5.5 · MCP 2026-07-28 · AgentENV ★≈3.6k / v0.2.2。</p>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <ul>
+      <li><strong>OpenAI misalignment</strong>：Authors Guild +「no rogue agents」话语 UPDATE；官方一手页无新实质段落。</li>
+      <li><strong>MiniMax Code</strong>：M3.1-Flash-Preview 文档 + Code/Token Plan 渠道确认（模型档 NEW；客户端 pin 否）。</li>
+      <li><strong>DeepSeek</strong>：npm latest→0.1.7-rc.2（near）；CDN/官网 CTA 仍无；DSec HN≈315p 续热。</li>
+      <li><strong>Qoder SOTA</strong>：截止后仍无结果官宣；Flash→09-30。</li>
+      <li><strong>开源</strong>：paperclip/hindsight 再涨；ax crash-revert；orca 新入观察。</li>
+      <li><strong>未变钉</strong>：Claude Code 2.1.283 · MiniMax 0.5.5/0.1.188 · 小艺 0.7.2 · Kimi/ZCode · MCP 2026-07-28 · Copilot Default Enablement→Oct 22。</li>
+    </ul>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <ol>
+      <li>模型档与客户端发版继续解耦（M3.1 进渠道，Desktop/CLI 数字不动）。</li>
+      <li>Agent 话语从「失控」转向「问责」——工程对应委托、审计与 egress。</li>
+      <li>版权/训练数据诉讼舆论与安全出站叙事并行。</li>
+      <li>开源编排/Memory 仓继续吸血，ADE 品类（orca）补位。</li>
+    </ol>
+
+    <h2 class="section-title">对智能体互联网</h2>
+    <ol>
+      <li>「没有 rogue agent」作为产品叙事约束——指向控制方责任与可审计委托。</li>
+      <li>出站与训练数据合规是两条并行压力——协议需预留 egress 策略与数据来源审计钩子。</li>
+    </ol>
+
+    <h2 class="section-title">对 Work / Agent 引擎</h2>
+    <ol>
+      <li>模型档热更新 vs 客户端冷更新——Runtime 应能在不升 Desktop 时切换/门控模型档与配额。</li>
+      <li>并行 ADE（orca）对照：多会话、agent-trust 写入边界、remote runtime。</li>
+      <li>Memory 基础设施兴趣未退（hindsight）——接口级评估仍值得排期。</li>
+    </ol>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <ul>
+      <li>MiniMax M3.1-Flash-Preview — 全量 API / 配额；CLI·Desktop pin</li>
+      <li>DeepSeek DSec / AgentENV / Harness CTA</li>
+      <li>OpenAI misalignment / 问责话语 · reporting framework</li>
+      <li>Copilot Default Enablement · <strong>Oct 22</strong></li>
+      <li>Qoder Flash→09-30 · SOTA 结果</li>
+      <li>paperclip / hindsight / orca / google/ax</li>
+      <li>Claude Code / 小艺·Kimi·ZCode / Muse / Cursor / MCP</li>
+    </ul>
+
+    <h2 class="section-title">未来信号</h2>
+    <p>「Agent 问责框架」可能比「更强 sandbox」更快进入产品文案与采购问卷——谁授权、谁审计、出站失败时谁兜底。仍属话语层信号，以威胁模型与对外说明迭代为主。</p>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <p>Qoder Flash 限免仍至 <strong>2026-09-30 23:59:59</strong>；SOTA claims 已截止、尚无结果官宣。MiniMax M3.1-Flash-Preview 渠道限定 Token Plan + Code，未见全量 API 新标价。Codex ~$78k 仍为未证实用户自述。</p>
+
+    <h2 class="section-title">信源与方法</h2>
+    <p>P0+P1 国内外官网/changelog/RSS + 官方 X；HN/V2EX/<code>gh</code>/Trending。X credits 约 $2.70→$2.58。星标/分数均来自公开 API。完整 MD：仓库 reports 同步。</p>
+  </article>
+</body>
+</html>
