@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-28T08:25:00+08:00",
+  "updatedAt": "2026-09-29T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-29",
+      "date": "2026-09-29",
+      "title": "AI Intelligence Daily · 2026-09-29",
+      "summary": "Sonnet 5.5+Code 2.1.284；Team Bots/Air Teams/OAS；MiniMax Desktop 3.0.74；开源续涨",
+      "href": "reports/2026-09-29.html"
+    },
     {
       "id": "2026-09-28",
       "date": "2026-09-28",
