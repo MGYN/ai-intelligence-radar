@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-09-29T08:30:00+08:00",
+  "updatedAt": "2026-09-30T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-09-30",
+      "date": "2026-09-30",
+      "title": "AI Intelligence Daily · 2026-09-30",
+      "summary": "DevDay Sol+dots；DeepSeek/MiniMax Desktop absorb；Manus 2.0；openrig；Claude Code 2.1.285",
+      "href": "reports/2026-09-30.html"
+    },
     {
       "id": "2026-09-29",
       "date": "2026-09-29",
