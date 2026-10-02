@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-10-02</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-10-02</h1>
+    <div class="meta">统计窗口：2026-10-01 08:00 → 2026-10-02 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 已吸收快讯 JetBrains Air IDE EAP / MiniMax CLI 0.6.x</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>过夜主线——<strong>GitHub Copilot Computer Use</strong> 进 CLI+桌面 app public preview；同窗 <strong>Claude Code 2.1.287 Mods</strong>、日间已推 <strong>JetBrains Air in IDEs EAP</strong> 与 <strong>MiniMax CLI 0.6.x</strong>，叠加社区 <strong>Pi 1.0 / Durable</strong>——「Desktop Computer Use / IDE 内嵌 agentic / harness 可扩展」三线并进。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+    <p class="meta" style="margin:0 0 1rem">过夜强 A：Copilot Computer Use + Claude Code 2.1.287 + Manus Setup 2.0.3。日间 absorb：JB Air EAP · MiniMax CLI 0.6.0→0.6.1。编排面 Dynamic workflows（A）。旁支 Guided Vision（B）。Argon/Flex/Embed5 等本窗无实质产品 Δ。</p>
+
+    <section class="card">
+      <h3>1. GitHub Copilot Computer Use —— CLI + 桌面 app public preview</h3>
+      <div class="chips">
+        <span class="chip s">强A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/C/E</span><span class="chip">overnight · 19:11Z ≈03:11 CST</span>
+      </div>
+      <h4>事实</h4>
+      <p>Changelog 宣布 <strong>Computer use</strong> 在 <strong>Copilot CLI</strong> 与 <strong>Copilot app（macOS/Windows）</strong> 进入 <strong>public preview</strong>：可读无障碍应用与视觉上下文，点击/键入/滚动/拖拽、跨应用工作流；需用户批准；可 always-allow/重置；组织策略可禁用。强调对「无 API/CLI/MCP」遗留桌面软件尤其有价值。</p>
+      <h4>判断</h4>
+      <p>一线 Desktop Computer Use 正式 public preview → <strong>强 A</strong>；对照 Runtime / Sandbox / 权限批准 UX。</p>
+      <p class="meta">原文主视觉为演示视频，无可靠事件专属静图 → 省略配图。</p>
+      <p class="sources">
+        <a href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps" target="_blank" rel="noopener">changelog</a> ·
+        <a href="https://docs.github.com/en/copilot/concepts/agents/computer-use" target="_blank" rel="noopener">docs</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Claude Code 2.1.286→2.1.287（Mods / You should know / MCP URL prompts）</h3>
+      <div class="chips">
+        <span class="chip s">强A</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">B/E/D</span><span class="chip">npm 16:59Z · GH 18:00Z · stable 仍 2.1.285</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>@anthropic-ai/claude-code</code> <strong>latest=2.1.287</strong>；<strong>stable 仍 2.1.285</strong>。新增 <strong>Claude Mods</strong>；内置 mod <strong>You should know</strong>（侧 agent 盯漏）；agents 视图 <code>n:&lt;text&gt;</code>；MCP <strong>URL prompts</strong>（2025-11-25）；Remote Control / VSCode / 权限 / a11y 修复；Bedrock/Vertex 默认 1M context（可关）。</p>
+      <h4>判断</h4>
+      <p>实质能力面（Mods / 侧 agent / MCP elicitation）→ <strong>强 A UPDATE</strong>；注意 stable 未翻。社区 <code>@ClaudeDevs</code> 高互动放大。</p>
+      <p class="meta">无可靠独立发版附图 → 省略配图。</p>
+      <p class="sources">
+        <a href="https://www.npmjs.com/package/@anthropic-ai/claude-code" target="_blank" rel="noopener">npm</a> ·
+        <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.287" target="_blank" rel="noopener">v2.1.287</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. JetBrains Air in IDEs EAP（absorb 快讯 23:31）</h3>
+      <div class="chips">
+        <span class="chip s">强A</span><span class="chip">NEW absorb</span><span class="chip">国际</span>
+        <span class="chip">B/C/E</span><span class="chip">pubDate 12:42Z · Marketplace 33314-air-alpha</span>
+      </div>
+      <h4>事实</h4>
+      <p>Air in IDEs <strong>EAP 开放</strong>：Marketplace 插件或 <strong>2026.3 EAP</strong> 原生；附 Junie Lite。插件是 agents/subscriptions 的 <strong>conduit</strong>，非 AI provider，默认<strong>不内置 agent</strong>；可检测 <strong>ACP-compatible agents</strong>；可接 Claude 订阅——不要求 JetBrains AI 订阅。</p>
+      <h4>判断</h4>
+      <p>一线 IDE 内嵌 agentic 正式邀测 → <strong>强 A absorb</strong>；「有 Air 插件」≠「自带 Coding Agent」。</p>
+      <img src="../assets/2026-10-02/jetbrains-air-ides-eap.png" alt="JetBrains Air in IDEs EAP" />
+      <div class="caption">图 1 · JetBrains 官方博文 featured 图</div>
+      <p class="sources">
+        <a href="https://blog.jetbrains.com/ai/2026/10/air-in-ides-eap/" target="_blank" rel="noopener">官方博文</a> ·
+        <a href="https://plugins.jetbrains.com/plugin/33314-air-alpha" target="_blank" rel="noopener">Marketplace</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. MiniMax Code CLI 0.6.0→0.6.1（合并 absorb）</h3>
+      <div class="chips">
+        <span class="chip s">强A</span><span class="chip">UPDATE absorb</span><span class="chip">国内</span>
+        <span class="chip">B/E</span><span class="chip">Desktop 仍 3.1.0 · docs 仍 0.5.10</span>
+      </div>
+      <h4>事实</h4>
+      <p><strong>0.6.0</strong>（npm 12:01Z，已 flash 21:28）：<code>/btw</code>+<code>/retry</code>；默认模型→<strong>MiniMax-M3.1-Flash-Preview</strong>。<strong>0.6.1</strong>（npm 14:15Z，absorb）：侧会话 <code>/doctor</code>+<code>/feedback</code>。Desktop yml 仍 <strong>3.1.0</strong>；Web docs 仍钉 <strong>0.5.10</strong>。</p>
+      <h4>判断</h4>
+      <p>国内 Coding CLI 小版本 + 默认模型切换 → <strong>强 A absorb</strong>；勿当 overnight Desktop 重推。</p>
+      <p class="meta">无 0.6.x 专文配图 → 省略。</p>
+      <p class="sources">
+        <a href="https://www.npmjs.com/package/@minimax-ai/code" target="_blank" rel="noopener">npm</a> ·
+        <a href="https://github.com/MiniMax-AI/minimax-code/releases/tag/v0.6.1" target="_blank" rel="noopener">v0.6.1</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. Manus Setup 2.0.2→2.0.3（Mac electron-updater）</h3>
+      <div class="chips">
+        <span class="chip s">强A</span><span class="chip">UPDATE</span><span class="chip">双边</span>
+        <span class="chip">B</span><span class="chip">yml 15:25Z · CTA 仍 2.0.2 · 无 changelog</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>latest-mac.yml</code> 钉 <strong>2.0.3</strong>（releaseDate 15:25:33Z）；dmg/zip <strong>200</strong>（LM 15:49Z）。上轮 2.0.3 仍 403 → 本窗可触达。<strong>Caveat：</strong>落地页 CTA 仍链 <strong>2.0.2</strong>；无公开 release notes；Win exe 仍 <strong>403</strong>。</p>
+      <h4>判断</h4>
+      <p>Desktop 二进制升版 → <strong>强 A UPDATE</strong>；能力 diff 未知，以 yml 通道为准。</p>
+      <p class="meta">无 2.0.3 专文配图 → 省略。</p>
+      <p class="sources">
+        <a href="https://download.manus.im/latest-mac.yml" target="_blank" rel="noopener">latest-mac.yml</a> ·
+        <a href="https://manus.im/desktop" target="_blank" rel="noopener">desktop（仍 2.0.2 CTA）</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. Dynamic workflows in Copilot CLI / Copilot app / SDK</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">D/E</span><span class="chip">public preview · 16:30Z</span>
+      </div>
+      <h4>事实</h4>
+      <p>以<strong>代码定义编排</strong>（串行/并行 + 多 agent），区别于 <code>/fleet</code> 子代理委派；所有 Copilot 计划可用；public preview。</p>
+      <h4>判断</h4>
+      <p>编排面产品化 → <strong>A</strong>；与 Computer Use 同日对照。</p>
+      <p class="meta">通用 changelog 图不配 → 省略。</p>
+      <p class="sources">
+        <a href="https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app" target="_blank" rel="noopener">changelog</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>7. Guided Vision in Gemini Live</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">无障碍</span><span class="chip">16:00Z</span>
+      </div>
+      <h4>事实</h4>
+      <p>Gemini Live <strong>Guided Vision</strong> 在兼容 Android 推出：摄像头共享 + 对话式实时视觉描述/引导；与盲人/低视力社区及 Aira 合作。</p>
+      <h4>判断</h4>
+      <p>消费端无障碍发船 → <strong>B</strong>；弱相关但够门槛。</p>
+      <img src="../assets/2026-10-02/gemini-guided-vision.png" alt="Gemini Live Guided Vision" />
+      <div class="caption">图 2 · blog.google 原文 hero</div>
+      <p class="sources">
+        <a href="https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/" target="_blank" rel="noopener">官方博文</a>
+      </p>
+    </section>
+
+    <p class="meta">脚注 pins：Cursor Sep23 · OpenShell 仍 v0.1.2 tip→76cfd0e@21:47Z · MCP 2026-07-28 · 小艺0.7.3 · DeepSeek rc.2 · Kimi1.0.3·Ext2.0.22 · ZCode3.14.4 · Qoder Flash TBD · MiniMax Desktop 3.1.0 · Claude stable 2.1.285</p>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>1. Pi 1.0 + Pi Durable 发船热议</h3>
+      <div class="chips">
+        <span class="chip s">强信号</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">HN 667p/220c</span><span class="chip">★111201 · v1.0.0</span>
+      </div>
+      <h4>事实</h4>
+      <p>Earendil 发船 <strong>Pi 1.0</strong> harness + 实验包 <strong>Pi Durable</strong>。GH <code>v1.0.0</code>@19:20Z。相对昨「You said no MCP」观点文 → <strong>产品发船升格</strong>。X 官方高互动。</p>
+      <h4>判断</h4>
+      <p>harness 1.0 + 长程 Durable runtime 对照物；接续 MCP core 叙事。</p>
+      <img src="../assets/2026-10-02/pi-1-0-og.png" alt="Pi 1.0" />
+      <div class="caption">图 3 · earendil.com Pi 1.0 OG</div>
+      <p class="sources">
+        <a href="https://earendil.com/posts/pi-1-0/" target="_blank" rel="noopener">Pi 1.0</a> ·
+        <a href="https://earendil.com/posts/pi-durable/" target="_blank" rel="noopener">Durable</a> ·
+        <a href="https://news.ycombinator.com/item?id=49926069" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Claude Mods 社区放大（与新闻条交叉）</h3>
+      <div class="chips">
+        <span class="chip b">≥B</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">@ClaudeDevs 高互动</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>@ClaudeDevs</code>「You can now mod Claude Code」likes <strong>12135</strong> / impressions ≈1.3M。产品事实以 2.1.287 CHANGELOG 为准。</p>
+      <h4>判断</h4>
+      <p>与 Pi 1.0 同日形成 harness 可扩展性对照。</p>
+      <p class="sources">
+        <a href="https://x.com/ClaudeDevs/status/2105721434807083061" target="_blank" rel="noopener">X</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. Cloudflare Clef + BirthdayWeek Agent 基建</h3>
+      <div class="chips">
+        <span class="chip b">≥B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">HN 404p</span><span class="chip">OS 仅 waitlist</span>
+      </div>
+      <h4>事实</h4>
+      <p>开源决策模型 <strong>Clef / Clef-flash</strong>（Workers AI）；BirthdayWeek 放大 <strong>Artifacts</strong> open beta 与 <strong>Cloudflare OS</strong> waitlist。OS 博文首发 <strong>2026-08-05</strong> → 本窗非 NEW 首发。</p>
+      <h4>判断</h4>
+      <p>决策路由 + Agent 可编程 repo——基建候选。</p>
+      <img src="../assets/2026-10-02/cloudflare-clef-og.png" alt="Cloudflare Clef" />
+      <div class="caption">图 4 · Cloudflare Clef 博文 OG</div>
+      <p class="sources">
+        <a href="https://blog.cloudflare.com/clef-decision-models/" target="_blank" rel="noopener">Clef</a> ·
+        <a href="https://news.ycombinator.com/item?id=49923692" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. Figma MCP 白名单排除 Pi</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">生态</span><span class="chip">国际</span>
+        <span class="chip">HN 171p/96c</span>
+      </div>
+      <p>Figma 收紧 MCP 为白名单客户端，社区称排除 Pi。记生态风险；勿当产品发船。</p>
+      <p class="sources">
+        <a href="https://news.ycombinator.com/item?id=49922729" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. turbopuffer「RIP, vector database」</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">检索</span><span class="chip">国际</span>
+        <span class="chip">HN 262p/76c</span>
+      </div>
+      <p>ANN 向量索引从主键降为二级；v3 混合检索叙事。对照 Memory/RAG 主键设计；非立刻换栈。</p>
+      <p class="sources">
+        <a href="https://turbopuffer.com/blog/rip-vector-database/" target="_blank" rel="noopener">博文</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>1. earendil-works/pi · v1.0.0 ★111201 —— highlight</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">highlight</span><span class="chip">harness</span></div>
+      <p>Fullscreen TUI；codemode 瘦身；MCP OAuth hardening；实验包 <code>pi-durable@1.0.0</code>。相对昨 MCP 观点 → <strong>1.0 产品钉</strong>。见图 3。</p>
+      <p class="sources"><a href="https://github.com/earendil-works/pi" target="_blank" rel="noopener">GitHub</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. anthropics/claude-code · 2.1.287（stable 仍 2.1.285）</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">★148865</span></div>
+      <p>Mods / You should know / MCP URL prompts。见新闻条。生产钉 stable 则不动。</p>
+      <p class="sources"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.287" target="_blank" rel="noopener">v2.1.287</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. Cloudflare Clef（交叉话题）</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">决策模型</span></div>
+      <p>Workers AI 托管；短名单评测 vs Jev。见图 4。</p>
+      <p class="sources"><a href="https://blog.cloudflare.com/clef-decision-models/" target="_blank" rel="noopener">Clef</a></p>
+    </section>
+
+    <section class="card">
+      <h3>4. OpenShell tip pin · Pins 持平</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">pin</span></div>
+      <p><strong>OpenShell</strong> 仍 <strong>v0.1.2</strong>；tip→<code>76cfd0e31d5e</code>@21:47Z（≠release）。openrig <strong>v0.6.3</strong>★3711 · orca <strong>v1.4.218</strong>★83173 · Magnitude CLI <strong>0.2.3</strong> · hindsight/paperclip/livenerf 爬升<strong>勿重抬</strong>。</p>
+      <p class="sources">
+        <a href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener">OpenShell</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <ul>
+      <li><strong>Copilot Computer Use</strong>：CLI+app public preview 19:11Z → <strong>强 A NEW</strong>。</li>
+      <li><strong>Claude Code</strong>：2.1.286→<strong>2.1.287</strong>（Mods）；stable 仍 2.1.285。</li>
+      <li><strong>JetBrains Air IDE EAP</strong>：flash 23:31 absorb；本窗无再 UPDATE。</li>
+      <li><strong>MiniMax CLI</strong>：0.6.0→0.6.1 合并 absorb；Desktop 仍 3.1.0。</li>
+      <li><strong>Manus Setup</strong>：2.0.2→<strong>2.0.3</strong>（Mac；CTA 滞后；无 notes）→ 强 A UPDATE。</li>
+      <li><strong>Pi</strong>：观点文 → <strong>v1.0.0 + Durable</strong> 发船。</li>
+      <li><strong>Argon / Flex / Embed5 / HydraFusion / OR tools / 蒸馏</strong>：本窗<strong>无实质产品 Δ</strong>。</li>
+      <li><strong>OpenShell</strong>：仍 v0.1.2；tip 前进 —— 不升格 release。</li>
+      <li><strong>未变钉</strong>：Cursor Sep23 · MCP 2026-07-28 · 小艺 0.7.3 · DeepSeek rc.2 · Qoder Flash TBD · Copilot Default Enablement→Oct 22。</li>
+    </ul>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <ol>
+      <li>Desktop Computer Use 正式进一线产品（Copilot CLI+app）。</li>
+      <li>IDE 内嵌 agentic 与 harness 可扩展同日对照（Air EAP + Mods + Pi 1.0）。</li>
+      <li>编排面代码化（Dynamic workflows vs /fleet）。</li>
+      <li>分发通道「双重真相」常态化（Manus yml vs CTA；MiniMax CLI vs docs）。</li>
+      <li>MCP 生态政治升温（Pi 1.0 vs Figma 白名单）。</li>
+    </ol>
+
+    <h2 class="section-title">对智能体互联网</h2>
+    <ol>
+      <li>Air ACP conduit + Copilot Computer Use 授权模型——宿主发现/挂载与桌面批准 UX。</li>
+      <li>Claude Mods / MCP URL elicitation + Pi MCP OAuth hardening——扩展面与凭证提示协议化。</li>
+      <li>Cloudflare Artifacts + Clef——Agent 互联网基建候选（OS waitlist 仅观察）。</li>
+    </ol>
+
+    <h2 class="section-title">对 Work / Agent 引擎</h2>
+    <ol>
+      <li>Computer Use + Dynamic workflows——Desktop 操控与代码化编排。</li>
+      <li>Claude Mods / You should know + Pi 1.0 / Durable——Plugin/Mod 与长程 Runtime。</li>
+      <li>Manus 2.0.3 通道纪律 + MiniMax CLI 0.6.x 默认模型门控——发版真相源与模型 pin。</li>
+    </ol>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <ul>
+      <li>Copilot Computer Use 组织策略 · Dynamic workflows GA · Claude stable 翻牌</li>
+      <li>Manus 2.0.3 Win/CTA/notes · Pi v1.0/Durable 实机 · Air EAP→稳定</li>
+      <li>MiniMax Desktop &gt;3.1.0 · docs 追上 · OpenShell &gt;0.1.2</li>
+      <li>Clef/Artifacts 实机 · Qoder Flash 结束日 · Copilot Default Enablement→<strong>Oct 22</strong></li>
+      <li>Argon Fairwind 扩面（无 Δ 不重抬）· Cursor Sep23 · MCP 2026-07-28</li>
+    </ul>
+
+    <h2 class="section-title">未来信号</h2>
+    <p>「Desktop Computer Use / IDE 内嵌 agentic / harness 可扩展」三线并进——竞争从「模型谁更强」落到「谁能安全跨应用行动、在 IDE 挂载谁的 agent、harness 能否被 mod 与审计」。</p>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <p>Qoder Flash <strong>10/1 续免</strong>（结束日 TBD）。MiniMax Flash-Preview promo 仍约 <strong>10/1–10/7</strong>。今日<strong>未见</strong>其他可核实的重要全站新促销/调价。</p>
+
+    <h2 class="section-title">信源与方法</h2>
+    <p>P0+P1 国内外官网/changelog/RSS/yml + 官方 X（余额耗尽后以网页为准）；HN/<code>gh</code>/Trending。配图仅原文真实图（JB Air / Guided Vision / Pi OG / Clef OG）。完整 MD：reports/2026-10-02.md · 扫描底稿 <code>/workspace/daily-2026-10-02-*.md</code>。</p>
+  </article>
+</body>
+</html>

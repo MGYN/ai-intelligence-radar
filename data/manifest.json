@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-01T08:30:00+08:00",
+  "updatedAt": "2026-10-02T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-02",
+      "date": "2026-10-02",
+      "title": "AI Intelligence Daily · 2026-10-02",
+      "summary": "Copilot Computer Use；Claude 2.1.287 Mods；JB Air EAP；MiniMax CLI 0.6.x；Manus 2.0.3；Pi 1.0",
+      "href": "reports/2026-10-02.html"
+    },
     {
       "id": "2026-10-01",
       "date": "2026-10-01",
