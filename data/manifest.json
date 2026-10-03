@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-02T08:30:00+08:00",
+  "updatedAt": "2026-10-03T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-03",
+      "date": "2026-10-03",
+      "title": "AI Intelligence Daily · 2026-10-03",
+      "summary": "Claude 2.1.288；Copilot code review API；openrig v0.6.4；GPT-6 指南；openJiuwen 路由",
+      "href": "reports/2026-10-03.html"
+    },
     {
       "id": "2026-10-02",
       "date": "2026-10-02",

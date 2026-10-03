@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-10-03</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-10-03</h1>
+    <div class="meta">统计窗口：2026-10-02 08:00 → 2026-10-03 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 吸收 Oct2 SILENT pin（openrig v0.6.4）· X credits≈$0 跳过检索</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>本窗主线偏「能力面补丁 + 编排/路由基建」——<strong>Claude Code 2.1.288</strong> 强化 Mods/MCP OAuth 与长会话恢复；<strong>Copilot code review API</strong>；日间 absorb <strong>openrig v0.6.4</strong>；旁支 OpenAI GPT-6 实践指南与 <strong>openJiuwen</strong> 模型路由——相对昨「Computer Use / IDE EAP / Pi 1.0」发船日，今日是跟进深化、无新一线 Desktop 二进制 shipping。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+    <p class="meta" style="margin:0 0 1rem">过夜强 A：Claude Code 2.1.288（stable 仍 2.1.285）。A：Copilot code review API。Absorb：openrig v0.6.4。B：GPT-6 指南 · openJiuwen X-Router · Stateless App tokens。勿重抬昨 Computer Use / 2.1.287 / JB Air / MiniMax 0.6.x / Manus 2.0.3 / Pi 1.0。</p>
+
+    <section class="card">
+      <h3>1. Claude Code 2.1.287→2.1.288（Mods UI selection / MCP OAuth 再认证 / 长会话恢复）</h3>
+      <div class="chips">
+        <span class="chip s">强A</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">B/E/D</span><span class="chip">npm 18:30Z · GH 20:19Z · stable 仍 2.1.285</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>@anthropic-ai/claude-code</code> <strong>latest=2.1.288</strong>；<strong>stable 仍 2.1.285</strong>。Mods 新增 <code>$.ui.selection()</code>；MCP 工具调用中 OAuth scope 不足 → <strong>重新认证提示</strong>；云会话内置 <code>gh api</code>；Ctrl+C 后 Up 恢复草稿；<code>/code-review --max-findings</code>；大量 resume / compaction / 超时续写 / 插件修复。</p>
+      <h4>判断</h4>
+      <p>扩展面 API + 生产稳定性连续发版 → <strong>强 A UPDATE</strong>；注意 stable 未翻。</p>
+      <p class="meta">changelog/release 无独立新闻配图 → 省略。</p>
+      <p class="sources">
+        <a href="https://www.npmjs.com/package/@anthropic-ai/claude-code" target="_blank" rel="noopener">npm</a> ·
+        <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.288" target="_blank" rel="noopener">v2.1.288</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Copilot code review —— REST/GraphQL API + Balanced 默认 effort</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">B/E</span><span class="chip">19:13Z · GA</span>
+      </div>
+      <h4>事实</h4>
+      <p>可通过 REST/GraphQL <strong>请求 Copilot code review</strong>，并可设 effort level；<strong>Balanced</strong> 为默认（Default 档自 Sep28 起采用）。Pro/Pro+/Max/Business/Enterprise generally available。</p>
+      <h4>判断</h4>
+      <p>评审面 API 化 → <strong>A</strong>；与昨 Computer Use 同族但不同实质。</p>
+      <p class="meta">通用 changelog 图不配 → 省略。</p>
+      <p class="sources">
+        <a href="https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level" target="_blank" rel="noopener">changelog</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. openrig v0.6.4（absorb · Agent 团队网络）</h3>
+      <div class="chips">
+        <span class="chip a">A</span><span class="chip">NEW absorb</span><span class="chip">国际</span>
+        <span class="chip">B/C/E/F</span><span class="chip">GH 05:45Z · ★4299</span>
+      </div>
+      <h4>事实</h4>
+      <p>正式 <strong>v0.6.4</strong>（rc.1→stable）。<strong>Web UI 默认关</strong>（需 <code>ui.enabled true</code>）；daemon 校验 host/origin（<code>OPENRIG_ALLOWED_HOSTS</code>/<code>ORIGINS</code>）；CLI/TUI 为受支持用法。Daily 10-02 仍写 v0.6.3 → 本日报 absorb。</p>
+      <h4>判断</h4>
+      <p>多 agent 组网小版本 + 默认攻击面收敛 → <strong>A absorb</strong>。</p>
+      <p class="meta">GH release 无独立配图 → 省略。</p>
+      <p class="sources">
+        <a href="https://github.com/mvschwarz/openrig/releases/tag/v0.6.4" target="_blank" rel="noopener">v0.6.4</a> ·
+        <a href="https://www.npmjs.com/package/@openrig/cli" target="_blank" rel="noopener">npm</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>4. OpenAI：A model guide for the GPT-6 family</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">A/E</span><span class="chip">16:15Z · 非 shipping</span>
+      </div>
+      <h4>事实</h4>
+      <p>GPT-6 家族选型、reasoning effort、prompts/skills、长程任务与 computer use 实践指南。<strong>非</strong>新模型发船。</p>
+      <h4>判断</h4>
+      <p>用法产品化 → <strong>B</strong>；对照默认模型门控。</p>
+      <img src="../assets/2026-10-03/openai-gpt6-guide.png" alt="OpenAI GPT-6 family guide" />
+      <div class="caption">图 1 · openai.com 原文 og:image</div>
+      <p class="sources">
+        <a href="https://openai.com/index/practical-guide-building-gpt-6" target="_blank" rel="noopener">官方指南</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>5. openJiuwen X-Router / model-router（自演进模型路由）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国内</span>
+        <span class="chip">A/C/D/F</span><span class="chip">量子位 15:34 · GH ★10</span>
+      </div>
+      <h4>事实</h4>
+      <p>开源模型路由内核（可配置/可演进/可观测）；仓 <code>openJiuwen-ai/model-router</code> ★10（created≈09-24）。媒体称成本可降约四成量级——<strong>以仓内复现为准</strong>。</p>
+      <h4>判断</h4>
+      <p>Agent 选模基建国内对照 → <strong>B</strong>；非一线 Desktop shipping；星标低需 caveat。</p>
+      <p class="meta">媒体 og 为 Logo → 按规则省略配图。</p>
+      <p class="sources">
+        <a href="https://github.com/openJiuwen-ai/model-router" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.qbitai.com/2026/10/500098.html" target="_blank" rel="noopener">量子位</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>6. GitHub Stateless App installation tokens 全量 rollout</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">C/F</span><span class="chip">22:18Z</span>
+      </div>
+      <h4>事实</h4>
+      <p>安装令牌默认 stateless <code>ghs_APPID_JWT</code>，长约 520；临时 header 弃用 <strong>2026-11-30</strong>。</p>
+      <h4>判断</h4>
+      <p>Agent/App 身份令牌基建 → <strong>B</strong>；非 AI 发船。</p>
+      <p class="sources">
+        <a href="https://github.blog/changelog/2026-10-02-stateless-github-app-installation-tokens-rolled-out" target="_blank" rel="noopener">changelog</a>
+      </p>
+    </section>
+
+    <p class="meta">脚注 pins：Cursor Sep23 · Manus 2.0.3 · MiniMax Desktop 3.1.0/CLI 0.6.2 · 小艺 0.7.3 · DeepSeek rc.2 · Kimi 1.0.3·Ext 2.0.22 · ZCode 3.14.4 · OpenShell 仍 v0.1.2 tip→48d9ab@22:10Z · MCP 2026-07-28 · Magnitude 0.2.4 · paperclip v2026.1001.0（canary.21≠stable）· Claude stable 2.1.285</p>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>1. 「Every SaaS will become a harness around a model」</h3>
+      <div class="chips">
+        <span class="chip b">≥B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">HN 77p/57c</span>
+      </div>
+      <h4>事实</h4>
+      <p>主张多数 SaaS 收敛为模型外的 harness（工具/权限/工作流/计费）。HN <strong>77p / 57c</strong>。</p>
+      <h4>判断</h4>
+      <p>与 Pi/Mods/Air「宿主 vs 模型」叙事同向——舆论定锚。</p>
+      <img src="../assets/2026-10-03/harness-is-company.png" alt="The harness is the company" />
+      <div class="caption">图 2 · 原文 Substack og:image</div>
+      <p class="sources">
+        <a href="https://blog.sshh.io/p/the-harness-is-the-company" target="_blank" rel="noopener">博文</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Muse Gadgets —— 开源硬件接 Muse</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">HN 105p/53c</span>
+      </div>
+      <h4>事实</h4>
+      <p><strong>gadgets.muse.ai</strong>：ESP32 / RPi 等经 SDK 接 Muse 外设。HN <strong>105p / 53c</strong>。</p>
+      <h4>判断</h4>
+      <p>Muse 向物理外设延伸 → <strong>B</strong>；勿与 Mac CUA 混为同一实质。</p>
+      <img src="../assets/2026-10-03/muse-gadgets.png" alt="Muse Gadgets" />
+      <div class="caption">图 3 · gadgets.muse.ai 原文 og:image</div>
+      <p class="sources">
+        <a href="https://gadgets.muse.ai" target="_blank" rel="noopener">Muse Gadgets</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>1. mvschwarz/openrig · v0.6.4 ★4299 —— highlight absorb</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">highlight</span><span class="chip">多 agent 网络</span></div>
+      <p>Web UI 默认关；host/origin 门控；CLI/TUI 优先。见新闻条。</p>
+      <p class="sources"><a href="https://github.com/mvschwarz/openrig/releases/tag/v0.6.4" target="_blank" rel="noopener">v0.6.4</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. anthropics/claude-code · 2.1.288（stable 仍 2.1.285）★148972</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">★148972</span></div>
+      <p>Mods <code>$.ui.selection</code>；MCP OAuth 再认证；resume 修复。见新闻条。</p>
+      <p class="sources"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.288" target="_blank" rel="noopener">v2.1.288</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. OpenShell tip pin · openJiuwen · Pins 持平</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">pin</span></div>
+      <p><strong>OpenShell</strong> 仍 <strong>v0.1.2</strong>；tip→<code>48d9ab3d0d9a</code>@22:10Z（≠release）★14426。<strong>model-router</strong> ★10。Pi v1.0.0★111771 · paperclip v2026.1001.0（canary.21≠stable）· Magnitude 0.2.4 · orca/hindsight 爬升<strong>勿重抬</strong>。</p>
+      <p class="sources">
+        <a href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener">OpenShell</a> ·
+        <a href="https://github.com/openJiuwen-ai/model-router" target="_blank" rel="noopener">model-router</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <ul>
+      <li><strong>Claude Code</strong>：2.1.287→<strong>2.1.288</strong>；stable 仍 2.1.285 → 强 A UPDATE。</li>
+      <li><strong>Copilot</strong>：Computer Use 无再 Δ；<strong>NEW</strong> code review API @19:13Z。</li>
+      <li><strong>openrig</strong>：v0.6.3→<strong>v0.6.4</strong>（日间 absorb）。</li>
+      <li><strong>Manus 2.0.3 / MiniMax 0.6.2 / JB Air / Pi 1.0</strong>：无更高实质 shipping。</li>
+      <li><strong>OpenShell</strong>：仍 v0.1.2；tip→48d9ab —— 不升格 release。</li>
+      <li><strong>Argon / Flex / Embed5 / Sol/dots</strong>：无实质产品 Δ（仅 GPT-6 指南）。</li>
+      <li><strong>未变钉</strong>：Cursor Sep23 · MCP 2026-07-28 · 小艺 0.7.3 · DeepSeek rc.2 · Qoder Flash TBD · Copilot Default Enablement→Oct 22 · paperclip canary≠stable。</li>
+    </ul>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <ol>
+      <li>发船日后的稳定性与扩展 API 补丁波（Claude 2.1.288）。</li>
+      <li>Agent 能力 API 化（Copilot code review 可编程触发）。</li>
+      <li>多 agent 网络默认收敛攻击面（openrig 关 UI + host/origin）。</li>
+      <li>选模/路由叙事升温（GPT-6 指南 + openJiuwen + 昨 Clef）。</li>
+      <li>Harness 舆论定锚（HN「SaaS = harness」）。</li>
+    </ol>
+
+    <h2 class="section-title">对智能体互联网</h2>
+    <ol>
+      <li>openrig 0.6.4 入口门控——多 agent daemon 安全默认。</li>
+      <li>Claude MCP OAuth 增量再认证——委托会话凭证升级 UX。</li>
+      <li>Stateless App tokens + Copilot review API——身份令牌与可编程评审。</li>
+    </ol>
+
+    <h2 class="section-title">对 Work / Agent 引擎</h2>
+    <ol>
+      <li>Claude 2.1.288：Mod API + 长会话 resume/compaction 清单。</li>
+      <li>Copilot code review API：嵌进 Agent Loop / CI。</li>
+      <li>模型路由对照：OpenAI 指南 + openJiuwen 骨架（自测后再信成本数字）。</li>
+    </ol>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <ul>
+      <li>Claude stable 翻牌 · CCR API effort 实机 · openrig &gt;0.6.4</li>
+      <li>Computer Use 组织策略 · Manus &gt;2.0.3 · Pi Durable · Air EAP→稳定</li>
+      <li>MiniMax Desktop &gt;3.1.0 · docs 追上 · OpenShell &gt;0.1.2</li>
+      <li>Qoder Flash 结束日 · Copilot Default Enablement→<strong>Oct 22</strong> · paperclip canary→stable</li>
+      <li>Cursor Sep23 · MCP 2026-07-28 · openJiuwen 评测复现</li>
+    </ul>
+
+    <h2 class="section-title">未来信号</h2>
+    <p>「发船」之后进入「可扩展 API + 默认安全 + 可编程触发」——差距越来越不像谁先官宣，而像谁能在升级节奏里同时收紧暴露面、打开扩展点、并把评审/选模/委托变成可编排 API。</p>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <p>Qoder Flash <strong>续免</strong>（结束日 TBD）。MiniMax Flash-Preview promo 仍约 <strong>10/1–10/7</strong>。今日<strong>未见</strong>其他可核实的重要全站新调价。</p>
+
+    <h2 class="section-title">信源与方法</h2>
+    <p>P0+P1 国内外官网/changelog/RSS/yml/<code>gh</code>/npm；X credits≈$0 跳过检索。配图仅原文真实图（OpenAI guide / Harness 文 / Muse Gadgets）。完整 MD：reports/2026-10-03.md · 扫描 <code>/workspace/daily-2026-10-03-*.md</code>。</p>
+  </article>
+</body>
+</html>
