@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-03T08:20:00+08:00",
+  "updatedAt": "2026-10-04T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-04",
+      "date": "2026-10-04",
+      "title": "AI Intelligence Daily · 2026-10-04",
+      "summary": "Claude Code 2.1.289 agent.spawn；Pi v1.0.1 Release；docs-vs-memory / skills heat；国内 Desktop 静默",
+      "href": "reports/2026-10-04.html"
+    },
     {
       "id": "2026-10-03",
       "date": "2026-10-03",

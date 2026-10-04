@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-10-04</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-10-04</h1>
+    <div class="meta">统计窗口：2026-10-03 08:00 → 2026-10-04 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 吸收 Oct3 SILENT pin（Magnitude 0.2.5 / Pi Release 闭合）· X credits≈$0 跳过检索</div>
+
+    <div class="lede">
+      <strong>今日一句话：</strong>本窗主线是 Claude Code 连续补丁波（<strong>2.1.289</strong> 新增 teammate <code>agent.spawn</code>）与 <strong>Pi v1.0.1</strong> GitHub Release 面闭合，叠加社区「Skill/Harness + 文档即记忆」热议——国内一线 Desktop 全静默、无新正式发船。
+    </div>
+
+    <h2 class="section-title">专栏一｜新闻</h2>
+    <p class="meta" style="margin:0 0 1rem">过夜强 A/A：Claude Code 2.1.289（stable 仍 2.1.285）。B UPDATE absorb：Pi v1.0.1 GH Release 404→200。Absorb alone：Magnitude CLI 0.2.5。国内：无足够重要 NEW。勿重抬昨 CC 2.1.288 / CCR / openrig 0.6.4 / GPT-6 / openJiuwen / Computer Use / Manus 2.0.3 / MiniMax 0.6.x。</p>
+
+    <section class="card">
+      <h3>1. Claude Code 2.1.288→2.1.289（teammate agent.spawn / agent id 统一 / 大量修复）</h3>
+      <div class="chips">
+        <span class="chip s">强A/A</span><span class="chip">UPDATE</span><span class="chip">国际</span>
+        <span class="chip">B/E/C</span><span class="chip">npm 20:12Z · GH 23:07Z · stable 仍 2.1.285</span>
+      </div>
+      <h4>事实</h4>
+      <p><code>@anthropic-ai/claude-code</code> <strong>latest=next=2.1.289</strong>（npm ≈04:12 CST Oct4；GH ≈07:07 CST）；<strong>stable 仍 2.1.285</strong>。要点：Added <code>agent.spawn</code> for teammates；plugin hooks 统一 agent id；<code>$.agent.list()</code> idle/waiting；大量 mods/plugin/Bash deny·ask/sandbox 修复；VSCode 回退 2.1.288 auth 变更。</p>
+      <h4>判断</h4>
+      <p>一线 Work Agent 连续补丁 + 多 agent teammate API → <strong>强 A/A UPDATE</strong>；注意 stable 未翻。</p>
+      <p class="meta">changelog/release 无独立新闻配图 → 省略。</p>
+      <p class="sources">
+        <a href="https://www.npmjs.com/package/@anthropic-ai/claude-code" target="_blank" rel="noopener">npm</a> ·
+        <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.289" target="_blank" rel="noopener">v2.1.289</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Pi GH Release v1.0.1（Release 面闭合 · MCP CIMD / project overrides）</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">UPDATE absorb</span><span class="chip">国际</span>
+        <span class="chip">B/E</span><span class="chip">GH 16:14Z · ★≈112154</span>
+      </div>
+      <h4>事实</h4>
+      <p>npm <strong>1.0.1</strong>@12:35Z（Oct3 SILENT 已见）；本窗 GH Release <strong>v1.0.1</strong>@16:14Z（≈00:14 CST Oct4）从 <strong>404→200</strong>。Nix flake；<code>.pi/mcp.json</code> project overrides；MCP OAuth CIMD；tool renderers。</p>
+      <h4>判断</h4>
+      <p>发船面闭合 + MCP 配置面 → <strong>B UPDATE absorb</strong>；勿写成第二次 NEW 大版本发船。</p>
+      <p class="meta">Release 页无独立配图 → 省略。</p>
+      <p class="sources">
+        <a href="https://github.com/earendil-works/pi/releases/tag/v1.0.1" target="_blank" rel="noopener">v1.0.1</a> ·
+        <a href="https://www.npmjs.com/package/@earendil-works/pi-coding-agent" target="_blank" rel="noopener">npm</a>
+      </p>
+    </section>
+
+    <p class="meta">脚注 absorb/pins：Magnitude CLI <strong>0.2.5</strong>@12:15Z（非一线 → absorb alone，仅 &gt;0.2.5 再评）· Manus 2.0.3 · MiniMax 3.1.0/0.6.2 · Cursor Sep23 · MCP 2026-07-28 · OpenShell 仍 v0.1.2 tip→71c3cd@21:22Z · openrig tip→0fe2cc@23:58Z 仍 v0.6.4 · orca tip→92965f@23:49Z 仍 v1.4.219 · paperclip canary.9≠stable · 小艺 0.7.3 · dsh latest rc.2（alpha hold）· Kimi 1.0.3/Ext 2.0.22 · ZCode 3.14.4 · Qoder Flash TBD · OpenAI LBD 23:50Z 0 items · Claude stable 仍 2.1.285 · 国内无 ≥B NEW</p>
+
+    <h2 class="section-title">专栏二｜话题热议</h2>
+
+    <section class="card">
+      <h3>1. HN：Getting the most out of Opus 5.5 in Claude and Claude Code</h3>
+      <div class="chips">
+        <span class="chip a">B+/A-</span><span class="chip">NEW heat</span><span class="chip">国际</span>
+        <span class="chip">HN ≈149p/105c</span><span class="chip">社区复活 · 非 overnight 发船</span>
+      </div>
+      <h4>事实</h4>
+      <p>HN id=<strong>49946567</strong>（≈149p / 105c @18:29Z）指向 <code>claude.dev</code> Opus 5.5 playbook。原文 <code>published_time</code>≈2026-09-22 → <strong>社区热议复活</strong>，不作官方 overnight NEW。</p>
+      <h4>判断</h4>
+      <p>模型 × Coding Agent 用法高热 → <strong>B+/A- heat</strong>；与 CC 2.1.289 补丁波对照阅读。</p>
+      <img src="../assets/2026-10-04/opus55-claude-code-og.png" alt="Getting the most out of Opus 5.5" />
+      <div class="caption">图 1 · claude.dev 原文 og:image</div>
+      <p class="sources">
+        <a href="https://claude.dev/blog/getting-the-most-out-of-opus-5-5/" target="_blank" rel="noopener">官方博文</a> ·
+        <a href="https://news.ycombinator.com/item?id=49946567" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>2. Agents don't need memory, they need documentation</h3>
+      <div class="chips">
+        <span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span>
+        <span class="chip">D/B</span><span class="chip">HN 28p/20c · Oct 3</span>
+      </div>
+      <h4>事实</h4>
+      <p>HN id=<strong>49945933</strong>（28p / 20c @17:03Z）；博文 dated Oct 3, 2026。论点：文档工作区 &gt; RAG memory 插件；Operator Memory OSS。</p>
+      <h4>判断</h4>
+      <p>Memory vs docs/context 设计辩论 → <strong>B+</strong>；旁证，非官方规范。</p>
+      <img src="../assets/2026-10-04/agents-docs-not-memory-loop.png" alt="Agents don't need memory loop diagram" />
+      <div class="caption">图 2 · 原文 loop diagram</div>
+      <p class="sources">
+        <a href="https://liao.gg/blog/agents-dont-need-memory" target="_blank" rel="noopener">博文</a> ·
+        <a href="https://news.ycombinator.com/item?id=49945933" target="_blank" rel="noopener">HN</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>3. GitHub Trending：Agent-Reach / skills / harness 集群</h3>
+      <div class="chips">
+        <span class="chip b">B</span><span class="chip">NEW cluster</span><span class="chip">国际/双边</span>
+        <span class="chip">stars_today 可核验</span>
+      </div>
+      <h4>事实</h4>
+      <p>可核验 stars_today：Agent-Reach <strong>1696</strong> · ponytail <strong>1281</strong> · ECC <strong>897</strong> · mattpocock/skills <strong>751</strong> · impeccable <strong>699</strong> · superpowers <strong>577</strong> · caveman <strong>507</strong> · pi <strong>408</strong> · context-mode <strong>256</strong> · addyosmani/agent-skills <strong>252</strong>。</p>
+      <h4>判断</h4>
+      <p>生态风向集群 → <strong>B</strong>；不升单条发船主新闻。</p>
+      <p class="sources">
+        <a href="https://github.com/trending?since=daily" target="_blank" rel="noopener">GitHub Trending</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">专栏三｜开源雷达</h2>
+
+    <section class="card">
+      <h3>1. anthropics/claude-code · v2.1.289 ★≈149219</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">highlight</span><span class="chip">★≈149219</span></div>
+      <p><code>agent.spawn</code>；统一 agent id；<code>$.agent.list()</code> idle/waiting。见新闻条。stable 仍 2.1.285。</p>
+      <p class="sources"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.289" target="_blank" rel="noopener">v2.1.289</a></p>
+    </section>
+
+    <section class="card">
+      <h3>2. earendil-works/pi · v1.0.1 ★≈112154</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">Release 闭合</span><span class="chip">★≈112154</span></div>
+      <p>Nix flake；<code>.pi/mcp.json</code>；MCP OAuth CIMD；tool renderers。见新闻条。</p>
+      <p class="sources"><a href="https://github.com/earendil-works/pi/releases/tag/v1.0.1" target="_blank" rel="noopener">v1.0.1</a></p>
+    </section>
+
+    <section class="card">
+      <h3>3. Magnitude 0.2.5 · Trending · Pins 持平</h3>
+      <div class="chips"><span class="chip">开源</span><span class="chip">absorb / pin</span></div>
+      <p><strong>Magnitude</strong> CLI <strong>0.2.5</strong>★≈6329 absorb alone。<strong>Trending</strong> Agent-Reach / skills 集群见话题 #3。<strong>Pins</strong>：openrig 仍 v0.6.4 tip→0fe2cc · OpenShell 仍 v0.1.2 tip→71c3cd · paperclip canary.9≠stable · orca 仍 v1.4.219 tip→92965f · hindsight / minimax-code 0.6.2 / MCP <strong>2026-07-28</strong>。</p>
+      <p class="sources">
+        <a href="https://github.com/magnitudedev/magnitude" target="_blank" rel="noopener">Magnitude</a> ·
+        <a href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener">OpenShell</a> ·
+        <a href="https://github.com/mvschwarz/openrig" target="_blank" rel="noopener">openrig</a>
+      </p>
+    </section>
+
+    <h2 class="section-title">重点事件新进展</h2>
+    <ul>
+      <li><strong>Claude Code</strong>：2.1.288→<strong>2.1.289</strong>；stable 仍 2.1.285 → 强 A/A UPDATE。</li>
+      <li><strong>Pi</strong>：npm 1.0.1（昨 SILENT）→ 本窗 <strong>GH Release v1.0.1</strong> 补挂 → B UPDATE absorb。</li>
+      <li><strong>Magnitude CLI</strong>：0.2.4→<strong>0.2.5</strong> → absorb alone（非一线）。</li>
+      <li><strong>Copilot / openrig 0.6.4 / Manus 2.0.3 / MiniMax / JB Air</strong>：无更高实质 shipping。</li>
+      <li><strong>OpenShell</strong>：仍 v0.1.2；tip→71c3cd —— 不升格 release。</li>
+      <li><strong>openrig / orca</strong>：仍 v0.6.4 / v1.4.219；tip-only。</li>
+      <li><strong>paperclip</strong>：canary.9 ≠stable；OpenAI LBD 0 items。</li>
+      <li><strong>未变钉</strong>：Cursor Sep23 · MCP 2026-07-28 · 小艺 0.7.3 · DeepSeek rc.2（alpha hold）· Qoder Flash TBD · Copilot Default Enablement→Oct 22。</li>
+    </ul>
+
+    <h2 class="section-title">今天正在形成的趋势</h2>
+    <ol>
+      <li>一线 Coding Agent 连续补丁波（Claude 2.1.289 teammate API）。</li>
+      <li>发船面「npm 先、Release 后」闭合（Pi 1.0.1）。</li>
+      <li>社区从「SaaS=harness」延伸到「文档即记忆」+ Skill 集群。</li>
+      <li>国内一线 Desktop 静默日；促销窗持平。</li>
+      <li>多 agent / MCP 配置面细化（CIMD、project overrides、统一 agent id）。</li>
+    </ol>
+
+    <h2 class="section-title">对智能体互联网</h2>
+    <ol>
+      <li>Claude <code>agent.spawn</code> + 统一 agent id——多 agent 委托身份与入口。</li>
+      <li>Pi MCP CIMD + project overrides——项目级工具/凭证注册。</li>
+      <li>「文档工作区 &gt; RAG memory」辩论——Memory 选型反共识旁证。</li>
+    </ol>
+
+    <h2 class="section-title">对 Work / Agent 引擎</h2>
+    <ol>
+      <li>Claude 2.1.289：<code>agent.spawn</code> / idle-waiting list / Bash deny·ask / sandbox 清单。</li>
+      <li>Pi 1.0.1：tool renderers + project MCP overrides。</li>
+      <li>Trending skills/harness 集群：可插拔工程技能的注意力密度（观察）。</li>
+    </ol>
+
+    <h2 class="section-title">值得继续跟踪</h2>
+    <ul>
+      <li>Claude stable 翻牌 · <code>agent.spawn</code> 生态 · Pi &gt;1.0.1 / CIMD</li>
+      <li>Magnitude &gt;0.2.5 · openrig &gt;0.6.4 · OpenShell &gt;0.1.2</li>
+      <li>CCR API / Computer Use · Manus &gt;2.0.3 · MiniMax Desktop &gt;3.1.0 · Air EAP→稳定</li>
+      <li>paperclip canary→stable · orca &gt;v1.4.219 · DeepSeek alpha→latest</li>
+      <li>Qoder Flash 结束日 · Copilot Default Enablement→<strong>Oct 22</strong> · Cursor Sep23 · MCP 2026-07-28</li>
+    </ul>
+
+    <h2 class="section-title">未来信号</h2>
+    <p>补丁波与「配置面闭合」并行：Claude 把 teammate 收成 <code>agent.spawn</code>，Pi 把 npm 已发的 1.0.1 补上 GH Release 与 MCP CIMD——差距越来越不像谁先喊 1.0，而像谁能在连续小版本里同时打开多 agent 入口、收紧权限面、并把 MCP/Skill 做成可项目化契约。社区「文档即记忆」与 skills 集群，则在 Memory 叙事之外另开一条注意力主线。</p>
+
+    <h2 class="section-title">价格 / 订阅雷达</h2>
+    <p>Qoder Flash <strong>续免</strong>（结束日 TBD）。MiniMax Flash-Preview promo 仍约 <strong>10/1–10/7</strong>。今日<strong>未见</strong>其他可核实的重要全站新调价。</p>
+
+    <h2 class="section-title">信源与方法</h2>
+    <p>P0+P1 国内外官网/changelog/RSS/yml/<code>gh</code>/npm；X credits≈$0 跳过检索。配图仅原文真实图（claude.dev og / docs-not-memory loop）。完整 MD：reports/2026-10-04.md · 扫描 <code>/workspace/daily-2026-10-04-*.md</code>。</p>
+  </article>
+</body>
+</html>
