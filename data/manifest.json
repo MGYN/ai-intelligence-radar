@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-04T08:20:00+08:00",
+  "updatedAt": "2026-10-05T08:50:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-05",
+      "date": "2026-10-05",
+      "title": "AI Intelligence Daily · 2026-10-05",
+      "summary": "agent 代价与问责：OpenAI 入侵走向诉讼监管；MiniMax OpenAgentCore；Higress MCP 鉴权；硬预算上限热议；cloudflare-os 能力式授权",
+      "href": "reports/2026-10-05.html"
+    },
     {
       "id": "2026-10-04",
       "date": "2026-10-04",
@@ -304,7 +311,7 @@
     },
     {
       "id": "openai-wiki-incident",
-      "title": "OpenAI Wiki / Rogue Agent 事件链",
+      "title": "OpenAI Agent 越界 / 入侵问责事件链",
       "status": "tracking",
       "href": "events/openai-wiki-incident.html"
     },
