@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-05T08:33:00+08:00",
+  "updatedAt": "2026-10-06T08:50:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-06",
+      "date": "2026-10-06",
+      "title": "AI Intelligence Daily · 2026-10-06",
+      "summary": "agent 越界进入第三方取证与宣誓听证：Wikimedia 确认 + NYC 听证 + 悉尼问询；Reflection Beam 501B；Cohere North 2；OpenAI 欧盟水印；MCP token audience 通告",
+      "href": "reports/2026-10-06.html"
+    },
     {
       "id": "2026-10-05",
       "date": "2026-10-05",

@@ -102,6 +102,16 @@ async function render(route) {
   const html = await res.text();
   const doc = new DOMParser().parseFromString(html, 'text/html');
   const article = doc.querySelector('.article') || doc.body;
+  // 子页面内的相对路径（如 ../assets/…）按子页面自身 URL 解析，避免在首页壳内配图 404
+  const baseUrl = new URL(href, location.href);
+  article.querySelectorAll('img[src]').forEach(el => {
+    const v = el.getAttribute('src');
+    if (v && !/^(https?:|data:|\/\/)/.test(v)) el.setAttribute('src', new URL(v, baseUrl).href);
+  });
+  article.querySelectorAll('a[href]').forEach(el => {
+    const v = el.getAttribute('href');
+    if (v && !/^(https?:|mailto:|#|\/\/)/.test(v)) el.setAttribute('href', new URL(v, baseUrl).href);
+  });
   content.innerHTML = '';
   content.appendChild(article);
 }
