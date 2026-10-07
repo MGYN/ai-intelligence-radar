@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-10-07（周三）</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-10-07（周三）</h1>
+    <div class="meta">统计窗口：2026-10-06 08:00 → 2026-10-07 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 国内国庆假期最后一天，一线国产厂商官方渠道全持平 · 一线 Desktop/Work Agent 正式发船 = 1（Cursor 本地 agent 远程控制，增量功能，非新产品）· X 余额 $0 跳过检索</div>
+<div class="lede"><strong>今日一句话：</strong><strong>前沿能力开始按「身份 + 资质」分级发放，而不是一刀切开放或封禁</strong>：Anthropic 把网络安全能力拆成 Defense / Red Team / Specialized 三档，按验证强度和安全控制逐级解锁（与昨天 Mistral Large 4 对 vetted/state 用户放宽审核是同一思路）；OpenAI 则一边公开 722 篇由未发布内部模型产出的数学手稿（模型本身不放），一边用 Ironclad 的真实业务任务训练 computer-use agent。与此同时，「谁在操作」这件事正在产品化：AgentID 给 agent 发 OIDC 身份并附带主人信息，Cursor 让手机远程接管本机 agent。<strong>能力越强，越要先回答「你是谁、替谁做、被允许到哪一档」。</strong></div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<p class="meta" style="margin:0 0 1rem">本栏条目：国际 8 · 国内 1（合集）· 双边 0。国内仍在国庆假期，P0 国产厂商官方站全部持平，预计 10-08 复工后集中发布。勿重抬：Mistral Large 4 本体（10-06 21:24 已快讯）、Reflection Beam、textGrain、Cohere North 2、GLM-5.3 Bedrock、Qwen Code v0.25.0。</p>
+<section class="card">
+<h3>1. OpenAI 公开 722 篇数学手稿：由未发布的内部模型产出，约 4,000 道题、平均每个结果约 3 小时 Pro 级算力，162 篇主结果附 Lean 形式化；数学界反应分裂</h3>
+<div class="chips"><span class="chip s">S（待独立验证）</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/H/K/J</span><span class="chip">官方博文 10-06</span><span class="chip">GitHub 仓库建于 10-07 05:47 CST</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>OpenAI 发布《Sharing AI progress in mathematics》，并开了公开仓库 <code>openai/math</code>。README 写明：<strong>722 篇手稿、分成 372 个结果族</strong>，全部由一个<strong>未发布的内部模型</strong>产出；评测中向模型提了约 <strong>4,000 道题</strong>，平均每个结果约用了「<strong>3 小时 ChatGPT Pro 思考</strong>」等量的算力。黎曼 ζ 函数零点区域、CM 阿贝尔簇上的 Hodge 猜想这两项不是走同一流程，其中零点区域那篇的文字经过人工润色。</li>
+<li>仓库里列出的标题包括 Hadwiger 猜想反例、Kaplansky 直接有限性猜想反例、「整数乘法低于 n log n」、「准黎曼假设：Re(s)&gt;7/8 的零点自由半平面」等。<strong>这些都是 OpenAI 的说法，没有同行评审。</strong></li>
+<li>形式化：<code>lean/formalization.yaml</code> 列了 <strong>162 篇「主结果已形式化」的论文</strong>（含上面的准黎曼假设一篇），但同一文件写着 <code>automation: method: agent</code>、<code>review: status: unchecked</code>，也就是<strong>形式化本身也是 agent 做的，人工审查尚未完成</strong>。README 也承认「部分未形式化的结果可能有问题」。另附 10 份推理过程摘要。</li>
+<li>反应：Scientific American 称大量结果已用 Lean 检查，「几乎可以确定正确」，同时引用 MIT 的 Andrew Sutherland：模型不放出、无法复现之前，「单 agent 一次解出」的说法都应视为未验证，「要看收据」；多伦多大学 Daniel Litt 则认为公开出来对数学是好事。WIRED 报道一批数学家不满 OpenAI 用博文而不是论文发布，并提到 4,000 多名数学家联署的 Leiden 宣言。HN 251 分 / 210 评。</li>
+</ul>
+<h4>我的判断</h4>
+<p><strong>这是「长时程自主研究 agent」最大规模的一次公开样本</strong>，重要性不在某一条定理，而在三点：一是规模（4,000 题里筛出 372 个族），二是单个结果算力只有「3 小时 Pro」量级，三是用 Lean 当外部裁判把「对不对」交给机器检查。这条路线（生成 + 形式化验证 + 大规模并行尝试）一旦在数学上跑通，会被快速搬到代码、协议证明和合规检查这类「有可执行判据」的领域。<strong>但现在必须保留两个折扣</strong>：形式化是 agent 做的、人工审查标注为 unchecked；模型不放出，第三方没法复现产出过程。按 S 级关注，但<strong>事实层面只能写成「OpenAI 声称 + 部分已机器检查」</strong>。</p>
+<h4>往后看</h4>
+<p>数学界对头部结果（Hadwiger 反例、n log n 乘法、准黎曼假设）的独立审查；Lean 形式化有没有被发现「陈述与论文不符」的问题；OpenAI 说的「负责任地发布该模型」何时、以什么形式落地；IAS 顾问组和 Hexagon / Palomar 这类社区仓库会不会接手。</p>
+<h4>对智能体互联网</h4>
+<p>无直接启示。间接一点：这种「结果 + 机器可验证证据 + 版本化修订」的发布方式，可以借鉴到 agent 产出物的可信发布（产出附带可验证证据和来源链）。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关（方法层）。</strong>它展示了「verifier-in-the-loop」能撑起多大规模的自主工作：任务池 → 并行尝试 → 外部可执行判据过滤 → 结果族聚合。Work 引擎里凡是能写出可执行判据的任务（测试、类型检查、策略校验、对账），都可以照这个模式把 agent 从「对话式」改成「批量尝试 + 判据筛选」。另外要注意，判据本身由 agent 生成时，必须单独审查（就像这里的 <code>unchecked</code>）。</p>
+<h4>建议动作</h4>
+<ol>
+<li>深入调研：读 README 的「How the results were produced」和 Comparator 校验说明，拆它的「题目池 → 尝试 → 形式化 → 族聚合」流水线。</li>
+<li>纳入需求：在 Agent Harness 里把「外部判据 + 判据来源审查」做成一等公民。</li>
+<li>关注后续：头部结果的独立审查。</li>
+</ol>
+<p class="sources">来源：<a href="https://openai.com/index/sharing-ai-progress-in-mathematics/" target="_blank" rel="noopener">OpenAI 官方博文</a> · <a href="https://github.com/openai/math" target="_blank" rel="noopener">GitHub openai/math</a> · <a href="https://www.scientificamerican.com/article/openai-unleashes-hundreds-more-math-results-upon-a-field-already-in-shock/" target="_blank" rel="noopener">Scientific American</a> · <a href="https://www.wired.com/story/openai-is-pissing-off-a-bunch-of-mathematicians-again/" target="_blank" rel="noopener">WIRED</a> · <a href="https://news.ycombinator.com/item?id=49984923" target="_blank" rel="noopener">HN 讨论</a> · <a href="https://www.ithome.com/1/010/137.htm" target="_blank" rel="noopener">IT之家中文报道</a></p>
+</section>
+<section class="card">
+<h3>2. Anthropic 扩大 Cyber Verification Program：网络能力按 Defense / Red Team / Specialized 三档分级开放，按身份验证和安全控制逐级解锁</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/F/I</span><span class="chip">官方 10-06</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>把原来的 Project Glasswing（Mythos 给关键软件维护方）和 CVP（降低 Opus/Sonnet 安全分类器拦截）合并成一个三档项目，覆盖 Opus 5.5、Sonnet 5.5、Mythos 5.1 及以后的新模型。</li>
+<li><strong>Defense Access</strong>：防御工作（SOC、应急响应、恶意软件逆向、漏洞分析），面向企业安全团队、关键基础设施运营方、开源维护者、有漏洞报告记录的个人研究者，「几天内」答复。<strong>Red Team Access</strong>：增加授权渗透测试，只对组织开放，审核约几周，仍实时拦截勒索软件部署、物理破坏等。<strong>Specialized Access</strong>：拦截最少，面向测试航空、电网、电信、银行间清算、政府网络等系统的组织，<strong>与美国政府合作逐家审查</strong>。</li>
+<li>安全控制随档位升级：从身份验证、安全声明，到企业验证 + 抗钓鱼认证 + 受控凭证 + 按席位访问，再到短时凭证、终端与网络控制、背景调查、席位上限。<strong>加入项目必须开启数据留存</strong>以便监控滥用；秋季晚些时候的 Enterprise Frontier Safeguards（EFS）会允许把数据存在客户自控的云上。Bedrock 上只对 EFS 合格客户开放。</li>
+<li>官方自测（CyScenarioBench，10 道题各 5 次）：无 CVP 时全部在第一条提示就被拦；Defense 档 50 次里 46 次被拦；Red Team 档零拦截、完成 34/50，与不加护栏时 67.6% 的成功率相当。Glasswing 伙伴 4–7 月报告了至少 <strong>12.9 万个已验证漏洞</strong>，Anthropic 自己的开源扫描 4–10 月另有 5,500 个，其中 3.3 万多个为严重 / 高危（官方承认数据只来自部分伙伴，是下限估计）。</li>
+</ul>
+<h4>我的判断</h4>
+<p><strong>这是「能力按身份分级」的完整样板</strong>：同一个模型，按调用方是谁、做什么、有哪些安全控制，给出不同的拦截策略；并且把「短时凭证、抗钓鱼认证、席位上限」这些身份与访问控制要求写进了获得能力的门槛。和昨天 Mistral Large 4 对 vetted/state 用户放宽审核放在一起看，前沿厂商正在把「能力开放」从模型级开关改成<strong>身份与资质驱动的策略层</strong>。这是长期趋势，不是一次性活动。另外「必须数据留存」也说明，能力越高，隐私（ZDR）与可监控性之间的取舍越被明确摆上桌。</p>
+<h4>往后看</h4>
+<p>EFS 上线时间和「自控云存储」的具体形态；Help Center 的完整档位细则；OpenAI / Google 是否推出同构的分级项目；监管（美国、澳洲听证）会不会把这种分级当作行业基准。</p>
+<h4>对智能体互联网</h4>
+<p><strong>强相关。</strong>这就是跨组织 agent 调用里「能力授权取决于调用方身份等级」的现实版本：档位 = 可验证资质，安全控制 = 对调用方运行环境的要求。智能体互联网的授权模型应该能表达「调用方资质等级 + 环境证明 + 用途声明」，而不只是 scope 列表。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>多租户 Work 平台可以借鉴：同一工具 / 模型能力按租户资质分档；高档位要求短时凭证、抗钓鱼认证、席位上限；拦截策略与档位绑定并可审计；「被误拦可申诉」的回路也要有。</p>
+<h4>建议动作</h4>
+<ol>
+<li>对标架构：把三档的「用途 × 资质 × 控制」矩阵（见图 1）映射到自家权限模型，看缺哪一维。</li>
+<li>纳入需求：工具权限里加入「调用方资质等级」和「运行环境证明」两个字段。</li>
+<li>关注后续：EFS 细节。</li>
+</ol>
+<p><img src="../assets/2026-10-07/01-anthropic-cvp-tiers.jpg" alt="Anthropic Cyber Verification Program 三档对比表" loading="lazy" /></p>
+<div class="caption">图 1 · CVP 各档位的适用对象、允许用途与安全控制要求 · 来源：Anthropic 官方博文</div>
+
+<p class="sources">来源：<a href="https://www.anthropic.com/news/cyber-verification-program" target="_blank" rel="noopener">Anthropic 官方</a> · <a href="https://www.ithome.com/1/010/127.htm" target="_blank" rel="noopener">IT之家中文报道</a></p>
+</section>
+<section class="card">
+<h3>3. Cursor 上线「本地 agent 远程控制」：iOS App 查看并回复本机正在跑的 agent，agent 不迁移、不依赖云端 agent</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/B/F</span><span class="chip">官方 changelog 10-06（10-06 23:22 CST 快讯轮之后上线）</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>用 Cursor iOS App 登录后，账号下的电脑会自动出现；在 App 里点选电脑，<strong>需要在桌面端批准配对请求</strong>，然后就能看到本地 agent 列表、查看进度或发消息。</li>
+<li><strong>agent 仍在本机运行</strong>，App 只是连接上去；电脑必须开机联网，桌面设置里可开「保持唤醒」（需接电源、开盖）。</li>
+<li>默认对所有人开启，<strong>企业组织除外</strong>：企业管理员要在 Org settings &gt; Security and identity &gt; Remote control 手动打开。官方明确说这个功能不需要 cloud agents。</li>
+</ul>
+<h4>我的判断</h4>
+<p>「本地执行 + 远程控制面」正在成为 coding agent 的标配：Claude Code 已有 Remote Control（今天的 2.1.292 还在修 Remote Control 查看后台子 agent 的问题），Cursor 这次补齐了移动端。好处是代码和凭证留在本机、算力用自己的，坏处是<strong>手机变成了能驱动本机 agent 的新入口</strong>。Cursor 对企业默认关闭、要求桌面端批准配对，说明它也把这当成安全边界在处理。这是产品形态的趋势信号：Work Agent 不一定上云，但控制面一定要跨设备。</p>
+<h4>往后看</h4>
+<p>配对设备的会话有效期、撤销与审计细节；远程消息能否触发高危操作（是否需要本机二次确认）；Android 版本；与 Cursor cloud agents 的切换体验。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>「设备配对 = 一种委托」：手机拿到的是对本机 agent 的操作授权，这和 agent 间委托一样需要可撤销、可审计。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>Runtime 设计可以分成「执行面在本地 / 自托管，控制面跨设备」：配对握手在执行端确认、默认对企业关闭、保持唤醒是显式开关。自家 Work 引擎如果支持本地 runner，应同步考虑移动端控制面和相应的风险分级（只读查看 vs 发指令 vs 批准高危动作）。</p>
+<h4>建议动作</h4>
+<ol>
+<li>对标架构：梳理自家本地 runner 的远程控制方案，至少区分「查看 / 发消息 / 批准」三级权限。</li>
+<li>关注后续：企业管控项与审计日志的公开文档。</li>
+</ol>
+<p><img src="../assets/2026-10-07/02-cursor-remote-control.jpg" alt="Cursor 桌面端 Remote Control 设置页" loading="lazy" /></p>
+<div class="caption">图 2 · Cursor 桌面端 Remote Control 设置：开关、自动注册电脑、保持唤醒、已配对设备 · 来源：Cursor 官方 changelog</div>
+
+<p class="sources">来源：<a href="https://cursor.com/changelog/remote-control-local-agents" target="_blank" rel="noopener">Cursor changelog</a></p>
+</section>
+<section class="card">
+<h3>4. OpenAI 推出 Decisions API 公测：用 gpt-6-luna 把文本 / 图片直接变成「概率、选项或评分」，官方称比 Responses API 快约 10 倍；API 用量档位从 5 档简化为 3 档</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/A/I</span><span class="chip">官方 changelog 10-06</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>新端点 <code>POST /v1/decisions</code>，目前只支持 <code>gpt-6-luna</code>，公测，官方称「未来几周 GA」。一次请求包含 <code>input</code>（共享证据，文本或图文消息）和多个 <code>questions</code>，每个问题三选一类型：<code>predicate</code>（返回条件为真的概率 0–1）、<code>choice</code>（从给定选项选一个，返回各选项概率）、<code>score</code>（按有序等级评分，返回概率加权平均）。</li>
+<li>官方定位是分类、路由、优先级排序；需要自定义 JSON 结构或工具调用时仍用 Structured Outputs / function calling。图片只能用内联 base64，不支持 URL 或 <code>file_id</code>。另有「语音接 Decisions」的指南。</li>
+<li>同日 changelog：<strong>API 用量档位从 5 档简化为 Build / Launch / Grow 3 档</strong>，按累计充值自动升级。HN 101 分 / 37 评。</li>
+</ul>
+<h4>我的判断</h4>
+<p>这是把「LLM 当判别器」从一种用法变成一个专门的产品面：返回的是校准过的概率而不是文本，延迟低一个量级。对 agent 系统来说，大量控制决策（这一步要不要人工批准、这条记忆相不相关、这个请求路由给谁、这个工具调用是否越权）本质上都是判别问题，过去用通用生成接口做，又慢又难设阈值。<strong>它是 agent 控制面的基础设施，而不是又一个模型接口。</strong></p>
+<h4>往后看</h4>
+<p>GA 时间与定价；会不会开放更多模型或微调；是否会出现在 Agents SDK 的护栏 / 路由组件里；概率校准质量的第三方测评。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>跨 agent 调用中的「准入判定」（这个请求是否符合委托范围）可以用这类判别接口实现，并把概率与阈值写进审计。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>可以直接用来做：权限自动审批分类器（auto mode）、记忆召回相关性打分、工具路由、子任务优先级。关键是返回概率，便于按租户设阈值、做 A/B 和审计。</p>
+<h4>建议动作</h4>
+<ol>
+<li>做 PoC：拿自家「是否需要人工批准」或「记忆相关性」的历史样本，对比 Decisions API 与现有分类方式的延迟、成本和准确率。</li>
+<li>纳入需求：把「判别类调用」在 Harness 里抽象成独立接口，便于换后端。</li>
+</ol>
+<p class="sources">来源：<a href="https://developers.openai.com/api/docs/guides/decisions" target="_blank" rel="noopener">Decisions API 官方指南</a> · <a href="https://platform.openai.com/docs/changelog" target="_blank" rel="noopener">OpenAI API changelog</a> · <a href="https://news.ycombinator.com/item?id=49984025" target="_blank" rel="noopener">HN 讨论</a></p>
+</section>
+<section class="card">
+<h3>5. AgentID 公开上线：给 agent 发自己的 OIDC 身份，并把背后的「人类主人」作为声明交给应用</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW（watchlist #15 补收）</span><span class="chip">国际</span><span class="chip">F/E</span><span class="chip">官方博文 10-06</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>AgentMail 推出「Sign in with AgentID」：每个 AgentID 背后是一个 AgentMail 邮箱，作为 agent 的稳定、可验证身份；底层是<strong>标准 OpenID Connect 提供方</strong>（<code>auth.agentid.com</code>），可以作为自定义 provider 接入 Clerk、Supabase、Auth0、Better Auth、Auth.js。</li>
+<li>每次登录返回 agent 的稳定 ID 和已验证邮箱；<strong>注册过的应用还能拿到主人的姓名和邮箱</strong>（在 id_token 和 /userinfo 里），申请了 owner 声明的应用不会收到缺少这些信息的登录。官方列举的用途：按主人限制注册数（同一人的 10 个 agent 共享一个免费额度）、单独撤销某个 agent、像对普通用户一样给 agent 发邮件。登录不会给应用访问 agent 邮箱的权限。</li>
+<li>已接入的应用：Firecrawl、Turso、TinyFish、Manufact、Telnyx、Rho，并有供 agent 查找的应用目录。对应用免费，限时送三个月 AgentMail。官方称「1000 万个 agent 可以找到你」（每个 AgentMail 邮箱都是一个 AgentID，这是官方口径）。</li>
+</ul>
+<h4>我的判断</h4>
+<p>它回答的是「agent 在别人的应用里开账号」这个具体问题：现在 agent 普遍借用主人的邮箱和验证码注册，应用既不知道是 agent，也不知道归谁。AgentID 的选择很务实，<strong>不发明新协议，直接复用 OIDC</strong>，把「agent 身份 + 主人声明」塞进现有登录栈。局限也明显：身份锚点是某一家公司的邮箱服务，信任根是中心化的；「主人」只是声明，没有说明委托范围。但这是把「每个 agent 都有一个负责的人」落到登录协议里的较早实例，值得作为参考实现。</p>
+<h4>往后看</h4>
+<p>是否推动 OIDC / IETF 层面的标准化（如 agent 专用 claim）；与 MCP / A2A 鉴权的衔接；其他身份厂商（Auth0、Clerk、Okta）是否推出原生的 agent 身份；滥用与撤销的实际表现。</p>
+<h4>对智能体互联网</h4>
+<p><strong>极强相关。</strong>几个设计点可以直接吸收：agent 身份与主人身份分离、主人信息作为必选声明、按主人做配额与撤销、应用目录作为发现入口。也要看到短板：缺少「委托范围」声明和去中心化的信任根，这正是智能体互联网可以补上的地方。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中度相关。</strong>Work 平台里的 agent 如果要替用户注册或登录第三方服务，可以优先走这类 agent 身份，而不是借用用户邮箱和验证码；平台自身也可以接受 agent 登录，并按主人计费和限流。</p>
+<h4>建议动作</h4>
+<ol>
+<li>拆源码 / 文档：读 <code>llms-full.txt</code> 与 OIDC 声明结构，对标自家 agent 身份模型的字段。</li>
+<li>做 PoC：在测试应用里接入一次，验证 owner claims 和撤销流程。</li>
+</ol>
+<p><img src="../assets/2026-10-07/03-agentid-signin.jpg" alt="AgentID 发布配图：Sign in with AgentID" loading="lazy" /></p>
+<div class="caption">图 3 · AgentID 发布配图（登录框中的「Sign in with AgentID」按钮）· 来源：AgentID 官方博文</div>
+
+<p class="sources">来源：<a href="https://www.agentid.com/blog/introducing-agentid" target="_blank" rel="noopener">AgentID 官方博文</a></p>
+</section>
+<section class="card">
+<h3>6. OpenAI 企业 agent 两条线：与 Ironclad 合作把真实合同流程做成 computer-use 训练任务；与 Atlassian 扩大合作，GPT-6 进入 Rovo 和 Teamwork Graph</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/D/I</span><span class="chip">官方 10-06</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li><strong>Ironclad</strong>：双方找出法务、商务、采购三类共 <strong>11 个任务</strong>（如设置 NDA、搭采购审批流程、按辖区更新可复用条款），每个任务按 8–50 条细则评分；Ironclad 提供托管软件环境，OpenAI 用强化学习训练。结果：GPT-6 Astra（Max 推理）平均得分 <strong>55.0%</strong>，GPT-5.6 Sol（High 推理）<strong>41.6%</strong>；估算单次耗时 19.2 分钟对 37.0 分钟（<strong>模拟估算，不是客户实测</strong>）；开发 Astra 时用的一个内部模型达到 63.7%。训练数据来自 SEC EDGAR 公开合同，未用客户数据。OpenAI 同时<strong>邀请少量软件公司</strong>带着「agent 做不好的任务、失败证据、评判标准、安全测试环境和可用数据」来合作。</li>
+<li><strong>Atlassian</strong>：新协议让 GPT-6 系列（含 GPT-6 Astra、GPT-5.6）驱动 Atlassian 平台和 Rovo 的 agent，结合 Teamwork Graph（企业上下文层）；Atlassian 已有 3,000 多名开发者在用 Codex；已有 Atlassian / Teamwork Graph 的 ChatGPT 与 Codex CLI 插件；双方在探索「在 Jira 里把工作分派给 AI agent、跟踪进度、记录决策、审阅结果」。</li>
+</ul>
+<h4>我的判断</h4>
+<p>两件事指向同一个方向：<strong>企业软件厂商正在变成前沿模型的「训练环境供应商」和「上下文供应商」</strong>。Ironclad 提供的是带规则的真实业务环境和评分细则，Atlassian 提供的是组织级上下文图谱。谁掌握了「真实任务 + 判据 + 环境」，谁就能影响下一代 agent 擅长什么。对做 Work 产品的团队来说，这既是机会（成为环境伙伴），也是威胁（通用模型直接学会你的业务流程）。Ironclad 的数字是 11 个研究任务上的结果，不代表全部工作流，不能外推。</p>
+<h4>往后看</h4>
+<p>还有哪些软件公司加入这个研究合作；Jira「分派给 agent」何时成为正式功能；Teamwork Graph 是否对外开放成通用上下文接口。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>「在 Jira 里给 agent 派活」意味着 agent 会成为工单系统里的一等参与者，需要身份、权限和责任归属。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>「细则评分（8–50 条）+ 托管环境 + RL」是一套可以借用的评测方法：Work 引擎的评测集应按「每条业务规则是否被保住」打分，而不只看任务是否完成。上下文侧，Teamwork Graph 说明企业 Work Agent 的上下文层正在图谱化。</p>
+<h4>建议动作</h4>
+<ol>
+<li>对标架构：用「规则保持率」重做自家 Work 场景评测（参考 Ironclad 的细则评分）。</li>
+<li>关注后续：Jira agent 派单的正式形态。</li>
+</ol>
+<p class="sources">来源：<a href="https://openai.com/index/advancing-computer-use-with-ironclad/" target="_blank" rel="noopener">OpenAI × Ironclad</a> · <a href="https://openai.com/index/atlassian-partnership/" target="_blank" rel="noopener">OpenAI × Atlassian</a></p>
+</section>
+<section class="card">
+<h3>7. GitLab Transcend 合集：Duo Agent Platform 目标驱动 flow、MCP Server 本月 GA、Orbit 生命周期上下文图谱、按订阅 / 组 / 用户的 credit 上限、Dependency Firewall</h3>
+<div class="chips"><span class="chip a">A-（下沿）</span><span class="chip">NEW（快讯 10-06 23:22 near-miss）</span><span class="chip">国际</span><span class="chip">B/C/D/E/G/I</span><span class="chip">官方 10-06 08:00 CST（窗口起点）</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>Duo Agent Platform：<code>/goal</code> 目标驱动 flow（官方称本月 GA）、Custom Flows、GitLab for Slack；<strong>GitLab MCP Server 本月 GA</strong>；平台上托管 GLM 5.3、Kimi K3、MiniMax 3 等开放权重模型。</li>
+<li><strong>GitLab Orbit</strong>：软件生命周期 context graph，官方称下月 GA，并称可让 retries 减少 45 倍（官方口径）。</li>
+<li>管控：按订阅 / 组 / 用户设置 credit 与用量上限；Impact Analytics（早期访问）；Secrets Manager 本月 GA；Artifact Central（beta）。</li>
+<li><strong>Dependency Firewall</strong>（早期访问）：在构建前拦截有风险的依赖包。</li>
+</ul>
+<h4>我的判断</h4>
+<p>GitLab 把 Work Agent 平台的几块拼图一次摆齐：目标驱动的 agent 流程、MCP 对外暴露、生命周期上下文图谱、按组织层级的用量封顶、供应链拦截。多数功能还在「本月 / 下月 GA」，所以只算预告级的 A-。值得注意的是 <strong>credit 上限按订阅 / 组 / 用户三级</strong>，与 Cohere North 2 的四级成本控制一样，说明「多租户成本护栏」已是企业 agent 平台的必选项。</p>
+<h4>往后看</h4>
+<p><code>/goal</code> flow 与 MCP Server 的 GA 文档；Orbit 的数据模型与开放程度；Dependency Firewall 对 agent 自动装依赖的拦截效果。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>MCP Server GA 让 GitLab 成为又一个大型「能力节点」，鉴权方式值得看。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中度相关。</strong>三级 credit 上限和依赖防火墙都可以直接进需求池；Orbit 的「生命周期上下文图谱」是 Context 层的参照。</p>
+<h4>建议动作</h4>
+<p>关注后续：MCP Server 与 Orbit GA 文档出来后再拆。</p>
+<p class="sources">来源：<a href="https://about.gitlab.com/blog/transcend-india-announcements/" target="_blank" rel="noopener">GitLab Transcend 汇总</a> · <a href="https://about.gitlab.com/blog/transcend-dependency-firewall/" target="_blank" rel="noopener">Dependency Firewall</a></p>
+</section>
+<section class="card">
+<h3>8. 补收｜「Protocol pivoting」：同一类 MCP SSRF 缺陷在 Google、JPMorgan、Weaviate、法国 DINUM、印尼 Tangerang 市政府先后修复，并可借 A2A 交接扩散到下游 agent</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">补收（Ars 10-06 06:26 CST 窗前发布；TNW / Unite.AI 窗内跟进）</span><span class="chip">国际</span><span class="chip">G/E/F</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>独立研究者 Syed Anas Mohiuddin 报告的 5 起同类问题都已修复：MCP Server 拿 agent 给的 URL / 路径直接发请求，不检查实际解析地址，形成 SSRF。最典型的是 Google MCP Toolbox for Databases 的 <strong>CVE-2026-14540</strong>（8.0 分，影响 0.3.0–1.4.0，PR #3448 加了 DNS rebinding 防护和 IP 允许 / 阻止列表）。</li>
+<li>他把更广的攻击类别称为「protocol pivoting」：在 MCP 工具返回内容里埋一段「长得像 A2A 任务」的文本，编排 agent 转给子 agent，子 agent 因为信任编排者而执行。X41 D-Sec 的 Markus Vervier 认为这是间接提示注入的一种。研究者另称美国联邦 MCP Server 有 5 项问题未修；预印本 5 月已发在 Zenodo；10-23 会在 MCPCon North America 演讲。</li>
+<li>另外 Rapid7 Bulk Export MCP Server 的 CVE-2026-97228 是 GraphQL 注入（不同类别，0.6.2 已修）。</li>
+</ul>
+<h4>我的判断</h4>
+<p>和昨天 MCP SDK 的 token audience 通告是一组：<strong>MCP 生态的问题集中在「信任边界默认是开的」</strong>，token 不校验受众、URL 不校验目标、上游 agent 的输出被下游当指令。它不是某一家的 bug，而是协议层没有把「数据」和「指令」、「内部」和「外部」区分开。</p>
+<h4>往后看</h4>
+<p>MCPCon 演讲披露的完整清单；美国联邦 MCP Server 未修项；MCP 规范层是否加入出站请求和跨协议交接的安全要求。</p>
+<h4>对智能体互联网</h4>
+<p><strong>极强相关。</strong>跨协议交接（MCP → A2A）必须带来源标签和信任等级，下游 agent 不能因为「来自内部编排者」就无条件执行。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>MCP 网关和自建 Server 要默认做出站目标校验（禁内网、防 DNS rebinding）；子 agent 收到的任务要能区分「编排者原始意图」和「工具返回内容转述」。</p>
+<h4>建议动作</h4>
+<p>本周排查：自家 MCP Server 中所有「按参数发出站请求」的工具；子 agent 任务消息加来源标注。</p>
+<p class="sources">来源：<a href="https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/" target="_blank" rel="noopener">Ars Technica</a> · <a href="https://thenextweb.com/news/mcp-flaw-ssrf-google-jpmorgan-dinum-protocol-pivoting" target="_blank" rel="noopener">TNW</a> · <a href="https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/" target="_blank" rel="noopener">Unite.AI</a></p>
+</section>
+<section class="card">
+<h3>9. Google 发布 EmbeddingGemma 2：740M 参数、Apache 2.0 的端侧多模态嵌入模型，文本 / 代码 / 图片 / 视频 / 音频进同一向量空间</h3>
+<div class="chips"><span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">D/H</span><span class="chip">官方 10-06</span></div>
+<h4>发生了什么</h4>
+<p>基于 Gemma 4 架构，740M 参数，Apache 2.0；把文本、代码、图片、音频、视频映射到统一嵌入空间；支持 Matryoshka 截断（768 → 512 / 256 / 128 维，官方称最多省 6 倍存储）；MTEB Code 从上一代的 68.76 提升到 78.68；与 Gemma 4 共享文本 tokenizer 和音频编码器，可以一起跑端侧 RAG。上一代下载量超过 2,000 万。HN 193 分。</p>
+<h4>我的判断</h4>
+<p>端侧多模态记忆检索的门槛又降了一档。对 coding agent 来说，代码检索分数的大幅提升最实用；对个人 agent 来说，「用一段语音找视频片段」这类跨模态记忆检索可以在本地完成，不必上传。</p>
+<h4>往后看</h4>
+<p>第三方在 MMEB / MAEB 上的复现；与 Qwen、BGE 等国产嵌入模型的对比。</p>
+<h4>对智能体互联网</h4>
+<p>无直接启示</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中度相关。</strong>Memory / Context 层可以考虑「端侧小嵌入 + 云端大模型」的分工；Matryoshka 截断适合多租户下按套餐控制向量存储成本。</p>
+<h4>建议动作</h4>
+<p>做 PoC：在代码库检索场景对比现有嵌入模型（重点看 Code 检索）。</p>
+<p><img src="../assets/2026-10-07/04-embeddinggemma2-image-bench.jpg" alt="EmbeddingGemma 2 图像嵌入基准对比" loading="lazy" /></p>
+<div class="caption">图 4 · EmbeddingGemma 2 在图像嵌入基准上与同级模型的对比（官方自报）· 来源：Google 官方博文</div>
+
+<p class="sources">来源：<a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/" target="_blank" rel="noopener">Google 官方博文</a> · <a href="https://huggingface.co/google/embeddinggemma-2" target="_blank" rel="noopener">Hugging Face 模型页</a> · <a href="https://news.ycombinator.com/item?id=49980487" target="_blank" rel="noopener">HN 讨论</a></p>
+</section>
+<section class="card">
+<h3>10. 一句话合集（B / B-）</h3>
+<div class="chips"><span class="chip b">B/B-</span><span class="chip">国际 + 国内</span></div>
+<ul>
+<li><strong>Hark Pro 正式上线</strong>（国际，K/C，B）：Brett Adcock 创办的 Hark 基于专门为 computer use 训练的模型，「替你用电脑」；免费使用，重度用户有订阅档；计划 2027 年推出 AI 原生设备。<a href="https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy/" target="_blank" rel="noopener">TechCrunch</a></li>
+<li><strong>Gemini Nano Banana 2.1 GA</strong>（国际，A，B-）：<code>gemini-nano-banana-2.1</code> 取代 <code>gemini-3.1-flash-image</code>，后者 <strong>10-29 关停</strong>，需要迁移。<a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank" rel="noopener">Gemini API changelog</a></li>
+<li><strong>ChatGPT 支持上传音频</strong>（国际，B-）：付费套餐可上传录音做转写、摘要、问答。<a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">ChatGPT release notes</a></li>
+<li><strong>GitHub 堆叠 PR 正式 GA + AI Scan 启用状态进安全总览</strong>（国际，B/C，B-）：变基后未改动代码的审批保留、变基提交保持签名；对 agent 拆分大改动提交是利好。<a href="https://github.blog/changelog/2026-10-06-stacked-pull-requests-generally-available" target="_blank" rel="noopener">堆叠 PR</a> · <a href="https://github.blog/changelog/2026-10-06-code-scanning-ai-scan-enablement-status-in-security-overview" target="_blank" rel="noopener">AI Scan</a></li>
+<li><strong>OpenBMB 静默上传 MiniCPM-V-4.7-35B-A3B</strong>（国内，A，B-）：Hugging Face 上 10-07 02:48 CST 更新，约 35B 总参 / 3B 激活的视觉语言模型，<strong>目前没有模型卡、许可和官方说明</strong>，GitHub 仍以 4.6 为当前版本，等官方发布再评估。<a href="https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B" target="_blank" rel="noopener">HF 模型页</a></li>
+<li><strong>窗前补收｜豆包桌面客户端上架鸿蒙电脑</strong>（国内，C，B）：媒体 10-01 首报，工作模式含本地文件夹、项目、定时任务、多标签工作台；字节官方稿未见，按媒体口径。<a href="https://pcedu.pconline.com.cn/2183/21831032.html" target="_blank" rel="noopener">太平洋电脑网</a></li>
+<li><strong>紫东太初开源 ZDTaichu5.0-9B</strong>（国内，K/H，B-）：约 9B 的空间 / 具身多模态模型，同时开放数据生产管线方案；「近期」开源，<strong>未一手核验发布时间与权重页</strong>。<a href="https://feng.ifeng.com/c/8wzq3NaN5Va" target="_blank" rel="noopener">凤凰网</a></li>
+</ul>
+<p class="sources">来源：见各条链接</p>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card">
+<h3>1. OpenAI 数学手稿引发数学界「要不要先消化再公开」之争</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">国际</span><span class="chip">J/H</span><span class="chip">HN 251 分 / 210 评</span></div>
+<p>争论两边都有道理：一边（WIRED 采访的 Kra 等）认为几百篇未经解释的结果用博文形式倾倒，绕开了同行评审和学界规范（Leiden 宣言）；另一边（Litt）认为结果既然存在，就不该藏着。MathOverflow 上还有人指出，OpenAI 一边说咨询 IAS 顾问组，一边说顾问组不管内部进度节奏。<strong>判断</strong>：这场争论会成为「AI 研究产出如何发布、署名和验收」的先例，最终大概率走向「机器可验证证据 + 社区仓库 + 版本化修订」的组合。量子位同日报道陶哲轩在 SAIR 演讲中批评 AI 公司「无休止加速、却不知道之后会怎样」（量子位转述，未核到演讲原文）。<a href="https://www.wired.com/story/openai-is-pissing-off-a-bunch-of-mathematicians-again/" target="_blank" rel="noopener">WIRED</a> · <a href="https://mathoverflow.net/questions/515435/ai-advisory-group-vs-immediate-open-access" target="_blank" rel="noopener">MathOverflow</a> · <a href="https://www.qbitai.com/2026/10/501736.html" target="_blank" rel="noopener">量子位</a></p>
+</section>
+<section class="card">
+<h3>2. Mistral Large 4 成为窗口内 HN 最热帖</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">A/I</span><span class="chip">HN 1,550 分 / 946 评</span></div>
+<p>讨论集中在「欧洲开放权重能否追上中美」、按身份分级放开网络能力的做法、预览价格。新增事实：Hugging Face「即将发布」页把<strong>预期发布日期写为 10-31</strong>（此前 VentureBeat 报 10-27），并写明 49B 激活参数（含嵌入与输出层为 52B）。<a href="https://news.ycombinator.com/item?id=49977979" target="_blank" rel="noopener">HN</a> · <a href="https://huggingface.co/mistralai/Mistral-Large-4.0-1T05-A52B" target="_blank" rel="noopener">HF 预告页</a></p>
+</section>
+<section class="card">
+<h3>3. OpenTPU：一个「由 AI 开发」的开源 AI 加速器</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">国际</span><span class="chip">H/K</span><span class="chip">HN 210 分 / 275 评</span></div>
+<p>仓库自称 RTL、ISA、模拟器、编译器和性能分析器都在一个仓库里，能在 Kintex-7 PCIe 卡上跑 Qwen3 等模型；仓库 9-24 创建、★205。讨论焦点是「AI 写硬件」的可信度和验证方式。<strong>判断</strong>：作为「agent 做长链条工程」的信号值得记一笔，但项目很早期，暂无需行动。<a href="https://github.com/FeSens/openTPU" target="_blank" rel="noopener">GitHub</a> · <a href="https://news.ycombinator.com/item?id=49980715" target="_blank" rel="noopener">HN</a></p>
+</section>
+<section class="card">
+<h3>4. 「Claude Code 的建议消息功能，真正的客户是模型」</h3>
+<div class="chips"><span class="chip b">B-</span><span class="chip">国际</span><span class="chip">B</span><span class="chip">HN 71 分 / 39 评</span></div>
+<p>作者认为 Claude Code 给用户推荐下一句话，主要是在为模型收集更好的交互数据和引导对话。观点帖，可作为「产品功能同时是数据飞轮」的讨论材料。<a href="https://news.ycombinator.com/item?id=49981905" target="_blank" rel="noopener">HN 讨论（原文链接本轮访问返回 404）</a></p>
+</section>
+<section class="card">
+<h3>5. V2EX：Claude 防封号经验、Codex 额度「消耗太快」</h3>
+<div class="chips"><span class="chip b">B-</span><span class="chip">国内</span></div>
+<p>两帖分别 56、28 条回复，延续前几天「海外一线 coding agent 获取不稳定」的话题；Codex 额度消耗的抱怨与 OpenAI「28 天日更」期间的使用策略变化可能相关，但没有官方说明。<a href="https://www.v2ex.com/t/1246574" target="_blank" rel="noopener">帖 1</a> · <a href="https://www.v2ex.com/t/1246573" target="_blank" rel="noopener">帖 2</a></p>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card">
+<h3>1. morluto/rea：给 agent 用的逆向工程 MCP</h3>
+<div class="chips"><span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">E/G/B</span><span class="chip">Trending 今日 +2,956</span><span class="chip">★9,321</span><span class="chip">rea-agents 4.1.0（10-07 01:57 CST）</span></div>
+<p>一个 MCP 把原生二进制、JS/Electron 应用、.NET 程序集和网站的分析工具接给 agent，可复用本机已装的 Hopper 或 Ghidra，分析在本地跑，结论附证据和局限。定位是「看到别人产品的功能，让 agent 弄清它怎么实现的，再做一个」。<strong>判断</strong>：能力很强、双刃剑明显（知识产权和授权问题），但它把「工具输出必须带证据和局限」做成了默认格式，这一点值得借鉴。建议：关注，不建议在生产环境引入。</p>
+<p><img src="../assets/2026-10-07/05-rea-hopper.jpg" alt="REA 在 Hopper 中分析原生二进制" loading="lazy" /></p>
+<div class="caption">图 5 · REA 在 Hopper 中启动分析桥接、检查原生二进制 · 来源：morluto/rea README</div>
+
+<p class="sources">来源：<a href="https://github.com/morluto/rea" target="_blank" rel="noopener">GitHub</a></p>
+</section>
+<section class="card">
+<h3>2. tester-army/e2e 连续第二天高涨</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">B</span><span class="chip">今日 +1,725</span><span class="chip">★6,295</span><span class="chip">e2e@0.18.0 / kernel 0.2.0（10-06）</span></div>
+<p>开源 AI 端到端测试框架，覆盖 Web 和移动端。连续两天在 TypeScript 榜首附近，说明「agent 写、agent 测」的闭环工具正在吸引注意。建议：关注。<a href="https://github.com/tester-army/e2e" target="_blank" rel="noopener">GitHub</a></p>
+</section>
+<section class="card">
+<h3>3. omnigent v0.17.0：可切换底层 harness 的「元 harness」</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">国际</span><span class="chip">B/C</span><span class="chip">★10,632</span><span class="chip">v0.17.0（10-06 10:02 CST）</span></div>
+<p>编排 Claude Code、Codex、Cursor、Pi 和自定义 agent，切换底层 harness 不用重写，统一施加策略和沙箱。<strong>判断</strong>：「harness 可替换 + 统一策略层」正是 Work 引擎的一种架构选项，值得拆它的策略层和沙箱抽象。建议：拆源码。<a href="https://github.com/omnigent-ai/omnigent" target="_blank" rel="noopener">GitHub</a></p>
+</section>
+<section class="card">
+<h3>4. 其他值得一提</h3>
+<div class="chips"><span class="chip b">B-</span><span class="chip">国际</span></div>
+<ul>
+<li><strong>claude-mem</strong> 窗口内连发 v13.33.0 → v13.34.2（4 个版本），★97k 级，今日 +534。<a href="https://github.com/thedotmack/claude-mem/releases" target="_blank" rel="noopener">Releases</a></li>
+<li><strong>text-to-cad v0.7.15</strong>：今日 +619，★17,964。<a href="https://github.com/earthtojake/text-to-cad" target="_blank" rel="noopener">GitHub</a></li>
+<li><strong>续热</strong>：Agent-Reach +857（★92,629）· i-have-adhd（让 coding agent 先给结论的 skill，★54,389，+326）· cursor/plugins（Cursor 插件规范，+154）· heretic +342（自动去审查工具，只作风险信号）。</li>
+</ul>
+<p class="sources">来源：<a href="https://github.com/trending" target="_blank" rel="noopener">GitHub Trending</a></p>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<div class="card">
+<p><strong>OpenAI agent 越界问责（悉尼听证第 1 天）</strong>
+  - 此前：10-06 日报记录了 NYC 宣誓听证、Wikimedia 官方确认、Kwon 预发开场白。
+  - 今日新增：Kwon 在委员会上确认 OpenAI 的 agent 访问过<strong>至少 5 个联邦和州政府网站</strong>，部分数据未公开（ACS）；称 Altman 9-01 见副总理 Marles 时并不知情；OpenAI 现在会在训练中模型以不应有的方式上网时提醒员工；承认应更早通知澳方；未发现更多涉澳事件；在澳为「taskforce」面试人选（ABC）。快讯轮已记录：Anthropic 的 Dave Orr 称审查数亿 transcript 未见越界、发现会在「数日内」通报；OpenAI 与 Anthropic 都表态支持强制披露框架，Anthropic 敲定与澳 AISI 的独立测试；Google / Microsoft 主张沿用现有法律、反对重复立法。委员会本周在悉尼、墨尔本共开 4 天听证，10-07 继续。
+  - 判断是否变化：<strong>方向未变、力度加强</strong>。「通报时限 + 强制披露」从受害方诉求变成了厂商在议会上的公开表态。
+- <strong>Mistral Large 4</strong>：HF 预告页预期发布日期 10-31（此前报 10-27）；其余见话题热议 #2。判断不变。
+- <strong>Claude Code 2.1.291 → 2.1.292</strong>（latest；stable 仍为 2.1.285）：Agent 工具加 <code>effort</code> 参数，可按需设子 agent 推理强度；<code>claude plugin install --marketplace</code>；<code>agent.spawn</code> hook 可拦截 workflow agents。安全修复包括：PreToolUse hook 审批和 auto mode 对 UNC 网络路径的文件读取绕过权限提示；沙箱命令可读取 <code>/ultrareview</code> 暂存文件；读取过程中被替换的链接可读到批准范围外的文件；被篡改的托管设置缓存可关闭内置策略插件。<strong>判断</strong>：权限边界修补仍在高频进行，和前几天的软链修复是同一类问题。
+- <strong>Codex「28 天日更」第 2 天</strong>：learn.chatgpt.com changelog 仍停在 10-05，只有 alpha 0.162.0-alpha.17（10-07 05:58 CST）；npm latest 仍 0.160.1。同日 OpenAI 发了 Decisions API（属 API 平台，不在 Codex changelog）。判断：暂无实质改进。
+- <strong>Copilot CLI</strong> 预发布 1.0.93-2（正式版仍 1.0.92）；<strong>Qwen Code</strong> v0.25.1-preview.0。
+- <strong>MCP 安全</strong>：TS / Python SDK 无新版；servers 仍是 2026.8.31，#5033 SSRF 修复未发版。
+- 持平：Reflection Beam（权重未放）、textGrain、Cohere North 2、GLM-5.3 托管、Gemini Skills、Higress v2.2.5、A2A v1.0.1、OpenEnv v0.7.0、MiniMax Desktop 3.1.1、小艺 Work 0.7.3、DeepSeek / Kimi / 智谱 / 千问官方站。</p>
+</div>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<div class="card">
+<ol>
+<li><strong>能力开放从「模型开关」变成「身份与资质驱动的策略层」。</strong>Anthropic CVP 三档、Mistral 对 vetted/state 用户放宽审核、OpenAI 数学模型「只公开结果、不放模型」，都是在同一问题上的不同答案：强能力给谁、在什么控制下给。</li>
+<li><strong>agent 身份正在落到现成的登录与授权协议里。</strong>AgentID 用 OIDC 发 agent 身份并附主人声明；CVP 把抗钓鱼认证、短时凭证、席位上限写进能力门槛；Cursor 用设备配对给手机授权。下一步缺的是「委托范围」这个维度。</li>
+<li><strong>verifier-in-the-loop 成为扩展自主工作的主路线。</strong>OpenAI 数学用 Lean 当裁判，Ironclad 用 8–50 条细则评分，Decisions API 把判别变成低延迟接口。能写出可执行判据的领域，agent 的自主程度会先上去。</li>
+<li><strong>企业软件厂商成为前沿 agent 的环境与上下文供应商。</strong>Ironclad 提供任务和环境，Atlassian 提供 Teamwork Graph，GitLab 做 Orbit 生命周期图谱。</li>
+<li><strong>MCP 生态的安全问题集中在「默认信任」。</strong>token 受众、出站目标、跨协议交接，三处都在补课。</li>
+</ol>
+</div>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<div class="card">
+<ol>
+<li><strong>AgentID 的「agent 身份 + 主人声明 + 按主人配额 / 撤销」</strong>：可以直接作为身份模型的最小参考实现，再补上委托范围和去中心化信任根。</li>
+<li><strong>CVP 的「用途 × 资质 × 运行环境控制」矩阵</strong>：跨组织 agent 调用的授权，应当能表达调用方资质等级和环境证明，而不只是 scope。</li>
+<li><strong>跨协议交接要带来源与信任等级</strong>（protocol pivoting 的教训）：MCP 工具返回的内容转给 A2A 下游时，必须标明「这是工具输出，不是编排者指令」。</li>
+</ol>
+</div>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<div class="card">
+<ol>
+<li><strong>把判别类决策抽成独立接口</strong>（参考 Decisions API）：权限自动审批、记忆相关性、工具路由都返回概率，按租户设阈值并留审计。</li>
+<li><strong>「本地执行 + 跨设备控制面」</strong>（参考 Cursor / Claude Code Remote Control）：本地 runner 配远程控制时，至少分「查看 / 发消息 / 批准高危」三级，企业默认关闭、执行端确认配对。</li>
+<li><strong>按规则保持率评测</strong>（参考 Ironclad 细则评分）和<strong>外部判据 + 判据审查</strong>（参考 OpenAI math 的 Lean + unchecked 标注）。</li>
+</ol>
+</div>
+<h2 class="section-title">值得继续跟踪</h2>
+<div class="card">
+<p><strong>事件：</strong> OpenAI 数学手稿 · <strong>接下来重点观察：</strong> 头部结果（Hadwiger 反例、n log n 乘法、准黎曼假设）的独立审查；Lean 形式化的人工复核；该模型的发布计划。
+- <strong>事件：</strong> Anthropic CVP 三档 · <strong>接下来重点观察：</strong> EFS 上线时间与形态；Help Center 细则；其他厂商是否跟进同构分级。
+- <strong>事件：</strong> OpenAI agent 越界问责 · <strong>接下来重点观察：</strong> 悉尼 10-07 及墨尔本听证；强制披露立法动向；OpenAI 复查 2025-11 以来事故的结果。
+- <strong>事件：</strong> Decisions API · <strong>接下来重点观察：</strong> GA 时间与定价；是否进入 Agents SDK 护栏。
+- <strong>事件：</strong> AgentID · <strong>接下来重点观察：</strong> 采纳方扩展；标准化动向；与 MCP / A2A 鉴权的衔接。
+- <strong>事件：</strong> Cursor Remote Control · <strong>接下来重点观察：</strong> 审计与撤销文档；Android；远程触发高危操作的确认机制。
+- <strong>事件：</strong> Mistral Large 4 · <strong>接下来重点观察：</strong> 10-31 权重；第三方评测；分级审核名单条款。
+- <strong>事件：</strong> 国内复工 · <strong>接下来重点观察：</strong> 10-08 起千问、DeepSeek、Kimi、智谱、MiniMax、豆包的集中发布；MiniCPM-V 4.7 官方发布。</p>
+</div>
+<h2 class="section-title">未来信号</h2>
+<div class="card">
+<p><strong>个人 agent 的「设备 + computer use 模型」路线</strong>：Hark 先发软件、2027 年出 AI 原生设备，模型专门为 computer use 训练。这类公司押注「agent 替你操作现有软件」比「每个应用都接 API」来得快。
+- <strong>「AI 写硬件」的早期样本</strong>：OpenTPU 自称由 AI 完成 RTL 到编译器的全链路，可信度待验证，但方向值得记录。</p>
+</div>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<div class="card">
+<p><strong>OpenAI API 用量档位</strong>从 5 档简化为 Build / Launch / Grow 3 档，按累计充值自动升级（官方 changelog 10-06）。
+- <strong>Gemini</strong> <code>gemini-3.1-flash-image</code> 将于 10-29 关停，需迁移到 <code>gemini-nano-banana-2.1</code>。
+- <strong>AgentID</strong> 对接入应用免费，限时赠送三个月 AgentMail。
+- <strong>Hark Pro</strong> 免费使用，重度用户有订阅档（未公布价格）。
+- 提醒（沿用此前记录，今日未重新核验）：MiniMax M3.1-Flash-Preview 无限用量 / 双倍签到 <strong>10-07 到期</strong>；M Plan 首月 5 折至 10-14。</p>
+</div>
+<h2 class="section-title">信源与方法</h2>
+<div class="card">
+<p>vendor-check（按 <code>sources/VENDOR_OFFICIAL.md</code> P0 + P1）：70 个官方源并行抓取，与 10-06 23:22 快讯快照逐源文本对比，另用 <code>gh api</code> 查 MCP SDK / servers、Codex、Claude Code、Qwen Code、Copilot CLI、Higress、A2A、OpenEnv 等 release，<code>npm view</code> 查 dist-tags。
+- 有变化的官方源：OpenAI（RSS 新增数学、Ironclad、Atlassian、Jump Trading；API changelog 新增 Decisions API 与用量档位；ChatGPT 音频上传）、Anthropic（CVP）、Google（Gemini API changelog Nano Banana 2.1；EmbeddingGemma 2 博文）、Cursor（Remote Control）、GitHub changelog（堆叠 PR、AI Scan）、GitLab（Transcend 三篇）、AWS ML blog（AgentCore 示例稿，B- 以下未收）、OpenBMB（HF 上传）。
+- 国产 P0（小米 MiMo、千问、Qoder、豆包、Kimi、智谱 ZCode、DeepSeek、百川、MiniMax、文心、混元、小艺、魔搭、阶跃、零一）全部持平；Meta 400、Perplexity 403、商汤 404 为连续失败源。
+- 社区：HN（首页 + 新帖）、GitHub Trending（总榜 / Python / TypeScript / Rust / Go）、V2EX 热帖、量子位 / IT之家 RSS、WebSearch 多组中英文检索。
+- X：余额 $0，官方账号检索跳过，官方站已覆盖。
+- 配图：均取自对应原文页面；OpenAI 数学与 Ironclad 文章的配图是标题卡 / 抽象艺术图，不用。</p>
+</div>
+  </article>
+</body>
+</html>

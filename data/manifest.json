@@ -1,344 +1,351 @@
 {
-  "updatedAt": "2026-10-06T08:30:00+08:00",
-  "title": "AI Intelligence Radar",
-  "dailies": [
-    {
-      "id": "2026-10-06",
-      "date": "2026-10-06",
-      "title": "AI Intelligence Daily · 2026-10-06",
-      "summary": "agent 越界进入第三方取证与宣誓听证：Wikimedia 确认 + NYC 听证 + 悉尼问询；Reflection Beam 501B；Cohere North 2；OpenAI 欧盟水印；MCP token audience 通告",
-      "href": "reports/2026-10-06.html"
-    },
-    {
-      "id": "2026-10-05",
-      "date": "2026-10-05",
-      "title": "AI Intelligence Daily · 2026-10-05",
-      "summary": "agent 代价与问责：OpenAI 入侵走向诉讼监管；MiniMax OpenAgentCore；Higress MCP 鉴权；硬预算上限热议；cloudflare-os 能力式授权",
-      "href": "reports/2026-10-05.html"
-    },
-    {
-      "id": "2026-10-04",
-      "date": "2026-10-04",
-      "title": "AI Intelligence Daily · 2026-10-04",
-      "summary": "Claude Code 2.1.289 agent.spawn；Pi v1.0.1 Release；docs-vs-memory / skills heat；国内 Desktop 静默",
-      "href": "reports/2026-10-04.html"
-    },
-    {
-      "id": "2026-10-03",
-      "date": "2026-10-03",
-      "title": "AI Intelligence Daily · 2026-10-03",
-      "summary": "Claude 2.1.288；Copilot code review API；openrig v0.6.4；GPT-6 指南；openJiuwen 路由",
-      "href": "reports/2026-10-03.html"
-    },
-    {
-      "id": "2026-10-02",
-      "date": "2026-10-02",
-      "title": "AI Intelligence Daily · 2026-10-02",
-      "summary": "Copilot Computer Use；Claude 2.1.287 Mods；JB Air EAP；MiniMax CLI 0.6.x；Manus 2.0.3；Pi 1.0",
-      "href": "reports/2026-10-02.html"
-    },
-    {
-      "id": "2026-10-01",
-      "date": "2026-10-01",
-      "title": "AI Intelligence Daily · 2026-10-01",
-      "summary": "Gemini 4 Argon Fairwind；Manus Flex BYOK；Embed5；Code 2.1.286；Pi↔MCP；openrig 0.6.3",
-      "href": "reports/2026-10-01.html"
-    },
-    {
-      "id": "2026-09-30",
-      "date": "2026-09-30",
-      "title": "AI Intelligence Daily · 2026-09-30",
-      "summary": "DevDay Sol+dots；DeepSeek/MiniMax Desktop absorb；Manus 2.0；openrig；Claude Code 2.1.285",
-      "href": "reports/2026-09-30.html"
-    },
-    {
-      "id": "2026-09-29",
-      "date": "2026-09-29",
-      "title": "AI Intelligence Daily · 2026-09-29",
-      "summary": "Sonnet 5.5+Code 2.1.284；Team Bots/Air Teams/OAS；MiniMax Desktop 3.0.74；开源续涨",
-      "href": "reports/2026-09-29.html"
-    },
-    {
-      "id": "2026-09-28",
-      "date": "2026-09-28",
-      "title": "AI Intelligence Daily · 2026-09-28",
-      "summary": "MiniMax M3.1-Flash-Preview 进 Code/Token Plan；Agent 问责叙事；paperclip/hindsight/orca；Desktop shipping 静默",
-      "href": "reports/2026-09-28.html"
-    },
-    {
-      "id": "2026-09-27",
-      "date": "2026-09-27",
-      "title": "AI Intelligence Daily · 2026-09-27",
-      "summary": "DeepSeek DSec 生产级 Sandbox；BBC×OpenAI 政府站点续链；paperclip/hindsight 续暴涨；一线 Desktop shipping 静默",
-      "href": "reports/2026-09-27.html"
-    },
-    {
-      "id": "2026-09-26",
-      "date": "2026-09-26",
-      "title": "AI Intelligence Daily · 2026-09-26",
-      "summary": "OpenAI misalignment 53图/agent spam；Claude Code 2.1.283；GH Memory×autofix；Copilot 默认启用；MiniMax 0.5.5",
-      "href": "reports/2026-09-26.html"
-    },
-    {
-      "id": "2026-09-25",
-      "date": "2026-09-25",
-      "title": "AI Intelligence Daily · 2026-09-25",
-      "summary": "Muse Mac CUA 现已可用；Gemini Live Avatar；小艺 Work 0.7.2；GitHub proof of presence；Claude Code 2.1.282",
-      "href": "reports/2026-09-25.html"
-    },
-    {
-      "id": "2026-09-24",
-      "date": "2026-09-24",
-      "title": "AI Intelligence Daily · 2026-09-24",
-      "summary": "Cursor Rollouts+Security；Qwen Intelligence；DeepMind Private Memory；Copilot Local sandbox；Kimi Desktop 1.0.3",
-      "href": "reports/2026-09-24.html"
-    },
-    {
-      "id": "2026-09-23",
-      "date": "2026-09-23",
-      "title": "AI Intelligence Daily · 2026-09-23",
-      "summary": "Opus 5.5；GPT-6 Sol/Luna；Kimi Browser Extension；JetBrains Air；Step Code 0.1.0；小艺 0.7.1",
-      "href": "reports/2026-09-23.html"
-    },
-    {
-      "id": "2026-09-22",
-      "date": "2026-09-22",
-      "title": "AI Intelligence Daily · 2026-09-22",
-      "summary": "MiMo-V2.6 开源+Desktop；Grok 4.7；Kimi Code Desktop；MiniMax 0.5.1；ZCode 3.14.1",
-      "href": "reports/2026-09-22.html"
-    },
-    {
-      "id": "2026-09-21",
-      "date": "2026-09-21",
-      "title": "AI Intelligence Daily · 2026-09-21",
-      "summary": "Step 5 Preview；Google AX v0.3.0；Qwen-Image-2.1；MiniMax Code 0.5.0；Qoder Credits 系数校准",
-      "href": "reports/2026-09-21.html"
-    },
-    {
-      "id": "2026-09-20",
-      "date": "2026-09-20",
-      "title": "AI Intelligence Daily · 2026-09-20",
-      "summary": "ZCode 致歉→3.14.0；Plugin4Shell；Qwen LiveTranslate；Qoder Flash 限免；Claude Code 2.1.278；MiniMax/BrowserSkill/CUA-S1",
-      "href": "reports/2026-09-20.html"
-    },
-    {
-      "id": "2026-09-19",
-      "date": "2026-09-19",
-      "title": "AI Intelligence Daily · 2026-09-19",
-      "summary": "Muse Mac+connectors；Claude Projects+AGENTS.md；MiniMax Code 开源；Qwen Omni；华为云 Agentic Cloud；Accenture 评估；Copilot CCR",
-      "href": "reports/2026-09-19.html"
-    },
-    {
-      "id": "2026-09-18",
-      "date": "2026-09-18",
-      "title": "AI Intelligence Daily · 2026-09-18",
-      "summary": "Copilot Runtime→Rust；BrowserSkill CLI 0.3.0；Astra for Law；GitLab Duo /goal+MCP；Computer effort",
-      "href": "reports/2026-09-18.html"
-    },
-    {
-      "id": "2026-09-17",
-      "date": "2026-09-17",
-      "title": "AI Intelligence Daily · 2026-09-17",
-      "summary": "小艺 Work 0.7.0；BrowserSkill 0.3.0；NaviX 开售；Grok Memory；Mistral×Mozilla；Sponsored Agents",
-      "href": "reports/2026-09-17.html"
-    },
-    {
-      "id": "2026-09-16",
-      "date": "2026-09-16",
-      "title": "AI Intelligence Daily · 2026-09-16",
-      "summary": "飞书团队智能体；讯飞 AStudio；Gemini 3.8 Live；HP×Perplexity；CobbleDB agents；Cline Desktop；Claude Mods",
-      "href": "reports/2026-09-16.html"
-    },
-    {
-      "id": "2026-09-15",
-      "date": "2026-09-15",
-      "title": "AI Intelligence Daily · 2026-09-15",
-      "summary": "Portable Computer Windows；豆包 SAEP；Pace 遇中国外交部与 Huang×Trump；Andon Pion",
-      "href": "reports/2026-09-15.html"
-    },
-    {
-      "id": "2026-09-14",
-      "date": "2026-09-14",
-      "title": "AI Intelligence Daily · 2026-09-14",
-      "summary": "Pace 被 Sacks/特朗普政治拆解；MCP SEP-2640 Skills；DeepSeek Pro 9/14 续供；Perplexity×Astra 客户文",
-      "href": "reports/2026-09-14.html"
-    },
-    {
-      "id": "2026-09-13",
-      "date": "2026-09-13",
-      "title": "AI Intelligence Daily · 2026-09-13",
-      "summary": "Pace the frontier：Amodei 嵌入评估 + Altman/Musk/HF 级联；Real-SWE 私仓评测；DeepSeek KV 报告",
-      "href": "reports/2026-09-13.html"
-    },
-    {
-      "id": "2026-09-12",
-      "date": "2026-09-12",
-      "title": "AI Intelligence Daily · 2026-09-12",
-      "summary": "RubyGems/Hawley/Anthropic 把 Agent 安全推上国会与供应链；Cursor Projects、Quick、Fusion、MCP Apps 产品化",
-      "href": "reports/2026-09-12.html"
-    },
-    {
-      "id": "2026-09-11",
-      "date": "2026-09-11",
-      "title": "AI Intelligence Daily · 2026-09-11",
-      "summary": "OpenAI Agents API 把 Codex harness 托管化；DeepSeek Flash GA + Harness；OpenRouter Shell；商务部回应 AA26",
-      "href": "reports/2026-09-11.html"
-    },
-    {
-      "id": "2026-09-10",
-      "date": "2026-09-10",
-      "title": "AI Intelligence Daily · 2026-09-10",
-      "summary": "Anthropic 对齐事故评估 + AA26-251A 蒸馏通告；Kimi Remote Control 与 DeepSeek Flash 转正定价",
-      "href": "reports/2026-09-10.html"
-    },
-    {
-      "id": "2026-09-09",
-      "date": "2026-09-09",
-      "title": "AI Intelligence Daily · 2026-09-09",
-      "summary": "万级 Agent 冲击 Navier–Stokes；Meta Muse 与小米 MiMo Desktop 把 Personal/桌面 Agent 推到产品默认",
-      "href": "reports/2026-09-09.html"
-    },
-    {
-      "id": "2026-09-08",
-      "date": "2026-09-08",
-      "title": "AI Intelligence Daily · 2026-09-08",
-      "summary": "真实经营 Agent 失控实验 vs 办公多人工作台/长程 Runtime：写权限与组织级 Agent 同日对撞",
-      "href": "reports/2026-09-08.html"
-    },
-    {
-      "id": "2026-09-07",
-      "date": "2026-09-07",
-      "title": "AI Intelligence Daily · 2026-09-07",
-      "summary": "Agent 失控进入监管与人权话语；OpenAI 披露 3.1 agent-workdays 与 Alien Mind",
-      "href": "reports/2026-09-07.html"
-    }
-  ],
-  "events": [
-    {
-      "id": "mcp-skills-sep-2640",
-      "title": "MCP Skills Extension (SEP-2640)",
-      "status": "tracking",
-      "href": "events/mcp-skills-sep-2640.html"
-    },
-    {
-      "id": "pace-the-frontier",
-      "title": "Pace the Frontier / Embedded Evaluators",
-      "status": "tracking",
-      "href": "events/pace-the-frontier.html"
-    },
-    {
-      "id": "aws-mcp-apps",
-      "title": "AWS MCP Apps / AgentCore",
-      "status": "tracking",
-      "href": "events/aws-mcp-apps.html"
-    },
-    {
-      "id": "cognition-fusion",
-      "title": "Cognition Fusion",
-      "status": "tracking",
-      "href": "events/cognition-fusion.html"
-    },
-    {
-      "id": "amazon-quick-desktop",
-      "title": "Amazon Quick Desktop GA",
-      "status": "tracking",
-      "href": "events/amazon-quick-desktop.html"
-    },
-    {
-      "id": "cursor-projects",
-      "title": "Cursor Projects",
-      "status": "tracking",
-      "href": "events/cursor-projects.html"
-    },
-    {
-      "id": "hawley-openai-hf",
-      "title": "Hawley 调查 OpenAI×HF",
-      "status": "tracking",
-      "href": "events/hawley-openai-hf.html"
-    },
-    {
-      "id": "rubygems-openai-agents",
-      "title": "RubyGems × OpenAI Agent 复盘",
-      "status": "tracking",
-      "href": "events/rubygems-openai-agents.html"
-    },
-    {
-      "id": "openai-agents-api",
-      "title": "OpenAI Agents API 公测",
-      "status": "tracking",
-      "href": "events/openai-agents-api.html"
-    },
-    {
-      "id": "openrouter-shell",
-      "title": "OpenRouter Shell / Files / In-Region",
-      "status": "tracking",
-      "href": "events/openrouter-shell.html"
-    },
-    {
-      "id": "kimi-remote-control",
-      "title": "Kimi Remote Control",
-      "status": "tracking",
-      "href": "events/kimi-remote-control.html"
-    },
-    {
-      "id": "deepseek-v41-flash",
-      "title": "DeepSeek V4.1 Flash 转正",
-      "status": "tracking",
-      "href": "events/deepseek-v41-flash.html"
-    },
-    {
-      "id": "aa26-251a-distillation",
-      "title": "AA26-251A 工业级蒸馏通告",
-      "status": "tracking",
-      "href": "events/aa26-251a-distillation.html"
-    },
-    {
-      "id": "anthropic-alignment-cyber",
-      "title": "Anthropic 对齐事故评估 / METR",
-      "status": "tracking",
-      "href": "events/anthropic-alignment-cyber.html"
-    },
-    {
-      "id": "xiaomi-mimo-desktop",
-      "title": "小米 MiMo Desktop 邀测",
-      "status": "tracking",
-      "href": "events/xiaomi-mimo-desktop.html"
-    },
-    {
-      "id": "openai-navier-stokes",
-      "title": "OpenAI Navier–Stokes 多 Agent 证明",
-      "status": "tracking",
-      "href": "events/openai-navier-stokes.html"
-    },
-    {
-      "id": "meta-muse",
-      "title": "Meta Muse Personal Agent",
-      "status": "tracking",
-      "href": "events/meta-muse.html"
-    },
-    {
-      "id": "openai-wiki-incident",
-      "title": "OpenAI Agent 越界 / 入侵问责事件链",
-      "status": "tracking",
-      "href": "events/openai-wiki-incident.html"
-    },
-    {
-      "id": "openai-research-intern",
-      "title": "OpenAI Research Intern → 2028 Automated Researcher",
-      "status": "tracking",
-      "href": "events/openai-research-intern.html"
-    },
-    {
-      "id": "bottleneck-autonomous-business",
-      "title": "Bottleneck Labs 自主商业 Agent 评测",
-      "status": "tracking",
-      "href": "events/bottleneck-autonomous-business.html"
-    },
-    {
-      "id": "argus-runtime",
-      "title": "Argus 长程 Agent Runtime",
-      "status": "tracking",
-      "href": "events/argus-runtime.html"
-    }
-  ]
+ "updatedAt": "2026-10-07T08:40:00+08:00",
+ "title": "AI Intelligence Radar",
+ "dailies": [
+  {
+   "id": "2026-10-07",
+   "date": "2026-10-07",
+   "title": "AI Intelligence Daily · 2026-10-07",
+   "summary": "能力按身份分级发放：Anthropic CVP 三档；OpenAI 722 篇数学手稿（Lean 形式化待复核）；Cursor 本地 agent 远程控制；Decisions API；AgentID 发 agent OIDC 身份",
+   "href": "reports/2026-10-07.html"
+  },
+  {
+   "id": "2026-10-06",
+   "date": "2026-10-06",
+   "title": "AI Intelligence Daily · 2026-10-06",
+   "summary": "agent 越界进入第三方取证与宣誓听证：Wikimedia 确认 + NYC 听证 + 悉尼问询；Reflection Beam 501B；Cohere North 2；OpenAI 欧盟水印；MCP token audience 通告",
+   "href": "reports/2026-10-06.html"
+  },
+  {
+   "id": "2026-10-05",
+   "date": "2026-10-05",
+   "title": "AI Intelligence Daily · 2026-10-05",
+   "summary": "agent 代价与问责：OpenAI 入侵走向诉讼监管；MiniMax OpenAgentCore；Higress MCP 鉴权；硬预算上限热议；cloudflare-os 能力式授权",
+   "href": "reports/2026-10-05.html"
+  },
+  {
+   "id": "2026-10-04",
+   "date": "2026-10-04",
+   "title": "AI Intelligence Daily · 2026-10-04",
+   "summary": "Claude Code 2.1.289 agent.spawn；Pi v1.0.1 Release；docs-vs-memory / skills heat；国内 Desktop 静默",
+   "href": "reports/2026-10-04.html"
+  },
+  {
+   "id": "2026-10-03",
+   "date": "2026-10-03",
+   "title": "AI Intelligence Daily · 2026-10-03",
+   "summary": "Claude 2.1.288；Copilot code review API；openrig v0.6.4；GPT-6 指南；openJiuwen 路由",
+   "href": "reports/2026-10-03.html"
+  },
+  {
+   "id": "2026-10-02",
+   "date": "2026-10-02",
+   "title": "AI Intelligence Daily · 2026-10-02",
+   "summary": "Copilot Computer Use；Claude 2.1.287 Mods；JB Air EAP；MiniMax CLI 0.6.x；Manus 2.0.3；Pi 1.0",
+   "href": "reports/2026-10-02.html"
+  },
+  {
+   "id": "2026-10-01",
+   "date": "2026-10-01",
+   "title": "AI Intelligence Daily · 2026-10-01",
+   "summary": "Gemini 4 Argon Fairwind；Manus Flex BYOK；Embed5；Code 2.1.286；Pi↔MCP；openrig 0.6.3",
+   "href": "reports/2026-10-01.html"
+  },
+  {
+   "id": "2026-09-30",
+   "date": "2026-09-30",
+   "title": "AI Intelligence Daily · 2026-09-30",
+   "summary": "DevDay Sol+dots；DeepSeek/MiniMax Desktop absorb；Manus 2.0；openrig；Claude Code 2.1.285",
+   "href": "reports/2026-09-30.html"
+  },
+  {
+   "id": "2026-09-29",
+   "date": "2026-09-29",
+   "title": "AI Intelligence Daily · 2026-09-29",
+   "summary": "Sonnet 5.5+Code 2.1.284；Team Bots/Air Teams/OAS；MiniMax Desktop 3.0.74；开源续涨",
+   "href": "reports/2026-09-29.html"
+  },
+  {
+   "id": "2026-09-28",
+   "date": "2026-09-28",
+   "title": "AI Intelligence Daily · 2026-09-28",
+   "summary": "MiniMax M3.1-Flash-Preview 进 Code/Token Plan；Agent 问责叙事；paperclip/hindsight/orca；Desktop shipping 静默",
+   "href": "reports/2026-09-28.html"
+  },
+  {
+   "id": "2026-09-27",
+   "date": "2026-09-27",
+   "title": "AI Intelligence Daily · 2026-09-27",
+   "summary": "DeepSeek DSec 生产级 Sandbox；BBC×OpenAI 政府站点续链；paperclip/hindsight 续暴涨；一线 Desktop shipping 静默",
+   "href": "reports/2026-09-27.html"
+  },
+  {
+   "id": "2026-09-26",
+   "date": "2026-09-26",
+   "title": "AI Intelligence Daily · 2026-09-26",
+   "summary": "OpenAI misalignment 53图/agent spam；Claude Code 2.1.283；GH Memory×autofix；Copilot 默认启用；MiniMax 0.5.5",
+   "href": "reports/2026-09-26.html"
+  },
+  {
+   "id": "2026-09-25",
+   "date": "2026-09-25",
+   "title": "AI Intelligence Daily · 2026-09-25",
+   "summary": "Muse Mac CUA 现已可用；Gemini Live Avatar；小艺 Work 0.7.2；GitHub proof of presence；Claude Code 2.1.282",
+   "href": "reports/2026-09-25.html"
+  },
+  {
+   "id": "2026-09-24",
+   "date": "2026-09-24",
+   "title": "AI Intelligence Daily · 2026-09-24",
+   "summary": "Cursor Rollouts+Security；Qwen Intelligence；DeepMind Private Memory；Copilot Local sandbox；Kimi Desktop 1.0.3",
+   "href": "reports/2026-09-24.html"
+  },
+  {
+   "id": "2026-09-23",
+   "date": "2026-09-23",
+   "title": "AI Intelligence Daily · 2026-09-23",
+   "summary": "Opus 5.5；GPT-6 Sol/Luna；Kimi Browser Extension；JetBrains Air；Step Code 0.1.0；小艺 0.7.1",
+   "href": "reports/2026-09-23.html"
+  },
+  {
+   "id": "2026-09-22",
+   "date": "2026-09-22",
+   "title": "AI Intelligence Daily · 2026-09-22",
+   "summary": "MiMo-V2.6 开源+Desktop；Grok 4.7；Kimi Code Desktop；MiniMax 0.5.1；ZCode 3.14.1",
+   "href": "reports/2026-09-22.html"
+  },
+  {
+   "id": "2026-09-21",
+   "date": "2026-09-21",
+   "title": "AI Intelligence Daily · 2026-09-21",
+   "summary": "Step 5 Preview；Google AX v0.3.0；Qwen-Image-2.1；MiniMax Code 0.5.0；Qoder Credits 系数校准",
+   "href": "reports/2026-09-21.html"
+  },
+  {
+   "id": "2026-09-20",
+   "date": "2026-09-20",
+   "title": "AI Intelligence Daily · 2026-09-20",
+   "summary": "ZCode 致歉→3.14.0；Plugin4Shell；Qwen LiveTranslate；Qoder Flash 限免；Claude Code 2.1.278；MiniMax/BrowserSkill/CUA-S1",
+   "href": "reports/2026-09-20.html"
+  },
+  {
+   "id": "2026-09-19",
+   "date": "2026-09-19",
+   "title": "AI Intelligence Daily · 2026-09-19",
+   "summary": "Muse Mac+connectors；Claude Projects+AGENTS.md；MiniMax Code 开源；Qwen Omni；华为云 Agentic Cloud；Accenture 评估；Copilot CCR",
+   "href": "reports/2026-09-19.html"
+  },
+  {
+   "id": "2026-09-18",
+   "date": "2026-09-18",
+   "title": "AI Intelligence Daily · 2026-09-18",
+   "summary": "Copilot Runtime→Rust；BrowserSkill CLI 0.3.0；Astra for Law；GitLab Duo /goal+MCP；Computer effort",
+   "href": "reports/2026-09-18.html"
+  },
+  {
+   "id": "2026-09-17",
+   "date": "2026-09-17",
+   "title": "AI Intelligence Daily · 2026-09-17",
+   "summary": "小艺 Work 0.7.0；BrowserSkill 0.3.0；NaviX 开售；Grok Memory；Mistral×Mozilla；Sponsored Agents",
+   "href": "reports/2026-09-17.html"
+  },
+  {
+   "id": "2026-09-16",
+   "date": "2026-09-16",
+   "title": "AI Intelligence Daily · 2026-09-16",
+   "summary": "飞书团队智能体；讯飞 AStudio；Gemini 3.8 Live；HP×Perplexity；CobbleDB agents；Cline Desktop；Claude Mods",
+   "href": "reports/2026-09-16.html"
+  },
+  {
+   "id": "2026-09-15",
+   "date": "2026-09-15",
+   "title": "AI Intelligence Daily · 2026-09-15",
+   "summary": "Portable Computer Windows；豆包 SAEP；Pace 遇中国外交部与 Huang×Trump；Andon Pion",
+   "href": "reports/2026-09-15.html"
+  },
+  {
+   "id": "2026-09-14",
+   "date": "2026-09-14",
+   "title": "AI Intelligence Daily · 2026-09-14",
+   "summary": "Pace 被 Sacks/特朗普政治拆解；MCP SEP-2640 Skills；DeepSeek Pro 9/14 续供；Perplexity×Astra 客户文",
+   "href": "reports/2026-09-14.html"
+  },
+  {
+   "id": "2026-09-13",
+   "date": "2026-09-13",
+   "title": "AI Intelligence Daily · 2026-09-13",
+   "summary": "Pace the frontier：Amodei 嵌入评估 + Altman/Musk/HF 级联；Real-SWE 私仓评测；DeepSeek KV 报告",
+   "href": "reports/2026-09-13.html"
+  },
+  {
+   "id": "2026-09-12",
+   "date": "2026-09-12",
+   "title": "AI Intelligence Daily · 2026-09-12",
+   "summary": "RubyGems/Hawley/Anthropic 把 Agent 安全推上国会与供应链；Cursor Projects、Quick、Fusion、MCP Apps 产品化",
+   "href": "reports/2026-09-12.html"
+  },
+  {
+   "id": "2026-09-11",
+   "date": "2026-09-11",
+   "title": "AI Intelligence Daily · 2026-09-11",
+   "summary": "OpenAI Agents API 把 Codex harness 托管化；DeepSeek Flash GA + Harness；OpenRouter Shell；商务部回应 AA26",
+   "href": "reports/2026-09-11.html"
+  },
+  {
+   "id": "2026-09-10",
+   "date": "2026-09-10",
+   "title": "AI Intelligence Daily · 2026-09-10",
+   "summary": "Anthropic 对齐事故评估 + AA26-251A 蒸馏通告；Kimi Remote Control 与 DeepSeek Flash 转正定价",
+   "href": "reports/2026-09-10.html"
+  },
+  {
+   "id": "2026-09-09",
+   "date": "2026-09-09",
+   "title": "AI Intelligence Daily · 2026-09-09",
+   "summary": "万级 Agent 冲击 Navier–Stokes；Meta Muse 与小米 MiMo Desktop 把 Personal/桌面 Agent 推到产品默认",
+   "href": "reports/2026-09-09.html"
+  },
+  {
+   "id": "2026-09-08",
+   "date": "2026-09-08",
+   "title": "AI Intelligence Daily · 2026-09-08",
+   "summary": "真实经营 Agent 失控实验 vs 办公多人工作台/长程 Runtime：写权限与组织级 Agent 同日对撞",
+   "href": "reports/2026-09-08.html"
+  },
+  {
+   "id": "2026-09-07",
+   "date": "2026-09-07",
+   "title": "AI Intelligence Daily · 2026-09-07",
+   "summary": "Agent 失控进入监管与人权话语；OpenAI 披露 3.1 agent-workdays 与 Alien Mind",
+   "href": "reports/2026-09-07.html"
+  }
+ ],
+ "events": [
+  {
+   "id": "mcp-skills-sep-2640",
+   "title": "MCP Skills Extension (SEP-2640)",
+   "status": "tracking",
+   "href": "events/mcp-skills-sep-2640.html"
+  },
+  {
+   "id": "pace-the-frontier",
+   "title": "Pace the Frontier / Embedded Evaluators",
+   "status": "tracking",
+   "href": "events/pace-the-frontier.html"
+  },
+  {
+   "id": "aws-mcp-apps",
+   "title": "AWS MCP Apps / AgentCore",
+   "status": "tracking",
+   "href": "events/aws-mcp-apps.html"
+  },
+  {
+   "id": "cognition-fusion",
+   "title": "Cognition Fusion",
+   "status": "tracking",
+   "href": "events/cognition-fusion.html"
+  },
+  {
+   "id": "amazon-quick-desktop",
+   "title": "Amazon Quick Desktop GA",
+   "status": "tracking",
+   "href": "events/amazon-quick-desktop.html"
+  },
+  {
+   "id": "cursor-projects",
+   "title": "Cursor Projects",
+   "status": "tracking",
+   "href": "events/cursor-projects.html"
+  },
+  {
+   "id": "hawley-openai-hf",
+   "title": "Hawley 调查 OpenAI×HF",
+   "status": "tracking",
+   "href": "events/hawley-openai-hf.html"
+  },
+  {
+   "id": "rubygems-openai-agents",
+   "title": "RubyGems × OpenAI Agent 复盘",
+   "status": "tracking",
+   "href": "events/rubygems-openai-agents.html"
+  },
+  {
+   "id": "openai-agents-api",
+   "title": "OpenAI Agents API 公测",
+   "status": "tracking",
+   "href": "events/openai-agents-api.html"
+  },
+  {
+   "id": "openrouter-shell",
+   "title": "OpenRouter Shell / Files / In-Region",
+   "status": "tracking",
+   "href": "events/openrouter-shell.html"
+  },
+  {
+   "id": "kimi-remote-control",
+   "title": "Kimi Remote Control",
+   "status": "tracking",
+   "href": "events/kimi-remote-control.html"
+  },
+  {
+   "id": "deepseek-v41-flash",
+   "title": "DeepSeek V4.1 Flash 转正",
+   "status": "tracking",
+   "href": "events/deepseek-v41-flash.html"
+  },
+  {
+   "id": "aa26-251a-distillation",
+   "title": "AA26-251A 工业级蒸馏通告",
+   "status": "tracking",
+   "href": "events/aa26-251a-distillation.html"
+  },
+  {
+   "id": "anthropic-alignment-cyber",
+   "title": "Anthropic 对齐事故评估 / METR",
+   "status": "tracking",
+   "href": "events/anthropic-alignment-cyber.html"
+  },
+  {
+   "id": "xiaomi-mimo-desktop",
+   "title": "小米 MiMo Desktop 邀测",
+   "status": "tracking",
+   "href": "events/xiaomi-mimo-desktop.html"
+  },
+  {
+   "id": "openai-navier-stokes",
+   "title": "OpenAI Navier–Stokes 多 Agent 证明",
+   "status": "tracking",
+   "href": "events/openai-navier-stokes.html"
+  },
+  {
+   "id": "meta-muse",
+   "title": "Meta Muse Personal Agent",
+   "status": "tracking",
+   "href": "events/meta-muse.html"
+  },
+  {
+   "id": "openai-wiki-incident",
+   "title": "OpenAI Agent 越界 / 入侵问责事件链",
+   "status": "tracking",
+   "href": "events/openai-wiki-incident.html"
+  },
+  {
+   "id": "openai-research-intern",
+   "title": "OpenAI Research Intern → 2028 Automated Researcher",
+   "status": "tracking",
+   "href": "events/openai-research-intern.html"
+  },
+  {
+   "id": "bottleneck-autonomous-business",
+   "title": "Bottleneck Labs 自主商业 Agent 评测",
+   "status": "tracking",
+   "href": "events/bottleneck-autonomous-business.html"
+  },
+  {
+   "id": "argus-runtime",
+   "title": "Argus 长程 Agent Runtime",
+   "status": "tracking",
+   "href": "events/argus-runtime.html"
+  }
+ ]
 }
