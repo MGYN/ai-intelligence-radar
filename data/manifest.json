@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-07T08:40:00+08:00",
+ "updatedAt": "2026-10-08T08:45:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-08",
+   "date": "2026-10-08",
+   "title": "AI Intelligence Daily · 2026-10-08",
+   "summary": "agent 竞争转向边界·身份·路由：Windows MXC 执行容器 GA；GPT-6 + Intelligent UI 全量；Claude Haiku 5.5 降价约 90%；Atlassian AMP；PAP/PACT + Sierra fleming-1；决策模型成品类",
+   "href": "reports/2026-10-08.html"
+  },
   {
    "id": "2026-10-07",
    "date": "2026-10-07",
@@ -221,6 +228,30 @@
   }
  ],
  "events": [
+  {
+   "id": "atlassian-amp",
+   "title": "Atlassian AMP（Agentic Multiplayer Protocol）",
+   "status": "tracking",
+   "href": "events/atlassian-amp.html"
+  },
+  {
+   "id": "korea-artex-bank-hack",
+   "title": "韩国金融机构 AI Agent（ARTEX）入侵",
+   "status": "tracking",
+   "href": "events/korea-artex-bank-hack.html"
+  },
+  {
+   "id": "personal-agent-protocol",
+   "title": "PAP / PACT / fleming-1 个人 Agent 身份协议",
+   "status": "tracking",
+   "href": "events/personal-agent-protocol.html"
+  },
+  {
+   "id": "windows-mxc",
+   "title": "Windows MXC Agent 执行容器",
+   "status": "tracking",
+   "href": "events/windows-mxc.html"
+  },
   {
    "id": "mcp-skills-sep-2640",
    "title": "MCP Skills Extension (SEP-2640)",

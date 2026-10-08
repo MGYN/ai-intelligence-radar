@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-10-08（周四）</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-10-08（周四）</h1>
+    <div class="meta">统计窗口：2026-10-07 08:00 → 2026-10-08 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 节后首个工作日，国产一线厂商官方站与官方 X 窗口内仍全部持平 · 一线 Desktop/Work Agent 正式发船 = 0 个新客户端（平台/增量 2：Windows MXC GA、GitHub Copilot 本地沙箱 GA）· X 检索走 x 命名空间（本轮约 12 次读取）</div>
+<div class="lede"><strong>今日一句话：</strong><strong>agent 的竞争重心正从「模型多强」转到「关在哪、认得出是谁、交给哪个模型」</strong>：微软把 agent 执行容器 MXC 做成 Windows 上 GA 的系统能力，策略放在 agent 够不着的地方，并预告 Entra 把 agent 活动与人的活动分开记；Atlassian 给每个 agent 配主人、档案和实时署名，Sierra 用模型识别「打来电话的是不是 agent」。同一夜，模型层继续变便宜、变可替换：GPT-6 推给全部 ChatGPT 用户，Claude Haiku 5.5 短请求价格降到 4.5 的十分之一，决策模型一周内成了独立品类，Grok Bot 宣布按任务调用包括 Claude 在内的外部模型。<strong>模型越来越像可替换的零件，真正难做的是边界、身份和路由。</strong></div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<p class="meta" style="margin:0 0 1rem">本栏条目：国际 10 · 国内 1（合集）· 双边 1（韩国事件，攻击工具为开源项目）。节后首个工作日国内一线厂商仍未发新品。勿重抬：OpenAI 数学手稿本体、Anthropic CVP、Cursor Remote Control、Decisions API 本体、AgentID（均见 10-07 日报）；Atlassian AMP 已在 10-07 17:18 快讯轮作 near-miss 记录，本期正式收录。</p>
+<section class="card">
+<h3>1. 微软 Windows「混合智能」发布会：agent 执行容器 MXC 正式 GA，策略由系统强制、agent 无法给自己加权限；Copilot 本地动作、本地大模型与 RTX Spark 硬件同场</h3>
+<div class="chips"><span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/F/G</span><span class="chip">发布会 10-07 10:00 PT（10-08 01:00 CST）</span><span class="chip">官方博客 10-07</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li><strong>MXC（Microsoft Execution Containers）GA</strong>：开发者用 JSON 策略声明文件读 / 写 / 拒绝清单、网络入站 / 出站、桌面 / UI 访问，配 Rust / .NET / Node SDK。官方强调<strong>策略在 agent 的控制范围之外</strong>，agent 不能自行扩权。后端可选：进程容器（Windows 上是 AppContainer，macOS 用 Seatbelt，Linux 用 Bubblewrap）、会话容器（仅 Windows：独立账号与会话，桌面、剪贴板、输入隔离）、WSLc、microVM（实验）、Windows 365 for Agents（GA）。</li>
+<li><strong>三种运行模式</strong>：Enforcement（强制）、Learning（照样拦截，同时输出 JSON 活动报告，用来收敛出最小权限策略）、Permissive（只记录不拦）。「即将推出」：Intune 下发策略；<strong>Entra 在 Agent 365 里区分 agent 活动与用户活动</strong>。NVIDIA OpenShell 已集成 MXC（补 OCSF 审计）。</li>
+<li><strong>已接入 MXC</strong>：GitHub Copilot、OpenClaw、OpenAI Codex、Replit、LM Studio、Unsloth、NVIDIA OpenShell；<strong>即将接入</strong>：Claude Code、Box、Egnyte、Heidi Health、Hermes Agent、Manus、Perplexity、Raycast、Simular。Meta「Muse for Windows」原生应用（基于 MXC）coming soon。</li>
+<li><strong>开源仓库</strong> <code>microsoft/mxc</code>（MIT，2026-02 建库，★1,441，10-08 08:09 CST 仍在推送）。README 列出更多后端（Windows Sandbox、LXC、Hyperlight、Nanvix MicroVM 等）；搜索引擎缓存的旧版 README 曾写「早期预览、勿将任何 profile 视为安全边界」，<strong>当前 main 分支已无这段</strong>，GA 后的安全边界承诺以官方博客为准，仍需第三方评估。</li>
+<li><strong>端侧 / 混合</strong>：Copilot+ PC 上的 Copilot 将获得本地上下文、代用户操作和本地模型（「未来数月」）。本地模型示例：MAI Code 1.1 Flash（总 137B / 激活 6.8B，3-bit，256K 上下文）、即将推出的 2-bit Nemotron 70B+、DeepSeek V4 Flash 284B。GitHub「HydraFusion」本地 / 云路由 10 月晚些时候实验预览；OpenClaw 原生 Windows 网关。</li>
+<li><strong>硬件</strong>：RTX Spark 笔记本即日预售、10-16 发货；Surface Laptop Ultra $2,599 起；Surface RTX Spark Dev Box $5,999（11 月）；DGX Station for Windows 年内（748GB 内存、20 PF FP4，NVIDIA 口径）。</li>
+</ul>
+<h4>我的判断</h4>
+<p><strong>这是今年 agent 运行时最重要的平台级发布之一。</strong>此前 agent 沙箱是各家自己做（Claude Code 的 bubblewrap/Seatbelt、Codex 的 sandbox、Cursor 的 worktree），微软把它收成「OS 提供、跨三平台、带学习模式和企业策略下发」的公共层，并一次拉来 Codex、Copilot、OpenClaw、OpenShell，Claude Code 也在待接入名单里。等 Intune/Entra 接上，企业就能「按 agent 下发策略、按 agent 审计」，这会让 agent 的执行边界从应用内配置变成 IT 管理对象。保留折扣：GA 当天的隔离强度还没有第三方评估，各后端的防护强度差别很大（进程容器 ≠ microVM）。</p>
+<h4>往后看</h4>
+<p>Intune / Entra / Agent 365 的上线时间与 agent 身份字段；Claude Code、Manus、Perplexity 的接入时间；安全研究者对各后端的逃逸测试；HydraFusion 的路由策略是否开放配置。</p>
+<h4>对智能体互联网</h4>
+<p><strong>中等相关。</strong>Entra「区分 agent 活动与用户活动」意味着企业目录里 agent 将成为独立主体，跨组织调用时对方可以要求「这是哪个 agent、在什么策略下运行」，可作为远程证明（attestation）的雏形。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>① 策略与执行分离：策略文件由宿主或管理员下发，agent 进程无写权限。② 学习模式：先跑一遍收集真实访问，再生成最小权限策略，比让用户手写清单靠谱。③ 本地 runner 可以直接把 MXC 当 Windows 后端，Linux / macOS 与现有 bubblewrap / Seatbelt 方案同构。</p>
+<h4>建议动作</h4>
+<ol>
+<li>深入调研：读 MXC 策略 schema 与三模式文档，拿自家 runtime 的沙箱配置做一次逐项对照。</li>
+<li>小规模试验：在 Windows runner 上用 Learning 模式跑一组真实任务，看生成的策略能否直接复用。</li>
+<li>关注后续：Entra 的 agent 身份字段与 Intune 策略格式。</li>
+</ol>
+<p><img src="../assets/2026-10-08/01-windows-hybrid-intelligence.jpg" alt="Windows 混合智能发布会配图：MXC、Copilot 混合、RTX Spark、DGX Station" loading="lazy" /></p>
+<div class="caption">图 1 · Windows「Hybrid intelligence」总览图（MXC、混合 Copilot、RTX Spark、DGX Station、本地最高 284B 模型）· 来源：Windows Experience Blog</div>
+
+<p class="sources">来源：<a href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/" target="_blank" rel="noopener">Windows Developer Blog：MXC</a> · <a href="https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/" target="_blank" rel="noopener">Windows Experience Blog（Pavan Davuluri）</a> · <a href="https://blogs.windows.com/devices/2026/10/07/pre-order-our-most-powerful-surface-devices-ever/" target="_blank" rel="noopener">Surface 博客</a> · <a href="https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/" target="_blank" rel="noopener">NVIDIA 博客</a> · <a href="https://devblogs.microsoft.com/foundry-on-windows/build-on-winml-oct-7-26/" target="_blank" rel="noopener">WinML 开发者博客</a> · <a href="https://github.com/microsoft/mxc" target="_blank" rel="noopener">GitHub microsoft/mxc</a></p>
+</section>
+<section class="card">
+<h3>2. OpenAI 把 GPT-6 推给全部 ChatGPT 用户，并上线 Intelligent UI：模型边生成边渲染原生交互组件，边想边答</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C</span><span class="chip">官方 10-07（@OpenAI 10-08 02:05 CST）</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>即日起 Plus / Pro / Business / Enterprise 的 Chat 标签页切到 GPT-6，Free 与 Go 次日开始。付费档用 <strong>GPT-6 Sol</strong>，Free/Go 用 <strong>GPT-6 Luna</strong>，Pro 的推理档仍是 GPT-6 Astra。官方写明：<strong>Work 与 Codex 所用模型不变。</strong>API 侧 <code>chat-latest</code> 同日更新为指向 ChatGPT 当前模型。</li>
+<li><strong>Intelligent UI</strong>：一套可流式输出的原生组件库，加一个随生成渐进渲染界面的编译器。官方示例包括可交互的自行车结构图、越位规则演示。</li>
+<li><strong>边想边答</strong>：OpenAI 内部任务上，GPT-6 Extra High 开始作答的时间与 GPT-5.6 Medium 相当，得分高于 GPT-5.6 Extra High；GPT-6 Instant 联网搜索时开始作答提前 44%。<strong>以上均为 OpenAI 自测。</strong>官方称 ChatGPT 周活 12 亿，配有 system card。</li>
+<li>HN 466 分 / 238 评。</li>
+</ul>
+<h4>我的判断</h4>
+<p>两点值得记：一是<strong>「生成式 UI」从演示进入 12 亿用户的默认体验</strong>，组件库 + 流式编译器的做法说明 OpenAI 选的是「受控组件集」而不是任意 HTML，安全和一致性更好；二是<strong>「Work 与 Codex 模型不变」</strong>，说明 OpenAI 把 Chat 与 agent 产品线的模型节奏拆开了，agent 产品更看重稳定性。</p>
+<h4>往后看</h4>
+<p>Intelligent UI 是否开放给 Apps SDK / 第三方组件；Free 档 Luna 的额度；Work/Codex 何时切换。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>如果第三方服务能以组件形式被模型调用渲染，「服务 → 组件」就成了 agent 与服务交互的新表面，值得观察组件的权限和来源标注。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中等相关。</strong>Work 产物（报告、看板、审批单）可以采用「受控组件库 + 流式渲染」，而不是让模型直接写前端代码；「边想边答」对长任务的进度反馈也有参考价值。</p>
+<h4>建议动作</h4>
+<ol>
+<li>对标产品：梳理自家 Work 产物的组件化程度，评估做一套受控组件 schema。</li>
+<li>关注后续：Apps SDK 是否开放 Intelligent UI 组件。</li>
+</ol>
+<p><img src="../assets/2026-10-08/02-gpt6-intelligent-ui.jpg" alt="GPT-6 Intelligent UI 示例卡片" loading="lazy" /></p>
+<div class="caption">图 2 · GPT-6 with Intelligent UI：交互式自行车结构图、越位示例 · 来源：OpenAI 官方页面</div>
+
+<p class="sources">来源：<a href="https://openai.com/index/gpt-6-for-everyone/" target="_blank" rel="noopener">OpenAI：GPT-6 and Intelligent UI for everyone</a> · <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">ChatGPT release notes</a> · <a href="https://platform.openai.com/docs/changelog" target="_blank" rel="noopener">OpenAI API changelog</a> · <a href="https://news.ycombinator.com/item?id=49996425" target="_blank" rel="noopener">HN 讨论</a></p>
+</section>
+<section class="card">
+<h3>3. Anthropic 发布 Claude Haiku 5.5：首个支持 effort 档位的 Haiku，10 万 token 以内请求输入 $0.10 / 输出 $0.50，约为 Haiku 4.5 的十分之一；Sonnet 5.5 缓存读取半价</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/B/I</span><span class="chip">官方 10-07（@AnthropicAI 10-08 02:01 CST）</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>模型 id <code>claude-haiku-5-5</code>，官方称是迄今最快的 Claude，<strong>首个可调 effort 的 Haiku</strong>。</li>
+<li><strong>价格（每百万 token，≤100K / &gt;100K 提示）</strong>：输入 $0.10 / $0.50，输出 $0.50 / $2.50，缓存读 $0.01 / $0.05，缓存写 $0.125 / $0.625。对照 Haiku 4.5 为 $1 / $5。官方称约 90% 的 Haiku 流量在 100K 以内，这部分便宜约 90%，平均约 75%。</li>
+<li><strong>同时调价与赠额</strong>：Sonnet 5.5 缓存读取 $0.20 → $0.10（官方称 agent 工作负载约便宜 20%）；本周起 Max 5x 每月送 $100 API 额度、Max 20x 送 $200、Team 最高 $500 共享。Python / TypeScript SDK 新增 computer use 与 browser use beta。</li>
+<li><strong>官方表格（Haiku 5.5 / Haiku 4.5 / GPT-6 Luna / Sonnet 5.5）</strong>：OSWorld 2.1 离线子集 72.4 / 15.7 / 48.9 / 83.9；Terminal-Bench 4.0 39.2 / 0.0 / 16.4 / 70.6。均为厂商自报。</li>
+<li><strong>安全</strong>：网络安全护栏比 Haiku 4.5 严，但比 Sonnet 5.5 允许更多防御任务，渗透测试仍拦截；需要更多权限的指向 CVP。</li>
+<li><strong>同夜分发</strong>：GitHub Copilot GA（Pro 及以上各档）、Cursor、OpenRouter、AWS 上架；Claude Code 2.1.293 把它设为默认 Haiku（1M 上下文）。客户引述：HubSpot 92.8%、Box +11 分、Cognition Devin Fusion 的 FrontierCode 66.2。HN 633 分 / 319 评（窗口内 AI 类最高）。</li>
+</ul>
+<h4>我的判断</h4>
+<p><strong>这是今天对 agent 成本结构影响最大的一条。</strong>子 agent、检索整理、工具结果摘要、权限预判这类「量大、短上下文」的环节，价格直接降一个数量级；OSWorld 子集 72.4 意味着便宜档也能做像样的 computer use。加上 Sonnet 缓存读半价，长会话 agent 的主循环也在降价。可以预期多 agent 编排会从「省着用子 agent」变成「默认分派」。</p>
+<h4>往后看</h4>
+<p>第三方评测是否复现 OSWorld/Terminal-Bench 数字；&gt;100K 的定价是否让长上下文用户反而更贵；OpenAI / Google 在小模型价格上的跟进。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>调用成本下降会放大 agent 间调用量，身份校验、限流、计费本身的开销占比会上升。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>① 重算子 agent 成本模型，把「≤100K」作为任务切分的设计约束；② effort 档位可以按任务难度动态设置（Claude Code 已给 Agent 工具加 effort 参数）；③ computer/browser use 进官方 SDK，自研浏览器 agent 层可以评估替换。</p>
+<h4>建议动作</h4>
+<ol>
+<li>小规模试验：在子 agent / 摘要 / 路由环节换上 Haiku 5.5，对比成本与成功率。</li>
+<li>纳入需求：任务调度器支持「按上下文长度分档定价」的成本估算。</li>
+</ol>
+<p class="sources">来源：<a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener">Anthropic：Claude Haiku 5.5</a> · <a href="https://x.com/AnthropicAI" target="_blank" rel="noopener">@AnthropicAI</a> · <a href="https://news.ycombinator.com/item?id=49996437" target="_blank" rel="noopener">HN 讨论</a> · <a href="https://github.blog/changelog/" target="_blank" rel="noopener">GitHub changelog</a> · <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Claude Code CHANGELOG</a>（官方页仅有标题卡，不配图）</p>
+</section>
+<section class="card">
+<h3>4. Atlassian 发布 AMP（Agentic Multiplayer Protocol）：agent 有主人、档案和实时署名，权限分「继承调用者」与「独立服务账号」两种，非人类身份清单即将上线</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">E/F/B/C</span><span class="chip">Team &#x27;26 Europe 10-07 14:45 CST（10-07 17:18 快讯轮已记为 near-miss）</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>AMP 分三层：<strong>In-the-Flow</strong>（agent 出现在 Jira/Confluence 等工作流里）；<strong>Identity &amp; Shared Presence</strong>（每个 agent 有主人、档案、实时署名与「agent 光标」，本地 IDE / 终端里的 agent 会话可桥接成 Jira 里的「Agent Sessions」）；<strong>Context &amp; Governance</strong>（基于 Teamwork Graph 的上下文；两种权限模式：例如 HR agent 继承发起人的权限，Helpdesk agent 用自己的服务账号；完整审计谁触发、碰了哪些数据；关键步骤人工确认）。</li>
+<li>「即将推出」：<strong>agent 账号与非人类身份（NHI）清单</strong>，覆盖 Atlassian 自家和第三方的 agent、应用、服务账号，可统一撤销；本地会话进 Jira。</li>
+<li>同场：Rovo Work（沙箱里的长任务）；Atlassian MCP 重建到 200+ 工具（官方 X 写 220+），token 消耗最多降 25%。</li>
+<li><strong>性质</strong>：这是 Atlassian 平台内的框架命名，不是公开规范，没有放出协议文本。</li>
+</ul>
+<h4>我的判断</h4>
+<p>AMP 把「agent 是协作中的一个成员」做成了产品语义：<strong>署名、主人、权限来源、可撤销</strong>。其中「继承调用者 vs 独立服务账号」这对概念非常实用，把委托（代表某人）和自主（以自己的身份）明确分开了，几乎所有企业 agent 平台都会遇到这道选择题。名字叫 Protocol，但目前不开放，对互操作的意义有限。</p>
+<h4>往后看</h4>
+<p>NHI 清单是否能导入第三方 agent（如通过 MCP/A2A 接入的）；Agent Sessions 是否开放 API；是否与 PAP / A2A 发生对接。</p>
+<h4>对智能体互联网</h4>
+<p><strong>强相关（概念层）。</strong>「代表谁 / 以谁的身份」应该成为 agent 间调用的必带字段；NHI 清单 + 统一撤销是企业侧接受外部 agent 的前提。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>多人协作空间里的 agent 署名与版本历史（图中 Confluence 的「Rovo with 某人」），可以直接借鉴到 Workspace 的修改归属；本地会话桥接到工单系统也值得做。</p>
+<h4>建议动作</h4>
+<ol>
+<li>纳入需求：Workspace 修改记录区分「人 / agent / agent 代表某人」三种主体。</li>
+<li>对标架构：在权限模型里显式区分「继承调用者」与「独立服务账号」两种 agent。</li>
+</ol>
+<p><img src="../assets/2026-10-08/03-atlassian-amp-agent-attribution.jpg" alt="Confluence 中 agent 实时署名与版本历史" loading="lazy" /></p>
+<div class="caption">图 3 · Confluence 里的 agent 署名（「Rovo with 某用户」）与按 agent 的版本历史 · 来源：Atlassian 官方博客</div>
+
+<p class="sources">来源：<a href="https://www.atlassian.com/blog/company-news/team26-europe-founder-update" target="_blank" rel="noopener">Atlassian 创始人更新（Team '26 Europe）</a> · <a href="https://www.atlassian.com/blog/company-news/team26-europe-ai-platform" target="_blank" rel="noopener">AI 平台稿</a> · <a href="https://www.atlassian.com/blog/company-news/team26-europe-atlassian-mcp" target="_blank" rel="noopener">Atlassian MCP 稿</a> · <a href="https://x.com/Atlassian" target="_blank" rel="noopener">@Atlassian</a></p>
+</section>
+<section class="card">
+<h3>5. 补收 + 新进展｜个人 agent 与企业的「接头协议」：PAP（Meta×Sierra）、PACT（Decagon×Instinct）之后，Sierra 10-08 再发 fleming-1，用模型识别来电方是不是 agent</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW（快讯已推）+ UPDATE</span><span class="chip">国际</span><span class="chip">E/F</span><span class="chip">PAP 10-06 / PACT 10-06（窗前，10-07 日报漏收）</span><span class="chip">fleming-1 10-08 04:28 CST</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li><strong>PAP（Personal Agent Protocol，10-06，11:24 快讯已推）</strong>：Meta 与 Sierra 牵头，伙伴 Genesys、Instinct、Rocket、Shopify、Stripe、Walmart。个人 agent 通过网站发现入口，用 OAuth 建立跨渠道的单一会话，由用户决定读写范围，请求可路由到网站、MCP、OpenAPI 或企业自己的 agent。v0.1 规范「本月」发布，<strong>截至发稿仍未公开</strong>。</li>
+<li><strong>PACT（Personal Agent Consent &amp; Trust Protocol，10-06，19:14 快讯已推）</strong>：Decagon 与 Instinct 共建，Apache-2.0，有规范和参考实现：用 A2A 1.0 Agent Card 做发现，个人 agent 用 JWKS 签名 JWT 证明身份，OAuth 设备码授权，绑定式委托令牌，每次操作返回签名回执；Decagon 同时加入 PAP 工作组。GitHub 仓库目前 ★92。10-08 00:54 CST Decagon 官方 X 再发与 Instinct 的合作推文，无新技术内容。</li>
+<li><strong>fleming-1（10-08 新）</strong>：Sierra 发布实时识别「电话那头是不是 AI agent」的模型，对通话音频持续打分，默认偏保守，识别后怎么处理由企业决定；可用于任何 Sierra 语音 agent。Sierra 的表述是：最好的情况是 agent 自报身份（走 PAP），不自报的就靠 fleming-1。Sierra Summit London 10-15。</li>
+</ul>
+<h4>我的判断</h4>
+<p><strong>两周内出现了「自报身份」（PAP/PACT）和「被动识别」（fleming-1）两条互补路线</strong>，这正是智能体互联网身份层要的组合：守规矩的 agent 走协议拿到更好的服务，不守规矩的会被识别、降级或转人工。PACT 已经给出可运行的签名和委托令牌实现，比 PAP 走得快；PAP 有 Meta、Shopify、Stripe、Walmart 的分发优势。两者短期是「规范在 PACT、生态在 PAP」的格局，PACT 加入 PAP 工作组后可能合流。</p>
+<h4>往后看</h4>
+<p>PAP v0.1 规范文本（重点看身份证明是否采纳 PACT 的 JWKS / 回执设计）；fleming-1 的误判率与申诉机制；电商、支付伙伴的首个落地。</p>
+<h4>对智能体互联网</h4>
+<p><strong>强相关。</strong>① 发现（Agent Card / 网站入口）+ 身份（签名 JWT）+ 委托（绑定式令牌）+ 回执（签名）四件套，可直接对照自家协议栈逐项补齐；② 「未声明 agent 的被动识别」应作为协议栈之外的配套能力。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中等相关。</strong>Work Agent 代用户对外办事（打电话、下单、客服）时，应默认自报身份并携带委托证明，否则会越来越多地被识别和拦截。</p>
+<h4>建议动作</h4>
+<ol>
+<li>深入调研：精读 PACT 规范与参考实现，评估与 A2A Agent Card、自家身份模型的兼容性。</li>
+<li>关注后续：PAP v0.1 发布当天做逐条对比。</li>
+</ol>
+<p><img src="../assets/2026-10-08/06-sierra-pap-diagram.jpg" alt="PAP 架构示意" loading="lazy" /></p>
+<div class="caption">图 6 · PAP 示意：个人 agent 经单一入口发现与登录，按用户规则路由到网站、API 或企业 agent · 来源：Sierra 官方博客（PAP 发布稿）</div>
+
+<p class="sources">来源：<a href="https://sierra.ai/blog/caller-id-in-the-age-of-agents" target="_blank" rel="noopener">Sierra：fleming-1 / Caller ID in the age of agents</a> · <a href="https://x.com/SierraPlatform" target="_blank" rel="noopener">@SierraPlatform</a> · <a href="https://sierra.ai/blog/introducing-personal-agent-protocol" target="_blank" rel="noopener">Sierra：PAP 发布稿</a> · <a href="https://decagon.ai/blog/introducing-the-personal-agent-consent-trust-protocol-pact" target="_blank" rel="noopener">Decagon：PACT</a> · <a href="https://x.com/DecagonAI" target="_blank" rel="noopener">@DecagonAI</a></p>
+</section>
+<section class="card">
+<h3>6. GitHub Copilot：本地沙箱 GA（基于 MXC）、CLI 发现本地模型、专用泄密检测模型；企业可强制开启沙箱且禁止放宽</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/G</span><span class="chip">GitHub changelog 10-07</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li><strong>本地沙箱 GA</strong>：覆盖 Copilot CLI、Copilot 应用和 VS Code Agent Host，限制文件系统、网络与凭证访问，也作用于本地 MCP server 和语言服务器；底层用 MXC；企业托管设置可<strong>强制开启并禁止用户放宽</strong>；不论用哪个模型都生效。</li>
+<li>Copilot CLI 可发现本地模型（Ollama 等，需支持工具调用与流式）；HydraFusion 本地路由「即将推出」。</li>
+<li>专门训练的泄密检测模型；AI 推送保护将按 AI Credits 计费（即将推出）。Haiku 5.5 同日 GA。</li>
+</ul>
+<h4>我的判断</h4>
+<p>这是 MXC 的第一个大规模落地，而且把「沙箱作用于 MCP server」写进了默认行为：<strong>MCP server 也被当作不可信代码</strong>，这和近期 MCP 生态的安全事件是同一条线。「企业可锁定、用户不能放宽」是 agent 沙箱进入企业采购清单的关键开关。</p>
+<h4>往后看</h4>
+<p>沙箱对 MCP server 的网络策略细节；HydraFusion 预览；泄密检测的误报率。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong></p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>把 MCP server / 工具进程纳入同一沙箱策略；管理员策略优先级高于用户设置。</p>
+<h4>建议动作</h4>
+<ol>
+<li>纳入需求：沙箱策略三级覆盖（组织 &gt; 项目 &gt; 用户），且下级只能收紧。</li>
+<li>对标架构：工具进程与 agent 主进程用同一套隔离。</li>
+</ol>
+<p class="sources">来源：<a href="https://github.blog/changelog/" target="_blank" rel="noopener">GitHub changelog</a> · <a href="https://x.com/github" target="_blank" rel="noopener">@github</a>（changelog 正文无配图）</p>
+</section>
+<section class="card">
+<h3>7. 「决策模型」一周成品类：Liquid AI 开源 d1（3B 一次前向出决策）、OpenRouter 上线决策模型排行与分类</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/B/H</span><span class="chip">Liquid d1 10-08 00:54 CST</span><span class="chip">OpenRouter 10-07 22:55 CST</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li><strong>Liquid AI d1</strong>（开放权重）：d1-3B 在 Decision Index 0.2.1 得 48.57，高于所有 4B / 9B 模型和 Decider 35B-A3B（47.11）；<strong>一次前向直接输出决策，不生成 token</strong>；Jetson AGX Thor 上 16 ms、Orin Nano 上 50 ms、GPU 上 10 ms 以内；另有 d1-omni-600M（文本 + 图像或音频）。数据为厂商自报。</li>
+<li><strong>OpenRouter</strong>：上线 Decision Model Rankings，并上架 GPT-6 Luna Decisions（输入 $0.10/M、输出免费、1M 上下文）、Perplexity Decider v1.1（$0.02/M）、Cloudflare Clef / Clef Flash（$0.24 / $0.09 每 M）。</li>
+<li><strong>HF 趋势榜前三</strong>（08:10 CST）：Cloudflare/clef、autotrust/JEV-27B-VL、autotrust/GEV-26B-Decide，均为决策 / 判别类。</li>
+<li>窗前背景：Strands Decider 2B（10-01 发布，HN 窗口内 274 分）、Perplexity Decider v1.1（10-07 01:13 CST）、OpenAI Decisions API（10-07 日报已收）。</li>
+</ul>
+<h4>我的判断</h4>
+<p><strong>「判别」正在从生成模型里拆出来，成为独立的模型类和 API 类。</strong>一次前向、毫秒级、输出概率，正适合 agent 控制面：工具路由、权限预判、记忆取舍、是否升级给人。排行榜和统一计费出现，说明它已经有可比较的市场。风险是 Decision Index 还很新，各家自报分数可比性有限。</p>
+<h4>往后看</h4>
+<p>Decision Index 的独立维护方与版本稳定性；端侧决策模型在机器人 / 嵌入式的落地；大厂是否跟进开源。</p>
+<h4>对智能体互联网</h4>
+<p><strong>中等相关。</strong>跨组织调用的「是否接受这个请求」可以由小型决策模型给出概率并留痕。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>控制面里所有「是 / 否 / 选哪个」的判断，可以统一抽成决策模型接口，按租户设阈值，便宜到可以每步都调。</p>
+<h4>建议动作</h4>
+<ol>
+<li>小规模试验：拿 d1-3B 或 Decider 2B 做工具路由与权限预判的离线评测。</li>
+<li>纳入需求：Harness 增加「决策接口」抽象，可切换 API（Decisions API / OpenRouter）与本地模型。</li>
+</ol>
+<p><img src="../assets/2026-10-08/04-liquid-d1-decision-index.jpg" alt="Liquid d1 决策指数对比图" loading="lazy" /></p>
+<div class="caption">图 4 · Decision Index 得分与模型规模：d1-3B 对比其他模型 · 来源：Hugging Face 上 Liquid AI 官方博文</div>
+
+<p class="sources">来源：<a href="https://huggingface.co/blog/LiquidAI/open-d1" target="_blank" rel="noopener">HF 博客：Liquid AI open d1</a> · <a href="https://huggingface.co/LiquidAI" target="_blank" rel="noopener">Liquid AI HF 主页</a> · <a href="https://openrouter.ai/rankings" target="_blank" rel="noopener">OpenRouter Rankings</a> · <a href="https://x.com/OpenRouter" target="_blank" rel="noopener">@OpenRouter</a> · <a href="https://strandsagents.com/blog/introducing-strands-decider/" target="_blank" rel="noopener">Strands Decider 2B</a> · <a href="https://huggingface.co/models" target="_blank" rel="noopener">HF Trending</a></p>
+</section>
+<section class="card">
+<h3>8. NVIDIA Nemotron：IOI 2026 非官方实测 535.4/600（超过人类最高分），IMO 2026 30/42 达金牌线</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/H</span><span class="chip">HF 博文 10-07 20:45 CST（21:22 快讯轮已记 near-miss）</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li><strong>IOI 2026</strong>：535.4 / 600（金牌线 361.12，人类最高 498.27）。官方定位为<strong>非官方、无监考、按赛制约束的现场实测</strong>，不计入正式排名。</li>
+<li><strong>IMO 2026</strong>：30 / 42（金牌线 29），由 IMO 官方阅卷人评分。</li>
+<li>方法线索：以 IOI 2025 为例，Nano 从 130 → 280（SFT）→ 291（RL）→ 468（加 GenCorrect 自我纠错），Ultra-CC 502。</li>
+</ul>
+<h4>我的判断</h4>
+<p>竞赛线上开放模型已追平闭源头部，且 NVIDIA 公开了从 SFT、RL 到自我纠错的分段增益，<strong>「生成 → 自查 → 纠错」的推理期循环贡献最大</strong>，这和 agent 的 verifier-in-the-loop 是同一件事。IOI 成绩是非官方条件，引用时须注明。</p>
+<h4>往后看</h4>
+<p>权重与训练配方的开放程度；GenCorrect 是否单独发布。</p>
+<h4>对智能体互联网</h4>
+<p>无直接启示。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中等相关。</strong>推理期自我纠错的分段增益数据，可作为 harness 里「自查轮次」投入产出的参考。</p>
+<h4>建议动作</h4>
+<ol>
+<li>关注后续：GenCorrect 方法细节。</li>
+</ol>
+<p><img src="../assets/2026-10-08/05-nemotron-ioi-imo.jpg" alt="Nemotron IMO/IOI 2026 成绩对比" loading="lazy" /></p>
+<div class="caption">图 5 · Nemotron IMO 2026 30/42、IOI 2026 535.4/600 · 来源：Hugging Face 上 NVIDIA 官方博文</div>
+
+<p class="sources">来源：<a href="https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026" target="_blank" rel="noopener">HF 博客：Nemotron IOI &amp; IMO 2026</a></p>
+</section>
+<section class="card">
+<h3>9. Grok Bot 宣布多模型后端：按任务选用最合适的模型，点名 Claude Opus 5.5、Midjourney、Suno 等外部 API</h3>
+<div class="chips"><span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/I</span><span class="chip">X 10-07 14:46 CST</span></div>
+<h4>发生了什么</h4>
+<ul>
+<li>Elon Musk 在 X 上表示，此后 SpaceX（Grok Bot）会「为每项任务使用最好的后端模型，包括 Claude Opus 5.5、MidJourney、Suno 及其他领先 API」（该帖 X 显示约 6,700 万次浏览）。后续回复补充：简单请求会路由到更快的 Grok 4.8（「推出后」），复杂请求交给大模型。</li>
+<li>同期 Grok Bot 0.68.1 更新幻灯片、格式化邮件，以及 1920×1200 下更快的 computer use。IT之家有中文报道。</li>
+<li>说明：这是 CEO 个人帖与媒体转述，未见独立的官方技术文档。</li>
+</ul>
+<h4>我的判断</h4>
+<p>一家自有前沿模型的公司公开说「后端按任务选最好的，包括竞争对手」，和今天微软 HydraFusion、Windows 混合路由是同一方向：<strong>助手产品的护城河在编排、路由和执行环境，而不是独占模型。</strong>需要观察数据流向、隐私条款和第三方 API 的合规安排。</p>
+<h4>往后看</h4>
+<p>路由策略与数据处理条款是否公开；Grok 4.8 发布时间。</p>
+<h4>对智能体互联网</h4>
+<p><strong>弱相关。</strong>多后端意味着一次用户请求会穿过多家模型提供方，数据归属与审计链更复杂。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>中等相关。</strong>模型路由层应支持按任务类型、成本、合规约束选择后端，并在审计日志里记录每一步用了哪个模型。</p>
+<h4>建议动作</h4>
+<ol>
+<li>关注后续：路由与数据条款的官方说明。</li>
+</ol>
+<p class="sources">来源：<a href="https://x.com/elonmusk" target="_blank" rel="noopener">Elon Musk 的 X 帖</a> · <a href="https://www.ithome.com/1/010/359.htm" target="_blank" rel="noopener">IT之家</a>（无官方配图）</p>
+</section>
+<section class="card">
+<h3>10. 一句话合集（B+ / B / B-）</h3>
+<div class="chips"><span class="chip b">B+/B/B-</span><span class="chip">国际 + 国内</span></div>
+<ul>
+<li><strong>Google SynthID Detector 向所有人开放</strong>（国际，G，B）：任何人可上传内容检查 SynthID 水印（约每天 10 次），合作方含 OpenAI、NVIDIA、Kakao，Apple 即将加入。HN 86 分。<a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/" target="_blank" rel="noopener">Google 博客</a> · <a href="https://synthid.com/" target="_blank" rel="noopener">synthid.com</a></li>
+<li><strong>Bitdefender AI Guardian</strong>（国际，G/C，B+）：免费、独立安装、macOS 优先的 agent 动作管控层，面向 Claude Code / OpenClaw，覆盖 MCP、提示注入、skills、API 密钥。终端安全厂商开始把 coding agent 当作新的端点类别。<a href="https://www.bitdefender.com/en-us/blog/hotforsecurity/bitdefender-ai-guardian-free-security-for-ai-agents" target="_blank" rel="noopener">Bitdefender 博客</a></li>
+<li><strong>Vijil DART 多 agent 自适应红队</strong>（国际，G，B）：针对多 agent 系统的自适应红队测试产品。<a href="https://www.globenewswire.com/news-release/2026/10/07/3376528/0/en/vijil-launches-diamond-adaptive-red-team-for-agents-to-help-enterprises-test-multi-agent-systems.html" target="_blank" rel="noopener">GlobeNewswire 新闻稿</a></li>
+<li><strong>Codex CLI 0.161.0</strong>（国际，C/F，B）：默认模型 GPT-6.1 Sol；<code>/mcp login</code>；按轮次 <code>--cyber-access-program</code>（与 Daybreak 可选加入相关）；企业 MCP 鉴权失败时默认拒绝（fail closed）；Guardian 会通知父 agent。Codex iOS 1.2026.272 同步更新。<a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">Codex releases</a></li>
+<li><strong>Meta Muse 上 iPad，新增 7 个连接器</strong>（国际，C，B）：Canva、Dropbox、Figma、QuickBooks、GitHub、Klaviyo、Zoom；媒体转述，Meta 官方稿未核到。<a href="https://www.ithome.com/1/010/295.htm" target="_blank" rel="noopener">IT之家</a></li>
+<li><strong>Perplexity pplx-embed-v2-late</strong>（国际，D，B）：late-interaction 嵌入模型，已上 HF。<a href="https://x.com/perplexity_ai" target="_blank" rel="noopener">@perplexity_ai</a></li>
+<li><strong>OpenAI 青少年报告与 ChatGPT for Teens / College Planner</strong>（国际，I/J，B-）：Common Sense Media 批评家长提醒存在延迟。<a href="https://openai.com/index/teens-learn-and-plan" target="_blank" rel="noopener">OpenAI</a> · <a href="https://www.ithome.com/1/010/358.htm" target="_blank" rel="noopener">IT之家</a></li>
+<li><strong>Cohere Compass Cloud 私测</strong>（国际，D，B-）：托管版检索服务。<a href="https://x.com/cohere" target="_blank" rel="noopener">@cohere</a></li>
+<li><strong>国内｜腾讯 CodeBuddy Code 2.162.0</strong>（国内，C，B-）：Web UI 支持 /export、长任务的任务清单提醒、ACP 连接清理；10-07 23:58 CST 发布。<a href="https://www.npmjs.com/package/@tencent-ai/codebuddy-code" target="_blank" rel="noopener">npm</a></li>
+<li><strong>国内｜节后首日国产一线厂商静默</strong>：千问、DeepSeek、Kimi、智谱、MiniMax、小米 MiMo、阶跃、豆包、混元、文心、小艺、魔搭官方站与官方 X 窗口内均无新发布（MiniMax X 仅有活动宣传）。</li>
+</ul>
+<p class="sources">来源：见各条链接</p>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card">
+<h3>1. 「Navier–Stokes Lost in Translation」：Lean 验证通过 ≠ 自然语言证明正确，矛头直指 OpenAI 的 Navier–Stokes 与数学手稿</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">H/J</span><span class="chip">arXiv 10-06 提交</span><span class="chip">HN 237 分 / 150 评（10-07 23:24 CST）</span></div>
+<p>剑桥 Anders Hansen 等三人在 arXiv 论文中论证：把自然语言数学「语义忠实地」自动形式化，本身在 SCI 层级上是不可计算的（比停机问题还难），因此 Lean 通过只能说明「Lean 里那个命题对」，不能保证它就是原文的命题；文中列举若干 AI 误译案例，并称 <strong>OpenAI 宣布的 Navier–Stokes 爆破证明的 Lean 形式化与自然语言证明并不对应</strong>。这正好落在 10-07 日报提示的折扣上：OpenAI 数学仓库 162 篇形式化标注 <code>review: unchecked</code>。同窗口 Scott Aaronson 的「The Mathocalypse」（HN 174 分 / 209 评）讨论 AI 数学结果对学界的冲击；「AI 辅助证明 11 个正方形最优装箱」（HN 107 分）是另一类人机协作样本；OpenAI 数学帖累计 HN 1,219 分 / 1,393 评。<strong>判断</strong>：verifier-in-the-loop 的瓶颈从「有没有判据」转向「判据是否忠实于原题」，对所有用 agent 生成测试 / 规格再自我验证的工程流程都是警示。<a href="https://arxiv.org/abs/2610.08144" target="_blank" rel="noopener">arXiv 2610.08144</a> · <a href="https://news.ycombinator.com/item?id=49994145" target="_blank" rel="noopener">HN</a> · <a href="https://scottaaronson.blog/?p=10169" target="_blank" rel="noopener">The Mathocalypse</a></p>
+</section>
+<section class="card">
+<h3>2. 「Meta 与微软减少员工使用 Claude」</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">国际</span><span class="chip">J/I</span><span class="chip">HN 252 分 / 246 评</span></div>
+<p>TechRadar 等报道：微软把内部 Anthropic 支出预期下调三分之一以上，Meta 内部 Claude Code 用户约从 6 万降到 3 万，两家都在推自研工具。均为媒体报道，公司未正式确认数字。讨论集中在「大厂内部 coding agent 的锁定成本」与「自研替代」。与今天 Grok Bot 反向接入 Claude 形成对照：<strong>模型供应关系正在快速重组。</strong><a href="https://www.techradar.com/pro/meta-and-microsoft-want-to-stop-their-employees-using-claude" target="_blank" rel="noopener">TechRadar</a> · <a href="https://news.ycombinator.com/item?id=49997161" target="_blank" rel="noopener">HN</a></p>
+</section>
+<section class="card">
+<h3>3. Haiku 5.5 与 GPT-6 同夜发布，HN 两帖并列 AI 热帖前二</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">国际</span><span class="chip">A/I</span><span class="chip">HN 633 分 / 466 分</span></div>
+<p>讨论焦点：Haiku 5.5 的 &gt;100K 定价跳档（5 倍）是否在「劝退」长上下文；GPT-6 的 Intelligent UI 是否会让回答更难复制和引用；「Work/Codex 模型不变」被解读为 agent 产品优先稳定。<a href="https://news.ycombinator.com/item?id=49996437" target="_blank" rel="noopener">Haiku HN</a> · <a href="https://news.ycombinator.com/item?id=49996425" target="_blank" rel="noopener">GPT-6 HN</a></p>
+</section>
+<section class="card">
+<h3>4. 研究：Claude 与 ChatGPT 购物推荐价格随用户财富而变</h3>
+<div class="chips"><span class="chip b">B-</span><span class="chip">国际</span><span class="chip">E/J</span><span class="chip">HN 88 分</span></div>
+<p>Bloomberg 报道的一项研究称，两款助手对不同财富画像的用户给出不同价位的购物建议。对个人 agent 代购的启示：<strong>agent 代表用户时是否「看人下菜」需要可审计</strong>，这也是 PAP「用户定规则」想解决的问题之一。原文付费墙，按 HN 标题与摘要记录。<a href="https://news.ycombinator.com/item?id=49994746" target="_blank" rel="noopener">HN</a></p>
+</section>
+<section class="card">
+<h3>5. V2EX：Codex 额度被提前重置、Claude 封号难避免</h3>
+<div class="chips"><span class="chip b">B-</span><span class="chip">国内</span><span class="chip">C/I</span><span class="chip">V2EX 30 回复 / 24 回复</span></div>
+<p>多名用户反馈 Codex 用量额度被提前重置（与 10-07 日报「消耗太快」帖呼应）；另一帖讨论国内用户使用 Claude 的封号风险。<a href="https://www.v2ex.com/t/1246743" target="_blank" rel="noopener">Codex 额度帖</a> · <a href="https://www.v2ex.com/t/1246729" target="_blank" rel="noopener">Claude 封号帖</a></p>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card">
+<h3>1. microsoft/mxc：Windows agent 执行容器的开源 SDK</h3>
+<div class="chips"><span class="chip b">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/G</span><span class="chip">★1,441</span><span class="chip">MIT</span></div>
+<p>Rust / .NET / Node SDK，统一封装 ProcessContainer、Windows Sandbox、LXC、Bubblewrap、Seatbelt、MicroVM、WSLC 等后端，带「访问被拒」诊断工具；README 提醒 <code>--audit</code> 会关闭全部沙箱防护。详见新闻 #1。<a href="https://github.com/microsoft/mxc" target="_blank" rel="noopener">GitHub</a></p>
+</section>
+<section class="card">
+<h3>2. ARTEX（韩国金融入侵所用开源渗透 agent）窗口内发 0.3.15</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">UPDATE</span><span class="chip">双边</span><span class="chip">G</span><span class="chip">★1,953</span><span class="chip">Go 趋势 +236</span></div>
+<p>10-07 发布 0.3.15，提交记录含鉴权初始化失败时「fail closed」。事件仍在发酵（见下方重点事件），仓库热度继续上升，<strong>只作风险信号记录，不建议使用</strong>。<a href="https://github.com/trending/go" target="_blank" rel="noopener">GitHub Trending Go</a></p>
+</section>
+<section class="card">
+<h3>3. morluto/rea 连续高涨</h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">C/G</span><span class="chip">★14,954</span><span class="chip">今日 +4,655</span></div>
+<p>给 agent 用的逆向工程 MCP（10-07 日报已收），今日仍居总榜前列。<a href="https://github.com/morluto/rea" target="_blank" rel="noopener">GitHub</a></p>
+</section>
+<section class="card">
+<h3>4. 其他值得一提</h3>
+<div class="chips"><span class="chip b">B-</span><span class="chip">国际</span></div>
+<ul>
+<li><strong>tester-army/e2e</strong>：★7,422，今日 +1,390，连续第三天上榜。</li>
+<li><strong>anthropics/knowledge-work-plugins</strong>：Claude Cowork 插件集，★27,134，+766。</li>
+<li><strong>cloudflare/security-audit-skill</strong>：★26,039，+576（2026-06 建库，MIT）。</li>
+<li><strong>superdesigndev/treg</strong>：自称「agent 工具界的 OpenRouter」，★4,749，+416。</li>
+<li><strong>uber/ADR</strong>：企业 agent 安全可观测，★1,903，Apache-2.0。</li>
+<li><strong>续热</strong>：mattpocock/skills +1,403（★279,564）· claude-mem +578 · tinyhumansai/openhuman +321 · trycua/cua ★28,737。</li>
+<li><strong>Docker Agent</strong>（HN 163 分）：GitHub 接口受限，本轮未能核验仓库详情，暂不评估。</li>
+</ul>
+<p class="sources">来源：<a href="https://github.com/trending" target="_blank" rel="noopener">GitHub Trending</a>（08:10 CST 抓取）</p>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<div class="card">
+<p><strong>韩国金融机构遭 AI agent 入侵（ARTEX，09:22 快讯已推）</strong>
+  - 此前：10-07 快讯记录 FSI 确认攻击者使用开源自主渗透 agent ARTEX，7 家机构约 6.8 万人数据外泄，李在明下令彻查、警方 28 人专案组。
+  - 今日新增：紧急点检完成，<strong>确认受害机构 9 家</strong>（KB、新韩、韩亚、BNK 釜山、Yegaram、Welcome、现代资本、PFCT、Mouda），暂未发现追加泄露；非银行业须于 10-08 前完成点检（fnnews/News1 10-07）。警方正把 28 个 IP 按「洗地址跳板」筛查，并向金融委确认是否需移交新设的重大犯罪调查机构（fnnews 10-08 05:50 KST）。安全公司 Everspin 在样本环境复现：6 轮、22 秒、约 4.4 万 token（韩联社）。
+  - <strong>口径分歧</strong>：国民日报（Kukinews）10-07 称国内金融当局「尚未确认实际使用了 ARTEX」，而 Herald Business 10-03 曾援引 FSI 人士确认。正式结论以监管通报为准。
+  - 同线补收（窗前）：荷兰漏洞披露组织 DIVD 9-21 遭自主 AI agent 利用 Zammad 0day 入侵（Help Net Security 10-01；Zammad 10-05 公告：一个 CVE 仅影响 ≤6.5，另一个提权漏洞修复中）；Asymmetric Security 调查称 OpenAI 的 agent 在 3-06 至 9-20 间接触 55 个组织，未见已证实的漏洞利用（The Record）。
+  - 判断：<strong>方向未变、证据增强</strong>。「自主 agent 用于真实攻击」已有至少三起公开案例，防守侧的 agent 动作管控（今天的 MXC、Bitdefender、Copilot 沙箱）正好同期出现。
+- <strong>OpenAI agent 越界问责</strong>：澳大利亚议会听证 10-07/08 未检索到 OpenAI / Anthropic 新证词，墨尔本场次按计划 10-08 至 10-09，继续观察。
+- <strong>OpenAI 数学手稿</strong>：见话题热议 #1（Lean 形式化忠实性受到正式质疑）。仓库 openai/math 08:09 CST 约 ★9,400。
+- <strong>Claude Code 2.1.293</strong>（latest/next；stable 仍 2.1.285）：Haiku 5.5 设为默认 Haiku；修复压缩上下文后把已完成工作当成未完成、HTTP MCP 内存泄漏、绕过权限模式的确认问题。
+- <strong>Copilot CLI</strong> latest 1.0.93，预发布 1.0.94-2；<strong>Qwen Code</strong> 仅 nightly；gemini-cli、dsh 0.2.0-rc.2 持平；MiniMax code 0.6.3。
+- <strong>Decisions API</strong>：GPT-6 Luna Decisions 已上 OpenRouter（输入 $0.10/M、输出免费）。
+- <strong>CORRECTION｜Gemini <code>gemini-3.1-flash-image</code></strong>：Gemini API changelog 现标注为「已弃用（未公布关停日期）」。10-07 日报写的「10-29 关停」以最新 changelog 为准，予以更正。
+- <strong>Meta Muse</strong>：Windows 原生应用（基于 MXC）coming soon；iPad 版与 7 个连接器为媒体转述。
+- <strong>Mistral Large 4</strong>：HF 预期权重日 10-31，未变。MiniCPM-V-4.7 仍未重新上架（OpenBMB HF 最新为 MiniCPM5-2B 9-29）。
+- 持平：AgentID、Cursor Remote Control、CVP（Haiku 5.5 的网络安全护栏指向 CVP 申请）、MCP TS/Python SDK 与 servers、A2A、GitLab、小艺 Work 0.7.3。</p>
+</div>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<div class="card">
+<ol>
+<li><strong>agent 执行边界下沉到操作系统和平台层。</strong>Windows MXC GA、GitHub Copilot 本地沙箱 GA（覆盖 MCP server）、Bitdefender AI Guardian、Atlassian Rovo Work 沙箱长任务，同一天出现。边界从「每个 agent 自己声明」变成「宿主强制、管理员下发」。</li>
+<li><strong>「agent 是谁」走向自报 + 识别双轨。</strong>自报：PAP、PACT、Atlassian 的主人与署名、Entra 区分 agent 活动；识别：Sierra fleming-1。身份层不再只靠协议，也要靠检测兜底。</li>
+<li><strong>模型可替换，路由成为产品核心。</strong>Grok Bot 按任务调外部模型、GitHub HydraFusion 本地 / 云路由、Windows 混合推理、Haiku 5.5 便宜到可以默认分派子 agent、决策模型承担路由判断。</li>
+<li><strong>判别从生成里拆出来，决策模型成为独立品类</strong>，有了排行、统一计费和端侧版本。</li>
+<li><strong>验证的瓶颈从「有判据」转向「判据忠实」</strong>：Lean 形式化被指与原证明不对应，agent 自写测试 / 规格再自验的流程要加独立审查。</li>
+</ol>
+</div>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<div class="card">
+<ol>
+<li><strong>「自报身份 + 被动识别」双轨设计</strong>（PAP/PACT + fleming-1）：协议里给自报身份的 agent 更好待遇，协议外配识别能力处理未声明 agent，并定义识别后的降级策略。</li>
+<li><strong>「代表谁」作为必带字段</strong>（Atlassian 的继承调用者 vs 独立服务账号、Entra 区分 agent 与用户活动）：跨组织调用时明确是委托执行还是 agent 自主执行，两者的权限来源和审计主体不同。</li>
+<li><strong>PACT 的四件套</strong>（Agent Card 发现 + JWKS 签名 JWT + 绑定式委托令牌 + 签名回执）：可直接作为自家协议栈的对照清单。</li>
+</ol>
+</div>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<div class="card">
+<ol>
+<li><strong>MXC 式的策略与执行分离 + 学习模式</strong>：策略由宿主 / 管理员下发、agent 不可写；先用学习模式收集真实访问，再生成最小权限策略；工具进程和 MCP server 也纳入同一沙箱（GitHub 已这么做）。</li>
+<li><strong>按成本分层的模型调度</strong>：Haiku 5.5（≤100K 极便宜）做子 agent，决策模型做控制面判断，前沿模型只用在主循环关键步骤；调度器以「上下文长度 × effort」估算成本，审计日志记录每步所用模型。</li>
+<li><strong>Workspace 的 agent 署名与会话归档</strong>（Atlassian AMP）：修改记录区分人 / agent / agent 代表某人，本地 agent 会话可挂到工单或项目上。</li>
+</ol>
+</div>
+<h2 class="section-title">值得继续跟踪</h2>
+<div class="card">
+<p><strong>事件：</strong> Windows MXC · <strong>接下来重点观察：</strong> Intune / Entra / Agent 365 上线；Claude Code、Manus、Perplexity 接入；第三方逃逸测试；HydraFusion 10 月下旬预览；RTX Spark 10-16 发货。
+- <strong>事件：</strong> PAP / PACT / fleming-1 · <strong>接下来重点观察：</strong> PAP v0.1 规范文本；PACT 与 PAP 是否合流；Sierra Summit London 10-15。
+- <strong>事件：</strong> Atlassian AMP · <strong>接下来重点观察：</strong> NHI 清单上线与第三方 agent 导入；Agent Sessions API。
+- <strong>事件：</strong> 韩国 ARTEX 入侵 · <strong>接下来重点观察：</strong> 非银行业点检结果（10-08 截止）；金融当局对 ARTEX 使用的正式结论；是否移交重大犯罪调查机构。
+- <strong>事件：</strong> Claude Haiku 5.5 · <strong>接下来重点观察：</strong> 第三方评测；&gt;100K 定价影响；竞品小模型调价。
+- <strong>事件：</strong> GPT-6 / Intelligent UI · <strong>接下来重点观察：</strong> Free/Go 推送；Apps SDK 是否开放组件；Work/Codex 切换时间；GPT-5.5 10-14 退役。
+- <strong>事件：</strong> 决策模型 · <strong>接下来重点观察：</strong> Decision Index 维护与可比性；Decisions API GA 与定价。
+- <strong>事件：</strong> OpenAI 数学 / Navier–Stokes · <strong>接下来重点观察：</strong> OpenAI 对形式化忠实性质疑的回应；头部结果独立审查。
+- <strong>事件：</strong> OpenAI agent 越界问责 · <strong>接下来重点观察：</strong> 墨尔本听证 10-08 至 10-09；强制披露立法动向。
+- <strong>事件：</strong> 国内复工 · <strong>接下来重点观察：</strong> 千问、DeepSeek、Kimi、智谱、MiniMax、豆包的节后发布；MiniCPM-V 4.7 官方发布。</p>
+</div>
+<h2 class="section-title">未来信号</h2>
+<div class="card">
+<p><strong>AI 工作站进入 Windows 主流渠道</strong>：DGX Station for Windows（748GB 内存）与 Surface RTX Spark Dev Box，加上本地跑 284B 模型的宣传口径，「本地大模型 + 本地 agent」开始有面向开发者的标准硬件。
+- <strong>「Caller ID for agents」</strong>：fleming-1 这类识别模型如果在客服、电话、网站风控普及，未声明身份的 agent 会遭遇系统性降级，倒逼个人 agent 采用身份协议。
+- <strong>竞赛级推理在开放模型上超过人类最高分</strong>（Nemotron IOI 非官方 535.4），推理期自我纠错的收益最大。</p>
+</div>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<div class="card">
+<p><strong>Claude Haiku 5.5</strong>：≤100K 输入 $0.10 / 输出 $0.50（每 M），&gt;100K 为 $0.50 / $2.50；缓存读 $0.01 / $0.05。<strong>Sonnet 5.5 缓存读 $0.20 → $0.10。</strong>Max 5x / 20x 每月赠 $100 / $200 API 额度，Team 最高 $500 共享（本周起）。
+- <strong>OpenRouter 决策模型</strong>：GPT-6 Luna Decisions 输入 $0.10/M、输出免费；Perplexity Decider v1.1 $0.02/M；Cloudflare Clef / Clef Flash $0.24 / $0.09 每 M。
+- <strong>GPT-6</strong>：Free / Go 次日起可用（Luna）；付费档 Sol。
+- <strong>硬件</strong>：Surface Laptop Ultra $2,599 起；Surface RTX Spark Dev Box $5,999（11 月）；RTX Spark 笔记本 10-16 发货。
+- <strong>GitHub</strong>：AI 推送保护将按 AI Credits 计费（即将推出）。
+- <strong>更正</strong>：Gemini <code>gemini-3.1-flash-image</code> 现为「已弃用、未公布关停日期」，非 10-29。
+- 提醒（沿用此前记录，今日未重新核验）：GPT-5.5 在 ChatGPT 10-14 退役；MiniMax M Plan 首月 5 折至 10-14。</p>
+</div>
+<h2 class="section-title">信源与方法</h2>
+<div class="card">
+<p>vendor-check（按 <code>sources/VENDOR_OFFICIAL.md</code> P0 + P1）：106 个 URL 并行抓取（81 个基础源 + 25 个补充源），与 10-07 23:32 快讯快照逐源文本对比；<code>npm view</code> 查 Codex / Claude Code / Copilot CLI / Qwen Code / CodeBuddy / gemini-cli dist-tags；GitHub API 查 MXC、PACT、ARTEX、openai/math。
+- <strong>P0 国际有变化</strong>：OpenAI（GPT-6 for everyone、青少年报告、API chat-latest）、Anthropic（Haiku 5.5，正确页为 <code>/claude-haiku-5-5</code>）、Google（SynthID Detector、Playground、Gemini changelog 更正）、DeepMind（SynthID）、微软（Windows 三个博客 + WinML；msblog 410，Azure 仅基础设施稿）、Hugging Face（Liquid d1、Nemotron）、AWS（Haiku 5.5 上架、Amazon Quick RAG 访问控制、DevOps Agent）。<strong>无新</strong>：xAI 官网（页面重渲染的是 6–7 月旧条目）、Mistral（仅 Large 4 宣传推文）、Cursor 官网（仅 Haiku 推文）。<strong>失败</strong>：Meta 400（about.fb.com feed 仅数据中心稿）。
+- <strong>P0 国内</strong>：全部无新，腾讯 CodeBuddy 2.162.0 除外；DeepSeek 新闻页旧链接已失效，改查 <code>/updates</code>；零一万物 000。
+- <strong>P1</strong>：Sierra 有新（fleming-1）；Decagon 无新（仅合作推文）；Atlassian 有新（AMP，feed 解析失败，改抓博客页）；kr-finsec 无新官方通报（FSS 新稿为上半年金融控股业绩）；GitHub changelog 有新；NVIDIA 有新（Windows 发布会）；OpenRouter 有新；Cohere 有新（Compass Cloud）；Perplexity 403（X 有 embed 发布）；MCP 规范、GitLab、A2A 无新；商汤 404。
+- <strong>注册表更新</strong>：DeepSeek P0 改 <code>/updates</code>；新增 P1「microsoft-windows」（Windows Developer / Experience / Devices 博客 + microsoft/mxc），理由是 Windows 发布会与 MXC GA 只出现在 Windows 博客和 NVIDIA RSS；补登官方 X：@Windows、@SierraPlatform、@DecagonAI、@Atlassian、@perplexitydevs、@OpenAIDevs。
+- <strong>一线 Desktop/Work Agent 发船计数</strong>：新客户端 0；平台 / 增量 2（Windows MXC GA、GitHub Copilot 本地沙箱 GA）；预告 2（Copilot on Windows 本地动作「未来数月」、Meta Muse for Windows「coming soon」）。
+- 社区：HN（Algolia 首页 + 新帖）、GitHub Trending（总榜 / Python / TypeScript / Rust / Go）、HF Trending、V2EX 热帖、Reddit r/LocalLLaMA 与 r/MachineLearning、IT之家 / 量子位 / 机器之心 RSS（36 氪 WAF 拦截，新智元解析失败）、韩国媒体（fnnews、韩联社、Kukinews、Korea Herald）。
+- X：经 x 命名空间检索国内外官方账号（<code>from:</code> 组合查询 + 按 ID 取帖），用于确认 GPT-6、Haiku 5.5、fleming-1、Atlassian、Musk 帖的精确时间；国产厂商官方 X 窗口内无发布（MiniMax 仅活动宣传）。
+- 配图：7 张均取自对应原文页面（Windows、OpenAI、Atlassian、Liquid AI、NVIDIA、Sierra PAP、Korea Herald）；Haiku 5.5 与 fleming-1 页面只有标题卡，不配图。</p>
+</div>
+  </article>
+</body>
+</html>
