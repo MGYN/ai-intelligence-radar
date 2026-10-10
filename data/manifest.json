@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-08T08:30:00+08:00",
+ "updatedAt": "2026-10-10T08:14:39+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-10",
+   "date": "2026-10-10",
+   "title": "AI Intelligence Daily · 2026-10-10",
+   "summary": "身份·隔离·供应链同昼夜：Gemini agent 同事身份+SPIFFE；AgentCorruption；Cyber Mission；Codex×MXC；GhostAction；豆包画布；math CORRECTION 补收",
+   "href": "reports/2026-10-10.html"
+  },
   {
    "id": "2026-10-08",
    "date": "2026-10-08",
@@ -228,6 +235,30 @@
   }
  ],
  "events": [
+  {
+   "id": "google-gemini-agent",
+   "title": "Google Gemini agent / Agent Identity（同事账号+SPIFFE）",
+   "status": "tracking",
+   "href": "events/google-gemini-agent.html"
+  },
+  {
+   "id": "zenity-agentcorruption",
+   "title": "Zenity AgentCorruption（Bedrock AgentCore）",
+   "status": "tracking",
+   "href": "events/zenity-agentcorruption.html"
+  },
+  {
+   "id": "anthropic-cyber-mission",
+   "title": "Anthropic Cyber Mission / OSS Scanner / CIDP",
+   "status": "tracking",
+   "href": "events/anthropic-cyber-mission.html"
+  },
+  {
+   "id": "ghostaction-supply-chain",
+   "title": "GhostAction GitHub Actions 供应链（Socket/StepSecurity）",
+   "status": "tracking",
+   "href": "events/ghostaction-supply-chain.html"
+  },
   {
    "id": "atlassian-amp",
    "title": "Atlassian AMP（Agentic Multiplayer Protocol）",
