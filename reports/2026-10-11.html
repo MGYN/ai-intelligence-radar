@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Intelligence Daily · 2026-10-11（周日）</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <article class="article" style="max-width:none;margin:0;padding:0">
+    <h1>AI Intelligence Daily · 2026-10-11（周日）</h1>
+    <div class="meta">统计窗口：2026-10-10 08:00 → 2026-10-11 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 快讯已推 PAP（10-10 11:18）与 TRAE（10-10 23:20）本期正式入栏并注明曾推送 · <strong>一线 Desktop/Work Agent 正式新客户端发船 = 1（TRAE 双端融合）</strong> · X 检索走 x 命名空间 · npm/Desktop 相对 10-10 23:20：codex 0.162.1 / claude-code 2.1.296 / copilot 1.0.95 / codebuddy 2.164.0 / dsh 0.2.0-rc.2 / MiniMax Desktop 3.1.1 / Manus 2.0.4 / 小艺 Work 0.7.3 / Kimi Desktop 1.0.4 / ZCode 3.14.5 持平；<strong>@minimax-ai/code 0.6.7→0.6.8</strong>（CLI 补丁，≠Desktop）；microsoft/mxc ★2529→<strong>2570</strong>（pushed 10-10 23:43Z）</div>
+<div class="lede"><strong>今日一句话：</strong><strong>个人 Agent 协议落到可读规范，国内一线把 Work 与 IDE 收成同一 Desktop</strong>：Sierra 公开 Personal Agent Protocol（Poppy）Draft 0.1（35 家 design partners 含 OpenAI）；字节 TRAE 将 TraeCode×TraeWork 融合为统一三端平台（Agent+IDE，TraeWork 过渡至 <strong>10-23</strong>）；阿里 Qoder 兑现「10.10」为 <strong>Fast</strong> 模式（3s / 0.8x credits，非新 Desktop 产品发船）。<strong>身份协议与统一 Harness 入口同窗落地；模型档位促销与 CLI 补丁不升格。</strong></div>
+
+<h2 class="section-title">专栏一｜新闻</h2>
+<p>本栏条目：国际 1 · 国内 2。快讯 10-10 已推 PAP、TRAE（用户已知）本期以正式入栏并注明曾快讯推送。Daily 10-10 已收条目窗内无实质新进展 → <strong>不重复灌水</strong>。</p>
+
+<section class="card">
+<h3>1. Sierra 公开 Personal Agent Protocol（Poppy）Draft 0.1：个人 Agent↔企业发现/会话/登录 + 35 家 design partners（含 OpenAI）</h3>
+<div class="chips"><span class="chip s">强A</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">E/F/C</span><span class="chip">博文 Oct 9 / X≈10-10 04:58 CST</span><span class="chip">快讯 10-10 11:18 已推</span><span class="chip">Daily 10-10 曾误判未公开</span></div>
+<h4>发生了什么</h4>
+<ul><li>Sierra 发布博文 <strong>「Sharing a draft of Personal Agent Protocol」</strong>，协议草案昵称 <strong>Poppy</strong>，开放规范站 personalagentprotocol.org（Draft 0.1 Spec，Updated Oct 9, 2026）。</li><li>相对 10-06 首发伙伴，本轮再宣布 <strong>35 家 design partners</strong>，含 Adyen、Bank of America、Cloudflare、Mastercard、Notion、Okta、<strong>OpenAI</strong>、PayPal、Visa、Wells Fargo、Zapier、Zendesk、1Password 等。</li><li><strong>五块积木</strong>：Discovery（<code>/.well-known/poppy.json</code>）；Sessions；Sign-in（OAuth / 可选代登）；同一会话贯通 API/网站/企业 Agent；企业自选通道（浏览 / OpenAPI·MCP / 公司 Agent）。</li><li><strong>规范要点</strong>：OAuth Client ID Metadata + JWKS；Session Token（DPoP；MCP 例外 Bearer+resource）；Account Token；Direct/Device/Mediated 登录；draft 可破坏性变更；支付/推送等仍为 Open topics。</li></ul>
+<h4>我的判断</h4>
+<p>个人 Agent↔企业开放标准第一次落到可读可实现的 Draft 0.1。OpenAI 进 design partners，与 Gemini Agent Identity、Atlassian、Entra、PACT 同屏对照价值立刻上升。仍是 draft，但「可对照实现」门槛已跨过。</p>
+<h4>往后看</h4>
+<p>reference implementation / design workshops；稳定版；PACT 合流；Sierra Summit London <strong>10-15</strong>。</p>
+<h4>对智能体互联网</h4>
+<p><strong>强相关。</strong>Discovery、Agent 身份、用户委托、会话跨通道，可映射到 Discovery / Identity / AuthZ / Trust 清单。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>出站带可验证 agent client；MCP Bearer 例外单独威胁模型；Mediated Sign-In 默认拒或强审计；禁写 Account Token 入 Memory。</p>
+<h4>建议动作</h4>
+<ol><li>精读 spec §3–4，做 PAP / PACT / Gemini / Atlassian 对照表。</li><li>试验性发布 <code>/.well-known/poppy.json</code>。</li><li>盯 reference implementation 与 10-15 London。</li></ol>
+<p><img src="../assets/2026-10-11/01-sierra-pap-poppy.png" alt="Sierra PAP / Poppy 博文 OG" loading="lazy" /></p>
+<div class="caption">图 1 · Sierra Poppy 博文 OG · 来源：Sierra blog（快讯资产）</div>
+<p><img src="../assets/2026-10-11/01b-btaylor-pap.jpg" alt="Bret Taylor 官宣帖配图" loading="lazy" /></p>
+<div class="caption">图 2 · @btaylor 官宣帖附图 · 来源：X</div>
+<p><strong>来源</strong>：<a href="https://sierra.ai/blog/poppy" target="_blank" rel="noopener">Sierra：Sharing a draft of Personal Agent Protocol</a> · <a href="https://personalagentprotocol.org/docs/spec" target="_blank" rel="noopener">Draft 0.1 Spec</a> · <a href="https://x.com/btaylor/status/2108663336393208233" target="_blank" rel="noopener">X @btaylor</a> · <a href="https://x.com/SierraPlatform/status/2108665347201212623" target="_blank" rel="noopener">X @SierraPlatform</a></p>
+</section>
+
+<section class="card">
+<h3>2. 字节 TRAE：TraeCode × TraeWork 融合为统一 Desktop/三端平台（Agent 模式 + IDE 模式；TraeWork 过渡至 10-23）</h3>
+<div class="chips"><span class="chip s">强A</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/C</span><span class="chip">官方≈10-09 03:38 CST</span><span class="chip">快讯 10-10 23:20 已推</span><span class="chip">desktop_work_agent_shipping=1</span></div>
+<h4>发生了什么</h4>
+<ul><li>字节 <strong>TraeCode</strong> 与 <strong>TraeWork</strong> 正式合并为统一产品 <strong>TRAE</strong>：「一个入口、两种模式、三端同步」。</li><li><strong>Agent 模式</strong>：跨项目工作台、多 Agent 并行、自动化任务、模板库、统一产物面板。</li><li><strong>IDE 模式</strong>：完整智能开发环境，可与 Agent 模式无缝切换。</li><li><strong>桌面 / Web / 移动</strong> 三端；客户端内引导升级并迁移数据。<strong>TraeWork 过渡期截止 2026-10-23</strong>。</li></ul>
+<h4>我的判断</h4>
+<p>国内一线把「办公 Work 端」与「IDE Code 端」收成同一 Desktop/Harness 的明确 shipping。漏报根因是信源表未登记 TRAE——已补入 VENDOR_OFFICIAL。</p>
+<h4>往后看</h4>
+<p>灰度全量；<strong>10-23</strong> 停服；国际站文案；与 Cursor / Claude / Qoder / MiniMax 对照。</p>
+<h4>对智能体互联网</h4>
+<p><strong>间接。</strong>多 Agent 与跨端会话可观察；暂无开放互联协议一手。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p><strong>强相关。</strong>双模式切换；多 Agent + 产物管线；旧端 EOL 与数据迁移；Harness 产品化。</p>
+<h4>建议动作</h4>
+<ol><li>下载新 TRAE 短测 Agent/IDE 切换与产物面板。</li><li>盯 10-23 停服与灰度全量。</li><li>对照竞品「工作台+IDE」差异。</li></ol>
+<p><img src="../assets/2026-10-11/02-trae-agent-ide.png" alt="TRAE Agent / IDE 双模式" loading="lazy" /></p>
+<div class="caption">图 3 · TRAE 官方中文文档配图 · 来源：docs.trae.cn</div>
+<p><img src="../assets/2026-10-11/02b-trae-workflow.webp" alt="TRAE 统一工作流" loading="lazy" /></p>
+<div class="caption">图 4 · TRAE 统一工作流示意 · 来源：docs.trae.cn</div>
+<p><strong>来源</strong>：<a href="https://docs.trae.cn/ide_traework-to-traecode-data-migration" target="_blank" rel="noopener">docs.trae.cn 融合页</a> · <a href="https://docs.trae.cn/work_traework-to-traecode-data-migration" target="_blank" rel="noopener">TraeWork 升级页</a> · <a href="https://forum.trae.cn/t/topic/183224" target="_blank" rel="noopener">官方社区</a> · <a href="https://technode.com/2026/10/10/bytedance-merges-traework-and-traecode-into-unified-trae-platform/" target="_blank" rel="noopener">TechNode</a></p>
+</section>
+
+<section class="card">
+<h3>3. 阿里 Qoder 上线 Fast 模式：Performance→Fast（约 3s 首响，Credits 1.1x→0.8x；Desktop ≥0.4.4）</h3>
+<div class="chips"><span class="chip a">A-</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B</span><span class="chip">官方文档 10-10</span><span class="chip">@qoder_ai_ide ≈14:28 CST</span><span class="chip">非 Desktop 新客户端发船</span></div>
+<h4>发生了什么</h4>
+<ul><li>Qoder 桌面端模式选择器中 <strong>Performance 升级为 Fast</strong>（国际版自动替换；CN 版新增 Fast 档）。</li><li>官方对比（国际版）：首响约 <strong>8s→3s</strong>；Credits <strong>1.1x→0.8x</strong>。Desktop <strong>0.4.4+</strong> 首发；其他产品线称将陆续跟上。</li><li>@qoder_ai_ide：「Just dropped: Fast… Performance is now Fast… 1.1x → 0.8x credits」；回复确认「new model — Fast」。</li></ul>
+<h4>我的判断</h4>
+<p>兑现「10.10」teaser 的实质是模式/模型档位，不是新 Desktop 产品线发船，<strong>不计入 desktop_work_agent_shipping</strong>。入栏 A-。</p>
+<h4>往后看</h4>
+<p>全系列是否跟上；真实质量差；版本分布。</p>
+<h4>对智能体互联网 / Work·Agent 引擎</h4>
+<p><strong>中相关（引擎）。</strong>多档位路由与 Credits 系数透明化是 Harness 产品化标配。</p>
+<h4>建议动作</h4>
+<p>有 Qoder Desktop 则升到 0.4.4+ 实测 Fast vs Auto；对照自家默认路由策略。</p>
+<p><img src="../assets/2026-10-11/03-qoder-fast.jpg" alt="Qoder Fast 官宣帖附图" loading="lazy" /></p>
+<div class="caption">图 5 · @qoder_ai_ide Fast 官宣帖预览图 · 来源：X 原帖媒体</div>
+<p><strong>来源</strong>：<a href="https://docs.qoder.com/product-overview/fast-mode-announcement" target="_blank" rel="noopener">docs.qoder.com</a> · <a href="https://docs.qoder.cn/product-overview/fast-mode-announcement" target="_blank" rel="noopener">docs.qoder.cn</a> · <a href="https://x.com/qoder_ai_ide/status/2108806953141162235" target="_blank" rel="noopener">X @qoder_ai_ide</a> · <a href="https://www.ithome.com/1/011/332.htm" target="_blank" rel="noopener">IT之家</a></p>
+</section>
+
+<h2 class="section-title">专栏二｜话题热议</h2>
+<ul>
+<li><strong>PAP Draft 公开</strong>：社区讨论从愿景切到 well-known / DPoP / design partners 名单。</li>
+<li><strong>TRAE 双端融合</strong>：国内媒体与社区放大；关心数据迁移与 <strong>10-23</strong> 停服。</li>
+<li><strong>Qoder Fast</strong>：teaser 兑现后讨论 Credits 系数与是否算「新模型」。</li>
+<li><strong>Step 5 Preview</strong>：SF Launch Night <strong>Oct 22</strong>、多渠道一周免费——热议大于新发船。</li>
+<li><strong>MiniMax M3 × Vera Rubin / vLLM</strong>：推理栈 continuum，非 Desktop。</li>
+<li><strong>HN</strong>：可见 mxc、个人 Agent 对齐、coding agents 工作流等；无一线 Desktop 新发船升格。</li>
+</ul>
+<p>互动数字仅在有一手帖时引用；不编造。</p>
+
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<table class="tbl"><thead><tr><th>项目</th><th>核验点（约 10-11 08:00 CST）</th><th>备注</th></tr></thead><tbody>
+<tr><td>microsoft/mxc</td><td>★<strong>2,570</strong>，pushed <code>2026-10-10T23:43:39Z</code></td><td>相对 23:20 ★2,529 续涨；Codex×MXC continuum</td></tr>
+<tr><td>openai/math</td><td>★<strong>13,670</strong>，pushed <code>2026-10-08T05:20:00Z</code></td><td>CORRECTION 后续涨；history.md 权威勘误源</td></tr>
+<tr><td>MiniMax-AI/minimax-code</td><td>npm <strong>0.6.8</strong>（10-10T20:48Z）</td><td>CLI 补丁；Desktop 仍 3.1.1</td></tr>
+<tr><td>higress</td><td>releases 顶仍 <strong>v2.2.5</strong></td><td>持平</td></tr>
+<tr><td>ARTEX</td><td>当局正式结论仍未核到</td><td>风险跟踪</td></tr>
+</tbody></table>
+
+<h2 class="section-title">重点事件新进展</h2>
+<p>Daily 10-10 已报条目窗内无实质 UPDATE → 不灌水。下列仅为有增量 continuum。</p>
+<section class="card">
+<h3>UPDATE · Windows MXC continuum</h3>
+<div class="chips"><span class="chip">continuum</span><span class="chip">国际</span><span class="chip">B/C</span></div>
+<ul><li><code>microsoft/mxc</code> ★2,570（pushed 10-10 23:43Z）。窗内无新一线 agent 接入 MXC 的官方宣布。</li></ul>
+</section>
+<section class="card">
+<h3>UPDATE · PAP / Poppy</h3>
+<div class="chips"><span class="chip s">强A</span><span class="chip">UPDATE</span><span class="chip">见新闻 1</span></div>
+<ul><li>相对 Daily 10-10「仍未公开」为实质补收。规范站仍 Draft 0.1；无 reference implementation 新发。</li></ul>
+</section>
+<p><strong>持平不展开</strong>：Gemini agent / AgentCorruption / Cyber Mission / GhostAction / 豆包画布 / math CORRECTION / Ant×HSBC。</p>
+
+<h2 class="section-title">今天正在形成的趋势</h2>
+<ol>
+<li><strong>个人 Agent 协议从愿景到 Draft</strong>：Poppy 可实现字段 + 大厂 design partners。</li>
+<li><strong>国内 Desktop 合流「工作台 + IDE」</strong>：TRAE 双端融合是明确 shipping 样本。</li>
+<li><strong>模式档位成为产品竞争面</strong>：Qoder Fast 用时延与 Credits 系数说话。</li>
+<li><strong>沙箱/开源容器热度仍在</strong>：mxc 星数续涨，新发船节奏放缓。</li>
+<li><strong>攻防与供应链线进入消化期</strong>：窗内无新强 A 披露。</li>
+</ol>
+
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<ol>
+<li><strong>Poppy Draft 0.1</strong>：well-known、CIMD、DPoP、Mediated Sign-In——做字段级对照表。</li>
+<li><strong>design partners 名单</strong>（含 OpenAI、支付与 IdP）：跨组织「agent 是谁」预演。</li>
+<li><strong>与 Gemini SPIFFE / Atlassian NHI / PACT 三线并读</strong>。</li>
+</ol>
+
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<ol>
+<li><strong>双模式入口 + 产物管线</strong>（TRAE）；旧端 EOL（10-23）提醒迁移契约。</li>
+<li><strong>多档位路由 + Credits 系数透明</strong>（Qoder Fast）。</li>
+<li><strong>出站身份</strong>：接企业站/MCP 时默认带可验证 agent client。</li>
+</ol>
+
+<h2 class="section-title">值得继续跟踪</h2>
+<ul>
+<li>PAP：reference implementation；Sierra London <strong>10-15</strong></li>
+<li>TRAE：灰度全量、<strong>10-23</strong> TraeWork 停服、国际站文案</li>
+<li>Qoder Fast：全系列跟上？真实质量差</li>
+<li>Gemini agent 私人预览；MXC 其他 agent 接入</li>
+<li>AgentCorruption / GhostAction / Cyber Mission OSS Scanner</li>
+<li>ARTEX；openai/math 后续勘误</li>
+<li>到期：GPT-5.5 退役 <strong>10-14</strong>；RTX Spark <strong>10-16</strong>；OpenRouter ElevenLabs 5 折至 <strong>10-19</strong>；Copilot Default Enablement <strong>10-22</strong>；StepFun Launch Night / TraeWork EOL / MCPCon <strong>10-22~10-23</strong>；Usage Policy <strong>11-12</strong>；Mistral L4 <strong>10-31</strong></li>
+</ul>
+
+<h2 class="section-title">未来信号</h2>
+<ul>
+<li>StepFun SF Launch Night <strong>Oct 22</strong>（预告）</li>
+<li>Step 5 Preview 多渠道一周免费（运营续）</li>
+<li>Codex composer predictions（Pro beta）——交互向</li>
+<li>MiniMax M3 × Vera Rubin / vLLM（推理栈）</li>
+</ul>
+
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<ul>
+<li>Qoder Fast：Credits <strong>1.1x→0.8x</strong>（相对原 Performance）——模式系数变更，非 API 官价表</li>
+<li>MiniMax Code Bonus Reset Cards：<strong>10-10→10-18</strong>（延续促销）</li>
+<li>MiniMax M Plan 首月 5 折至 <strong>10-14</strong>（延续）</li>
+<li>OpenRouter ElevenLabs 5 折至 <strong>10-19</strong>（延续）</li>
+<li>Anthropic Usage Policy 线索 → <strong>11-12</strong></li>
+<li>窗内无新的一线 API 官价表变更可核</li>
+</ul>
+
+<h2 class="section-title">信源与方法</h2>
+<ul>
+<li><strong>时间窗</strong>：2026-10-10 08:00 → 2026-10-11 08:00 Asia/Shanghai。</li>
+<li><strong>快讯吸收</strong>：PAP（11:18）、TRAE（23:20）正式入栏；SILENT 轮 near-miss 仅 Qoder Fast 升格。</li>
+<li><strong>官方</strong>：按 <code>sources/VENDOR_OFFICIAL.md</code> <strong>P0+P1 全检</strong>（详见 <code>flashes/.scan-2026-10-11-daily.md</code>）。</li>
+<li><strong>连接器</strong>：X <code>search_posts_all</code>；GitHub <code>gh</code>；WebSearch/WebFetch/curl；国内媒体公开页。</li>
+<li><strong>Desktop 基线</strong>：见文首；<strong>desktop_work_agent_shipping=1</strong>（仅 TRAE）。</li>
+<li><strong>配图</strong>：PAP/TRAE 快讯原文图；Qoder 官方 X 帖媒体；禁止 AI 生成。</li>
+<li><strong>脆弱面</strong>：openai.com/index 403（RSS 可用）；部分 Cloudflare/WAF。</li>
+</ul>
+</article>
+</body>
+</html>

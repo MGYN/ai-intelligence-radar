@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-10T08:14:39+08:00",
+ "updatedAt": "2026-10-11T08:20:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-11",
+   "date": "2026-10-11",
+   "title": "AI Intelligence Daily · 2026-10-11",
+   "summary": "PAP/Poppy Draft 0.1 正式入栏；字节 TRAE 双端融合（desktop_work_agent_shipping=1）；Qoder Fast 模式；mxc ★2570",
+   "href": "reports/2026-10-11.html"
+  },
   {
    "id": "2026-10-10",
    "date": "2026-10-10",
