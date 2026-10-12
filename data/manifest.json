@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-11T08:20:00+08:00",
+ "updatedAt": "2026-10-12T08:20:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-12",
+   "date": "2026-10-12",
+   "title": "AI Intelligence Daily · 2026-10-12",
+   "summary": "静默消化日：专栏一无≥B新事件；desktop_work_agent_shipping=0；mxc ★2656 / math ★14072 continuum；临近 GPT-5.5 退役10-14与Sierra London10-15",
+   "href": "reports/2026-10-12.html"
+  },
   {
    "id": "2026-10-11",
    "date": "2026-10-11",
