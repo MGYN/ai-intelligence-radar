@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-12T08:20:00+08:00",
+ "updatedAt": "2026-10-13T08:35:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-13",
+   "date": "2026-10-13",
+   "title": "AI Intelligence Daily · 2026-10-13",
+   "summary": "The X Subscription 合并 Cursor/Grok/X Premium（第三方模型改按量）；Meta Muse Wonder 前沿 Agent 模型；Anthropic 反蒸馏（推理组织隔离/preserved thinking）；Perplexity Projects Git forge；Azure Maia 300；GLM-Legal；ZCode 3.15.1；desktop shipping=0",
+   "href": "reports/2026-10-13.html"
+  },
   {
    "id": "2026-10-12",
    "date": "2026-10-12",
@@ -250,6 +257,12 @@
  ],
  "events": [
   {
+   "id": "x-subscription",
+   "title": "The X Subscription（Cursor×Grok×X Premium 统一订阅）",
+   "status": "tracking",
+   "href": "events/x-subscription.html"
+  },
+  {
    "id": "google-gemini-agent",
    "title": "Google Gemini agent / Agent Identity（同事账号+SPIFFE）",
    "status": "tracking",
@@ -371,7 +384,7 @@
   },
   {
    "id": "aa26-251a-distillation",
-   "title": "AA26-251A 工业级蒸馏通告",
+   "title": "AA26-251A 工业级蒸馏通告 / Anthropic 反蒸馏",
    "status": "tracking",
    "href": "events/aa26-251a-distillation.html"
   },
@@ -395,7 +408,7 @@
   },
   {
    "id": "meta-muse",
-   "title": "Meta Muse Personal Agent",
+   "title": "Meta Muse Personal Agent / Muse Wonder",
    "status": "tracking",
    "href": "events/meta-muse.html"
   },
