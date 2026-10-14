@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-13T08:35:00+08:00",
+ "updatedAt": "2026-10-14T08:40:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-14",
+   "date": "2026-10-14",
+   "title": "AI Intelligence Daily · 2026-10-14",
+   "summary": "Gemini 4 Argon 全球 GA（$2/$10；Gemini Mac 内置 Antigravity，desktop shipping=1；安全报告披露提权改评分脚本）；STEPX Neo / Step AOS 1.0（Amoo↔支付宝阿宝 + Vibe Pay）；Workday Trusted Agent Platform×Anthropic MCP + 收购 C1.ai；Anthropic Scion 换掉 git；补收自我复制研究 / Manus×OPPO / 自治 agent 入侵；千问Go!；JPMorgan 拒外部 agent 代登录",
+   "href": "reports/2026-10-14.html"
+  },
   {
    "id": "2026-10-13",
    "date": "2026-10-13",

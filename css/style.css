@@ -365,3 +365,20 @@ button { font: inherit; }
   .grid-2 { grid-template-columns: 1fr 1fr; }
   .menu-btn { display: none; }
 }
+
+/* ===== Article body (daily / event pages) — added 2026-10-14 ===== */
+.article h1 { font-size: 22px; line-height: 1.3; margin: 4px 0 8px; letter-spacing: -.01em; }
+.article .meta { color: var(--muted); font-size: 12.5px; line-height: 1.55; margin: 0 0 16px; overflow-wrap: anywhere; }
+.article .meta code { white-space: normal; }
+.section-title { font-size: 16px; font-weight: 750; margin: 26px 0 12px; padding-left: 10px; border-left: 3px solid var(--brand); line-height: 1.3; }
+.article > ul, .article > ol, .article > p { color: #d7e0f5; font-size: 14px; line-height: 1.65; }
+.article li { margin-bottom: 6px; }
+.card blockquote, .article blockquote { margin: 0 0 12px; padding: 8px 12px; border-left: 3px solid var(--warn); background: rgba(255,209,102,.07); border-radius: 0 10px 10px 0; }
+.card blockquote p { margin: 0; color: #f1e3bd; font-size: 13px; }
+.tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 10px; }
+.tbl-wrap table, table.tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 13px; line-height: 1.5; }
+.tbl-wrap th, .tbl-wrap td { border-bottom: 1px solid var(--line); padding: 8px 8px; text-align: left; vertical-align: top; color: #d7e0f5; overflow-wrap: anywhere; }
+.tbl-wrap th { color: var(--brand); font-weight: 700; white-space: nowrap; }
+.card img.tall { width: auto; max-width: 100%; max-height: 620px; margin-left: auto; margin-right: auto; }
+.card code, .article code { font-size: .92em; background: rgba(255,255,255,.06); padding: 1px 5px; border-radius: 6px; }
+@media (min-width: 960px) { .article h1 { font-size: 26px; } }
