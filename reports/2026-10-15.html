@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>AI Intelligence Daily · 2026-10-15（周四）</title>
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+  <main class="content">
+  <article class="article">
+    <h1>AI Intelligence Daily · 2026-10-15（周四）</h1>
+    <div class="meta">统计窗口：2026-10-14 08:00 → 2026-10-15 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-14 白天快讯 7 轮（09:14→21:18）全部 SILENT，本期消化 watchlist 49–54/52 待收并补收 IDE 双 CVE / AWS OSS / XBOW · <strong>一线 Desktop/Work Agent 正式新客户端发船 = 1</strong>（Kimi Code Desktop 1.1.0：Linux + Remote Control）· npm/Desktop：codex 0.162.1（alpha.11）/ claude-code <strong>2.1.300</strong> / copilot <strong>1.0.98</strong> / codebuddy <strong>2.167.0</strong> / minimax-code 0.6.11 / Desktop 3.1.1 / dsh 0.2.0-rc.2（alpha.3）/ <strong>Kimi Desktop 1.1.0</strong> / CLI 2.2.0 / ZCode 3.15.3 / 小艺 0.7.3 / Manus 2.0.4 / Gemini notes 仍 2026.10.13 · microsoft/mxc ★<strong>2804</strong>（+18）· openai/math ★<strong>14814</strong>（+55）</div>
+    <h2 class="section-title">今日一句话判断</h2>
+<div class="lede"><strong>补收与纠错日：Microsoft IDE Agent 宿主双 CVE（Copilot 尾点写 <code>.mcp</code> + VS Code 9.6）与 AWS 开源沙箱治理栈（Strands Box / Dogwood / TOLAP）同日入栏；国内 Kimi Code Desktop 1.1.0 补上 Linux + Remote Control，desktop shipping=1；Argon 首发价期限纠为 11-30 后翻倍至 $4/$20。</strong> 对用户两条主线：<strong>Agent 配置写路径/沙箱策略的安全底线，和 Desktop 远程控本机 Agent 的交互形态，同时收紧。</strong></div>
+    <h2 class="section-title">专栏一｜新闻</h2>
+<p>本栏条目：国际 5 长条 + 1 CORRECTION + 1 合并短讯 · 国内 1 长条（含 4 条补收：双 CVE、AWS OSS、XBOW、Argon 期限纠错）。不单独入栏：Manus Video Editor、灵光 2.0、Gemini 自定义 MCP（仍无官方）、DeepSeek 千亿融资（仅媒体、官方未发）。</p>
+<section class="card">
+<h3><ol start="1"><li>Kimi Code Desktop 1.1.0：补上 Linux 安装包，新增 Remote Control（链接/二维码控本机 Agent）与 File Tree；配套 CLI 2.2.0</li></ol></h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/C</span><span class="chip">changelog 日期 2026-10-14</span><span class="chip">CLI/GH ≈23:31–23:35 CST</span><span class="chip">desktop_work_agent_shipping=1</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><strong>Kimi Code Desktop 升至 1.1.0</strong>（官方 Desktop changelog，日期 2026-10-14）：新增 <strong>Linux</strong> 安装包（AppImage / deb / RPM）；<strong>Remote Control</strong>——可用链接或二维码从另一设备控制本机 Agent；右侧 <strong>File Tree</strong>；进度更新能力进 Lab（<strong>默认关闭</strong>）；新增 CLI 命令 <code>kimi app</code> 打开桌面会话。</li>
+<li><strong>配套 CLI</strong>：<code>@moonshot-ai/kimi-code</code> <strong>2.1.1 → 2.2.0</strong>（npm <code>15:35:26Z</code> / GitHub release <code>15:31:16Z</code>，约 <strong>23:31–23:35 CST</strong>），与 Desktop 同波。</li>
+<li>相对 10-14 21:18 快讯基线（仍见 Desktop 1.0.4）：属晚间露出，本期补收。官方 X @Kimi_Moonshot 窗内 0 帖，以 changelog / GitHub 为一手。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>本期唯一计入 <strong>desktop_work_agent_shipping=1</strong> 的正式客户端发船：一线国内 Coding Desktop 补齐 Linux，并把「远程控本机 Agent」做成产品能力——与 Cursor Remote Control、Gemini Mac×Antigravity、Claude/Qoder/MiniMax Desktop 同场对照。</li>
+<li>Remote Control 把攻击面从「本机 UI」扩到「链接/二维码会话」：鉴权、会话时效、是否可远程批准危险工具，是产品安全必答题。</li>
+<li>Lab 进度默认关，说明厂商对「可观测性 vs 打扰」仍偏保守。</li>
+</ul>
+<p><strong>往后看</strong>：Remote Control 的鉴权与工具批准粒度；Linux 包签名与自动更新；是否跟进 Windows/macOS 对等能力说明；与 TRAE 融合、Qoder Fast、MiniMax Desktop 的形态对照。</p>
+<p><strong>对智能体互联网</strong>：中相关。远程控本机 Agent 是「人在另一设备、执行在本机」的委托形态，凭证与会话绑定方式可对照 PAP / 本地守护进程鉴权。</p>
+<p><strong>对 Work / Agent 引擎</strong>：强相关。① Desktop 远程控制 UX（链接/二维码）；② 本地 Agent 进程的调用方鉴权与会话绑定；③ <code>kimi app</code> 一类 CLI→Desktop 拉起路径。</p>
+<p><strong>建议动作</strong>：① 拆解 Remote Control 会话建立与工具批准流，写入 Desktop 对标表；② 检查自家本地守护进程：远程会话是否短时、是否可撤销、危险工具是否强制本机确认。</p>
+<p><strong>配图</strong>：changelog 页与产品页无可靠事件专图，按规则不配图。</p>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html">Kimi Code Desktop changelog</a> · <a target="_blank" rel="noopener" href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.2.0">GitHub：@moonshot-ai/kimi-code@2.2.0</a> · npm <code>@moonshot-ai/kimi-code@2.2.0</code></p>
+</section>
+<section class="card">
+<h3><ol start="2"><li>Microsoft IDE / Agent 宿主双 CVE（补收）：Copilot 尾点绕过写 `.mcp.json`（CVSS 8.8）+ VS Code 路径穿越 RCE（CVSS 9.6，热修 1.141.1）；同发跨平台 agent 终端沙箱</li></ol></h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">NEW（补收）</span><span class="chip">国际</span><span class="chip">G/C</span><span class="chip">MSRC / CVE.org 10-13</span><span class="chip">Rehberger 全文 10-13</span><span class="chip">Daily 10-14 漏收</span></div>
+<blockquote><p>补收说明：两条均落在 10-13 Patch Tuesday / 热修窗口，Daily 10-14 漏收（watchlist 49/53），本期合组入栏。</p></blockquote>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><strong>CVE-2026-103572</strong>（MSRC 2026-10-13）：*Visual Studio Tools for Applications and SQL Server Management Studio Remote Code Execution*；Impact RCE；Max Severity Important；CVSS 3.1 <strong>8.8</strong>（<code>AV:N/AC:L/PR:N/UI:R</code>）；CWE-94；公开利用 No、Exploitability Less Likely。修复：VS 2022 <strong>17.14.42</strong>、VS 2026 <strong>18.10.4</strong>。FAQ：恶意 / 间接注入 prompt 经 Copilot 交互可升至 RCE。致谢 Johann Rehberger。</li>
+<li><strong>Rehberger 全文根因</strong>：共享 DLL <code>Microsoft.VisualStudio.Copilot.Core.dll</code>；Win32 忽略文件名尾 <code>.</code> → <code>.mcp.json.</code> / <code>settings.VisualStudio.json.</code> 绕过保护文件校验，实际写入 <code>.mcp.json</code> / settings；可启用恶意 MCP、改 <code>ripgrepPath</code> 弹 calc；亦影响 SSMS；修复加 <code>GetFullPath</code> 归一化；8 月报洞，10-13 出补丁；作者称 <strong>$0 bounty</strong>。</li>
+<li><strong>CVE-2026-102238</strong>（CVE.org Updated 2026-10-14）：VS Code *path traversal* → 未授权网络 RCE；CWE-22；CVSS 3.1 <strong>9.6 CRITICAL</strong>（<code>AV:N/UI:R/S:C</code>）；影响 <strong>1.0.0 – <1.141.1</strong>。GitHub tag <strong>1.141.1</strong> Published <strong>2026-10-13T21:53:53Z</strong>（安全热修）。根因技术细节未公开。</li>
+<li><strong>VS Code 1.141 产品侧同波</strong>（Stable 2026-10-07，Update 1.141.1 明确 addresses security issues）：<code>chat.agent.sandbox.enabled</code> <strong>跨平台</strong>终端沙箱（Win/macOS/Linux）、Agents 窗口网格、worktree 清理、外部 Copilot/Codex 会话续接等（背景能力，非 CVE 根因公开细节）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>两条合在一起，打到的是 <strong>IDE Agent 宿主写配置 / 路径解析</strong> 的底线：MCP 配置、settings、工作区路径一旦可被 prompt 间接改写，就等于把攻击面开到「启用恶意 MCP / 换工具路径」。</li>
+<li>与 Daily 近期 MCP 恶意 client、AgentCorruption、サンドbox 叙事同框：安全重心已从「模型拒答」移到「宿主 canonicalize + 沙箱」。</li>
+<li>保留：103572 官方标未利用；102238 细节未公开；勿把「agent sandbox」开关当成 CVE 补丁本身。</li>
+</ul>
+<p><strong>往后看</strong>：Cursor 等 VS Code 分支是否同步；其他 IDE 的 MCP/settings 写路径是否做 <code>GetFullPath</code> 一类归一化；野外利用；Rehberger 是否跟进 Cursor/Claude。</p>
+<p><strong>对智能体互联网</strong>：中相关。MCP 配置文件成为攻击载荷落点 → Discovery / 配置分发需签名与完整性校验。</p>
+<p><strong>对 Work / Agent 引擎</strong>：强相关。① 所有「Agent 可写配置」路径必须 canonicalize（拒尾点、拒穿越）；② 保护名单文件（<code>.mcp.json</code>、settings）写前校验；③ 终端/工具沙箱默认开、与工作区信任绑定。</p>
+<p><strong>建议动作</strong>：① 审计自家 Harness / Desktop 写 <code>.mcp</code> / settings 的代码路径，补 <code>realpath</code>/<code>GetFullPath</code> 与保护文件白名单；② VS Code 用户升到 <strong>≥1.141.1</strong>，VS/SSMS 打齐 10-13 补丁；③ 将「prompt→写配置」列为红队用例。</p>
+<p><img src="../assets/2026-10-15/01-cve-copilot-rce.png" alt="图 1" loading="lazy" /></p>
+<div class="caption">图 1 · Rehberger 文首：VS Copilot RCE 示意 · 来源：embracethered.com</div>
+<p><img src="../assets/2026-10-15/02-vscode-141.webp" alt="图 2" loading="lazy" /></p>
+<div class="caption">图 2 · VS Code 1.141 更新页亮点图 · 来源：code.visualstudio.com/updates/v1_141</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-103572">MSRC：CVE-2026-103572</a> · <a target="_blank" rel="noopener" href="https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/">Rehberger：VS Copilot RCE</a> · <a target="_blank" rel="noopener" href="https://cve.org/CVERecord?id=CVE-2026-102238">CVE.org：CVE-2026-102238</a> · <a target="_blank" rel="noopener" href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-102238">MSRC：CVE-2026-102238</a> · <a target="_blank" rel="noopener" href="https://code.visualstudio.com/updates/v1_141">VS Code 1.141</a> · <a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/releases/tag/1.141.1">vscode 1.141.1 tag</a></p>
+</section>
+<section class="card">
+<h3><ol start="3"><li>AWS 开源补收：Strands Box（OS 隔离沙箱）+ Dogwood Local Engine（时序治理）+ TOLAP（工具返回对象级 ACL）</li></ol></h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">NEW（补收）</span><span class="chip">国际</span><span class="chip">C/F/G</span><span class="chip">OSS blog 10-07 / 09-30 / 09-22</span><span class="chip">注册表缺口后补</span></div>
+<blockquote><p>补收说明：三篇均在 AWS Open Source Blog；此前 Daily/快讯因注册表缺口漏扫（watchlist 51），本期合组。</p></blockquote>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><strong>Strands Box</strong>（Fernando Dingler，<strong>2026-10-07</strong>，developer preview，Apache 2.0）：OS 隔离（如 macOS Seatbelt）+ Dogwood 细粒度策略；嵌入 Dogwood Local Engine；强制点含 egress / Python(Monty) / Shell / MCP broker；事件统一如 <code>fs:read</code>、<code>http:request</code>；网关可代签凭证（agent 只见 placeholder）；<code>box.toml</code> + <code>policy.dw</code>；时序例：Slack 10 分钟内最多 3 帖。Repo：<code>github.com/strands-agents/box</code>；目前 macOS 优先，计划扩 OS / 部署到 AgentCore·ECS·K8s。</li>
+<li><strong>Dogwood Local Engine</strong>（Arora / Tassarotti / Tristan，<strong>2026-09-30</strong>，Apache 2.0）：嵌入式策略引擎，按历史时序 allow/deny；durable event log（redb）+ snapshot；动态策略更新；harness 负责 verdict 执行与事件完整性。</li>
+<li><strong>TOLAP</strong>（Phillip Spies，<strong>2026-09-22</strong>，Apache-2.0，<code>github.com/awslabs/tolap</code>）：工具返回数据的<strong>对象级 ACL</strong>（列/行/字段遮蔽等）；源点强制；.NET/Python/TS SDK + 14 框架集成；新增 purpose-binding、delegation chains、可选 LLM judge；<strong>非</strong> MCP 协议本身。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>这是目前公开材料里较完整的「沙箱 + 时序政策 + 工具回传脱敏」开源栈，可直接对标 Windows MXC、NVIDIA OpenShell、Workday C1 权限模型。</li>
+<li>价值在组合：隔离（Box）解决「能跑什么」，Dogwood 解决「按历史限频/限序」，TOLAP 解决「工具看见什么」——三者缺一，Agent 权限模型就不完整。</li>
+<li>保留：均为 preview / 博客级；macOS 优先；与 Bedrock AgentCore 产品化路径未在本稿写死。</li>
+</ul>
+<p><strong>往后看</strong>：是否进入 AgentCore 正式产品；跨 OS；与 MXC / OpenShell 互操作叙事；社区采用。</p>
+<p><strong>对智能体互联网</strong>：强相关。delegation chains + purpose-binding + 凭证 placeholder，是跨 Agent 委托时可抄的字段与执行点设计。</p>
+<p><strong>对 Work / Agent 引擎</strong>：强相关。Sandbox 强制点清单、时序政策引擎、工具回传 ACL，可映射到自家 Runtime / Harness / MCP broker。</p>
+<p><strong>建议动作</strong>：① 读三篇 + 对照 MXC 事件模型，列「强制点 × 时序 × 回传 ACL」缺口表；② PoC：工具回传字段遮蔽是否进 Context 管线。</p>
+<p><img src="../assets/2026-10-15/03-aws-strands-box.png" alt="图 3" loading="lazy" /></p>
+<div class="caption">图 3 · Strands Box 官博配图 · 来源：aws.amazon.com/blogs/opensource</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/opensource/introducing-strands-box-ai-agent-sandboxes-powered-by-dogwood/">Strands Box</a> · <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/">Dogwood Local Engine</a> · <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/opensource/introducing-tolap-object-level-access-control-for-ai-agent-tools/">TOLAP</a></p>
+</section>
+<section class="card">
+<h3><ol start="4"><li>XBOW × GPT-5.6 Sol：约 $40k 算力打出 Chrome 全链利用，Google 奖金 $250k；三洞已修（补收）</li></ol></h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">NEW（补收）</span><span class="chip">国际</span><span class="chip">G/H</span><span class="chip">xbow.com 官博 10-13</span><span class="chip">Daily 漏收</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>作者 Oege de Moor；刊日 <strong>2026-10-13</strong>。公开模型 <strong>GPT-5.6 Sol</strong>（及前代）；约 <strong>6 天</strong>、算力约 <strong>$40k</strong>；Google 奖金 <strong>$250k</strong>（称 2026 新规则下首笔）。</li>
+<li>三洞链：网页 → Windows 机控；<strong>三洞已修</strong>；首次链因谷歌已知一洞被否 → Black Hat/DEF CON 周（8/2–8/7）换备份洞重建。</li>
+<li>人机协作：AI 搜源码/PoC/初稿 exploit；人称一年内 agent 可独立发现同类三洞。建议用户：Chrome 保持更新并重启生效。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>与 Chainguard Harness、Anthropic Cyber Mission 同气候：前沿模型已是高水平漏洞挖掘劳动力；「全链」把浏览器当 Agent 入口的风险说得很硬。</li>
+<li>保留：人机协作、非完全无人；奖金与「一年内独立发现」为作者口径。</li>
+</ul>
+<p><strong>往后看</strong>：是否出现无人端到端复现；浏览器厂商披露节奏；与 IDE 宿主 CVE 合看「Agent 入口面」。</p>
+<p><strong>对智能体互联网</strong>：中相关。浏览器仍是个人 Agent 常用宿主 → 补丁时效与会话隔离是信任前提。</p>
+<p><strong>对 Work / Agent 引擎</strong>：中相关。云端/桌面 Agent 若驱动浏览器自动化，需强制最新浏览器频道 + 沙箱 profile。</p>
+<p><strong>建议动作</strong>：浏览器自动化默认钉最新稳定版；红队场景加入「agent 辅助挖洞」假设。</p>
+<p><img src="../assets/2026-10-15/04-xbow-chrome.png" alt="图 4" loading="lazy" /></p>
+<div class="caption">图 4 · XBOW 官博 OG · 来源：xbow.com</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://xbow.com/blog/xbow-built-a-chrome-full-chain-exploit">XBOW：Chrome full chain</a></p>
+</section>
+<section class="card">
+<h3><ol start="5"><li>Chainguard Harness 上架 Claude Marketplace：microVM 内用 Mythos 5.1 猎洞，复现后才交付 + 人工审修；beta waitlist</li></ol></h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/B/I</span><span class="chip">PRNewswire 10-14 ≈05:00Z</span><span class="chip">chainguard.dev/harness</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>Chainguard 官宣（SEATTLE；PR <strong>2026-10-14 01:00 ET</strong>）：从源码在隔离 <strong>microVM</strong>（Chainguard OS）构建活体实例 → 前沿模型（点名 <strong>Claude Mythos 5.1</strong>）猎洞 → <strong>复现后</strong>才交付 + <strong>人工审核</strong>修复；无 egress / 无凭证进沙箱。</li>
+<li><strong>Claude Marketplace</strong> 可购；Anthropic 代开票，可用既有 Anthropic commitment 抵扣。</li>
+<li>路径：对 Chainguard 分发 OSS 打补丁进 Repository；或对客户源码出工程师审阅报告；<strong>beta waitlist</strong>。Dan Lorenc / Daniela Hurtado（Anthropic Head of Commercial Cyber）有引述。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>「复现门槛 + 人工审修 + 无凭证沙箱」是可持续的 cyber harness 产品形状，比纯自动报洞更可运营；与 XBOW 叙事互补（一个卖利用发现，一个卖可合并修复）。</li>
+<li>保留：beta；非 Desktop 发船；效果数据未公开。</li>
+</ul>
+<p><strong>往后看</strong>：Marketplace 其他 cyber harness；与 Anthropic Cyber Mission / XBOW 对照；客户案例。</p>
+<p><strong>对智能体互联网</strong>：弱–中。供应链修复作为 Agent 可购服务，涉及报告投递与责任边界。</p>
+<p><strong>对 Work / Agent 引擎</strong>：中相关。microVM 猎洞流水线 = 高危 Agent 工作负载的隔离模板（无 egress、无凭证、复现门闩）。</p>
+<p><strong>建议动作</strong>：观察 beta；若自建安全 Agent，抄「复现才交付」门闩。</p>
+<p><img src="../assets/2026-10-15/05-chainguard-harness.png" alt="图 5" loading="lazy" /></p>
+<div class="caption">图 5 · Chainguard Harness 产品页 OG · 来源：chainguard.dev/harness（未用 PR Logo 图）</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://www.prnewswire.com/news-releases/introducing-chainguard-harness-proven-vulnerabilities-and-ready-to-merge-fixes-from-frontier-ai-no-model-access-required-302907725.html">PRNewswire</a> · <a target="_blank" rel="noopener" href="https://chainguard.dev/harness">chainguard.dev/harness</a></p>
+</section>
+<section class="card">
+<h3><ol start="6"><li>CORRECTION：Gemini 4 Argon 首发价有明确期限——introductory 至 2026-11-30，此后 $4/$20（缓存 $0.10→$0.20）</li></ol></h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">CORRECTION</span><span class="chip">国际</span><span class="chip">A/I</span><span class="chip">官博脚注 + pricing 页一手</span><span class="chip">纠 Daily 10-14「没给期限」</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>Daily 10-14 写 Argon「首发价是 introductory，<strong>没给期限</strong>」→ <strong>事实纠错</strong>。</li>
+<li>官博脚注原文：*After the introductory period expires on <strong>November 30, 2026</strong>, the price of <strong>$4</strong> per 1M input tokens and <strong>$20</strong> per 1M output tokens will apply. Applies to the Argon model intended for public access only.*</li>
+<li>pricing 页一致：<code>$2.00 through November 30, 2026. $4.00 starting December 1, 2026.</code>（output <code>$10</code>→<code>$20</code>；cache <code>$0.10</code>→<code>$0.20</code>）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>首发约 6 周窗口；12-01 起翻倍仍可能低于部分前沿编码价，但成本模型必须按 <strong>$4/$20</strong> 做预算，不能按 introductory 外推全年。</li>
+</ul>
+<p><strong>往后看</strong>：是否延长 introductory；第三方复测是否改变性价比叙事。</p>
+<p><strong>建议动作</strong>：Agent Loop 成本表切到 post-intro 价；在 11-30 前完成主力模型并排回归。</p>
+<p><img src="../assets/2026-10-15/06-argon.png" alt="图 6" loading="lazy" /></p>
+<div class="caption">图 6 · Gemini 4 Argon 官博头图（纠错条目配图）· 来源：blog.google</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/">Introducing Gemini 4 Argon</a> · <a target="_blank" rel="noopener" href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a></p>
+</section>
+<section class="card">
+<h3><ol start="7"><li>短讯合并｜政策 / 算力 / 模型迁移与退市（B）</li></ol></h3>
+<div class="chips"><span class="chip b">B</span><span class="chip">NEW / UPDATE</span><span class="chip">国际+国内</span><span class="chip">选收</span></div>
+<ul>
+<li><strong>MiMo V2.5→V2.6 路由已生效（国内）</strong>：自 <strong>2026-10-14 18:00 CST</strong>，<code>mimo-v2.5-pro</code>→<code>mimo-v2.6-pro</code>、<code>mimo-v2.5</code>→<code>mimo-v2.6-flash</code> 自动路由；<strong>2026-10-21 10:00 CST</strong> 旧 ID 失效。v2.6 思考模式 temperature/top_p 固定；Flash 默认 <code>max_completion_tokens</code> 32768→<strong>131072</strong>。一手：<a target="_blank" rel="noopener" href="https://mimo.mi.com/docs/zh-CN/updates/deprecate">deprecate 文档</a>（英文表头曾误写 10:00，以正文 Note / 中文页 <strong>18:00</strong> 为准）。</li>
+<li><strong>NVIDIA 承诺 $250M / 5 年推进英国 agentic safety & security 研究（国际）</strong>：约 $50M/年；支持更广 UK 研究社区及 BOLD（Oxford）、SOFAIR（UCL）、Imperial 等；涉及 OpenShell / Sentry reference。<a target="_blank" rel="noopener" href="https://nvidianews.nvidia.com/news/nvidia-commits-250-million-to-advance-uk-agentic-safety-and-security-research-over-the-next-five-years">nvidianews</a>（RSS ≈06:01Z）。</li>
+<li><strong>OpenAI GPT-4 系列 API 下线（国际）</strong>：公告日 2026-10-14；<strong>2027-01-14</strong> 关停 <code>gpt-4o</code>（2024-08-06 / 2024-11-20）、<code>gpt-4o-mini-2024-07-18</code>、<code>gpt-4.1-2025-04-14</code>、<code>gpt-4.1-mini-2025-04-14</code>；推荐替换 <strong><code>gpt-6-luna</code></strong>。<a target="_blank" rel="noopener" href="https://platform.openai.com/docs/deprecations">deprecations</a>。</li>
+<li><strong>Anthropic 新加坡办公室 + 政府 MOU（国际，可选）</strong>：APAC 第 5 办公室；与 MDDI 签 AI safety/evaluation/responsible adoption MOU；<code>datePublished</code> 2026-10-14T08:30:00.000Z。<a target="_blank" rel="noopener" href="https://www.anthropic.com/news/singapore-office-opening">anthropic.com/news</a>。</li>
+<li><strong>JetBrains Air：云端 Agent Sandboxing 工程稿（国际，空窗）</strong>：2026-10-14 12:26Z；云 agent 在 JetBrains 托管隔离环境运行。<a target="_blank" rel="noopener" href="https://blog.jetbrains.com/air/2026/10/cloud-agent-sandboxing/">blog</a>。</li>
+<li><strong>Google Play 个人 AI 应用（国际，可选）</strong>：AI Studio vibe code → 以个人应用装到自己设备；私有、与公开目录隔离；标准 Google 账号即可；美国等精选市场、18+。<a target="_blank" rel="noopener" href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/">Play Oct 2026</a>。</li>
+<li><strong>Sierra Summit London 开场（弱 UPDATE）</strong>：@SierraPlatform 10-14 23:36Z「cab-load of people at our first Sierra Summit in London」；尚无完整 day-1 长稿；PAP 仍 Draft 0.1。</li>
+<li><strong>脚注 · DeepSeek「千亿融资」</strong>：IT之家等转《财经》称第二轮拟扩至约 1000 亿元；<strong>DeepSeek 官网 / X 无官宣</strong> → 不升格，只记「媒体称 / 官方未发」。</li>
+</ul>
+<p><img src="../assets/2026-10-15/07-nvidia-uk.jpg" alt="图 7" loading="lazy" /></p>
+<div class="caption">图 7 · NVIDIA UK agentic safety 新闻配图 · 来源：nvidianews.nvidia.com</div>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<div class="card">
+<p><strong>AI agent「失控」归咎 containment / 监控失败（国际，强热）</strong>：HN front_page 约 <strong>819 分 / 442 评</strong>（2026-10-14T17:45Z，CSO Online：*AI agents aren't going rogue — frontier labs are skipping security basics*）。叙事是缺 isolation/monitoring，非模型自发作恶——与本期双 CVE、AWS Box/Dogwood、VS sandbox 同框。</p>
+<ul>
+<li><strong>OpenCode 2.0（国际）</strong>：HN 约 <strong>246 分 / 90 评</strong>（20:48Z）。本地常驻 background service（TUI/web/desktop 共用）、重建 API、<strong>Code Mode</strong>（MCP→可组合脚本，默认 opt-in）、background subagents；仓库 ★约 <strong>213k</strong>。与 Codex #48195「默认 daemon」同构对照。</li>
+<li><strong>Anthropic Scion × Mononoke 技术溯源（国际）</strong>：HN 约 <strong>224 分 / 100 评</strong>（20:30Z，sunshowers.io）。延续 Daily 10-14 Scion 工程热议。</li>
+<li><strong>CVE-2026-103572 X 二次传播（国际+中文，中等）</strong>：多帖可核但 impressions 多为两位数～数百（例 @ThreatWire_ ≈579 imp）；属 watchlist 49 社区放大，非新 CVE。</li>
+</ul>
+<p>互动数字仅引自 HN Algolia / X <code>public_metrics</code>，不编造。国内 V2EX 热榜仅弱 AI 一条；Reddit LocalLLaMA 403、知乎热榜 401，未取到可核高热帖。</p>
+</div>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<div class="card">
+<div class="table-wrap"><table><thead><tr><th>项目</th><th>核验点（约 10-15 08:10–08:30 CST）</th><th>看点 / 建议</th></tr></thead><tbody><tr><td>microsoft/mxc</td><td>★<strong>2,804</strong>（相对 10-14 晚 ★2,786，<strong>+18</strong>）；release 仍 v1.0.0；窗内 main：<strong>#1493</strong> 迁移发布管线至 1ES/ESRP（16:59Z）</td><td>发布/签名基建 continuum；无产品能力发船</td></tr><tr><td>openai/math</td><td>★<strong>14,814</strong>（<strong>+55</strong>）；无窗内 push（最后仍 10-12）</td><td>星数 continuum</td></tr><tr><td>deepseek-ai/deepseek-harness</td><td>★<strong>249,670</strong>（<strong>+713</strong>）；新 tag <strong><code>dsh-v0.2.1-alpha.3</code></strong> @13:32Z</td><td>alpha continuum；非正式 Desktop GA</td></tr><tr><td>mksglu/context-mode</td><td>★<strong>29,102</strong>；Trending <strong>+947 today</strong></td><td>Context/MCP+hooks 路由；Harness 上下文策略直接相关</td></tr><tr><td>anomalyco/opencode</td><td>★<strong>213,532</strong>；OpenCode <strong>2.0</strong> 笔记：常驻 service + Code Mode</td><td>对照 Codex #48195：默认后台服务须 opt-in</td></tr><tr><td>openai/codex#48195</td><td>open · <strong>19</strong> 评 · updated 仍 10-13 15:33Z</td><td>官方仍静默；不升格 NEW</td></tr><tr><td>MCP SDK GHSA</td><td>窗内无新增（最新仍 10-05 批次）</td><td>维持既有补丁</td></tr><tr><td>Trending · morluto/rea</td><td>页 <strong>+41,034 today</strong>（API ★约 241k）</td><td>Agent RE 工具链，简记</td></tr><tr><td>Trending · ifixai-ai/iFixAi</td><td><strong>+2,109 today</strong></td><td>独立审计 AI Agents</td></tr><tr><td>Trending · vxcontrol/pentagi</td><td><strong>+1,025 today</strong></td><td>自主渗透测试 agent 系统</td></tr></tbody></table></div>
+<p><strong>Desktop / CLI shipping 表</strong></p>
+<div class="table-wrap"><table><thead><tr><th>组件</th><th>基线（10-14 21:18 / Daily 10-14）</th><th>现值（10-15 ≈08:20）</th><th>结论</th></tr></thead><tbody><tr><td><strong>Kimi Code Desktop</strong></td><td>1.0.4</td><td><strong>1.1.0</strong>（Linux + Remote Control）</td><td><strong>计入 shipping=1</strong></td></tr><tr><td>@moonshot-ai/kimi-code</td><td>2.1.1</td><td><strong>2.2.0</strong></td><td>CLI 同波，不计单独 shipping</td></tr><tr><td>@openai/codex</td><td>0.162.1 / alpha.11</td><td>同左</td><td>持平</td></tr><tr><td>@anthropic-ai/claude-code</td><td>2.1.299</td><td><strong>2.1.300</strong></td><td>CLI continuum</td></tr><tr><td>@github/copilot</td><td>1.0.97（prerelease 1.0.98-1）</td><td><strong>1.0.98</strong> latest</td><td>CLI continuum</td></tr><tr><td>@tencent-ai/codebuddy-code</td><td>2.164.0</td><td><strong>2.167.0</strong></td><td>CLI continuum</td></tr><tr><td>@minimax-ai/code / MiniMax Desktop</td><td>0.6.11 / 3.1.1</td><td>同左</td><td>持平</td></tr><tr><td>@deepseek-ai/dsh</td><td>0.2.0-rc.2 / alpha.3</td><td>同左</td><td>持平</td></tr><tr><td>ZCode / 小艺 Work / Manus</td><td>3.15.3 / 0.7.3 / 2.0.4</td><td>同左</td><td>持平</td></tr><tr><td>Gemini Apps release-notes</td><td>2026.10.13</td><td>同左</td><td>无新 Desktop 条</td></tr></tbody></table></div>
+<p>另：HF 窗内无必须升格的新 frontier 模型；LiquidAI LFM2.5-24B-A2B（10-13，端侧 agent）作旁注。</p>
+</div>
+<h2 class="section-title">重点事件新进展</h2>
+<div class="card">
+<p><strong>Argon 定价（watchlist 45）</strong>：<strong>CORRECTION 已兑现</strong>——introductory 至 <strong>2026-11-30</strong>，此后 <strong>$4/$20</strong>（见新闻 6）。第三方复测与 tasks 授权粒度仍观察；桌面自定义 MCP（40）<strong>仍无</strong>官方 release-notes 字样。</p>
+<ul>
+<li><strong>IDE Agent 宿主安全（49/53）</strong>：双 CVE 正式入栏（新闻 2）；X 二次传播中等。</li>
+<li><strong>AWS OSS 沙箱治理（51）</strong>：三件套入栏（新闻 3）；对照 MXC / OpenShell / Workday C1。</li>
+<li><strong>XBOW / Chainguard（50/54）</strong>：补收与新发同气候入栏（新闻 4–5）。</li>
+<li><strong>MiMo 路由（52）</strong>：10-14 18:00 CST 已生效；盯 10-21 旧 ID 停用。</li>
+<li><strong>PAP / Sierra Summit</strong>：Draft 0.1 未升版；London Summit <strong>今日进行中</strong>（弱现场帖），盯 day-1 实录与 PAP/Muse。</li>
+<li><strong>STEPX Neo（42）</strong>：<strong>明日 10-16 10:13 首销</strong>；本窗无新官方稿。</li>
+<li><strong>Kimi Desktop</strong>：基线升至 <strong>1.1.0</strong>（新闻 1）。</li>
+<li><strong>MXC / TRAE / 灵光 2.0 / Gemini Agent Identity / Codex #48195</strong>：无升格级一手；#48195 持平。</li>
+</ul>
+</div>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<div class="card">
+<ol>
+<li><strong>Agent 宿主写配置成为高危面</strong>：Copilot 尾点写 <code>.mcp</code>、VS Code 路径穿越，说明「prompt → 文件系统」链路必须 canonicalize；与 MCP 生态普及同步放大。</li>
+<li><strong>沙箱治理栈公开化</strong>：AWS Box + Dogwood + TOLAP、VS Code 跨平台 agent sandbox、JetBrains Air 云沙箱、Chainguard microVM，指向「隔离 + 时序政策 + 回传 ACL」三件套。</li>
+<li><strong>Desktop 远程控本机成为标配能力</strong>：Kimi Remote Control 接上 Cursor Remote Control / Gemini 后台 tasks 叙事——人机分离执行的 UX 与鉴权要一起设计。</li>
+<li><strong>前沿模型 = 可运营的 cyber 劳动力</strong>：XBOW 全链与 Chainguard「复现后交付」把漏洞挖掘做成流水线；HN containment 819 分说明舆论也在要 isolation/monitoring。</li>
+<li><strong>introductory 定价必须读脚注</strong>：Argon 6 周后翻倍，提醒所有「首发价」条目默认查期限。</li>
+</ol>
+</div>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<div class="card">
+<ol>
+<li><strong>配置完整性与 MCP 信任根</strong>：<code>.mcp.json</code> 可被间接写入时，Discovery / 配置分发需要签名、只读挂载或 OS 级保护。</li>
+<li><strong>委托链上的 purpose-binding / delegation chains（TOLAP）</strong>：工具回传按目的与委托链遮蔽，可对照 PAP 字段。</li>
+<li><strong>（可选）远程会话凭证短时化</strong>：Desktop Remote Control 类能力应默认短时、可撤销、危险操作回本机确认。</li>
+</ol>
+</div>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<div class="card">
+<ol>
+<li><strong>写路径 canonicalize + 保护文件白名单</strong>：所有 Agent 可触达的配置写 API 做 <code>realpath</code>/<code>GetFullPath</code>，拒尾点与穿越（对标 CVE-103572 修复）。</li>
+<li><strong>沙箱三件套对照表</strong>：OS 隔离（Box/MXC）× 时序引擎（Dogwood）× 工具回传 ACL（TOLAP）——补自家缺口。</li>
+<li><strong>默认常驻服务必须 opt-in</strong>：OpenCode 2.0 / Codex #48195 同构；产品默认后台下载或常驻需明示。</li>
+<li><strong>Context 路由</strong>：context-mode 持续涨星 + OpenCode Code Mode，验证「工具输出出窗 / MCP→脚本」是否进 harness。</li>
+</ol>
+</div>
+<h2 class="section-title">值得继续跟踪</h2>
+<div class="card">
+<p><strong>事件：Kimi Desktop 1.1.0 Remote Control</strong>，重点观察：鉴权、工具批准、Linux 更新通道。</p>
+<ul>
+<li><strong>事件：双 CVE 49/53</strong>，重点观察：分支同步、野外利用、其他 IDE 同类。</li>
+<li><strong>事件：AWS Strands Box 栈（51）</strong>，重点观察：AgentCore 产品化、跨 OS。</li>
+<li><strong>事件：Argon 定价 / 复测（45）</strong>，重点观察：11-30 后真实用量成本；自定义 MCP（40）。</li>
+<li><strong>事件：STEPX 首销（42）</strong> — <strong>明日 10-16 10:13</strong>；权限/支付/回滚实测。</li>
+<li><strong>事件：Sierra Summit / PAP（00）</strong> — Summit 进行中；是否有规范升版。</li>
+<li><strong>延续</strong>：XBOW/Chainguard 气候 · Workday×C1 · Scion RPC · JPM 外部 agent · 千问Go!/Manus×OPPO · TRAE EOL 10-23 · 灵光 2.0 官方 · Seed Preparedness · Codex #48195。</li>
+<li><strong>到期</strong>：Sierra London <strong>今日</strong>；STEPX 首销 / RTX Spark <strong>10-16</strong>；MiMo 旧 ID <strong>10-21 10:00</strong>；Find X10 <strong>10-21</strong>；Copilot Default Enablement / StepFun Launch Night <strong>10-22</strong>；MCPCon / TraeWork EOL <strong>10-23</strong>；OpenRouter ElevenLabs 5 折至 <strong>10-19</strong>；GitHub Universe <strong>10-28–29</strong>；Mistral L4 <strong>10-31</strong>；<strong>Argon intro 截止 11-30</strong>；GitHub Stateless App tokens header 弃用 <strong>11-30</strong>；Workday×C1 交割 ≤<strong>2027-01-31</strong>；GPT-4 系列 API 下线 <strong>2027-01-14</strong>。</li>
+</ul>
+</div>
+<h2 class="section-title">未来信号</h2>
+<div class="card">
+<p><strong>「配置即攻击面」会逼出 Agent 配置签名标准</strong>：MCP/settings 写入若普遍可被 prompt 间接触发，行业可能推动签名配置或 OS 级保护 API。</p>
+<ul>
+<li><strong>远程控本机 Agent 的合规与安全审阅升温</strong>：链接/二维码会话一旦可批工具，企业 MDM / 审计会要求会话录像与批准日志。</li>
+<li><strong>Cyber harness 产品化</strong>：Marketplace 上「猎洞→复现→补丁」可能成为订阅附件，改变安全团队的外包边界。</li>
+</ul>
+</div>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<div class="card">
+<p><strong>Gemini 4 Argon（CORRECTION）</strong>：introductory <strong>$2/$10</strong>（cache $0.10）至 <strong>2026-11-30</strong>；自 <strong>2026-12-01</strong> 起 <strong>$4/$20</strong>（cache $0.20）（<a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/">官博</a> · <a target="_blank" rel="noopener" href="https://ai.google.dev/gemini-api/docs/pricing">pricing</a>）。</p>
+<ul>
+<li><strong>MiMo</strong>：V2.6 按新模型计价；旧 ID <strong>10-21 10:00 CST</strong> 停用。</li>
+<li><strong>OpenAI GPT-4 系列 API</strong>：→ <strong>2027-01-14</strong> 下线，替 <strong>gpt-6-luna</strong>。</li>
+<li><strong>Qoder Happy Hour（可选）</strong>：Ultimate 8 折至 10 月底，每日 22:00–08:00 CST（@qoder_ai_ide）。</li>
+<li>延续：STEPX Neo 3999 元全栈（10-16 首销）；OpenRouter ElevenLabs 5 折至 <strong>10-19</strong>；ZCode 邀请至 <strong>11-13</strong>；The X Subscription 存量切换。</li>
+</ul>
+</div>
+<h2 class="section-title">信源与方法</h2>
+<div class="card">
+<p><strong>时间窗</strong>：2026-10-14 08:00 → 2026-10-15 08:00 Asia/Shanghai；10-14 白天快讯 7 轮 SILENT，本期消化 49–54/52；四路扫描：<code>flashes/.scan-2026-10-15-daily-intl.md</code> · <code>...-daily-cn.md</code> · <code>...-daily-oss.md</code> · <code>...-daily-verify.md</code>。</p>
+<ul>
+<li><strong>官方 vendor-check 摘要</strong>：P0 intl——OpenAI deprecations（GPT-4→2027-01-14）、Anthropic Singapore+MOU、Google Argon 脚注 CORRECTION + Play/Europe/Impact、AWS OSS 补收可达、NVIDIA UK $250M；国内 P0——<strong>Kimi Desktop 1.1.0</strong> shipping、MiMo 路由生效、DeepSeek 融资无官方；P1——JetBrains Air 云沙箱、Sierra Summit 开场弱信号、Chainguard Harness、CVE 页 200；Desktop shipping 仅 Kimi。</li>
+<li><strong>连接器</strong>：X <code>search_posts_all</code>；<code>gh api</code>；npm view；curl / WebFetch / WebSearch；HN Algolia；GitHub Trending；量子位 / IT之家等；配图自原文 og:image / 文内图至 <code>/workspace/daily-1015-assets/</code>。</li>
+<li><strong>配图</strong>：7 张（CVE×2、AWS、XBOW、Chainguard、Argon、NVIDIA）；Kimi / MiMo deprecate / 部分 B 级无事件专图不配；禁用 PR Logo 凑数（Chainguard 用产品页 OG）。</li>
+<li><strong>脆弱面</strong>：Azure AI category 超时；stepx/lingguang SPA；DeepSeek 融资无一手；Reddit/知乎登录墙；Gemini 自定义 MCP 仍无官方字样。</li>
+</ul>
+</div>
+    <div class="footer-note"><a href="../index.html">← 返回 AI Intelligence Radar 首页</a></div>
+  </article>
+  </main>
+</body>
+</html>

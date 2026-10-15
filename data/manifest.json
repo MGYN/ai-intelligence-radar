@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-14T08:40:00+08:00",
+ "updatedAt": "2026-10-15T08:40:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-15",
+   "date": "2026-10-15",
+   "title": "AI Intelligence Daily · 2026-10-15",
+   "summary": "补收与纠错日：Kimi Desktop 1.1.0（Linux+Remote Control，shipping=1）；IDE 双 CVE（Copilot 尾点写.mcp 8.8 + VS Code 9.6）；AWS Strands Box/Dogwood/TOLAP；XBOW Chrome 全链；Chainguard Harness；Argon 首发价纠为 11-30 后 $4/$20",
+   "href": "reports/2026-10-15.html"
+  },
   {
    "id": "2026-10-14",
    "date": "2026-10-14",
