@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-15T08:40:00+08:00",
+ "updatedAt": "2026-10-16T08:40:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-16",
+   "date": "2026-10-16",
+   "title": "AI Intelligence Daily · 2026-10-16",
+   "summary": "开放权重同日三连：Meta Muse Spark Open（816B/42B，双M5 Ultra）；NVIDIA Nemotron Super VL+Bolt 24GB；阶跃 Step-5 Preview（600B/27B）+架构博文；补收 Claude Desktop CVE-88066/SneakPeek；Qoder 个人版 Agent Teams+Phone use；desktop shipping=0",
+   "href": "reports/2026-10-16.html"
+  },
   {
    "id": "2026-10-15",
    "date": "2026-10-15",
