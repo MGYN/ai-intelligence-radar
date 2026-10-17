@@ -1,7 +1,14 @@
 {
- "updatedAt": "2026-10-16T08:40:00+08:00",
+ "updatedAt": "2026-10-17T09:40:00+08:00",
  "title": "AI Intelligence Radar",
  "dailies": [
+  {
+   "id": "2026-10-17",
+   "date": "2026-10-17",
+   "title": "AI Intelligence Daily · 2026-10-17",
+   "summary": "补跑：NIST×NSA SISC×CISA 发布 SI 控制事件响应十条实践（首次定义 agent 越界事件）；GPT-6 Astra Pro 并行多 agent；ZCode CVE-88755 + Claude Agent SDK CVE-96620（MCP 入口即命令执行）；Anthropic ECDSA 种子溯源 lrand48 + Mythos 5 量子电路；腾讯 Hy-Memory 2.0 三层开源；Cursor Environments API；Shop MCP/UCP consent/Vercel Shop；补收 METR/MAI-Base-2/Ledger/GitLab MCP；Reflection Mirror 源码核验；desktop shipping=0",
+   "href": "reports/2026-10-17.html"
+  },
   {
    "id": "2026-10-16",
    "date": "2026-10-16",
