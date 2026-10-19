@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-17T09:40:00+08:00",
+  "updatedAt": "2026-10-19T08:18:25+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-19",
+      "date": "2026-10-19",
+      "title": "AI Intelligence Daily · 2026-10-19",
+      "summary": "漏报补收OpenCode Console BYOK（1.4%用户第三方Provider密钥可能暴露；CLI/Desktop本地路径未上传；快讯11:18已PUSH）；Anthropic Public Benefit Fund起手5%股权可随估值放大；Reflection Beam 1T/日+限额重置；CodeBuddy 2.168.3→2.169.0；desktop shipping=0",
+      "href": "reports/2026-10-19.html"
+    },
     {
       "id": "2026-10-18",
       "date": "2026-10-18",

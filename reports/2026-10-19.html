@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>AI Intelligence Daily · 2026-10-19（周一）</title>
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+  <main class="content">
+  <article class="article">
+<h1>AI Intelligence Daily · 2026-10-19（周一）</h1>
+<div class="meta">统计窗口：2026-10-18 08:00 → 2026-10-19 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-18 快讯：11:18 PUSH（OpenCode Console BYOK）/ 其余 SILENT · <strong>一线 Desktop/Work Agent 正式新客户端发船 = 0</strong> · npm/Desktop：codex latest <strong>0.163.0</strong>（alpha <strong>0.164.0-alpha.3</strong>）/ claude-code <strong>2.1.303</strong>（@21:15Z）/ copilot <strong>1.0.98</strong>（prerelease <strong>1.0.100-1</strong>）/ codebuddy <strong>2.169.0</strong>（经 2.168.3@14:52Z）/ minimax-code <strong>0.6.12</strong> / Desktop <strong>Win+Mac 3.1.3</strong>（changelog 顶 <strong>v3.1.3 — 2026-10-18</strong>）/ dsh latest <strong>0.2.0-rc.2</strong>（next <strong>0.2.1-rc.2</strong> / alpha 0.2.1-alpha.5）/ Kimi Desktop <strong>1.1.0</strong> / CLI <strong>2.2.0</strong> / ZCode <strong>3.15.3</strong> / 小艺 <strong>0.7.4</strong> / Step Code <strong>0.1.5</strong> / Manus <strong>2.0.4</strong> · microsoft/mxc ★<strong>2908</strong>（+16）· openai/math ★<strong>15169</strong>（+65）· deepseek-harness ★<strong>253064</strong>（+931）· opencode ★<strong>216561</strong>（+1266）· reflection-oss/mirror ★<strong>180</strong>（+14）· Hy-Memory ★<strong>778</strong>（+212）</div>
+<h2 class="section-title">今日一句话判断</h2>
+<div class="lede"><strong>Hosting BYOK 密钥库被证实可被攻破：OpenCode Console 1.4% 用户第三方 Provider 密钥可能暴露（本地 CLI/Desktop 路径官方称未上传），Anthropic/Google 员工侧已开始吊销或封锁——「密钥存在第三方 harness」的工程默认假设被即时否定；同日 Anthropic 用可随估值放大的 Public Benefit Fund（起手 5%）把「公益股权」做成结构性承诺，而一线 Desktop 发船仍为 0。</strong> 对用户两条主线：<strong>生产 Provider 密钥勿再默认写入第三方 Console</strong>；Runtime/多租户要把 <strong>BYOK 托管拓扑</strong> 写进 Trust 边界与轮换/支出硬顶基线。</div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<p>本栏：国际 1 长条（OpenCode BYOK 漏报补收）+ 国际 1 长条（Anthropic Public Benefit Fund）+ 国际 1 短条（Reflection Beam 1T）+ 国内 1 短条（CodeBuddy 2.168.3→2.169.0）+ 1 合并短讯。按「重要度 → 用户相关性 → 时效」排序。快讯已 PUSH 项做结构化全文；不单独入栏：STEPX 第二批（10-18 10:13 媒体/微博预告后仍无 @StepFun_ai / stepx.com 一手开售核验）、Claude Code 2.1.303（仅 bugfix）、OpenCode RCA（仍无）。</p>
+<section class="card">
+<h3>1. OpenCode Console BYOK：蒸馏攻击相关安全事件，1.4% 用户第三方 Provider 密钥可能暴露（漏报补收）</h3>
+<div class="chips"><span class="chip b">强A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/B/C/F/I</span><span class="chip">@opencode 2026-10-17T18:08:06Z（10-18 02:08 CST）</span><span class="chip">快讯 10-18 11:18 PUSH</span><span class="chip">Daily 10-18 漏收</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul><li><a target="_blank" rel="noopener" href="https://x.com/opencode/status/2111519637049319818">@opencode</a>（核验时 flashes 记录 impressions ≈127 万）：称昨夜发生与「大规模蒸馏攻击」相关的安全事件，影响 <strong>1.4% OpenCode Console 用户</strong>；已向受影响用户发邮件；<strong>未收到邮件则未受影响</strong>；受影响子集是<strong>链接了外部 Provider</strong> 的用户；事件仍在进行，正与 <strong>Anthropic、OpenAI、Google</strong> 协同处置。编辑链首帖 <a target="_blank" rel="noopener" href="https://x.com/opencode/status/2111516673953935833">2111516673953935833</a>（17:56:19Z）。</li><li>用户邮件（多家媒体与 HN 转述，标题多为 “Action Required: Potential provider key breach”）：识别到对<strong>正退役的 legacy 系统</strong>的未授权访问；保存在 workspace 的第三方 Provider 密钥（如 OpenAI、Anthropic）<strong>可能已暴露</strong>；要求在各 Provider 控制台<strong>吊销并更换</strong>密钥、更新应用、检查近期用量。</li><li>产品边界（与官帖一致）：冲击面是 <strong>OpenCode Console</strong>（托管网关 / BYOK），<strong>不是</strong>本机 CLI/TUI/Desktop 本地密钥路径——本地 app 密钥不上传公司侧。Console 预算拦不住「用盗钥直连 Provider」的账单。</li><li><strong>窗内处置回声（员工帖，非公司新闻稿）</strong>：Anthropic Claude Code 团队 <a target="_blank" rel="noopener" href="https://x.com/lydiahallie/status/2111563956666110287">@lydiahallie</a> 称已与 OpenCode 协作并<strong>吊销其认为受影响的 Claude API 密钥</strong>，建议曾把密钥存进 OpenCode 的用户仍可自行换新；Google 侧有员工帖称已 <strong>block exposed API keys</strong>（以当事人帖与各 Provider 控制台为准，勿升格为实验室官方声明）。官方 <a target="_blank" rel="noopener" href="https://trust.opencode.ai/">trust.opencode.ai</a> 仍无本事件完整 RCA / incident 页。</li><li>二手热度：HN <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50133401">50133401</a> 核验时约 <strong>941</strong> 分；Cyera / StepSecurity / Tech City Authority 等整理时间线与缓解步骤。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li>主流 Coding Harness（opencode continuum ★21.6 万+）的<strong>托管 BYOK 凭证库</strong>被证实入侵；对「密钥存在第三方 harness / 网关」是即时否定——与 Work/Agent 引擎、多租户密钥隔离同一层。Daily 10-18 漏收，快讯已补推，本期必须结构化入栏。</li><li>蒸馏叙事尚未被独立取证证实，勿把动机写成定论；短期动作是轮换密钥与查账单，中期是 BYOK 是否应落在厂商托管侧。</li></ul>
+<p><strong>往后看</strong>：官方 RCA、三家吊销规模、Console 加密存储与远程吊销改造；是否出现正式 GHSA。</p>
+<p><strong>对智能体互联网</strong>：强相关。跨 Agent / 跨 Provider 的<strong>委托凭证</strong>若集中存放在第三方 Console，等价于扩大 Trust 边界；密钥托管拓扑本身就是协议层要声明的能力。</p>
+<p><strong>对 Work / Agent 引擎</strong>：强相关。① 默认勿把生产 Provider 密钥写入第三方 BYOK 网关；优先本地密钥 / 自建网关或短时租约。② Console 类产品需按服务账号轮换、支出硬顶、按工作区最小权限。③ 对照 Memory/Skill/MCP 配置是否有「密钥进云」路径。</p>
+<p><strong>建议动作</strong>：① 排查是否使用 OpenCode Console BYOK；有邮件则立即在各 Provider 控制台吊销重发并查 10-16 起账单。② 跟踪 RCA 与 trust 中心。③ 把「Harness 不得持久化用户 Provider 密钥（或仅硬件加密 + 可远程吊销）」写入引擎安全基线。</p>
+<p><img src="../assets/2026-10-19/02-opencode-email.webp" alt="图 1" loading="lazy" /></p>
+<div class="caption">图 1 · OpenCode 发给用户的通知邮件截图（标题 Action Required: Potential provider key breach）· 来源：快讯 10-18 11:18 资产（转自公开邮件截图 / Tech City Authority；官方 X 主帖无附图）</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://x.com/opencode/status/2111519637049319818">@opencode</a> · <a target="_blank" rel="noopener" href="https://trust.opencode.ai/">trust.opencode.ai</a> · <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50133401">HN 50133401</a> · 员工侧 <a target="_blank" rel="noopener" href="https://x.com/lydiahallie/status/2111563956666110287">lydiahallie</a> · 快讯归档 <code>flashes/2026-10-18-1118.md</code></p>
+</section>
+<section class="card">
+<h3>2. Anthropic Public Benefit Fund：起手承诺 5% 股权，估值每涨 50% 可再加 2%；合计约 20% 股份导向公益</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/I</span><span class="chip">官网 2026-10-18</span><span class="chip">@AnthropicAI 18:07:51Z（10-19 02:07 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul><li><a target="_blank" rel="noopener" href="https://www.anthropic.com/news/public-benefit-fund">Investing in the public benefit</a>（<strong>Oct 18, 2026</strong>）：设立 <strong>Anthropic Public Benefit Fund</strong>（全资 LLC，非 501(c)(3)），在股东批准前提下<strong>今日起承诺公司股份的 5%</strong>；公司价值相对设定基线每增长 <strong>50%</strong>，董事会可酌情再增拨 <strong>2%</strong>。LLC 持有的 Anthropic 股权<strong>不用于</strong>游说或政治捐赠（美国内外）。</li><li>结构意图：公司内部已有安全/可解释性、生物医学、非营利折扣等「既公益又商业」活动；Fund 用于更灵活的大规模捐赠或定向分配。举例劳动市场影响——公司已承诺 <strong>$2 亿</strong>研究与应对，Fund 可走更大胆路径。</li><li>与既有承诺叠加：联合创始人创立时承诺捐赠其持股的 <strong>80%</strong>；员工股权捐赠匹配计划约一半员工参与；<strong>合计后约 20% 股份导向公益</strong>，另加估值里程碑可能追加的比例。未来数月将公布治理与估值里程碑，并发布 public benefit report。</li><li><a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2111881963657412903">@AnthropicAI</a> 核验时 impressions ≈<strong>206 万</strong>、likes ≈<strong>1.09 万</strong>。HN <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50143755">50143755</a> 核验约 <strong>48</strong> 分 / 十余条讨论。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li>不是模型或 Desktop 发船，但是<strong>把「公共受益」做成可随估值放大的股权结构</strong>——比一次性捐赠声明更可审计。对采购与治理叙事有用；对 Runtime 工程无直接 API 变更。</li><li>评 <strong>A</strong>（公司级治理一手）；<code>desktop_work_agent_shipping</code> 不计。</li></ul>
+<p><strong>往后看</strong>：估值基线与加仓细则；public benefit report；与 PBC 章程/优先股结构如何衔接。</p>
+<p><strong>对智能体互联网</strong>：弱–中。资金与治理层信号，不直接改协议字段。</p>
+<p><strong>对 Work / Agent 引擎</strong>：弱。关注其是否影响 Claude 企业条款或安全披露节奏即可。</p>
+<p><strong>建议动作</strong>：法务/采购收藏原文；工程侧无需改默认栈。</p>
+<p><img src="../assets/2026-10-19/01-anthropic-pbf.jpg" alt="图 2" loading="lazy" /></p>
+<div class="caption">图 2 · Anthropic Public Benefit Fund 公告页 OG 图 · 来源：anthropic.com/news/public-benefit-fund</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://www.anthropic.com/news/public-benefit-fund">官网公告</a> · <a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2111881963657412903">@AnthropicAI</a> · <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50143755">HN 50143755</a></p>
+</section>
+<section class="card">
+<h3>3. Reflection Beam：24 小时服务 1T tokens，庆祝性重置全员限额（UPDATE）</h3>
+<div class="chips"><span class="chip a">B+</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip a">A/I</span><span class="chip">@reflection_ai 2026-10-18T02:09:36Z（10:09 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul><li><a target="_blank" rel="noopener" href="https://x.com/reflection_ai/status/2111640810148303231">@reflection_ai</a>：称 Beam <strong>24 小时内服务了 1 trillion tokens</strong>；为庆祝<strong>重置所有人的限额</strong>；附短视频。核验时 impressions ≈<strong>6.0 万</strong>、likes ≈<strong>439</strong>。属已入栏 Beam 开放权重（Daily 10-17 / watch 73）的运营 UPDATE，非新权重发船。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li>「1T / 日」是托管端点吞吐叙事，对开放权重对照评测有参考；限额重置是短期促销。评 <strong>B+</strong>。</li></ul>
+<p><strong>往后看</strong>：限额是否回弹；Safety Report；mirror CLI 采用。</p>
+<p><strong>对 Work / Agent 引擎</strong>：中。可作为 Beam 托管端点压力测试窗口。</p>
+<p><img src="../assets/2026-10-19/04-reflection-beam.jpg" alt="图 3" loading="lazy" /></p>
+<div class="caption">图 3 · @reflection_ai 主帖视频预览帧 · 来源：pbs.twimg.com amplify_video_thumb</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://x.com/reflection_ai/status/2111640810148303231">@reflection_ai</a></p>
+</section>
+<section class="card">
+<h3>4. 腾讯 CodeBuddy Code：npm 2.168.3 → 2.169.0（定时任务/防休眠/Web UI 工作台）</h3>
+<div class="chips"><span class="chip">B</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/C</span><span class="chip">npm 2.168.3@14:52:58Z</span><span class="chip">2.169.0@18:39:54Z（10-18）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul><li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@tencent-ai/codebuddy-code">@tencent-ai/codebuddy-code</a>：<strong>2.168.3</strong>（CHANGELOG 日期 2026-10-18）新增定时任务默认 <strong>30 天有效期</strong>与指派、全局「防止系统自动休眠」、Web UI 输入区/队列等；<strong>2.169.0</strong>（CHANGELOG 标 2026-10-19，npm time <strong>10-18 18:39Z</strong>）新增全屏工作台对话标签、浏览器地址栏/页签改进、插件入口收进头像菜单等。</li><li><strong>非</strong>一线厂 Desktop/Work Agent 正式新客户端邀测或上线；<code>desktop_work_agent_shipping=0</code>。快讯 23:21 已将 2.168.3 标为弱 A/B 留 Daily。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li>定时任务有效期 + 防休眠 + 工作台浏览器，是 Coding CLI/Web 宿主向「长驻 agent」靠拢的产品细节。评 <strong>B</strong>。</li></ul>
+<p><strong>往后看</strong>：是否出现独立 Desktop 安装包发船；与 Flash-1017 / WorkBuddy 工具调用稳定性。</p>
+<p><strong>对 Work / Agent 引擎</strong>：中。定时任务到期策略与防休眠权限是长驻 Runtime 必答题。</p>
+<p><strong>配图</strong>：changelog 无事件专图，不配。</p>
+<p class="sources"><strong>来源</strong>：主 npm <code>@tencent-ai/codebuddy-code</code> CHANGELOG（包内）</p>
+</section>
+<section class="card">
+<h3>短讯｜合并</h3>
+<ul><li><strong>Claude Code 2.1.303</strong>（国际，B−）：npm <strong>2026-10-18T21:15:23Z</strong>；CHANGELOG 仅「Bug fixes and reliability improvements」——不单开长条。</li><li><strong>StepFun Launch Night（SF，10-22）</strong>（国内，B）：<a target="_blank" rel="noopener" href="https://x.com/StepFun_ai/status/2111887537224798409">@StepFun_ai</a> <strong>18:30Z</strong> 预告与 Together 合办 Step 5 Preview Launch Night——权重已在先日报入栏，本条为活动预告。</li><li><strong>Qoder day0 / 营销</strong>（国内，B−）：<a target="_blank" rel="noopener" href="https://x.com/qoder_ai_ide/status/2111670519552782513">@qoder_ai_ide</a> 等 Flash-1017 day0 与产品营销回声，非新模型一手。</li><li><strong>GitHub Security Lab × agent 找 Android 漏洞</strong>（国际，B）：<a target="_blank" rel="noopener" href="https://x.com/github/status/2111880011485516083">@github</a> 称用开源 agent 发现 24 个 Android 漏洞——安全 agent 叙事，非 Desktop 发船。</li></ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<ul><li><strong>OpenCode Console BYOK（国际→双边，强热）</strong>：HN <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50133401">50133401</a> ≈<strong>941</strong> 分；官方帖 impressions 百万级。焦点：Console vs 本地密钥路径、账单被盗刷、BYOK 是否应托管、蒸馏叙事可信度。</li><li><strong>Anthropic Public Benefit Fund（国际）</strong>：官方帖 impressions ≈<strong>206 万</strong>；HN <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50143755">50143755</a> ≈<strong>48</strong> 分。讨论股权结构可审计性 vs 公关。</li><li><strong>DeepSeek Flash-1017 / Search-Fetch（国内，延续）</strong>：量子位等 10-17 稿仍在传播；本窗无新官方一手，热度从发船日回落。</li><li><strong>Reflection Beam 1T（国际）</strong>：官方庆祝帖 ≈6 万 impressions；属开放权重托管吞吐话题。</li></ul>
+<p>互动数字只引用 HN 与 X public_metrics 核验值，不编造。</p>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<div class="table-wrap"><table><tr><th>项目</th><th>核验点（2026-10-19 ≈08:10 CST）</th><th>看点 / 建议</th></tr><tr><td><strong>anomalyco/opencode</strong>（国际）</td><td>★<strong>216561</strong>（+1266 vs 10-18）；安全事件见新闻 1</td><td><strong>轮换密钥</strong>；盯 RCA</td></tr><tr><td><strong>Tencent-Hunyuan/Hy-Memory</strong>（国内）</td><td>★<strong>778</strong>（+212）</td><td>MemHub 热度加速；论文/隐私边界</td></tr><tr><td>deepseek-ai/deepseek-harness</td><td>★<strong>253064</strong>（+931）；latest 仍 0.2.0-rc.2 / next 0.2.1-rc.2</td><td>盯 latest→0.2.1；11-01 计费</td></tr><tr><td>microsoft/mxc</td><td>★<strong>2908</strong>（+16）</td><td>continuum</td></tr><tr><td>openai/math</td><td>★<strong>15169</strong>（+65）</td><td>continuum</td></tr><tr><td>reflection-oss/mirror</td><td>★<strong>180</strong>（+14）</td><td>与 Beam 1T 合看</td></tr><tr><td>DeepSeek-V4.1-Flash-1017</td><td>HF likes <strong>1333</strong> / downloads <strong>10233</strong>（API 核验）</td><td>已入栏；继续复测</td></tr></table></div>
+<p><strong>Desktop / CLI shipping 表</strong></p>
+<div class="table-wrap"><table><tr><th>组件</th><th>Daily 10-18 / 23:21 基线</th><th>现值（10-19 ≈08:10）</th><th>结论</th></tr><tr><td>一线 Desktop 新客户端</td><td>—</td><td><strong>无新品牌发船</strong></td><td><strong>shipping=0</strong></td></tr><tr><td>@openai/codex</td><td>0.163.0 / α.3</td><td><strong>0.163.0</strong> / <strong>0.164.0-alpha.3</strong></td><td>持平</td></tr><tr><td>@anthropic-ai/claude-code</td><td>2.1.302</td><td><strong>2.1.303</strong></td><td>bugfix bump</td></tr><tr><td>@github/copilot</td><td>1.0.98 / 1.0.100-1</td><td>同左</td><td>持平</td></tr><tr><td>@tencent-ai/codebuddy-code</td><td>2.168.3（23:21）</td><td><strong>2.169.0</strong></td><td>CLI/Web 功能 bump</td></tr><tr><td>@minimax-ai/code / Desktop</td><td>0.6.12 / 3.1.3</td><td>同左；changelog 顶仍 v3.1.3</td><td>持平</td></tr><tr><td>@deepseek-ai/dsh</td><td>0.2.0-rc.2 / next 0.2.1-rc.2</td><td>同左</td><td>latest 未切</td></tr><tr><td>Kimi / ZCode / 小艺 / Step / Manus</td><td>1.1.0 / 3.15.3 / 0.7.4 / 0.1.5 / 2.0.4</td><td>同左</td><td>持平</td></tr></table></div>
+<h2 class="section-title">重点事件新进展</h2>
+<ul><li><strong>OpenCode BYOK（55/90）</strong>：快讯 11:18 已 PUSH；本期全文入栏。trust 中心仍无 RCA；员工侧 Anthropic 吊销 / Google block 回声入事实段。</li><li><strong>STEPX（42）</strong>：10-18 10:13 第二批媒体/微博预告日后，@StepFun_ai 本窗无开售一手，stepx.com 仍营销壳；仅有 SF Launch Night（10-22）活动帖 → <strong>仍待一手开售核验</strong>。</li><li><strong>商务部 48 号（83）</strong>：mofcom 顶条仍 10-16；无窗内新稿；意见截止 <strong>11-15</strong>。</li><li><strong>DeepSeek Flash-1017 / Search-Fetch（86/89）</strong>：updates 顶仍 10-17；dsh latest 未切；<strong>11-01</strong> 计费临近。</li><li><strong>Reflection Beam（73）</strong>：1T/日 + 限额重置 UPDATE 入短条。</li><li><strong>MiniMax（88）</strong>：changelog 顶已为 v3.1.3（fixes）；CDN 持平。</li><li><strong>OpenRouter ElevenLabs 5 折</strong>：折扣窗至 <strong>10-19</strong>（本日到期）。</li><li><strong>PAP / TraeWork / 灵光 / MiMo</strong>：无升格级一手；TraeWork EOL <strong>10-23</strong>；MiMo 旧 ID <strong>10-21 10:00 CST</strong>；灵光 2.0 仍无官方。</li></ul>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<p>1. <strong>BYOK 托管成为明确攻击面</strong>：Console 存密钥 = 扩大凭证库半径；本地路径与托管路径必须在产品文案与威胁模型里拆开。</p>
+<p>2. <strong>Provider 侧「批量吊销」成为事件响应标配</strong>：员工帖先行、公司新闻稿可能滞后——采购与安全团队要以控制台操作为准。</p>
+<p>3. <strong>公益股权结构化</strong>：比一次性捐款声明更可跟踪；治理叙事与产品发船脱钩但同日抢注意力。</p>
+<p>4. <strong>开放权重托管吞吐竞赛</strong>：Beam 用 1T/日讲产能；与 Flash-1017 Search/Fetch 按次计费同属「agent 基础设施可计量」。</p>
+<p>5. <strong>Desktop 发船空窗延续</strong>：CLI/changelog 微 bump 不等于 Work Agent 新客户端。</p>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<p>1. <strong>委托凭证存放拓扑是 Trust 边界的一等公民</strong>：发现/授权协议应声明「密钥是否离开终端」「是否可远程吊销」。</p>
+<p>2. <strong>跨 Provider 协同处置</strong>（Anthropic/OpenAI/Google 被点名）预示：Agent 网络事故会同时打到多条身份与计费平面。</p>
+<p>3. <strong>公益/治理承诺不替代技术问责</strong>：PBF 与 BYOK 事故同日出现，提醒「公司使命叙述」与「密钥工程」不可互相替代。</p>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<p>1. <strong>默认禁止生产密钥进入第三方 BYOK</strong>；自建网关或短时 STS；支出硬顶 + 异常用量告警。</p>
+<p>2. <strong>密钥轮换与会话失效要可编排</strong>：吊销后依赖该密钥的 agent 会话应失败可观测，而非静默重试烧备用密钥。</p>
+<p>3. <strong>长驻 agent</strong>：对照 CodeBuddy 定时任务有效期与防休眠——调度器需要明确 TTL 与电源策略。</p>
+<p>4. <strong>继续执行 48 号差距表与 Search/Fetch 11-01 配额</strong>（上期动作未过期）。</p>
+<h2 class="section-title">值得继续跟踪</h2>
+<ul><li><strong>事件：OpenCode Console BYOK / RCA</strong>，重点观察：trust 中心 incident、三家吊销规模、架构整改。</li><li><strong>事件：Anthropic Public Benefit Fund</strong>，重点观察：治理细则与 public benefit report。</li><li><strong>事件：STEPX 第二批</strong>，重点观察：官方一手开售；Launch Night 10-22。</li><li><strong>事件：DeepSeek Search/Fetch 11-01 计费</strong>；dsh latest→0.2.1。</li><li><strong>事件：商务部 48 号 11-15 意见截止</strong>。</li><li><strong>延续</strong>：MiMo 旧 ID <strong>10-21</strong> · TraeWork EOL / MCPCon / Bolt E4B <strong>10-23</strong> · Copilot Default Enablement / StepFun Launch Night <strong>10-22</strong> · Mistral L4 <strong>10-31</strong> · Argon 11-30 · ZCode CVE 修复 · Hy-Memory 复现 · CISA SI PDF。</li></ul>
+<h2 class="section-title">未来信号</h2>
+<ul><li><strong>「Console BYOK」可能被保险与企业采购直接列入否决项</strong>——除非提供硬件加密、远程吊销与 SOC 报告。</li><li><strong>员工个人 X 帖成为漏洞响应的「快通道」</strong>：正式新闻稿滞后时，安全运营仍须以控制台状态为准并留证。</li><li><strong>开放权重 + 托管吞吐数字</strong>会成为下一轮融资与采购幻灯片标配；需用独立压测核对。</li></ul>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<ul><li><strong>到期提醒</strong>：OpenRouter ElevenLabs <strong>5 折至 2026-10-19</strong>（本日）。</li><li><strong>临近</strong>：MiMo 旧 ID <strong>10-21 10:00 CST</strong> 停用；DeepSeek Search/Fetch Harness/Claude Code/Codex 服务端工具<strong>免费至 11-01 00:00 CST</strong>（$0.75/千次成功）；MOFCOM 48 号意见 <strong>11-15</strong>；Argon introductory <strong>11-30</strong> 后 $4/$20。</li><li><strong>本窗无新的重大模型价改</strong>；Anthropic PBF 不改 API 价。</li></ul>
+<h2 class="section-title">信源与方法</h2>
+<ul><li><strong>时间窗</strong>：2026-10-18 08:00 → 2026-10-19 08:00 Asia/Shanghai（≈00:00Z→00:00Z）。吸收 10-18 快讯 11:18 PUSH 与全日 SILENT 近窗（含 23:21 CodeBuddy near-miss）。</li><li><strong>官方 vendor-check</strong>：见 <code>flashes/.scan-2026-10-19-daily.md</code>。摘要——P0 国际：Anthropic <strong>new(A)</strong>（Public Benefit Fund）；OpenAI/Google/Meta/xAI/Mistral/Cursor/AWS/HF 等无升格级 Desktop 发船。P0 国内：腾讯 CodeBuddy <strong>new(B)</strong>（npm）；DeepSeek/MiniMax/Kimi/ZCode/小艺/Step/STEPX 等无 Desktop 正式新发船；STEPX 第二批仍 <strong>no-new（待一手）</strong>。P1：opencode <strong>已报强A（漏报补收）</strong>；reflection <strong>UPDATE(B+)</strong>（1T）；其余 P1 无线索强 A。<strong>desktop_work_agent_shipping=0</strong>。</li><li><strong>连接器/工具</strong>：X <code>search_posts_all</code>（公共读；部分时段 429 后重试）、npm、GitHub API stars、HN Algolia、WebFetch/curl 官网与 CDN yml。</li><li><strong>配图</strong>：3 张——OpenCode 邮件截图（快讯资产）、Anthropic 公告 OG、Reflection 视频预览帧；均来自原文/官方媒体，非 AI 生成。CodeBuddy 等无事件专图未配。</li><li><strong>脆弱面</strong>：国内机器之心/知乎等部分页登录墙或未返回有效正文（记 fail，不编造）；STEPX 第二批缺电商「已开售」一手截图；OpenCode 蒸馏动机与完整影响面以官方 RCA 为准；Anthropic/Google 处置以员工帖转述，非实验室 newsroom。</li></ul>
+  </article>
+  </main>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>
