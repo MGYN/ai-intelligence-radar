@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-19T08:18:25+08:00",
+  "updatedAt": "2026-10-20T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-20",
+      "date": "2026-10-20",
+      "title": "AI Intelligence Daily · 2026-10-20",
+      "summary": "MiniMax M3.1 Flash正式GA（Space Bunny揭面；OR/OpenCode/Qoder Day-0；快讯23:40已PUSH）；OpenAI低资源语言MultiLangBench+COBOL迁移；Inception Mercury 3扩散LLM≈1k tok/s；ChatGPT Slides协同；Claude Code 2.1.304；CodeBuddy 2.170.0；dsh latest→0.2.1-rc.2；desktop shipping=0",
+      "href": "reports/2026-10-20.html"
+    },
     {
       "id": "2026-10-19",
       "date": "2026-10-19",
