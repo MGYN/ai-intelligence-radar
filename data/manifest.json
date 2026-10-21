@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-20T08:20:00+08:00",
+  "updatedAt": "2026-10-21T08:25:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-21",
+      "date": "2026-10-21",
+      "title": "AI Intelligence Daily · 2026-10-21",
+      "summary": "Perplexity Computer可在Mac完全本地运行（PPLX Pro基于Qwen 3.8；Hybrid云本地拆分；desktop shipping=1）；DeepSeek DeepInfer开源（快讯17:19；★12k/HN 2101）；Vercel durable-harness让Claude Code/Codex/OpenCode崩溃续跑；OpenAI 12h prompt cache；Mistral Voxtral 3语音Agent SDK；OpenAI收购Orchestra Bio；CodeBuddy 2.171.0修ACP网关免密；eMudhra中间CA私钥泄露",
+      "href": "reports/2026-10-21.html"
+    },
     {
       "id": "2026-10-20",
       "date": "2026-10-20",

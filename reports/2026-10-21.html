@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>AI Intelligence Daily · 2026-10-21（周三）</title>
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+  <main class="content">
+  <article class="article">
+<h1>AI Intelligence Daily · 2026-10-21（周三）</h1>
+<div class="meta">统计窗口：2026-10-20 08:00 → 2026-10-21 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-20 快讯：17:19 PUSH（DeepSeek DeepInfer）/ 09:20–23:17 其余 SILENT · <strong>一线 Desktop/Work Agent 正式上线 = 1（Perplexity Computer 本地模式，23:48 CST，晚于末轮快讯窗）</strong> · npm：codex latest <strong>0.163.0</strong>（alpha <strong>0.164.0-alpha.8</strong>）/ claude-code <strong>2.1.305</strong>（@19:29Z；stable 2.1.304）/ copilot <strong>1.0.101</strong>（@18:49Z）/ codebuddy <strong>2.171.0</strong>（@17:27Z）/ minimax-code <strong>0.6.12</strong> / dsh latest <strong>0.2.1-rc.2</strong> · ZCode <strong>3.16.2</strong> · DeepInfer ★<strong>12143</strong> · deepseek-recipe ★<strong>1504</strong> · opencode ★<strong>218894</strong>（+1109）· deepseek-harness ★<strong>255770</strong>（+1323）· Hy-Memory ★<strong>1066</strong>（+106）· mxc ★<strong>2938</strong>（+13）· openai/math ★<strong>15303</strong>（+76）· mirror ★<strong>195</strong>（+7）</div>
+<h2 class="section-title">今日一句话判断</h2>
+<div class="lede"><strong>Agent 正在同时向「更本地」和「更持久」两个方向长：Perplexity 把 Computer 的模型和 Agent 整体搬到 Mac 本地跑，Vercel 用 durable-harness 让 Claude Code / Codex / OpenCode 在云上崩溃后自动续跑，OpenAI 则用 12 小时 prompt cache 给「全天在线的 Agent」降成本；DeepSeek DeepInfer 开源把 Serving 层也摆上桌。</strong> 对用户两条主线：本地/云端双栖 Runtime、可恢复的 Agent Loop、长寿命上下文缓存，三件事今天都有了可对标的一手实现。</div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<p>本栏：国际 1 长条（Perplexity 本地 Computer）+ 国内 1 长条（DeepInfer，快讯 17:19 吸收）+ 国际 3 长条（Vercel durable-harness / OpenAI 12h 缓存 / Mistral Voxtral 3）+ 国际 1 中条（OpenAI 收购 Orchestra Bio）+ 国内 1 中条（CodeBuddy 2.171.0）+ 国际 2 短条（eMudhra 中间 CA 私钥泄露 / Sierra×Stripe）+ 合并短讯。按「重要度 → 用户相关性 → 时效」排序。不单独入栏：STEPX 第二批（仍无一手）、OpenCode RCA（仍无）、MiniMax M3.1 Flash 权重（仍未上架）。</p>
+<section class="card">
+<h3>1. Perplexity Computer 可在 Mac 上完全本地运行：模型与 Agent 都在本机</h3>
+<div class="chips"><span class="chip b">强A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/D/G/K</span><span class="chip">@perplexity_ai 2026-10-20T15:48:13Z（23:48 CST）</span><span class="chip">一线 Desktop/Work Agent 正式上线</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/perplexity_ai/status/2112571597798461920">@perplexity_ai 主帖</a>：Perplexity Computer 现可在 Mac 上<strong>完全本地</strong>运行，可操作原生 Mac 应用和本地文件，敏感数据不出本机；官方原话是「模型和 Agent 都运行在你的 Mac 上」，已在 Perplexity Mac app 上线。核验时 impressions ≈<strong>16.7 万</strong>、likes ≈<strong>1131</strong>、bookmarks ≈<strong>541</strong>。</li>
+<li><a target="_blank" rel="noopener" href="https://x.com/perplexity_ai/status/2112571609693523990">线程第 2 帖</a>：本地任务使用 <strong>PPLX Pro</strong>（官方称是基于 <strong>Qwen 3.8</strong> 后训练的版本），<strong>不消耗 Computer credits</strong>；复杂任务可用 <strong>Hybrid</strong> 模式，把任务在云端模型和本地模型之间拆分，敏感数据留在本地。</li>
+<li><a target="_blank" rel="noopener" href="https://x.com/perplexity_ai/status/2112571621550760085">线程第 3 帖</a>：面向 <strong>Pro / Max / Enterprise</strong> 订户，需受支持的 Apple silicon Mac，<strong>建议 36 GB 统一内存</strong>；需先在 Mac app 里配置本地模型。</li>
+<li>官方说明页 <a target="_blank" rel="noopener" href="https://www.perplexity.ai/hub/products/hybrid-compute">Run Computer locally on your Mac</a> 对本机抓取返回 403（Cloudflare），页面标题与摘要经 X 卡片核验：「Mac app 可在本机完整运行 Computer 任务，或把云端模型与私有文件上的本地工作配对」。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>这是一线厂把<strong>完整 Computer-use Agent（模型 + Loop + 工具执行）</strong>做成本地可交付产品，而不是「本地壳 + 云端大脑」。我算作 <code>desktop_work_agent_shipping=1</code>。</li>
+<li>真正的信号是 <strong>Hybrid 拆分</strong>：同一个任务里，哪一步走云、哪一步留本地，由产品替用户决定——这是「数据驻留」从部署选项变成<strong>任务级调度策略</strong>。</li>
+<li>用国产开源底座（Qwen 3.8）后训练做本地 Agent 模型，说明「开放权重 + 垂直后训练」已经够用到商业 Desktop Agent。评 <strong>强A</strong>，不升 S：硬件门槛（36 GB）与实际本地成功率还没有第三方数据。</li>
+</ul>
+<p><strong>往后看</strong>：本地/Hybrid 的拆分规则是否公开；本地模式的权限沙箱与审计；Windows 版本；其他 Desktop Agent（Claude / ChatGPT / MiniMax / Kimi）是否跟进「本地全栈」。</p>
+<p><strong>对智能体互联网</strong>：Agent 的执行位置开始成为可声明属性（本地 / 云 / 混合）。跨 Agent 调用时，调用方可能需要知道对方「数据会不会出本机」——这可以成为 Agent 能力描述或 Trust 声明的一个字段。</p>
+<p><strong>对 Work / Agent 引擎</strong>：直接对标。① Runtime 需要支持「同一会话内云端模型 + 本地模型」的分步路由；② 本地执行面要有与云端一致的工具协议与权限模型；③ 计费上「本地任务不扣 credits」会倒逼云端 Agent 产品重新定价。</p>
+<p><strong>建议动作</strong>：对标架构（Hybrid 拆分策略、本地模型规格、权限边界）；有 36 GB 以上 Mac 可做一次实测；纳入需求评审：「任务级数据驻留策略」。</p>
+<p><img alt="图 1" src="../assets/2026-10-21/01-perplexity-local-computer.jpg" loading="lazy" /></p>
+<div class="caption">图 1 · Perplexity「Run Computer tasks locally on your Mac」官方发布配图 · 来源：perplexity.ai/hub/products/hybrid-compute（经官方 X 卡片获取）</div>
+
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://x.com/perplexity_ai/status/2112571597798461920">@perplexity_ai 线程</a> · <a target="_blank" rel="noopener" href="https://www.perplexity.ai/hub/products/hybrid-compute">官方说明页</a></p>
+</section>
+<section class="card">
+<h3>2. DeepSeek DeepInfer：生产推理框架 Apache-2.0 开源（快讯已推，日报补全）</h3>
+<div class="chips"><span class="chip b">强A</span><span class="chip">NEW（快讯 10-20 17:19 PUSH）</span><span class="chip">国内→双边</span><span class="chip">A/H/C</span><span class="chip">initial commit 2026-10-20T04:09:42Z（12:09 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/deepseek-ai/DeepInfer">deepseek-ai/DeepInfer</a>：DeepSeek 称其为支撑大规模生产服务的高性能推理框架，<strong>Apache-2.0</strong>；README 写明当前支持 <strong>DeepSeek-V4.1-Flash</strong>，硬件为 <strong>NVIDIA SM100</strong> 与<strong>华为昇腾 950</strong>；含 FlashMLA / DeepGEMM / DeepEP 算子、Attention DP、MoE EP+EPLB、推测解码、确定性采样、结构化输出等。开源版<strong>不含</strong>完整线上 KV cache 系统与 Prefill/Decode 分离编排。</li>
+<li>同步开源 <a target="_blank" rel="noopener" href="https://github.com/deepseek-ai/deepseek-recipe">deepseek-recipe</a>（与官方 API 对齐的 Token 编解码组件）。知乎 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/2095560295930508953">@DeepSeek 工程文</a> 披露线上指标（如 cache hit ≈96%、KV 闲置保留 72h）。</li>
+<li><strong>今日新增</strong>：DeepInfer ★<strong>12,143</strong>、deepseek-recipe ★<strong>1,504</strong>（GitHub API，08:15 CST）；<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50163277">HN 讨论</a> <strong>2,101 分 / 820 评论</strong>，为统计窗内 HN 最高分。@deepseek_ai X 仍未补发。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>一线厂把「线上跑 Flash 的那一层」整框架开源，Serving 竞争从算子库升到框架层；昇腾 950 一等支持对国内私有化部署分量很重。快讯已推，日报不重复论证，只确认社区反应强烈且实质（HN 2,101 分不是情绪噪音）。</li>
+</ul>
+<p><strong>往后看</strong>：社区补 KV / PD 分离的方案；vLLM / SGLang 是否吸收其算子；后续模型推理代码是否同仓 Day-0。</p>
+<p><strong>对智能体互联网</strong>：间接。自建 DeepSeek 服务节点成本下降，Agent 服务网络里「自托管节点」会变多，Trust 仍落在部署方网关。</p>
+<p><strong>对 Work / Agent 引擎</strong>：强相关。确定性采样 + 结构化输出对 tool-call 复现与评测有直接价值；若默认大脑是 DeepSeek Flash，可把 DeepInfer 列入 Serving 对照（vs vLLM / SGLang）。</p>
+<p><strong>建议动作</strong>：拆源码（调度器与确定性采样实现）；评估补 KV/PD 的工程量后再决定 PoC。</p>
+<p><img alt="图 2" src="../assets/2026-10-21/03-deepinfer-prefill.png" loading="lazy" /></p>
+<div class="caption">图 2 · DeepInfer README 性能图（Prefill Pareto）· 来源：github.com/deepseek-ai/DeepInfer `doc/images/`</div>
+
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://github.com/deepseek-ai/DeepInfer">GitHub DeepInfer</a> · <a target="_blank" rel="noopener" href="https://github.com/deepseek-ai/deepseek-recipe">deepseek-recipe</a> · <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/2095560295930508953">知乎 @DeepSeek</a> · 社区 <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50163277">HN</a> · 快讯 <code>flashes/2026-10-20-1719.md</code></p>
+</section>
+<section class="card">
+<h3>3. Vercel durable-harness：让 Claude Code / Codex / OpenCode / Pi 崩溃后自动续跑</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/H</span><span class="chip">@vercel 2026-10-20T21:14:59Z（05:14 CST）</span><span class="chip">博文署 19 Oct 2026（时区边界，以官宣帖为准）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://vercel.com/blog/making-every-harness-durable">Making every harness durable</a>：Vercel 推出开源包 <strong>durable-harness</strong>，为 Pi、OpenCode、Codex、Claude Code 等现成 harness「从外部」加上持久性，无需改动 harness 本身；可跑在 Vercel、自托管 Postgres，甚至本机。</li>
+<li>机制（原文）：每个 turn 的每一步写入<strong>持久日志</strong>——模型调用或工具调用前先记录 intent，完成后记录 outcome；turn 由<strong>队列消息兜底</strong>，函数死掉后由新函数读日志接着跑。已完成的调用不重跑（不会重复计费 token）；标注 <code>replay: 'safe'</code> 的工具会重放，其他中断的工具以「可能已执行」交回模型自行判断；Claude Code transcript、Codex rollout、OpenCode event store 等会话文件被镜像进日志，可在新函数或 Sandbox 中重建。底层复用 Workflow SDK 的 <code>World</code>（Storage + Queue + Streamer）接口。</li>
+<li>博文还指出：并非所有 Agent 任务都需要 Sandbox，数据库查询和 API 调用可在函数里跑，<strong>凭证不必进入 Sandbox</strong>。</li>
+<li>仓库 <a target="_blank" rel="noopener" href="https://github.com/vercel-labs/durable-harness">vercel-labs/durable-harness</a>：Apache-2.0，创建于 10-16，★<strong>28</strong>（刚官宣）。<a target="_blank" rel="noopener" href="https://x.com/vercel/status/2112653833382027729">@vercel 官宣帖</a> impressions ≈<strong>4.4 万</strong>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>这把「Agent Loop 的可恢复性」从各家 harness 的私有实现，抽成了<strong>harness 无关的外挂层</strong>——intent/outcome 双写日志 + 工具幂等标注，是工作流引擎（Temporal 一类）思想在 Agent 上的直接移植。</li>
+<li>「工具中断后交给模型判断是否已执行」是务实但值得警惕的设计：对有副作用的工具，最终仍要靠幂等键或外部状态核对。</li>
+<li>长期趋势信号：harness 正在变成可托管的工作负载，云平台在争夺「Agent 运行时」这一层。评 <strong>A</strong>。</li>
+</ul>
+<p><strong>往后看</strong>：仓库星标与采用；与 Claude Code / Codex 官方 cloud 模式的关系；对有副作用工具的幂等约定是否标准化。</p>
+<p><strong>对智能体互联网</strong>：「凭证不进 Sandbox、在函数侧完成调用」与委托授权设计一致——Agent 拿到的是能力，不是密钥。</p>
+<p><strong>对 Work / Agent 引擎</strong>：高度相关。① 对照自家 Agent Loop 是否有 intent/outcome 日志与崩溃续跑；② 工具 schema 增加 <code>replay</code> 安全等级；③ 会话文件镜像到持久存储，支持跨 Sandbox 重建 Workspace。</p>
+<p><strong>建议动作</strong>：拆源码（日志格式、工具重放语义）；做 PoC：给现有 harness 套一层同类 durable 日志；纳入需求：工具副作用分级。</p>
+<p><img alt="图 3" src="../assets/2026-10-21/02-vercel-durable-harness.png" loading="lazy" /></p>
+<div class="caption">图 3 · Vercel「Making every harness durable」博文发布配图 · 来源：vercel.com/blog/making-every-harness-durable</div>
+
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://vercel.com/blog/making-every-harness-durable">Vercel 博文</a> · <a target="_blank" rel="noopener" href="https://github.com/vercel-labs/durable-harness">GitHub 仓库</a> · <a target="_blank" rel="noopener" href="https://x.com/vercel/status/2112653833382027729">@vercel</a></p>
+</section>
+<section class="card">
+<h3>4. OpenAI API 支持 12 小时 prompt cache：为「全天在线的 Agent」降成本</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/D/I</span><span class="chip">@OpenAIDevs 2026-10-20T17:56:38Z（01:56 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/OpenAIDevs/status/2112603916076781778">@OpenAIDevs</a>：API 可选 <strong>12 小时</strong> prompt caching；官方举例「像 dots 这样的持久 Agent 全天复用上下文」，共享指令、工具和上下文可缓存更久并按较低的 cached-input 价计费。可在同一请求中混用：共享指令 12h，新对话内容用默认 30 分钟。impressions ≈<strong>14.8 万</strong>。</li>
+<li><a target="_blank" rel="noopener" href="https://developers.openai.com/api/docs/guides/prompt-caching">Prompt caching 文档</a>：GPT-5.6 及以后，Responses API 用 <code>prompt_cache_options.ttl</code> 选 <code>"30m"</code>（默认，写入 1.25× 输入价）或 <code>"12h"</code>（写入 <strong>2.5×</strong> 输入价）；读取均为 <strong>0.1×</strong>（GPT-6.1 Sol 为 <strong>0.05×</strong>）。支持显式断点 <code>prompt_cache_breakpoint</code>（每请求最多 4 个写入）、<code>prewarm</code> 预热、用 <code>prompt_cache_key</code> 做按客户的缓存隔离（文档明确提到可防止跨用户 cache-hit 探测）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>价格设计说明 OpenAI 认定主流负载已从「一问一答」变成「长时间、多次间隔复用同一前缀的 Agent」。12h 写入贵一倍，只有在一天内多次复用时才划算——这是给 Agent 平台而不是聊天应用的定价。</li>
+<li>文档里关于跨用户 cache-hit 探测的提示，是一个容易被忽视的多租户安全点。评 <strong>A</strong>。</li>
+</ul>
+<p><strong>往后看</strong>：Anthropic / Google 是否跟进更长 TTL；Agents API 会话是否默认使用 12h。</p>
+<p><strong>对智能体互联网</strong>：无直接启示。</p>
+<p><strong>对 Work / Agent 引擎</strong>：高度相关。① 上下文组装要「稳定前缀在前、动态内容在后」，并显式打断点；② 多租户下按租户设置 <code>prompt_cache_key</code> 做缓存隔离；③ 在成本模型里加入 TTL 选择逻辑（按前缀复用间隔自动选 30m/12h）。</p>
+<p><strong>建议动作</strong>：纳入需求（上下文分层 + 缓存断点 + 租户隔离）；用真实会话日志测算 12h 是否划算。</p>
+<p><strong>配图</strong>：文档与帖子均无事件专图，不配。</p>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://developers.openai.com/api/docs/guides/prompt-caching">OpenAI 文档</a> · <a target="_blank" rel="noopener" href="https://x.com/OpenAIDevs/status/2112603916076781778">@OpenAIDevs</a> · <a target="_blank" rel="noopener" href="https://x.com/OpenAIDevs/status/2112603918522105890">线程续帖</a></p>
+</section>
+<section class="card">
+<h3>5. Mistral Voxtral 3：语音模型族 + 基于 LiveKit 的语音 Agent SDK</h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/B/E</span><span class="chip">@MistralAI 2026-10-20T16:00:12Z（00:00 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://mistral.ai/news/voxtral-3">Voxtral 3 官方博文</a>：新语音识别 <strong>Voxtral Small Transcribe 3</strong>（多语种转写、说话人分离、上下文偏置、说话结束检测）与 <strong>Mini Transcribe 3</strong>（4B 参数，$0.0035/分钟），语音合成 <strong>Voxtral Mini TTS 3</strong>（35+ 语言、50+ 方言，按对话自动调整情绪/语速/重音，也支持 <code>[emotion=sad][pace=slow]</code> 这类显式标签）；<strong>Pro Voice</strong> 用约 30 分钟音频做专业级声音适配。</li>
+<li>同时推出<strong>语音 Agent SDK</strong>（<a target="_blank" rel="noopener" href="https://x.com/MistralAI/status/2112574627381936345">@MistralAI</a> 称基于 <strong>LiveKit</strong>）：转写→推理模型思考并调用工具→语音回复，作为一条实时流水线。可走 Mistral 欧盟托管 API 或<strong>自部署</strong>。</li>
+<li>官方图表（FLEURS 45 语种）称 Small Transcribe 3 WER 低于 Whisper、Scribe v2、Gemini 3.5 Transcribe 等（厂商自测）。<a target="_blank" rel="noopener" href="https://x.com/OpenRouter/status/2112595979950334291">@OpenRouter</a> 当日上架三款模型，并提供欧盟托管与零数据保留端点。<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50168396">HN</a> <strong>491 分</strong>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>亮点不在 WER，而在 <strong>「听—想—调工具—说」打包成 SDK 并可自部署</strong>，这让语音 Agent 从「拼三家 API」变成一个可私有化的整体。评 <strong>A−</strong>：基准为厂商自测。</li>
+</ul>
+<p><strong>往后看</strong>：SDK 的工具调用与打断处理实测；自部署许可条款。</p>
+<p><strong>对智能体互联网</strong>：电话/语音渠道的 Agent 会越来越多，语音身份（声音克隆 Pro Voice）带来新的冒充风险，Trust 层要考虑「声音不是凭证」。</p>
+<p><strong>对 Work / Agent 引擎</strong>：语音作为 Agent 的一种输入输出通道，可复用现有 tool-call 栈；如果产品有语音入口，Voxtral SDK 是可自部署的参考实现。</p>
+<p><strong>建议动作</strong>：关注后续；有语音场景时做 PoC。</p>
+<p><img alt="图 4" src="../assets/2026-10-21/05-voxtral-diagram.webp" loading="lazy" /></p>
+<div class="caption">图 4 · Voxtral 3 博文内架构示意图 · 来源：mistral.ai/news/voxtral-3</div>
+
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://mistral.ai/news/voxtral-3">Mistral 博文</a> · <a target="_blank" rel="noopener" href="https://x.com/MistralAI/status/2112574615318876178">@MistralAI</a> · <a target="_blank" rel="noopener" href="https://x.com/OpenRouter/status/2112595979950334291">@OpenRouter</a></p>
+</section>
+<section class="card">
+<h3>6. OpenAI 收购 Orchestra Bio：把「人和 Agent 协同推进药物项目」并入 Rosalind</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">I/B/C</span><span class="chip">官网 October 20, 2026</span><span class="chip">@OpenAI 2026-10-20T18:10:16Z（02:10 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/openai-to-acquire-orchestra-bio">OpenAI acquires Orchestra Bio</a>：Orchestra Bio 是帮助生物制药团队协调药物开发流程的平台，官方描述为「人和 AI Agent 一起推进药物项目」——科学家把研究与活动的监控、跟踪委托给 Agent；某环节出问题（如生产批次失败影响临床试验启动）时，Agent 找出受影响的活动与时间线并比较应对方案，由人决定。团队和技术将并入 <strong>Rosalind</strong>（GPT-Rosalind 与 Rosalind Workbench）。未披露交易金额。</li>
+<li><a target="_blank" rel="noopener" href="https://x.com/OpenAI/status/2112607347688583586">@OpenAI</a> impressions ≈<strong>41.9 万</strong>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>OpenAI 在垂直行业买的是「<strong>项目协调型 Agent</strong>」而不是模型能力——长周期、多方依赖、人做决策、Agent 做跟踪与影响分析，这正是 Work Agent 的典型形态。评 <strong>B+</strong>：对用户项目是形态参考，不是技术突破。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：跨组织（内部部门 + 外部合作方）的 Agent 协调是 Agent 互联的真实需求场景。</p>
+<p><strong>对 Work / Agent 引擎</strong>：「依赖图 + 影响分析 + 人审决策」可作为长任务 Work Agent 的参考模板。</p>
+<p><strong>建议动作</strong>：暂无需行动，关注 Rosalind 是否开放 Agent 接口。</p>
+<p><img alt="图 5" src="../assets/2026-10-21/06-openai-orchestra.png" loading="lazy" /></p>
+<div class="caption">图 5 · OpenAI 收购 Orchestra Bio 公告配图 · 来源：openai.com/index/openai-to-acquire-orchestra-bio</div>
+
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://openai.com/index/openai-to-acquire-orchestra-bio">OpenAI 官网</a> · <a target="_blank" rel="noopener" href="https://x.com/OpenAI/status/2112607347688583586">@OpenAI</a></p>
+</section>
+<section class="card">
+<h3>7. 腾讯 CodeBuddy Code 2.171.0：修复 ACP 网关免密连接漏洞 + 后台会话崩溃自动续跑</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/C/G</span><span class="chip">npm 2026-10-20T17:27:14Z（01:27 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@tencent-ai/codebuddy-code">@tencent-ai/codebuddy-code 2.171.0</a>（包内 CHANGELOG 日期 2026-10-20）：</li>
+<li><strong>安全修复</strong>：<code>--serve</code> 开启网关密码后，暴露远程端口或经 Tunnel/反向代理转发时，此前<strong>无需密码即可创建 ACP 连接、领取连接令牌</strong>，且密码可能经网址泄露到代理与访问日志（#146634）；另改进远程密码传递，避免暴露在进程参数与环境变量中。</li>
+<li><strong>后台会话崩溃自动续跑</strong>：<code>--bg</code> 会话异常退出（如 OOM）时按原会话 <code>--resume</code> 自动拉起并发送续跑提示，600 秒内最多 3 次，可用环境变量关闭或调整。</li>
+<li><strong>模型请求分层重试</strong>：优先遵循网关下发的 <code>retry_policy</code>，对 429/5xx/408/409 最多重试 8 次、指数退避封顶 32s，尊重 <code>Retry-After</code>。</li>
+<li>远程主机管理、远程授权目录只读浏览 Git；云端记忆工具统一命名为 <code>MemoryRecall</code> / <code>MemoryUpdate</code>，并明确「平台不可用时不得写本地文件替代」。</li>
+<li>非一线厂 Desktop 新客户端发船。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>安全修复说明：<strong>Agent 的远程控制端口一旦经隧道暴露，鉴权缺陷就是远程代码执行入口</strong>——与此前 OpenCode Console、MCP 入口类 CVE 是同一类风险。崩溃续跑与 Vercel durable-harness 同日出现，「可恢复 Loop」成为共识。评 <strong>B+</strong>。</li>
+</ul>
+<p><strong>对 Work / Agent 引擎</strong>：对照自家远程/隧道模式：鉴权是否在所有转发路径上生效、密码是否会进 URL/日志/进程参数；记忆工具「不可用时不写本地」的约束值得照抄。</p>
+<p><strong>建议动作</strong>：纳入安全自查清单；关注是否出 CVE/公告。</p>
+<p><strong>配图</strong>：changelog 无事件专图，不配。</p>
+<p class="sources"><strong>来源</strong>：主 npm 包内 CHANGELOG 2.171.0</p>
+</section>
+<section class="card">
+<h3>8. eMudhra 8 张中间 CA 私钥泄露：主流浏览器已拦截，大量非浏览器客户端仍需更新</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/F</span><span class="chip">披露页 20 Oct 2026</span><span class="chip">HN 2026-10-20T13:58Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://emudhra.we-have-a-problem.com/">披露页</a>：eMudhra 的 <strong>8 张中间 CA 证书私钥</strong>被泄露，它们链到 Mozilla、Microsoft、Apple、Chrome 根计划信任的根证书。报告人 10-17 用每个中间 CA 私钥签名消息证明，并提供 OpenSSL 验证方法。Firefox 和 Chrome 自 10-17 起已拦截，Apple 自 10-19；CA 已吊销。<strong>许多不消费吊销信息的客户端需要软件更新</strong>，否则持有私钥者可冒充任意网站或服务。</li>
+<li>相关：<a target="_blank" rel="noopener" href="https://github.com/golang/go/issues/82345">Go 将拒绝含 8 个被弃用 SPKI 的证书链</a>（HN 134 分）。<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50166579">HN 讨论</a> <strong>589 分</strong>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>不是 AI 事件，但直接打到 Agent 运行环境：Sandbox 容器、CLI、自带信任库的 SDK 往往<strong>不读 CRL/CRLite</strong>，Agent 发出的 HTTPS 请求就可能被中间人冒充。评 <strong>B+</strong>（G/F 相关性加权）。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：Agent 身份与服务发现普遍建在 Web PKI 上，这件事提醒：Agent-to-Agent 调用需要独立于浏览器的吊销与证书钉扎策略。</p>
+<p><strong>对 Work / Agent 引擎</strong>：检查 Sandbox 基础镜像的 CA bundle 版本与更新机制；用披露页给的测试域名做一次 curl 自检。</p>
+<p><strong>建议动作</strong>：立即自查（镜像信任库）；纳入需求：信任库随镜像自动更新。</p>
+<p><strong>配图</strong>：披露页无图，不配。</p>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://emudhra.we-have-a-problem.com/">披露页</a> · <a target="_blank" rel="noopener" href="https://github.com/golang/go/issues/82345">Go issue</a> · 社区 <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50166579">HN</a></p>
+</section>
+<section class="card">
+<h3>9. Sierra × Stripe：客服 Agent 在同一段对话里直接完成付款</h3>
+<div class="chips"><span class="chip">B</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">E/F/I</span><span class="chip">@SierraPlatform 2026-10-20T18:00:28Z（02:00 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/SierraPlatform/status/2112604880171131197">@SierraPlatform</a>：与 Stripe 合作，客户可以在同一段对话中得到解答并付款，<strong>无需转人工、无需付款链接</strong>；Cedar 是首批通过该集成接受<strong>电话付款</strong>的客户之一（患者致电其 Agent「Kora」咨询账单并支付）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>Agent 代收款从「发链接跳出去」变成「对话内完成」，支付授权边界被搬进 Agent 会话。与 Sierra 的 PAP/Poppy 个人 Agent 协议线（watchlist 00）合看。评 <strong>B</strong>。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：委托支付的同意、额度与审计如何在 Agent 对话中表达，是 Agent 身份/授权协议的硬需求。</p>
+<p><strong>建议动作</strong>：关注后续是否公开授权流程细节。</p>
+<p><img alt="图 6" src="../assets/2026-10-21/08-sierra-stripe.png" loading="lazy" /></p>
+<div class="caption">图 6 · Sierra 官方帖配图 · 来源：x.com/SierraPlatform/status/2112604880171131197</div>
+
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://x.com/SierraPlatform/status/2112604880171131197">@SierraPlatform</a></p>
+</section>
+<section class="card">
+<h3>短讯｜合并</h3>
+<ul>
+<li><strong>ChatGPT 团队任务（国际，B）</strong>：<a target="_blank" rel="noopener" href="https://x.com/OpenAIDevs/status/2112565702552940794">@OpenAIDevs</a> 15:24Z——可用 team tasks 自动化重复工程工作（如每周五汇总已发布与受阻事项），队友可审阅结果并修改下次覆盖内容。属「定时 Agent 任务 + 团队共享」。</li>
+<li><strong>ChatGPT Locked Chats（国际，B）</strong>：<a target="_blank" rel="noopener" href="https://x.com/ChatGPT/status/2112597766333673624">@ChatGPT</a> 17:32Z——可把对话移出常规历史与搜索，网页/桌面用 PIN、移动端用 PIN/Face ID/Touch ID 解锁。impressions ≈19.7 万。</li>
+<li><strong>Anthropic：Claude 设计蝎毒素结合蛋白（国际，B）</strong>：<a target="_blank" rel="noopener" href="https://www.anthropic.com/research/claude-scorpion-toxin-binder-design">官方博文</a>——64 小时内生成 30 万+ 设计，送测 211 个，17 个达标；官方明确「不是抗蛇毒血清」。211 个设计与实验数据已在 <a target="_blank" rel="noopener" href="https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design">Hugging Face 公开</a>。科研 Agent 的长时自主运行案例。</li>
+<li><strong>Qoder Lite $10/月（国内，B）</strong>：<a target="_blank" rel="noopener" href="https://docs.qoder.com/release-notes/lite-launch-announcement">官方公告</a>（13:25Z 官宣）——每月 1,000 Credits + 精选性价比模型，含完整 Agent 能力。套餐分层，非新客户端。</li>
+<li><strong>Claude Code 2.1.305（国际，B−）</strong>：npm latest @19:29Z（stable 仍 2.1.304）；包内未附 CHANGELOG，变化待官方说明。</li>
+<li><strong>Copilot CLI 1.0.101（国际，B−）</strong>：npm latest @18:49Z。<strong>Codex alpha 0.164.0-alpha.8</strong>（@22:40Z），latest 仍 0.163.0。</li>
+<li><strong>Google 开源 TorchTPU（国际，B）</strong>：<a target="_blank" rel="noopener" href="https://github.com/google-pytorch/torch_tpu">google-pytorch/torch_tpu</a>，PyTorch 原生 TPU 后端；仓库 created 2026-03，近期公开引发 <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50169053">HN 246 分</a>、IT之家等转述，★295。公开时间点以 HN 窗内为准，未见 Google 官方博文核验。</li>
+<li><strong>Gemini Personal Intelligence 上车（国际，B−）</strong>：<a target="_blank" rel="noopener" href="https://x.com/Google/status/2112655614132285592">@Google</a> 21:22Z——Android Auto 上的 Gemini 开始推送，经用户许可连接 Google 应用数据；未来数月扩展到 Google built-in 车型。</li>
+<li><strong>VS Code Canvases（国际，B−）</strong>：<a target="_blank" rel="noopener" href="https://x.com/code/status/2112636251782201602">@code</a>——Preview 中的共享工作区，人和 Coding Agent 一起整理发布、排优先级，把卡片转成 Agent 可执行的计划。</li>
+<li><strong>Reflection：OpenCode 上的匿名模型「CatJam」即 Beam（国际，B−）</strong>：<a target="_blank" rel="noopener" href="https://x.com/reflection_ai/status/2112638600122704381">@reflection_ai</a>——Beam 在 OpenCode 继续免费一周。继 MiniMax「Space Bunny」之后，又一例「匿名跑榜→揭面」。</li>
+<li><strong>ZCode 3.16.2（国内，B−）</strong>：changelog 10-20 露出（快讯 13:20 已记为功能迭代）。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<ul>
+<li><strong>DeepInfer 开源（国内→双边，强热）</strong>：HN <strong>2,101 分 / 820 评论</strong>，统计窗内第一；GitHub 四天 ★12,143。讨论集中在「开源版缺 KV / PD 分离到底能不能用于生产」和昇腾支持。这是技术圈的实质讨论，不是情绪。</li>
+<li><strong>Agent 流量已是人类的约 8 倍（国际）</strong>：<a target="_blank" rel="noopener" href="https://x.com/OpenRouter/status/2112650173382074540">@OpenRouter</a> 21:00Z——自 2026 年 2 月初 Agent 用量增长 <strong>34×</strong>，周度 Agent 用量约为人类的 <strong>8 倍</strong>（图中为 132.6T vs 17.0T，7.8×，截至 10-05 这周）。这是单一平台口径，但趋势与 OpenAI 12h 缓存的定价逻辑互相印证。（见图 7）</li>
+<li><strong>Aleksander Madry 回到 OpenAI 做安全（国际，J）</strong>：<a target="_blank" rel="noopener" href="https://x.com/aleks_madry/status/2112231448103239998">Madry 本人帖</a>（10-19 17:16Z，即 10-20 01:16 CST，impressions ≈60 万）称离开「更像休假」，因「进入了 AI 进展的不同阶段」而回归；<a target="_blank" rel="noopener" href="https://x.com/sama/status/2112652656602923366">Sam Altman</a> 21:10Z 回应称「面对超级智能，安全与安保挑战巨大」。判断：头部实验室把安全人才回流和「超级智能」叙事绑定公开表态，值得和 OpenAI Misalignment 报告线（watchlist 08）合看。</li>
+<li><strong>「发布假统计数据，就会被 LLM 引用」（国际，G）</strong>：<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50165801">HN 315 分</a>，<a target="_blank" rel="noopener" href="https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web">原文</a>讲作者用编造数据被 AI 搜索大量引用的做法。对 Agent 检索/RAG 来说，这是数据投毒在商业 GEO 场景下的现实版本。</li>
+<li><strong>Steam 用户要求「无 AI」过滤（国际）</strong>：HN 164 分，围绕 Next Fest 大量 AI 生成游戏。属情绪与平台治理话题，与两条主线弱相关。</li>
+<li><strong>国内</strong>：IT之家等转述 OpenAI COBOL、Orchestra Bio、TorchTPU；Meta Muse 美国 40 天下载破千万（IT之家，未核验一手，不入新闻栏）。量子位/机器之心本轮未抓到可核验新稿。</li>
+</ul>
+<p>互动数字只引用 X public_metrics 与 HN 分数的核验值，不编造。</p>
+<p><img alt="图 7" src="../assets/2026-10-21/07-openrouter-agentic.jpg" loading="lazy" /></p>
+<div class="caption">图 7 · OpenRouter「Agents are using 34× more tokens than in February 2026」· 来源：x.com/OpenRouter/status/2112650173382074540</div>
+
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>核验点（2026-10-21 ≈08:15 CST）</th>
+<th>看点 / 建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>deepseek-ai/DeepInfer</strong>（国内）</td>
+<td>★<strong>12,143</strong>（创建 10-16，10-20 首次提交）；HN 2,101</td>
+<td>拆源码：调度与确定性采样</td>
+</tr>
+<tr>
+<td>deepseek-ai/deepseek-recipe（国内）</td>
+<td>★<strong>1,504</strong></td>
+<td>核对与官方 API tokenize 一致性</td>
+</tr>
+<tr>
+<td><strong>vercel-labs/durable-harness</strong>（国际）</td>
+<td>★<strong>28</strong>（刚官宣）；Apache-2.0</td>
+<td>拆源码：intent/outcome 日志、replay 语义</td>
+</tr>
+<tr>
+<td>google-pytorch/torch_tpu（国际）</td>
+<td>★<strong>295</strong>；窗内仍有提交</td>
+<td>关注，非用户主线</td>
+</tr>
+<tr>
+<td>anomalyco/opencode</td>
+<td>★<strong>218,894</strong>（+1,109）；<strong>RCA 仍无</strong></td>
+<td>继续盯 trust</td>
+</tr>
+<tr>
+<td>deepseek-ai/deepseek-harness</td>
+<td>★<strong>255,770</strong>（+1,323）；latest 仍 0.2.1-rc.2</td>
+<td>盯稳定版；11-01 计费</td>
+</tr>
+<tr>
+<td>Tencent-Hunyuan/Hy-Memory</td>
+<td>★<strong>1,066</strong>（+106）</td>
+<td>MemHub 热度延续</td>
+</tr>
+<tr>
+<td>microsoft/mxc · openai/math · reflection-oss/mirror</td>
+<td>★2,938（+13）· 15,303（+76）· 195（+7）</td>
+<td>continuum</td>
+</tr>
+<tr>
+<td>MiniMax M3.1 Flash 权重</td>
+<td>HF 仍未上架</td>
+<td>pin</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Desktop / CLI shipping 表</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>Daily 10-20 基线</th>
+<th>现值（10-21 ≈08:15）</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一线 Desktop/Work Agent</td>
+<td>—</td>
+<td><strong>Perplexity Computer 本地模式上线</strong></td>
+<td><strong>shipping=1</strong></td>
+</tr>
+<tr>
+<td>@openai/codex</td>
+<td>0.163.0 / α.6</td>
+<td>0.163.0 / <strong>0.164.0-alpha.8</strong></td>
+<td>alpha 微 bump</td>
+</tr>
+<tr>
+<td>@anthropic-ai/claude-code</td>
+<td>2.1.304</td>
+<td><strong>2.1.305</strong>（stable 2.1.304）</td>
+<td>latest 升</td>
+</tr>
+<tr>
+<td>@github/copilot</td>
+<td>1.0.100</td>
+<td><strong>1.0.101</strong></td>
+<td>latest 升</td>
+</tr>
+<tr>
+<td>@tencent-ai/codebuddy-code</td>
+<td>2.170.0</td>
+<td><strong>2.171.0</strong></td>
+<td>功能+安全修复</td>
+</tr>
+<tr>
+<td>@minimax-ai/code / Desktop</td>
+<td>0.6.12 / 3.1.4</td>
+<td>同左</td>
+<td>持平</td>
+</tr>
+<tr>
+<td>@deepseek-ai/dsh</td>
+<td>0.2.1-rc.2</td>
+<td>同左</td>
+<td>持平</td>
+</tr>
+<tr>
+<td>ZCode</td>
+<td>3.15.3</td>
+<td><strong>3.16.2</strong></td>
+<td>功能迭代</td>
+</tr>
+</tbody>
+</table></div>
+<h2 class="section-title">重点事件新进展</h2>
+<ul>
+<li><strong>DeepSeek DeepInfer（93）</strong></li>
+<li>此前：快讯 10-20 17:19 PUSH，开源与能力边界已述。</li>
+<li>今日新增：★12,143、HN 2,101 分；@deepseek_ai X 仍未补发；仓库 11:03Z 后无新推送。</li>
+<li>判断是否变化：重要度不变（强A），社区验证了热度。</li>
+<li><strong>MiniMax M3.1 Flash（92）</strong></li>
+<li>此前：Daily 10-20 头条。</li>
+<li>今日新增：@MiniMax_AI 转引第三方 Parallel 搜索效率榜 #1（第三方数据，非官方评测）；HF 权重仍未上架。</li>
+<li>判断：无实质变化。</li>
+<li><strong>Reflection Beam（73）</strong></li>
+<li>今日新增：OpenCode 匿名模型「CatJam」揭面为 Beam，OpenCode 免费延长一周。</li>
+<li>判断：运营 UPDATE，非新权重。</li>
+<li><strong>OpenCode BYOK（55/90）</strong>：仍无 RCA。<strong>STEPX（42）</strong>：第二批仍无一手，Launch Night SF <strong>10-22</strong>。<strong>商务部 48 号（83）</strong>：无新稿，意见截止 11-15。</li>
+<li><strong>Sierra 个人 Agent 线（00）</strong>：新增 Stripe 对话内支付集成（见新闻 9），PAP 规范未升版。</li>
+</ul>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<ol>
+<li><strong>Agent 执行位置成为产品变量</strong>：Perplexity 本地全栈 + Hybrid 拆分、Voxtral 可自部署、DeepInfer 昇腾支持——「在哪里跑」从部署细节变成卖点和策略。</li>
+<li><strong>可恢复的 Agent Loop 成为共识</strong>：Vercel durable-harness 和 CodeBuddy 崩溃续跑同一天出现，长任务 Agent 必须假设进程会死。</li>
+<li><strong>定价开始围绕「全天在线的 Agent」设计</strong>：OpenAI 12h 缓存、Perplexity 本地任务不扣 credits、OpenRouter 显示 Agent 流量约为人类的 8 倍——成本模型的主角已经换了。</li>
+<li><strong>远程控制面是新的高危入口</strong>：CodeBuddy ACP 网关免密、eMudhra 证书泄露都在提醒，Agent 暴露的端口、隧道与信任库要按生产服务对待。</li>
+<li><strong>「匿名跑榜→揭面」成为固定发布套路</strong>：MiniMax Space Bunny 之后，Reflection CatJam 也走同一路线。</li>
+</ol>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<ol>
+<li><strong>把执行位置和数据驻留写进 Agent 能力声明</strong>：本地 / 云 / 混合，以及数据是否出本机，应该是调用方在委托前就能读到的字段。</li>
+<li><strong>能力代替密钥</strong>：Vercel 的「凭证不进 Sandbox、由函数侧代为调用」与 Sierra×Stripe 的对话内支付，都在走「Agent 拿能力、不拿凭证」的路线，可直接用于委托授权设计。</li>
+<li><strong>Agent-to-Agent 调用不能只依赖浏览器级 PKI</strong>：需要自己的吊销检查或证书钉扎策略。</li>
+</ol>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<ol>
+<li><strong>intent/outcome 双写日志 + 工具 replay 安全等级</strong>（Vercel durable-harness）：让 Loop 崩溃可恢复，且不重复计费、不重复执行有副作用的工具。</li>
+<li><strong>上下文分层 + 显式缓存断点 + 按租户隔离缓存</strong>（OpenAI 12h 缓存文档）：稳定前缀在前，按复用间隔选 TTL，用 <code>prompt_cache_key</code> 防跨租户探测。</li>
+<li><strong>云—本地混合路由</strong>（Perplexity Hybrid）：同一会话内按敏感度把步骤分给云端或本地模型，并统一工具协议和权限模型。</li>
+</ol>
+<h2 class="section-title">值得继续跟踪</h2>
+<ul>
+<li><strong>事件：Perplexity Computer 本地/Hybrid</strong>，接下来重点观察：拆分规则文档、本地权限沙箱、Windows 版、竞品是否跟进。</li>
+<li><strong>事件：Vercel durable-harness</strong>，接下来重点观察：采用情况、对有副作用工具的幂等约定、与官方 cloud 模式的关系。</li>
+<li><strong>事件：OpenAI 12h prompt cache</strong>，接下来重点观察：其他厂商是否跟进更长 TTL。</li>
+<li><strong>事件：DeepInfer</strong>，接下来重点观察：KV / PD 分离补齐方案、vLLM/SGLang 吸收、@deepseek_ai 官宣。</li>
+<li><strong>事件：CodeBuddy ACP 网关鉴权漏洞</strong>，接下来重点观察：是否出 CVE 或安全公告。</li>
+<li><strong>事件：eMudhra 中间 CA 泄露</strong>，接下来重点观察：各语言运行时与发行版信任库更新。</li>
+<li><strong>延续</strong>：MiniMax 权重 · OpenCode RCA · STEPX / Launch Night <strong>10-22</strong> · Copilot Default Enablement <strong>10-22</strong> · TraeWork EOL / MCPCon / Bolt E4B <strong>10-23</strong> · Mistral L4 <strong>10-31</strong> · DeepSeek Search/Fetch 计费 <strong>11-01</strong> · 48 号 <strong>11-15</strong>。</li>
+</ul>
+<h2 class="section-title">未来信号</h2>
+<ul>
+<li><strong>「本地全栈 Desktop Agent」可能成为高端订阅标配</strong>：一旦 36 GB 级 Mac 跑得动可用的 Computer-use 模型，云端 Agent 的价值会集中到「本地做不了的那部分」，Hybrid 拆分规则会变成新的产品竞争点。</li>
+<li><strong>Agent 运行时托管成为云平台的新战场</strong>：Vercel 直接托管第三方 harness，意味着 harness 有可能像 Web 框架一样被「平台化部署」。</li>
+</ul>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<ul>
+<li><strong>新</strong>：OpenAI 12h prompt cache——写入 2.5× 输入价，读取 0.1×（GPT-6.1 Sol 0.05×）；默认 30m 写入 1.25×。</li>
+<li><strong>新</strong>：Perplexity 本地 Computer 任务<strong>不消耗 Computer credits</strong>（Pro / Max / Enterprise）。</li>
+<li><strong>新</strong>：Qoder Lite <strong>$10/月</strong>，1,000 Credits。</li>
+<li><strong>新</strong>：Voxtral Mini Transcribe 3 <strong>$0.0035/分钟</strong>；OpenRouter 上 Voxtral TTS 3 标价 $13/百万字符。</li>
+<li><strong>延续</strong>：Reflection Beam 在 OpenCode 免费再延一周；MiniMax Code M3.1 Flash 无限额至 <strong>10-25</strong>、M Plan 首月 5 折至 <strong>10-31</strong>；Mercury 3 上线半价；DeepSeek Search/Fetch <strong>11-01</strong> 起 $0.75/千次成功。</li>
+</ul>
+<h2 class="section-title">信源与方法</h2>
+<ul>
+<li><strong>时间窗</strong>：2026-10-20 08:00 → 2026-10-21 08:00 Asia/Shanghai（00:00Z→00:00Z）。吸收快讯 10-20 全天 7 轮（17:19 PUSH DeepInfer，其余 SILENT），本轮重点补扫末轮快讯之后的 15:17Z→00:10Z 空窗。</li>
+<li><strong>官方 vendor-check</strong>：P0 国际——OpenAI <strong>new</strong>（12h 缓存 A / Orchestra Bio B+ / team tasks B / Locked Chats B）、Anthropic <strong>new(B)</strong>（科研博文）、Google <strong>new(B−)</strong>（Android Auto）、Mistral <strong>new(A−)</strong>、Cursor/Meta/xAI/HF no-new；P0 国内——DeepSeek（已报，DeepInfer 星标更新）、阿里 Qoder <strong>new(B)</strong>、腾讯 CodeBuddy <strong>new(B+)</strong>、MiniMax/Kimi/智谱/阶跃/小米/字节 no-new 或仅营销；P1——Perplexity <strong>new(强A)</strong>、Vercel <strong>new(A)</strong>、Sierra <strong>new(B)</strong>、OpenRouter 数据帖、Reflection 揭面、Cognition/Replit 仅活动帖。<strong>desktop_work_agent_shipping=1</strong>。</li>
+<li><strong>工具</strong>：X <code>search_posts_all</code>（官方账号严格窗）、npm registry、GitHub API、HN Algolia、curl/WebFetch 官网与文档、IT之家 RSS。</li>
+<li><strong>配图</strong>：7 张——Perplexity 官方发布图（经 X 卡片）、DeepInfer README 图、Vercel 博文图、Voxtral 博文示意图、OpenAI 公告图、Sierra 帖图、OpenRouter 数据图；均来自原文或官方帖，非 AI 生成。12h 缓存、CodeBuddy、eMudhra 无事件图，不配。</li>
+<li><strong>脆弱面</strong>：Perplexity 说明页 403，细节以官方 X 线程为准；Voxtral 基准与 OpenRouter 用量为厂商口径；TorchTPU 公开时间未见官方博文；量子位/机器之心未抓到新稿；Claude Code 2.1.305 无 changelog。</li>
+</ul>
+  </article>
+  </main>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>
