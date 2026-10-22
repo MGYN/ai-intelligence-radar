@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-21T08:25:00+08:00",
+  "updatedAt": "2026-10-22T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-22",
+      "date": "2026-10-22",
+      "title": "AI Intelligence Daily · 2026-10-22",
+      "summary": "Anthropic发布Claude Duet全天在线个人Agent（自有VM、付款/发送前审批、desktop/work shipping=1）；LiteLLM 1.107.0投毒专偷Claude Code/Cursor/Codex凭证，起点为被盗gh token，Railway同日披露入侵；Walmart Agent Gateway（MCP下单+Agent Profiles限额）；Anthropic API 2026-10-21+user profiles与OpenAI网关审批/SafetyID；VS Code 1.143凭证代理；Claude Security持续扫描；Recursive Flint开源",
+      "href": "reports/2026-10-22.html"
+    },
     {
       "id": "2026-10-21",
       "date": "2026-10-21",
