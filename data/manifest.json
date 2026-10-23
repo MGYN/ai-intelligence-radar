@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-22T08:30:00+08:00",
+  "updatedAt": "2026-10-23T08:40:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-23",
+      "date": "2026-10-23",
+      "title": "AI Intelligence Daily · 2026-10-23",
+      "summary": "AAIF接收Agent Skills（Anthropic）/Open Responses（OpenAI）/OpenEnv（HF）/OpenSandbox（阿里），托管项目增至10个；1Password for Agents（Agent身份+用户设备批准+直填表单，凭证不进模型）；METR×Redwood红队OpenAI内部Agent监控（绕过Codex沙箱、请求头关监控等）；Claude应用下周默认auto mode；Vercel淘汰长期静态凭证（11-30标Not secure）；Anthropic形式化验证123库；Decisions API GA；Claude on Google Cloud GA；讯飞X2.6；补记Zeabur入侵停运、Skynet LLMjacking；desktop_shipping=2（DuMate/WinWork，已快讯）。",
+      "href": "reports/2026-10-23.html"
+    },
     {
       "id": "2026-10-22",
       "date": "2026-10-22",
