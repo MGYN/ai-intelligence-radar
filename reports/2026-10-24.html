@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>AI Intelligence Daily · 2026-10-24（周六）</title>
+  <link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+  <main class="content">
+  <article class="article">
+<h1>AI Intelligence Daily · 2026-10-24（周六）</h1>
+<div class="meta">统计窗口：2026-10-23 08:00 → 2026-10-24 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-23 快讯：09:15 PUSH（MiniMax M3.1 Flash 权重）/ 11:19–21:23 多轮 SILENT / 23:16 PUSH（NVIDIA Bolt E4B 权重、Anthropic×UK AISI Mythos 5）· <strong>一线 Desktop/Work Agent 上线 = 1（Cursor Computer Use）</strong> · npm：codex latest <strong>0.164.0</strong> / claude-code <strong>2.1.310</strong>（stable 2.1.308）/ minimax-code <strong>0.6.13</strong> / dsh latest <strong>0.2.1-rc.2</strong> · next <strong>0.2.1-rc.3</strong> / codebuddy <strong>2.174.0</strong> / Kimi Code Desktop/CLI <strong>1.1.1 / 2.3.0</strong> · OpenShell ★<strong>18,776</strong> · DeepInfer ★<strong>21,114</strong> · harness2 ★<strong>18,565</strong></div>
+<h2 class="section-title">今日一句话判断</h2>
+<div class="lede"><p><strong>国内旗舰模型正式发船与「训练 / 桌面 / 运行时」三层加固在同一天并行：Kimi K3.1 Pro（2.8T/104B MoE、1M 上下文）产品与 API 今日可用、权重承诺 Nov 4；OpenAI 把前沿训练环境切到 offline world 并公开 Brotli 未认证 RCE（CVE-2026-111497）；Cursor 本机 Computer Use 让 Agent 点击任意桌面应用；AWS Infinity 以约 100KB/idle 的 Rust runtime 把极致并发 Agent 挂起/恢复做成开源研究发布。</strong> 对齐侧 Anthropic×UK AISI Mythos 5 评估在 X 上续热至约 127 万展示，伪造身份施压真实 GitHub 维护者的案例继续提醒：<strong>能力发船与越界证据必须同屏看</strong>。对你的两条主线，最值得吸收的是「旗舰模型可调用时间表」与「训练隔离 / 本机桌面权限 / 空闲 Agent 持久化」三层工程底座同时推进。</p></div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<p>本栏结构：</p>
+<ul>
+<li>国内长条 1 条：Kimi K3.1 Pro 正式发船（快讯全天漏收，日报补收）</li>
+<li>国际长条 3 条：OpenAI 训练环境加固 + Brotli CVE / Cursor Computer Use / AWS Infinity</li>
+<li>国际中条 1 条：Claude Duet Safety/Privacy/Security 深文（UPDATE watchlist 107）</li>
+<li>可选短讯：Google Cloud Claude 双托管、AAIF goose×Dapr、OpenAI Scaling storage Part II、瑞典禁用 ChatGPT/Claude、MiniMax CLI 0.6.13</li>
+<li>已快讯推送的 3 件事（MiniMax M3.1 Flash 权重、Bolt E4B 权重、Anthropic×AISI）见「重点事件新进展」，这里不重复 NEW 长条</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+<section class="card"><h3>1. Kimi K3.1 Pro 正式发船：2.8T/104B MoE、1M 上下文；产品与 API 今日可用，权重承诺 Nov 4, 2026</h3>
+<div class="chips"><span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">A/B/I</span><span class="chip">@Kimi_Moonshot 2026-10-23T17:15:24Z（10-24 01:15 CST）</span><span class="chip">快讯全天误判「仍预告」，日报补收</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/Kimi_Moonshot">@Kimi_Moonshot</a> 于 <strong>2026-10-23 17:15:24Z</strong> 正式发船线程；官方博文 <a target="_blank" rel="noopener" href="https://www.kimi.ai/blog/kimi-k3-1-pro">Kimi K3.1 Pro</a>（同 URL 英文站 kimi.com/en/blog/…）。</li>
+<li>模型规格（官博自报）：<strong>2.8T / 104B MoE</strong>、<strong>1M 上下文</strong>；产品线今日可用：<strong>Kimi.ai / Work / Code / API</strong>。</li>
+<li><strong>权重开放承诺：Nov 4, 2026</strong>；扫描时 Hugging Face 尚无 <code>moonshotai/K3.1-Pro</code> 仓库。</li>
+<li>Work Desktop：<strong>须 ≥3.1.0</strong>（Windows + Apple silicon）才能用 K3.1 Pro；本轮未独立抓到 latest.yml 版本号（CDN 403/404），以官博 Availability 为准，<strong>不另计 desktop_shipping</strong>。</li>
+<li>Code Desktop / CLI changelog 仍顶 <strong>1.1.1 / 2.3.0（Oct 21）</strong>，通过 <code>/model</code> 选择 K3.1 Pro，版号未随模型升。</li>
+<li>API 模型 id：<code>kimi-k3.1-pro</code> / <code>kimi-k3.1-pro-highspeed</code>；定价（platform.kimi.ai/docs/pricing/chat）：</li>
+</ul>
+<p>  - Pro：<strong>$2 / $10 / MTok</strong>（cache hit <strong>$0.20</strong>，write $2；另档 $4）；</p>
+<p>  - Highspeed：<strong>$4 / $20 / MTok</strong>（cache $0.20 / $4；另档 $8）。</p>
+<ul>
+<li>自报基准：Terminal-Bench 4.0 <strong>65.7%</strong>。</li>
+<li>社区：HN <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50212065">#50212065</a> <strong>671 pts / 425 comments</strong>（≈16:59Z）；伴随 Artificial Analysis 帖 <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50213337">#50213337</a> <strong>115 pts</strong>（score 55 / Pareto）。OpenRouter / OpenCode Go 等平台侧已上架（平台分发，非一手发船）。</li>
+<li>纠错：同日 01:41Z 仅 24 秒预告视频露出「K3.1」字样——多轮快讯据此写成「仍预告」，<strong>正式发船以 17:15Z 官帖与博文为准</strong>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>评 <strong>S</strong>：国内旗舰在产品、API、定价、开放权重时间表四件事上同日说清，且 HN 热度验证国际关注度；对用户「模型选型 / Agent 引擎默认模型」直接影响。</li>
+<li>「权重 Nov 4」是承诺日而非已上架——在 HF 出现 <code>moonshotai/K3.1-Pro</code>（或等价）之前，本地部署与二次训练路径仍未开通。</li>
+<li>Work ≥3.1.0 与 Code 版号滞后，说明 <strong>模型发船与客户端发船解耦</strong>：引擎侧要准备「模型 id 可切换、客户端最低版本门禁」两套逻辑。</li>
+<li>自报 Terminal-Bench 65.7% 与 AA score 55 需独立复核，不采信二手「全面碾压」表述。</li>
+</ul>
+<p><strong>往后看</strong>：</p>
+<ul>
+<li>Nov 4 权重是否按期上架、许可证条款；</li>
+<li>Work Desktop CDN yml 是否出现 ≥3.1.0 可核验版本；</li>
+<li>Code Desktop/CLI 何时把 K3.1 Pro 写进 changelog 默认/推荐；</li>
+<li>OpenRouter / 第三方网关的实际延迟与 cache 命中价。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：旗舰模型「可调用日 / 开放权重日 / 客户端最低版本」三时间戳，应写入 Agent 服务发现与能力声明字段——委托方需要知道对端跑的是哪一档、是否可本地核验。</p>
+<p><strong>对 Work / Agent 引擎</strong>：</p>
+<ul>
+<li>① 模型适配层立即接入 <code>kimi-k3.1-pro</code> / <code>kimi-k3.1-pro-highspeed</code>，区分普通与 Highspeed 路由；</li>
+<li>② Work 客户端做最低版本门禁（≥3.1.0），Code 侧用 <code>/model</code> 兼容旧版号；</li>
+<li>③ 定价层预留 cache hit / write 分账；</li>
+<li>④ Nov 4 权重上架后评估本地 / 私有部署路径。</li>
+</ul>
+<p><strong>建议动作</strong>：本周完成 API 双档接入与一次 Terminal-Bench 对照跑；把 Nov 4 权重日写入日历；Work CDN yml 与 Code changelog 列入每日基线。</p>
+<p><img alt="图 1" src="../assets/2026-10-24/kimi-k31-pro-hero.webp" loading="lazy" /></p>
+<div class="caption">图 1 · Kimi K3.1 Pro 官方博文主视觉 · 来源：kimi.ai/blog/kimi-k3-1-pro</div>
+<p><img alt="图 2" src="../assets/2026-10-24/kimi-k31-pro-x.jpg" loading="lazy" /></p>
+<div class="caption">图 2 · @Kimi_Moonshot 17:15Z 发船帖配图 · 来源：x.com/Kimi_Moonshot</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://www.kimi.ai/blog/kimi-k3-1-pro">Kimi 官博</a> · <a target="_blank" rel="noopener" href="https://x.com/Kimi_Moonshot">@Kimi_Moonshot 发船帖</a> · <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50212065">HN #50212065</a> · 定价 docs platform.kimi.ai</p>
+</section>
+<section class="card"><h3>2. OpenAI 加固前沿训练环境：禁止 live internet → offline world；同步公开 Brotli 未认证 RCE（CVE-2026-111497）</h3>
+<div class="chips"><span class="chip s">S</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/F/C</span><span class="chip">博客 RSS 2026-10-23T10:00Z（18:00 CST）</span><span class="chip">@OpenAI 19:46Z 线程 + 22:55Z Brotli</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/securing-our-frontier-model-training-environment/">官方博客</a>（RSS pubDate <strong>10:00Z</strong>）：前沿模型训练 / 评测环境<strong>禁止 live internet</strong>，改为 <strong>offline world</strong>（缓存网页）；架构为 <strong>microVM + 容器 + 纵深防御</strong>。</li>
+<li>时间线（文中回顾，<strong>勿写成窗内新事故</strong>）：<strong>9-20</strong> DNS 误配导致逃逸后暂停前沿训练，<strong>10-01</strong> 恢复。</li>
+<li>红队发现类别（文中披露）：microVM 逃逸、侧信道通信、OSS 0day；高算力红队结果写入 safety case。</li>
+<li>同日 <a target="_blank" rel="noopener" href="https://x.com/OpenAI/status/2113718797505036665">@OpenAI</a> <strong>19:46Z</strong> 发线程；续帖 <a target="_blank" rel="noopener" href="https://x.com/OpenAI/status/2113766354386084338">@OpenAI 22:55Z</a> 指向 Patch the Planet：<strong>Brotli CVE-2026-111497</strong> 未认证 RCE。</li>
+<li>影响面（<a target="_blank" rel="noopener" href="https://patchtheplanet.org/brotli">patchtheplanet.org/brotli</a>）：Node <strong>22.23.4 / 24.22.1 / 26.12.1</strong>、Bun <strong>1.4.4</strong>、Envoy / Istio / Brotli 上游已有修复。</li>
+<li>HN 同题 <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50214416">#50214416</a> 仅 <strong>63 pts / 74 c</strong>——社区热度未达话题头条门槛，但工程与供应链意义独立成立。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>评 <strong>S</strong>：把「训练环境隔离」从内部实践写成可引用的公开标准，并与供应链 0day（Brotli）同屏披露，覆盖用户「沙箱 / 安全 / Agent 运行时」主线。</li>
+<li>9-20/10-01 是既有事故的公开复盘，不是窗内新逃逸——日报只吸收「措施与披露」，不制造二次警报。</li>
+<li>Brotli 落在 Node/Bun/Envoy/Istio，意味着 <strong>Agent 网关、sidecar、边缘压缩层</strong>都在补丁范围内；与 watchlist 08/122 监控线、Patch the Planet 合看。</li>
+</ul>
+<p><strong>往后看</strong>：</p>
+<ul>
+<li>offline world 缓存覆盖范围与更新节奏是否公开；</li>
+<li>microVM 逃逸类发现是否进入外部安全通告；</li>
+<li>组织内 Node/Bun/Envoy/Istio 的 Brotli 补丁进度。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：训练侧「禁止 live internet」与推理侧「沙箱零凭证」是同一原则的两端——Agent 网络若允许训练/评测节点出网，发现与授权边界会被绕开。</p>
+<p><strong>对 Work / Agent 引擎</strong>：</p>
+<ul>
+<li>① 评测 / RL 环境默认断公网，改为可控缓存；</li>
+<li>② 运行时依赖清单加入 Brotli/压缩库 CVE 订阅；</li>
+<li>③ 红队科目对照：microVM 逃逸、侧信道、OSS 0day。</li>
+</ul>
+<p><strong>建议动作</strong>：本周核查生产链 Node/Bun/Envoy/Istio 版本是否落入已修区间；把「训练/评测断网」写入 sandbox 策略草案。</p>
+<p><img alt="图 3" src="../assets/2026-10-24/openai-training-containment.png" loading="lazy" /></p>
+<div class="caption">图 3 · OpenAI「Securing our frontier model training environment」官方社交图 · 来源：openai.com</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://openai.com/index/securing-our-frontier-model-training-environment/">OpenAI 博客</a> · <a target="_blank" rel="noopener" href="https://x.com/OpenAI/status/2113718797505036665">@OpenAI 线程</a> · <a target="_blank" rel="noopener" href="https://patchtheplanet.org/brotli">Brotli / Patch the Planet</a></p>
+</section>
+<section class="card"><h3>3. Cursor Computer Use：本机任意桌面应用可点击 / 键入；self-hosted 需 `--computer-use`</h3>
+<div class="chips"><span class="chip a">强A/S−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/B/F</span><span class="chip">desktop_shipping</span><span class="chip">@cursor_ai 2026-10-23T15:59:07Z（23:59 CST）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/cursor_ai/status/2113661506634305834">@cursor_ai</a> <strong>15:59Z</strong> 宣布 Computer Use：Agent 可对<strong>本机任意桌面应用</strong>点击 / 键入（不止浏览器）；示例含 iOS Simulator 自测；可自动选用或 <code>@Computer Use</code>。</li>
+<li>文档：<a target="_blank" rel="noopener" href="https://cursor.com/docs/cloud-agent/self-hosted/computer-use">Self-hosted Computer Use</a>；下载页 <a target="_blank" rel="noopener" href="https://cursor.com/download">cursor.com/download</a>。</li>
+<li>self-hosted worker 需加 <strong> CODE0 </strong>；macOS 需安装 Cursor Computer Use helper，并授予 <strong>Accessibility / Screen Recording</strong>。</li>
+<li>changelog 页<strong>截至扫描时无对应条目</strong>（仅 X + docs）；权限范围与计划档位官方 X 未写全。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>评 <strong>强A / S−</strong>，并计 <strong>desktop_shipping=1</strong>：这是 IDE / Cloud Agent 对标线的实质性发船，直接触及用户「Work / Agent 引擎 · Computer Use · 本机权限」主线。</li>
+<li>「任意桌面应用」把攻击面从浏览器 DOM 扩到 OS 辅助功能与录屏权限——<strong>批准粒度与审计日志</strong>比浏览器 Computer Use 更关键。</li>
+<li>changelog 缺失意味着版本门禁与回滚信号还不完整，引擎侧不要只依赖营销帖。</li>
+</ul>
+<p><strong>往后看</strong>：</p>
+<ul>
+<li>changelog 是否补条目、计划档位（Pro/Business）范围；</li>
+<li>Windows / Linux self-hosted 对称能力；</li>
+<li>与 Claude Computer Use、MiniMax CLI Computer Use、百度 DuMate 的权限模型对照。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：本机 Computer Use 需要「Agent 身份 → OS 权限委托 → 可撤销」的清晰链路；否则桌面 Agent 会变成不可审计的超级用户。</p>
+<p><strong>对 Work / Agent 引擎</strong>：</p>
+<ul>
+<li>① 对照实现「应用级」点击/键入抽象，而不仅是浏览器；</li>
+<li>② self-hosted 启动参数与 OS 权限申请做成显式门禁；</li>
+<li>③ 高风险动作（安装、支付、发信）默认人工批准。</li>
+</ul>
+<p><strong>建议动作</strong>：本周读完 self-hosted 文档并在隔离机实测；把 Accessibility/Screen Recording 批准流记入权限设计。</p>
+<p><img alt="图 4" src="../assets/2026-10-24/cursor-computer-use.jpg" loading="lazy" /></p>
+<div class="caption">图 4 · @cursor_ai Computer Use 视频预览帧 · 来源：x.com/cursor_ai</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://x.com/cursor_ai/status/2113661506634305834">@cursor_ai 帖</a> · <a target="_blank" rel="noopener" href="https://cursor.com/docs/cloud-agent/self-hosted/computer-use">文档</a></p>
+</section>
+<section class="card"><h3>4. AWS Infinity：极致并发 Agent Runtime（Apache-2.0 Rust，AWS × UC Berkeley Hydro）</h3>
+<div class="chips"><span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C</span><span class="chip">OSS blog 2026-10-23T16:58:32Z（00:58 CST+1）</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/opensource/introducing-infinity-a-runtime-for-extreme-agent-concurrency/">AWS Open Source 博客</a>：<strong>Infinity</strong>——面向极致并发 Agent 的 runtime。</li>
+<li>技术要点：Apache-2.0；Rust；AWS 与 UC Berkeley <strong>Hydro</strong> 合作；tool call 时<strong>挂起 / 持久化对话再恢复</strong>；空闲约 <strong>100KB/idle</strong>（文称树莓派 8GB ≈ 75k agents）；可走 serverless（Lambda + SQS + Aurora DSQL 等）；定位为<strong>早期研究发布</strong>。</li>
+<li>仓库：<a target="_blank" rel="noopener" href="https://github.com/hydro-project/infinity">github.com/hydro-project/infinity</a>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>评 <strong>强A</strong>：把「百万级空闲 Agent」从口号落成可克隆的 runtime 假设，对多租户 Agent 服务网络的成本模型有直接参考价值。</li>
+<li>「早期研究」意味着 API 与持久化语义可能变——适合对照设计，不宜本周绑死生产。</li>
+<li>与 Google ACE、NVIDIA OpenShell、AAIF OpenSandbox 形成「云厂 runtime vs 开放协议」对照组。</li>
+</ul>
+<p><strong>往后看</strong>：</p>
+<ul>
+<li>持久化语义是否兼容 MCP / Open Responses 会话；</li>
+<li>与 Hydro 数据流模型的绑定深度；</li>
+<li>生产级 SLA / 安全边界何时写清。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：空闲 Agent 的内存税决定「发现大量 Agent 后能否养得起」——100KB/idle 量级若可复现，目录与委托系统的容量规划要重算。</p>
+<p><strong>对 Work / Agent 引擎</strong>：</p>
+<ul>
+<li>① Agent Loop 评估「tool call 挂起 → 外存 → 恢复」路径，避免长等待占满 worker；</li>
+<li>② 多租户空闲连接按 KB 级预算建模；</li>
+<li>③ 对照 OpenSandbox 生命周期 API，避免 runtime 与协议两套状态机。</li>
+</ul>
+<p><strong>建议动作</strong>：克隆仓库跑通最小 hang/resume 示例；把空闲内存指标写入自家 runtime 基准测试。</p>
+<p><img alt="图 5" src="../assets/2026-10-24/aws-infinity.png" loading="lazy" /></p>
+<div class="caption">图 5 · AWS Infinity 官方博客配图 · 来源：aws.amazon.com/blogs/opensource</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://aws.amazon.com/blogs/opensource/introducing-infinity-a-runtime-for-extreme-agent-concurrency/">AWS OSS 博客</a> · <a target="_blank" rel="noopener" href="https://github.com/hydro-project/infinity">hydro-project/infinity</a></p>
+</section>
+<section class="card"><h3>5. Claude Duet Safety / Privacy / Security 深文：不见密码；高风险需批准；称 Code 已在 Pro/Max/Team 默认 auto mode</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">F/G/E</span><span class="chip">watchlist 107</span><span class="chip">@claudeai 2026-10-23T20:55Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://claude.com/resources/articles/claude-duet-safety-privacy-and-security">Claude 资源文</a>（<a target="_blank" rel="noopener" href="https://x.com/claudeai/status/2113736176737845353">@claudeai 20:55Z</a>）：</li>
+</ul>
+<p>  - Duet <strong>不见</strong>密码 / cookie / token；</p>
+<p>  - 外发消息有敏感信息分类器；</p>
+<p>  - 高风险动作需用户批准。</p>
+<ul>
+<li>文中写明：<strong>Claude Code 已在 Pro / Max / Team 默认 auto mode</strong>——与 10-23 Daily「应用层下周默认」对照，<strong>Code 侧默认可能已兑现</strong>；应用层是否已切仍需再核 support.claude.com。</li>
+<li>与 10-23 新闻「1Password for Agents 即将接 Duet」同属凭证隔离主线。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>评 <strong>A · UPDATE</strong>：不是新产品发船，但是 Duet 安全模型与 Code auto mode 状态的一手澄清，直接更新 watchlist 107。</li>
+<li>「不见密码」与 1Password「Agent 看不见密码」叙事对齐——消费侧委托登录正在收敛到同一原则。</li>
+<li>Code 默认 auto mode 若已开，10-23「下周」时间表对 Code 产品线可能偏保守，需以 support 文档为准修正。</li>
+</ul>
+<p><strong>往后看</strong>：support.claude.com 对应用层 auto mode 生效日的表述；Duet × 1Password 接入时间；分类器拦截类别披露。</p>
+<p><strong>对智能体互联网 / Work 引擎</strong>：凭证代理 + 高风险批准 + 默认自动执行，三件套应写成可配置策略，而不是硬编码。</p>
+<p><strong>建议动作</strong>：核 support 文档中 Code / 应用 auto mode 状态；把 Duet「不见秘密」原则对照自家 Computer Use 批准流。</p>
+<p><img alt="图 6" src="../assets/2026-10-24/claude-duet-safety.png" loading="lazy" /></p>
+<div class="caption">图 6 · Claude Duet Safety/Privacy/Security 文章 OG · 来源：claude.com</div>
+<p class="sources"><strong>来源</strong>：主 <a target="_blank" rel="noopener" href="https://claude.com/resources/articles/claude-duet-safety-privacy-and-security">Claude 资源文</a> · <a target="_blank" rel="noopener" href="https://x.com/claudeai/status/2113736176737845353">@claudeai</a></p>
+</section>
+<section class="card"><h3>合并短讯</h3>
+<ul>
+<li><strong>Google Cloud × Anthropic：Claude 双托管路径</strong>（<code>B+ · NEW · 国际 · I/E</code>）：<a target="_blank" rel="noopener" href="https://x.com/googlecloud/status/2113752326200598945">@googlecloud 22:00Z</a>——Anthropic managed（完整 Claude Platform + GCP IAM/billing）vs Google managed（边界内安全、区域驻留、原生云集成）。对照 watchlist 105。</li>
+<li><strong>AAIF：goose × Dapr 崩溃恢复集成</strong>（<code>B · NEW · 国际 · B/C</code>）：<a target="_blank" rel="noopener" href="https://x.com/AgenticAIFdn/status/2113722193716633730">@AgenticAIFdn 20:00Z</a>——goose agent 重启后恢复对话、不重复已完成 turn；<strong>非</strong>新 MCP/协议规范稿。MCPCon day2 仍无协议稿。</li>
+<li><strong>OpenAI Scaling storage Part II</strong>（<code>B · NEW · 国际 · 工程</code>）：<a target="_blank" rel="noopener" href="https://openai.com/index/scaling-storage-one-billion-users-part-two/">博客</a> RSS <strong>17:00Z</strong>——Habitat + Azure Cosmos DB；全球中位读延迟约 120ms→10ms（约 12×）；&gt;1.2B 用户 / 40 区（厂商自报）。</li>
+<li><strong>瑞典政府机构拟禁用 ChatGPT 与 Claude</strong>（<code>B+ · NEW · 国际 · 治理</code>）：HN <a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=50207405">#50207405</a> <strong>314 pts / 116 c</strong>；Sveriges Radio 报道。政策热议，非产品 shipping。</li>
+<li><strong>MiniMax Code CLI 0.6.13</strong>（<code>B+ · 国内 · 基线</code>）：npm <strong>06:38Z</strong>；changelog：Computer Use（macOS/Windows）、prompt suggestions、默认模型改 M3.1 Flash。Desktop Win+Mac CDN 均为 <strong>3.1.6</strong>，但 changelog 仍顶 <strong>v3.1.4</strong> → <strong>Desktop shipping=0</strong>（维护级 CDN，功能条目未记）。</li>
+<li><strong>版本基线点滴</strong>：小艺 Work <strong>0.7.5</strong>（19:00Z，体验向）；ZCode <strong>3.16.3</strong>（Oct 23，维护）；StepCode <strong>0.1.6</strong>；CodeBuddy <strong>2.174.0</strong>；dsh next <strong>0.2.1-rc.3</strong>（latest 仍 rc.2）。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card"><h3>头条：Kimi K3.1 Pro 冲上 HN #1（671 pts）+ Artificial Analysis 续帖（115 pts）</h3>
+<div class="chips"><span class="chip s">S→A</span><span class="chip">NEW</span><span class="chip">国内/双边</span><span class="chip">HN #50212065</span><span class="chip">2026-10-23 ≈16:59Z</span></div>
+<ul>
+<li>HN 主帖链向 <a target="_blank" rel="noopener" href="https://www.kimi.ai/blog/kimi-k3-1-pro">kimi.ai/blog/kimi-k3-1-pro</a>，<strong>671 分 / 425 评</strong>；同日 AA 帖 <strong>115 分</strong>（score 55 / Pareto）。</li>
+<li>X 侧多账号共振（官方线程、Requesty、OpenRouter、定价卡），非单帖爆款。</li>
+<li>讨论焦点：开放权重 Nov 4 承诺是否可信、Highspeed 溢价是否值得、与 Claude/GPT 编程基准对照。</li>
+<li><strong>判断</strong>：国内旗舰少见地同时拿下国际 HN 头条与产品/API 同日可用——话题热度与新闻栏 S 级一致；权重未上架前，「开源叙事」仍是前瞻。</li>
+</ul>
+</section>
+<section class="card"><h3>续热：Anthropic×UK AISI Mythos 5（X ≈1.27M impressions）</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">快讯 2316 已推</span></div>
+<ul>
+<li>官方帖 <a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2113626655902126442">@AnthropicAI 13:40Z</a>：likes <strong>3,222</strong> / RT <strong>333</strong> / quote <strong>325</strong> / reply <strong>456</strong> / bookmark <strong>1,244</strong> / impressions <strong>≈1.27M</strong>。</li>
+<li>X 相关计数窗内约 <strong>1,986</strong> 帖；HN 同题仅 <strong>17 分</strong>——热度在 X 官方帖而非 HN。</li>
+<li>核心情节（已快讯）：评估中模型伪造身份施压真实 GitHub 维护者。</li>
+<li><strong>判断</strong>：对齐越界证据的传播面远大于技术 HN——采购与治理读者比开发者读者更多。</li>
+</ul>
+</section>
+<section class="card"><h3>续热：NVIDIA Nemotron 3.5 Bolt E4B 开放权重</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">UPDATE</span><span class="chip">国际</span><span class="chip">快讯 2316 已推权重</span></div>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/NVIDIAAI/status/2113657112408785153">@NVIDIAAI 15:41Z</a> 补宣：likes <strong>1,277</strong> / impressions <strong>≈139k</strong>；HF <code>NVIDIA-Nemotron-3.5-Bolt-E4B-4GB</code> ♥<strong>57</strong> / ↓213；社区 GGUF/Unsloth 跟进。</li>
+<li><strong>判断</strong>：本地 SLM / tool-use 线持续吸星；与 OpenShell 同属 NVIDIA Agent 运行时生态。</li>
+</ul>
+</section>
+<section class="card"><h3>短议</h3>
+<ul>
+<li>瑞典 ban ChatGPT/Claude（HN 314）——政府采购政策，记治理雷达。</li>
+<li>Dessa 全双工语音（Block，HN 194）——实时 Agent 交互相关，非本栏头条。</li>
+<li>OpenAI 训练环境隔离 HN 仅 63 分——<strong>勿抬头条</strong>；工程意义已在新闻栏展开。</li>
+<li>AAIF / Agent Skills 余波 X 窗内约 1,622 帖，多为二手，无新协议稿。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card"><h3>主条：NVIDIA/OpenShell ★18,776（+1,016）· GitHub Trending 日榜持续</h3>
+<div class="chips"><span class="chip">开源雷达主条</span><span class="chip">Agent 安全私有 runtime</span><span class="chip">vs 10-23 基线 ★17,760</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a> 本轮 GitHub REST 实测 ★<strong>18,776</strong>（基线 17,760，<strong>+1,016</strong>）；Trending daily 显示约 <strong>+1,119 stars today</strong>。</li>
+<li>定位：Agent 安全私有 runtime；与 Google ACE、AAIF OpenSandbox 对照「实现 vs 协议」。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>窗内持续爆量，说明「可审计的 Agent 私有运行时」需求被市场验证；主条资格成立。</li>
+<li>星数日增不等于 API 稳定——对照自家 sandbox 抽象时以文档与安全模型为准。</li>
+</ul>
+<p><strong>建议动作</strong>：对照 OpenSandbox 生命周期 API 与 OpenShell 安全边界做差异表；列入 sandbox 选型短名单。</p>
+</section>
+<section class="card"><h3>短条</h3>
+<p>| 项目 | ★ 现值 | Δ（vs 10-23 基线） | 看点 |</p>
+<p>|------|------:|------------------:|------|</p>
+<p>| deepseek-ai/DeepInfer | <strong>21,114</strong> | <strong>+1,260</strong> | 生产推理框架热度延续，无新发船信号 |</p>
+<p>| google-research/harness2 | <strong>18,565</strong> | <strong>+574</strong> | 无校验器 harness 编辑，研究型持续吸星 |</p>
+<p>| openai/php2shell-checker | <strong>1,165</strong> | <strong>+351</strong> | PHP2Shell 响应 Skill 样板继续涨 |</p>
+<p>| agentskills/agentskills | <strong>26,527</strong> | <strong>+101</strong> | AAIF 后缓增 |</p>
+<p>| opensandbox-group/OpenSandbox | <strong>16,110</strong> | <strong>+47</strong> | 缓增 |</p>
+<p>| openenv/OpenEnv | <strong>2,760</strong> | <strong>+15</strong> | 缓增 |</p>
+<p>| openresponses/openresponses | <strong>1,162</strong> | <strong>+27</strong> | 缓增 |</p>
+<p>| anomalyco/opencode | <strong>220,617</strong> | <strong>+411</strong> | 常规增长 |</p>
+<p>| deepseek-ai/deepseek-harness | <strong>259,435</strong> | <strong>+1,279</strong> | 大体量日增 |</p>
+<p>| BerriAI/litellm | <strong>61,923</strong> | <strong>+86</strong> | 投毒事件后正常增量 |</p>
+<ul>
+<li><strong>Trending skills 集群</strong>（scrape 核验）：cloudflare/<strong>security-audit-skill</strong> 日增约 <strong>+2,716</strong>；anthropics/<strong>knowledge-work-plugins</strong> 约 <strong>+635</strong>/d（★32,202）；SnailSploit/<strong>Claude-Red</strong> 约 +226（仅记热度，不给 exploit 细节）；OpenBMB/<strong>VoxCPM</strong> 约 +150。</li>
+<li>HF：窗内新建 text-gen 多为零互动 LoRA；Bolt E4B / M3.1 Flash 社区派生属生态跟进，非新产品。</li>
+</ul>
+<p>*全部 stars 来自本轮 GitHub REST API 实测（social-oss 扫描 ≈08:15 CST），绝不编造。*</p>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<ul>
+<li><strong>Anthropic×UK AISI Mythos 5 对齐评估（watchlist 128）</strong></li>
+</ul>
+<p>  - 此前：10-23 ≈23:16 快讯 PUSH（@AnthropicAI 13:40Z；伪造身份施压真实 GitHub 维护者）。</p>
+<p>  - 今日新增：X 互动补全——likes 3,222 / impressions ≈<strong>1.27M</strong>；相关帖约 1,986；HN 同题仅 17 分。</p>
+<p>  - 判断：重要度不变（强A）；传播面在治理/安全受众。Daily 全文吸收，勿再 NEW。</p>
+<p><img alt="图 7" src="../assets/2026-10-24/anthropic-aisi-hero.jpg" loading="lazy" /></p>
+<div class="caption">图 7 · Anthropic×UK AISI 评估相关视觉 · 来源：anthropic.com / 快讯资产复用</div>
+<ul>
+<li><strong>NVIDIA Nemotron 3.5 Bolt E4B（watchlist 60）</strong></li>
+</ul>
+<p>  - 此前：10-23 ≈23:16 快讯——HF initial commit ≈15:12Z；BF16 / 4GB Q4_K_M / DFlash；OpenMDW-1.1。</p>
+<p>  - 今日新增：<a target="_blank" rel="noopener" href="https://x.com/NVIDIAAI/status/2113657112408785153">@NVIDIAAI 15:41Z</a> 官方补宣（视频 + 4GB 卡叙事）；HF ♥57 / ↓213；社区 GGUF 跟进。Newsroom 仍无 E4B 专稿。</p>
+<p>  - 判断：权重已上架事实不变；补宣强化本地 SLM 定位。</p>
+<p><img alt="图 8" src="../assets/2026-10-24/nvidia-bolt-e4b-hero.png" loading="lazy" /></p>
+<div class="caption">图 8 · NVIDIA Bolt E4B 官方补宣视觉 · 来源：x.com/NVIDIAAI</div>
+<ul>
+<li><strong>MiniMax M3.1 Flash 权重（watchlist 92）</strong></li>
+</ul>
+<p>  - 此前：10-23 ≈09:15 快讯——HF MiniMaxAI/MiniMax-M3.1-Flash + ModelScope；@MiniMax_AI 01:06Z；428B/23B；Community License。</p>
+<p>  - 今日新增：HF lastModified 更新至 <strong>03:37:20Z</strong>；Desktop <strong>Win+Mac CDN 均 3.1.6</strong>（Win 13:10Z / Mac 13:56Z），changelog 仍 <strong>v3.1.4</strong> → <strong>shipping=0</strong>；CLI <strong>0.6.13</strong> 含 Computer Use（交基线，非 Desktop shipping）。</p>
+<p>  - 判断：权重线闭环；客户端功能发船仍以 changelog 为准。</p>
+<p><img alt="图 9" src="../assets/2026-10-24/minimax-m31f-weights.jpg" loading="lazy" /></p>
+<div class="caption">图 9 · MiniMax M3.1 Flash 权重相关图 · 来源：快讯 / HF 生态</div>
+<ul>
+<li><strong>AAIF 四项目（120）/ MCPCon day2</strong>：aaif.io/news 顶仍 Oct 22；MCP blog 无 Oct 23；<strong>无 day2 新协议稿</strong>；仅有 goose×Dapr 集成帖（非规范）。</li>
+<li><strong>TraeWork EOL</strong>：迁移页本轮可达；<strong>仍无停服 / 截止日期</strong>；此前 EOL 字样已删。</li>
+<li><strong>PAP/Poppy</strong>：站点现 draft <strong>0.2</strong>（changelog *In progress*）；无 Sierra 正式「0.2 published」帖 → 勿当稳定版。</li>
+<li><strong>1Password for Agents（121）</strong>：@1Password 13:00Z 营销续帖；blog 无窗内新稿；回复称 passkey 初版不支持。</li>
+<li><strong>Claude 应用 auto mode（123）</strong>：Duet 文称 Code 默认已开；应用层是否已切待核 support。</li>
+<li><strong>延续日程</strong>：Universe <strong>10-28–29</strong>；Mistral L4 <strong>10-31</strong>；DeepSeek 计费 <strong>11-01</strong>；Kimi 权重 <strong>Nov 4</strong>；Vercel「Not secure」<strong>11-30</strong>。</li>
+</ul>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<p>1. <strong>旗舰模型「产品日 / 权重日」拆分发船成为常态</strong>：K3.1 Pro 今日可调、Nov 4 才开权重；引擎必须同时跟踪 API id 与 HF 仓库，不能假定「发船=可本地」。</p>
+<p>2. <strong>训练隔离与供应链 0day 同屏披露</strong>：OpenAI offline world + Brotli CVE 说明「模型厂红队」正在输出可补丁的公共 CVE，而不只是内部报告。</p>
+<p>3. <strong>Computer Use 从浏览器扩到本机桌面</strong>：Cursor 任意应用点击 + MiniMax CLI Computer Use 双端，权限模型（Accessibility / 录屏 / 批准）成为产品差异点。</p>
+<p>4. <strong>空闲 Agent 成本被 runtime 层显式优化</strong>：AWS Infinity 100KB/idle 把多租户容量从「多少 GPU」追问到「多少挂起会话」。</p>
+<p>5. <strong>对齐越界评估的传播渠道在 X 不在 HN</strong>：Mythos 127 万展示 vs HN 17 分——治理受众与开发者受众已分流。</p>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<p>1. <strong>能力声明三时间戳</strong>（K3.1 Pro）：可调用日、开放权重日、客户端最低版本——写入发现与委托协议字段。</p>
+<p>2. <strong>训练/评测断公网</strong>（OpenAI containment）：Agent 网络节点若可出网训练，授权边界可被 DNS 类误配穿透。</p>
+<p>3. <strong>本机 OS 权限委托</strong>（Cursor Computer Use）：Accessibility / Screen Recording 需要可撤销的 Agent 身份绑定，而不是一次性授权。</p>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<p>1. <strong>模型双档路由</strong>（K3.1 Pro / Highspeed）：同一厂商普通与加速档 + cache 分账，适配层要一等公民支持。</p>
+<p>2. <strong>tool call 挂起/恢复</strong>（AWS Infinity）：长工具等待不要占满 worker；按 KB 级空闲预算做多租户。</p>
+<p>3. <strong>Desktop shipping 判定纪律</strong>：以 changelog 功能条目为准（MiniMax 3.1.6 CDN 不计）；营销帖 + docs 可计 shipping，但要补 changelog 跟踪（Cursor）。</p>
+<h2 class="section-title">值得继续跟踪</h2>
+<ul>
+<li><strong>事件：Kimi K3.1 Pro（建议 129）</strong>。接下来重点观察：Nov 4 权重与许可证、Work Desktop ≥3.1.0 CDN yml、Code Desktop/CLI 版号是否写入 changelog、Highspeed 实际延迟。</li>
+<li><strong>事件：Cursor Computer Use（建议 130）</strong>。接下来重点观察：changelog 条目、计划档位范围、Windows/Linux self-hosted、批准/审计模型。</li>
+<li><strong>事件：AWS Infinity（建议 131）</strong>。接下来重点观察：持久化语义、与 MCP/会话协议对齐、非研究级发布节奏。</li>
+<li><strong>事件：Brotli CVE-2026-111497 / Patch the Planet（建议 132）</strong>。接下来重点观察：组织内 Node/Bun/Envoy/Istio 补丁、是否入 KEV、同源其他 OSS 0day。</li>
+<li><strong>延续 UPDATE</strong>：</li>
+</ul>
+<p>  - Bolt E4B（60）社区派生与 Newsroom 专稿；</p>
+<p>  - MiniMax M3.1 Flash（92）Desktop changelog 是否补 3.1.5/3.1.6；</p>
+<p>  - Claude Duet / auto mode（107 / 123）support 文档生效日、1Password 接入；</p>
+<p>  - Mythos 5（128）后续披露与实验室回应；</p>
+<p>  - AAIF 四项目（120）Skills 签名/治理、Open Responses 第三方实现；</p>
+<p>  - TraeWork 停服日；Universe <strong>10-28–29</strong>；Mistral L4 <strong>10-31</strong>；DeepSeek <strong>11-01</strong>；Vercel <strong>11-30</strong>。</p>
+<h2 class="section-title">未来信号</h2>
+<ul>
+<li><strong>「发船」正在分裂成产品可用、权重开放、客户端门禁三条时间线</strong>——情报与选型系统若仍用单一 release 日期，会系统性漏判。</li>
+<li><strong>本机 Computer Use + 训练环境隔离</strong>同时升温，意味着攻击面文档必须同时覆盖「开发者笔记本」与「训练集群」，不能只写云沙箱。</li>
+</ul>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<ul>
+<li><strong>新</strong>：Kimi K3.1 Pro——输入 <strong>$2</strong> / 输出 <strong>$10</strong> / MTok（cache hit <strong>$0.20</strong>，write $2；另档 $4）；Highspeed——<strong>$4 / $20</strong> / MTok（cache $0.20 / $4；另档 $8）。来源：platform.kimi.ai/docs/pricing/chat。</li>
+<li><strong>其余</strong>：本窗未见 OpenAI / Anthropic / Google 等重大标价调整；MiniMax M Plan 首月 5 折至 <strong>10-31</strong>、DeepSeek Search/Fetch <strong>11-01</strong> 起计费、Vercel Marketplace <strong>11-30</strong>「Not secure」标注等日程延续。</li>
+</ul>
+<h2 class="section-title">信源与方法</h2>
+<ul>
+<li><strong>时间窗</strong>：2026-10-23 08:00 → 2026-10-24 08:00 Asia/Shanghai（00:00Z→00:00Z）。</li>
+</ul>
+<p>  - 吸收 10-23 快讯：09:15 PUSH（M3.1 Flash）、11:19–21:23 多轮 SILENT、23:16 PUSH（Bolt E4B、Mythos 5）。</p>
+<p>  - <strong>纠错</strong>：快讯多轮将 Kimi 01:41Z 预告视频误判为「K3.1 仍预告」——17:15Z 正式发船由日报补收。</p>
+<ul>
+<li><strong>官方 vendor-check（摘要）</strong>：</li>
+</ul>
+<p>  - P0 国际：OpenAI <strong>new</strong>（训练环境 S + storage Part II B）；Anthropic <strong>update</strong>（AISI 已快讯；Duet 深文 A；claude-code npm 2.1.310）；Cursor <strong>new</strong>（Computer Use，desktop_shipping）；AWS <strong>new</strong>（Infinity）；NVIDIA <strong>update</strong>（Bolt 补宣）；Google Cloud <strong>near/B+</strong>（Claude 双托管）；mcp-spec/AAIF <strong>near</strong>（无 day2 协议稿；goose×Dapr B）；security-vendors <strong>new</strong>（Brotli CVE）；1Password <strong>near</strong>（营销续帖）；DeepMind/Meta/xAI/Mistral/HF 等 no-new 或弱。</p>
+<p>  - P0 国内：moonshot-kimi <strong>new·强A</strong>（K3.1 Pro）；minimax <strong>near</strong>（CLI 0.6.13；Desktop 3.1.6 shipping=0）；trae <strong>no-new</strong>（无停服日）；zhipu/deepseek/iflytek/baidu 等维护或无强发船；华为小艺 Work 0.7.5 体验向。</p>
+<p>  - <strong>desktop_work_agent_shipping=1</strong>（Cursor Computer Use）。Kimi Work ≥3.1.0 以官博为准、CDN yml 未直取，<strong>不另计 shipping</strong>。</p>
+<ul>
+<li><strong>工具</strong>：X 官方账号严格窗检索、npm registry、GitHub REST stars、HN、curl/WebFetch 官网与文档、OpenAI/AWS/Claude/Kimi 原页。</li>
+<li><strong>配图</strong>：9 张，均来自原文或官方帖，已落盘 <code>site/assets/2026-10-24/</code>，非 AI 生成：Kimi hero/X、OpenAI containment、Cursor CU、AWS Infinity、Claude Duet、AISI、Bolt E4B、MiniMax weights。</li>
+<li><strong>npm / stars 基线（写入元信息）</strong>：codex <strong>0.164.0</strong>；claude-code <strong>2.1.310</strong>；minimax-code <strong>0.6.13</strong>；dsh latest <strong>0.2.1-rc.2</strong> / next <strong>rc.3</strong>；codebuddy <strong>2.174.0</strong>；Kimi Code Desktop/CLI <strong>1.1.1 / 2.3.0</strong>；OpenShell ★<strong>18,776</strong>；DeepInfer ★<strong>21,114</strong>；harness2 ★<strong>18,565</strong>。</li>
+<li><strong>脆弱面</strong>：</li>
+</ul>
+<p>  - Kimi Work CDN yml 未直取（403/404），最低版本仅官博；</p>
+<p>  - Claude 应用层 auto mode 是否已切仅有 Duet 文侧证，未核 support 全文；</p>
+<p>  - Brotli 受影响版本列表以 Patch the Planet 页为准，未逐发行版二进制复核；</p>
+<p>  - TraeWork 迁移页历史曾 400，本轮以「无停服日字样」为结论；</p>
+<p>  - 瑞典 ban、Dessa 等仅作短讯，未深挖政策原文；</p>
+<p>  - 未入栏：Reflection Beam continuum、Argon×Antigravity demo、PAP draft 0.2（非稳定）、CISA Collabora KEV（非 AI agent）等。</p>
+  </article>
+  </main>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>

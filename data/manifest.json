@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-23T08:40:00+08:00",
+  "updatedAt": "2026-10-24T08:25+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-24",
+      "date": "2026-10-24",
+      "title": "AI Intelligence Daily · 2026-10-24",
+      "summary": "国内旗舰模型正式发船与「训练 / 桌面 / 运行时」三层加固在同一天并行：Kimi K3.1 Pro（2.8T/104B MoE、1M 上下文）产品与 API 今日可用、权重承诺 Nov 4；OpenAI 把前沿训练环境切到 offline world 并公开 Brotli 未认证 RCE（CVE-2026-111497）；Cursor 本机 Computer Use 让 Agent 点击任意桌面应用；AWS Infinity 以约 100KB/idle 的 Rust runtime 把极致并发 Agent 挂起/恢复做成开源研究发布。 对齐侧 Anthropic×UK AISI Mythos 5 评估在 X 上续热至约 127 万",
+      "href": "reports/2026-10-24.html"
+    },
     {
       "id": "2026-10-23",
       "date": "2026-10-23",
