@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-24T08:25+08:00",
+  "updatedAt": "2026-10-25T08:30+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "date": "2026-10-25",
+      "href": "reports/2026-10-25.html",
+      "id": "2026-10-25",
+      "summary": "准入与边界日：美国大行拦第三方 Agent 代登录、MCP Inspector OAuth→stdio RCE、英国 £600m+ AI 安全包、Brotli HTTP2Shell 扩面、OpenAI 抢 Replit（据报）",
+      "title": "AI Intelligence Daily · 2026-10-25"
+    },
     {
       "id": "2026-10-24",
       "date": "2026-10-24",
