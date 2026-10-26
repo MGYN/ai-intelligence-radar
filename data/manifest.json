@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-25T08:30+08:00",
+  "updatedAt": "2026-10-26T08:40+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-26",
+      "date": "2026-10-26",
+      "title": "AI Intelligence Daily · 2026-10-26",
+      "summary": "输入面反咬日：Wiz 披露 Gheist 用被盗 GitHub token 批量外带 CI secrets、网页投放 AGENTS.md 劫持编码 Agent、Kimi 道歉返额度并改默认单 Agent、千问 Go 授权调用个人数据生成应用",
+      "href": "reports/2026-10-26.html"
+    },
     {
       "date": "2026-10-25",
       "href": "reports/2026-10-25.html",
