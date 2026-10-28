@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-27T08:20+08:00",
+  "updatedAt": "2026-10-28T08:25+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-28",
+      "date": "2026-10-28",
+      "title": "AI Intelligence Daily · 2026-10-28",
+      "summary": "世界模型与个人 Agent 同日落地：DeepMind Genie 4；蚂蚁灵光 2.0（APASS/MCP/长程云主机）；Anthropic OneGov 4 折 + judgment-calls 86%；Apple Creator Studio MCP；Cloudflare×SGLang KV 日报首收；MCP Python SDK 三 GHSA",
+      "href": "reports/2026-10-28.html"
+    },
     {
       "id": "2026-10-27",
       "date": "2026-10-27",

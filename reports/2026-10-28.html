@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-10-28</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+
+<h1>AI Intelligence Daily · 2026-10-28（周三）</h1>
+<div class="meta">统计窗口：2026-10-27 08:00 → 2026-10-28 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-27 快讯：09:16 PUSH（157 Cloudflare×SGLang KV）/ 11:21·13:17·15:14·17:21·19:22·21:23·23:26 SILENT · <strong>一线 Desktop/Work Agent 上线 = 0</strong> · npm：codex <strong>0.165.0</strong> / claude-code <strong>2.1.312</strong> / gemini-cli <strong>0.66.0</strong> / codebuddy <strong>2.177.1</strong> / kimi-code <strong>2.3.3</strong> / minimax-code <strong>0.7.1</strong> / copilot <strong>1.0.104</strong> / inspector <strong>2.12.0</strong> / dsh latest <strong>0.2.1-rc.2</strong>（alpha 0.2.2-alpha.2） · OpenShell ★<strong>20,284</strong> · DeepInfer ★<strong>23,396</strong> · MCP servers ★<strong>91,609</strong> · thinkrail ★<strong>3,974</strong>（+1,100）</div>
+<h2 class="section-title">今日一句话判断</h2>
+<div class="lede">
+<p><strong>世界模型与个人 Agent 同日落地，MCP 同时向办公文档与政府采购渗透；推理多租户串租余波进入日报：DeepMind Genie 4（实时交互世界模型 + Gemini 环内 agent）与蚂蚁灵光 2.0（长程云主机 / MCP / CLI / APASS）同窗发船；Anthropic 把 Claude 全政府层级打到 4 折（OneGov），Apple 让 Keynote/Pages/Numbers 原生接入 MCP；快讯已推的 Cloudflare×SGLang KV 跨请求暴露作日报首收。</strong> 另有 judgment-calls 揭示专家 86% 跟随 agent 偏好、药物研发 Agent 工作流早期进展、MCP Python SDK 三则 GHSA、Copilot 组织级 S2S 鉴权。对你两条主线：<strong>个人 Agent 身份（APASS）与办公 MCP 正在产品化；委托偏倚与多租户推理隔离同时成为信任硬约束。</strong></p>
+</div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<section class="card">
+<p>本栏结构：</p>
+<ul>
+<li>国际/国内头条：Genie 4 / 灵光 2.0 / Anthropic OneGov / judgment-calls / Apple Creator Studio MCP</li>
+<li>重点进展首收：Cloudflare×SGLang KV（快讯 157）</li>
+<li>科学/安全/身份中条：药物研发 Agent、MCP Python SDK GHSA、Copilot S2S、FrontierCode 2.0、OpenAI×Oracle</li>
+<li>合并短讯：钉钉 DWS 鸿蒙 PC（媒体放大）、CodeBuddy 2.177.1、MiniMax 0.7.1、OpenShell 0.1.6、OpenSandbox 1.2.0、opencode v2.2.0、ChatGPT iCloud、CLI 升档</li>
+<li><strong>不升格</strong>：Amazon AI 裁撤（二手）、Qoder 促销、CF PHP CTF、ScubaGear、libghostty/Ghostty、Fable 臆测、Universe keynote（尚无一手）、SGLang 0.5.23（无）、灵光 TLS 失败站、Reddit FAIL</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+</section>
+<section class="card"><h3>1. Google DeepMind 发布 Genie 4：迄今最写实的实时交互世界模型</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/C/K</span><span class="chip">Agent 训练环境 / World model</span><span class="chip">watchlist 158</span><span class="chip">@GoogleDeepMind 16:10Z</span><span class="chip">HN ≈681</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">DeepMind 官博</a>（另见 <a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/">Google Blog</a>）与 <a target="_blank" rel="noopener" href="https://x.com/GoogleDeepMind/status/2115114028338962672">@GoogleDeepMind</a>（16:10:55Z）：定位为迄今最写实、可实时交互的世界模型；<strong>原生多模态音频</strong>（环境声 + 可交互对话）；自然语言实时改天气/镜头/物体；Gemini 家族提供连贯性与推理。</li>
+<li><strong>Gemini 3.8 Flash</strong> 作环内引导 agent；文中实验 <strong>Gemini 4 Argon × Genie 4</strong> 驱动 Apptronik Apollo 仿真（任务拆步→Genie 渲染）。</li>
+<li>可用性：trusted tester 研究预览；随后面向 Google AI Ultra（Project Genie）与 Gemini API / AI Studio 早期伙伴；输出带 <strong>SynthID</strong>。</li>
+<li>自述局限：长会话漂移、复杂物理、可读文本与长期一致性仍在研。</li>
+<li>热度（oss）：官方帖 impressions <strong>≈1.53M</strong>、likes ≈14.4k；HN <strong>681 pts / 412 c</strong>（16:06Z）。</li>
+</ul>
+<p><img alt="图 1" src="../assets/2026-10-28/deepmind-genie4-hero.jpg" loading="lazy" /></p>
+<p class="caption">图 1 · DeepMind Genie 4 官博题图 · 来源：deepmind.google/blog/genie-4-…</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A</strong>。世界模型从「看视频」进入「环内可交互 + 可对话」；把 Gemini 当作环内 agent 的设计，对具身/仿真训练环境是直接可吸收范式。</li>
+<li>非 coding shipping、非 desktop_shipping；价值在 <strong>Agent 环境层</strong>，而非 IDE 客户端。</li>
+<li>局限自述诚实——长一致性与复杂物理仍是瓶颈，不宜写成「通用物理模拟已解决」。</li>
+</ul>
+<p><strong>未来影响</strong></p>
+<ul>
+<li>预计更多机器人/游戏/自动驾驶仿真会接「世界模型 + 推理模型」双环；SynthID 会成为生成世界内容的默认水印要求。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>仿真环境本身可成为可发现的 Agent 服务节点：身份、配额与输出水印应进入互联协议元数据。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li>评估「环境模型 + 策略/引导 agent」双环 harness；长会话漂移对应你的 Memory/compaction 策略。</li>
+</ul>
+<p><strong>建议动作</strong>：通读官博局限段；把 Genie/Project Genie 可用性节点写入 watchlist；对照自研仿真或 Computer Use 环境是否需要「环内引导模型」。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">DeepMind · Genie 4</a> · <a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/">Google Blog</a> · <a target="_blank" rel="noopener" href="https://x.com/GoogleDeepMind/status/2115114028338962672">@GoogleDeepMind</a></p>
+</section>
+<section class="card"><h3>2. 蚂蚁灵光 2.0：「能管事的」个人 Agent（云主机长程 + MCP/CLI + APASS）</h3>
+<div class="chips"><span class="chip">A/强A</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/C/E/F</span><span class="chip">Personal Agent</span><span class="chip">watchlist 159</span><span class="chip">IT之家 2026-10-27 10:05 CST</span><span class="chip">非 desktop_shipping</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ithome.com/1/018/252.htm">IT之家</a>（<strong>2026-10-27 10:05:24 CST</strong>；URL 以扫描核验为准见下）与 <a target="_blank" rel="noopener" href="https://cn.chinadaily.com.cn/a/202610/27/WS6ae01544e4b09a165c791b6a.html">中国日报网</a>、<a target="_blank" rel="noopener" href="https://www.businesswire.com/news/home/20261026586960/en/">BusinessWire 英文稿</a>：灵光 2.0 突破单次对话；<strong>独立云主机</strong>可在用户退出后继续跑任务；内置支付宝账单/会员/出行、钉钉、飞书、邮箱、米家；开放环境可调 <strong>MCP、CLI</strong>；接入蚂蚁 <strong>APASS</strong>（跨智能体/设备/应用统一账号与安全管理）。</li>
+<li>口径：「从能聊会做到记得住、盯得牢、办得了」。</li>
+<li>端：iOS / Android / Web 滚动上线；<strong>非</strong> P0 Coding Desktop → <strong>desktop_shipping=0</strong>。</li>
+<li>Daily 10-27 未收（仅 flashes near-miss）；国内媒体主传播日为 10-27 → 本 Daily 作 <strong>NEW</strong>。BusinessWire 日期标 10-26 为出海一手。</li>
+</ul>
+<p><img alt="图 2" src="../assets/2026-10-28/lingguang-2-ithome.png" loading="lazy" /></p>
+<p class="caption">图 2 · 灵光 2.0 IT之家原文配图 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A/强A（个人事务 Agent）</strong>。把「长程云主机 + 跨 App 工具 + 统一身份（APASS）」一次性产品化，是国内个人 Agent 从聊天助理跃迁到事务执行体的清晰一步。</li>
+<li>必须与 Coding Desktop 分列：本条是 Personal/Work 助理形态，<strong>不计 desktop_shipping</strong>。</li>
+<li>官方站 <code>lingguang.com</code> 本轮 TLS EOF → 以 IT之家 + BusinessWire + 中国日报三角核验；后续仍须盯官方一手页。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li><strong>APASS</strong> 是国内可见的「跨智能体/设备统一账号与安全管理」产品名——对照 PAP/Poppy、Agent Identity：身份、授权、委托应可跨端撤销与审计。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li>「用户退出后云主机继续跑」= 后台 Agent Loop + 持久 Workspace；需审批门闸（付款/发送类动作）与会话级开关。</li>
+</ul>
+<p><strong>建议动作</strong>：把 APASS 公开材料（若有）对照你的身份/委托设计；评估长程任务的中断恢复与费用可见性。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.ithome.com/1/018/252.htm">IT之家</a> · <a target="_blank" rel="noopener" href="https://cn.chinadaily.com.cn/a/202610/27/WS6ae01544e4b09a165c791b6a.html">中国日报网</a> · <a target="_blank" rel="noopener" href="https://www.businesswire.com/news/home/20261026586960/en/">BusinessWire</a></p>
+</section>
+<section class="card"><h3>3. Anthropic × GSA OneGov：全政府层级 Claude 统一 40% 折扣</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">I/E/B/G</span><span class="chip">watchlist 160</span><span class="chip">公告 Oct 27</span><span class="chip">@AnthropicAI 22:20Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.anthropic.com/news/expanding-partnership-gsa">Anthropic 公告</a>与 <a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2115207004293853358">@AnthropicAI</a>（22:20:23Z）：新 OneGov 协议——Claude Enterprise / Claude for Government / Claude API <strong>统一 40% 折扣</strong>，覆盖直采与后续云市场；扩展至州/地方/部落/领地。</li>
+<li>约 <strong>500</strong> 个联邦/州/地方组织在用；Claude for Government 周活自 2 月约 <strong>×8</strong>；联邦文职用量约 <strong>×20</strong>/年；公司称折扣合计可节约政府约 <strong>$10 亿</strong>、无最低消费。</li>
+<li>用例：犹他州 34 名开发者 Claude Code 试点；州 CIO 称勒索响应 8 分钟 vs 通常 2–3 天；联邦安全队用 <strong>Claude Mythos</strong> 约两天发现并修补关键生产系统漏洞。</li>
+<li>Claude for Government 已于 <strong>9-30 GA</strong>（FedRAMP High 近功能对等）；Bedrock/Vertex 授权口径见公告。</li>
+</ul>
+<p><img alt="图 3" src="../assets/2026-10-28/anthropic-onegov-hero.webp" loading="lazy" /></p>
+<p class="caption">图 3 · Anthropic×GSA 公告题图 · 来源：anthropic.com/news/expanding-partnership-gsa</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A</strong>。政府采购路径把 Claude（含 Code / Government）打成默认可采货架；折扣无门槛会加速州/地方落地。</li>
+<li>与 S-1（149）同周：一边上市叙事，一边吃透公共部门渠道——渠道与合规（FedRAMP）比单纯模型分数更有采购意义。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：政府场景的身份与审计要求更高——Agent 调用链应能对齐 FedRAMP/州 CIO 合规叙述。</p>
+<p><strong>对 Work·Agent 引擎</strong>：企业/政府 Harness 需支持「云市场抵扣 + 组织级预算」；Mythos 类安全用例提示红队 Agent 会进入采购故事。</p>
+<p><strong>建议动作</strong>：若有政府/强合规客户，对齐 OneGov 折扣与 Claude for Government 功能边界；更新价格雷达「政府渠道」假设。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.anthropic.com/news/expanding-partnership-gsa">Anthropic · GSA</a> · <a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2115207004293853358">@AnthropicAI</a></p>
+</section>
+<section class="card"><h3>4. Anthropic 研究：专家与 Claude Code 协作时 86% 跟随 agent「偏好」</h3>
+<div class="chips"><span class="chip">A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">F/G/B</span><span class="chip">对齐 / 委托</span><span class="chip">watchlist 161</span><span class="chip">Oct 27</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.anthropic.com/research/agents-judgment-calls">Anthropic 研究页</a>：50 名因果推断分析师用内嵌 Claude Code（Opus 4.8 High）做农业合作社评估；四项分析选择上与 agent 被随机赋予的 lean 一致率 <strong>86%</strong>；已有偏好时若 agent 反对则 <strong>60%</strong> 改口。</li>
+<li>事后解释中 <strong>77%</strong> 复述 agent 论点（常逐字），仅 <strong>15%</strong> 归功于 agent；仍有约半数称建议「更像自己的」。</li>
+<li>作者强调：故意强化 lean；单任务/单模型局限；对 AI 安全研究「人在环独立校验」假设提出警告。</li>
+</ul>
+<p><img alt="图 4" src="../assets/2026-10-28/anthropic-judgment-calls.jpg" loading="lazy" /></p>
+<p class="caption">图 4 · agents-judgment-calls 研究页题图 · 来源：anthropic.com/research/agents-judgment-calls</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A−，对委托/Trust 极相关</strong>。人在环≠独立校验；专家也会被 agent 的隐性 lean 带走，且事后归因失真。</li>
+<li>故意强化 lean 的实验设计限制外推，但方向信号足够强：产品里的「默认建议措辞」本身就是治理对象。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：委托协议应记录 agent 的决策偏向来源（策略/系统提示/工具结果），便于事后审计「人是否真的独立判断」。</p>
+<p><strong>对 Work·Agent 引擎</strong>：关键判断（合规则、合并、花钱）应强制结构化反建议或双模型对照，而不是单一 agent 流畅说服。</p>
+<p><strong>建议动作</strong>：在审批 UX 中加入「展示反对证据 / 强制写下独立理由」实验；把本文献入 Trust 设计评审。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.anthropic.com/research/agents-judgment-calls">Anthropic · Judgment calls</a></p>
+</section>
+<section class="card"><h3>5. Apple Creator Studio：Keynote / Pages / Numbers 引入 MCP + .keyx</h3>
+<div class="chips"><span class="chip">A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">E/B/C</span><span class="chip">MCP</span><span class="chip">watchlist 162</span><span class="chip">Apple Newsroom Oct 27</span><span class="chip">非 desktop_shipping</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/">Apple Newsroom</a>（October 27, 2026）：Keynote/Pages/Numbers 订阅档——文档上下文助手（Apple + OpenAI，beta）+ <strong>MCP</strong>，允许外部 AI agents/tools <strong>读取、编辑、执行自动化</strong>；脚注：MCP 需 <strong>macOS 27+</strong>。</li>
+<li>Keynote 新开 <strong>.keyx</strong>（JSON bundle），面向外部工具/开发者工作流/<strong>AI agents</strong>。</li>
+<li>Creator Studio 更新 <strong>11 月</strong> App Store 对现有订阅免费。另有 Logic 助手、Pixelmator Generate Fill 等（创意向，非本栏重点）。</li>
+<li><strong>不计 desktop_shipping</strong>（文档应用侧协议开放，非新 Work Agent 客户端）。</li>
+</ul>
+<p><img alt="图 5" src="../assets/2026-10-28/apple-creator-studio.jpg" loading="lazy" /></p>
+<p class="caption">图 5 · Apple Creator Studio Newsroom 题图 · 来源：apple.com/newsroom</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A−</strong>。MCP 从 IDE/终端进入苹果办公三件套，是「办公文档成为 Agent 一等公民」的标志事件；<code>.keyx</code> 说明 Apple 在为 agent 可读可写格式让路。</li>
+<li>macOS 27+ 门槛意味着短期仅开发者/早期系统可测；11 月更新是落地节点。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：办公文档 MCP 服务器将成为高频互联节点——鉴权、最小权限、撤销与审计必须产品化。</p>
+<p><strong>对 Work·Agent 引擎</strong>：Harness 应预留 Keynote/Pages/Numbers MCP 适配；区分「读文档上下文」与「改文件/执行自动化」权限级别。</p>
+<p><strong>建议动作</strong>：11 月更新后实测 MCP 工具面与鉴权；评估 .keyx 是否可作为演示稿自动化中间格式。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/">Apple Newsroom</a></p>
+</section>
+<section class="card"><h3>6. Cloudflare × SGLang：GLM-5.3 Workers AI 跨请求 KV cache 暴露（日报首收）</h3>
+<div class="chips"><span class="chip">强A</span><span class="chip">NEW（日报首收）</span><span class="chip">国际</span><span class="chip">G/C/A/H</span><span class="chip">watchlist 157</span><span class="chip">快讯 10-27 09:16 已推</span><span class="chip">协同披露 10-26</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.cloudflare.com/kv-cache-exposure-remediation/">Cloudflare 博文</a>与 <a target="_blank" rel="noopener" href="https://www.lmsys.org/blog/2026-10-26-cf-security/">LMSYS/SGLang</a> 协同披露（CF Last-Modified ≈22:01Z）：Workers AI 上 <code>@cf/zai-org/glm-5.3</code> 在 PD 分离部署下，超长 prompt（>681,280 tokens，配置上下文却为 1,048,576）可走入 SGLang 拒绝路径，却仍完成 prefill→decode 交接；decode 在未写满的 KV 页上生成，<strong>响应可含其他租户会话内容</strong>。共 <strong>155</strong> 条响应受影响；公司称未见蓄意利用迹象，其他 Workers AI 模型未中招。事故窗 <strong>2026-08-27 → 09-09</strong>（模型已于 09-09 修复并恢复）。</li>
+<li>根因两层：(1) 部署侧 KV pool < 宣称上下文；(2) 引擎侧「已拒绝」请求在 disagg 交接中仍被视为 live。CF 当日扩 pool、打补丁后恢复。</li>
+<li>上游建议运营商升至 <strong>SGLang ≥v0.5.22</strong>；本窗顶 tag <strong>仍 v0.5.22</strong>（无 0.5.23）。</li>
+</ul>
+<p><img alt="图 6" src="../assets/2026-10-28/cloudflare-kv-cache.png" loading="lazy" /></p>
+<p class="caption">图 6 · Cloudflare 博文题图 · 来源：blog.cloudflare.com/kv-cache-exposure-remediation/</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A、偏长期机制信号</strong>（与快讯一致）。多租户 Agent/长上下文 Serving 的隔离失败模式被一线 CDN 与主流开源引擎同日写清：配置校验失败 + 拒绝路径不原子 = 静默串租。</li>
+<li>Daily 10-27 曾标 B−「待确认」漏收 → 本轮日报全文吸收。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：跨 Agent/跨租户 Trust 不能停在协议身份层——若底层推理 KV 可串读，上层委托与审计会被静默击穿。</p>
+<p><strong>对 Work·Agent 引擎</strong>：Cloud Agent / 多租户 Runtime 若用 SGLang PD：立刻核对 <strong>pool≥context</strong>、升 <strong>≥0.5.22</strong>、开 deferred release 与 release metrics；评估 PD checksum。</p>
+<p><strong>建议动作</strong>：盘点自建/供应商 SGLang 版本与 PD 拓扑；把「拒绝/中止路径是否仍会 handoff」写进 harness 回归；跟踪研究者独立报告与 v0.5.23。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://blog.cloudflare.com/kv-cache-exposure-remediation/">Cloudflare</a> · <a target="_blank" rel="noopener" href="https://www.lmsys.org/blog/2026-10-26-cf-security/">LMSYS</a> · <a target="_blank" rel="noopener" href="../flashes/2026-10-27-0916.md">快讯归档</a></p>
+</section>
+<section class="card"><h3>7. Anthropic：Claude 加速药物研发早期进展（六伙伴 + 自研）</h3>
+<div class="chips"><span class="chip a">A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/B/C</span><span class="chip">Agent 科学工作流</span><span class="chip">watchlist 163</span><span class="chip">Oct 27</span><span class="chip">HN ≈93</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.anthropic.com/research/early-progress-drug-development">Anthropic 研究</a>与 <a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2115178675050307942">@AnthropicAI</a>（20:27:48Z）：与 BigHat、BMS、Divergence、Enveda、Generate、TCG 深度合作；自研含罕见儿童肌营养不良（基金会 Mithril Medicine）。</li>
+<li>案例：Generate 用 <strong>Claude Code</strong> 提出 CAR-T 片段设计（一例缩短约 70%、受体表达约 ×10）；Divergence 约一个月生成约 <strong>3.5 万</strong> 抗体设计并找到 hits；BigHat 约 10 周测约 1010 变体；Enveda 制造文档审阅时间约 −89%、监管草稿从约 3 月→4 小时量级。</li>
+<li>多数仍属临床前；计划扩展到临床试验阶段；并行 Claude Science / Life Sciences Verification / guest investigators。</li>
+</ul>
+<p><img alt="图 7" src="../assets/2026-10-28/anthropic-drug-dev.jpg" loading="lazy" /></p>
+<p class="caption">图 7 · 药物研发布文题图 · 来源：anthropic.com/research/early-progress-drug-development</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A（科学 Agent 工作流）</strong>。不是新模型发船，而是「Claude Code + 领域工具链」在高价值 R&D 的可量化早期证据；对 Agent 产品叙事有示范意义。</li>
+<li>临床前阶段 → 勿写成「药已上市」；数字来自合作方案例，按厂商研究口径引用。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong>：领域 Agent 需要可验证工具链（实验设计、文档审阅、监管草稿）与人审门闸；Coding harness 可迁移到科学流水线。</p>
+<p><strong>建议动作</strong>：若有生命科学客户，对照案例拆「哪些步骤可 agent 化、哪些必须 HITL」。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.anthropic.com/research/early-progress-drug-development">Anthropic · Drug development</a></p>
+</section>
+<section class="card"><h3>8. MCP Python SDK 三则 GHSA 入全球公告库（升 mcp≥1.30 或 ≥2.2）</h3>
+<div class="chips"><span class="chip">A−/B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">G/E</span><span class="chip">MCP 安全</span><span class="chip">watchlist 166</span><span class="chip">GHSA ≈21:05–21:07Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>三则 moderate 通告同窗入库：<a target="_blank" rel="noopener" href="https://github.com/advisories/GHSA-w4fh-qvv9-3v23"><code>GHSA-w4fh-qvv9-3v23</code></a>（bearer 接受错误资源服务器签发的 token）、<a target="_blank" rel="noopener" href="https://github.com/advisories/GHSA-5h93-6whr-6q8j"><code>GHSA-5h93-6whr-6q8j</code></a>（HTTP 客户端跨源 redirect 携带自定义头/体）、<a target="_blank" rel="noopener" href="https://github.com/advisories/GHSA-rwrf-2pqf-9j8j"><code>GHSA-rwrf-2pqf-9j8j</code></a>（校验 tool output schema 时拉取服务端选定 <code>$ref</code> URL）。CVE-2026-116684/5/6。</li>
+<li>受影响 pip <code>mcp</code>：<code>&gt;=2.0.0,&lt;2.2.0</code> 与 <code>1.x</code> 若干区间；<strong>patched 2.2.0 / 1.30.0</strong>（PyPI 补丁上传实为 2026-09-07；公告库今日集中可见）。现 latest <strong>2.3.0</strong>。</li>
+<li>X 相关讨论量中等（oss：≈243）；事实一手在 GHSA。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A− 安全短条</strong>。勿写成「今日才出补丁」——强调<strong>升级到 ≥1.30.0 或 ≥2.2.0（现 2.3.0）</strong>；三类问题分别打在身份、HTTP 客户端、schema 校验面，正是 Agent 互联默认依赖面。</li>
+</ul>
+<p><strong>对智能体互联网 / Work·Agent 引擎</strong>：所有 Python MCP 客户端/服务器依赖盘点并强制升档；redirect 与 <code>$ref</code> 拉取应默认 deny 或 allowlist。</p>
+<p><strong>建议动作</strong>：CI 锁 <code>mcp&gt;=2.3.0</code>；审查自定义 HTTP 传输是否复现 redirect 带头问题。</p>
+<p><strong>来源</strong>：GHSA 三则（上链）· PyPI <code>mcp</code></p>
+</section>
+<section class="card"><h3>9. GitHub Copilot SDK：组织级 server-to-server 鉴权（公测）</h3>
+<div class="chips"><span class="chip">B+/A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">E/F/B</span><span class="chip">Agent 身份 / NHI</span><span class="chip">watchlist 165</span><span class="chip">Changelog Oct 27 ≈21:36Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication">GitHub Changelog</a>：GitHub Apps 安装于 org 后，可用短时 installation token 调 Copilot SDK，<strong>无需终端用户登录态</strong>；用量归属 org，并受模型策略/预算约束。</li>
+<li>权限：只读 <code>Copilot Requests</code>；用量 CSV 可按 <code>app_client_id</code> 归因；可挂起/卸载 App 切断。</li>
+<li>时点：GitHub Universe <strong>10-28–29</strong> 开幕前夜；截至扫描时刻<strong>尚无 Universe keynote 一手 shipping</strong>。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>B+/A−</strong>。NHI/org 级 Agent 身份进入 Copilot SDK——后台 Agent 不再寄生个人 OAuth；对多租户 Cloud Agent 是正确方向。</li>
+<li>Changelog 无独立事件图 → <strong>本条不配图</strong>。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：组织级安装身份 + 可撤销 + 用量归因，是 Agent 服务网络的默认身份模式。</p>
+<p><strong>对 Work·Agent 引擎</strong>：对照自研 SDK：支持 installation token、按 app 归因、预算熔断。</p>
+<p><strong>建议动作</strong>：Universe 会期继续盯 keynote；内部 PoC 用 GitHub App 调 Copilot SDK。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication">GitHub Changelog</a></p>
+</section>
+<section class="card"><h3>10. Cognition FrontierCode 2.0：更难饱和的编码 Agent 基准</h3>
+<div class="chips"><span class="chip">B+/A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/B</span><span class="chip">Eval</span><span class="chip">watchlist 164</span><span class="chip">博文 2026-10-27</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cognition.com/blog/frontier-code-2.0">Cognition 博文</a>（datePublished 10:00-07）：相对 1.1——更多仓/类（含安全补丁与性能）、更严可合并标准、参考改动文件数 +67% / 行数 +89%；<strong>thoroughness</strong> blocker 约 ×3。</li>
+<li>顶分 Claude Opus 5.5 约 <strong>45.5%</strong>（1.1 为 54.6%）；多模型在 2.0 上显著掉分；强调不完整提示下推断用户意图。</li>
+<li>Pareto：高分 Opus 5.5；低成本端含 Luna/Haiku/Sol；GPT-6.1 Sol 性价比被点名。</li>
+</ul>
+<p><img alt="图 8" src="../assets/2026-10-28/cognition-frontier-code.jpg" loading="lazy" /></p>
+<p class="caption">图 8 · FrontierCode 2.0 封面 · 来源：cognition.com/blog/frontier-code-2.0</p>
+<p><strong>我的判断</strong>：评测变难是好事——45.5% 顶分说明前沿编码 Agent 远未饱和；对 Harness 回归有新标尺。</p>
+<p><strong>建议动作</strong>：把 FrontierCode 2.0 纳入内部评测对照（若可接入）；关注 thoroughness blocker 设计。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://cognition.com/blog/frontier-code-2.0">Cognition</a></p>
+</section>
+<section class="card"><h3>11. OpenAI × Oracle：Oracle 应用进入 ChatGPT + AI Workspace 等</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/E/I</span><span class="chip">官博 Oct 27</span><span class="chip">RSS 07:00 GMT</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/oracle-apps-in-chatgpt">OpenAI 官博</a>（本机 curl 对部分路径偶发 403，事实以 RSS/扫描核验口径）：扩展合作——Oracle 应用与数据进入 ChatGPT；Oracle 用 OpenAI 模型做新产品；愿景「agent-ready enterprise」。</li>
+<li>Oracle 称约 <strong>13 万</strong> ChatGPT 活跃用户、<strong>>9.5 万</strong> Codex 活跃用户。</li>
+<li>在研 <strong>Oracle AI Workspace</strong>（ChatGPT 内完成审批后业务流程）；另宣 AI Security Mesh、SMB Bundle、App Composer；美国客户可经 Oracle Marketplace 用 Universal Credits 采购 API/Codex/ChatGPT Work。</li>
+</ul>
+<p><img alt="图 9" src="../assets/2026-10-28/openai-oracle-apps.png" loading="lazy" /></p>
+<p class="caption">图 9 · OpenAI×Oracle 官博 SEO 图 · 来源：openai.com/index/oracle-apps-in-chatgpt</p>
+<p><strong>我的判断</strong>：企业套件进 ChatGPT + Marketplace 抵扣，延续「模型即云货架」；AI Workspace 的「审批后业务流程」与委托/HITL 主线同题。</p>
+<p><strong>建议动作</strong>：跟踪 AI Workspace 公开规格；对照 OneGov/云市场渠道。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://openai.com/index/oracle-apps-in-chatgpt">OpenAI · Oracle</a></p>
+</section>
+<section class="card"><h3>合并短讯</h3>
+<ul>
+<li><strong>钉钉 DWS 适配鸿蒙 PC（国内 · B+/A− · 媒体放大）</strong>：<a target="_blank" rel="noopener" href="https://www.geekpark.net/news/372984">极客公园</a> / 观察者网等 10-27 报道覆盖约 25 业务模块、1000+ 命令。GitHub <code>DingTalk-Real-AI/dingtalk-workspace-cli</code> 的 <code>dws-openharmony-arm64</code> 已出现在 <strong>v1.0.65（10-20）</strong> 及后续；最新 <strong>v1.0.66-beta.2 @ 10-26</strong>（仍 prerelease）。<strong>勿写成今日首发开源</strong>——本窗为国内媒体集中兑现。</li>
+<li><strong>腾讯 CodeBuddy Code 2.177.1（国内 · B+）</strong>：npm <strong>2026-10-27T16:20:39Z</strong>。后台智能体 CLI 预热池（首连 ~1.3s→~0.4s）；额度用尽区分个人/部门/企业包；子代理派发收紧；桌面后台固定端口 56527–56529；多项 Runtime/审批修复。2.177.0（Code Mode/PTC）已报勿重复 NEW。</li>
+<li><strong>MiniMax Code CLI 0.7.1（双边 · B · UPDATE 154）</strong>：npm <strong>15:10:29Z</strong>。本地插件 Apps（<code>*.app.json</code>）、Goal 请求/时间限额、流式/deep-research/compaction/tool_search 修复；嵌入 CU 仍 <strong>0.34.1</strong>；Desktop 仍 <strong>3.1.6</strong> → 非 desktop_shipping。</li>
+<li><strong>OpenShell v0.1.6（国际 · B+ · shipping）</strong>：GH <strong>17:56Z</strong>。Gateway <strong>默认要求</strong> OIDC/mTLS/JWT（本地可 <code>allow_unauthenticated_users</code>）；新沙箱 <strong>sandbox→supervisor</strong> 控制连接方向翻转，需成对升级。★20,284（+199）。</li>
+<li><strong>OpenSandbox release-1.2.0（国际 · B）</strong>：<strong>12:50Z</strong>。Auto-pause + wake-on-access（OSEP-0024）；idlePolicy；五 SDK wake-retry（默认关）。</li>
+<li><strong>opencode GH v2.2.0（国际 · B）</strong>：<strong>09:04Z</strong>。Desktop <strong>plugins</strong>（实验）、插件/SDK 图像与 decision generation API；npm <code>opencode-ai</code> latest <strong>仍 1.19.4</strong>（与 GH v2 线并存，勿混）。</li>
+<li><strong>ChatGPT iCloud Mail/Calendar 插件（国际 · B）</strong>：<a target="_blank" rel="noopener" href="https://x.com/ChatGPT/status/2115139248458191070">@ChatGPT</a> 17:51Z；全计划；web/desktop/iOS。非新 Desktop 客户端。</li>
+<li><strong>CLI 升档短讯</strong>：codex <strong>0.165.0</strong>、gemini-cli <strong>0.66.0</strong>、claude-code <strong>2.1.312</strong>、copilot 仍 <strong>1.0.104</strong>（prerelease 1.0.105-1）、dsh alpha <strong>0.2.2-alpha.2</strong>（latest 仍 0.2.1-rc.2）。</li>
+<li><strong>Cursor Design Mode「Annotate」</strong>：产品放大帖；博文日期 2026-06-05 → 短讯，勿 NEW-main。</li>
+<li><strong>不升格</strong>：Amazon AI 裁撤叙事（HN 230，缺官方）；Qoder 促销；CF PHP CTF；ScubaGear；libghostty；Universe keynote（无一手）。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card"><h3>头条：DeepMind Genie 4——世界模型成为当日全球热源</h3>
+<div class="chips"><span class="chip">国际</span><span class="chip">A</span><span class="chip">X ≈1.53M impr</span><span class="chip">HN 681 pts / 412 c</span></div>
+<ul>
+<li>事实见新闻 1。@sundarpichai 转发 likes ≈12.4k / impr ≈958k；X counts（Genie 4∩DeepMind）窗内 <strong>8,259</strong> 帖。</li>
+<li>判断：一手官宣 + HN 前列；讨论焦点在实时交互/音频/环内 Gemini，而非「开源权重」（Genie 4 <strong>无</strong>开源权重，勿写入开源雷达主条）。</li>
+</ul>
+</section>
+<section class="card"><h3>次条：MCP Python SDK 三 GHSA 入库</h3>
+<div class="chips"><span class="chip">国际</span><span class="chip">A−</span><span class="chip">安全</span></div>
+<ul>
+<li>事实见新闻 8。讨论量中等、事实一手清晰；工程行动是升级 <code>mcp</code>，不是恐慌标题。</li>
+</ul>
+</section>
+<section class="card"><h3>短议可选</h3>
+<ul>
+<li><strong>Wikipedia 清理 AI 生成内容</strong>（HN 435）：内容治理，非产品 shipping。</li>
+<li><strong>「Here be monsters」</strong>（HN 148）：Agent 代劳后人类能力边界——与 judgment-calls（新闻 4）同题互文。</li>
+<li><strong>Amazon「砍掉 AI 部门」</strong>：Futurism 等二手 + HN 230；<strong>缺官方一手</strong> → 脚注级，勿抬为已证实全员解散。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card"><h3>主条：JetBrains/thinkrail ★3,974（+1,100）仍居 Trending</h3>
+<div class="chips"><span class="chip">国际</span><span class="chip">B/C</span><span class="chip">编码 Agent × IDE</span></div>
+<ul>
+<li>连续第二日大涨；窗内 nightly <code>v0.3.0-nightly.7</code>；与昨日 Netflix headless IDE intelligence 同题。</li>
+<li>建议：对照自研 IDE/Agent 集成；评估 fork 或接入。</li>
+</ul>
+</section>
+<section class="card"><h3>shipping 短条</h3>
+<ul>
+<li><strong>OpenShell v0.1.6</strong>：强制认证默认开 + 连接方向翻转（见短讯）。</li>
+<li><strong>OpenSandbox 1.2.0</strong>：auto-pause / wake-on-access。</li>
+<li><strong>opencode v2.2.0</strong>：Desktop plugins（npm 仍 1.19.4）。</li>
+</ul>
+</section>
+<section class="card"><h3>continuum 表（vs Daily 10-27 ≈08:13 CST）</h3>
+<table>
+<tr><th>项目</th><th>★ 现值</th><th>Δ</th><th>看点</th></tr>
+<tr><td>JetBrains/thinkrail</td><td><strong>3,974</strong></td><td><strong>+1,100</strong></td><td>Trending 主条</td></tr>
+<tr><td>deepseek-ai/deepseek-harness</td><td><strong>263,657</strong></td><td><strong>+1,097</strong></td><td>常规；dsh alpha 窗内</td></tr>
+<tr><td>Nutlope/hallmark</td><td><strong>38,960</strong></td><td><strong>+2,691</strong></td><td>Skills 集群</td></tr>
+<tr><td>cloudflare/security-audit-skill</td><td><strong>50,154</strong></td><td><strong>+1,616</strong></td><td>Skills</td></tr>
+<tr><td>pbakaus/impeccable</td><td><strong>90,486</strong></td><td><strong>+1,316</strong></td><td>Skills</td></tr>
+<tr><td>makecindy/cindy</td><td><strong>7,446</strong></td><td><strong>+1,006</strong></td><td>Skills</td></tr>
+<tr><td>NVIDIA/SkillSpector</td><td><strong>22,731</strong></td><td><strong>+564</strong></td><td>技能安全扫描</td></tr>
+<tr><td>anomalyco/opencode</td><td><strong>222,374</strong></td><td><strong>+419</strong></td><td>v2.2.0</td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td><strong>23,396</strong></td><td><strong>+380</strong></td><td></td></tr>
+<tr><td>google-research/harness2</td><td><strong>20,540</strong></td><td><strong>+387</strong></td><td></td></tr>
+<tr><td>NVIDIA/OpenShell</td><td><strong>20,284</strong></td><td><strong>+199</strong></td><td><strong>v0.1.6</strong></td></tr>
+<tr><td>Tencent-Hunyuan/Hy-SimulMT</td><td><strong>147</strong></td><td><strong>+103</strong></td><td>HF ♥ 18→38</td></tr>
+<tr><td>opensandbox-group/OpenSandbox</td><td><strong>16,212</strong></td><td><strong>+17</strong></td><td><strong>1.2.0</strong></td></tr>
+<tr><td>modelcontextprotocol/servers</td><td><strong>91,609</strong></td><td><strong>+16</strong></td><td></td></tr>
+<tr><td>modelcontextprotocol/python-sdk</td><td><strong>24,688</strong></td><td>—</td><td>GHSA 日；绝对星</td></tr>
+</table>
+<ul>
+<li>Skills 集群继续占 Trending daily；jailbreaks 仓仅记噪音不收。</li>
+<li>Cohere traces HF <code>CohereLabs/10-2026-qwen-investigation-traces</code> ♥<strong>64</strong>（lastMod 10-27 00:21Z）——<strong>UPDATE 152 材料指针</strong>，非新指控。</li>
+</ul>
+</section>
+<section class="card"><h3>npm 基线（本窗）</h3>
+<table>
+<tr><th>包</th><th>latest</th><th>备注</th></tr>
+<tr><td>@openai/codex</td><td><strong>0.165.0</strong></td><td>↑；alpha 0.166.0-alpha.3</td></tr>
+<tr><td>@anthropic-ai/claude-code</td><td><strong>2.1.312</strong></td><td>↑；stable 2.1.308</td></tr>
+<tr><td>@google/gemini-cli</td><td><strong>0.66.0</strong></td><td>↑</td></tr>
+<tr><td>@github/copilot</td><td><strong>1.0.104</strong></td><td>持平；prerelease 1.0.105-1</td></tr>
+<tr><td>@minimax-ai/code</td><td><strong>0.7.1</strong></td><td>↑</td></tr>
+<tr><td>@tencent-ai/codebuddy-code</td><td><strong>2.177.1</strong></td><td>↑</td></tr>
+<tr><td>@moonshot-ai/kimi-code</td><td>2.3.3</td><td>不变</td></tr>
+<tr><td>@modelcontextprotocol/inspector</td><td>2.12.0</td><td>不变</td></tr>
+<tr><td>opencode-ai</td><td>1.19.4</td><td>不变（GH 已 v2.2.0）</td></tr>
+<tr><td>@deepseek-ai/dsh</td><td>0.2.1-rc.2</td><td>alpha 0.2.2-alpha.2 窗内</td></tr>
+</table>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<section class="card">
+<ul>
+<li><strong>157 Cloudflare×SGLang KV（快讯 10-27 09:16 已推）</strong></li>
+</ul>
+<p>  - 此前：快讯强A 补推；Daily 10-27 漏收。</p>
+<p>  - 今日：日报全文吸收（新闻 6）；SGLang 顶仍 v0.5.22、无 0.5.23。</p>
+<p>  - 判断：<strong>有变化（日报首收完整）</strong>。观察研究者独立报告、v0.5.23、他厂 PD 复盘。</p>
+<ul>
+<li><strong>149 Anthropic S-1</strong></li>
+</ul>
+<p>  - 窗内无价格区间/Run-Rate 新一手 → <strong>无实质 UPDATE</strong>。</p>
+<ul>
+<li><strong>150 Cathedral</strong></li>
+</ul>
+<p>  - 窗内无厂商正式技术博文/CVE 新一手 → <strong>无实质 UPDATE</strong>。</p>
+<ul>
+<li><strong>151 GPT-6.1 Terra</strong></li>
+</ul>
+<p>  - 窗内无新价目/客户端 shipping → <strong>无实质 UPDATE</strong>。</p>
+<ul>
+<li><strong>152 Cohere×Qwen</strong></li>
+</ul>
+<p>  - HF traces ♥64、lastMod 贴窗起点 → <strong>UPDATE 指针</strong>（材料可引用，非新指控）。</p>
+<ul>
+<li><strong>154 MiniMax Code</strong></li>
+</ul>
+<p>  - <strong>0.7.0→0.7.1</strong>（新闻短讯）；Desktop 仍 3.1.6。</p>
+<ul>
+<li><strong>155 Hy-SimulMT</strong>：★44→<strong>147</strong>（+103）；HF ♥+20。</li>
+<li>其余 153/156 等：窗内无实质 UPDATE 可省略。</li>
+</ul>
+</section>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<p>1. <strong>世界模型进入环内 Agent 范式</strong>：Genie 4 = 环境 + Gemini 引导。</p>
+<p>2. <strong>个人 Agent 产品化绑定身份层</strong>：灵光 2.0 × APASS；对照 PAP/Poppy。</p>
+<p>3. <strong>MCP 渗透办公文档与政府采购</strong>：Apple 三件套 MCP + OneGov 折扣。</p>
+<p>4. <strong>委托偏倚成为可测问题</strong>：judgment-calls 86% 跟随率冲击「人在环=安全」。</p>
+<p>5. <strong>多租户推理隔离进入一线事故叙事</strong>：CF×SGLang KV 日报首收。</p>
+<p>6. <strong>Sandbox/Runtime 强制认证默认化</strong>：OpenShell 0.1.6。</p>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<p>1. <strong>APASS / 组织级 S2S / MCP 文档节点</strong>：身份与授权要跨端、可撤销、可归因（灵光、Copilot S2S、Apple MCP）。</p>
+<p>2. <strong>推理平面隔离证明</strong>：KV 串租证明协议层 Trust 不够（157）。</p>
+<p>3. <strong>委托记录与反说服设计</strong>：judgment-calls 要求审计「人是否独立判断」。</p>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<p>1. <strong>长程云主机 + 退出后续跑</strong>：后台 Loop、费用可见、审批门闸（灵光 2.0）。</p>
+<p>2. <strong>OpenShell 默认认证 + 连接方向</strong>：Sandbox 升级要成对发布。</p>
+<p>3. <strong>CodeBuddy 预热池 / 子代理收紧 / MiniMax Goal 限额</strong>：Harness 成本与派发治理继续产品化。</p>
+<p>4. <strong>FrontierCode 2.0</strong>：更难评测作回归标尺。</p>
+<h2 class="section-title">值得继续跟踪</h2>
+<section class="card">
+<ul>
+<li>Genie 4 / Project Genie 向 AI Ultra 与 API 开放时间表；SynthID 落地。</li>
+<li>灵光 2.0 官方站恢复与 APASS 公开规格；是否出现 Coding Desktop 旁路。</li>
+<li>OneGov 州/地方采纳数据；Claude for Government 功能边界。</li>
+<li>Apple Creator Studio <strong>11 月</strong> MCP 实机工具面。</li>
+<li>SGLang v0.5.23、研究者独立 KV 报告。</li>
+<li>MCP <code>mcp</code> 依赖升级覆盖率；三 GHSA 是否引出 TS SDK 同类。</li>
+<li>GitHub Universe <strong>10-28–29</strong> keynote shipping。</li>
+<li>MiniMax Desktop 是否跟 0.7.x；Kimi 权重 Nov 4。</li>
+</ul>
+</section>
+<h2 class="section-title">未来信号</h2>
+<section class="card">
+<ul>
+<li>若更多办公套件原生 MCP，Agent 互联的「文档节点」会与「代码仓库节点」同等重要。</li>
+<li>若 judgment-calls 类实验被复现，合规可能要求关键 Agent 决策附带独立人类理由记录。</li>
+<li>若 PD 推理串租在他厂复现，「推理隔离证明」可能进入云采购清单。</li>
+</ul>
+</section>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<section class="card">
+<ul>
+<li><strong>Anthropic OneGov</strong>：Claude Enterprise / for Government / API <strong>统一 40% 折扣</strong>；号称可节约政府约 $10 亿、无最低消费（公司口径）。</li>
+<li><strong>GPT-6.1 Terra</strong>：$1/$5 每百万（昨日报已收；窗内无变）。</li>
+<li><strong>Qoder</strong>：Flash 免费 / Credits / Lite $10 等促销多则（@qoder_ai_ide）——促销向，不入主栏价目定稿。</li>
+<li>MiniMax / Kimi 促销节点见前报；窗内无新官方价目表变更一手。</li>
+</ul>
+</section>
+<h2 class="section-title">信源与方法</h2>
+<section class="card">
+<ul>
+<li><strong>时间窗</strong>：2026-10-27 08:00 → 2026-10-28 08:00 Asia/Shanghai（10-27 00:00Z → 10-28 00:00Z）。</li>
+</ul>
+<p>  - 吸收 10-27 快讯：09:16 PUSH（157）；其余 SILENT；near-miss 升格 Apple MCP、灵光 2.0、MiniMax 0.7.1 等。</p>
+<ul>
+<li><strong>desktop_work_agent_shipping=0</strong>（灵光为个人助理移动/Web；Apple 为文档 MCP；ChatGPT iCloud 为连接器）。</li>
+<li><strong>配图</strong>：9 张，均来自原文/官方，非 AI 生成，存于 <code>site/assets/2026-10-28/</code>：Genie 4、灵光 IT之家、OneGov、judgment-calls、Apple Creator Studio、CF KV、药物研发、FrontierCode、OpenAI×Oracle。未配：Copilot S2S（changelog 通用图）、MCP GHSA、多数短讯。</li>
+<li><strong>失败 / 受限</strong>：Reddit 六子版 SSL 超时；量子位 403；perplexity/microsoft.ai 403；灵光官网 TLS EOF；OpenAI 部分路径本机 403（以 RSS/扫描口径）；HN Algolia 部分组合不稳；Universe 无 keynote 一手。</li>
+<li><strong>脆弱面</strong>：灵光主传播为媒体三角核验（官网 TLS 失败）；OneGov「$10 亿」为公司估计；药物研发数字为合作方案例；Amazon 裁撤缺官方；FrontierCode 分数为厂商基准。</li>
+</ul>
+</section>
+</article></main>
+</body>
+</html>
