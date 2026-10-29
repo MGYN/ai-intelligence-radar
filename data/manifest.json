@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-28T08:25+08:00",
+  "updatedAt": "2026-10-29T08:30+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-29",
+      "date": "2026-10-29",
+      "title": "AI Intelligence Daily · 2026-10-29",
+      "summary": "GitHub Universe Day1 整包发船（Copilot app/Fusion/Computer Use 公测/Cloud→desktop_shipping=1）；Gemini 4 Carbon；Foundry Copilot harness；豆包工作 CU→Skill；WorkBuddy 远程；Mistral Responses；CodeBuddy 2.178 / Kimi 2.4.0；百灵开源补记",
+      "href": "reports/2026-10-29.html"
+    },
     {
       "id": "2026-10-28",
       "date": "2026-10-28",

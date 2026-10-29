@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-10-29</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+<h1>AI Intelligence Daily · 2026-10-29（周四）</h1>
+<div class="meta">统计窗口：2026-10-28 08:00 → 2026-10-29 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-28 快讯：09:18·11:22·13:21·15:22·17:24·19:22·21:25·23:17 均为 SILENT · <strong>一线 Desktop/Work Agent 上线 = 1</strong>（GitHub Copilot app Computer Use 公测） · npm：codex <strong>0.165.0</strong> / claude-code <strong>2.1.312</strong> / gemini-cli <strong>0.66.0</strong> / copilot <strong>1.0.105</strong>↑ / codebuddy <strong>2.178.0</strong>↑ / kimi-code <strong>2.4.0</strong>↑ / minimax-code <strong>0.7.1</strong> / inspector <strong>2.13.0</strong>↑ / opencode-ai <strong>1.19.5</strong>↑ / dsh <strong>0.2.1-rc.2</strong> · Desktop：MiniMax CDN <strong>3.1.7</strong>（changelog 仍 3.1.6，不升格）/ ZCode 3.16.3 / Kimi 1.1.4 / StepCode 0.1.6 · thinkrail ★<strong>5,019</strong>（+1,045）· harness ★<strong>264,778</strong>（+1,121）· DeepInfer ★<strong>23,916</strong>（+520）· OpenShell ★<strong>20,574</strong>（+290）· servers ★<strong>91,642</strong>（+33）· opencode ★<strong>222,755</strong>（+381）· OpenSandbox ★<strong>16,239</strong>（+27）· harness2 ★<strong>21,020</strong>（+480）· mxc ★<strong>3,033</strong>（+108）</div>
+<h2 class="section-title">今日一句话判断</h2>
+<div class="lede">
+<p><strong>GitHub Universe Day1 把「agentic software delivery」整包发船（Copilot app / Projects / Fusion GA / Computer Use 公测 / Cloud sandboxes / Automations），Gemini 4 Carbon 以网络防御与长程 Agent 叙事登顶 AA Index；微软把 Copilot harness 塞进 Foundry Agent Service；国内豆包工作把电脑操作录成可复用 Skill、WorkBuddy 上线手机远程控桌面。</strong> desktop_shipping=1。对你两条主线：<strong>多模型 harness + 云沙箱 + Computer Use 门闸已成为国际默认产品矩阵；国内侧 CU→Skill 固化与远程委托可视化同步落地。</strong></p>
+</div>
+<h2 class="section-title">专栏一｜新闻</h2>
+<section class="card">
+<p>本栏结构：</p>
+<ul>
+<li>国际 S 级：GitHub Universe Day1 整包（含 Computer Use → desktop_shipping=1）</li>
+<li>国际 S/强A：Gemini 4 Carbon；强A：Foundry Microsoft Copilot harness</li>
+<li>国内中栏：豆包工作 CU Skill + Mac 锁屏；WorkBuddy 手机远程控制</li>
+<li>国际中/短：Mistral Responses API、ChatGPT text your dot、OpenAI API credits、$500、NVIDIA RTX Spark、Replit ViBench 2.0、Anthropic AI for Science</li>
+<li>国内短：CodeBuddy 2.178.0、Kimi Code CLI 2.4.0、百灵 Ling-3.1-flash-1019 补记</li>
+<li>合并短讯：Inspector 2.13.0、copilot 1.0.105、opencode-ai 1.19.5、MiniMax CDN 3.1.7 静默、Claude for Legal artifacts、ServiceNow 扩合作（RSS 标题级）</li>
+<li><strong>不升格</strong>：Claude Duet 放大、Genie/OneGov/Apple MCP/CF KV 无 UPDATE、DeepSeek V5 占位符、Qoder 促销、STEPX 无一手、SGLang 无 0.5.23、MiniMax 3.1.7 changelog 空</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+</section>
+<section class="card"><h3>1. GitHub Universe Day1：Copilot app / Fusion / Computer Use / Cloud Agents 整包发船</h3>
+<div class="chips"><span class="chip a">S</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/E/F</span><span class="chip">Agentic SDLC / Computer Use / Multi-model harness</span><span class="chip">watchlist 167</span><span class="chip">desktop_shipping=1</span><span class="chip">keynote ≈15:59Z</span><span class="chip">changelog universe26</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/">愿景稿</a>、<a target="_blank" rel="noopener" href="https://github.com/events/universe/recap">Recap</a>、<a target="_blank" rel="noopener" href="https://github.blog/changelog/label/universe26/">changelog 标签 universe26</a> 与 <a target="_blank" rel="noopener" href="https://x.com/github/status/2115473527214424496">@github 开幕帖</a>（15:59Z）、<a target="_blank" rel="noopener" href="https://x.com/github/status/2115500308873052465">产品线程</a>（≈17:45Z）：定位端到端「agentic software delivery」——开发者定方向与问责，Agent 实现与验证，学习引擎闭环。</p>
+<p><strong>GitHub Copilot app</strong>（agent-first 表面）+ <strong>Copilot Projects</strong> 公测（多仓并行托管会话）；<strong>Copilot Fusion GA</strong>——多模型路由/编排（Standard/High/Max）；AA Coding Agent Index：Fusion Max ≈ Opus 5.5 Max −2 分、约一半成本、约 −40% 时间；付费计划限时 <strong>30% 折扣至 Nov 30</strong>；支持本地模型选择。</p>
+<p><strong>Computer Use 公测</strong>（macOS/Windows）：Copilot 可读 UI、点击、输入、跨 App 导航；需用户批准；组织可关 → <strong>desktop_shipping=1</strong>。</p>
+<p><strong>Cloud experience + cloud sandboxes GA</strong>（付费 Copilot）：跨 github.com / Mobile / CLI / App / VS Code / Slack / Teams 同一会话；默认云沙箱可快照恢复；Actions 额度改为美元共享池；云沙箱计费自 <strong>2026-11</strong> 起。</p>
+<p>同日密集 changelog：<strong>Automations</strong>（按需/定时/事件；可从结果学习并提出改进 PR）、<strong>dreaming</strong>（从会话与 code review 反馈改进 personal memories / repo instructions / agent skills）、<strong>code review Max</strong>、<strong>GitHub Enterprise 含 Copilot</strong>（按 AI credits，无需另购）、<strong>Agentic Workflows GA</strong>、<strong>Agent Merge</strong>、Security extension / AI Scan 等；SDK 命名演进：<strong>GitHub Copilot SDK → Microsoft Copilot SDK</strong>。</p>
+<ul><li>关键 changelog：<a target="_blank" rel="noopener" href="https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/">App</a> · <a target="_blank" rel="noopener" href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Fusion</a> · <a target="_blank" rel="noopener" href="https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience/">Cloud</a>。</li></ul>
+<p><img alt="图 1" src="../assets/2026-10-29/github-universe-hero.png" loading="lazy" /></p>
+<p class="caption">图 1 · GitHub Universe 2026 愿景稿题图 · 来源：github.blog</p>
+<p><strong>我的判断</strong></p>
+<p><strong>S</strong>。当日国际最大 Work/Coding Agent 产品矩阵发船；Computer Use + 多模型 harness + 云沙箱 + 组织 credits 一次齐套，与你的两条主线直接对齐。</p>
+<p>兑现 watchlist <strong>165</strong> 对 Universe keynote 的观察节点；S2S 鉴权是前夜铺垫，今日是整层栈产品化。</p>
+<ul><li>Fusion 折扣与 Enterprise「含 Copilot」改变采购叙事——比单模型分数更有工程落地意义。</li></ul>
+<p><strong>未来影响</strong></p>
+<ul><li>预计更多 IDE/云厂商会跟进「Projects 多会话 + Fusion 式路由 + 默认云沙箱」；Computer Use 门闸（用户批准 / 组织可关）会成为桌面 Agent 默认合规模板。</li></ul>
+<p><strong>对智能体互联网</strong></p>
+<ul><li>组织级 installation/credits、可撤销权限、跨表面会话身份——Agent 服务网络的默认计费与身份模式。</li></ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul><li>Fusion 编排、Projects 多 Agent 并行、Computer Use 门闸、Automations 学习闭环——可直接对照自研 Harness/Loop/Sandbox/Skill。</li></ul>
+<p><strong>建议动作</strong>：通读 universe26 changelog 簇与愿景稿；把 Fusion 路由策略与 Computer Use 审批 UX 写入对标清单；评估云沙箱计费（11 月起）对 Cloud Agent 成本模型的影响。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/">愿景稿</a> · <a target="_blank" rel="noopener" href="https://github.blog/changelog/label/universe26/">universe26 changelog</a> · <a target="_blank" rel="noopener" href="https://x.com/github/status/2115473527214424496">@github</a></p>
+</section>
+<section class="card"><h3>2. Google 发布 Gemini 4 Carbon：网络防御 + 长程 Agent 前沿模型</h3>
+<div class="chips"><span class="chip a">S/强A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/C/G</span><span class="chip">Frontier model / Cyber / Long-horizon</span><span class="chip">watchlist 168</span><span class="chip">@GoogleDeepMind 17:02Z</span><span class="chip">HN ≈772</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Google 官博</a> 与 <a target="_blank" rel="noopener" href="https://x.com/GoogleDeepMind/status/2115489356437651654">@GoogleDeepMind</a>（17:02:21Z）、<a target="_blank" rel="noopener" href="https://x.com/GoogleAI/status/2115489593818816591">@GoogleAI</a>（17:03:17Z）：自称最强 Gemini；<strong>AA Intelligence Index v5 #1（59）</strong>；SEC-bench Pro <strong>88.2%</strong> / ExploitGym <strong>54.8%</strong> / CWE-bench <strong>71.0%</strong>；相对 Argon 安全代码生成内部 >2×；Chrome 团队称补丁质量相对另一实验室前沿模型 >10×。</p>
+<p>长程：内部可见「跑数日」的多步工程任务；WebDev Arena +89 Elo → #4（1768）；Terminal-Bench 4.0 作弊成功 <strong>0.0%</strong>、高严重 misalignment 告警约 −80%；Gray Swan IPI 攻击成功率 <strong>0.0%</strong>。</p>
+<ul><li>发布节奏：参与美政府自愿预发布测试；本周起向<strong>部分网络防御者</strong>开放，再经 Fairwind 扩到可信伙伴；开发者/企业/消费者「尽快」；价格与 Argon 同介绍价 <strong>$2/$10</strong> per MTok（介绍期后 $4/$20）。</li></ul>
+<p><img alt="图 2" src="../assets/2026-10-29/gemini-4-carbon.png" loading="lazy" /></p>
+<p class="caption">图 2 · Gemini 4 Carbon 官博题图 · 来源：blog.google</p>
+<p><strong>我的判断</strong></p>
+<p><strong>能力信号 S；落地按强A</strong>——可用性仍 Fairwind/部分防御者子集，勿写成「全量 GA」。</p>
+<ul><li>把编码 Agent 与网络防御全生命周期绑在同一发船叙事，且对齐/拒注入指标写进官宣——对 Agent 信任评测是正面压力。</li></ul>
+<p><strong>对智能体互联网</strong>：高能力 cyber 模型的接入身份、用途限制与审计将成为互联默认议题。</p>
+<p><strong>对 Work·Agent 引擎</strong>：长程不捷径、少幻觉、可协作澄清——对照 Agent Loop 评测与门闸。</p>
+<p><strong>建议动作</strong>：把 Carbon 评测数字与 Fairwind 开放节奏写入模型选型表；价格雷达记 $2/$10 intro → 后 $4/$20。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Introducing Gemini 4 Carbon</a> · <a target="_blank" rel="noopener" href="https://x.com/GoogleDeepMind/status/2115489356437651654">@GoogleDeepMind</a></p>
+</section>
+<section class="card"><h3>3. Microsoft Copilot harness 进入 Foundry Agent Service（公测）</h3>
+<div class="chips"><span class="chip a">强A</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/C/E</span><span class="chip">Agent Runtime / Harness / MCP</span><span class="chip">watchlist 169</span><span class="chip">Foundry 博文 2026-10-28</span><span class="chip">与 Universe 同日</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/">Foundry 博文</a> 与 <a target="_blank" rel="noopener" href="https://x.com/msdev/status/2115488391043449336">@msdev</a>：<strong>Microsoft Copilot harness</strong> 在 Foundry Agent Service <strong>公测</strong>——微软跑 agent loop + sandbox；开发者声明式定义 agent（skills / MCP 与 Foundry 工具 / 文件与代码执行 / 内置 subagents / 源控定义）。</p>
+<p>Hosted agents 的 <strong>long-running resilience GA</strong>（中断恢复）；Harness 计费自 <strong>2026-12-01</strong>（此前 runtime 免费；之后 sandbox $0.0994/vCPU-h、$0.0118/GiB-h）。</p>
+<ul><li>明确三档：无 harness 的 prompt agents / 带 Copilot harness / 自带框架的 hosted agents。</li></ul>
+<p><img alt="图 3" src="../assets/2026-10-29/ms-copilot-harness.webp" loading="lazy" /></p>
+<p class="caption">图 3 · Microsoft Copilot harness in Foundry 题图 · 来源：devblogs.microsoft.com/foundry</p>
+<p><strong>我的判断</strong></p>
+<p><strong>强A</strong>。把 GitHub 侧多模型 harness 产品化为 Azure 托管运行时——Cloud Agent / 多租户 Runtime 的直接对标物。</p>
+<ul><li>「声明式 agent + 托管 loop/sandbox」是 Harness 产品化模板；12-01 计费是成本模型硬节点。</li></ul>
+<p><strong>对智能体互联网</strong>：MCP 工具显式鉴权与审批；技能包可复用。</p>
+<p><strong>对 Work·Agent 引擎</strong>：三档分层（prompt / Copilot harness / BYO framework）值得产品化对照。</p>
+<p><strong>建议动作</strong>：通读 Foundry 博文计费与工具面；评估自研是否暴露等价「托管 harness」档。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/">Foundry · Copilot harness</a> · <a target="_blank" rel="noopener" href="https://x.com/msdev/status/2115488391043449336">@msdev</a></p>
+</section>
+<section class="card"><h3>4. 豆包工作：电脑操作录制存为技能 + Mac 锁屏续跑</h3>
+<div class="chips"><span class="chip a">A−/B+</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/C/E</span><span class="chip">Computer Use / Skill</span><span class="chip">watchlist 170</span><span class="chip">IT之家 2026-10-28 12:00 CST</span><span class="chip">非 desktop_shipping</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.ithome.com/1/018/860.htm">IT之家</a>（<strong>2026-10-28 12:00:26 CST</strong>，≈04:00Z）：豆包公众号宣布「豆包工作」操作电脑能力升级；继浏览器操作录技能后，现支持将<strong>录制电脑操作</strong>保存为技能；可边操作边讲解；学会后下次选用技能即可。</p>
+<p>「设置 → 工作任务模式设置」开启「允许豆包在锁屏时工作」后，<strong>Mac 锁屏时任务可继续</strong>；可用手机向锁屏 Mac 下发任务并查看结果，解锁后可接管。</p>
+<p>一手为豆包公众号（媒体转述）；本扫未打开豆包官方站独立 changelog → 以 IT之家事实栏为准，勿写成「官网发船稿」。</p>
+<ul><li><strong>非</strong> Coding Desktop 新版本号；<strong>desktop_shipping=0</strong>（国内侧功能增量）。</li></ul>
+<p><img alt="图 4" src="../assets/2026-10-29/doubao-work-skill.png" loading="lazy" /></p>
+<p class="caption">图 4 · 豆包工作 IT之家原文配图 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<p><strong>A−/B+</strong>。「演示一遍→存技能→复用」把 CU 轨迹固化为可调用 Skill；锁屏续跑贴近无人值守 Work Agent。</p>
+<ul><li>与 MiniMax Remote Control / WorkBuddy 同题：远程委托 + 审批/接管边界需产品化。</li></ul>
+<p><strong>对智能体互联网</strong>：Skill 作为可发现、可授权的能力单元——录制来源与权限边界应可审计。</p>
+<p><strong>对 Work·Agent 引擎</strong>：CU 轨迹 → Skill 编译是 Harness/Skill 层可直接吸收的产品路径。</p>
+<p><strong>建议动作</strong>：对照自研 Skill 是否支持「演示录制」入口；评估锁屏/无人值守的审批策略。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.ithome.com/1/018/860.htm">IT之家</a></p>
+</section>
+<section class="card"><h3>5. 腾讯 WorkBuddy「远程控制」：手机实时看/控电脑桌面</h3>
+<div class="chips"><span class="chip a">A−/B+</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">B/F/G</span><span class="chip">Remote Control</span><span class="chip">watchlist 171</span><span class="chip">IT之家 2026-10-28 12:32 CST</span><span class="chip">非 desktop_shipping</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.ithome.com/1/018/882.htm">IT之家</a>（<strong>2026-10-28 12:32:32 CST</strong>，≈04:32Z）：WorkBuddy 宣布上线「远程控制」（腾讯 Edge One 技术支持）。</p>
+<p>手机 App 一键连电脑：实时画面 + 可直接接管；小窗悬浮于首页/会话顶，可纠偏；全屏横屏点控；操作/键盘/鼠标；「显示所有窗口」「显示桌面」；画质切换。</p>
+<p>版本门槛：手机 <strong>≥v2.7.0</strong>，macOS 桌面 <strong>≥v5.9.3</strong>；设置→设备连接→允许同账号远程连接→安装遥控组件并授屏幕录制/辅助功能→启用远程遥控。</p>
+<p>一台电脑同时仅一部已认证手机；加密通道；官方称不记录用户输入、不保存画面；操作只耗流量不耗 Token。</p>
+<ul><li>本扫以 IT之家转述为准；@TencentHunyuan 窗内无专帖。</li></ul>
+<p><img alt="图 5" src="../assets/2026-10-29/workbuddy-remote.png" loading="lazy" /></p>
+<p class="caption">图 5 · WorkBuddy 远程控制 IT之家原文配图 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<p><strong>A−/B+</strong>。Agent 远程委托的「可见可控」形态清晰；同账号绑定 + 一次授权对标设备信任。</p>
+<ul><li>既有 Desktop 功能增量，<strong>不计 desktop_shipping</strong>。</li></ul>
+<p><strong>对智能体互联网</strong>：远程画面通道的身份绑定与「仅认证设备」声明需可验证。</p>
+<p><strong>对 Work·Agent 引擎</strong>：人在环纠偏小窗是 Remote Control UX 标杆；流量/Token 分账叙事可借鉴。</p>
+<p><strong>建议动作</strong>：对照 MiniMax Remote Control / Cursor Remote Control 的鉴权与录屏权限模型。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.ithome.com/1/018/882.htm">IT之家</a></p>
+</section>
+<section class="card"><h3>6. Mistral Responses API 公测（OpenAI Responses 兼容）</h3>
+<div class="chips"><span class="chip a">A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/E</span><span class="chip">Agent API / Interop</span><span class="chip">watchlist 172</span><span class="chip">@MistralAI 14:01Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://x.com/MistralAI/status/2115443720371814478">@MistralAI</a>（<strong>2026-10-28 14:01:00Z</strong>）与 <a target="_blank" rel="noopener" href="https://docs.mistral.ai/studio/conversations/responses">docs</a>、<a target="_blank" rel="noopener" href="https://docs.mistral.ai/api/endpoint/responses">API</a>：Responses API <strong>public preview</strong>——每次返回 answer / reasoning / tool calls 为<strong>分条 items</strong>；兼容 OpenAI Responses 形态；<strong>stateless</strong>（客户端维护 history）；支持视觉/文件、structured output、streaming、function calling、<code>reasoning.effort</code>、<code>/v1/responses/input_tokens</code>。</p>
+<p>适用于 Mistral 托管全部 chat 模型（含 Large 4）；同帖：Cloud Inference 上架 DeepSeek V4.1 Flash（PP）与 GLM 5.3 Flash（GA）；EU/US 服务。</p>
+<ul><li>mistral.ai/news 列表弱曝光——以官方 X + docs 为一手。</li></ul>
+<p><img alt="图 6" src="../assets/2026-10-29/mistral-responses.jpg" loading="lazy" /></p>
+<p class="caption">图 6 · Mistral Responses API 官方帖媒体 · 来源：@MistralAI</p>
+<p><strong>我的判断</strong></p>
+<p><strong>A−</strong>。Agent 构建面 API 互操作再开一家；降低从 OpenAI Responses 迁栈成本。</p>
+<ul><li>分条 tool/reasoning 输出利于审计与委托协议映射。</li></ul>
+<p><strong>建议动作</strong>：对照自研是否同时支持 Chat Completions 与 Responses 双面。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://docs.mistral.ai/studio/conversations/responses">docs · Responses</a> · <a target="_blank" rel="noopener" href="https://x.com/MistralAI/status/2115443720371814478">@MistralAI</a></p>
+</section>
+<section class="card"><h3>7. ChatGPT：可用 iMessage/RCS 短信联络「dot」</h3>
+<div class="chips"><span class="chip a">A−/B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">B/F</span><span class="chip">Personal Agent / Proactive</span><span class="chip">watchlist 173</span><span class="chip">@ChatGPT 17:30Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://x.com/ChatGPT/status/2115496387613786374">@ChatGPT</a>（<strong>2026-10-28 17:30:17Z</strong>）：「text your dot」——通过 <strong>iMessage 或 RCS</strong> 向 dot 发任务（文本/照片/语音），dot 可主动回短信更新；声称安全且仅用户可达；dot 保持相同上下文与插件。</p>
+<ul><li>非新 Desktop 客户端；属个人 Agent 通道扩展。本条无可靠本地原文配图 → <strong>不配图</strong>。</li></ul>
+<p><strong>我的判断</strong></p>
+<p><strong>A−/B+</strong>。个人 Agent 进入系统级消息通道，委托与主动触达产品化。</p>
+<ul><li>「仅你可达」声明需可验证——对照身份/设备绑定。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://x.com/ChatGPT/status/2115496387613786374">@ChatGPT</a></p>
+</section>
+<section class="card"><h3>8. OpenAI：ChatGPT Pro/Business 可领最高 $500/月 API credits</h3>
+<div class="chips"><span class="chip">B+/A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">I/B</span><span class="chip">开发者激励</span><span class="chip">@OpenAIDevs 23:17Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://x.com/OpenAIDevs/status/2115583698074755078">@OpenAIDevs</a>（<strong>2026-10-28 23:17:13Z</strong>）：符合条件的 Pro / Business 订阅者可领取 API credits 构建 apps/agents；额度：Pro 按档 <strong>$100/$200/$500</strong> 每月；Business 每付费 Standard 座 <strong>$20</strong> 或 Premium 座 <strong>$100</strong>，workspace 池化上限 <strong>$500</strong>。</p>
+<ul><li>领取路径：ChatGPT billing 领取 → Developers 插件/Codex 创建 API key。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B+/A−</strong>。把消费订阅与 Agent/API 构建预算打通，降低原型门槛；预算池与座级归因对照企业 NHI 计费。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://x.com/OpenAIDevs/status/2115583698074755078">@OpenAIDevs</a></p>
+</section>
+<section class="card"><h3>9. NVIDIA RTX Spark：本地 Agent 工具链更新</h3>
+<div class="chips"><span class="chip">B+/A−</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/E/A</span><span class="chip">Local Agent / ASR</span><span class="chip">NVIDIA Blog 2026-10-28</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/">NVIDIA Blog</a>（另见 <a target="_blank" rel="noopener" href="https://huggingface.co/blog/nvidia/nemotron-transcribe-granary">HF · Nemotron Transcribe</a>）：<strong>Nemotron 3.5 Transcribe</strong> 开源权重 ASR（转写+说话人+翻译+问答；40 语；≈4.3B active；HF Open ASR #1）；Liquid AI <strong>LFM3</strong> 日零支持；Hermes Agent 增加 <strong>OpenShell / Switchyard</strong>；NVIDIA App 可在前台应用与<strong>后台 Agent</strong> 间分配 GPU。</p>
+<p>RTX Spark 笔记本已上市（ASUS/Dell/HP/Lenovo/Microsoft/MSI，起价 $2,599）。</p>
+<ul><li>非新 Work Desktop 客户端 → <strong>desktop_shipping=0</strong>。</li></ul>
+<p><img alt="图 7" src="../assets/2026-10-29/nvidia-rtx-spark.jpg" loading="lazy" /></p>
+<p class="caption">图 7 · NVIDIA RTX Spark 博文题图 · 来源：blogs.nvidia.com</p>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B+/A−</strong>。本地 Agent 硬件+工具面（沙箱 OpenShell、GPU 分时）继续产品化；后台 Agent vs 交互前台的资源隔离是 Runtime 必答题。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/">NVIDIA Blog</a></p>
+</section>
+<section class="card"><h3>10. Replit ViBench 2.0：长程「从空仓做产品」基准</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">C/B</span><span class="chip">Eval</span><span class="chip">@Replit ≈21:15Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://x.com/Replit/status/2115553116942975013">@Replit</a>（≈21:15Z）：ViBench 2.0——Agent 从空项目构建完整产品；17 个产品、241 功能、54 交互验收；顶部分 GPT-6.1 Sol ≈65% / GPT-6 Astra 等，多数模型 <20%。</p>
+<ul><li>强调单功能通过 ≠ 组合通过（约 3/4 失败构建在单功能上全过）。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B+</strong>。比单仓补丁更接近「产品级 Agent」评测；与 FrontierCode 2.0（164）互补。回归套件可参考「组合失败」设计。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://x.com/Replit/status/2115553116942975013">@Replit</a></p>
+</section>
+<section class="card"><h3>11. Anthropic：AI for Science 扩展至 20 家基金会/机构</h3>
+<div class="chips"><span class="chip">B</span><span class="chip">NEW</span><span class="chip">国际</span><span class="chip">A/B</span><span class="chip">Science Agent</span><span class="chip">公告 Oct 28</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<ul><li><a target="_blank" rel="noopener" href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions">Anthropic 公告</a>：向 Sloan / Simons / Schmidt / NSF / CAS 等基金与 STScI / Sanger / Crick / EMBL 等机构发放免费 Claude credits；点名与 HHMI Janelia 的 <strong>Model Hardware Standard (MHS)</strong>（Agent 安全操作实验仪器，研究预览）及 Allen Institute 多 Agent 数据分析。</li></ul>
+<p><img alt="图 8" src="../assets/2026-10-29/anthropic-ai-science.jpg" loading="lazy" /></p>
+<p class="caption">图 8 · AI for Science 公告题图 · 来源：anthropic.com</p>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B（短）</strong>。科学 Agent 从个人科学家扩展到机构分发；MHS 是「Agent↔物理仪器」协议线索。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions">Anthropic · AI for Science</a></p>
+</section>
+<section class="card"><h3>12. 腾讯 CodeBuddy Code 2.178.0</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">C/B/G</span><span class="chip">Coding Agent Harness</span><span class="chip">watchlist 174</span><span class="chip">npm 16:33Z</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p>npm <code>@tencent-ai/codebuddy-code</code> <strong>2.178.0</strong>（<strong>2026-10-28T16:33:33Z</strong>）。CHANGELOG：链路追踪按会话打开（含子智能体/后台进程）；频道默认上限 6→<strong>12</strong>（可改 2–20）；<strong><code>/approve</code></strong> 对自动审查拒绝动作做一次重试授权（不直接执行、不改权限模式）；Agent Home 只读频道 + 任务执行人登记；智能体证据核验（伪造队友来信拒绝；完成须可核实证据）；Mods <code>tool.check</code> 返回 <code>ask</code> 只能由人答；多项 Runtime/远程主机/沙箱/额度修复。</p>
+<ul><li>相对 2.177.1（Daily 10-28）为新 minor；勿重复 NEW 2.177.x。无原文独立配图 → 不配图。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B+</strong>。「完成须证据」与 <code>/approve</code> 重试 = 多 Agent 协作的审计/授权硬约束可借鉴。</li></ul>
+<p><strong>来源</strong>：npm <code>@tencent-ai/codebuddy-code@2.178.0</code> CHANGELOG</p>
+</section>
+<section class="card"><h3>13. Kimi Code CLI 2.4.0</h3>
+<div class="chips"><span class="chip">B+</span><span class="chip">NEW</span><span class="chip">国内</span><span class="chip">C/B</span><span class="chip">Coding CLI</span><span class="chip">watchlist 174</span><span class="chip">npm/GH 11:50Z</span><span class="chip">Desktop 未跟</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p>npm <code>@moonshot-ai/kimi-code</code> <strong>2.4.0</strong>（<strong>2026-10-28T11:50:24Z</strong>）；<a target="_blank" rel="noopener" href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.4.0">GH Release</a> <strong>11:45:13Z</strong>。</p>
+<p>Minor：流式思考 Ctrl-O；<strong><code>/import-sessions</code> / <code>kimi import-sessions</code></strong> 导入近 15/30 天 Claude Code 与 Codex 会话；Web/Desktop 会话空闲 30 分钟卸载内存并透明恢复；<strong>Plan 模式仅手动开启且每份计划等人审</strong>（Agent 不可自进 Plan；Never Ask 不再自动批计划；<code>kimi -p</code> 跳过 default_plan_mode）；Tower 默认并发 <strong>16→256</strong>；另有 MCP/Swarm/interaction 等大量 Patch。</p>
+<ul><li><strong>Kimi Code Desktop</strong> changelog 顶仍 <strong>1.1.4（2026-10-26）</strong> → Desktop <strong>未</strong>跟 → 非 desktop_shipping。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B+</strong>。会话迁移（Claude/Codex→Kimi）与 Plan 人审收紧，对标「默认自主 vs 显式模式」产品抉择。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.4.0">GH Release 2.4.0</a> · npm</p>
+</section>
+<section class="card"><h3>14. 补记：蚂蚁百灵 Ling-3.1-flash-1019（+ base）MIT 开源权重</h3>
+<div class="chips"><span class="chip">B+/A−</span><span class="chip">NEW-补记</span><span class="chip">国内</span><span class="chip">A/K</span><span class="chip">Personal Agent 底座</span><span class="chip">watchlist 175</span><span class="chip">交叉 159/26</span><span class="chip">勿重复灵光产品</span></div>
+<p><strong>发生了什么（事实）</strong></p>
+<p>HF <a target="_blank" rel="noopener" href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">&lt;code&gt;inclusionAI/Ling-3.1-flash-1019&lt;/code&gt;</a>：createdAt <strong>2026-10-27T05:46:51Z</strong>，lastModified <strong>10-27T10:46Z</strong>（相对本窗为<strong>窗外一手</strong>）；license <strong>MIT</strong>。<a target="_blank" rel="noopener" href="https://huggingface.co/inclusionAI/Ling-3.1-flash-base">&lt;code&gt;Ling-3.1-flash-base&lt;/code&gt;</a> 更早（10-25/26）。ModelScope 页可开。</p>
+<p><a target="_blank" rel="noopener" href="https://www.qbitai.com/2026/10/505928.html">量子位</a>（<strong>2026-10-28 12:04:48 CST</strong>，窗内媒体主传播；稿注明蚂蚁授权转载）：称 10-28 正式开源 1019；AA Index v4.3.2 约 44 分（+3）；同步开源 base；叙述与灵光 2.0 长程任务绑定；称总参约 <strong>560B / 激活约 25B</strong> 混合线性 MoE；VL 版「已用于灵光、后续对外」→ VL <strong>未</strong>发船，勿写成已开源。</p>
+<ul><li>Daily 10-28 主收灵光产品、<strong>漏收</strong>权重仓 → 本 Daily 作 <strong>补记 NEW</strong>；量子位稿无稳定独立新闻配图 → <strong>不配图</strong>。</li></ul>
+<p><strong>我的判断</strong></p>
+<ul><li><strong>B+/A−（补记）</strong>。个人 Agent 产品（灵光）与开源底座（百灵）双轨；MIT + base 对国内 Agent 底座选型有吸力。勿与 159 产品条重复堆砌。</li></ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">HF 1019</a> · <a target="_blank" rel="noopener" href="https://www.qbitai.com/2026/10/505928.html">量子位</a></p>
+</section>
+<section class="card"><h3>合并短讯</h3>
+<p><strong>MCP Inspector 2.13.0（国际 · B · UPDATE）</strong>：GH release <strong>18:41:38Z</strong>；跟进 10-20 eMudhra 中间 CA 与 10-21 Node.js 安全版捆绑 CA——升级 Node runtime advisories。非新 Critical 逻辑洞。</p>
+<p><strong>@github/copilot 1.0.105（国际 · B）</strong>：npm <strong>00:44Z</strong>；Fusion 长上下文选模修复（快讯已记）。</p>
+<p><strong>opencode-ai 1.19.5（国际 · B）</strong>：npm <strong>06:17Z</strong>；非 Desktop 发船。</p>
+<p><strong>MiniMax Desktop CDN 3.1.7（双边 · B− · 不升格）</strong>：Win <strong>07:56Z</strong> / Mac <strong>08:52Z</strong> 已跟；changelog 顶仍 <strong>v3.1.6</strong>；官方 X 无 3.1.7 → <strong>静默补丁，不升格 desktop_shipping</strong>。CLI 仍 <strong>0.7.1</strong>。</p>
+<p><strong>Claude for Legal artifacts（国际 · B）</strong>：<a target="_blank" rel="noopener" href="https://x.com/claudeai/status/2115467192276025500">@claudeai</a> 15:34Z——合同审查等现成 artifacts；垂直工作流模板化。</p>
+<p><strong>OpenAI × ServiceNow 扩合作（国际 · B · RSS 标题级）</strong>：OpenAI RSS <strong>13:15Z</strong>「expand partnership across enterprise workflows」；本机偶发 403 → <strong>仅标题级，勿脑补正文</strong>。</p>
+<p><strong>MCP servers latest tag v2.2.0</strong>（国际 · B 脚注）：GH release <strong>2026-10-28T20:57:13Z</strong>（intl 扫描曾写仍 v2.1.0；本轮实测以 <strong>v2.2.0</strong> 为准）。</p>
+<p><strong>脚注窗外</strong>：Anthropic「Discovering vulnerabilities with Claude」research <strong>Oct 27</strong>；AA Index v5 发布稿 Oct 27——本窗仅被 Carbon/Fusion 引用，不标本窗 NEW。</p>
+<ul><li><strong>不升格</strong>：Claude Duet 社媒放大；Genie 4 / OneGov / Apple MCP / CF KV / 药物 / judgment-calls / S2S / FrontierCode 2.0 无实质 UPDATE；DeepSeek V5 占位符；Qoder 促销；STEPX 无一手；SGLang 顶仍 <strong>v0.5.22</strong>（无 0.5.23）。</li></ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card"><h3>头条：GitHub Universe Day1——Agentic SDLC 产品风暴</h3>
+<div class="chips"><span class="chip">国际</span><span class="chip a">S</span><span class="chip">@github keynote + changelog 簇</span><span class="chip">desktop_shipping=1</span></div>
+<p>事实见新闻 1。官方开幕帖与产品线程同日密集；changelog <code>universe26</code> 同日约 30 条量级（扫描非穷尽枚举）。</p>
+<p>判断：一手产品宣布密度高；讨论焦点在 Copilot app / Fusion / Computer Use / Cloud sandboxes，而非单纯营销。定性为当日工程社区主热源之一。</p>
+</section>
+<section class="card"><h3>次条：Gemini 4 Carbon——HN ≈772</h3>
+<div class="chips"><span class="chip">国际</span><span class="chip a">S/强A</span><span class="chip">HN ≈772 pts（17:01Z）</span><span class="chip">@GoogleDeepMind/@GoogleAI 同步</span></div>
+<p>事实见新闻 2。HN 窗内高分帖（扫描 Algolia ≈772）；能力与开放节奏（Fairwind/防御者）同屏讨论。</p>
+<p>判断：勿把「HN 高分」写成官方下载量；可用性仍受限 → 讨论中应区分「分数」与「可调用性」。</p>
+</section>
+<section class="card"><h3>短议</h3>
+<p><strong>Copilot Computer Use 公测</strong>：与 Cursor Computer Use（130）、ChatGPT×Chrome CU 同题对照——桌面门闸（批准/组织可关）成共识。</p>
+<ul><li><strong>Foundry harness</strong>：与 Universe 同日，微软双轨（GitHub 产品面 + Azure 运行时）叙事清晰。</li></ul>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card"><h3>主条：JetBrains/thinkrail ★5,019（+1,045）</h3>
+<div class="chips"><span class="chip">国际</span><span class="chip">B/C</span><span class="chip">编码 Agent × IDE</span></div>
+<p>连续多日暴涨；相对 Daily 10-28 ★3,974 → <strong>+1,045</strong>。建议继续对照自研 IDE/Agent 集成。</p>
+</section>
+<section class="card"><h3>continuum 表（vs Daily 10-28）</h3>
+<table>
+<tr><th>项目</th><th>★ 现值</th><th>Δ</th><th>看点</th></tr>
+<tr><td>JetBrains/thinkrail</td><td><strong>5,019</strong></td><td><strong>+1,045</strong></td><td>Trending 主条</td></tr>
+<tr><td>deepseek-ai/deepseek-harness</td><td><strong>264,778</strong></td><td><strong>+1,121</strong></td><td>常规</td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td><strong>23,916</strong></td><td><strong>+520</strong></td><td>continuum</td></tr>
+<tr><td>google-research/harness2</td><td><strong>21,020</strong></td><td><strong>+480</strong></td><td></td></tr>
+<tr><td>anomalyco/opencode</td><td><strong>222,755</strong></td><td><strong>+381</strong></td><td>npm 1.19.5</td></tr>
+<tr><td>NVIDIA/OpenShell</td><td><strong>20,574</strong></td><td><strong>+290</strong></td><td>RTX Spark 博文引用</td></tr>
+<tr><td>microsoft/mxc</td><td><strong>3,033</strong></td><td><strong>+108</strong></td><td></td></tr>
+<tr><td>modelcontextprotocol/servers</td><td><strong>91,642</strong></td><td><strong>+33</strong></td><td>latest tag <strong>v2.2.0</strong></td></tr>
+<tr><td>opensandbox-group/OpenSandbox</td><td><strong>16,239</strong></td><td><strong>+27</strong></td><td></td></tr>
+</table>
+<p>百灵 HF <code>inclusionAI/Ling-3.1-flash-1019</code>：开源权重补记（新闻 14），非 GH stars 主条。</p>
+<p>SGLang 顶仍 <strong>v0.5.22</strong>（无 0.5.23）。</p>
+</section>
+<section class="card"><h3>npm / Desktop 基线（本窗）</h3>
+<table>
+<tr><th>包/产品</th><th>latest</th><th>备注</th></tr>
+<tr><td>@openai/codex</td><td><strong>0.165.0</strong></td><td>不变</td></tr>
+<tr><td>@anthropic-ai/claude-code</td><td><strong>2.1.312</strong></td><td>不变</td></tr>
+<tr><td>@google/gemini-cli</td><td><strong>0.66.0</strong></td><td>不变</td></tr>
+<tr><td>@github/copilot</td><td><strong>1.0.105</strong></td><td>↑ 1.0.104</td></tr>
+<tr><td>@tencent-ai/codebuddy-code</td><td><strong>2.178.0</strong></td><td>↑</td></tr>
+<tr><td>@moonshot-ai/kimi-code</td><td><strong>2.4.0</strong></td><td>↑；Desktop 仍 1.1.4</td></tr>
+<tr><td>@minimax-ai/code</td><td><strong>0.7.1</strong></td><td>不变</td></tr>
+<tr><td>@modelcontextprotocol/inspector</td><td><strong>2.13.0</strong></td><td>↑</td></tr>
+<tr><td>opencode-ai</td><td><strong>1.19.5</strong></td><td>↑</td></tr>
+<tr><td>@deepseek-ai/dsh</td><td><strong>0.2.1-rc.2</strong></td><td>latest 未升</td></tr>
+<tr><td>MiniMax Agent Desktop CDN</td><td><strong>3.1.7</strong></td><td>changelog 仍 3.1.6；<strong>不升格</strong></td></tr>
+<tr><td>ZCode / Kimi Desktop / StepCode</td><td>3.16.3 / 1.1.4 / 0.1.6</td><td>未变</td></tr>
+</table>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<section class="card">
+<p><strong>165 Copilot S2S / Universe 观察节点</strong></p>
+<p>此前：Changelog Oct 27 S2S；盯 Universe keynote。</p>
+<p>今日：<strong>Universe Day1 整包兑现</strong>（新闻 1；watchlist <strong>167</strong>）；Computer Use 公测 → desktop_shipping=1。</p>
+<p>判断：<strong>有实质变化（兑现）</strong>。</p>
+<p><strong>157 Cloudflare×SGLang KV</strong></p>
+<p>SGLang 顶仍 v0.5.22、无 0.5.23 → <strong>无实质 UPDATE</strong>。</p>
+<p><strong>158 Genie 4 / 160 OneGov / 161 judgment-calls / 162 Apple MCP / 163 药物 / 164 FrontierCode / 166 MCP Python SDK</strong></p>
+<p>窗内无新一手 shipping/CVE → <strong>无实质 UPDATE</strong>。</p>
+<p><strong>159 灵光 2.0</strong></p>
+<p>产品无 UPDATE；交叉百灵权重补记（新闻 14 / <strong>175</strong>）；官网 TLS 仍失败。</p>
+<p><strong>154 MiniMax Code / 88 MiniMax Desktop</strong></p>
+<p>CLI 仍 0.7.1；CDN <strong>3.1.7</strong> 静默、changelog 空 → <strong>UPDATE 备注，不升格 shipping</strong>。</p>
+<p><strong>26 灵光</strong>：已由 159 兑现；本窗仅底座开源补记。</p>
+</section>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<p><strong>Agentic SDLC 整层栈产品化</strong>：Universe = App + Fusion + CU + Cloud + Automations + Enterprise credits。</p>
+<p><strong>多模型 harness 双轨落地</strong>：GitHub Fusion（产品面）+ Foundry Copilot harness（Azure 运行时）。</p>
+<p><strong>Computer Use 门闸共识</strong>：用户批准 / 组织可关；国内 CU→Skill 固化并行。</p>
+<p><strong>前沿模型绑定 cyber + 长程</strong>：Carbon 把防御基准与对齐指标写进发船稿。</p>
+<p><strong>远程委托可视化</strong>：WorkBuddy 手机控桌面；豆包锁屏续跑。</p>
+<p><strong>Responses/Agent API 互操作扩散</strong>：Mistral 跟进 OpenAI Responses 形态。</p>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<p><strong>组织级 credits / installation / 可关 Computer Use</strong>：身份、预算、权限撤销的默认产品语法（Universe / Enterprise Copilot）。</p>
+<p><strong>声明式 agent + 托管 harness（Foundry）</strong>：MCP/skills 显式鉴权进入云运行时。</p>
+<p><strong>消息通道个人 Agent（dot iMessage/RCS）</strong>：「仅你可达」的可验证身份绑定。</p>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<p><strong>Fusion 路由 + Projects 多会话 + 云沙箱快照</strong>：Harness/Loop/Sandbox 对标包。</p>
+<p><strong>CU 录制→Skill（豆包）+ <code>/approve</code>/证据核验（CodeBuddy）+ Plan 人审（Kimi）</strong>：Skill 编译、审批与证据链三件套。</p>
+<p><strong>Remote Control 可见可控（WorkBuddy）</strong>：人在环纠偏小窗与设备信任。</p>
+<p><strong>ViBench 2.0 组合失败设计</strong>：产品级评测回归。</p>
+<h2 class="section-title">值得继续跟踪</h2>
+<section class="card">
+<p>Universe Day2（10-29）是否还有 shipping；Fusion 折扣至 Nov 30；云沙箱 11 月计费细则。</p>
+<p>Carbon → Fairwind / 开发者/企业开放时间表；介绍价结束节点。</p>
+<p>Foundry harness <strong>12-01</strong> 计费生效后的用量与竞品反应。</p>
+<p>豆包工作官方 changelog；WorkBuddy 安卓桌面门槛是否扩展。</p>
+<p>MiniMax <strong>3.1.7</strong> changelog 是否补记重大 CU/Harness。</p>
+<p>Mistral Responses GA；Large 4 权重 <strong>10-31</strong>。</p>
+<p>百灵 VL 是否对外；灵光官网恢复。</p>
+<p>SGLang v0.5.23；MCP servers v2.2.0 变更摘要。</p>
+<p>Kimi Desktop 是否跟 2.4.0；K3.1 Pro 权重 Nov 4。</p>
+</section>
+<h2 class="section-title">未来信号</h2>
+<section class="card">
+<p>若「Projects + Fusion + 默认云沙箱」成为默认，自研 Cloud Agent 的差异化会更多落在身份/委托/证据链，而非单模型分数。</p>
+<p>若 CU→Skill 录制成为国内标配，Skill 供应链（来源、权限、伪造）会上升为安全主线。</p>
+<p>若 Responses 形态成为跨厂 Agent API 公约，审计字段（reasoning/tool items）可能进入互联协议。</p>
+</section>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<section class="card">
+<p><strong>Copilot Fusion</strong>：付费计划限时 <strong>30% off → Nov 30</strong>（公司口径）。</p>
+<p><strong>Gemini 4 Carbon</strong>：介绍价 <strong>$2/$10</strong> per MTok；介绍期后 <strong>$4/$20</strong>（与 Argon 同结构）。</p>
+<p><strong>Foundry Copilot harness</strong>：runtime 现免费；计费自 <strong>2026-12-01</strong>（sandbox $0.0994/vCPU-h、$0.0118/GiB-h）。</p>
+<p><strong>OpenAI Pro/Business API credits</strong>：最高 <strong>$500/月</strong>（见新闻 8）。</p>
+<p><strong>GitHub Enterprise 含 Copilot</strong>：按 AI credits，无需另购订阅（Sales 今日；自助即将）。</p>
+<p>云沙箱计费自 <strong>2026-11</strong>；Actions 额度改美元共享池。</p>
+</section>
+<h2 class="section-title">信源与方法</h2>
+<section class="card">
+<p><strong>时间窗</strong>：2026-10-28 08:00 → 2026-10-29 08:00 Asia/Shanghai（10-28 00:00Z → 10-29 00:00Z）。</p>
+<p>吸收 10-28 全天快讯 SILENT 的 near-miss 升格：Universe Day1、Mistral Responses、MiniMax CDN 3.1.7（不升格）、Carbon、Foundry 等。</p>
+<p><strong>desktop_work_agent_shipping=1</strong>（GitHub Copilot app Computer Use 公测；国内豆包/WorkBuddy/MiniMax 3.1.7 均不计）。</p>
+<p><strong>配图</strong>：8 张，均来自原文/官方，非 AI 生成，存于 <code>site/assets/2026-10-29/</code>：Universe hero、Carbon、Foundry harness、豆包工作、WorkBuddy 远程、NVIDIA RTX Spark、Anthropic AI for Science、Mistral Responses。未配：ChatGPT dot、API credits、ViBench、CodeBuddy、Kimi、百灵、多数短讯。</p>
+<p><strong>失败 / 受限</strong>：灵光官网 TLS 超时；qwen.ai TLS EOF；知乎热榜 403；OpenAI 部分 index 本机偶发 403（ServiceNow 仅 RSS 标题）；小红书/抖音无连接器默认不采视频。</p>
+<p><strong>脆弱面</strong>：豆包/WorkBuddy 以 IT之家转述为主（公众号一手未直开）；Carbon/Fusion 评测数字为厂商/AA 口径；ServiceNow 正文未补核；MiniMax 3.1.7 功能未知（changelog 空）。</p>
+</section>
+</article></main>
+</body>
+</html>
