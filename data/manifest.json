@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-29T08:30+08:00",
+  "updatedAt": "2026-10-31T08:16:50+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-10-31",
+      "date": "2026-10-31",
+      "title": "AI Intelligence Daily · 2026-10-31",
+      "summary": "Cursor Marketplace 恶意 Claude Code 2.1.312/313（CORRECTION：非 Open VSX）+ Mistral Large 4 OSS 积压首收；OpenAI Spec/misalignment 监控；Northflank AI keys；Qoder Device Connection；Marvis Coding 管家",
+      "href": "reports/2026-10-31.html"
+    },
     {
       "id": "2026-10-29",
       "date": "2026-10-29",

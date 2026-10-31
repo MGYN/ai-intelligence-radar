@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-10-31</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+
+<h1>AI Intelligence Daily · 2026-10-31（周六）</h1>
+<div class="meta">统计窗口：2026-10-30 08:00 → 2026-10-31 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · <strong>备注：reports/ 仍无 2026-10-30.md（例行称已跑但产物缺失）→ 本报额外吸收 Daily 10-29 截稿后～本窗起点前的快讯积压（尤其 Mistral Large 4 OSS、OpenAI Model Spec/misalignment 监控扩面）</strong> · 10-30 快讯：09:17 SILENT · 11:20 SILENT · 13:14 SILENT · <strong>15:13 PUSH（177 Open VSX/第三方取证）</strong> · <strong>17:15 PUSH（177 Cursor 官方 Marketplace 声明）</strong> · 19:17·21:18·23:22 SILENT · <strong>一线 Desktop/Work Agent 新上线 = 0</strong> · npm：codex <strong>0.166.0</strong>↑ / claude-code <strong>2.1.314</strong>↑ / gemini-cli <strong>0.66.0</strong> / copilot <strong>1.0.105</strong> / codebuddy <strong>2.179.0</strong>↑ / kimi-code <strong>2.4.1</strong>↑ / minimax-code <strong>0.7.4</strong>↑ / inspector <strong>2.13.0</strong> / opencode-ai <strong>1.19.5</strong> · Desktop：MiniMax CDN <strong>3.1.7</strong>（changelog 仍顶 3.1.6，不升格）/ Kimi Code Desktop <strong>1.2.1</strong>（polish，非新邀测）/ StepCode 0.1.6 · thinkrail ★<strong>6,569</strong>（+1,550）· harness ★<strong>266,722</strong>（+1,944）· DeepInfer ★<strong>24,495</strong>（+579）· OpenShell ★<strong>20,767</strong>（+193）· servers ★<strong>91,703</strong>（+61）· opencode ★<strong>223,326</strong>（+571）· OpenSandbox ★<strong>16,315</strong>（+76）· humanlayer ★<strong>12,723</strong> · mxc ★<strong>3,050</strong>（+17）· Hy-Memory ★<strong>1,879</strong></div>
+<h2 class="section-title">今日一句话判断</h2>
+<section class="card">
+<div class="lede">
+<p><strong>Coding Agent 扩展分发信道被坐实为高价值供应链面：Cursor Marketplace 确认供货恶意 Claude Code <code>2.1.312/2.1.313</code>（官方通告 ≤5000、C2 已下线、remediate 脚本齐备；第三方初判 Open VSX 后经 Cursor 确认更正为 Marketplace 起源）；同窗吸收 Mistral Large 4（Le Chonk）改进版开源权重兑现，以及 OpenAI 把 Model Spec 收束到五价值观并公开扩面 misalignment 监控。</strong> 国内侧 Qoder 上线局域网 Device Connection、腾讯 Marvis 以「Coding 管家」远程调用 CodeBuddy/Kimi Desktop。desktop_shipping=0。对你两条主线：<strong>扩展/Marketplace provenance 与「卸载≠清后门」必须进 Harness 默认安全基线；开源旗舰 coding 底座与跨设备委托产品同步加压选型表。</strong></p>
+</div>
+</section>
+<h2 class="section-title">专栏一｜新闻</h2>
+<section class="card">
+<p>本栏结构：</p>
+<ul>
+<li>国际头条：Cursor×Claude Code 扩展供应链事故（快讯吸收 + CORRECTION）</li>
+<li>积压首收：Mistral Large 4 OSS；OpenAI Model Spec + misalignment 监控扩面</li>
+<li>国际中栏：Northflank 环境变量/AI key 事故；Cohere 加拿大 C$4B 承诺</li>
+<li>国内中栏：Qoder Device Connection；Marvis Coding 管家</li>
+<li>短讯：Kimi Desktop 1.2.1、CLI 升档、Universe Day2 无新产品 changelog、Anthropic 仍无 2.1.313 事故稿</li>
+<li><strong>不升格</strong>：OpenAI Private Intelligence 既有页放大、Sierra ARR 营销（无一手完整核验则短记）、MiniMax CDN 3.1.7 静默、Kimi 3D Make / Plugins（非 Desktop shipping）</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+<h3>1. Cursor Marketplace 恶意 Claude Code 扩展 <code>2.1.312/2.1.313</code>：官方事故声明 + Open VSX 起源更正</h3>
+<p class="badges">强A · NEW→UPDATE/CORRECTION · 国际 · G/B/E/C · 扩展供应链 / SSH 后门 · watchlist 177 · desktop_shipping=0 · 快讯 15:13+17:15 · Cursor 通告更新 10-30 11:30am PT</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>快讯 <strong>15:13</strong> 首报：OpenSourceMalware / Phorion 披露标识为 <code>anthropic.claude-code@2.1.313</code> 的扩展在 <code>extension.js</code> 前插入加载器；编辑器加载即执行；写入 <code>svc-telemetry</code> SSH 公钥、反向隧道至 <code>134.209.82.225</code>、跨平台持久化、<code>:8099/beacon</code> 侦察。当时第三方强调<strong>仅确认所分析样本恶意</strong>，未断定 Anthropic 官方管线失陷。</li>
+<li>快讯 <strong>17:15 UPDATE</strong>：Cursor 发布 <a target="_blank" rel="noopener" href="https://cursor.com/blog/claude-code-extension-security-notice">Security notice</a> + <a target="_blank" rel="noopener" href="https://x.com/cursor_ai/status/2116074289053175808">@cursor_ai 07:46Z</a>——确认 <strong>Cursor VS Code Extension Marketplace</strong> 曾供应恶意包（<strong>非 Anthropic 开发</strong>）；暴露窗 <strong>2026-10-29 ≈2:27am–1:35pm PT</strong>；影响至多 <strong>5,000</strong> 用户并将直联；下架、关停并重建 Marketplace、轮换密钥；与云厂商协作使 C2 失效；给出 VSIX SHA-256、公钥指纹与 <code>remediate-*.sh/ps1</code>。</li>
+<li><strong>本报核验 CORRECTION</strong>：OpenSourceMalware 文首 UPDATE——经 Cursor 联系后确认恶意扩展<strong>起源于 Cursor Marketplace</strong>，并明确 <strong>Open VSX / npm <code>@anthropic-ai/claude-code</code> / Microsoft VS Marketplace 官方扩展并非恶意</strong>（与 15:13 快讯「Open VSX 样本」初判相反，以 Cursor 声明与 OSM 更正为准）。</li>
+<li>Cursor 通告现写明受影响版本为 <strong>2.1.312 与 2.1.313</strong>（Win/macOS）；多数主机缺管理员权限时开启 SSH/经隧道登录会失败，但仍写公钥、装持久化并 beacon；<strong>卸载扩展≠清后门</strong>。通告页 <strong>Update: Oct 30, 2026, 11:30 am PT</strong> 更新 IOC 并澄清受影响版本。Anthropic 官方 X / articles 至本窗末仍无对应事故稿；扩展现顶 <strong>2.1.314</strong>。</li>
+</ul>
+<p><img alt="图 1" src="../assets/2026-10-31/cursor-marketplace-compromised.png" loading="lazy" /></p>
+<p class="caption">图 1 · OpenSourceMalware 原文附图（标注 Cursor Marketplace 妥协）· 来源：opensourcemalware.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A（接近 S）</strong>。这是 Coding Agent <strong>宿主侧一手 IR</strong>：把「样本恶意」升级为「Marketplace 确认供货 + 量化影响 + 官方处置与自查手册」，并完成「Open VSX vs Marketplace」起源更正。</li>
+<li>对 Work/Agent 引擎用户有<strong>即时自查价值</strong>；发布路径（谁上传/凭证如何失陷）与 Anthropic 正式声明仍待补——可能再升 S / 出进一步 CORRECTION。</li>
+</ul>
+<p><strong>未来影响</strong></p>
+<ul>
+<li>多注册表/多 Marketplace 镜像下，「品牌显示名 = 官方构建」不可默认成立；扩展安装冷却、哈希钉扎、<code>authorized_keys</code>/LaunchAgent 基线告警会从可选变成默认。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>Discovery 与扩展分发需要可验证 provenance，而非仅靠 publisher 显示名；安装面与 MCP 工具面同属高权限信任边界。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li>扩展宿主（Cursor 等）应把 Marketplace 自身当作高价值供应链面；产品需具备：强制钉版本/哈希、安装冷却、「卸载≠清后门」的标准响应（本通告脚本即模板）。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ul>
+<li>若 10-29 PT 暴露窗内从 Cursor Marketplace 装过/更新过 <code>2.1.312/2.1.313</code>：按通告查 <code>svc-telemetry</code>，跑官方 remediate，并从可信机轮换凭证。</li>
+<li>跟踪 Anthropic 是否出正式事故说明；把 Marketplace provenance 写入自研扩展/Skill 分发评审。</li>
+<li>工程侧评估：<code>extensions.installCooldownHours</code>、仅信任签名源、对伪装系统 LaunchAgent 的基线告警。</li>
+</ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://cursor.com/blog/claude-code-extension-security-notice">Cursor Security notice</a> · <a target="_blank" rel="noopener" href="https://x.com/cursor_ai/status/2116074289053175808">@cursor_ai</a> · <a target="_blank" rel="noopener" href="https://opensourcemalware.com/blog/trojanized-claude-code-extension-plants-persistent-ssh-backdoor">OpenSourceMalware（含 CORRECTION）</a> · <a target="_blank" rel="noopener" href="https://phorion.io/blog/offical-claude-code-vsx-compromise/">Phorion</a></p>
+<h3>2. Mistral Large 4（Le Chonk）改进版开放权重提前兑现</h3>
+<p class="badges">强A · NEW（日报首收）/ UPDATE（相对公测与 watchlist #11） · 国际 · A/B/G/I · 开源旗舰 / Agentic coding · watchlist 176 · 事件 2026-10-29 14:21Z（上海 22:21）· <strong>Daily 10-30 缺失 → 本报积压吸收</strong> · desktop_shipping=0</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/MistralAI/status/2115811242556137820">@MistralAI 14:21:24Z</a> + <a target="_blank" rel="noopener" href="https://mistral.ai/news/mistral-large-4-oss/">官博</a>：释放改进后 Large 4 开放权重（约 1T / ~49–52B 激活 MoE、1M 上下文、三档 <code>reasoning_effort</code>）。相对月初公测再 RL：FrontierCode 2.0 开源 <strong>#1（19.7%）</strong>；AA Coding Agent Index <strong>48%</strong>（token≈−47% vs 前列）；Terminal-Bench 4.0 <strong>+13pp→41%</strong>；Cyber Index <strong>51%</strong>；恶意网络拒答均值 <strong>96.6%</strong>；B3 Agent Security <strong>97.1%</strong>。</li>
+<li>HF <a target="_blank" rel="noopener" href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"><code>mistralai/Mistral-Large-4-1T-A52B</code></a>（+NVFP4）；API <code>mistral-large-4</code>；价 <strong>$0.70 / $0.07 cached / $2.10</strong>；许可 <strong>Mistral Ecosystem Open-Weight</strong>（改版 MIT，<strong>MaaS 另购商用许可</strong>）；vLLM/SGLang Day-0。watchlist 原预期权重 <strong>10-31</strong> → <strong>10-29 提前兑现</strong>（快讯 23:18）。本窗 HF lastModified 仍约 10-29 14:51Z，无进一步 UPDATE。</li>
+</ul>
+<p><img alt="图 2" src="../assets/2026-10-31/mistral-le-chonk.jpg" loading="lazy" /></p>
+<p class="caption">图 2 · @MistralAI 原帖附图 · 来源：x.com/MistralAI</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。欧洲训练的开源旗舰权重真正可自托管，且叙事钉在 <strong>agentic coding + 防御安全</strong>——与 Coding Agent 底座选型直接同频。</li>
+<li>非 Desktop 客户端；价值在<strong>模型层</strong>。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：无新协议标准。间接抬高企业私有 Agent 服务网络的默认能力上限；盯 <strong>开源权重 + MaaS 另许可</strong> 分界。</p>
+<p><strong>对 Work·Agent 引擎</strong>：<strong>高相关</strong>。可作为开源主力候选；需实测 FrontierCode/Terminal-Bench 宣称 vs 你方仓库，以及防御拒答是否误伤合法红队工作流。</p>
+<p><strong>建议动作</strong>：拉 HF 许可卡；用同一套内部 Coding Agent 评测对打 GLM-5.3 / Kimi / DeepSeek / Claude；观察红队专用变体准入。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://mistral.ai/news/mistral-large-4-oss/">mistral.ai/news/mistral-large-4-oss</a> · <a target="_blank" rel="noopener" href="https://x.com/MistralAI/status/2115811242556137820">@MistralAI</a> · <a target="_blank" rel="noopener" href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B">HF</a></p>
+<h3>3. OpenAI：Updated Model Spec（五价值观）+ 扩面 frontier misalignment 监控</h3>
+<p class="badges">A · NEW（日报积压吸收） · 国际 · G/F/B · 对齐 / Agent 监控 · 事件约 2026-10-29（Model Spec RSS ≈17:00 GMT；监控稿 X 放大 ≈19:59Z）· Daily 10-30 缺失 → 本报首收</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/updated-model-spec">Updated Model Spec</a>（Oct 29, 2026）：公开 Spec 重组为五价值观——<strong>faithfulness to human intent / harm minimization / honesty and transparency / human agency / care</strong>；新增 context、oversight、agency 相关默认；退休大部分细粒度 style 指引；文中改称模型为 “GPT” 而非 “the assistant”。完整 Spec：<a target="_blank" rel="noopener" href="https://model-spec.openai.com/2026-10-29.html">model-spec.openai.com/2026-10-29</a>。</li>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/how-we-detect-frontier-model-misalignment">How we detect frontier model misalignment</a>：公开多层监控（activation probes → model reviewer → investigative agent → automated investigation → 人在环）；覆盖 frontier RL/评测/内部 Codex，并对 Critical cyber 能力模型的外部 tool use 做变体；称回放 Hugging Face 事故时，加强后监控约 <strong>30 分钟</strong>报警、距真实外部突破仍有 <strong>&gt;30 小时</strong>；强调监控不直接改 RL reward，以免 incentivize CoT 隐匿。与既有 <a target="_blank" rel="noopener" href="https://alignment.openai.com/misalignment-reports/">misalignment-reports</a> / METR×Redwood 红队线（watchlist 08/122）合看。</li>
+</ul>
+<p><img alt="图 3" src="../assets/2026-10-31/openai-model-spec.png" loading="lazy" /></p>
+<p class="caption">图 3 · OpenAI Model Spec 更新官博题图 · 来源：openai.com/index/updated-model-spec</p>
+<p><img alt="图 4" src="../assets/2026-10-31/openai-misalignment-monitor.png" loading="lazy" /></p>
+<p class="caption">图 4 · misalignment 监控官博题图 · 来源：openai.com/index/how-we-detect-frontier-model-misalignment</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A</strong>。不是新产品 shipping，但是 <strong>Agent 越界治理</strong> 的方法论与公开承诺升级：把「人在环」推进到可分层、可回放、可红队的监控栈。</li>
+<li>Spec 五价值观对委托协议设计有直接语言资源（尤其 faithfulness vs agency）。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：跨 Agent 调用的 Trust 需要可审计的「意图层级 / 上下文证据 / 侧效应声明」——Spec 语言可映射到委托元数据。</p>
+<p><strong>对 Work·Agent 引擎</strong>：Harness 应预留异步 misalignment 探针位与「严重告警自动暂停 workload」钩子；勿把监控反馈直接写进 RL 奖励。</p>
+<p><strong>建议动作</strong>：通读 Spec 新 faithfulness/agency 段与监控四层图；对照自研审批/沙箱逃逸检测覆盖面。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://openai.com/index/updated-model-spec">Updated Model Spec</a> · <a target="_blank" rel="noopener" href="https://openai.com/index/how-we-detect-frontier-model-misalignment">Detect frontier misalignment</a> · <a target="_blank" rel="noopener" href="https://model-spec.openai.com/2026-10-29.html">Spec 2026-10-29</a></p>
+<h3>4. Northflank Security incident：假定环境变量已解密，多用户确认 AI keys 被用</h3>
+<p class="badges">A · NEW · 国际 · G/C/F · PaaS 凭证 / AI key · 2026-10-30 ≈13:40Z 起 · status 持续更新至 ≈23:38Z</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://status.northflank.com/cmvv0rn5a092f14rutwccodpp">Northflank status 事故页</a>：Investigating <strong>13:40 UTC</strong> → Identified <strong>13:58</strong>（假定全部 env 已解密、立即轮换）→ <strong>15:12</strong> Update：Postgres/Mongo secret rotation 已开；<strong>Multiple users are confirming that their AI keys have been used</strong>；<strong>19:28</strong> 称调查仍在进行、指引不变；<strong>23:38</strong> 再强调未授权使用平台内 AI API keys，要求立即吊销并核对账单；称或与 Wiz「Black October」报告中的攻击模式一致。时间线含 Wiz 威胁告警 <strong>11:43 UTC</strong>、网络策略补丁与 Wiz CIRT 协作。</li>
+</ul>
+<p><img alt="图 5" src="../assets/2026-10-31/northflank-status-og.png" loading="lazy" /></p>
+<p class="caption">图 5 · Northflank status 事故 OG · 来源：status.northflank.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A</strong>。中型 PaaS 凭证事故，但把 <strong>AI API keys 被盗用</strong>写进官方 status，与 Railway / Zeabur / LiteLLM 线同题：Agent 时代密钥浓度升高，云托管面成为默认狩猎场。</li>
+<li>非一线模型/Desktop 厂商 shipping；快讯按门槛交 Daily——今日入栏。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：Agent 服务网络若托管第三方推理密钥，需假设宿主平台失陷时的密钥爆炸半径与即时吊销 SLA。</p>
+<p><strong>对 Work·Agent 引擎</strong>：Cloud Agent / 多租户 Runtime 应默认短寿凭证、按 workload 隔离、禁止长期静态 AI key 进全局 secret；账单异常检测是运营必需品。</p>
+<p><strong>建议动作</strong>：若使用 Northflank：立即轮换全部 AI/云密钥并查用量；把「PaaS env 假定已解密」写入事故演练剧本。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://status.northflank.com/cmvv0rn5a092f14rutwccodpp">Northflank status · Security incident</a></p>
+<h3>5. 阿里 Qoder：Device Connection（局域网桌面端互联）</h3>
+<p class="badges">A− · NEW · 国内 · B/C/F · 跨设备委托 · 2026-10-30 · IT之家 16:44 CST + docs.qoder.com Oct 30 · 非 desktop_shipping（既有 Desktop 功能增量）</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ithome.com/1/020/173.htm">IT之家</a>（<strong>2026-10-30 16:44:14 CST</strong>）与 <a target="_blank" rel="noopener" href="https://docs.qoder.com/release-notes/qoder">Qoder Release Notes · October 30, 2026</a>：上线 <strong>Device connections</strong>——局域网内用设备地址 + 配对码连接另一台 Qoder 桌面端；可在授权工作区发起任务、用终端/浏览器/文件、跟进进度并预览远端产物；<code>@</code> 引用已连接设备工作区委派任务；两端须同账号配对，可配置工作区开放与会话同步范围，可随时撤销。此前已有手机 Remote Control。同日 release 还有 Needs Me 收件箱、Codex 数据导入、Cloud Agent 管理、Excel 插件等——本条以 Device Connection 为主事件。</li>
+</ul>
+<p><img alt="图 6" src="../assets/2026-10-31/qoder-device-connection.png" loading="lazy" /></p>
+<p class="caption">图 6 · IT之家原文配图 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A−</strong>。把「专用构建机 + 轻便本」拆成<strong>产品内一等公民互联</strong>，比 SSH/远程桌面更贴 Agent 会话模型；安全叙事（配对码时效、同账号、可撤销）是要点。</li>
+<li><strong>不计 desktop_shipping</strong>（非新客户端邀测）。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：设备级委托身份 + 可撤销授权，是 Agent 服务网络的最小跨端信任单元。</p>
+<p><strong>对 Work·Agent 引擎</strong>：多机 Harness 调度、远端产物预览、会话同步范围——可直接对照自研 Remote/Cloud Agent 产品。</p>
+<p><strong>建议动作</strong>：对照 MiniMax / WorkBuddy / Cursor Remote Control 的鉴权模型；评估「配对码 + 工作区 ACL」是否写入需求。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.ithome.com/1/020/173.htm">IT之家</a> · <a target="_blank" rel="noopener" href="https://docs.qoder.com/release-notes/qoder">Qoder Release Notes</a></p>
+<h3>6. 腾讯 Marvis「Coding 管家」：手机远程调用 CodeBuddy / Kimi Code Desktop</h3>
+<p class="badges">A−/B+ · NEW · 国内 · B/C/E · Personal Agent × Coding Desktop · 媒体 2026-10-29/30 · 中新网 10-30 16:34 CST · 非 desktop_shipping</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.chinanews.com.cn/cj/2026/10-30/10723416.shtml">中国新闻网</a>（<strong>2026-10-30 16:34</strong>，称 10-29 上线）及经济观察网等转载：腾讯 AI 管家 Marvis 上线 <strong>Coding 管家</strong>——在既有「手机遥控电脑」之上，增加调用其他桌面 AI 编程工具的能力；<strong>首批支持 CodeBuddy IDE（编程模式）与 Kimi Code Desktop</strong>；手机可看项目/聊天/进度、继续发消息或开新项目，对话与改动同步回电脑端；可开防休眠。后期称将支持更多工具。本扫未拿到腾讯官方独立产品稿 URL → 以中新网等权威媒体事实栏为准，勿写成「官网英文发船稿」。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A−/B+</strong>。个人 Agent（管家）开始<strong>编排第三方 Coding Desktop</strong>，而不是只遥控桌面像素——「手机发起 / 电脑执行 / 手机确认」产品化。</li>
+<li>与 WorkBuddy 远程控制、Qoder Device Connection 同题三连：跨端委托正在国内密集落地。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：跨厂商桌面 Agent 被第三方管家调用时，需要明确的身份、权限与会话边界——否则变成隐式超级用户。</p>
+<p><strong>对 Work·Agent 引擎</strong>：外部「管家」接入面（API/协议/审批）应成为产品选项；防休眠是无人值守前提。</p>
+<p><strong>建议动作</strong>：关注官方是否公开接入规范；对照自研是否允许被第三方 Personal Agent 远程驱动。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.chinanews.com.cn/cj/2026/10-30/10723416.shtml">中新网</a></p>
+<h3>7. Cohere：加拿大 C$4B+ / 1500+ 岗位至 2031 主权 AI 承诺</h3>
+<p class="badges">B+ · NEW · 国际 · I · 2026-10-30 · <a target="_blank" rel="noopener" href="https://cohere.com/blog/cohere-canada-commitment">官博</a></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>Cohere 官博 Oct 30：推进既有加拿大投资，预期至 <strong>2031</strong> 创造 <strong>1500+</strong> 岗位（约 1000 为研究/工程等技术岗）、投入逾 <strong>C$4B</strong> R&amp;D 与 AI 基础设施；含 250+ 带薪学生岗至 2029、多校合作；已有与 Bell AI Fabric 的 C$309M GPU 云等。无新产品 API/权重/Desktop。</li>
+</ul>
+<p><img alt="图 7" src="../assets/2026-10-31/cohere-canada.png" loading="lazy" /></p>
+<p class="caption">图 7 · Cohere 官博题图 · 来源：cohere.com/blog/cohere-canada-commitment</p>
+<p><strong>我的判断</strong>：<strong>B+</strong> 主权算力/就业叙事；对选型无即时工程影响，记入产业雷达即可。</p>
+<p><strong>建议动作</strong>：暂无需行动。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://cohere.com/blog/cohere-canada-commitment">Cohere · Canada commitment</a></p>
+<h3>8. 合并短讯（B 级上下）</h3>
+<ul>
+<li><strong>Kimi Code Desktop 1.2.1（2026-10-30）</strong>：<a target="_blank" rel="noopener" href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html">changelog</a>——长中文文件上下文优化、防休眠、归档会话删除、粘贴图片 auto-mention、Steer 已读进度、Swarm 空会话修复等 polish；<strong>非</strong>新 Desktop 邀测 → <strong>不计 shipping</strong>。CLI <code>@moonshot-ai/kimi-code</code> <strong>2.4.1</strong>（10-30 09:55Z）。</li>
+<li><strong>CLI 升档</strong>：<code>@tencent-ai/codebuddy-code</code> <strong>2.179.0</strong>（10-30 16:40Z）；<code>@minimax-ai/code</code> <strong>0.7.2→0.7.4</strong>（10-30 当日连发）；<code>@openai/codex</code> <strong>0.166.0</strong>；<code>@anthropic-ai/claude-code</code> <strong>2.1.314</strong>（事故后现顶）。</li>
+<li><strong>MiniMax Desktop</strong>：CDN Win/Mac 仍 <strong>3.1.7</strong>（releaseDate 仍 10-28）；changelog Desktop 顶仍 <strong>v3.1.6</strong> → <strong>不升格 shipping</strong>（延续 88/154）。</li>
+<li><strong>GitHub Universe Day2</strong>：社媒有 keynote，但 <strong>universe26 changelog 仍无 10-29/10-30 新产品条</strong>（顶簇仍 10-28）→ 不重报 Day1。</li>
+<li><strong>Anthropic</strong>：至本窗末仍无 Claude Code 扩展事故正式稿；articles 顶仍偏 Oct 28 Smart reports 等。</li>
+<li><strong>OpenAI Private Intelligence</strong>：@OpenAI 15:12Z 放大既有 business 页；RSS 无新 item → 不升格。</li>
+<li><strong>Sierra ARR $400M+</strong>：媒体/聚合有报；一手博文本轮抓取超时 → <strong>仅作产业近听，不建正式条</strong>（待一手核验）。</li>
+<li><strong>Kimi 3D Make / Gmail·Drive·Calendar Plugins</strong>：快讯 near-miss；非 Desktop shipping，不单列头条。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card">
+<h3>T1. Cursor Marketplace × Claude Code 后门：供应链讨论压过产品发船</h3>
+<p class="badges">双边热议代理 · G/B · 强相关</p>
+<ul>
+<li><strong>在说什么</strong>：开发者侧迅速从「哪个注册表」争论转向「扩展加载即 RCE / 卸载清不干净 / Marketplace 重建」；Cursor 官方通告与 OSM CORRECTION 成为主证据链。</li>
+<li><strong>为何此刻热</strong>：一线 Coding IDE Marketplace 被确认供货恶意「官方品牌」扩展；与 LiteLLM / Zeabur / Northflank 同周叠加，形成「AI 密钥与工具链面」焦虑共振。</li>
+<li><strong>与主线关系</strong>：直接打中 Work/Agent 引擎的扩展与 Skill 分发信任模型。</li>
+<li><strong>噪音过滤</strong>：早期「Open VSX 已被攻破」说法已被 OSM/Cursor 更正——日报以更正后事实为准。</li>
+</ul>
+<h3>T2. 开源旗舰 coding：Large 4 OSS 与国内底座选型闲聊</h3>
+<p class="badges">国际为主 · A/B</p>
+<ul>
+<li>Mistral OSS 发船后，社区对照 GLM-5.3 / Kimi / DeepSeek 的 token 效率与自托管成本；HF 权重卡与 MaaS 许可边界是高频追问。热度代理：官方帖 + HF 上架 + 快讯打断，而非编造星标涨幅。</li>
+</ul>
+<h3>T3. 国内「跨端遥控 Coding」产品连发</h3>
+<p class="badges">国内 · B/C</p>
+<ul>
+<li>Qoder Device Connection、Marvis Coding 管家、此前 WorkBuddy 远程 / 豆包锁屏续跑——开发者社区讨论焦点从「会不会写代码」转向「人不在场时如何安全委托」。</li>
+</ul>
+<p>今日无足够独立的 HN/Reddit 高分新帖需升格为单独 S/A 事件（Northflank 线索已并入新闻栏）。</p>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card">
+<div class="table-wrap"><table>
+<tr><th>项目</th><th>星标（约今日）</th><th>相对 Daily 10-29</th><th>看点</th><th>建议</th></tr>
+<tr><td>deepseek-ai/deepseek-harness</td><td>266,722</td><td>+1,944</td><td>国内 harness 持续吸星</td><td>关注</td></tr>
+<tr><td>jetbrains/thinkrail（路径以 gh 为准）</td><td>6,569</td><td>+1,550</td><td>符号级/IDE intelligence 同题热</td><td>关注 / 对照 156</td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td>24,495</td><td>+579</td><td>推理框架 continuum</td><td>关注</td></tr>
+<tr><td>anomalyco/opencode</td><td>223,326</td><td>+571</td><td>harness 热度</td><td>关注（Console 安全线仍 pin）</td></tr>
+<tr><td>NVIDIA/OpenShell</td><td>20,767</td><td>+193</td><td>Agent Runtime 参考架构</td><td>关注</td></tr>
+<tr><td>modelcontextprotocol/servers</td><td>91,703</td><td>+61</td><td>MCP 参考服务器</td><td>关注安全通告</td></tr>
+<tr><td>opensandbox-group/OpenSandbox</td><td>16,315</td><td>+76</td><td>AAIF 沙箱</td><td>关注</td></tr>
+<tr><td>humanlayer/humanlayer</td><td>12,723</td><td>—</td><td>人在环全栈 OSS</td><td>关注</td></tr>
+<tr><td>microsoft/mxc</td><td>3,050</td><td>+17</td><td>Windows 混合智能</td><td>关注</td></tr>
+<tr><td>Tencent-Hunyuan/Hy-Memory</td><td>1,879</td><td>—</td><td>记忆层</td><td>关注</td></tr>
+</table></div>
+<p><strong>开源发船点</strong>：Mistral Large 4 权重（见新闻 2）为本窗最重要开源事件；无其他短窗「暴涨新仓」达 B+ 独立条（宁缺毋滥）。</p>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<section class="card">
+<h3>177 · Claude Code 恶意扩展（快讯双推）</h3>
+<ul>
+<li><strong>此前</strong>：15:13 第三方取证偏向 Open VSX 样本；17:15 Cursor 官方 Marketplace 声明。</li>
+<li><strong>今日新增（日报核验）</strong>：OSM UPDATE <strong>更正起源为 Cursor Marketplace</strong>；通告明确 <strong>2.1.312+2.1.313</strong>；<strong>11:30am PT</strong> IOC/版本澄清；Anthropic 官方仍无稿。</li>
+<li><strong>判断是否发生变化</strong>：<strong>是</strong>——起源与受影响版本范围已定稿级更新；响应手册可用。继续盯 Anthropic 声明与上传路径。</li>
+</ul>
+<h3>176 · Mistral Large 4 OSS</h3>
+<ul>
+<li><strong>此前</strong>：快讯 10-29 23:18 PUSH。</li>
+<li><strong>今日新增</strong>：HF/官博相对发船无实质 UPDATE；日报完成全文吸收与选型启示。</li>
+<li><strong>判断是否发生变化</strong>：<strong>否（无新能力点）</strong>——状态从「仅快讯」→「日报入库」。</li>
+</ul>
+<h3>167 · GitHub Universe</h3>
+<ul>
+<li><strong>此前</strong>：Day1 整包（Daily 10-29）。</li>
+<li><strong>今日新增</strong>：Day2 社媒有、changelog 无 10-29/30 新产品条。</li>
+<li><strong>判断是否发生变化</strong>：<strong>否</strong>。</li>
+</ul>
+<h3>88 / 154 · MiniMax Desktop / CLI</h3>
+<ul>
+<li><strong>此前</strong>：CDN 3.1.7 静默、CLI 0.7.1。</li>
+<li><strong>今日新增</strong>：CDN 仍 3.1.7 / changelog 仍 3.1.6；CLI 升至 <strong>0.7.4</strong>。</li>
+<li><strong>判断是否发生变化</strong>：<strong>CLI 有补丁级变化；Desktop 仍不升格 shipping</strong>。</li>
+</ul>
+<h3>11 · Mistral 权重预期</h3>
+<ul>
+<li><strong>此前</strong>：预期 10-31。</li>
+<li><strong>今日新增</strong>：已于 10-29 兑现（176）。</li>
+<li><strong>判断是否发生变化</strong>：<strong>已兑现，可降级观察许可/红队变体</strong>。</li>
+</ul>
+</section>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<section class="card">
+<ul>
+<li><strong>工具链供应链从「依赖包」扩到「IDE/Agent 扩展 Marketplace」</strong>——品牌显示名不够；需要 provenance、冷却与宿主 IR 剧本。</li>
+<li><strong>开源旗舰把 agentic coding + 防御安全绑成同一发船叙事</strong>（Large 4）——自托管 coding agent 的默认能力上限上移。</li>
+<li><strong>越界监控从内部备忘走向公开工程说明</strong>（OpenAI 四层监控 + Spec 价值观）——实验室开始比拼「看得见 agent」而不只是「模型分数」。</li>
+<li><strong>国内跨端委托产品连发</strong>（Qoder 互联 / Marvis Coding 管家 / 既有远程控制）——「人不在场」成为标配场景，审批与防休眠一起产品化。</li>
+<li><strong>AI 密钥在 PaaS 失陷中被点名滥用</strong>（Northflank）——Cloud Agent 密钥爆炸半径进入 status 级公共话语。</li>
+</ul>
+</section>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<section class="card">
+<ul>
+<li><strong>扩展/技能分发的可验证 provenance</strong>（签名、哈希、注册表审计、安装冷却）——Marketplace 事故是负例教材。</li>
+<li><strong>跨设备委托的最小信任单元</strong>：同账号 + 短时配对码 + 工作区 ACL + 可撤销（Qoder）——可映射到 Agent Discovery/授权。</li>
+<li><strong>第三方 Personal Agent 编排 Coding Desktop</strong>（Marvis）——互联层要预设「被外部管家调用」的身份与权限边界。</li>
+</ul>
+</section>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<section class="card">
+<ul>
+<li><strong>「卸载≠清后门」响应手册</strong> + <code>authorized_keys</code>/LaunchAgent/计划任务基线检测——直接抄 Cursor remediate 结构。</li>
+<li><strong>多机 Harness</strong>：Device Connection 式远端任务/产物预览/会话同步范围——对照 Cloud/自托管拆分。</li>
+<li><strong>异步 misalignment 监控架构</strong>（探针→评审→调查→自动暂停）——不要把监控信号直接写进训练奖励。</li>
+</ul>
+</section>
+<h2 class="section-title">值得继续跟踪</h2>
+<section class="card">
+<ul>
+<li><strong>事件：177 Claude Code / Cursor Marketplace</strong> · 观察：Anthropic 正式声明；上传/凭证失陷路径；企业检出率；是否波及其他扩展。</li>
+<li><strong>事件：176 Mistral Large 4 OSS</strong> · 观察：内部评测复现；Forge 定制；红队变体准入；MaaS 许可执法。</li>
+<li><strong>事件：Northflank（新建 178）</strong> · 观察：根因 RCA；Wiz Black October 关联是否坐实；他厂 PaaS 是否跟进披露。</li>
+<li><strong>事件：Qoder Device Connection / Marvis Coding 管家</strong> · 观察：官方接入规范；更多 Desktop 适配；安全绕过研究。</li>
+<li><strong>事件：OpenAI Spec + 监控</strong> · 观察：外部部署干预能力扩展；misalignment-reports 新 First posted。</li>
+<li><strong>事件：MiniMax Desktop changelog vs CDN 3.1.7</strong> · 观察：是否补记正式 shipping。</li>
+<li><strong>事件：Kimi K3.1 Pro 权重（129）</strong> · 观察：Nov 4 是否兑现。</li>
+<li><strong>到期：DeepSeek Search/Fetch 计费 11-01 00:00 CST</strong>；GitHub Fusion 折扣→Nov 30；Foundry harness 计费→12-01。</li>
+</ul>
+</section>
+<h2 class="section-title">未来信号</h2>
+<section class="card">
+<ul>
+<li><strong>Personal Agent 编排第三方 Coding Desktop</strong>（Marvis Coding 管家）可能成为「Agent Service Network」在消费端的雏形：管家 = 路由器/审批面，Desktop = 执行面。若腾讯后续公开接入协议，值得提前对照 A2A/MCP 发现层。</li>
+<li><strong>扩展 Marketplace 作为攻击面</strong> 会倒逼「Agent OS / 桌面宿主」提供系统级扩展沙箱（已超单产品 IR）。</li>
+</ul>
+</section>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<section class="card">
+<ul>
+<li><strong>Mistral Large 4 API</strong>：$0.70 输入 / $0.07 cached / $2.10 输出 per MTok（权重开源同日价）。</li>
+<li><strong>DeepSeek Search/Fetch</strong>：仍提醒 <strong>2026-11-01 00:00 CST</strong> 起结束免费窗口（既有跟踪，非本窗新调价）。</li>
+<li>今日未见其他可核实的重要新促销/额度突变；Cohere 为投资承诺非 API 调价。</li>
+</ul>
+</section>
+<h2 class="section-title">信源与方法（vendor-check 摘要）</h2>
+<section class="card">
+<ul>
+<li><strong>P0 命中/吸收</strong>：cursor（Marketplace 通告 + IOC UPDATE）、mistral（OSS 积压）、openai（Model Spec + misalignment 监控）、moonshot（Desktop 1.2.1 / CLI 2.4.1）、alibaba-qoder（Device Connection）、minimax（CDN/CLI）、tencent（Marvis 媒体；CodeBuddy npm 2.179.0）。</li>
+<li><strong>P0/P1 无新 shipping</strong>：anthropic（无事故稿）、google-ai/universe26（无 10-29/30 新产品 changelog）、github、deepseek、stepfun、meta、xai 等。</li>
+<li><strong>P1 新入栏线索</strong>：cloud-hosting Northflank status；cohere Canada commitment。</li>
+<li><strong>方法</strong>：官方站/通告 + 官方 X 线索（快讯日志）+ IT之家/中新网 + npm view + <code>gh api</code> 星标；禁止编造互动数。国内小红书/抖音本轮未做默认视频采集。</li>
+</ul>
+</section>
+</article></main>
+</body>
+</html>
