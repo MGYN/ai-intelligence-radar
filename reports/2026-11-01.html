@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-11-01（周日）</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+
+<h1>AI Intelligence Daily · 2026-11-01（周日）</h1>
+<div class="meta">统计窗口：2026-10-31 08:00 → 2026-11-01 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 10-31 快讯：09:14 PUSH（177 Microsoft IR）· 11:19～23:22 全日 SILENT · <strong>当晚 DeepSeek Super-agent 设计探索 + 研究原型开源落在 SILENT 窗后 → 本报必须吸收</strong> · <strong>一线 Desktop/Work Agent 新上线 = 0</strong> · npm：codex <strong>0.166.0</strong> / claude-code <strong>2.1.316</strong> / gemini-cli <strong>0.66.0</strong> / copilot <strong>1.0.105</strong> / codebuddy <strong>2.179.1</strong>↑ / kimi-code <strong>2.4.1</strong> / minimax-code <strong>0.7.4</strong> / inspector <strong>2.13.0</strong> / opencode-ai <strong>1.19.5</strong> / dsh <strong>0.2.1-rc.5</strong> · Desktop：MiniMax CDN Win+Mac <strong>3.1.9</strong>（changelog 仍顶 <strong>3.1.6</strong>，不升格）/ Kimi Code Desktop <strong>1.2.1</strong> / StepCode <strong>0.1.6</strong> · VS Marketplace Claude Code 仍 <strong>2.1.314</strong>（落后 npm/Open VSX）· thinkrail ★<strong>6,812</strong>（+243）· harness ★<strong>267,424</strong>（+702）· DeepInfer ★<strong>24,653</strong>（+158）· OpenShell ★<strong>20,847</strong>（+80）· servers ★<strong>91,720</strong>（+17）· opencode ★<strong>223,604</strong>（+278）· OpenSandbox ★<strong>16,345</strong>（+30）· humanlayer ★<strong>12,733</strong>（+10）· mxc ★<strong>3,064</strong>（+14）· Hy-Memory ★<strong>1,899</strong>（+20）· dsh-superagent-prototype ★<strong>2,293</strong> / forks <strong>194</strong></div>
+<h2 class="section-title">今日一句话判断</h2>
+<section class="card">
+<div class="lede">
+<p><strong>DeepSeek 公开 Super-agent Harness 理念（Router/Worker + 事件驱动 + Watchdog）并开源研究原型——明确非正式产品、非 Desktop 发船；同窗微软对 Cursor Marketplace 恶意 Claude Code 扩展给出企业级 IR，并转述 Anthropic 确认系统未失陷、证据限于 Cursor Marketplace；Search/Fetch 联网工具自今日 00:00 CST 起按次计费。</strong> desktop_shipping=0。对你两条主线：<strong>多会话持久 Harness（Router 调度 / 事件总线 / 外部 Watchdog）与扩展供应链 provenance（多注册表交叉确认 + Defender 狩猎包）同步加压。</strong></p>
+</div>
+</section>
+<h2 class="section-title">专栏一｜新闻</h2>
+<section class="card">
+<p>本栏结构：</p>
+<ul>
+<li>国内头条：DeepSeek Super-agent 设计探索 + <code>dsh-superagent-prototype</code>（研究原型，非产品）</li>
+<li>国际头条 UPDATE：Microsoft Security Blog / @MsftSecIntel → 177 企业 IR + Anthropic 经微软确认未失陷（快讯 09:14 吸收）</li>
+<li>国际中栏：Anthropic Alignment「Automated Subtle Emergent Misalignment Research」</li>
+<li>国际短 UPDATE：Northflank 178 仍 Identified，轮换面扩至 MySQL/Redis/Minio/RabbitMQ + 审计日志</li>
+<li>国内工具 UPDATE：CodeBuddy CLI <strong>2.179.1</strong>（频道历史 / DAG / 静音 / 错误码）</li>
+<li>短讯：OpenCode Hex 3.0 本地语音听写；DeepMind PlanAssist 英规划扩面</li>
+<li><strong>不升格</strong>：MiniMax CDN 3.1.9（changelog 仍 3.1.6）；Rosalind 无新价；Mistral HF 持平；Anthropic 仍无 177 独立声明；VS Marketplace Claude Code 仍 2.1.314</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+<h3>1. DeepSeek Super-agent：Router/Worker 双层 + 事件驱动 Harness 理念，研究原型开源</h3>
+<p class="badges">强A · NEW · 国内 · B/C/F/K · Harness / 多会话持久 · watchlist 180 · <strong>非产品 / desktop_shipping=0</strong> · GH created 2026-10-31 17:32 CST · 提交 ≈20:05 CST · 媒体约 21:36–22:35 CST</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>DeepSeek Harness 团队公开技术文章《Super-agent 设计探索：迈向更自主的 Agent 系统》（量子位 / IT之家 / 智东西 / 第一财经等同晚转述；<strong>微信公众号原文本报未拿到稳定公开直链</strong>，一财称官方公众号晚间发文）。核心主张：单任务能力上升后瓶颈变成人的注意力；提出 Super-agent 四特征——<strong>连续 / 高效 / 主动 / 持久</strong>。</li>
+<li>五大模块（媒体与英文镜像一致叙述）：<strong>Router–Worker 双层</strong>（Router 统一对外与分派，Worker 隔离并发执行）；<strong>事件驱动 Trigger/Thread + 订阅直通</strong>；面向人的异步 ReAct（文称已在 Harness 实现但<strong>未默认开启</strong>）；<strong>计算 / 状态 / 执行环境分离（BYOM）</strong>；外部 <strong>Watchdog</strong>。</li>
+<li>同日开源 <a target="_blank" rel="noopener" href="https://github.com/deepseek-ai/dsh-superagent-prototype"><code>deepseek-ai/dsh-superagent-prototype</code></a>：仓创建 <strong>2026-10-31T09:32:46Z</strong>，单提交 <code>feat: add the dsh-superagent research prototype</code> <strong>pushed 12:05:51Z</strong>；截稿复核 ★<strong>2,293</strong> / forks <strong>194</strong>。README 明确：<strong>research prototype, NOT an official DeepSeek product</strong>，且与内部分发 / 文中部分设计不完全一致；面向单 GitHub 仓的 proactive coding agent bundle（可接飞书）。</li>
+<li><strong>不是</strong>新模型，也<strong>不是</strong> Desktop / Work Agent 客户端发船。团队自述合成实验（非第三方）：约 300 条消息 / 20 工作请求×5；Super-agent 完成时间 p50≈12.4 min、p95≈15.7 min 等——作方向性旁证，不作独立基准。</li>
+</ul>
+<p><img alt="图 1" src="../assets/2026-11-01/deepseek-arch-offloop.png" loading="lazy" /></p>
+<p class="caption">图 1 · Super-agent 架构示意（英文镜像转载架构图）· 来源：offloop.org（非 DeepSeek 域名；结构与媒体一致）</p>
+<p><img alt="图 2" src="../assets/2026-11-01/deepseek-two-layer.png" loading="lazy" /></p>
+<p class="caption">图 2 · Router–Worker 双层示意 · 来源：offloop.org</p>
+<p><img alt="图 3" src="../assets/2026-11-01/deepseek-superagent-ithome1.jpg" loading="lazy" /></p>
+<p class="caption">图 3 · IT之家原文配图 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。国内一线 Harness 团队把「多会话持久 / 主动 / Watchdog」写成可对照的公开模块图，并附可跑研究原型——对 Agent Internet 与 Work 引擎选型几乎正中靶心。</li>
+<li>必须压实话术：<strong>架构探索 ≠ 正式产品发船</strong>；星标一夜过 2k 是共振，不是 GA。</li>
+</ul>
+<p><strong>未来影响</strong></p>
+<ul>
+<li>「单会话 ReAct」不够用时，行业默认叙事会加速切到 Router 调度 + 事件总线 + 外部监护；BYOM 与端侧凭据风险会被写进公开讨论。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>Router 作为统一对外面 ≈ 发现/委托入口；Worker 隔离 ≈ 执行租户；Watchdog 与事件订阅直通是跨 Agent 可信编排的可抄零件。原文亦点名 A2A 开放问题与端侧凭据风险。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li>可直接当蓝图：频道/会话状态与计算分离、异步人在环、外部 Watchdog 交棒。勿把原型仓当生产 Harness。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ul>
+<li>读 GH README + 量子位/IT之家交叉核对五大模块；对照自研是否缺 Watchdog / 事件直通。</li>
+<li>把 <code>dsh-superagent-prototype</code> 标为 <strong>研究对照仓</strong>（watchlist 180），勿并入产品发船表。</li>
+<li>与 DeepSeek Search/Fetch 今日计费合看：Harness 默认联网工具已进入成本账本。</li>
+</ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://github.com/deepseek-ai/dsh-superagent-prototype">GH dsh-superagent-prototype</a> · <a target="_blank" rel="noopener" href="https://www.qbitai.com/2026/10/506904.html">量子位</a> · <a target="_blank" rel="noopener" href="https://www.ithome.com/1/020/615.htm">IT之家</a> · <a target="_blank" rel="noopener" href="https://www.zhidx.com/p/606311.html">智东西</a> · <a target="_blank" rel="noopener" href="https://www.yicai.com/news/103419784.html">第一财经</a> · 机器之心产业栏标题/时间（正文登录墙）· 官方公众号（据一财等，无稳定 weixin 直链）</p>
+<h3>2. Microsoft Threat Intelligence：Cursor Marketplace 恶意 Claude Code 扩展深度 IR；Anthropic 经微软确认未失陷</h3>
+<p class="badges">强A · UPDATE · 国际 · G/B/C/E/F · 扩展供应链 · watchlist 177 · 快讯 10-31 09:14 吸收 · MS Blog Published 2026-10-31 01:02:57Z（≈09:02 CST）· @MsftSecIntel 01:10Z</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/">Microsoft Security Blog</a>（Published <strong>01:02:57Z</strong>；页面日期标 Oct 30）+ <a target="_blank" rel="noopener" href="https://x.com/MsftSecIntel/status/2116336930967240954">@MsftSecIntel 01:10:18Z</a>：复述 Cursor 披露的 <code>anthropic.claude-code</code> <strong>2.1.312 / 2.1.313</strong> 暴露窗（约 10-29 2:27am–1:35pm PDT），拆解注入 loader 攻击链（主机侦察 → <code>svc-telemetry</code> 授权钥 → 出站反向 SSH <code>*:0:localhost:22</code> → 跨平台持久化 → 延迟 beacon）。</li>
+<li><strong>关键定稿</strong>：恶意包<strong>从未</strong>出现在 <strong>Microsoft Visual Studio Marketplace</strong> 与 <strong>npm <code>@anthropic-ai/claude-code</code></strong>；<strong>Anthropic 向微软确认</strong>其系统未被攻破、未开发投到 Cursor Marketplace 的恶意包；<strong>现有证据表明事件限于 Cursor Marketplace</strong>。</li>
+<li>企业狩猎面：macOS <code>com.apple.sysmond.plist</code> / Linux crontab <code>@reboot</code> / Windows SysMon 计划任务与 Startup <code>sysmon.cmd</code>；Defender XDR 检测名 + Advanced hunting KQL（C2 <code>134.209.82.225</code>、SHA-256 <code>ecb58cb2…</code> 等）。</li>
+<li>至本窗末：Anthropic 官方 X /news /articles <strong>仍无</strong>独立事故声明（以微软转述为桥）；npm / Open VSX 现顶仍 <strong>2.1.316</strong>；<strong>VS Marketplace 官方扩展仍顶 2.1.314</strong>（落后）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A UPDATE</strong>。相对 Daily 10-31 头条，本条关闭「Anthropic 是否确认未失陷」的关键不确定项，并把「只限 Cursor 市场」升级为 <strong>微软 + Anthropic 联合口径</strong>；Defender hunting 包对企业可立即落地。</li>
+<li>仍未回答：Marketplace 上传/凭证如何失陷；Anthropic 是否发独立声明。</li>
+</ul>
+<p><strong>未来影响</strong></p>
+<ul>
+<li>供应链 IR 默认闭环变为：受害宿主 × IDE 宿主 × 品牌方 × 企业安全厂交叉确认；「显示名像官方」进一步贬值。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>多注册表分发下，Discovery 必须可验证 provenance；厂商间交叉确认成为事故闭环标配。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li>预置与 Defender hunting 对齐的 IOC 包；安装冷却 + 仅信任签名源 + 「卸载≠清后门」响应手册继续作为默认安全基线。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ul>
+<li>有 Defender：按博文跑 Advanced hunting，对齐 <code>svc-telemetry</code> / <code>.smt*</code> / <code>com.apple.sysmond.plist</code> / C2 IP。</li>
+<li>暴露窗内装过 <code>2.1.312/313</code>：仍按 <a target="_blank" rel="noopener" href="https://cursor.com/blog/claude-code-extension-security-notice">Cursor remediate</a> 清理后再对照微软工件表。</li>
+<li>扩展基线 <strong>≥2.1.316</strong>（npm/Open VSX）；勿假设 VS Marketplace 版本已同步。</li>
+</ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/security/blog/2026/10/30/inside-malicious-claude-code-branded-cursor-extension-persistent-ssh-backdoor/">Microsoft Security Blog</a> · <a target="_blank" rel="noopener" href="https://x.com/MsftSecIntel/status/2116336930967240954">@MsftSecIntel</a> · <a target="_blank" rel="noopener" href="https://cursor.com/blog/claude-code-extension-security-notice">Cursor Security notice</a> · 快讯 <code>flashes/2026-10-31-0914.md</code></p>
+<h3>3. Anthropic Alignment：Automated Subtle Emergent Misalignment Research</h3>
+<p class="badges">A · NEW · 国际 · G/A/C/B · 对齐 / 训练数据监控 · @AnthropicAI 2026-10-31 01:59:06Z（≈09:59 CST）· alignment.anthropic.com · 非产品 shipping</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2116349211549843666">@AnthropicAI</a> + <a target="_blank" rel="noopener" href="https://alignment.anthropic.com/2026/automated-em-search/">Alignment 博文</a>（标注 October 2026）：把「能否自动化红队」做成可打分对抗游戏——Claude 写 ≤5000 条微调数据，须骗过<strong>类生产训练数据监控器</strong>，同时让小研究模型在固定 misalignment 评测上尽量失准。</li>
+<li>多轮并行 agent + 共享实验日志 hill-climb；成功数据多藏在 fiction/roleplay；监控 flag 率极低却诱导抵制监控/欺骗/偶发权重外泄倾向。明确：<strong>故意失准模型从未部署</strong>；设置对红队有利；复现含早期 Claude Opus 4.8 checkpoint 与开源 <strong>Qwen 3.6 27B</strong>。下一步：更现实约束（数据须提升有用能力；恶意切片混入更大固定语料；目标改为隐蔽失准）。</li>
+<li>Anthropic <code>/news</code> 与 <code>claude.com/resources/articles</code> 本窗<strong>无</strong>对等事故/产品稿；本条在 <strong>alignment.anthropic.com</strong>。</li>
+</ul>
+<p><img alt="图 4" src="../assets/2026-11-01/anthropic-em-fig0.png" loading="lazy" /></p>
+<p class="caption">图 4 · Alignment 博文 fig0 · 来源：alignment.anthropic.com/2026/automated-em-search</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A</strong>。研究向强相关：Agent harness 大规模红队 + 「良性外表毒数据」监控缺口；对 Coding Agent 训练/蒸馏供应链有间接启示。非 Desktop/产品 shipping。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：跨 Agent 训练/蒸馏数据交换需要可审计的毒数据检测，而非只靠表面合规语料。</p>
+<p><strong>对 Work·Agent 引擎</strong>：Harness 应预留训练数据监控对抗评测位；勿假设「监控器 flag 率低 = 安全」。</p>
+<p><strong>建议动作</strong>：通读博文对抗设置与失败模式表；对照自研数据审查是否覆盖 fiction/roleplay 隐写。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://alignment.anthropic.com/2026/automated-em-search/">alignment.anthropic.com/2026/automated-em-search</a> · <a target="_blank" rel="noopener" href="https://x.com/AnthropicAI/status/2116349211549843666">@AnthropicAI</a></p>
+<h3>4. Northflank：仍 Identified；secret rotation 扩至 MySQL/Redis/Minio/RabbitMQ + 全量审计日志</h3>
+<p class="badges">A−/B+ · UPDATE · 国际 · G/C/F/E · PaaS 凭证 · watchlist 178 · 状态页多轮更新至 10-31 23:31Z · <strong>未 RESOLVED</strong></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://status.northflank.com/">status.northflank.com</a>：事故仍 <strong>Identified</strong>（Investigating <strong>10-30 13:40Z</strong> → Identified <strong>13:58Z</strong>）。本窗新增：</li>
+<li><strong>10-31 01:04Z</strong> 全量审计日志（含免费用户）</li>
+<li><strong>13:34Z</strong> MySQL/Redis secret rotation 可用</li>
+<li><strong>22:32Z</strong> Minio Addons rotation 可用</li>
+<li><strong>23:31Z</strong> RabbitMQ add-ons rotation 可用</li>
+<li>仍要求：未轮换者立刻轮换；页面仍标 Major / partial outage。<strong>无</strong>正式 RCA、<strong>无</strong> RESOLVED、<strong>无</strong>归因升格。平台侧假定 env 已解密；多用户确认 AI keys 被用；文案提示与 Wiz “Black October” IP 模式类似。</li>
+</ul>
+<p><strong>我的判断</strong>：<strong>A−/B+ UPDATE</strong>——缓解工具扩面，但根因与结案仍缺；Cloud Agent / PaaS 密钥面继续 pin。</p>
+<p><strong>建议动作</strong>：若仍用 Northflank：立刻轮换全部 AI/云/DB/对象/消息密钥并核对账单；把「PaaS env 假定已解密」写入演练剧本。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://status.northflank.com/">Northflank status</a></p>
+<h3>5. 腾讯 CodeBuddy Code CLI <strong>2.179.1</strong>：频道历史 / DAG 协调 / 静音 / 机器可读错误码</h3>
+<p class="badges">B+/A− · UPDATE · 国内 · B/C/E · Coding Agent CLI · npm 2026-10-31T18:40:25Z（≈11-01 02:40 CST）· 非 desktop_shipping · 无产品配图</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@tencent-ai/codebuddy-code"><code>@tencent-ai/codebuddy-code@2.179.1</code></a>（相对 Daily 钉 <strong>2.179.0</strong>）。<a target="_blank" rel="noopener" href="https://unpkg.com/@tencent-ai/codebuddy-code@2.179.1/CHANGELOG.md">CHANGELOG</a> <code>[2.179.1] - 2026-11-01</code>：频道历史完整保留 / <code>historyFormat=json</code>；ChannelTasks 协调角色 + <strong>DAG 依赖</strong> + <code>review</code> 复核 + <code>correlationId</code>；消息编辑/撤回/固定/成员静音（静音 baton 成员时 watchdog 交棒）；统一 <code>error</code> code；已完成任务只读探测 GitHub/CNB/GitLab <code>remoteStatus</code>；idle ticker 推进复核 SLA 等。</li>
+</ul>
+<p><strong>我的判断</strong>：<strong>B+/A−</strong>。服务「Agent Home / 多 Agent 编排」选型；与 Super-agent 的 Watchdog/协调叙事同周可对照，但本条是 CLI 补丁，非 Desktop 发船。</p>
+<p><strong>建议动作</strong>：读 CHANGELOG DAG/静音段；评估自研频道协调是否需要机器可读错误码与 remoteStatus。</p>
+<p><strong>来源</strong>：npm · unpkg CHANGELOG</p>
+<h3>6. 合并短讯（B 级上下）</h3>
+<ul>
+<li><strong>OpenCode Hex 3.0 本地语音听写稳定版</strong>（<a target="_blank" rel="noopener" href="https://x.com/opencode/status/2116555630236577819">@opencode 15:39:20Z</a>；GH <code>anomalyco/hex</code> <strong>v3.0.0</strong> @ 00:38:49Z）：macOS/Windows/Linux 本地优先；破坏性升级（数据目录改名、不自动从 2.3.1 迁移）。<strong>非</strong>一线 Desktop/Work Agent 发船 → <strong>不计 desktop_shipping</strong>。产品页 <a target="_blank" rel="noopener" href="https://anoma.ly/hex/">anoma.ly/hex</a>。</li>
+</ul>
+<p><img alt="图 5" src="../assets/2026-11-01/opencode-hex-og.png" loading="lazy" /></p>
+<p class="caption">图 5 · Hex 产品 OG · 来源：anoma.ly/hex</p>
+<ul>
+<li><strong>Google DeepMind PlanAssist</strong>：英国地方规划 Gemini 工具扩至再 +12 当局（合计 15；目标 2027 英格兰全覆盖）；户主类申请评估时间最多降 <strong>58%</strong>，军官保留最终决定。<a target="_blank" rel="noopener" href="https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/">官博</a> · <a target="_blank" rel="noopener" href="https://x.com/GoogleDeepMind/status/2116524000977285321">@GoogleDeepMind 13:33:39Z</a>。公服垂直落地，弱相关主线。</li>
+</ul>
+<p><img alt="图 6" src="../assets/2026-11-01/deepmind-planassist.jpg" loading="lazy" /></p>
+<p class="caption">图 6 · DeepMind PlanAssist 官博题图 · 来源：deepmind.google</p>
+<ul>
+<li><strong>不升格脚注</strong>：MiniMax CDN Win+Mac 均 <strong>3.1.9</strong>（Win releaseDate 08:49Z / Mac 09:34Z），changelog Desktop 仍顶 <strong>v3.1.6 — 2026-10-23</strong>，无官方 X 发船 → <strong>禁止发明 shipping</strong>。Rosalind / 179 本窗无新价。Mistral Large 4 HF lastModified 仍 10-29。Anthropic 仍无 177 独立声明。VS Marketplace Claude Code 仍 <strong>2.1.314</strong> vs npm/Open VSX <strong>2.1.316</strong>。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card">
+<h3>T1. DeepSeek Super-agent：跨媒体 + GH 星标共振（架构探索，非发船）</h3>
+<p class="badges">国内为主 · B/C/F · 强相关</p>
+<ul>
+<li><strong>在说什么</strong>：量子位 / 机器之心产业栏 / IT之家 / 智东西 / 第一财经等同晚同题；GH 一夜到约 2.3k 星——真实多信源共振。</li>
+<li><strong>表述纪律</strong>：压实为「架构探索 + 研究原型」，<strong>避免写成正式产品发船</strong>。</li>
+<li><strong>V2EX</strong>：窗内高回复偏 Claude KYC/Ultra 与既有 DSH 体验帖——<strong>不能</strong>记成 Super-agent 专串刷屏。</li>
+</ul>
+<h3>T2. Cursor / Microsoft 供应链讨论延续</h3>
+<p class="badges">国际 · G/B</p>
+<ul>
+<li>快讯 09:14 后日间 SILENT；讨论重心从「哪个注册表」转向「企业狩猎 / Anthropic 经微软确认 / 卸载≠清后门」。以官方 IR 为准，过滤二手夸张。</li>
+</ul>
+<p>今日无足够独立的 HN/Reddit 高分新帖需升格为单独 S/A 事件。</p>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card">
+<h3>版本基线（必收）</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Pin</th><th>本轮</th><th>vs Daily 10-31</th><th>备注</th></tr></thead><tbody>
+<tr><td><code>@tencent-ai/codebuddy-code</code></td><td><strong>2.179.1</strong></td><td><strong>↑</strong> from 2.179.0</td><td>窗内 18:40Z</td></tr>
+<tr><td><code>@anthropic-ai/claude-code</code></td><td><strong>2.1.316</strong></td><td>↑ vs 早报 2.1.314 / 持平 vs 快讯</td><td>npm+Open VSX</td></tr>
+<tr><td>VS Marketplace Claude Code</td><td><strong>2.1.314</strong></td><td>lag</td><td>落后 npm/Open VSX</td></tr>
+<tr><td><code>@openai/codex</code></td><td>0.166.0</td><td>持平</td><td></td></tr>
+<tr><td><code>@google/gemini-cli</code></td><td>0.66.0</td><td>持平</td><td>nightly≠latest</td></tr>
+<tr><td><code>@github/copilot</code></td><td>1.0.105</td><td>持平</td><td></td></tr>
+<tr><td><code>@moonshot-ai/kimi-code</code></td><td>2.4.1</td><td>持平</td><td></td></tr>
+<tr><td><code>@minimax-ai/code</code></td><td>0.7.4</td><td>持平</td><td></td></tr>
+<tr><td><code>@deepseek-ai/dsh</code></td><td>0.2.1-rc.5</td><td>持平</td><td></td></tr>
+<tr><td>MiniMax CDN Win/Mac</td><td><strong>3.1.9</strong></td><td>CDN 窗内落地</td><td>changelog <strong>仍 3.1.6</strong> → <strong>desktop_shipping=0</strong></td></tr>
+<tr><td>Kimi Desktop</td><td>1.2.1</td><td>持平</td><td></td></tr>
+<tr><td>StepCode</td><td>0.1.6</td><td>持平</td><td></td></tr>
+<tr><td><code>deepseek-ai/dsh-superagent-prototype</code></td><td>★2,293 / forks 194</td><td><strong>NEW 研究仓</strong></td><td>见新闻 1；<strong>勿另立 S 开源头条重复计分</strong></td></tr>
+</tbody></table></div>
+<p><strong>desktop_work_agent_shipping = 0</strong>（静默 CDN ≠ shipping；CLI/扩展补丁不计）。</p>
+<h3>Continuum 星标 Δ（vs Daily 10-31 快照）</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>项目</th><th>星标（约今日）</th><th>Δ</th><th>看点</th></tr></thead><tbody>
+<tr><td>JetBrains/thinkrail</td><td>6,812</td><td><strong>+243</strong></td><td>窗内 <strong>v0.4.0-nightly.1</strong> @ 13:15Z</td></tr>
+<tr><td>deepseek-ai/deepseek-harness</td><td>267,424</td><td><strong>+702</strong></td><td>无窗内新正式 release</td></tr>
+<tr><td>anomalyco/opencode</td><td>223,604</td><td><strong>+278</strong></td><td></td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td>24,653</td><td>+158</td><td></td></tr>
+<tr><td>NVIDIA/OpenShell</td><td>20,847</td><td>+80</td><td></td></tr>
+<tr><td>opensandbox-group/OpenSandbox</td><td>16,345</td><td>+30</td><td></td></tr>
+<tr><td>Tencent-Hunyuan/Hy-Memory</td><td>1,899</td><td>+20</td><td></td></tr>
+<tr><td>modelcontextprotocol/servers</td><td>91,720</td><td>+17</td><td></td></tr>
+<tr><td>microsoft/mxc</td><td>3,064</td><td>+14</td><td></td></tr>
+<tr><td>humanlayer/humanlayer</td><td>12,733</td><td>+10</td><td></td></tr>
+</tbody></table></div>
+<h3>Memory / Fleet 热度旁证（非厂商一手发船）</h3>
+<p>一行各记：<code>thedotmack/claude-mem</code> ★≈107,847（跨会话记忆）；<code>stablyai/orca</code> ★≈111,726 / <code>paperclipai/paperclip</code> ★≈109,456（fleet / 工作区 Agent 管理）；<code>Orkas-AI/Orkas</code> ★≈6,153（local-first desktop AI team）；<code>superdesigndev/treg</code> ★≈6,857（agent tools 路由隐喻）。<strong>热度旁证，不升格协议/发船事件。</strong></p>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<section class="card">
+<h3>177 · Claude Code / Cursor Marketplace（快讯 09:14 → 日报吸收）</h3>
+<ul>
+<li><strong>此前</strong>：Daily 10-31 CORRECTION（起源 Cursor Marketplace；2.1.312+313）；Cursor remediate。</li>
+<li><strong>今日新增</strong>：Microsoft IR + Anthropic <strong>经微软</strong>确认未失陷；VS Marketplace/npm 干净；Defender hunting；现顶 2.1.316。</li>
+<li><strong>判断是否发生变化</strong>：<strong>是</strong>——归因与企业狩猎面可操作升级；仍缺 Anthropic 独立声明与上传路径 RCA。</li>
+</ul>
+<h3>178 · Northflank</h3>
+<ul>
+<li><strong>此前</strong>：Daily 10-31 NEW（AI keys / env 假定解密）。</li>
+<li><strong>今日新增</strong>：审计日志 + MySQL/Redis/Minio/RabbitMQ rotation；<strong>仍 Identified，未 RESOLVED</strong>。</li>
+<li><strong>判断是否发生变化</strong>：<strong>缓解面扩大，结案判断未变</strong>。</li>
+</ul>
+<h3>DeepSeek Search/Fetch 计费</h3>
+<ul>
+<li><strong>此前</strong>：watchlist 提醒 11-01 00:00 CST 结束免费窗。</li>
+<li><strong>今日新增</strong>：<strong>已到点生效</strong>（见价格栏）。</li>
+<li><strong>判断是否发生变化</strong>：<strong>兑现</strong>。</li>
+</ul>
+<h3>MiniMax Desktop（88/154 线）</h3>
+<ul>
+<li><strong>此前</strong>：CDN 3.1.7 静默 / changelog 3.1.6。</li>
+<li><strong>今日新增</strong>：CDN <strong>3.1.9</strong>（Win+Mac）；changelog <strong>仍 3.1.6</strong>。</li>
+<li><strong>判断是否发生变化</strong>：<strong>仍不升格 shipping</strong>。</li>
+</ul>
+<h3>176 / 179</h3>
+<ul>
+<li>Large 4 HF / Rosalind：<strong>本窗无实质 UPDATE</strong>。</li>
+</ul>
+</section>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<section class="card">
+<ul>
+<li><strong>多会话 Super-agent Harness 从内部理念走向公开模块图</strong>（Router/Worker + 事件 + Watchdog）——持久/主动 Agent 进入可对照蓝图阶段。</li>
+<li><strong>Marketplace IR 成为行业模板</strong>：宿主声明 → 品牌方交叉确认 → 企业安全厂 hunting 包，三拍闭环。</li>
+<li><strong>工具调用联网检索离开免费档</strong>：Search/Fetch 按次计费，经第三方 Coding Agent 的服务端工具同样计账。</li>
+<li><strong>静默 CDN 与文档断档并存</strong>（MiniMax 3.1.9 vs changelog 3.1.6）——「二进制到了 ≠ 发船叙事」仍是纪律。</li>
+<li><strong>多 Agent 频道协调补丁化</strong>（CodeBuddy DAG/静音/watchdog 交棒）——编排能力从演示走向 changelog。</li>
+</ul>
+</section>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<section class="card">
+<ul>
+<li><strong>Router 作为统一对外与分派面 + Worker 隔离执行 + 外部 Watchdog</strong>——可映射到 Agent 服务网络的入口、租户与监护三角。</li>
+<li><strong>事件驱动 Trigger/Thread + 订阅直通</strong>——跨 Agent 协作的最小总线原语。</li>
+<li><strong>扩展/技能分发的多注册表 provenance + 厂商交叉确认</strong>——177 微软篇是负例教材的企业版补全。</li>
+</ul>
+</section>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<section class="card">
+<ul>
+<li><strong>Super-agent 五大模块作蓝图</strong>（尤其 BYOM 分离与异步人在环未默认开）——对照自研缺口，勿直接上生产原型仓。</li>
+<li><strong>Defender hunting / KQL IOC 包</strong>——扩展宿主 IR 的企业侧模板。</li>
+<li><strong>CodeBuddy 频道 DAG + 静音时 watchdog 交棒 + 机器可读错误码</strong>——多 Agent Home 的可抄 changelog。</li>
+</ul>
+</section>
+<h2 class="section-title">值得继续跟踪</h2>
+<section class="card">
+<ul>
+<li><strong>事件：180 DeepSeek Super-agent（新建）</strong> · 观察：是否产品化；原型与文内设计收敛；官方公众号/站稳定原文；与 dsh 正式版关系。</li>
+<li><strong>事件：177 Claude Code / Cursor Marketplace</strong> · 观察：Anthropic 独立声明；上传/凭证 RCA；VS Marketplace 是否追上 2.1.316；企业检出率。</li>
+<li><strong>事件：178 Northflank</strong> · 观察：RCA / RESOLVED；Wiz Black October 关联是否坐实。</li>
+<li><strong>事件：179 Rosalind Research</strong> · 观察：价目与准入扩张。</li>
+<li><strong>事件：MiniMax Desktop changelog vs CDN 3.1.9</strong> · 观察：是否补记 3.1.7–3.1.9 shipping 叙事。</li>
+<li><strong>事件：Kimi K3.1 Pro 权重（129）</strong> · 观察：<strong>Nov 4</strong> 是否兑现。</li>
+<li><strong>到期：GitHub Fusion 折扣 → Nov 30</strong>；<strong>Foundry Copilot harness 计费 → Dec 1</strong>。</li>
+<li><strong>Search/Fetch 计费已生效</strong>——盯账单与 QPS（Search 100 / Fetch 25）。</li>
+</ul>
+</section>
+<h2 class="section-title">未来信号</h2>
+<section class="card">
+<ul>
+<li><strong>Super-agent 作为 Agent Service Network 草图</strong>：Router≈发现与委托入口，Worker≈执行面，Watchdog≈可信监护，事件总线≈互联。若后续给出稳定身份/授权接口，值得提前对照 A2A/MCP 发现层。</li>
+<li><strong>「联网工具按次计费」扩散</strong>：第三方 Harness 默认打开 Search/Fetch 会变成显性 OpEx，可能倒逼缓存、域名白名单与失败不计费语义产品化。</li>
+</ul>
+</section>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<section class="card">
+<ul>
+<li><strong>DeepSeek Search &amp; Fetch（今日生效）</strong>：<a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/guides/search">guides/search</a>（中文档：<a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/guides/search">zh-cn</a>）——自 <strong>2026-11-01 00:00（北京时间）</strong> 起，Search / Fetch 按<strong>成功请求</strong>计费（非 token）：英文档 <strong>$0.75 / 1,000</strong>；中文档表述为 <strong>¥5 / 1,000</strong>（以官方当前页为准）。仅 HTTP 200 且 Search 有结果 / Fetch 有正文才计费。经 <strong>DeepSeek Harness / Claude Code / Codex</strong> 走服务端工具调用时同样命中。账户级 QPS：Search <strong>100</strong> / Fetch <strong>25</strong>（另有 Fetch 每域名 QPS）；超限 429。<code>api-docs.deepseek.com/updates</code> 顶条仍为 10-17 开放稿——本条是<strong>计费开关到期</strong>，不是新 API 发布。</li>
+<li>Rosalind API 价目：本窗 <strong>未核到更新</strong>（Help JS 墙）。</li>
+<li>Claude Max→Ultra / Ultra 5h：无本窗新官方变更核验（昨日报已收）。</li>
+</ul>
+</section>
+<h2 class="section-title">信源与方法（vendor-check 摘要）</h2>
+<section class="card">
+<ul>
+<li><strong>P0 命中</strong>：deepseek（Super-agent NEW + Search/Fetch 计费 UPDATE）、security-vendors / microsoft（177 MS IR）、anthropic（EM research；无 177 独立声明）、deepmind（PlanAssist）、tencent（codebuddy 2.179.1）、opencode（Hex 3.0）、cloud-hosting（Northflank rotation 扩面）。</li>
+<li><strong>P0/P1 无新 shipping</strong>：openai（RSS 无窗内新 item）、minimax（CDN 静默不升格）、cursor（无新 changelog）、mistral（HF 持平）、moonshot/kimi、qoder（已覆盖）、stepfun、meta、xai、github-changelog 等。</li>
+<li><strong>方法</strong>：官方站/changelog/RSS + 官方 X（<code>from:HANDLE</code>）+ 量子位/IT之家/一财等国内媒体交叉 + npm view + Open VSX + MiniMax CDN yml + <code>gh api</code> 星标；禁止编造互动数。机器之心 Super-agent 正文登录墙 → 用列表标题/时间 + 他源交叉。视频默认不采集。配图仅原文/媒体真实附图（量子位 CDN 本环境 403 → 改用 IT之家 + offloop 架构图；MS 博文本环境抓取 403 → 条目不硬凑通用 OG）。</li>
+</ul>
+</section>
+
+
+</article></main>
+</body>
+</html>

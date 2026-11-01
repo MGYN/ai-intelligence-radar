@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-10-31T08:19:25+08:00",
+  "updatedAt": "2026-11-01T08:24:30+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-01",
+      "date": "2026-11-01",
+      "title": "AI Intelligence Daily · 2026-11-01",
+      "summary": "DeepSeek Super-agent Harness 理念+研究原型；微软 Claude Code IR UPDATE（Anthropic 经微软确认未失陷）；Search/Fetch 今日按次计费；EM research；Northflank 轮换扩面；CodeBuddy 2.179.1；desktop_shipping=0",
+      "href": "reports/2026-11-01.html"
+    },
     {
       "id": "2026-10-31",
       "date": "2026-10-31",
