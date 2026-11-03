@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-01T08:24:30+08:00",
+  "updatedAt": "2026-11-03T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-03",
+      "date": "2026-11-03",
+      "title": "AI Intelligence Daily · 2026-11-03",
+      "summary": "Anthropic Message Threads 公测；OpenAI Pando Scaling Git + LifeVal；腾讯混元 Hyra 2.0 AutoResearch；支付宝 AHA 乌镇奖；Northflank→Monitoring+CVE-2026-98432；CodeBuddy 2.179.3；dsh-superagent ★≈13082 continuum；desktop_shipping=0",
+      "href": "reports/2026-11-03.html"
+    },
     {
       "id": "2026-11-01",
       "date": "2026-11-01",

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-11-03（周二）</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+
+<h1>AI Intelligence Daily · 2026-11-03（周二）</h1>
+<div class="meta">统计窗口：2026-11-02 08:00 → 2026-11-03 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · Daily 11-02 runtime FAILED（无 reports/2026-11-02.md）→ 本报吸收 11-02 全日快讯 near-miss：Hyra 2.0（181）/ Northflank→Monitoring+CVE-2026-98432（178）· 11-02 17:15～23:21 多轮 SILENT · <strong>一线 Desktop/Work Agent 新上线 = 0</strong> · npm：codex <strong>0.166.0</strong> / claude-code <strong>2.1.316</strong> / gemini-cli <strong>0.66.0</strong> / codebuddy <strong>2.179.3</strong>↑ / kimi-code <strong>2.4.1</strong> / minimax-code <strong>0.7.4</strong> / inspector <strong>2.13.0</strong> / opencode-ai <strong>1.19.5</strong> / dsh <strong>0.2.1-rc.5</strong> · Desktop：MiniMax CDN 仍 <strong>3.1.10</strong>（11-01 已收，changelog 已追记，<strong>不升格 shipping</strong>）· harness ★<strong>269,577</strong>（+2,153 vs 11-01）· DeepInfer ★<strong>25,026</strong>（+373）· OpenShell ★<strong>20,977</strong>（+130）· servers ★<strong>91,751</strong>（+31）· opencode ★<strong>224,108</strong>（+504）· OpenSandbox ★<strong>16,399</strong>（+54）· humanlayer ★<strong>12,766</strong>（+33）· mxc ★<strong>3,079</strong>（+15）· Hy-Memory ★<strong>1,919</strong>（+20）· Hyra-results ★<strong>184</strong> · dsh-superagent-prototype ★<strong>13,082</strong>（Daily 11-01 为 2,293；无新提交）</div>
+<h2 class="section-title">今日一句话判断</h2>
+<section class="card">
+<div class="lede">
+</div>
+<p><strong>Anthropic 公开 Message Threads 服务端会话缓存公测（短闲置过期、非 ZDR、多云托管可用），OpenAI 工程博客披露 Codex 规模 Git 后端 Pando（约 10 周用 Codex 建成、推上游），腾讯混元 Hyra 2.0 AutoResearch 官宣并开源结果仓——同窗支付宝 AHA 获乌镇场景奖、OpenAI LifeVal 个人助理基准上线、Northflank 事故升 Monitoring 并披露 CVE-2026-98432。</strong> desktop_shipping=0。对你两条主线：<strong>长程 Agent 会话状态（Threads 服务端缓存 vs Super-agent/Hyra 的持久队列与 Review）与工程基础设施（Pando 级并发 Git / PaaS 密钥面）同时加压；AHA 奖项是 Agent 互联产业认可而非新协议 GA。</strong></p>
+</section>
+<h2 class="section-title">专栏一｜新闻</h2>
+<section class="card">
+<p>本栏结构：</p>
+<ul>
+<li>国际头条：Anthropic Message Threads 公测（API / AWS / Foundry / Google Cloud Anthropic managed）</li>
+<li>国际头条：OpenAI Pando — Scaling Git at OpenAI（Codex 规模并发推送后端）</li>
+<li>国内头条：腾讯混元 Hyra 2.0 AutoResearch（watchlist 181 吸收；非 Desktop）</li>
+<li>国内中栏：支付宝 AHA 获乌镇「新耀」场景奖（A2A+MCP+A2UI；产品已于 8 月上线）</li>
+<li>国际中栏：OpenAI LifeVal 日常个人助理基准</li>
+<li>国际 UPDATE：Northflank 178 → Monitoring + CVE-2026-98432（仍非 RESOLVED；旁注 Trigger.dev 11-01 子集 org env）</li>
+<li>国内短讯：CodeBuddy Code <strong>2.179.3</strong>（托盘/企业 preReadDetection/MCP OAuth 修复）</li>
+<li><strong>不升格</strong>：MiniMax CDN 仍 3.1.10；DeepSeek Super-agent 无新提交（星标续涨见开源雷达）；OpenAI Grid Protectors / Anthropic Residency / MsftSecIntel CVE 浓度分析 → near-miss；177 Anthropic 仍无独立声明（本报未复核 VS Marketplace 滞后）</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+<h3>1. Anthropic Message Threads 公测：服务端短时会话缓存，加速长程 Agent 请求</h3>
+<p class="badges">强A · NEW · 国际 · B/C/D · Agent 会话 / TTFT · watchlist 182 · @ClaudeDevs 2026-11-02 19:06:08Z · articles Date Nov 2 · <strong>非 Desktop shipping</strong></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/ClaudeDevs">@ClaudeDevs</a> <strong>2026-11-02 19:06:08Z</strong> + <a target="_blank" rel="noopener" href="https://claude.com/resources/articles/message-threads">claude.com/resources/articles/message-threads</a> + <a target="_blank" rel="noopener" href="https://platform.claude.com/docs/en/build-with-claude/message-threads">platform docs</a>：Message Threads 进入 <strong>public beta</strong>；beta header <code>message-threads-2026-08-12</code>。</li>
+<li>机制：服务端维护<strong>短生命周期会话缓存</strong>；客户端可只发新消息并带 <code>previous_message_id</code>，避免每次重传整段历史。闲置约 <strong>5 分钟过期</strong>，删除窗口约 <strong>≤1 小时</strong>。官方明确：<strong>NOT ZDR</strong>（不满足 Zero Data Retention）。</li>
+<li>可用面：Claude API + AWS + Microsoft Foundry + Google Cloud Anthropic managed。文称 Claude Code <strong>多数场景默认开启</strong>；对 <strong>500k–1M token</strong> 量级请求，宣称中位 TTFT 约 <strong>−35%</strong>；<strong>token 用量不变</strong>（服务端仍完整读取上下文）。</li>
+<li>Anthropic <code>/news</code> 当日「Latest news」日期占位不等于新稿；本条以 articles + @ClaudeDevs + platform docs 互证。</li>
+</ul>
+<p><img alt="图 1" src="../assets/2026-11-03/claude-threads-og.png" loading="lazy" /></p>
+<p class="caption">图 1 · Message Threads 文章 OG · 来源：claude.com/resources/articles/message-threads</p>
+<p><img alt="图 2" src="../assets/2026-11-03/claude-threads-preview.jpg" loading="lazy" /></p>
+<p class="caption">图 2 · @ClaudeDevs 帖视频缩略图 · 来源：X / ClaudeDevs</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。把「长上下文重复上传」从客户端工程债变成平台原语——对 Cloud Agent / 多轮 Coding Agent 的首 token 延迟与带宽直接相关。</li>
+<li>约束必须写进选型：<strong>非 ZDR、短闲置即失效</strong> → 不能当持久 Memory；与 DeepSeek Super-agent「持久状态」叙事互补而非替代。</li>
+</ul>
+<p><strong>未来影响</strong></p>
+<ul>
+<li>厂商竞争点从「更大 context 窗」外溢到「会话缓存 / 增量消息协议」；合规团队会追问缓存驻留与租户隔离。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li><code>previous_message_id</code> 类续话句柄可映射为跨请求委托凭证的弱形态；但过期与非 ZDR 限制其作为身份/审计锚点的资格。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li>Harness 可评估：何时走 Threads 减 TTFT、何时必须本地全量重放以满足审计/ZDR；勿默认「开了 Threads = 有了 Memory」。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ul>
+<li>读 articles + docs；在沙箱对 500k+ 会话测 TTFT 与失败重试（过期后须全量重发）。</li>
+<li>合规清单显式标注 <strong>非 ZDR</strong>；企业默认策略与 ZDR 租户分流。</li>
+<li>对照自研是否已有等价的服务端 conversation cache / message cursor。</li>
+</ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://claude.com/resources/articles/message-threads">articles/message-threads</a> · <a target="_blank" rel="noopener" href="https://platform.claude.com/docs/en/build-with-claude/message-threads">platform docs</a> · @ClaudeDevs 2026-11-02 19:06:08Z · platform release notes Nov 2</p>
+<h3>2. OpenAI Pando：面向 Codex 规模并发推送的 Git 兼容后端</h3>
+<p class="badges">强A · NEW · 国际 · C/B/H · 工程基础设施 / 源码控制 · watchlist 183 · openai.com Engineering · RSS pubDate Mon 02 Nov 2026 15:30:00 GMT</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/scaling-git-at-openai">openai.com/index/scaling-git-at-openai</a>（Engineering；RSS <strong>pubDate 15:30:00 GMT</strong>）：介绍内部 Git 兼容后端 <strong>Pando</strong>，服务 Codex 规模<strong>高并发 push</strong>；叙述中位 push 延迟约 <strong>5× / ~80%</strong> 改善量级；Git 数据量级约 <strong>PB/日</strong>；强调因果一致性、<code>packfile-uri</code> 等路径；称约用 Codex 在 <strong>~10 周</strong>建成，并<strong>向上游 Git 贡献</strong>。</li>
+<li>本条是<strong>工程基础设施</strong>披露，不是新模型、也不是 Desktop/Work Agent 客户端发船。</li>
+</ul>
+<p><img alt="图 3" src="../assets/2026-11-03/pando-og.png" loading="lazy" /></p>
+<p class="caption">图 3 · Scaling Git at OpenAI 文 OG · 来源：openai.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。Agent 舰队写代码的瓶颈常在「仓库并发与对象存储」而非模型本身；OpenAI 把内部解法公开到可对照的架构叙事，对自建 Cloud Agent Runtime / monorepo 很有参照价值。</li>
+<li>「用 Codex 建 Pando」是元叙事，勿外推为「人人 10 周可复刻」——缺独立基准与开源仓。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：多 Agent 并行改同一仓时，发现/委托层之外还需要<strong>源控因果一致</strong>；否则互联编排会在 merge 冲突与损坏 pack 上崩。</p>
+<p><strong>对 Work·Agent 引擎</strong>：评估 monorepo push 队列、pack 协商与对象去重是否成为 fleet 吞吐上限；关注上游 Git 贡献落点。</p>
+<p><strong>建议动作</strong>：通读工程文因果一致性与 packfile-uri 段；对照自研 Git 网关/镜像是否有并发写热点。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://openai.com/index/scaling-git-at-openai">Scaling Git at OpenAI</a> · OpenAI RSS 2026-11-02 15:30 GMT</p>
+<h3>3. 腾讯混元 Hyra 2.0 AutoResearch：Overall / Mission / Worker + 结果仓开源</h3>
+<p class="badges">强A · NEW · 国内 · B/C/H/A/K · AutoResearch / Harness · watchlist 181 · @TencentHunyuan 2026-11-02 10:14:21Z · <strong>desktop_shipping=0</strong></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://x.com/TencentHunyuan/status/2117198622022619399">@TencentHunyuan 2026-11-02 10:14:21Z</a> + 官页 <a target="_blank" rel="noopener" href="https://hy.tencent.com/research/hyra2">hy.tencent.com/research/hyra2</a>（SPA）与 hyra 系列页：发布 <strong>Hyra 2.0 AutoResearch</strong>。架构叙述含 <strong>Overall / Mission / Worker</strong>、持久队列、<strong>Research Board</strong>、独立 <strong>Review Worker</strong>、Books 知识沉淀与 <strong>skill 蒸馏</strong>；强调「造工具」而非只刷题。</li>
+<li>GitHub <a target="_blank" rel="noopener" href="https://github.com/Tencent-Hunyuan/Hyra-results"><code>Tencent-Hunyuan/Hyra-results</code></a>：截稿约 ★<strong>184</strong>；<strong>2026-11-02 推送</strong>（约 14:19Z 一带）含 HyInv / HyPLM-Flash / HyFF 与数学等结果叙述（权重/代码以仓内为准）。</li>
+<li>国内媒体：IT之家 <a target="_blank" rel="noopener" href="https://www.ithome.com/1/021/266.htm">ithome.com/1/021/266.htm</a>（约 <strong>21:08 CST</strong>）及同花顺/一财/凤凰网等转述。</li>
+<li><strong>不是</strong> Work Desktop / Coding Desktop 新客户端发船；属科研 AutoResearch 线。快讯 11-02 19:21 已标 near-miss → <strong>本日报全文吸收</strong>。</li>
+</ul>
+<p><img alt="图 4" src="../assets/2026-11-03/hyra-x-1.jpg" loading="lazy" /></p>
+<p class="caption">图 4 · 混元官方 X 配图 1 · 来源：@TencentHunyuan</p>
+<p><img alt="图 5" src="../assets/2026-11-03/hyra-x-2.jpg" loading="lazy" /></p>
+<p class="caption">图 5 · 混元官方 X 配图 2 · 来源：@TencentHunyuan</p>
+<p><img alt="图 6" src="../assets/2026-11-03/hyra-ithome-1.png" loading="lazy" /></p>
+<p class="caption">图 6 · IT之家原文配图 1 · 来源：ithome.com</p>
+<p><img alt="图 7" src="../assets/2026-11-03/hyra-ithome-2.png" loading="lazy" /></p>
+<p class="caption">图 7 · IT之家原文配图 2 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。与 DeepSeek Super-agent（180）同属「多角色 + 持久队列 + 独立评审」公开模块图，但场景偏科研闭环与工具生成；对 Agent Internet 的 Mission/Worker 分层与 Review 闸门可对照。</li>
+<li>官页 SPA 正文稳定性与「是否另有开源 harness 仓」仍观察中；结果仓 ≠ 完整可复现研究操作系统。</li>
+</ul>
+<p><strong>对智能体互联网</strong>：Overall 调度 + Mission 分解 + Worker 执行 + Review 独立面，可映射为跨 Agent 委托与验收协议草图。</p>
+<p><strong>对 Work·Agent 引擎</strong>：Research Board / Books / skill 蒸馏对「长期知识沉淀」产品有直接借鉴；勿与 Desktop GA 混淆。</p>
+<p><strong>建议动作</strong></p>
+<ul>
+<li>对照 180：Router–Worker–Watchdog vs Overall–Mission–Worker–Review。</li>
+<li>抽读 Hyra-results README 与权重许可；评估是否值得做科研 Agent 对照实验。</li>
+<li>盯官页是否补稳定非 SPA 文档与独立 harness 开源。</li>
+</ul>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://x.com/TencentHunyuan/status/2117198622022619399">X 帖</a> · <a target="_blank" rel="noopener" href="https://hy.tencent.com/research/hyra2">hyra2</a> · <a target="_blank" rel="noopener" href="https://github.com/Tencent-Hunyuan/Hyra-results">Hyra-results</a> · <a target="_blank" rel="noopener" href="https://www.ithome.com/1/021/266.htm">IT之家</a> · 快讯 <code>.scan-2026-11-02-1921.md</code></p>
+<h3>4. 支付宝 AHA 获乌镇「新耀」场景奖：A2A + MCP + A2UI，账号锚点跨端协同</h3>
+<p class="badges">A−/B+ · NEW/UPDATE · 国内 · E/F · Agent 互联 · 产品 2026-08 已上线 · 奖项 ≠ 新协议 GA</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>IT之家 <a target="_blank" rel="noopener" href="https://www.ithome.com/1/021/218.htm">ithome.com/1/021/218.htm</a>（<strong>2026-11-02 17:57 CST</strong>）：支付宝 <strong>AHA（Agent Hub Access）</strong> 获乌镇世界互联网大会「新耀」场景奖。叙述要点：协议栈 <strong>A2A + MCP + A2UI</strong>；以<strong>支付宝账号</strong>为锚；跨端协同；参编《人工智能智能体互联》国标指导性技术文件。</li>
+<li>产品本身据报道 <strong>2026 年 8 月</strong>已上线——本条主事件是<strong>产业奖项/认可</strong>，不是新协议突然 GA。</li>
+</ul>
+<p><img alt="图 8" src="../assets/2026-11-03/aha-ithome-1.jpeg" loading="lazy" /></p>
+<p class="caption">图 8 · IT之家 AHA 配图 1 · 来源：ithome.com</p>
+<p><img alt="图 9" src="../assets/2026-11-03/aha-ithome-2.png" loading="lazy" /></p>
+<p class="caption">图 9 · IT之家 AHA 配图 2 · 来源：ithome.com</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A−/B+</strong>。对「智能体互联网」主线有产业信号价值（账号锚 + 多协议栈 + 国标参编），但须压实：<strong>奖项 ≠ 互操作已统一</strong>；公开规格深度仍依赖后续一手文档。</li>
+</ul>
+<p><strong>建议动作</strong>：把 AHA 标为国内 Agent Hub 对照样本；追官方协议说明与 A2UI 公开面；勿写成「国标已强制落地」。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://www.ithome.com/1/021/218.htm">IT之家</a></p>
+<h3>5. OpenAI LifeVal：日常个人助理基准（ATUS/MTUS + 问卷）</h3>
+<p class="badges">B+/A− · NEW · 国际 · K/C · 评测 · watchlist 184 · openai.com · @OpenAI 17:27:26Z · RSS pubDate 09:00 GMT</p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://openai.com/index/lifeval">openai.com/index/lifeval</a>（RSS <strong>09:00 GMT</strong>）+ <a target="_blank" rel="noopener" href="https://x.com/OpenAI">@OpenAI 17:27:26Z</a>：发布 <strong>LifeVal</strong>——面向日常个人助理场景的基准，数据来自 ATUS/MTUS 时间使用调查 + <strong>3995</strong> 人问卷；覆盖 browser / computer use / connectors 等。</li>
+<li>官方叙述含自报样例高分区间（约 <strong>90–100%</strong> 量级表述，以原文为准）。第三方笔记称 GPT-6 Astra 均奖励约 <strong>80.6%</strong> vs GPT-5.2 <strong>49.3%</strong> 等——<strong>任务未完整公开到可独立复跑</strong> → 本报将第三方分数标为<strong>判断慎用</strong>，不作硬基准入库。</li>
+</ul>
+<p><img alt="图 10" src="../assets/2026-11-03/lifeval-og.png" loading="lazy" /></p>
+<p class="caption">图 10 · LifeVal 文 OG · 来源：openai.com/index/lifeval</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>B+/A−</strong>。个人助理 / Computer Use 评测缺口真实存在；有官方基准总好过只有演示。但在任务与评分脚本未开放前，外推「Astra 碾压」需克制。</li>
+</ul>
+<p><strong>建议动作</strong>：读官方方法学；观察是否开源任务包；内部 Computer Use 回归可预留 LifeVal 对齐位。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://openai.com/index/lifeval">LifeVal</a> · @OpenAI 2026-11-02 17:27:26Z</p>
+<h3>6. Northflank：Identified → Monitoring；CVE-2026-98432；仍促全量轮换</h3>
+<p class="badges">A− · UPDATE · 国际 · G/C/F · PaaS 凭证 · watchlist 178 · Monitoring @ 2026-11-02 11:09 UTC · <strong>仍非 RESOLVED</strong></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://status.northflank.com/">status.northflank.com</a>：<strong>2026-11-02 11:09 UTC</strong> 步进至 <strong>Monitoring</strong>（快讯 19:21 near-miss → 本报吸收）。官方叙述要点：攻击向量约在首警 <strong>1 小时内遏制</strong>；<strong>独立取证</strong>协同中；称 running workloads / 数据未见被访问；证据指向控制面 secrets；已在 fleet（含 BYOC）打补丁 <strong>CVE-2026-98432</strong>；仍促轮换 AI/云/支付等密钥；拟确认后发 RCA；<strong>页面仍非 RESOLVED</strong>。</li>
+<li>旁注（非同事件、合看 PaaS 线）：<a target="_blank" rel="noopener" href="https://trigger.dev/blog/security-incident-nov-2026">Trigger.dev security incident</a>（文标 Nov 1；HN 热度延至 Nov 2）称子集 org 环境变量遭未授权访问——作 continuum 对照，<strong>不另立 S 事件</strong>。</li>
+</ul>
+<p><strong>我的判断</strong>：<strong>A− UPDATE</strong>——从 Identified 到 Monitoring 是实质进展，但缺完整 RCA 与 RESOLVED；Cloud Agent 密钥轮换纪律不变。</p>
+<p><strong>建议动作</strong>：仍用 Northflank 者按状态页完成轮换与账单核对；关注 CVE-2026-98432 技术细节与 NVD；PaaS env「假定已解密」继续写入演练。</p>
+<p><strong>来源</strong>：<a target="_blank" rel="noopener" href="https://status.northflank.com/">Northflank status</a> · 快讯 <code>.scan-2026-11-02-1921.md</code> · <a target="_blank" rel="noopener" href="https://trigger.dev/blog/security-incident-nov-2026">Trigger.dev 事故博文</a>（旁注）</p>
+<h3>7. 短讯：腾讯 CodeBuddy Code <strong>2.179.3</strong>（托盘 / 企业预读检测 / MCP OAuth）</h3>
+<p class="badges">B+/A− · UPDATE · 国内 · C/G · Coding Agent CLI（changelog 含 Desktop 行为）· npm 2026-11-02T17:30:33Z · changelog 日期 2026-11-03 · <strong>非 desktop_shipping</strong></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@tencent-ai/codebuddy-code"><code>@tencent-ai/codebuddy-code@2.179.3</code></a>（相对 11-01 的 2.179.1 / 快讯中途 2.179.2）。CHANGELOG 要点：Win/Linux <strong>标题栏菜单 + 托盘</strong>，关闭默认最小化到托盘；企业 <strong>preReadDetection</strong>（读文件前）；sandbox 跟随企业黑名单/网络/备份策略；修复 MCP OAuth 仍显示 needsAuth、harness 业务码、已退出会话 hover 拉起进程、频道任务板依赖卡住、<code>--serve</code> 进程标题等。</li>
+</ul>
+<p><strong>我的判断</strong>：<strong>B+/A−</strong>。企业策略与 MCP OAuth 修复对 Work 引擎有用；托盘是增量桌面行为，<strong>不是</strong>新 Desktop 客户端 GA → <strong>desktop_shipping=0</strong>。</p>
+<p><strong>来源</strong>：npm · 包内 CHANGELOG.md</p>
+<h3>8. 不升格 / near-miss 脚注</h3>
+<ul>
+<li>MiniMax CDN 仍 <strong>3.1.10</strong>（11-01 已收；changelog Desktop 已追记）→ <strong>不升格 shipping</strong>。</li>
+<li>DeepSeek <code>dsh-superagent-prototype</code>：<strong>无新提交</strong>（仍 10-31 12:05Z）；星标见开源雷达 → <strong>不升格新闻</strong>。</li>
+<li>OpenAI Grid Protectors（RSS 15:00Z，电网弹性）：非模型/Desktop。</li>
+<li>Anthropic Residency（人事帖）：默认不入栏。</li>
+<li>MsftSecIntel CVE 利用浓度分析：非 177 随访 IR。</li>
+<li>177：Anthropic <strong>仍无</strong>独立事故声明（本报未另复核 VS Marketplace 版本滞后）。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏二｜话题热议</h2>
+<section class="card">
+<h3>T1. Hyra 2.0 × DeepSeek Super-agent：国内「多角色科研/持久 Agent」同周对照</h3>
+<p class="badges">国内为主 · B/C/H · 强相关</p>
+<ul>
+<li><strong>在说什么</strong>：混元官宣 Hyra 2.0 + 结果仓；与 10-31/11-01 DeepSeek Super-agent 模块图形成同周对照（调度分层、评审、知识沉淀）。</li>
+<li><strong>表述纪律</strong>：两者皆<strong>非 Desktop 发船</strong>；Hyra 偏 AutoResearch，Super-agent 偏 Harness 理念+研究原型。</li>
+</ul>
+<h3>T2. HN：Weight-space programming（Astra 读写权重改进 Qwen）</h3>
+<p class="badges">国际 · A/K · 可选热议 · 1734 pts</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://rikiyat.github.io/blog/weight-space-programming/">rikiyat.github.io/blog/weight-space-programming</a> · HN Algolia 核验约 <strong>1734</strong> 分（story created ≈ 2026-11-02 18:21Z）。讨论「在权重空间编程」类研究叙事；<strong>非</strong>厂商发船。作话题信号，不升格新闻 S/A。</li>
+</ul>
+<h3>T3. PaaS 密钥面：Northflank Monitoring + Trigger.dev 子集 env</h3>
+<p class="badges">国际 · G/C</p>
+<ul>
+<li>状态页 Monitoring 步进与 Trigger.dev Nov 事故博文同窗热议；过滤成「轮换 + 假定解密」操作纪律，避免标题党「全网沦陷」。</li>
+</ul>
+</section>
+<h2 class="section-title">专栏三｜开源雷达</h2>
+<section class="card">
+<h3>头条 continuum：<code>dsh-superagent-prototype</code> 星标狂飙、无新提交</h3>
+<p class="badges">国内 · B/C/F · watchlist 180 · <strong>非新闻升格</strong></p>
+<ul>
+<li>pushed_at 仍 <strong>2026-10-31T12:05:51Z</strong>；截稿 ★<strong>13,082</strong>（Daily 11-01 为 <strong>2,293</strong>）。README 约束不变：research prototype，非正式产品。热度记雷达，不重复当发船新闻。</li>
+</ul>
+<h3>版本基线（必收）</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Pin</th><th>本轮</th><th>vs Daily 11-01</th><th>备注</th></tr></thead><tbody>
+<tr><td><code>@tencent-ai/codebuddy-code</code></td><td><strong>2.179.3</strong></td><td><strong>↑</strong>（经 2.179.2）</td><td>npm 11-02 17:30Z</td></tr>
+<tr><td><code>@anthropic-ai/claude-code</code></td><td><strong>2.1.316</strong></td><td>持平</td><td>npm+Open VSX</td></tr>
+<tr><td><code>@openai/codex</code></td><td>0.166.0</td><td>持平</td><td></td></tr>
+<tr><td><code>@google/gemini-cli</code></td><td>0.66.0</td><td>持平</td><td>nightly≠latest</td></tr>
+<tr><td><code>@moonshot-ai/kimi-code</code></td><td>2.4.1</td><td>持平</td><td></td></tr>
+<tr><td><code>@minimax-ai/code</code></td><td>0.7.4</td><td>持平</td><td></td></tr>
+<tr><td><code>@modelcontextprotocol/inspector</code></td><td>2.13.0</td><td>持平</td><td></td></tr>
+<tr><td><code>opencode-ai</code></td><td>1.19.5</td><td>持平</td><td></td></tr>
+<tr><td><code>@deepseek-ai/dsh</code></td><td>0.2.1-rc.5</td><td>持平</td><td></td></tr>
+<tr><td>MiniMax CDN Win/Mac</td><td><strong>3.1.10</strong></td><td>相对 11-01 CDN 已到</td><td><strong>不升格 shipping</strong></td></tr>
+<tr><td><code>Tencent-Hunyuan/Hyra-results</code></td><td>★184</td><td><strong>NEW 结果仓</strong></td><td>见新闻 3</td></tr>
+<tr><td><code>deepseek-ai/dsh-superagent-prototype</code></td><td>★13,082</td><td><strong>+10,789 vs 11-01</strong></td><td>无新提交</td></tr>
+</tbody></table></div>
+<p><strong>desktop_work_agent_shipping = 0</strong>（无一线新 Desktop GA；CodeBuddy 托盘=增量；Hyra/Pando/Threads/LifeVal/AHA 奖 ≠ Desktop shipping）。</p>
+<h3>Continuum 星标 Δ（vs Daily 11-01 快照）</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>项目</th><th>星标（约今日）</th><th>Δ</th><th>看点</th></tr></thead><tbody>
+<tr><td>deepseek-ai/deepseek-harness</td><td>269,577</td><td><strong>+2,153</strong></td><td></td></tr>
+<tr><td>anomalyco/opencode</td><td>224,108</td><td><strong>+504</strong></td><td></td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td>25,026</td><td><strong>+373</strong></td><td></td></tr>
+<tr><td>NVIDIA/OpenShell</td><td>20,977</td><td>+130</td><td></td></tr>
+<tr><td>opensandbox-group/OpenSandbox</td><td>16,399</td><td>+54</td><td></td></tr>
+<tr><td>humanlayer/humanlayer</td><td>12,766</td><td>+33</td><td></td></tr>
+<tr><td>modelcontextprotocol/servers</td><td>91,751</td><td>+31</td><td></td></tr>
+<tr><td>Tencent-Hunyuan/Hy-Memory</td><td>1,919</td><td>+20</td><td></td></tr>
+<tr><td>microsoft/mxc</td><td>3,079</td><td>+15</td><td></td></tr>
+<tr><td>Tencent-Hunyuan/Hyra-results</td><td>184</td><td><strong>NEW</strong></td><td>AutoResearch artifacts</td></tr>
+<tr><td>deepseek-ai/dsh-superagent-prototype</td><td>13,082</td><td><strong>+10,789</strong></td><td>无新提交</td></tr>
+</tbody></table></div>
+</section>
+<h2 class="section-title">重点事件新进展</h2>
+<section class="card">
+<h3>181 · 腾讯混元 Hyra 2.0（快讯 near-miss → 日报吸收）</h3>
+<ul>
+<li><strong>此前</strong>：快讯 11-02 19:21 IDENTIFIED / 待 Daily。</li>
+<li><strong>今日新增</strong>：日报全文升格 NEW；结果仓 ★184；媒体 IT之家等。</li>
+<li><strong>判断是否发生变化</strong>：<strong>是</strong>——从 near-miss 落地为国内强A AutoResearch 公开模块图。</li>
+</ul>
+<h3>178 · Northflank</h3>
+<ul>
+<li><strong>此前</strong>：Daily 11-01 仍 Identified；轮换面扩至 DB/对象/消息。</li>
+<li><strong>今日新增</strong>：<strong>Monitoring@11:09Z</strong>；CVE-2026-98432；独立取证；仍促轮换；<strong>未 RESOLVED</strong>。</li>
+<li><strong>判断是否发生变化</strong>：<strong>缓解与归因叙述升级，结案未完成</strong>。</li>
+</ul>
+<h3>180 · DeepSeek Super-agent prototype</h3>
+<ul>
+<li><strong>此前</strong>：Daily 11-01 NEW ★2,293。</li>
+<li><strong>今日新增</strong>：无新提交；★≈13,082。</li>
+<li><strong>判断是否发生变化</strong>：<strong>热度 continuum，产品化判断未变</strong>。</li>
+</ul>
+<h3>177 · Claude Code / Cursor Marketplace</h3>
+<ul>
+<li><strong>今日新增</strong>：本窗无 Anthropic 独立声明核验到新稿；CLI 仍 2.1.316。</li>
+<li><strong>判断是否发生变化</strong>：<strong>否</strong>（观察项保留）。</li>
+</ul>
+<h3>MiniMax Desktop</h3>
+<ul>
+<li>CDN/changelog <strong>3.1.10</strong> 相对已收版本无新发船叙事 → <strong>仍不升格</strong>。</li>
+</ul>
+</section>
+<h2 class="section-title">今天正在形成的趋势</h2>
+<section class="card">
+<ul>
+<li><strong>长程 Agent 的「状态」分裂为三路</strong>：平台短时会话缓存（Threads）、科研/Harness 持久队列（Hyra / Super-agent）、评测侧日常助理基准（LifeVal）——选型须先问清过期、ZDR 与验收闸门。</li>
+<li><strong>Agent 舰队倒逼源控基础设施</strong>（Pando）——并发 push / 因果一致成为一级工程议题。</li>
+<li><strong>国内 AutoResearch 与 Harness 理念同周公开模块化</strong>——可对照而非可混为一谈。</li>
+<li><strong>Agent 互联进入「奖项与国标文件」阶段</strong>（AHA）——信号强于可互操作证明。</li>
+<li><strong>PaaS 控制面密钥事故进入 Monitoring/补丁 CVE 阶段</strong>——轮换纪律产品化。</li>
+</ul>
+</section>
+<h2 class="section-title">对智能体互联网最值得吸收的东西</h2>
+<section class="card">
+<ul>
+<li><strong>Mission/Worker + 独立 Review</strong>（Hyra）与 <strong>Router/Worker + Watchdog</strong>（Super-agent）对照——委托、执行、验收三角。</li>
+<li><strong>账号锚点 Hub（AHA）+ A2A/MCP/A2UI 叙事</strong>——国内互联落地样本，仍待公开规格深度。</li>
+<li><strong>会话续话句柄（previous_message_id）的能力与极限</strong>（非 ZDR、短过期）——勿误当跨域身份凭证。</li>
+</ul>
+</section>
+<h2 class="section-title">对 Work / Agent 引擎最值得吸收的东西</h2>
+<section class="card">
+<ul>
+<li><strong>Message Threads：TTFT vs 合规（ZDR）分流策略</strong>——长上下文 Agent Loop 的平台能力清单项。</li>
+<li><strong>Pando 级 Git 并发叙事</strong>——Cloud Agent / monorepo 写放大时的隐藏上限。</li>
+<li><strong>CodeBuddy 企业 preReadDetection + sandbox 策略跟随 + MCP OAuth 修复</strong>——企业 Harness changelog 可抄段。</li>
+</ul>
+</section>
+<h2 class="section-title">值得继续跟踪</h2>
+<section class="card">
+<ul>
+<li><strong>事件：182 Message Threads（新建）</strong> · 观察：GA；ZDR 选项；过期策略变更；他厂等价 API。</li>
+<li><strong>事件：183 Pando（新建）</strong> · 观察：上游 Git 贡献合并；是否开源/对外服务。</li>
+<li><strong>事件：181 Hyra 2.0</strong> · 观察：官页稳定文档；独立 harness 仓；与 180 对照实验。</li>
+<li><strong>事件：184 LifeVal（新建）</strong> · 观察：任务是否开源可复跑；他厂跟进。</li>
+<li><strong>事件：178 Northflank</strong> · 观察：RCA / RESOLVED；CVE-2026-98432 NVD。</li>
+<li><strong>事件：180 Super-agent prototype</strong> · 观察：新提交/产品化；星标热度冷却后是否有实质更新。</li>
+<li><strong>事件：177</strong> · 观察：Anthropic 独立声明；VS Marketplace 版本同步。</li>
+<li><strong>事件：AHA</strong> · 观察：官方协议文档与 A2UI 公开面。</li>
+<li><strong>到期：Kimi K3.1 Pro 权重（129）→ Nov 4</strong>；<strong>GitHub Fusion 折扣 → Nov 30</strong>；<strong>Foundry Copilot harness 计费 → Dec 1</strong>。</li>
+</ul>
+</section>
+<h2 class="section-title">未来信号</h2>
+<section class="card">
+<ul>
+<li><strong>「短时服务端 Threads」与「长时 Research/Harness 队列」可能组合成默认双层状态机</strong>：热路径缓存降 TTFT，冷路径持久队列保任务；中间的一致性与审计仍是空白。</li>
+<li><strong>AutoResearch 造工具</strong>若与 Coding Agent Skill 蒸馏打通，可能出现「科研 Worker 产物 → 生产 Skill」的供应链，需预留评审与 provenance。</li>
+</ul>
+</section>
+<h2 class="section-title">价格 / 订阅雷达</h2>
+<section class="card">
+<ul>
+<li>DeepSeek Search/Fetch 按次计费：自 <strong>11-01 00:00 CST</strong> 已生效（见 Daily 11-01）；本窗<strong>无新价目变更核验</strong>。</li>
+<li>Rosalind / Message Threads：Threads 为延迟优化、官方称 <strong>token 用量不变</strong>；未见单独 Threads 加价条目（以账单与 docs 为准）。</li>
+<li>Claude Max→Ultra 等：本窗无新官方变更核验。</li>
+</ul>
+</section>
+<h2 class="section-title">信源与方法（vendor-check 摘要）</h2>
+<section class="card">
+<ul>
+<li><strong>P0 命中</strong>：anthropic / ClaudeDevs（Message Threads）、openai（Pando + LifeVal；Grid Protectors near-miss）、tencent-hunyuan（Hyra 2.0 + CodeBuddy 2.179.3）、cloud-hosting（Northflank Monitoring）、国内媒体 IT之家（AHA / Hyra）。</li>
+<li><strong>P0/P1 无新 Desktop shipping</strong>：minimax（CDN 3.1.10 不升格）、cursor、mistral（HF 有动未升格发船）、moonshot、stepfun、deepseek（无新提交）、meta、xai 等。</li>
+<li><strong>方法</strong>：承接 <code>flashes/.scan-2026-11-03-daily-intl.md</code> + 11-02 多轮快讯 SILENT 日志；官方站/RSS/articles/docs + 官方 X + IT之家交叉 + npm CHANGELOG + <code>gh</code> 星标；视频默认不采集；配图仅原文/官方/媒体真实附图（本报未用 Northflank 通用状态 OG 凑图）。Daily 11-02 缺文件 → 强制吸收 Hyra/Northflank 等 near-miss。</li>
+</ul>
+</section>
+
+
+</article></main>
+</body>
+</html>
