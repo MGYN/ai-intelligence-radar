@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-03T08:20:00+08:00",
+  "updatedAt": "2026-11-04T08:25:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-04",
+      "date": "2026-11-04",
+      "title": "AI Intelligence Daily · 2026-11-04",
+      "summary": "Anthropic FlashProve 可证明推理（漏收补记）+ Claude EMA 组织级 MCP auto-connect；Postman 静默装 Agent 插件上 HN；智谱 ZCode Desktop 3.17.2 吸收（desktop_shipping=1）；OpenAI 物理工程 Astra/Codex；agent-desktop 1.1.0；HyCell；Kimi K3.1 Pro 截稿未兑现",
+      "href": "reports/2026-11-04.html"
+    },
     {
       "id": "2026-11-03",
       "date": "2026-11-03",
