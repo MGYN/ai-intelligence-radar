@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-11-06（周五）</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+<h1>AI Intelligence Daily · 2026-11-06（周五）</h1>
+<p><code>统计窗口：2026-11-05 08:00 → 2026-11-06 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · <strong>昨日 08:00 Daily failed 未出站 → 本报全文吸收 11-05 全天快讯强A（192–198）并补漏 OpenAI GPT‑6 Cyber</strong> · 快讯 PUSH：09:20 五条 / 11:20 agent-desktop 1.2.0 / 21:20 Kimi Desktop 1.3.1 · SILENT：13:20～19:20、23:20 · <strong>一线 Desktop/Work Agent 新上线 = 3（CodeBuddy 2.180.0 · agent-desktop 1.2.0 · Kimi Desktop 1.3.1）</strong> · npm：codex <strong>0.166.0</strong> / claude-code <strong>2.1.318</strong> / codebuddy <strong>2.180.0</strong> / kimi-code <strong>2.5.1</strong> / minimax-code <strong>0.7.6</strong>↑（CLI；Desktop 仍 3.1.10）/ dsh <strong>0.2.2-rc.1</strong>（RC）/ agent-desktop <strong>1.2.0</strong> / gemini-cli <strong>0.67.0</strong> · Desktop：ZCode <strong>3.17.2</strong> · MiniMax CDN <strong>3.1.10</strong> · Kimi Desktop <strong>1.3.1</strong> · CodeBuddy <strong>2.180.0</strong> · agent-desktop ★<strong>16,807</strong> · dsh-superagent-prototype ★<strong>19,475</strong> · DeepInfer ★<strong>25,467</strong> · FlashProve ★<strong>908</strong> · Hyra-results ★<strong>211</strong> · opencode ★<strong>224,792</strong> · servers ★<strong>91,815</strong></code></p>
+<h2>今日一句话判断</h2>
+<p><strong>OpenAI 把昨夜已报的「948 Linux LPE 自主管线」产品化成 GPT‑6 Cyber（Daybreak Red 初开放；快讯全天漏收），同窗叠加 Coding Agent 外围层并购潮（Meta×Conductor、Factory×HumanLayer，并 continuum OpenAI×Pierre）与国内三连发船（K3.1 Pro 权重兑现、CodeBuddy 2.180.0、Kimi Desktop 1.3.1）以及 Vercel Labs agent-desktop 1.2.0 把桌面 CU 一等公民化成 MCP——Postman 静默装插件事件则在窗内官宣「revert + 重设计」后关单。</strong> desktop_shipping=<strong>3</strong>。对你两条主线：<strong>对齐约束下的进攻性安全 Agent + 沙箱纵深</strong>与 <strong>多 Agent 工作区/记忆/MCP 宿主产品化</strong>同时变成选型硬问题；并购潮提醒「外围层 SaaS」随时可被一线厂收编。</p>
+<hr />
+<h2>专栏一｜新闻</h2>
+<p>本栏结构：</p>
+<ul>
+<li>国际头条：OpenAI <strong>GPT‑6 Cyber</strong> 正式推出（漏收补记；对接 194 管线）</li>
+<li>国际头条：Meta 收购 Conductor（多 Agent 并行工作区→MSL；快讯 192）</li>
+<li>国际头条：HumanLayer 并入 Factory（多人协作 Coding Agent；快讯 193）</li>
+<li>国际中栏：OpenAI 自主漏洞发现/利用/补丁管线（948 LPE；快讯 194）</li>
+<li>国内头条：Kimi K3.1 Pro 开放权重兑现（快讯 195）</li>
+<li>国内头条：腾讯 CodeBuddy Code <strong>2.180.0</strong>（<strong>desktop_shipping</strong>；快讯 196）</li>
+<li>国际中栏：Vercel Labs <strong>agent-desktop 1.2.0</strong>（MCP stdio；<strong>desktop_shipping</strong>；快讯 197）</li>
+<li>国内中栏：Kimi Code Desktop <strong>1.3.1</strong>（<strong>desktop_shipping</strong>；快讯 198）</li>
+<li>continuum / UPDATE：Postman #14370 <strong>revert 关单</strong>（188）；OpenAI×Pierre / Kimi Desktop 1.3.0 无再增量</li>
+<li><strong>不升格</strong>：MiniMax Desktop 仍 3.1.10（仅 CLI 0.7.6）；ZCode 仍 3.17.2；Hy4 权重仍 401；dsh 仍 RC；StepCode 0.1.7 无官宣；Instagram Edits Desktop（创作者剪辑器，非 Work Agent）；Community Compact 政策稿；Merge 客户故事</li>
+</ul>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+<h3>1. OpenAI GPT‑6 Cyber：对齐约束下的网络安全专用模型正式推出（漏收补记）</h3>
+<p><code>S/强A · NEW（日报漏收补记） · 国际 · G/A/B/C/F · Cyber Agent / Daybreak · watchlist <strong>199</strong> · 官网标 <strong>November 5, 2026</strong> · RSS pubDate <strong>09:00 GMT</strong> / lastBuild 截稿 <strong>23:52 GMT</strong> · 初开放 Daybreak Red 精选客户 · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://openai.com/index/introducing-gpt-6-cyber">openai.com/index/introducing-gpt-6-cyber</a>（<strong>November 5, 2026</strong>）：正式推出 <strong>GPT‑6 Cyber</strong>——面向安全研究的专用模型，强调「在研究者划定范围内发现并验证可利用漏洞」。</li>
+<li>相对 GPT‑5.6 Cyber：ExploitGym <strong>48.5%</strong> vs <strong>32.1%</strong>（约 +16pp / 相对提升叙述约 51%）；对齐评测 ExploitGym Honeypot：无部署安全提示时越界利用 <strong>99.93%</strong> 避免（5.6 为 94.49%），带提示为 <strong>100%</strong>。</li>
+<li>Preparedness：网络安全能力档升至 <strong>Critical</strong>（5.6 为 High）。RemoteExploitBench：GPT‑6 Astra + Daybreak Blue 拒答 100%；GPT‑6 Cyber 完成约 <strong>95%</strong>。</li>
+<li>实战叙述：衔接已披露的 <strong>948</strong> Linux LPE 与 Firefox <strong>81</strong> 个此前未知高危；客户/伙伴引言含 Firefox、Calif、Cognition、Palo Alto、Cisco、SentinelOne、Perplexity、CodeRabbit 等。</li>
+<li>获取：初经 API 与 Codex 向 <strong>精选 Daybreak Red</strong> 客户开放，将逐步扩至全部 Daybreak Red；同步向全部 Daybreak Red 开放 GPT‑5.6 Cyber；Daybreak Blue（Astra）alpha 扩面。配套：网络专用错位监控、被盗凭据防护（默认 IP allowlist）、PSP、关键基础设施防御者分组等。</li>
+<li><strong>扫描说明</strong>：11-05 多轮快讯 vendor-check 将「cyber」与已推 LPE 文混同或未 diff 新 guid <code>introducing-gpt-6-cyber</code> → <strong>本报漏收补记</strong>。RSS 另有 Community Compact / Merge 客户故事——政策与营销，不升格。</li>
+</ul>
+<p><img alt="图 1" src="../assets/2026-11-06/gpt6-cyber-og.png" /></p>
+<p>图 1 · GPT‑6 Cyber 公告页 OG · 来源：openai.com/index/introducing-gpt-6-cyber</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>S/强A</strong>。把「upcoming cyber model」从研究管线叙事推进到<strong>可申请的产品档位</strong>，并公开 Critical 分类与越界对齐数字——对 Sandbox/Runtime 威胁模型与「进攻性 Agent 如何授权」直接加压。</li>
+<li>仍非全民 API：精选 Daybreak Red + 强监控；不能写成「任意开发者可调 GPT‑6 Cyber」。</li>
+</ul>
+<p><strong>往后看</strong></p>
+<ul>
+<li>Daybreak Red 扩面节奏；system card 细表；与主线 Astra/Sol 的能力分轨是否固化为长期产品矩阵。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li><strong>强相关。</strong> 跨 Agent 调用若触及安全工具，需要<strong>范围授权 + 越界可观测</strong>原语；Critical 档暗示互联网络默认假设「低权限本地 ≠ 安全」。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> (1) Agent Loop 对「结果路径验证」而非只看成功 shell；(2) harness 随更强模型减负（与 194 文消融同向）；(3) 默认沙箱/确认策略对照 Daybreak 建议。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>通读公告 + system card；对照自有 Sandbox（gVisor/Firecracker/容器）与 OT/ICS 拒答策略。</li>
+<li>若在 Daybreak：评估 Red vs Blue 工作流拆分；非客户则跟踪扩面。</li>
+<li>与 watchlist <strong>194</strong> 合并跟踪：管线数字 ↔ 模型发船。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://openai.com/index/introducing-gpt-6-cyber">introducing-gpt-6-cyber</a> · <a href="https://openai.com/news/rss.xml">RSS</a> · <a href="https://openai.com/index/a-thousand-fewer-paths-to-root">a-thousand-fewer-paths-to-root</a></p>
+<hr />
+<h3>2. Meta 收购 Conductor：多 Agent 并行工作区调度台并入 MSL（快讯吸收）</h3>
+<p><code>强A · NEW（日报吸收） · 国际 · B/C/I/E · Agent 编排宿主并购 · watchlist <strong>192</strong> · @charlieholtz <strong>2026-11-04 18:18:29Z</strong>（上海 ≈11-05 02:18）· Cloud <strong>11-13</strong> 只读 / <strong>11-20</strong> 关停 · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://www.conductor.build/announcement">conductor.build/announcement</a>：Conductor joining Meta；团队将与 Nat Friedman、Alexandr Wang 在 <strong>Meta Superintelligence Labs</strong> 做「下一代界面」。</li>
+<li>产品：多 Coding Agent（Claude Code / Codex 等）并行隔离工作区的调度与审阅层——<strong>Agent 编排宿主</strong>，非自研模型。</li>
+<li>时间表：11-04 停新注册；<strong>11-13</strong> Cloud 只读；<strong>11-20</strong> Cloud 关停并开始删云数据；Local 维护至 <strong>early 2027</strong>，提供 Cloud→Local 迁移。TechCrunch 确认收购，金额未披露。</li>
+</ul>
+<p><img alt="图 2" src="../assets/2026-11-06/conductor-og.png" /></p>
+<p>图 2 · Conductor farewell / announcement OG · 来源：conductor.build</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。与 OpenAI×Pierre（Code Storage→Codex）同属「模型厂收购 Agent 外围层」；Conductor 明确是多 Agent 并行工作区，对标 Work/Agent 引擎调度/审阅面。Cloud 两周关停对现网用户有即时迁移成本。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>中。多 Agent 并行与隔离分支审合是 Discovery/委托边界的产品形态参考；并入封闭 lab 后互联标准推进不确定。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 立刻对照：多 Agent 并行工作区 UX、Cloud vs Local、关停迁移窗；评估自建 harness 是否依赖同类编排 SaaS。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>若在用 Conductor Cloud：11-13 前 Transfer to local / Export。</li>
+<li>跟踪 MSL「next interface」与 Muse Code 关系。</li>
+<li>与 Pierre、HumanLayer 并购并表。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://www.conductor.build/announcement">announcement</a> · <a href="https://www.conductor.build/changelog/0.93.0-conductor-is-joining-meta">changelog 0.93.0</a> · <a href="https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/">TechCrunch</a> · <a href="https://x.com/charlieholtz/status/2118045232218743264">@charlieholtz</a></p>
+<hr />
+<h3>3. HumanLayer 并入 Factory：多人协作 Coding Agent，承诺开源（快讯吸收）</h3>
+<p><code>强A · NEW（日报吸收） · 国际 · B/C/E/F · 并购+开源承诺 · watchlist <strong>193</strong> · @dexhorthy <strong>2026-11-04 17:36:53Z</strong> · 博文标 November 4, 2026 · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://www.humanlayer.dev/blog/humanlayer-joins-factory">HumanLayer 博文</a> + <a href="https://factory.com/news/humanlayer">Factory 新闻</a>：joining Factory；联合创始人 Dex & Kyle 加入。</li>
+<li>叙事：企业需要 <strong>lab-neutral</strong> 编排；多玩家规划协作、大规模工程团队不被「单体 Agent」服务好。</li>
+<li>过渡：平台至少再撑 <strong>≥30 天</strong>；导出 / 迁 Factory / <strong>自托管即将开源的 HumanLayer</strong>；付费退近几个月费用；将把 multiplayer tasks、文档/计划协作、live session diff streaming 等搬进 Factory。</li>
+</ul>
+<p><img alt="图 3" src="../assets/2026-11-06/humanlayer-og.jpg" /></p>
+<p>图 3 · HumanLayer 博文 OG · 来源：humanlayer.dev/blog/humanlayer-joins-factory</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。同窗「外围层并购日」第三起（Pierre / Conductor / HumanLayer）；HITL/审批与多玩家 Agent 工程实践对委托/审批/可组合工具有直接启示；开源承诺降低锁定但仍须核验 license 与时间表。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>中～强。lab-neutral + 开源自托管利于跨厂商协作与委托审批产品化。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 对照 multiplayer workstream、plan 协作、session diff 流式审阅；评估 HITL/审批层自建 vs 跟 Factory。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>读开源仓放出后的 license 与自托管路径。</li>
+<li>Factory 功能并表。</li>
+<li>30 天窗内决定导出/迁/自托管。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://www.humanlayer.dev/blog/humanlayer-joins-factory">humanlayer.dev/blog/…</a> · <a href="https://factory.com/news/humanlayer">factory.com/news/humanlayer</a> · <a href="https://x.com/dexhorthy/status/2118034762040246278">@dexhorthy</a></p>
+<hr />
+<h3>4. OpenAI：自主漏洞发现/利用/补丁管线（948 Linux LPE）与「更强模型→更轻编排」（快讯吸收）</h3>
+<p><code>强A · NEW（日报吸收） · 国际 · G/B/C/A · 安全 Agent 管线 · watchlist <strong>194</strong> · 官网 November 4 · @OpenAI <strong>23:13Z</strong>（上海 ≈11-05 07:13）· <strong>非 Desktop shipping</strong> · 与 <strong>199</strong> GPT‑6 Cyber 同弧</code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://openai.com/index/a-thousand-fewer-paths-to-root">A thousand fewer paths to root</a>：用 upcoming cyber model 跑 Scout→Analyst→动态验证→ExploitDev→补丁+人工复核。</li>
+<li>关键数字：候选 2308 → 动态复现 1724 → <strong>948</strong> 可工作 LPE；API 成本约 <strong>$1.21M</strong>（约 $1,279/LPE）；称至少 <strong>10</strong> 种新颖利用技术。</li>
+<li><strong>Harness 启示（文内明确）</strong>：更强模型需要更轻编排；给 GPT‑5.5 Cyber 堆 technique 技能库有增益，到 GPT‑5.6 Cyber 去掉重编排反而更好。</li>
+<li>防御：低权限账号≈高资源对手的 root；强调 Firecracker/gVisor 等纵深隔离。</li>
+</ul>
+<p><img alt="图 4" src="../assets/2026-11-06/openai-lpe-og.png" /></p>
+<p>图 4 · OpenAI 管线公告页 OG · 来源：openai.com/index/a-thousand-fewer-paths-to-root</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。一手官方安全研究 + 多 Agent 安全管线可核验；与今日 GPT‑6 Cyber 产品发船形成「研究→产品」闭环。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 分角色管线、结果路径验证、编排随模型代际减负、默认假设本地低权限≠安全。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>摘录 harness 消融结论进内部 Agent Loop 备忘。</li>
+<li>复盘自有 Sandbox 与「低权限≈root」假设。</li>
+<li>与 <strong>199</strong> 合并跟踪。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://openai.com/index/a-thousand-fewer-paths-to-root">a-thousand-fewer-paths-to-root</a> · <a href="https://x.com/OpenAI/status/2118119451401048497">@OpenAI</a></p>
+<hr />
+<h3>5. 月之暗面兑现 Kimi K3.1 Pro 开放权重（快讯吸收）</h3>
+<p><code>强A · UPDATE（日报吸收 / continuum 129） · 国内 · A/B/I · 开放权重 · watchlist <strong>195</strong> · @Kimi_Moonshot <strong>2026-11-04 16:00:35Z</strong>（上海 ≈11-05 00:00）· HF moonshotai/Kimi-K3.1-Pro · 截稿 likes <strong>916</strong> / downloads <strong>11,658</strong> · lastModified <strong>2026-11-05T07:11:43Z</strong> · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>官方 X 宣布 Releasing the model weights of Kimi K3.1 Pro，链到 HF <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro"><code>moonshotai/Kimi-K3.1-Pro</code></a>。</li>
+<li>HF：image-text-to-text；license_name <strong>kimi-k3.1-pro</strong>（other）；siblings 约 <strong>112</strong>。Daily 11-04 早间仍「by Nov 4 未兑现」→ 本窗兑现。</li>
+</ul>
+<p><img alt="图 5" src="../assets/2026-11-06/kimi-k31-hf-og.jpg" /></p>
+<p>图 5 · HF 模型页卡片 · 来源：huggingface.co/moonshotai/Kimi-K3.1-Pro</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A UPDATE</strong>。明确观察点闭环；许可为厂商自定义条款，须读 LICENSE，勿默认 Apache。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 可自托管/评测作 Coding/Agent 骨干；与 Desktop 1.3.x、CLI 2.5.x 同生态对照。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>读 LICENSE + Model Card。</li>
+<li>查 vLLM/SGLang Day-0 与量化。</li>
+<li>与 Mistral Large 4 / Reflection Beam 并表。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://x.com/Kimi_Moonshot/status/2118010528123773297">@Kimi_Moonshot</a> · <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro">HF</a></p>
+<hr />
+<h3>6. 腾讯 CodeBuddy Code 2.180.0：Memory summary、PTC、沙箱/权限硬化（快讯吸收）</h3>
+<p><code>强A · NEW（日报吸收） · 国内 · B/C/D/G · Coding Agent · watchlist <strong>196</strong> · npm <strong>2026-11-04T16:55:10Z</strong>（上海 ≈11-05 00:55）· CHANGELOG <strong>2026-11-04</strong> · 相对 <strong>2.179.3</strong> · <strong>desktop_shipping=1</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><code>@tencent-ai/codebuddy-code@2.180.0</code>：模型可下发 <strong>PTC 默认工具模式</strong>（<code>toolMode</code>；<code>CODEBUDDY_CODE_MODE_ENABLED</code>）；<strong>自动记忆首轮附带 Memory summary</strong>（预算上限、滤疑似凭据、可关）。</li>
+<li>权限/沙箱：<code>permissions.deny</code> 覆盖 REPL 工具目录；移除外部 Agent 目录默认沙箱放行；macOS 沙箱补包管理器缓存放行；自定义模型不再附带平台身份请求头。</li>
+<li>团队任务冷启动续跑、Agent Home 收信编造拒绝、UTF-8 中文 Edit 等大量修复。截稿正式版仍 <strong>2.180.0</strong>（仅见 -dev 构建，不升格）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。一线 Coding Agent 正式版本 bump；Memory summary + 工具模式下发 + 沙箱边界直接对标 Memory / Runtime / 多 Agent 工程。changelog 无附图 → 本条不配图。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> Memory summary 注入预算、PTC/模式门控、deny 与沙箱默认放行、团队任务恢复语义。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>装 2.180.0 试 Memory summary 与 PTC。</li>
+<li>回归沙箱默认放行变更是否影响自有技能目录。</li>
+<li>与 Kimi 1.3.x / ZCode 3.17.2 / MiniMax 3.1.10 做 Memory×权限差异表。</li>
+</ol>
+<p><strong>来源</strong>：npm <code>@tencent-ai/codebuddy-code@2.180.0</code>（包内 CHANGELOG.md）</p>
+<hr />
+<h3>7. Vercel Labs agent-desktop 1.2.0：桌面 Computer Use 正式加 MCP（快讯吸收）</h3>
+<p><code>强A · NEW（日报吸收） · 国际 · B/C/E/F/G · Desktop CU → MCP · watchlist <strong>197</strong> · GH Release <strong>2026-11-05T02:43:54Z</strong> · npm <strong>02:45:51Z</strong> · 相对 <strong>1.1.0</strong> · 截稿 ★<strong>16,807</strong> · <strong>desktop_shipping=1</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>CHANGELOG <strong>[1.2.0] (2026-11-05)</strong>：新增 <strong><code>agent-desktop mcp</code></strong>——stdio MCP 服务端，将 leaf CLI 暴露为 MCP tools（如 <code>desktop_snapshot</code> / <code>desktop_click</code> / <code>desktop_session_start</code>），对齐 CLI JSON envelope。</li>
+<li>其它：<code>type</code>/<code>set-value</code>/<code>clipboard-set</code> 支持 <code>--stdin</code>；macOS 列表行；Homebrew <code>brew install agent-desktop</code>。</li>
+<li>定位不变：无内置模型；AX / UI Automation / AT-SPI；Apache-2.0；文档提醒可达面≈登录用户 shell。</li>
+</ul>
+<p><img alt="图 6" src="../assets/2026-11-06/agent-desktop-og.png" /></p>
+<p>图 6 · 产品站 OG · 来源：agent-browser.dev/desktop</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。正式版本 bump + MCP 一等公民化，降低把原生桌面操控接到 Claude Code / Codex / Cursor 等 harness 的成本。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 立刻试 MCP 接入；核对 skills、全局 session/headed、stdin 与并发上限；评估确认策略（可 launch PATH 上任意程序）。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li><code>npm i -g agent-desktop@1.2.0</code> 或 brew；跑 skills。</li>
+<li>在 Claude Code / Codex / Cursor 配 <code>{"command":"agent-desktop","args":["mcp"]}</code>。</li>
+<li>沙箱/确认策略评审。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://github.com/vercel-labs/agent-desktop/releases/tag/v1.2.0">GH v1.2.0</a> · <a href="https://www.npmjs.com/package/agent-desktop">npm</a> · <a href="https://agent-browser.dev/desktop">docs</a></p>
+<hr />
+<h3>8. Kimi Code Desktop 1.3.1：1.3.0 翌日稳定性补丁（快讯吸收）</h3>
+<p><code>强A · UPDATE（日报吸收 / continuum 190） · 国内 · B/C/E/G · Coding Desktop · watchlist <strong>198</strong> · changelog <strong>1.3.1 (2026-11-05)</strong> · 配对 CLI <strong>2.5.1</strong> GH <strong>09:53:44Z</strong> / npm <strong>09:58:53Z</strong> · <strong>desktop_shipping=1</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html">Desktop Changelog</a> 顶条 <strong>1.3.1</strong>：全为 <strong>Bug Fixes</strong>（更新后错误页、空 system 重复失败、工具摘要抖动、图/视频预览、自动标题、空格路径图、窄屏面板、已删工作区会话、陈旧空工作区）。</li>
+<li>CLI <code>@moonshot-ai/kimi-code@2.5.1</code> 与上述对齐。What's New 营销页截稿仍顶 1.3.0——以 Desktop changelog 为版本源。官方 X 本窗无 1.3.1 专帖。</li>
+<li>continuum：<strong>1.3.0 (2026-11-04)</strong> 已含多工作目录项目、会话 Fork、<strong>subagent 许可下控制内置浏览器</strong>等——本窗无再增量，见重点进展简述。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。一线 Desktop 相对基线版本前进即计入 shipping；本版是稳定性补丁，对刚升 1.3.0 的用户有直接价值。无专图 → 不配图。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 更新失败兜底页、空 system 防护、工具卡片展开态、媒体预览与工作区删除后会话列表一致性——可直接做回归清单。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>已装 1.3.0 检查是否升到 <strong>1.3.1</strong>。</li>
+<li>对照 CLI 2.5.1 与 Desktop 逐条同源。</li>
+<li>关注是否补 What's New / 官方 X。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html">Desktop changelog</a> · <a href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai/kimi-code%402.5.1">CLI 2.5.1</a></p>
+<hr />
+<h2>专栏二｜话题热议</h2>
+<p>本栏：社区/媒体高信号讨论；无够 B 级则宁缺。</p>
+<h3>1. Postman #14370：官方宣布 revert 后关单（UPDATE）</h3>
+<p><code>强A · UPDATE · 国际 · G/E/F/B · Agent 插件同意 · watchlist <strong>188</strong> · issue <strong>closed completed 2026-11-05T11:41:48Z</strong> · 官方 @preethammavin <strong>03:46:20Z</strong>「we are reverting this change」· 锁帖 @a85 <strong>11:40:39Z</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>Daily 11-04 已报：Postman Desktop 经 auto-upgrade 静默装 Claude/Codex（及 Cursor）插件并尝试自批 hook；HN 爆发；员工 zecoquit 承诺更清晰 opt-in。</li>
+<li><strong>本窗实质进展</strong>：Postman <strong>preethammavin</strong>（2026-11-05 03:46:20Z）称将 <strong>re-designing the experience with the right level of control</strong>，并写明 <strong>「In the meantime, we are reverting this change.」</strong>；随后 issue <strong>closed as completed</strong>（11:41:48Z）并由 a85 锁帖。</li>
+<li>社区续有 Copilot settings 被写入等旁证与卸载潮；须继续核验：<strong>客户端是否已真正停止写入</strong>、存量环境清理路径是否完整。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A UPDATE</strong>。从「承诺改 opt-in」推进到书面 <strong>revert</strong>；但仍须版本号/安装器行为核验，不能仅以关单结案。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>复查本机 Codex/Claude/Cursor/Copilot 是否仍有 <code>postman@</code>。</li>
+<li>跟踪下一正式 Desktop 版本 release notes 是否写明默认 off。</li>
+<li>产品对照：安装器禁止自批 hook；插件默认 off。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://github.com/postmanlabs/postman-app-support/issues/14370">issue #14370</a></p>
+<h3>2. 今日无其他足够重要话题条目</h3>
+<ul>
+<li>HN 本窗未见 ≥B 级、可核验一手的 Agent/模型爆帖（相对 Postman 昨日量级）。</li>
+<li>国内媒体转述 OpenAI 948 LPE / GPT 图像等多为二手放大——以官方稿为准，不单列。</li>
+<li>Instagram <strong>Edits Desktop</strong>（macOS；The Verge 等；官网 edits.instagram.com/desktop）：创作者剪辑器，MCP 仅媒体/访谈侧面、官网正文未见 → <strong>不升格</strong>（记 near-miss）。</li>
+</ul>
+<hr />
+<h2>专栏三｜开源雷达</h2>
+<h3>1. vercel-labs/agent-desktop 1.2.0（见新闻 7）</h3>
+<p><code>强A · 国际 · ★16,807（截稿） · Apache-2.0 · MCP stdio 桌面 CU</code></p>
+<h3>2. 星标 continuum（可核验，非新发船）</h3>
+<table>
+<tr><th>仓</th><th>★截稿</th><th>备注</th></tr>
+<tr><td>deepseek-ai/dsh-superagent-prototype</td><td><strong>19,475</strong></td><td>仍 research prototype；pushed 漂移见元数据</td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td><strong>25,467</strong></td><td>生产推理框架 continuum</td></tr>
+<tr><td>anthropics/FlashProve</td><td><strong>908</strong></td><td>相对 Daily 11-04 ★357 快速攀升</td></tr>
+<tr><td>Tencent-Hunyuan/Hyra-results</td><td><strong>211</strong></td><td>HyCell continuum；pushed 11-05 06:41Z</td></tr>
+<tr><td>anomalyco/opencode</td><td><strong>224,792</strong></td><td>harness continuum</td></tr>
+<tr><td>modelcontextprotocol/servers</td><td><strong>91,815</strong></td><td>参考服务器</td></tr>
+</table>
+<h3>3. 今日无其他足够重要新仓/新 release 升格条目</h3>
+<ul>
+<li>MiniMax CLI <strong>0.7.6</strong>（Remote MCP OAuth、多 API key、ACP token/<code>_meta</code>、write 防覆盖未读文件、SSH Desktop 远程 CU 等）——<strong>Desktop CDN 仍 3.1.10</strong>，记 near-miss / 价格订阅外工程信号。</li>
+<li>StepCode <strong>0.1.7</strong>（CDN generatedAt 11:58Z）无官宣 → 不升格。</li>
+<li>DeepSeek dsh <strong>latest→0.2.2-rc.1</strong> 仍 RC → 不升格。</li>
+</ul>
+<hr />
+<h2>重点事件新进展</h2>
+<h3>Postman #14370（188）</h3>
+<ul>
+<li><strong>此前</strong>：HN 爆发 + 承诺更清晰 opt-in。</li>
+<li><strong>今日新增</strong>：官方书面 <strong>revert</strong> + issue <strong>closed completed</strong> + 锁帖。</li>
+<li><strong>判断是否变化</strong>：<strong>是（UPDATE）</strong>——治理里程碑，仍须客户端行为核验。</li>
+</ul>
+<h3>OpenAI cyber 管线（194）→ GPT‑6 Cyber（199）</h3>
+<ul>
+<li><strong>此前</strong>：快讯推 948 LPE 管线与 harness 消融。</li>
+<li><strong>今日新增</strong>：同弧产品发船 GPT‑6 Cyber（日报漏收补记）。</li>
+<li><strong>判断是否变化</strong>：<strong>是（产品化）</strong>。</li>
+</ul>
+<h3>OpenAI×Pierre（191）/ Kimi Desktop 1.3.0（190）</h3>
+<ul>
+<li>本窗无交割/新能力点 → <strong>不重复展开</strong>；1.3.0 已被 1.3.1 补丁 continuum。</li>
+</ul>
+<h3>Meta×Conductor / HumanLayer→Factory / K3.1 Pro / CodeBuddy / agent-desktop / Kimi 1.3.1</h3>
+<ul>
+<li>快讯已推，本报新闻栏全文吸收；无再增量不复述。</li>
+</ul>
+<h3>ZCode 3.17.2（185）/ Hy4（189）/ Northflank（178）/ FlashProve（186）/ EMA（187）</h3>
+<ul>
+<li>ZCode 更高版本 404；Hy4 HF 仍 <strong>401</strong>；Northflank 抽样无新 RCA；FlashProve/EMA 无窗内官方实质增量 → <strong>不重复报道</strong>。</li>
+</ul>
+<hr />
+<h2>今天正在形成的趋势</h2>
+<ol>
+<li><strong>安全 Agent 从「研究管线」进入「可申请产品档」</strong>：GPT‑6 Cyber + Daybreak Red/Blue 分轨，把 Critical 能力与范围对齐做成商业/治理问题。</li>
+<li><strong>Coding Agent 外围层并购加速</strong>：Pierre（存储/diff）+ Conductor（多 Agent 工作区）+ HumanLayer（多人协作/HITL）同周——「壳层 SaaS」窗口期缩短。</li>
+<li><strong>Desktop/CU 协议化</strong>：agent-desktop MCP + 国内 Desktop 小版本连发（CodeBuddy / Kimi）——控制面库与产品壳并行。</li>
+<li><strong>插件同意治理出现「revert」先例</strong>：Postman 关单不等于问题消失，但给行业写了反面教材的结局句。</li>
+<li><strong>国内开放权重兑现 vs 托管权重仍封</strong>：K3.1 Pro 已放；Hy4 仍 401——「承诺日」与「可拉权重」仍可能错位。</li>
+</ol>
+<hr />
+<h2>对智能体互联网最值得吸收的东西</h2>
+<ol>
+<li><strong>范围授权 + 越界可观测</strong>（GPT‑6 Cyber / Honeypot 评测）：跨 Agent 安全工具调用的委托凭证应编码「允许目标集」。</li>
+<li><strong>编排宿主可被收购</strong>：不要把关键调度/审阅 UX 完全绑在单一 SaaS；保留 Local/导出。</li>
+<li><strong>插件/MCP 安装的显式同意</strong>：Postman revert 强化「默认 off + 独立 opt-in」为互联信任前提。</li>
+</ol>
+<hr />
+<h2>对 Work / Agent 引擎最值得吸收的东西</h2>
+<ol>
+<li><strong>Harness 随基座变轻</strong>（194→199）：技能库堆叠对更强模型可能负收益；优先结果验证与角色拆分。</li>
+<li><strong>Memory summary 注入预算与凭据过滤</strong>（CodeBuddy 2.180.0）：首轮摘要是双刃剑。</li>
+<li><strong>Desktop CU 的 MCP 封装</strong>（agent-desktop 1.2.0）：stdin 敏感参数、确认 UX、可达面=登录用户。</li>
+<li><strong>客户端自更新与会话状态机</strong>（Kimi 1.3.1）：更新失败页、空 system、工作区生命周期是回归清单。</li>
+<li><strong>多 Agent 并行工作区</strong>（Conductor）：隔离分支 + 审合 UX，即使云关停也值得自建对照。</li>
+</ol>
+<hr />
+<h2>值得继续跟踪</h2>
+<ol>
+<li><strong>事件：GPT‑6 Cyber（199）</strong> — Daybreak 扩面；system card；与 Astra 分轨。</li>
+<li><strong>事件：cyber 管线（194）</strong> — Patch the Planet；补丁合入率。</li>
+<li><strong>事件：Conductor→MSL（192）</strong> — Cloud 关停执行；next interface。</li>
+<li><strong>事件：HumanLayer→Factory（193）</strong> — OSS license/仓；功能并表。</li>
+<li><strong>事件：Postman #14370（188）</strong> — 客户端是否真正停止写入；存量清理。</li>
+<li><strong>事件：K3.1 Pro 权重（195）</strong> — LICENSE 商业条款；推理栈 Day-0。</li>
+<li><strong>事件：CodeBuddy 2.180 / Kimi Desktop 1.3.1 / agent-desktop 1.2.0</strong> — 实机回归。</li>
+<li><strong>事件：Hy4（189）</strong> — 权重仓开放。</li>
+<li><strong>事件：Pierre（191）</strong> — 交割与 Codex 产品面。</li>
+<li><strong>事件：Northflank（178）</strong> — RCA / RESOLVED。</li>
+</ol>
+<hr />
+<h2>未来信号</h2>
+<ul>
+<li><strong>进攻性安全模型产品化</strong>可能迫使企业 Agent 默认「无沙箱不上网」策略上修。</li>
+<li><strong>外围层并购</strong>若继续，开源/可迁移编排层（HumanLayer 承诺）会成为议价筹码。</li>
+<li><strong>MiniMax CLI 0.7.6 的 Remote MCP OAuth / 多 key</strong> 若跟 Desktop 发船，可能下一轮打断。</li>
+</ul>
+<hr />
+<h2>价格 / 订阅雷达</h2>
+<ul>
+<li>GPT‑6 Cyber：经 Daybreak Red 精选开放（非公开价目变更稿）；补贴叙事见 Daybreak for Frontline Defenders。</li>
+<li>其余本窗未见可核实的重要新促销/调价。CodeBuddy / Kimi Desktop 为产品版本，非价目。</li>
+</ul>
+<hr />
+<h2>信源与方法（vendor-check 摘要）</h2>
+<ul>
+<li><strong>窗口</strong>：2026-11-05 08:00→2026-11-06 08:00 CST（00:00Z→00:00Z）。</li>
+<li><strong>国际 P0</strong>：OpenAI RSS（新 guid：<code>introducing-gpt-6-cyber</code> / Merge / Community Compact）；Anthropic /news 抽样无窗内新稿；Cursor changelog 无 Nov 5 顶条；MCP/GH releases；Conductor/Factory/HumanLayer 官网；Postman issue API。</li>
+<li><strong>国内 P0</strong>：Kimi Desktop changelog 1.3.1；CodeBuddy npm 2.180.0；ZCode CDN/changelog 仍 3.17.2；MiniMax CDN 3.1.10 + CLI 0.7.6；HF K3.1 Pro；Hy4 401；StepCode 0.1.7；机器之心/量子位公开页抽样。</li>
+<li><strong>Desktop 探针截稿</strong>：ZCode <strong>3.17.2</strong> · MiniMax <strong>3.1.10</strong> · CodeBuddy <strong>2.180.0</strong> · claude-code <strong>2.1.318</strong> · codex <strong>0.166.0</strong> · agent-desktop <strong>1.2.0</strong> · Kimi Desktop <strong>1.3.1</strong> · kimi-code <strong>2.5.1</strong> · minimax-code <strong>0.7.6</strong> · dsh <strong>0.2.2-rc.1</strong>。</li>
+<li><strong>官方 X</strong>：本轮共享 X 通道 429 限流（约至 00:10Z 后仍间歇失败）→ <strong>以 11-05 快讯 from: 日志 + 官网/RSS/GH 一手为准</strong>；未 invent 互动数。</li>
+<li><strong>扫描日志</strong>：<code>flashes/.scan-2026-11-06-daily.md</code>。</li>
+</ul>
+</article></main>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

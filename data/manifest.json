@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-04T08:25:00+08:00",
+  "updatedAt": "2026-11-06T08:25:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-06",
+      "date": "2026-11-06",
+      "title": "AI Intelligence Daily · 2026-11-06",
+      "summary": "OpenAI GPT-6 Cyber 漏收补记（Daybreak Red）；吸收 11-05 快讯：Meta×Conductor、HumanLayer→Factory、948 LPE 管线、K3.1 Pro 权重、CodeBuddy 2.180.0、agent-desktop 1.2.0、Kimi Desktop 1.3.1；Postman #14370 revert 关单；desktop_shipping=3",
+      "href": "reports/2026-11-06.html"
+    },
     {
       "id": "2026-11-04",
       "date": "2026-11-04",
