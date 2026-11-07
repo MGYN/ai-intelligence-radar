@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-11-07（周六）</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+<h1>AI Intelligence Daily · 2026-11-07（周六）</h1>
+<p><code>统计窗口：2026-11-06 08:00 → 2026-11-07 08:00（上海）· 事实与判断分区 · 国内/国际双轨 · 吸收快讯：09:21 Cursor Live Apps / 11:22 Codex CLI 0.167.0 / 19:20 Kimi Desktop 1.3.2 + CodeBuddy 2.181.0 / 23:29 Codex Desktop CVE-2026-110930 · <strong>一线 Desktop/Work Agent 新上线 = 4（Codex CLI 0.167.0 · Kimi Desktop 1.3.2 · CodeBuddy 2.181.0 · Claude Code 2.1.319）</strong> · npm：codex <strong>0.167.0</strong> / claude-code <strong>2.1.319</strong> / codebuddy <strong>2.181.0</strong> / kimi-code <strong>2.5.2</strong> / minimax-code <strong>0.7.6</strong> / dsh <strong>0.2.2-rc.1</strong>（RC）/ agent-desktop <strong>1.2.0</strong> · Desktop：ZCode <strong>3.17.2</strong> · MiniMax CDN <strong>3.1.11</strong>（changelog 仍 3.1.10）· Kimi Desktop <strong>1.3.2</strong> · CodeBuddy <strong>2.181.0</strong> · agent-desktop ★<strong>18,101</strong> · dsh-superagent-prototype ★<strong>20,235</strong> · DeepInfer ★<strong>25,552</strong> · FlashProve ★<strong>937</strong> · Hyra-results ★<strong>213</strong> · opencode ★<strong>225,061</strong> · servers ★<strong>91,839</strong></code></p>
+<h2>今日一句话判断</h2>
+<p><strong>窗内主线是 Agent Memory「dreaming」工程化（Anthropic）+ Desktop 信任门前安全事故（Codex Windows CVE-2026-110930）+ Cloud Agent 交付链产品化（Cursor Live Apps / Claude cloud env / Antigravity remote）+ 国内 Desktop/CLI 连发（Kimi 1.3.2 / CodeBuddy 2.181 / Codex CLI 0.167）+ Git 存储为 Agent 规模重建（GitHub Rubicon）。</strong> desktop_shipping=<strong>4</strong>。对你两条主线：<strong>记忆分层与 idle 纠错晋升</strong>、<strong>登录/project-trust 前的 argv 消毒与 Cloud Agent 托管交付门禁</strong>同时变成选型硬问题；Rubicon 与 Pierre/Pando continuum 说明「Agent 并发写 Git」已逼到存储架构层。</p>
+<hr />
+<h2>专栏一｜新闻</h2>
+<p>本栏结构：
+- 国际头条：Anthropic《The components of agent memory》+ Dreaming（Managed Agents Dreams API research preview）
+- 国际头条：OpenAI Codex Desktop Windows <strong>CVE-2026-110930</strong>（快讯 23:29 吸收；信任门前 RCE）
+- 国际头条：Cursor <strong>Build Live Apps</strong>（快讯 09:21 / Daily 11-06 漏收补推）
+- 国际中栏：Claude Code <strong>cloud sessions 自动配环境</strong> + <strong>2.1.319</strong> latest（<strong>desktop_shipping</strong>）
+- 国际中栏：GitHub <strong>Project Rubicon</strong> 新 Git 存储架构
+- 国际中栏：Google Antigravity <strong>Remote Agents</strong>（+ Voice mode 附注）
+- 国际中栏：OpenAI Codex CLI <strong>0.167.0</strong>（快讯 11:22；<strong>desktop_shipping</strong>）
+- 国内头条：腾讯 CodeBuddy Code <strong>2.181.0</strong>（快讯 19:20；<strong>desktop_shipping</strong>）
+- 国内中栏：Kimi Code Desktop <strong>1.3.2</strong>（快讯 19:20；<strong>desktop_shipping</strong>）
+- 国际短讯：OpenAI × Hacktron（Daybreak Red 扩面）
+- <strong>不升格</strong>：MiniMax CDN 3.1.11（changelog 仍 3.1.10）· Qwen teaser 无权重/API · kimi-code canary 2.6.0 · GitHub Next Enclaves（窗外 + HN amplify）· ZCode 仍 3.17.2 · dsh 仍 RC · agent-desktop 仍 1.2.0 · codex alpha 0.169.0-alpha.2 · BioBasicsBench / FMF / ChatGPT Remix Biz</p>
+<p>排序依据：重要度 → 用户相关性 → 时效。</p>
+<h3>1. Anthropic：Agent Memory 组件与 Dreaming——session 笔记 vs idle 纠错/建 wiki/晋升注入层</h3>
+<p><code>S/强A · NEW · 国际 · D/B/C · Agent Memory / Dreaming · watchlist <strong>205</strong> · 研究文 Published <strong>Nov 6, 2026</strong> · @AnthropicAI <strong>2026-11-06T21:16:17Z</strong>（截稿约 <strong>247k</strong> impr / <strong>3974</strong> likes）· Managed Agents Dreams API research preview（beta</code>dreaming-2026-04-21<code>）· <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://www.anthropic.com/research/components-of-agent-memory">anthropic.com/research/components-of-agent-memory</a>（<strong>November 6, 2026</strong>）：把 Agent Memory 拆成可工程化组件——<strong>session 内写 notes</strong> 与 <strong>idle dreaming</strong>（纠错、建 wiki、把稳定知识晋升到注入层）分轨。</li>
+<li>评估叙述含 <strong>CL-Bench</strong> / <strong>Pokémon</strong> / <strong>Stainless wiki</strong> 等；<strong>MEMORY.md</strong> 注入上限叙述为 <strong>200 lines / 25KB</strong>。</li>
+<li>设计约束强调：<strong>输入 store 不修改</strong>，dreaming <strong>产出新 store</strong>（避免就地污染）。</li>
+<li>产品面：<a href="https://platform.claude.com/docs/en/managed-agents/dreams">Managed Agents Dreams API docs</a> 标 research preview；beta header <code>dreaming-2026-04-21</code>。</li>
+<li>官方 X：@AnthropicAI <strong>2026-11-06T21:16:17Z</strong> 放大研究文（截稿互动如上）。</li>
+</ul>
+<p><img alt="图 1" src="../assets/2026-11-07/anthropic-agent-memory-og.jpg" /></p>
+<p>图 1 · Anthropic Agent Memory 研究页 OG · 来源：anthropic.com/research/components-of-agent-memory</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>S/强A</strong>。把「记忆」从模糊产品口号推进到<strong>可测组件 + idle 晋升管线 + 注入预算</strong>——对 Memory/Skill/Context 预算与多租户隔离直接加压。</li>
+<li>Dreams API 仍是 research preview：不能写成「全量生产默认开 dreaming」。</li>
+</ul>
+<p><strong>往后看</strong></p>
+<ul>
+<li>Dreams API 出 preview 的 SLA/计费；wiki 晋升误伤率；与 Claude Code / Managed Agents 产品面并表。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li><strong>强相关。</strong> 跨会话/跨 Agent 的记忆分享需要<strong>不可变输入 store + 显式晋升</strong>；否则委托链上的「记忆投毒」难审计。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> (1) session notes vs idle dreaming 双轨；(2) MEMORY.md 200 行/25KB 类注入预算；(3) 输入只读、产出新 store 的 CAS 式记忆演进。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>通读研究文 + Dreams docs；对照自有 Memory 层是否「就地改写」。</li>
+<li>把注入预算（行数/KB）做成可配置硬上限。</li>
+<li>评估 idle 任务调度与沙箱：dreaming 是否应降权运行。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://www.anthropic.com/research/components-of-agent-memory">components-of-agent-memory</a> · <a href="https://platform.claude.com/docs/en/managed-agents/dreams">Dreams API docs</a> · <a href="https://x.com/AnthropicAI">@AnthropicAI</a></p>
+<hr />
+<h3>2. OpenAI Codex Desktop Windows CVE-2026-110930：Explorer 路径注入，登录/project-trust 前可执行（快讯吸收）</h3>
+<p><code>强A · NEW（快讯 23:29 吸收 / Daily+全日漏收补推） · 国际 · G/C/F/B · Desktop 信任门前 RCE · watchlist <strong>204</strong> · NVD published <strong>2026-11-05T20:17:40.827Z</strong> · GHSA-f2g3-r2rh-7h5f high <strong>2026-11-05T21:34:53Z</strong> · @CERTpy amplify <strong>13:29Z Nov6</strong> · <strong>desktop_shipping=0</strong>（安全事故，非功能发船）</code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>官方顾问：<a href="https://openai.com/security/advisories/cve-2026-110930/">openai.com/security/advisories/cve-2026-110930</a>；NVD：<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-110930">CVE-2026-110930</a>；GHSA：<a href="https://github.com/advisories/GHSA-f2g3-r2rh-7h5f">GHSA-f2g3-r2rh-7h5f</a>。</li>
+<li>机制：Explorer「Open project in ChatGPT」路径<strong>引号未消毒</strong> → <strong>argv 注入</strong>；可在<strong>登录 / project-trust 之前</strong>以当前用户权限执行（CWE-88；CVSS <strong>8.0</strong>）。</li>
+<li>影响区间：独立版 <strong>26.820.60940–26.1002.52244</strong>；Store/MSIX <strong>26.820.7780.0–26.1002.7124.0</strong>；修复 <strong>≥26.1007.21434</strong> / Store <strong>≥26.1007.2314.0</strong>。</li>
+<li>本窗放大：@CERTpy <strong>2026-11-06 13:29Z</strong>；官方 X 未见专帖。与 <strong>201</strong> Codex CLI 0.167.0 <strong>分列</strong>（CLI 功能发船 ≠ Desktop 安全事故）。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。把威胁模型钉在「<strong>信任门之前</strong>」——凡是 Desktop/Explorer 集成、自定义 URL/路径启动的产品都要复查 argv 消毒与「未登录不执行」。</li>
+<li>无可靠原文配图 → <strong>不配图</strong>。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li><strong>强相关。</strong> 身份/认证完成前的执行面是 Discovery 与委托协议的反面教材；信任状态机必须默认拒绝。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> Explorer/Deep Link/自定义协议启动路径的参数消毒与 project-trust 门闩是回归必测项。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>Windows Codex Desktop 升到修复阈值以上；核查 Store 通道版本。</li>
+<li>自研「从资源管理器打开项目」路径做引号/argv 模糊测试。</li>
+<li>与 Datadog 等 trust-before-prompt 研究并读。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://openai.com/security/advisories/cve-2026-110930/">OpenAI advisory</a> · <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-110930">NVD</a> · <a href="https://github.com/advisories/GHSA-f2g3-r2rh-7h5f">GHSA-f2g3-r2rh-7h5f</a> · flashes/2026-11-06-2329.md</p>
+<hr />
+<h3>3. Cursor Build Live Apps：Cloud Agent → 托管应用（含 Postgres + SSO + 双门禁）（快讯吸收 / Daily 漏收补推）</h3>
+<p><code>强A · NEW（快讯 09:21 / Daily 11-06 漏收补推） · 国际 · B/C/E/F/G · Cloud Agent 交付链 · watchlist <strong>200</strong> · changelog <strong>Nov 5, 2026</strong> · @cursor_ai <strong>2026-11-05T21:41:10Z</strong> · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>Changelog：<a href="https://cursor.com/changelog/build-live-apps">cursor.com/changelog/build-live-apps</a>（<strong>Nov 5, 2026</strong>）；文档：<a href="https://cursor.com/docs/cloud-agent/apps">cloud-agent/apps</a>。</li>
+<li>Cloud Agent：脚手架 + <strong>Postgres</strong> + <strong>Cursor SSO</strong> + 托管；<strong>deterministic + agentic</strong> 安全门禁；团队管理 secret/下架；Origin/GitHub；需付费 + Cloud Agents。</li>
+<li>Daily 11-06 vendor-check 写「changelog 无 Nov 5」→ <strong>漏收</strong>；本报吸收快讯补推。</li>
+</ul>
+<p><img alt="图 2" src="../assets/2026-11-07/cursor-live-apps-og.png" /></p>
+<p>图 2 · Cursor Build Live Apps changelog OG · 来源：cursor.com/changelog/build-live-apps</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。把 Cloud Agent 从「改代码」推到「交付可登录的托管 app」——与你的 Cloud Agent / Runtime / 多租户线直接对标；双门禁是产品化安全叙事。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 对照：托管 DB、SSO 挂载、deterministic 门禁 vs agentic 门禁、团队 secret 治理、下架路径。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>读 changelog + apps docs；评估是否替代自建预览环境。</li>
+<li>实机测发布门禁与 GitLab 源是否支持。</li>
+<li>与 Agent SDK（10-20）产品边界并表。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://cursor.com/changelog/build-live-apps">build-live-apps</a> · <a href="https://cursor.com/docs/cloud-agent/apps">docs apps</a> · <a href="https://x.com/cursor_ai/status/2118458629091426304">@cursor_ai</a> · flashes/2026-11-06-0921.md</p>
+<hr />
+<h3>4. Claude Code cloud sessions：自动配环境（deps/network/API keys）+ 2.1.319 latest</h3>
+<p><code>强A · NEW · 国际 · C/E/F/B · Cloud Agent 环境 · watchlist <strong>206</strong> · @ClaudeDevs <strong>2026-11-06T19:58:33Z</strong>（截稿约 <strong>239k</strong> impr / <strong>4240</strong> likes）· docs cloud-environments · Claude Code npm latest <strong>2.1.319</strong> @<strong>2026-11-06T00:58:56.366Z</strong>（相对 <strong>2.1.318@11-03</strong>）· <strong>desktop_shipping 计入 2.1.319</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>@ClaudeDevs 宣布 cloud sessions <strong>自动配置环境</strong>（依赖、网络、API keys）；文档：<a href="https://code.claude.com/docs/en/cloud-environments">code.claude.com/docs/en/cloud-environments</a>；面向 <strong>Pro/Max/Ultra</strong>。</li>
+<li>密钥经 <strong>proxy 挂载</strong>，叙述强调 Claude <strong>不见明文</strong>。</li>
+<li>同窗 npm：<code>@anthropic-ai/claude-code@2.1.319</code> latest（<strong>2026-11-06T00:58:56.366Z</strong>）。快讯全日多把 next 当未升格；<strong>本报按 latest 计 shipping</strong>。</li>
+<li>CHANGELOG 要点（2.1.319）：<strong>MCP tasks 后台化</strong>、<code>permissions.denyInsteadOfPrompting</code>、多项安全修复（含 sandbox escape worktree、Bash bypass 等叙述）。</li>
+</ul>
+<p><img alt="图 3" src="../assets/2026-11-07/claude-cloud-env-thumb.jpg" /></p>
+<p>图 3 · @ClaudeDevs cloud environments 帖附图 · 来源：x.com/ClaudeDevs/status/2118795192090386454</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。Cloud Agent「开箱即跑」依赖密钥挂载模型——proxy 不见明文是正确方向，但仍须核验代理边界与日志残留。</li>
+<li>2.1.319 安全修复 + 权限 DSL 强化，值得立刻跟版。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>中～强。跨租户密钥挂载与「模型不见明文」是委托/凭据原语的产品样板。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 环境自动装配、MCP 后台任务、denyInsteadOfPrompting、worktree/sandbox 逃逸回归。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li><code>npm i -g @anthropic-ai/claude-code@2.1.319</code>；读 CHANGELOG 安全项。</li>
+<li>对照 cloud-environments 文档设计自有密钥 proxy。</li>
+<li>回归 sandbox escape / Bash bypass 相关用例。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://x.com/ClaudeDevs/status/2118795192090386454">@ClaudeDevs</a> · <a href="https://code.claude.com/docs/en/cloud-environments">cloud-environments</a> · npm <code>@anthropic-ai/claude-code</code></p>
+<hr />
+<h3>5. GitHub Project Rubicon：为数千并发 Agent 重建 Git 存储（Blob + Ref-CAS）</h3>
+<p><code>强A · NEW · 国际 · C/B/H · Git 存储架构 · watchlist <strong>207</strong> · 博文标 <strong>November 5, 2026</strong> · @github <strong>2026-11-06T22:17:58Z</strong> 放大 · limited private preview → <strong>early 2027</strong> · continuum watchlist <strong>191</strong> Pierre / <strong>183</strong> Pando · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>工程博文：<a href="https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/">Inside GitHub’s new Git storage architecture</a>（标 <strong>November 5, 2026</strong>）。</li>
+<li>内测叙述：<strong>5000</strong> concurrent agents / <strong>7200</strong> pushes/s；架构要点 <strong>Blob + Ref-CAS</strong>；状态为 <strong>limited private preview</strong>，目标 <strong>early 2027</strong>。</li>
+<li>@github <strong>2026-11-06T22:17:58Z</strong> 放大。与 OpenAI Pierre（Code Storage→Codex）及 Pando「Scaling Git」同属「Agent 写爆 Git」应对弧。</li>
+</ul>
+<p><img alt="图 4" src="../assets/2026-11-07/github-rubicon-og.png" /></p>
+<p>图 4 · GitHub Rubicon 工程博文 OG · 来源：github.blog/.../inside-githubs-new-git-storage-architecture/</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。存储层为 Agent 并发显式重做——说明「多 Agent 并行 push」已不是边缘场景；对你的 Workspace/Sandbox/多租户 Git 策略有硬参考。</li>
+</ul>
+<p><strong>对智能体互联网</strong></p>
+<ul>
+<li>中。跨 Agent 协作若共享远端仓，CAS/ref 模型影响冲突与审计语义。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 对照：并发 push 限流、ref 事务、blob 去重、预览环境的 Git 后端选型。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>读博文；评估自建 Git 服务是否需 CAS/ref 事务。</li>
+<li>与 Pierre / Pando continuum 并表跟踪 preview 准入。</li>
+<li>压测本机多 Agent 并行 push 瓶颈。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/">github.blog Rubicon</a> · <a href="https://x.com/github">@github</a></p>
+<hr />
+<h3>6. Google Antigravity Remote Agents：独立 cloud VM + 手机解权限（+ Voice mode 附注）</h3>
+<p><code>强A · NEW · 国际 · C/B/F · Remote Cloud Agent · watchlist <strong>208</strong> · @antigravity <strong>2026-11-06T02:27:01Z</strong>（截稿约 <strong>194k</strong> impr / <strong>3064</strong> likes）· paid consumer · 同窗 Voice mode @<strong>18:00Z</strong>（Gemini Live）可附注 · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>@antigravity 宣布 <strong>Remote Agents</strong>：跑在<strong>独立 cloud VM</strong>；支持<strong>手机端解权限</strong>；面向 <strong>paid consumer</strong>。</li>
+<li>同窗另有 <strong>Voice mode</strong>（约 <strong>18:00Z</strong>，Gemini Live）——本报作同条附注，不单开头条。</li>
+</ul>
+<p><img alt="图 5" src="../assets/2026-11-07/antigravity-remote-thumb.jpg" /></p>
+<p>图 5 · @antigravity Remote Agents 帖附图 · 来源：x.com/antigravity</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。Remote = 独立 VM + 移动端权限确认，补齐「云端 Agent 谁点同意」的 UX；与 Cursor Live Apps / Claude cloud env 同属 Cloud Agent 交付周。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 远程 VM 生命周期、移动审批、付费消费者档位与企业多租户差异。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>若在 Antigravity 付费档：试 Remote + 手机解权限闭环。</li>
+<li>对照自有 Cloud Agent 的移动审批通道。</li>
+<li>Voice mode 仅作交互面信号，不升格为模型发船。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://x.com/antigravity">@antigravity</a></p>
+<hr />
+<h3>7. OpenAI Codex CLI 0.167.0：command center / 多后端 / Vertex wizard / 系统代理（快讯吸收）</h3>
+<p><code>强A · NEW（快讯 11:22） · 国际 · B/C/E/F/G · Coding CLI · watchlist <strong>201</strong> · GH rust-v0.167.0 <strong>2026-11-06T01:40:00Z</strong> / npm <strong>01:46Z</strong> · 相对 <strong>0.166.0@10-29</strong> · <strong>desktop_shipping=1</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>GH <a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0">rust-v0.167.0</a>；npm <code>@openai/codex@0.167.0</code>。</li>
+<li>主特性：<code>codex agents --no-daemon</code> <strong>command center</strong>（未读标记）；session picker <strong>切换后端并保留草稿</strong>；本地图片预览；GCP Vertex <code>gcp_setup_wizard</code>；<code>/experimental</code> <strong>系统代理</strong>；审批态展开 patch。</li>
+<li>旁路：alpha 线至 <code>0.169.0-alpha.2</code> 仍为 prerelease → <strong>near-miss</strong>，不计入 shipping。</li>
+</ul>
+<p><img alt="图 6" src="../assets/2026-11-07/codex-0167-og.png" /></p>
+<p>图 6 · Codex CLI rust-v0.167.0 Release OG · 来源：github.com/openai/codex/releases/tag/rust-v0.167.0</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。command center + 多后端草稿保留是 Work Agent 控制面升级；与同窗 Desktop CVE <strong>分列</strong>——CLI 发船不掩盖 Desktop 信任门问题。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> 多后端会话、代理向导、审批 patch 展开 UX。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>升至 <strong>0.167.0</strong>；实机 command center。</li>
+<li>Vertex/系统代理默认面评估。</li>
+<li>跟踪 alpha→下次 latest。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0">GH rust-v0.167.0</a> · <a href="https://www.npmjs.com/package/@openai/codex">npm</a> · flashes/2026-11-06-1122.md</p>
+<hr />
+<h3>8. 腾讯 CodeBuddy Code 2.181.0：plugin eval/test · session toolMode · MCP 整服务权限（快讯吸收）</h3>
+<p><code>强A · UPDATE（快讯 19:20 / continuum 196） · 国内 · B/C/E/G · Coding CLI · watchlist <strong>203</strong> · npm <strong>2026-11-06T10:21:24.977Z</strong> · 相对 <strong>2.180.0@11-04</strong> · <strong>desktop_shipping=1</strong> · 无专图不配</code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>npm <code>@tencent-ai/codebuddy-code@2.181.0</code>；CHANGELOG <strong>2026-11-06</strong>。</li>
+<li>要点：<code>plugin eval</code> / <code>plugin test</code>；服务端会话 <code>toolMode</code>（Harness）；MCP <code>(*)</code> / <code>()</code> 整服务权限；插件 MCP 命名 <code>plugin:&lt;名&gt;:&lt;服务&gt;</code>（<strong>不兼容</strong>旧命名）。</li>
+<li>另：沙箱单次 token、PTC 计划预览/媒体路径、Agent Home 跨会话审批。</li>
+<li>本窗 @TencentHunyuan 无 2.181 专帖。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。Harness toolMode + 插件评测入口 + MCP 权限 DSL 是引擎层信号；<strong>命名不兼容</strong>需迁移清单。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> plugin eval 报告形态、权限 DSL、OAuth 重登窗口、跨会话审批。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>升 <strong>2.181.0</strong>；迁移插件 MCP 命名。</li>
+<li>实机跑 <code>plugin eval</code>/<code>plugin test</code>。</li>
+<li>回归 toolMode 与沙箱 token。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://www.npmjs.com/package/@tencent-ai/codebuddy-code">npm codebuddy-code</a> · unpkg CHANGELOG · flashes/2026-11-06-1920.md</p>
+<hr />
+<h3>9. Kimi Code Desktop 1.3.2：对齐 CLI 2.5.2 的稳定性补丁（快讯吸收）</h3>
+<p><code>强A · UPDATE（快讯 19:20 / continuum 198·190） · 国内 · B/C/E · Coding Desktop · watchlist <strong>202</strong> · changelog <strong>1.3.2 (2026-11-06)</strong> · 对齐 CLI <strong>2.5.2</strong> · <strong>desktop_shipping=1</strong> · 无专图不配</code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html">Desktop Changelog</a> 顶条 <strong>1.3.2 (2026-11-06)</strong>；上轮日报截稿仍 <strong>1.3.1</strong>。</li>
+<li>Bug Fixes：MCP tool definitions 变更时重复声明；steered messages 误入队；HTTP Web UI 建项失败等。</li>
+<li>配对 CLI <code>@moonshot-ai/kimi-code@2.5.2</code>（GH ≈07:48Z / npm 07:54Z）。本窗 @Kimi_Moonshot 无 1.3.2 专帖。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>强A</strong>。一线 Desktop 相对基线前进即计 shipping；本版以对齐 CLI 缺陷修复为主。</li>
+</ul>
+<p><strong>对 Work·Agent 引擎</strong></p>
+<ul>
+<li><strong>强相关。</strong> MCP 工具定义热更新去重、steered 消息队列、Web UI 建项失败兜底。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>自动更新核验到 <strong>1.3.2</strong>。</li>
+<li>对照 CLI 2.5.2 同源缺陷。</li>
+<li>关注 canary <strong>2.6.0</strong>（非 latest → near-miss）。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://www.kimi.com/code/docs/en/kimi-code-desktop/changelog.html">Desktop changelog</a> · flashes/2026-11-06-1920.md</p>
+<hr />
+<h3>10. OpenAI × Hacktron：Daybreak Red 扩给 Hacktron（短讯）</h3>
+<p><code>A−/B+ · NEW · 国际 · G/I · Daybreak 伙伴 · 官网 <strong>November 6, 2026</strong> · RSS pubDate <strong>Fri 06 Nov 2026 08:00:00 GMT</strong> · <strong>非 Desktop shipping</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li><a href="https://openai.com/index/partnering-with-hacktron">openai.com/index/partnering-with-hacktron</a>：与 Hacktron 合作，叙事为将 <strong>Daybreak Red</strong> 能力扩给该伙伴（衔接 GPT‑6 Cyber / Daybreak 产品弧）。</li>
+</ul>
+<p><img alt="图 7" src="../assets/2026-11-07/hacktron-og.png" /></p>
+<p>图 7 · OpenAI×Hacktron 公告 OG · 来源：openai.com/index/partnering-with-hacktron</p>
+<p><strong>我的判断</strong></p>
+<ul>
+<li><strong>A−/B+</strong>。属 Daybreak 生态扩面短讯，不单开安全模型头条；证明 Red 通道在窗内继续对外伙伴化。</li>
+</ul>
+<p><strong>建议动作</strong></p>
+<ol>
+<li>若在 Daybreak：对照伙伴准入叙事与自有申请状态。</li>
+<li>与 watchlist <strong>199</strong> GPT‑6 Cyber 合并跟踪扩面。</li>
+</ol>
+<p><strong>来源</strong>：<a href="https://openai.com/index/partnering-with-hacktron">partnering-with-hacktron</a> · <a href="https://openai.com/news/rss.xml">RSS</a></p>
+<hr />
+<h2>专栏二｜话题热议</h2>
+<p>本栏：社区/媒体高信号讨论；无够 B 级则宁缺。</p>
+<h3>1. Qwen「The becoming begins」预热热度（无权重/API）</h3>
+<p><code>话题 · 国际/国内交叉 · A/I · @Alibaba_Qwen <strong>2026-11-06T12:00:00Z</strong> · 截稿约 <strong>1.58M</strong> impr · <strong>不升格新闻头条</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>@Alibaba_Qwen 发「The becoming begins」类预热帖，互动量级可核验至约 <strong>158 万</strong> impr 量级；<strong>无</strong>同窗权重仓/API 发船实证。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>热议信号强，但缺产品/权重一手 → <strong>话题栏</strong>，不进新闻头条。</li>
+</ul>
+<h3>2. GitHub Next Enclaves：信息披露预算社区讨论</h3>
+<p><code>话题 · 国际 · G/C · 原文标 <strong>Nov 2</strong>（窗外）· HN <strong>11-06</strong> amplify · <strong>不升格新闻头条</strong></code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>GitHub Next 关于 Enclaves / 信息披露预算的文章日期在窗前；本窗 HN 等社区放大讨论 Agent 该看到多少敏感上下文。</li>
+</ul>
+<p><strong>我的判断</strong></p>
+<ul>
+<li>与 Memory/委托最小化相关，作<strong>未来信号/话题</strong>；不以窗内新闻发船计。</li>
+</ul>
+<h3>3. ChatGPT Remix for Business/Enterprise</h3>
+<p><code>话题 · 国际 · B/I · @ChatGPT <strong>2026-11-06T22:08Z</strong> · 短记</code></p>
+<p><strong>发生了什么（事实）</strong></p>
+<ul>
+<li>@ChatGPT 提及 Remix 面向 Business/Enterprise 的叙事；细节以官方后续文档为准，本报不作独立强A 新闻。</li>
+</ul>
+<hr />
+<h2>专栏三｜开源雷达</h2>
+<h3>1. 星标 continuum（截稿可核验，非必然新发船）</h3>
+<table>
+<thead>
+<tr>
+<th>仓</th>
+<th>★截稿</th>
+<th>vs Daily 11-06</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vercel-labs/agent-desktop</td>
+<td><strong>18,101</strong></td>
+<td>★16,807 → <strong>+1,294</strong></td>
+<td>版本仍 <strong>1.2.0</strong>；星标急升 continuum</td>
+</tr>
+<tr>
+<td>anthropics/FlashProve</td>
+<td><strong>937</strong></td>
+<td>★908</td>
+<td>可证明推理 continuum</td>
+</tr>
+<tr>
+<td>deepseek-ai/dsh-superagent-prototype</td>
+<td><strong>20,235</strong></td>
+<td>★19,475</td>
+<td>仍 research prototype；dsh <strong>0.2.2-rc.1</strong></td>
+</tr>
+<tr>
+<td>deepseek-ai/DeepInfer</td>
+<td><strong>25,552</strong></td>
+<td>★25,467</td>
+<td>生产推理框架 continuum</td>
+</tr>
+<tr>
+<td>Tencent-Hunyuan/Hyra-results</td>
+<td><strong>213</strong></td>
+<td>★211</td>
+<td>HyCell continuum</td>
+</tr>
+<tr>
+<td>anomalyco/opencode</td>
+<td><strong>225,061</strong></td>
+<td>★224,792</td>
+<td>harness continuum</td>
+</tr>
+<tr>
+<td>modelcontextprotocol/servers</td>
+<td><strong>91,839</strong></td>
+<td>★91,815</td>
+<td>参考服务器</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 今日无其他足够重要新仓/新 release 升格条目</h3>
+<ul>
+<li>MiniMax Desktop CDN <strong>3.1.11</strong>（Win releaseDate <strong>08:01:59Z</strong> / Mac <strong>08:44Z</strong>）但 changelog Desktop 仍顶 <strong>3.1.10@11-01</strong> → <strong>不升 desktop_shipping</strong>（near-miss）。</li>
+<li>kimi-code <strong>canary 2.6.0</strong> — 非 latest。</li>
+<li>codex <strong>0.169.0-alpha.2</strong> — prerelease near-miss。</li>
+<li>ZCode 仍 <strong>3.17.2</strong>；agent-desktop 版本仍 <strong>1.2.0</strong>；dsh 仍 RC。</li>
+</ul>
+<hr />
+<h2>重点事件新进展</h2>
+<h3>相对 Daily 11-06 的快讯增量（本报吸收）</h3>
+<ul>
+<li><strong>CVE-2026-110930</strong>（204）NEW；<strong>Live Apps</strong>（200）漏收补推；<strong>Codex CLI 0.167</strong>（201）；<strong>Kimi 1.3.2</strong>（202）；<strong>CodeBuddy 2.181</strong>（203）。</li>
+<li>本报另升格窗内新实质：<strong>Anthropic Memory/Dreaming（205）</strong>、<strong>Claude cloud env + 2.1.319（206）</strong>、<strong>GitHub Rubicon（207）</strong>、<strong>Antigravity Remote（208）</strong>、<strong>Hacktron 短讯</strong>。</li>
+</ul>
+<h3>Conductor→MSL（192）</h3>
+<ul>
+<li><strong>11-13</strong> Cloud 只读临近（距截稿约 <strong>6</strong> 天）——若在用：抓紧 Transfer to local / Export。</li>
+</ul>
+<h3>Postman #14370（188）</h3>
+<ul>
+<li>仍<strong>无</strong>客户端版本实证「已真正停止写入」→ 继续观察，不重复展开 revert 叙事。</li>
+</ul>
+<h3>Hy4（189）</h3>
+<ul>
+<li>权重仍未开放（截稿无新证据）→ <strong>不重复报道</strong>。</li>
+</ul>
+<h3>GPT‑6 Cyber（199）/ Pierre（191）/ Pando（183）</h3>
+<ul>
+<li>Cyber continuum 见 Hacktron 扩面短讯；Pierre/Pando 与 Rubicon 并表；无交割新点不复述。</li>
+</ul>
+<h3>ZCode（185）/ Northflank（178）/ FlashProve（186）/ EMA（187）</h3>
+<ul>
+<li>无窗内官方实质增量 → <strong>不重复报道</strong>。</li>
+</ul>
+<hr />
+<h2>今天正在形成的趋势</h2>
+<ol>
+<li><strong>Agent Memory 进入可测工程组件</strong>：session notes vs idle dreaming + 注入预算 + 输入只读/产出新 store。</li>
+<li><strong>信任门前执行面成为 Desktop 安全主战场</strong>：Codex CVE 把「未登录/未 trust 也可跑」钉成 CVSS 8.0 级问题。</li>
+<li><strong>Cloud Agent 交付链产品化同周集中</strong>：Cursor Live Apps（托管 app）+ Claude 自动环境 + Antigravity Remote VM——「写完代码」变成「交出租户可登录的运行体」。</li>
+<li><strong>Git 存储为 Agent 并发重做</strong>：Rubicon 与 Pierre/Pando continuum 说明多 Agent push 已逼到 CAS/ref 层。</li>
+<li><strong>国内 Desktop/CLI 小版本高频对齐</strong>：Kimi 1.3.2↔CLI 2.5.2、CodeBuddy 2.181——缺陷与权限 DSL 同步推进。</li>
+</ol>
+<hr />
+<h2>对智能体互联网最值得吸收的东西</h2>
+<ol>
+<li><strong>不可变输入记忆 + 显式晋升</strong>（Anthropic dreaming）：跨 Agent 共享记忆的审计前提。</li>
+<li><strong>认证完成前默认拒绝执行</strong>（Codex CVE）：Discovery/Deep Link/Explorer 启动必须进信任状态机。</li>
+<li><strong>密钥 proxy 挂载、模型不见明文</strong>（Claude cloud env）：委托凭据原语的产品样板。</li>
+<li><strong>托管交付的双门禁</strong>（Cursor Live Apps）：deterministic + agentic 分层同意。</li>
+</ol>
+<hr />
+<h2>对 Work / Agent 引擎最值得吸收的东西</h2>
+<ol>
+<li><strong>Memory 注入预算与 CAS 式 store</strong>（205）。</li>
+<li><strong>argv/路径消毒与 project-trust 门闩</strong>（204）——Explorer 集成回归必测。</li>
+<li><strong>Cloud Agent 环境自动装配 + MCP 后台任务 + denyInsteadOfPrompting</strong>（206 / 2.1.319）。</li>
+<li><strong>command center / 多后端草稿 / 系统代理</strong>（Codex 0.167）。</li>
+<li><strong>plugin eval + Harness toolMode + MCP 整服务权限 DSL</strong>（CodeBuddy 2.181）——注意命名不兼容。</li>
+<li><strong>并发 Git 的 Blob + Ref-CAS 思维</strong>（Rubicon）用于 Workspace 后端选型。</li>
+</ol>
+<hr />
+<h2>值得继续跟踪</h2>
+<ol>
+<li><strong>事件：Anthropic Memory / Dreams（205）</strong> — preview→GA；晋升误伤；计费。</li>
+<li><strong>事件：Codex Desktop CVE（204）</strong> — 升级到位率；是否扩非 Windows；KEV。</li>
+<li><strong>事件：Cursor Live Apps（200）</strong> — 实机门禁；GitLab；滥用面。</li>
+<li><strong>事件：Claude cloud env + 2.1.319（206）</strong> — proxy 边界；安全修复回归。</li>
+<li><strong>事件：GitHub Rubicon（207）</strong> — private preview 准入；early 2027。</li>
+<li><strong>事件：Antigravity Remote（208）</strong> — VM 隔离；移动审批。</li>
+<li><strong>事件：Codex CLI 0.167 / Kimi 1.3.2 / CodeBuddy 2.181</strong> — 实机回归。</li>
+<li><strong>事件：Conductor（192）</strong> — <strong>11-13</strong> 只读 / <strong>11-20</strong> 关停。</li>
+<li><strong>事件：Postman（188）</strong> — 客户端停止写入实证。</li>
+<li><strong>事件：Hy4（189） / GPT‑6 Cyber（199） / Pierre（191）</strong> — 权重/扩面/交割。</li>
+<li><strong>事件：MiniMax Desktop</strong> — changelog 是否追上 CDN 3.1.11。</li>
+</ol>
+<hr />
+<h2>未来信号</h2>
+<ul>
+<li><strong>Dreaming/idle 晋升</strong>若产品化，可能重塑「Memory Skill」市场——谁能证明晋升可审计谁占优。</li>
+<li><strong>信任门前 RCE</strong> 类 CVE 可能推动 Desktop 安装器默认「先登录再挂 Explorer 动词」。</li>
+<li><strong>Qwen teaser</strong> 与 <strong>Enclaves 信息披露预算</strong> 若落地，会同时冲击模型档位与上下文最小化设计。</li>
+<li><strong>MiniMax CDN 3.1.11</strong> 一旦 changelog 对齐，可能下一轮打断 shipping 计数。</li>
+</ul>
+<hr />
+<h2>价格 / 订阅雷达</h2>
+<ul>
+<li>Claude cloud environments：文档指向 <strong>Pro/Max/Ultra</strong> 可用性（非新价目表）；密钥 proxy 为能力叙事。</li>
+<li>Cursor Live Apps：需付费 + Cloud Agents（既有档位约束）。</li>
+<li>Antigravity Remote：paid consumer。</li>
+<li>Daybreak Red × Hacktron：伙伴扩面，非公开价目变更。</li>
+<li>其余本窗未见可核实的重要新促销/调价。CodeBuddy / Kimi / Codex CLI / Claude Code 为产品版本，非价目。</li>
+</ul>
+<hr />
+<h2>信源与方法（vendor-check 摘要）</h2>
+<ul>
+<li><strong>窗口</strong>：2026-11-06 08:00→2026-11-07 08:00 CST（00:00Z Nov6 → 00:00Z Nov7）。</li>
+<li><strong>国际 P0</strong>：Anthropic research + Dreams docs；OpenAI security advisory / NVD / GHSA + Hacktron 公告 + Codex GH/npm；Cursor changelog Live Apps；ClaudeDevs + cloud-environments + npm 2.1.319；GitHub Rubicon 博文；Antigravity X；CERTpy amplify。</li>
+<li><strong>国内 P0</strong>：Kimi Desktop changelog 1.3.2；CodeBuddy npm 2.181.0；ZCode 仍 3.17.2；MiniMax CDN 3.1.11 vs changelog 3.1.10；Hy4 权重无新证据；机器之心/量子位等公开页抽样。</li>
+<li><strong>Desktop 探针截稿</strong>：ZCode <strong>3.17.2</strong> · MiniMax CDN <strong>3.1.11</strong>（changelog <strong>3.1.10</strong>）· CodeBuddy <strong>2.181.0</strong> · claude-code <strong>2.1.319</strong> · codex <strong>0.167.0</strong>（alpha <strong>0.169.0-alpha.2</strong>）· agent-desktop <strong>1.2.0</strong> · Kimi Desktop <strong>1.3.2</strong> · kimi-code <strong>2.5.2</strong> · minimax-code <strong>0.7.6</strong> · dsh <strong>0.2.2-rc.1</strong>。</li>
+<li><strong>官方 X</strong>：@AnthropicAI / @ClaudeDevs / @antigravity / @cursor_ai / @github / @CERTpy / @Alibaba_Qwen / @ChatGPT 等窗内帖；互动数为截稿可核验近似值。</li>
+<li><strong>扫描日志</strong>：<code>flashes/.scan-2026-11-07-daily.md</code>。</li>
+</ul>
+</article></main>
+<script src="../js/app.js" defer></script>
+</body>
+</html>

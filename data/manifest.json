@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-06T08:25:00+08:00",
+  "updatedAt": "2026-11-07T08:15:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-07",
+      "date": "2026-11-07",
+      "title": "AI Intelligence Daily · 2026-11-07",
+      "summary": "Anthropic Agent Memory/Dreaming；Codex Desktop CVE-2026-110930；Cursor Live Apps；Claude cloud env + 2.1.319；GitHub Rubicon；Antigravity Remote；Codex CLI 0.167 / Kimi Desktop 1.3.2 / CodeBuddy 2.181；Hacktron；desktop_shipping=4",
+      "href": "reports/2026-11-07.html"
+    },
     {
       "id": "2026-11-06",
       "date": "2026-11-06",
