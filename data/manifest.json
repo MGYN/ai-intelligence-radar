@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-07T08:15:00+08:00",
+  "updatedAt": "2026-11-08T08:15:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-08",
+      "date": "2026-11-08",
+      "title": "AI Intelligence Daily · 2026-11-08",
+      "summary": "Cursor Voice Chat 与 Amp Spaces 补录；MiniMax Desktop 3.1.11 changelog 追上；Copilot CLI 1.0.107；Factory 1.6.0；ChatGPT dots OTP 代填；code review API；Antigravity CLI 1.5.3 沙箱硬化；desktop_shipping=3",
+      "href": "reports/2026-11-08.html"
+    },
     {
       "id": "2026-11-07",
       "date": "2026-11-07",
