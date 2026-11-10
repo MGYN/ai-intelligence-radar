@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-08T08:15:00+08:00",
+  "updatedAt": "2026-11-10T08:30:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-10",
+      "date": "2026-11-10",
+      "title": "AI Intelligence Daily · 2026-11-10",
+      "summary": "Claude Fable/Mythos 5.2；千问办公 2.0.0；CodeBuddy 2.182.0；Claude Code 2.1.321；Copilot Fable GA+CLI 1.0.108；TPU 8tx/8i Max；Control Room；dots 多机；Antigravity Knowledge Work；Muse Ember；ERNIE Evolve；desktop_shipping=4",
+      "href": "reports/2026-11-10.html"
+    },
     {
       "id": "2026-11-08",
       "date": "2026-11-08",
