@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-10T08:30:00+08:00",
+  "updatedAt": "2026-11-11T08:45:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-11",
+      "date": "2026-11-11",
+      "title": "AI Intelligence Daily · 2026-11-11",
+      "summary": "Gemini 4 Carbon 放量（引入价 $2/$10 至 11/30）；AlphaProof Code 验证 libsignal（非整个 Signal 应用）；Claude Whiteboards/Sheets/Data + MCP Apps + Desktop 默认 Unified Claude；Antigravity 1.5.5 /swarm；Cursor Projects multiplayer；LF ANS；Copilot CLI 1.0.109 CIDR；desktop_shipping=3",
+      "href": "reports/2026-11-11.html"
+    },
     {
       "id": "2026-11-10",
       "date": "2026-11-10",
