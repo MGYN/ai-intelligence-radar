@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-11T08:45:00+08:00",
+  "updatedAt": "2026-11-12T08:45:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-12",
+      "date": "2026-11-12",
+      "title": "AI Intelligence Daily · 2026-11-12",
+      "summary": "Qwen4-Max-Preview 进 Token Plan/办公/编程产品（Credits 校正为 2 折+夜间再 4 折=8%）；Gemini Decision 1 / Decisions API（最多 1,000 题、输出 $0）；MCP servers v2.4.0 六则 GHSA；VS Code 1.146 Local harness 弃用至 2027-02；CodeBuddy 2.183.0 + Factory 1.9.0 + Antigravity 1.5.6；desktop_shipping=3",
+      "href": "reports/2026-11-12.html"
+    },
     {
       "id": "2026-11-11",
       "date": "2026-11-11",
