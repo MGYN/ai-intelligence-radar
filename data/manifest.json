@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-13T08:23:39+08:00",
+  "updatedAt": "2026-11-14T08:40:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-14",
+      "date": "2026-11-14",
+      "title": "AI Intelligence Daily · 2026-11-14",
+      "summary": "ChatGPT Wallet 在 dots 上线代理支付（逐笔生物核验 + 网络侧 token，快讯漏收）；Antigravity Dynamic Workflows（/run-workflow）与 Claude Projects 分阶段公测；混元 Hy Realtime 已上元宝/客服（官方长文未打开）；吸收快讯 DeepSeek 应用 API 与 Qoder 0.5.11；WinWork V1.1.24 + Claude Code 2.1.325 默认权限收紧；desktop_shipping=2",
+      "href": "reports/2026-11-14.html"
+    },
     {
       "id": "2026-11-13",
       "date": "2026-11-13",
@@ -445,6 +452,30 @@
     }
   ],
   "events": [
+    {
+      "id": "chatgpt-wallet",
+      "title": "ChatGPT Wallet：代理支付与 payment token",
+      "status": "tracking",
+      "href": "events/chatgpt-wallet.html"
+    },
+    {
+      "id": "hunyuan-hy-realtime",
+      "title": "腾讯混元 Hy Realtime：实时语音 + 工具调用",
+      "status": "tracking",
+      "href": "events/hunyuan-hy-realtime.html"
+    },
+    {
+      "id": "antigravity-dynamic-workflows",
+      "title": "Antigravity Dynamic Workflows（/run-workflow）",
+      "status": "tracking",
+      "href": "events/antigravity-dynamic-workflows.html"
+    },
+    {
+      "id": "claude-projects-update",
+      "title": "Claude Projects：项目协调器与分阶段公测",
+      "status": "tracking",
+      "href": "events/claude-projects-update.html"
+    },
     {
       "id": "nvidia-ceo-transition",
       "title": "NVIDIA CEO 过渡：黄仁勋即时辞任 / Kress Interim CEO",
