@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-14T08:40:00+08:00",
+  "updatedAt": "2026-11-17T08:40:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-17",
+      "date": "2026-11-17",
+      "title": "AI Intelligence Daily · 2026-11-17",
+      "summary": "Qwen4-Max 正式发布取代 Preview（API $1.5/$4.5，人民币 10/30）；混元 Hy4 flash 目录价 0.5/2 元、11-30 前五折；OpenAI 医疗 computer-use 与 embedded assessments；HF×OpenRouter 路由交接；MiniMax 3.1.16 / 千问办公 2.1.0 / WinWork V1.1.25；主窗 desktop_shipping=3，补收+2",
+      "href": "reports/2026-11-17.html"
+    },
     {
       "id": "2026-11-14",
       "date": "2026-11-14",
