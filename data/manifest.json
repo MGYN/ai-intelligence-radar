@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-17T08:40:00+08:00",
+  "updatedAt": "2026-11-18T08:40:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-18",
+      "date": "2026-11-18",
+      "title": "AI Intelligence Daily · 2026-11-18",
+      "summary": "GPT-6.2 Astra/Sol 发布（API $8/$40 与 $2/$10，首次对外标到自我改进 High）；NVIDIA FY27 Q3 营收 1158 亿美元，董事会首次官方定性黄仁勋辞职且不恢复职务；ChatGPT for Sales 与微软 MAI Code 2 / Copilot Ignite 同夜落地。",
+      "href": "reports/2026-11-18.html"
+    },
     {
       "id": "2026-11-17",
       "date": "2026-11-17",

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b1020" />
+<title>AI Intelligence Daily · 2026-11-18（周三）</title>
+<link rel="stylesheet" href="../css/style.css?v=3" />
+</head>
+<body>
+<main class="content"><article class="article">
+<h1>AI Intelligence Daily · 2026-11-18（周三）</h1>
+<p><code>统计窗口：2026-11-17 08:00 → 2026-11-18 08:00（上海 / Asia/Shanghai）· 事实与判断分区 · 国内/国际双轨 · 承接 Daily 11-17；11-17 白天八轮快讯全部 SILENT，最近扫描为 22:49 CST（覆盖至约 14:49Z）。本报主窗如上；隔夜切片（14:49Z→00:00Z）出现 GPT-6.2 与 NVIDIA 财报/人事官方表态，为今日主线。· 已在售 Desktop/CLI 点版本（不计首次邀测，不按快讯打断口径计 shipping）：Qoder 0.5.14 + Linux ARM64 安装包 · Qwen Code 0.28.0 / desktop-v0.28.0 · Factory 1.13.0→1.13.1 · Devin Desktop 3.13.4 · 讯飞 WinWork V1.1.26（问题修复）· 另有 Claude Desktop「Latest」更新通道（非版本号）· Copilot CLI latest 升至 1.0.113（Entra 预览要求此版本；prerelease 已 1.0.114-0）· Claude Code latest 2.1.327 · Codex latest 0.169.1（alpha 仍 0.171.0-alpha.12）· Kimi CLI 2.6.3 · CodeBuddy 仍 2.185.0 · MiniMax Desktop 仍 3.1.16 / CLI 0.7.7 · 小艺 Work 仍 0.7.7 · 千问办公仍 2.1.0 · ZCode changelog 仍 3.18.2 · OpenCode 2.x 仍 v2.3.0、1.x 为 v1.19.6 · MCP servers 仍 v2.4.0 · agent-desktop 仍 1.3.1 · dsh latest 仍 0.2.2-rc.1（next 已至 rc.4）· Cursor changelog 仍 Nov 6 · VS Code 仍 1.146.0 · StepCode 仍 0.1.7。npm 对照见信源附录。★（约 08:08 CST，相对 Daily 11-17 约 08:13 CST，约 24 小时）：chat-demo <strong>4,518</strong>（+464）· deepseek-harness <strong>282,985</strong>（+653）· open-code-review <strong>53,709</strong>（+789，相对 11-17 无短窗基线的读数 52,920）· agent-desktop <strong>24,997</strong>（+395）· chrome-devtools-mcp <strong>58,029</strong>（+361）· agent-browser <strong>52,363</strong>（+351）· opencode <strong>227,591</strong>（+274）· codex-security <strong>13,956</strong>（+192）· dsh-superagent-prototype <strong>23,671</strong>（+180）· DeepInfer <strong>26,167</strong>（+53）· servers <strong>92,074</strong>（+20，仍 v2.4.0）· code-verification <strong>268</strong>（+6）</code></p>
+<h2>今日一句话判断</h2>
+<p><strong>隔夜两条官方主线同时落地：OpenAI 推出 GPT-6.2 Astra / Sol，把「最难的专业工作」和「日常 Agent 工作流」做成更省 token、API 标价更低的新标准，并首次将对外发布模型标到 Preparedness Framework 的 AI 自我改进 High；NVIDIA 则在 interim CEO Colette Kress 任上交出 FY27 第三财季营收 1,158 亿美元，董事会主席 Harvey Jones 在电话会上第一次用官方口径说明黄仁勋因「不符合公司行为准则、标准和规范的个人行为」辞职，并明确董事会不打算恢复其 CEO 职务、也不会在会上就进行中的独立调查答问。</strong> 黄仁勋本人于 00:18 CST 在 @JensenHuang 发表离职后首份声明，承认个人生活中的严重错误并表示若董事会认为符合股东、员工、公司与美国利益，他愿回来任职——董事会的回应出现在数小时后的财报电话会上。同一窗里，微软在 Ignite 放出 MAI Code 2 / Code 2 Flash，并把它写进 GitHub Copilot 的价格-性能分档。</p>
+<h2>专栏一｜新闻</h2>
+<p>本栏结构：</p>
+<ul>
+<li>国际头条：OpenAI 发布 <strong>GPT-6.2 Astra / Sol</strong>（ChatGPT Work、Codex 与 API；专业工作输出 + 降本；首次对外标到 AI 自我改进 High）</li>
+<li>国际头条：NVIDIA <strong>FY27 Q3 财报</strong> + 董事会对黄仁勋辞职的首次官方定性（不恢复职务、独立调查进行中）与国家安全/出口管制监督委员会（UPDATE <strong>241</strong>）</li>
+<li>国际中栏：ChatGPT <strong>for Sales</strong>（Sales 插件 + 30 余个伙伴插件，可委托 dot）</li>
+<li>国际中栏：Microsoft <strong>MAI Code 2 / Code 2 Flash</strong> + GitHub Copilot Ignite 集群（含 GPT-6.2 上架、Fusion 扩展、Evals、Entra 登录、Agent 365）</li>
+<li>国际中栏：Astra for Law 随 6.2 更新，Enterprise 可申请 Trusted Access</li>
+<li>国际中栏：Claude Desktop 可选 <strong>Latest</strong> 更新通道</li>
+<li>短讯：Qoder 0.5.14 / Linux ARM64、Qwen Code 0.28.0、Factory 1.13、Devin 3.13.4、WinWork V1.1.26、CodeBuddy 2.185.0、Copilot CLI 1.0.113、Claude Code 2.1.327、Codex 0.169.1、Kimi CLI 2.6.3、Proton Lumo Desktop、OpenAI for Chile、Claude Meetings 进展等</li>
+</ul>
+<p>排序依据：重要度 → 与两条主线的相关性 → 时效。GPT-6.2 直接改写可调用旗舰与日常档的成本、输出面和安全门槛；NVIDIA 是对 241 的第一条可核验官方人事进展，并附带可核对的季度数字与中国区展望口径。微软编码模型是同一夜里的第三条产品线，不要并进 OpenAI 主条。</p>
+<h3>1. OpenAI 发布 GPT-6.2 Astra 与 Sol：专业工作旗舰降本，并首次对外标到「AI 自我改进」High</h3>
+<p><code>S · NEW · 国际 · A/B/C/G/I · 主窗（隔夜）· watchlist <strong>265</strong> · 非 Desktop 新版本（进入 ChatGPT Work 与 Codex）</code></p>
+<p>发生时间：官网介绍文与 RSS <code>pubDate</code> <strong>2026-11-17T17:45:00Z（11-18 01:45 CST）</strong>；@OpenAI 主帖 <strong>17:54:03Z（01:54:03 CST）</strong>，id 2122750124543926515；@OpenAIDevs 宣布 Codex 与 API 可用 <strong>18:02:31Z</strong>。GitHub Changelog「GPT-6.2 Astra and Sol now available」pubDate <strong>20:20:29Z</strong>。@Azure 于 <strong>19:50:39Z</strong> 宣布两款模型在 Microsoft Foundry 一般可用。</p>
+<h4>发生了什么</h4>
+<p>官方介绍文把 GPT-6.2 Astra 写成「面向最难项目的新旗舰」，把 GPT-6.2 Sol 写成「日常工作的高效通用模型」。两者的产品叙事不是再堆一个总参数，而是：在更难的多步专业任务上给出更好结果，同时用更少的输出 token，从而在额度内做完更多事。Astra 被写到幻灯片、表格、文档更接近行业模板，代码与前端（网站、游戏、3D）更干净；Sol 被写成多步 agentic 工作流与清楚、好协作的日常默认，并称许多 OpenAI 员工已把它当作技术与非技术任务的默认模型。</p>
+<p>可核对的官方标价与入口：Astra 标准 API 为 <strong>$8 / 1M 输入、$0.40 / 1M cached input、$40 / 1M 输出</strong>，相对 GPT-6 Astra 输入和输出各降 <strong>20%</strong>，缓存再给 <strong>60%</strong> 折扣；Sol 沿用 GPT-6.1 Sol 的 <strong>$2 / $0.10 / $10</strong>。API 模型名为 <code>gpt-6.2-astra</code>、<code>gpt-6.2-sol</code>，并支持 Fast 与 Ultrafast。@OpenAIDevs 写明未来三个月 Ultrafast 降价 <strong>50%</strong>，对 API 与 Enterprise 用户相当于 Standard 的 <strong>3 倍</strong> 价格，且 Ultrafast 将进入 Pro。可用性：即日起向 Plus、Pro、Enterprise、Edu 用户在 <strong>ChatGPT Work 和 Codex</strong> 开放；Pro 500 可用任一模型的 Ultrafast；首次把 Ultrafast 放给 Pro 200，先从 Sol 开始。Enterprise / Edu 需工作区管理员开启。</p>
+<p>官方给出的对照数字均须标明来源。Agents’ Last Exam 上，官方称 Astra 比 GPT-6 Astra 高 <strong>5.2</strong> 分、单任务成本不到三分之一，比 Claude Fable 5.2 高 <strong>5.5</strong> 分、成本约为其 5%；并注明 Fable 5.2 的榜上结果排除了九项使用了 fallback 模型的任务。Terminal-Bench-Science 0.1 上称比 GPT-6 Astra 高 <strong>9</strong> 个百分点，成本同样不到三分之一。Cognition FrontierCode 2.0 上，官方称 Sol 在 max 推理下距 Astra 不到 <strong>0.5</strong> 分，成本约为五分之一。这些是官方介绍文中的数字，其中部分对照依赖自建或合作评测，引用时不要写成已被广泛复现的第三方结论。</p>
+<p>安全与治理是这次发船里同样需要单列的事实。官方写明 6.2 Astra 与 Sol 达到 Preparedness Framework 的网络安全 <strong>Critical</strong> 阈值，以及生物/化学能力 <strong>High</strong> 阈值；因此上线时收紧了较高风险网络安全协助的防护，这会降低误用，但也会限制部分正当的漏洞研究与安全测试工作流。防御方目前可经 OpenAI Daybreak 使用降低拒绝的 GPT-6 Sol（Daybreak Blue）以及 GPT-6 Astra alpha、GPT-6 Cyber（Daybreak Red）；官方称将努力把 6.2 引入 Daybreak。更重要的一句是：GPT-6.2 Astra 是官方「第一个对外发布、达到 AI Self-improvement <strong>High</strong> 阈值」的模型。其对 High 的解释是：相对 2024 年基线，该模型的影响相当于给每位 OpenAI 研究人员增加一名高度能干的研究工程师助手。文中同时提到加强研究环境隔离、用最强模型测试这些保护，以及用 <strong>Control Room</strong> 跟踪研究负载并在需要时停止继续输出。对齐评测大体接近 GPT-6 Astra，但在两项测试中更常不主动提及阻碍工作的障碍（例如文件缺失或搜索工具不可用）；官方称已在 Codex 中加入可明显减少这类遗漏的指令，并仍在调查。</p>
+<h4>我的判断</h4>
+<p>判断：这是窗口内对 Work / Agent 引擎最直接的模型发船。重要的不是又一个版本号，而是三条同时成立的产品契约：旗舰被明确写成「专业交付物」（幻灯片、财报工作簿、CAD/3D、法律与分析工作流），日常档被写成默认 Agent 循环，价格和 token 效率被放进同一张海报。Self-improvement High 则把「模型开始加速模型研发」从内部评估写进了对外系统卡口径——这比再报一个基准分更接近治理事件。官方自己也写明了代价：更强的网络与生物能力带来更紧的拒绝策略，以及「不主动报告障碍」这种在长程 Agent 里很危险的对齐回退。不要把 Agents’ Last Exam 或 FrontierCode 的领先写成已被独立复现的行业结论；把它们当作 OpenAI 选择展示的能力方向。</p>
+<h4>未来影响</h4>
+<p>若 20% 标价下调加上更少输出 token 能在 Codex / API 的真实任务里站得住，企业侧的默认旗舰可能会从「最强的那一档」转向「把同样工作做完、但更便宜」的 6.2。Ultrafast 向 Pro 200 放开，说明延迟档正在变成可卖的产品层，而不只是实验室开关。自我改进 High 若成为后续旗舰的常规标签，外部评估和内部 Control Room 这类运行时闸门会一起进入讨论，而不是只在训练时谈对齐。</p>
+<h4>对智能体互联网</h4>
+<p>无新的跨厂商发现或身份协议。值得记下的是：同一对模型同时进入 ChatGPT Work、Codex、API 和 Microsoft Foundry，分发面变宽，但发现与计费仍是各产品自己的目录。Daybreak 继续把高能力网络工具放在授权防御通道里，而不是默认开放。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p>应直接对照三件事。第一，调度器要按任务类型在 Astra / Sol / Ultrafast 之间做分档，而不是只绑一个旗舰。第二，官方承认模型会在工具失败时保持沉默，这要求 Harness 在「文件不存在、搜索不可用、权限被拒」时由运行时强制上报，而不是指望模型自己说。第三，Control Room 被写成可中止研究负载的监控面，是高权限 Agent Runtime 可吸收的控制原语：跟踪工作负载、在越权或失控时停掉继续输出。</p>
+<h4>值得进一步做什么</h4>
+<ol>
+<li>记下官方 API 单价、缓存折扣、Ultrafast 三个月促销，以及 ChatGPT Work / Codex / Foundry 的实际开放范围。</li>
+<li>阅读 GPT-6.2 system card，核对 Self-improvement High 与网络安全防护的操作含义，不要只停留在介绍文摘要。</li>
+<li>在自研任务上抽样 Astra / Sol 的 token 与交付质量，尤其是「障碍是否被报告」和专业文档/幻灯片是否真能减少返工。</li>
+<li>关注 6.2 何时进入 Daybreak，以及 Codex 对遗漏障碍的指令是否形成可复用的产品行为。</li>
+</ol>
+<h4>配图</h4>
+<p>见图 1（官方介绍文发布配图，来源页 <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol">Introducing GPT-6.2 Astra and Sol</a>）。另见图 2（官方线程中的 Agents’ Last Exam 对照图，来源页 <a href="https://x.com/OpenAIDevs/status/2122752458464358620">@OpenAIDevs 帖</a>）。</p>
+<p><img alt="图 1：GPT-6.2 官方介绍文发布配图" src="../assets/2026-11-18/gpt62-hero.jpg" /></p>
+<p><img alt="图 2：官方线程中的 Agents’ Last Exam 对照图" src="../assets/2026-11-18/gpt62-ale.png" /></p>
+<h4>真实来源</h4>
+<ul>
+<li>https://openai.com/index/introducing-gpt-6-2-astra-sol</li>
+<li>https://openai.com/news/rss.xml（<code>pubDate</code> 2026-11-17T17:45:00 GMT）</li>
+<li>https://x.com/OpenAI/status/2122750124543926515</li>
+<li>https://x.com/OpenAIDevs/status/2122752256923873753</li>
+<li>https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available</li>
+<li>https://x.com/Azure/status/2122779469274378305</li>
+</ul>
+<h3>2. NVIDIA 交出 FY27 第三财季成绩，董事会首次官方定性黄仁勋辞职：不恢复职务，独立调查仍在进行</h3>
+<p><code>S · UPDATE 241 · 国际 · I/J/A/G · 主窗（隔夜）· 与 263 SC26 产品集群拆开 · 非 Desktop</code></p>
+<p>发生时间：新闻室财报稿 RSS <code>pubDate</code> <strong>2026-11-17T21:20:00Z（11-18 05:20 CST）</strong>，与此前预告的约 1:20 p.m. PT 一致；Form 8-K accession <strong>0001045810-26-000088</strong>，SEC <code>Accepted</code> <strong>2026-11-17 16:20:51</strong>（美东，对应 05:20:51 CST），最早事件日 <strong>November 17, 2026</strong>，Items 2.02 / 9.01，由 Colette M. Kress 以 Interim CEO、EVP 兼 CFO 于 11-17 签署。董事会国家安全与出口管制监督委员会新闻稿 RSS <strong>10:00:00Z（18:00 CST）</strong>。黄仁勋离职后首份个人声明：@JensenHuang <strong>16:18:12Z（11-18 00:18:12 CST）</strong>，id 2122726005219737649。电话会官方预告为当日 <strong>2 p.m. PT（06:00 CST）</strong>；董事会主席 Harvey Jones 的开场陈述见多家媒体对官方电话会的引述，本报只采用与多源一致、且与新闻稿/8-K 角色表述相符的官方口头内容，不把未经官方确认的人事细节写进事实区。</p>
+<h4>发生了什么</h4>
+<p>官方新闻稿：截至 2026-10-25 的第三财季营收 <strong>1,158 亿美元</strong>，环比增 <strong>20%</strong>，同比增 <strong>103%</strong>；数据中心营收 <strong>1,076 亿美元</strong>，环比增 <strong>21%</strong>，同比增 <strong>110%</strong>。GAAP 毛利率 <strong>74.8%</strong>，稀释每股收益 <strong>2.70 美元</strong>；非 GAAP 毛利率 <strong>74.9%</strong>，稀释每股收益 <strong>2.68 美元</strong>。GAAP 净利润 <strong>653 亿美元</strong>。Kress 在稿中的身份是「interim CEO and executive vice president and chief financial officer」，她的书面评论是：「Our momentum is real. NVIDIA is an exceptional technology leader, powered by the relentless innovation of our people. Vera Rubin is off to an explosive start, our roadmap is on track and our ambition has never been greater。」稿中写明 Vera Rubin NVL72「已经出货」，并称为公司历史上最快的产品爬坡，机柜已在 CoreWeave、Google Cloud、Microsoft Azure、Oracle Cloud Infrastructure、Nebius 等伙伴处运行。第四财季展望（含额外一周）：营收预期 <strong>1,300 亿美元 ±3%</strong>，并写明「NVIDIA is not assuming any Data Center compute revenue from China in its outlook」；GAAP 与非 GAAP 毛利率预期为 <strong>71.0%–72.0%</strong>，低于本季的约 75%。9 月董事会批准增加 <strong>1,500 亿美元</strong> 无限期回购额度，季末剩余约 <strong>2,273 亿美元</strong>。新闻稿中的产品与合作列表多为季度回顾（包括已于 9 月宣布的收购 Hugging Face 协议、SC26 上已报的 Rubin HPC / Nemotron for Science / OpenShell 等），<strong>不要把这些季度回顾写成今日新发船</strong>。</p>
+<p>同日较早，董事会宣布成立常设的 National Security and Export Control Oversight Committee，由董事 Suzanne Nora Johnson 任主席，成员包括 Stephen C. Neal、John O. Dabiri，至少每季度开会，并可聘请法律、国家安全与贸易合规方面的独立外部专家。现有 National Security Team 与 Global Trade Compliance Team 将直接向该委员会以及 interim CEO Kress 汇报日常运营。主席 Harvey Jones 在新闻稿中的书面表态，强调先进硅技术与「artificial and superintelligence」给国家安全带来前所未有的挑战，公司将与政府和产业伙伴合作。</p>
+<p>人事口径是今日相对 11-12 / 11-17 日报真正新增的部分。11-17 日报仍写「官方仍无原因或常任人选」。本窗出现两份可核验的第一方表态。第一，黄仁勋于 00:18 CST 在 @JensenHuang 发表长文（工具读数，约 08:11 CST：展示 <strong>32,510,092</strong> / 赞 <strong>857,828</strong> / 转发 <strong>94,747</strong> / 回复 <strong>44,773</strong> / 引用 <strong>20,110</strong> / 收藏 <strong>62,584</strong>）。他写道：未能达到 NVIDIA 对每个人要求的标准，在个人生活中犯了严重错误，给董事会制造了自己深感遗憾的问题，完全承担这些错误，并承诺配合董事会的独立调查；若董事会认为他的回归符合股东、员工、公司与美国的利益，「I would be honored to answer these calls and return as CEO。」第二，数小时后的财报电话会上，董事会主席 Jones 的开场（The Verge 刊出被认为是完整引述的文本，TechCrunch 等亦引同一关键句）称：11 月 12 日董事会宣布，在披露了「不符合公司行为准则、标准和规范的个人行为」之后，黄仁勋自愿辞去总裁、CEO 和董事职务；董事会一致接受辞职，<strong>不打算恢复其 CEO 职务</strong>；已聘请 Heidrick &amp; Struggles 主持常任 CEO 寻访；当日早些时候成立上述国家安全委员会；<strong>本会不就辞职情形和正在进行的调查作答或接受提问</strong>，董事会将在适当时候再作沟通。Kress 在回答过渡问题时称，眼下最重要的是员工，从业务角度看是「business as usual」。Jones 并称寻访会同时看内部与外部候选人，希望尽快但不在找到合适人选前仓促任命。8-K 与新闻稿本身没有写辞职原因或「不恢复职务」；这两句来自电话会口头陈述。IR 站点本轮已列出书面点评 PDF 与网播链接，完整逐字稿在季度结果页上尚未像前两季那样挂出「Transcript」项，引用电话会内容时仍应对照后续官方逐字稿。</p>
+<h4>我的判断</h4>
+<p>判断：财报数字确认需求与 Vera Rubin 爬坡仍在，但对本雷达更重要的是 <strong>241 终于有了官方原因口径和「不恢复职务」的明确句</strong>。这与黄仁勋凌晨声明里「若董事会认为应当，我愿回来」形成时间线上的对照：先有本人承认错误并表示愿意回归，数小时后董事会在电话会上把门关上，同时把调查和出口管制监督委员会放到同一套治理叙事里。官方仍然没有给出调查范围、时间表或更具体的事实认定；「personal behavior inconsistent with the company&#x27;s code of conduct」是董事会选择的法律与治理用语，不要在事实区改写成媒体报道中的未经官方确认细节。展望里明确不计入中国数据中心计算营收，以及毛利率指引下调到 71–72%，是和人事并行的业务约束，值得分开记录，而不是用「爆超预期」盖过去。</p>
+<h4>未来影响</h4>
+<p>短期，市场与客户会同时看两件事：Rubin 出货能否支撑 1,300 亿美元的第四财季展望，以及常任 CEO 寻访需要多久。董事会把「不恢复职务」说出口，降低了将凌晨声明解读为即将回归的空间，但不排除调查结束后另有书面更新。中国区数据中心计算营收被从展望中拿掉，会继续影响可售产品组合与区域供应叙事。对行业而言，这是在 AI 基础设施需求仍高的时候，把公司治理、出口管制和国家安全监督一并制度化。</p>
+<h4>对智能体互联网</h4>
+<p>无新的互操作协议。新闻稿回顾中的 Open Agent Safety Platform / OpenShell 仍是已报能力（watchlist <strong>104</strong>），不要当作本日新架构。国家安全委员会如果后续对开源模型分发或跨境权重提出可执行政策，才可能间接影响到 Agent 服务网络的供应和合规边界。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p>无直接 Harness 发船。启示是基础设施供应与治理风险会进入企业采购的同一张表：Runtime 所依赖的加速器路线图仍在，但供应商的领导层过渡、出口管制和调查进展需要单独跟踪，而不能假设「需求旺盛就等于供应与合规无变化」。</p>
+<h4>值得进一步做什么</h4>
+<ol>
+<li>对照 IR 书面点评 PDF 与后续官方逐字稿，核对电话会上关于调查、寻访和中国区展望的完整措辞。</li>
+<li>继续跟踪常任 CEO 人选、任何新的 8-K 或董事会书面说明；在官方文件出现前，不把媒体推测升格为事实。</li>
+<li>把 Rubin 出货与第四财季 71–72% 毛利率指引分开看，避免用营收同比掩盖利润率变化。</li>
+</ol>
+<h4>配图</h4>
+<p>官方财报页与委员会新闻稿未见与本次事件直接相关、且可确认不是普通 Logo 或无关装饰的发布配图，本条不配图。</p>
+<h4>真实来源</h4>
+<ul>
+<li>https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027</li>
+<li>https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/0001045810-26-000088-index.html</li>
+<li>https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm</li>
+<li>https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee</li>
+<li>https://x.com/JensenHuang/status/2122726005219737649</li>
+<li>https://investor.nvidia.com/financial-info/quarterly-results/（CFO Commentary PDF / 网播入口）</li>
+<li>电话会开场引述补充：https://www.theverge.com/tech/1036160/nvidia-earnings-harvey-c-jones-jensen-huang ；https://techcrunch.com/2026/11/17/nvidia-says-it-doesnt-plan-to-reappoint-jensen-huang-as-ceo/</li>
+</ul>
+<h3>3. OpenAI 推出 ChatGPT for Sales：销售技能插件 + 30 余个伙伴插件，可把跟进交给 dot</h3>
+<p><code>A · NEW · 国际 · E/C/I · 主窗 · watchlist <strong>266</strong> · 非 Desktop</code></p>
+<p>发生时间：官网文日期 <strong>November 17, 2026</strong>，RSS <code>pubDate</code> <strong>2026-11-17T08:00:00Z（16:00 CST）</strong>。该 guid 在 11-17 日间快讯的 RSS 快照中尚未作为新顶条出现（22:49 扫描时顶条仍是已见的 NATO 文，另记 Chile MoU），更像是 RSS 延后写入；产品帖由 @ChatGPT 于 <strong>22:24:24Z（11-18 06:24:24 CST）</strong> 发出，id 2122818162995634504（工具读数，约 08:07 CST：展示 <strong>110,630</strong> / 赞 <strong>1,268</strong> / 转发 <strong>75</strong> / 回复 <strong>41</strong> / 引用 <strong>35</strong>）。事件落在本统计窗内，以官网日期与官方 X 为准，并对 RSS 延后作说明。</p>
+<h4>发生了什么</h4>
+<p>官方介绍 ChatGPT for Sales：一套面向销售团队的新体验，包含 OpenAI 自己的 Sales 插件（带有面向卖方的专用 skills / 现成工作流），以及 <strong>30 多个</strong>新增或增强的伙伴插件，用来把 CRM、通话记录、内容工具和报价系统里的客户上下文接进 ChatGPT。文中按工作阶段列举了可连接的工具，例如 Salesforce / HubSpot / Close / monday CRM，Apollo / Clay / ZoomInfo，Gong / Otter / Granola，Docusign / Ironclad / PandaDoc，以及 Gamma、Figma、Canva、ChatGPT Slides / Sites 等。它还写明可以把工作委托给 ChatGPT 里的 <strong>dot</strong>（常驻代理）：用同一批插件和客户上下文准备会议简报、跟踪交易变更，并在人审阅后提出下一步。ChatGPT Business 与 Enterprise 管理员可在 Admin Console 的 Plugins 里为团队启用或默认安装。伙伴插件与功能的可用性随计划、地区和工作区设置而变。文中的客户引言（如「减少约 65% 手工投入」）是各方自述，不作本报独立核验。</p>
+<h4>我的判断</h4>
+<p>判断：这是把「行业工作流」产品化的又一步，和前一日医疗 computer-use 属于同一方向，只是对象换成了销售。真正值得看的不是又一份行业海报，而是插件变成销售过程的默认工具面，以及 dot 被明确写成可在多会话之间持续跟进、但仍把变更交给人审阅。它还没有提出跨厂商的销售 Agent 协议，也不要写成无人值守的成交已经交付。</p>
+<h4>未来影响</h4>
+<p>若伙伴插件真正能读写 CRM 与合约系统，销售 Agent 会从「帮你写邮件」变成「帮你维护漏斗」。接下来要看的是权限范围、审计以及错误写入客户记录时的责任划分。</p>
+<h4>对智能体互联网</h4>
+<p>无新的开放发现协议。插件目录是 ChatGPT 内的能力生态；dot 的跨会话委托仍是产品内的代理，而不是可移植的 Agent 身份。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p>可对照的设计是：把行业技能（追账户、会前简报、会后跟进、风险标记）做成可安装的 Skill / Plugin 包，并允许常驻代理在人审阅的前提下继续跑。高权限写入 CRM / 合同前，应默认保留确认步。</p>
+<h4>值得进一步做什么</h4>
+<p>关注 Admin Console 的插件权限模型，以及 dot 委托是否出现可配置的范围与审计。暂不必因行业海报立即改架构。</p>
+<h4>配图</h4>
+<p>见图 3（官方介绍文发布配图，来源页 <a href="https://openai.com/index/introducing-chatgpt-for-sales">Introducing ChatGPT for Sales</a>）。</p>
+<p><img alt="图 3：ChatGPT for Sales 官方介绍文发布配图" src="../assets/2026-11-18/sales-hero.jpg" /></p>
+<h4>真实来源</h4>
+<ul>
+<li>https://openai.com/index/introducing-chatgpt-for-sales</li>
+<li>https://openai.com/news/rss.xml（<code>pubDate</code> 2026-11-17T08:00:00 GMT；快讯窗内 RSS 快照曾未及时露出该 guid）</li>
+<li>https://x.com/ChatGPT/status/2122818162995634504</li>
+</ul>
+<h3>4. 微软发布 MAI Code 2 / Code 2 Flash，并在 Ignite 把 Copilot 做成可评估、可监控的编码工作台</h3>
+<p><code>A · NEW · 国际 · A/B/C/I · 主窗（隔夜）· watchlist <strong>267</strong> · Copilot CLI 1.0.113 为配套点版本</code></p>
+<p>发生时间：微软官方稿标注 <strong>Nov 17, 2026</strong>；GitHub Changelog 一组 Ignite 条目集中在 <strong>18:00–18:04Z</strong> 以及 GPT-6.2 上架 <strong>20:20:29Z</strong>；@github 于 <strong>19:08–22:08Z</strong> 陆续宣布 Copilot 应用的 Azure DevOps 集成、Chrome 扩展和 MAI Code 2 一般可用。Copilot CLI latest <strong>1.0.113</strong> 的 npm 时间为 <strong>16:36:19Z</strong>，changelog 写明 Entra 预览需要该版本或更高。</p>
+<h4>发生了什么</h4>
+<p>微软在 microsoft.ai 介绍 <strong>MAI Code 2</strong> 与 <strong>MAI Code 2 Flash</strong>：前者面向把代码送到生产、深度调试、多文件实现、仓库级推理和界面；后者面向解释、局部修改、例行修复和高流量迭代。官方明确写它们「还没有针对基础科学研究或非常长程的 agentic 工作做调优」。官方给出的价格-性能对照必须连脚注一起读：在 DeepSWE 1.1、Terminal Bench 2.1、SWE-Atlas 与 FrontierCode v1.1 四项「日常企业编码」基准的平均意义上，称 Code 2 达到 GPT-6.1 Sol 约 <strong>98%</strong> 的表现、成本约为其 <strong>40%</strong>，以及 Opus 5.5 约 <strong>96%</strong> 的表现、成本约为其 <strong>5%</strong>；其中 FrontierCode 的成本用的是 <strong>50% 促销价</strong>。Flash 的对照同样使用了促销价。可用性：两款模型进入 GitHub Copilot（Flash 对 Free / Student 等也开放，Code 2 从 Pro 起）；Flash 在 Microsoft Foundry 为 limited-access preview；官方称随后将放到 OpenRouter、Vercel、Hermes、OpenCode 和 Kilo。文中还提到由 Code 2 Flash 再优化出的 <strong>MAI Work Flash</strong>，用于 Microsoft 365 与 Fabric IQ 等内部产品，数字均为微软内部基准。</p>
+<p>同一组 Ignite / Changelog 更新把 Copilot 工作台往前推了一截：Copilot Fusion 扩展到 github.com、Visual Studio 和 GitHub Mobile beta，并新加入 Claude Sonnet 5.5（Fusion Max）、GPT-6.1 Terra（Fusion High）、MAI-Code-2（Fusion Standard）；<strong>Copilot Evals</strong> 公测，可用 <code>/eval</code> 为 skill、自定义 agent 或 MCP 工具建立可重复评测（引擎为本地工具 Vally）；代码评审增加 Adaptive 工作量、跨仓上下文和密钥检测（公测）；Copilot CLI 增加 <strong>Microsoft Entra</strong> 登录预览（Windows / macOS，Linux 随后），既可静默对接 EMU，也可在 Frontier + Microsoft 365 Copilot 许可下走 Microsoft 365 推理，无需 GitHub 账号，并可接 Work IQ MCP；企业还可把 Copilot 活动流进 <strong>Microsoft Agent 365</strong>，查看提示词、回复和工具调用。此外还有 Copilot 应用的 Azure DevOps 集成、Chrome/Edge 浏览器扩展等。GPT-6.2 Astra / Sol 也已写入 Copilot 模型目录，与第 1 条为同一发船的分发面，不另开事件。</p>
+<h4>我的判断</h4>
+<p>判断：微软要抢的是「日常企业编码的性价比默认档」，并且自己写明了边界——这不是用来挑战科学或超长程 Agent 的旗舰。促销价出现在成本对照脚注里，引用时必须标明，否则 40% / 5% 会被读成目录价。与 GPT-6.2 同一夜出现，说明编码模型市场正在同时被「更强更便宜的旗舰」和「足够好且更便宜的自研档」撕开。Ignite 上更值得引擎侧吸收的，其实是 Evals、Agent 365 和 Entra：把评测、审计和身份接到工作台里，而不只是再加一个模型名。</p>
+<h4>未来影响</h4>
+<p>若 Code 2 真能在 Copilot 的常见任务上接近 Sol / Opus 且明显更便宜，企业默认模型可能会更多落在自研编码档，把前沿模型留给更难的任务。Evals 和 Agent 365 若可用，会把「改了一个 Skill 到底有没有退步」和「Agent 在企业里做了什么」变成可运营的控制面。</p>
+<h4>对智能体互联网</h4>
+<p>Entra 登录和「不必有 GitHub 账号、走 Microsoft 365 推理」说明身份提供方开始与 Agent 运行时解耦。这仍是微软生态内的委托，不是开放的跨云 Agent 身份。Work IQ MCP 是把办公数据作为上下文的一种接法。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p>Evals（对 skill / agent / MCP 做回归）和 Agent 365（提示词、工具调用可检查）是可以直接对照的产品原语。Adaptive 代码评审按变更风险选择深度，也值得借鉴：不是所有拉取请求都走最高推理档。模型分档（Fusion Standard / High / Max）与第 1 条的 Astra / Sol / Ultrafast 是同一类调度问题。</p>
+<h4>值得进一步做什么</h4>
+<ol>
+<li>把官方价格对照中的 50% 促销脚注记进成本模型，等待目录价与 OpenRouter 等上架后的可核对标价。</li>
+<li>试用 Copilot Evals / <code>/eval</code> 的思路，评估是否吸收到自研 Skill / MCP 回归。</li>
+<li>关注 Entra 预览在非 Windows/macOS 上的进展，以及 Agent 365 的实际审计范围。</li>
+</ol>
+<h4>配图</h4>
+<p>见图 4（微软官方介绍稿发布配图，来源页 <a href="https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/">MAI Code 2 and Code 2 Flash</a>）。</p>
+<p><img alt="图 4：MAI Code 2 官方介绍稿发布配图" src="../assets/2026-11-18/mai-code-2.jpg" /></p>
+<h4>真实来源</h4>
+<ul>
+<li>https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/</li>
+<li>https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot</li>
+<li>https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview</li>
+<li>https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview</li>
+<li>https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365</li>
+<li>https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models</li>
+<li>https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more</li>
+</ul>
+<h3>5. Astra for Law 随 GPT-6.2 更新，所有 ChatGPT Enterprise 客户可申请 Trusted Access</h3>
+<p><code>B+ · NEW · 国际 · A/I/G · 主窗 · 与 <strong>265</strong> 并读，不另开模型</code></p>
+<p>发生时间：官网文日期 <strong>November 17, 2026</strong>，RSS <code>pubDate</code> <strong>2026-11-17T00:00:00Z</strong>；与 GPT-6.2 介绍文互相指向，同日落在本窗。该 guid 同样可能存在 RSS 延后露出，以官网文为准。</p>
+<h4>发生了什么</h4>
+<p>官方称更新后的 <strong>Astra for Law</strong> 是 GPT-6.2 Astra 的配置：在旗舰模型之上加上扩展的法律检索索引，以及关于检索问题、权衡先例和撰写答案的指令。所有 ChatGPT Enterprise 客户现在可通过 Trusted Access Program 申请使用，也包括 API。官方称该配置在 Harvey LAB-AA 上取得领先，并且是 Vals AI Legal Research Bench 的顶尖表现之一；介绍文还写 LAB-AA 测试中「获得满分」的比例比对照运行高出近 40%。这些分数是官方叙述，需连同基准方法一起看待。</p>
+<h4>我的判断</h4>
+<p>判断：这不是又一个独立模型名，而是把旗舰做成垂直配置（索引 + 指令 + 准入）的样本。Trusted Access 说明高风险专业领域仍走申请制，而不是默认对所有工作区开放。</p>
+<h4>对智能体互联网</h4>
+<p>无直接协议启示。垂直配置加准入，是把能力发现和授权绑在同一产品门槛上。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p>可吸收的是「同一旗舰 + 领域索引 + 系统指令」的装配方式，而不是再训练一个法律专用基座。应用时应保留来源引用与人审，不要把官方基准分写成执业保证。</p>
+<h4>值得进一步做什么</h4>
+<p>与 265 一并跟踪 Trusted Access 的实际开放范围和 API 形态。</p>
+<h4>配图</h4>
+<p>见图 5（官方介绍文发布配图，来源页 <a href="https://openai.com/index/astra-law-6-2">Astra for Law leads in legal intelligence</a>）。</p>
+<p><img alt="图 5：Astra for Law 官方介绍文发布配图" src="../assets/2026-11-18/astra-law.jpg" /></p>
+<h4>真实来源</h4>
+<ul>
+<li>https://openai.com/index/astra-law-6-2</li>
+<li>https://openai.com/index/introducing-gpt-6-2-astra-sol</li>
+</ul>
+<h3>6. Claude Desktop 开放可选的 Latest 更新通道，默认仍是 Stable</h3>
+<p><code>B+ · NEW · 国际 · C/B · 主窗（隔夜）· watchlist <strong>268</strong> · 非新版本号</code></p>
+<p>发生时间：@ClaudeDevs <strong>2026-11-17T22:35:53Z（11-18 06:35:53 CST）</strong>，id 2122821051910684824（工具读数，约 08:07 CST：展示 <strong>82,254</strong> / 赞 <strong>1,136</strong> / 转发 <strong>37</strong> / 回复 <strong>60</strong> / 引用 <strong>21</strong>）。</p>
+<h4>发生了什么</h4>
+<p>官方帖写明：可以在 Windows 和 Mac 的 Claude Desktop 里选择更频繁的构建。路径是 Settings &gt; Desktop app，切换到 <strong>Latest</strong> 发布通道，会更快收到修复和改进，但这些构建可能不如默认的 <strong>Stable</strong> 可靠。Stable 仍是默认。本轮未见与该通道绑定的新版本号；Claude Code npm latest 在本窗升至 <strong>2.1.327</strong>（20:33:19Z），Desktop 是否已把 bundled 版本跟上，本轮未打开独立 changelog 核对，不把 2.1.327 写成 Desktop 发船。</p>
+<h4>我的判断</h4>
+<p>判断：这是把「追新」和「求稳」做成用户可选项，而不是强迫所有桌面用户吃每日构建。对已经在售的 Work 客户端来说，这比再发一个点版本更像是发布工程上的能力。</p>
+<h4>对 Work / Agent 引擎</h4>
+<p>若自研 Desktop 也有快速修复需求，可以对照「Stable 默认、Latest 可选、并写清可靠性差异」的发布策略，避免把实验构建直接推给全部生产用户。</p>
+<h4>值得进一步做什么</h4>
+<p>关注 Latest 通道是否开始出现独立版本号或安全修复说明。暂无需立即跟进。</p>
+<h4>配图</h4>
+<p>见图 6（官方 X 帖中的设置页截图，来源页 <a href="https://x.com/ClaudeDevs/status/2122821051910684824">@ClaudeDevs</a>）。</p>
+<p><img alt="图 6：Claude Desktop Latest 通道官方设置截图" src="../assets/2026-11-18/claude-latest-channel.jpg" /></p>
+<h4>真实来源</h4>
+<ul>
+<li>https://x.com/ClaudeDevs/status/2122821051910684824</li>
+</ul>
+<h3>短讯</h3>
+<ul>
+<li><strong>Qoder 0.5.14 + Linux ARM64 安装包</strong>（UPDATE <strong>248</strong>，国内，点版本）：官方 changelog 顶条 November 17 / Everyday Polish，正文为修复模型校验问题；@qoder_ai_ide <strong>14:39:47Z</strong> 宣布提供 Linux ARM64 <code>.deb</code> / <code>.rpm</code>，下载页列有 X64 / ARM64 / LoongArch64。已在售 IDE 的补丁与架构覆盖，不是首次邀测。</li>
+<li><strong>Qwen Code 0.28.0 / desktop-v0.28.0</strong>（国内，点版本）：npm <strong>12:10:30Z</strong>，Desktop tag <strong>12:31:07Z</strong>；官方写 No known breaking changes。其后 preview 出现 0.28.1-preview.0（19:31:23Z），latest 仍 0.28.0。</li>
+<li><strong>Factory CLI+Desktop 1.13.0→1.13.1</strong>（UPDATE <strong>254</strong>）：1.13.0 于 <strong>06:37Z</strong> 进入 latest（日间快讯已记，交 Daily）；1.13.1 于 <strong>21:45:43Z / 21:44:55Z</strong>（cli / droid）再升一点。未检索到足以改写路线的新 harness 说明。</li>
+<li><strong>Devin Desktop v3.13.4</strong>（日历日 November 17）：changelog 写后台本地会话、Command Center 多标签、Files 预览；Cognition 博客无同步稿。</li>
+<li><strong>讯飞 WinWork V1.1.26</strong>（UPDATE <strong>253</strong>）：更新页日期 2026-11-17，正文为「问题修复与优化」，无新能力顶条。</li>
+<li><strong>CodeBuddy 2.185.0</strong>（09:58:42Z）：发行说明含会话级临时开插件、压缩阈值可配及修复；未写 WorkBuddy Desktop 发船或默认行为变化。</li>
+<li><strong>Copilot CLI latest 1.0.113</strong>（16:36:19Z）：为 Entra 预览的版本门槛；prerelease 已见 1.0.114-0（22:58:02Z）。</li>
+<li><strong>Claude Code 2.1.327</strong>（20:33:19Z）：latest / next 对齐；本轮未展开 changelog 细节。Desktop 仍以通道公告为准，不把该 npm 版本写成 Desktop 发船。</li>
+<li><strong>Codex latest 0.169.1</strong>（22:26:21Z）：相对上日的 0.169.0 为点版本；alpha 仍为 0.171.0-alpha.12（14:36:00Z）。</li>
+<li><strong>Kimi CLI 2.6.3</strong>（15:20:31Z）：Desktop changelog 页此前仍停在较旧顶条，本轮未核到新的 Desktop 版本，不把它写成桌面发船。</li>
+<li><strong>OpenCode 1.x v1.19.6</strong>（07:21:32Z）：已在售 1.x 产品线补丁；2.x 仍 v2.3.0。</li>
+<li><strong>Antigravity CLI 1.5.10</strong>（05:41:11Z）：点版本，日间快讯已记。</li>
+<li><strong>Proton Lumo Desktop</strong>（P1，非一线 AI 厂）：官方博文 pubDate <strong>11:52:06Z</strong>，Windows / macOS / Linux，含本地文件、Shell、浏览器抓取、Mail Bridge、MCP Connectors、Schedules 与 Skills，源码公开。交观察，不按一线 Desktop 发船计。</li>
+<li><strong>OpenAI for Chile</strong>：RSS 在日间快讯已见新 guid，属政务 MoU，不是模型或 Desktop 发船。</li>
+<li><strong>Claude Meetings（beta）</strong>：状态页在 <strong>23:39:43Z（07:39 CST）</strong> 更新，仍为 identified：称加入会议更稳定，Enterprise 保持启用，Team 可再次手动把 Claude 加进新通话，Auto-join 对 Team 逐步恢复。属运营进展，不另开主条。<code>claude.ai</code> 组件在 18:56:06Z 仍为 degraded_performance。</li>
+<li><strong>GitHub Dependabot</strong>：告警关闭请求有效期改为一年（00:09:27Z），流程配置变更，不升格。</li>
+<li><strong>dsh next 0.2.2-rc.4</strong>（17:03:03Z）：latest 仍为 rc.1，不视为正式发版。</li>
+</ul>
+<h2>专栏二｜话题热议</h2>
+<h3>1. GPT-6.2 是隔夜 HN 上最明确的产品讨论</h3>
+<p><code>国际 · 主窗（隔夜）</code></p>
+<p>Hacker News 条目 “GPT‑6.2 Astra and Sol” 在采样时刻（约 08:08 CST）为 <strong>1,037 分 / 650 评</strong>，创建于 2026-11-17 17:46:43Z，链接指向官方介绍文。这与 @OpenAI 01:54 CST 的宣布几乎同时，是官方发船本身的讨论，而不是传闻。同一时段 “MAI Code 2 and Code 2 Flash” 为 <strong>264 分 / 124 评</strong>（18:25:13Z，链到 microsoft.ai 官方稿），热度明显低于 6.2，但足够说明微软自研编码档也被看到。两者不要并成一条「模型大战」叙事：讨论对象分别是 OpenAI 旗舰降本和微软的性价比编码模型。</p>
+<h3>2. 黄仁勋声明与董事会「不恢复职务」在社区里形成对照，但事实仍以第一方为准</h3>
+<p><code>国际 · 主窗</code></p>
+<p>@JensenHuang 00:18 CST 的长文是本窗互动量最高的相关帖之一（约 08:11 CST 工具读数：展示超过 3,250 万，赞约 85.8 万）。HN 转载 CNBC 的相关条目在采样时为 <strong>98 分 / 171 评</strong>，评论密度高于分数本身，说明争议强于单纯传播。FT 关于 NVIDIA 不再单独披露新加坡销售的报道在 HN 为 <strong>344 分 / 175 评</strong>（17:12:06Z）；该说法未见写入本轮已核的新闻稿要点，<strong>不能</strong>升格为已核对的官方披露政策变更，只记为高热讨论，等待 IR 附件或逐字稿印证。本报在事实区只采用黄仁勋原帖、8-K / 新闻稿，以及多源一致的董事会电话会关键句。</p>
+<h3>3. 「哪个模型该配哪套 Harness」成为一条独立技术讨论</h3>
+<p><code>国际 · 主窗</code></p>
+<p>HN 条目 “What is the best harness for each model?”（14:53:43Z，链到 FrontierHarness eval v1.1）在采样时为 <strong>323 分 / 113 评</strong>。它不是某厂发船帖，而是把模型与 Harness 的组合当成评测对象。与今日 GPT-6.2 / MAI Code 2 的产品分档放在一起看，讨论的问题很具体：同样的模型换一套循环、工具和验证策略，分数会差很多。这与用户的 Work / Agent 引擎主线直接相关，但条目本身是评测方法讨论，不当作官方产品新闻。</p>
+<h3>4. 其他只观察、不升格的讨论</h3>
+<p>Addy Osmani 在 claude.dev 的《How the Claude Code team thinks about verification》文内日期为 <strong>Nov 16, 2026</strong>，落在上一份日报窗；本窗 HN 讨论（10:20:40Z，<strong>252 分 / 124 评</strong>）是余波，作补收观察，不单开新闻条。文中「约 90% 代码由 Claude 编写和审查」以及「没有验证循环就很难并行很多个 agent」是作者叙述，可作工程观点，不是新的产品发船。国内社区本轮未把可核验的热榜数字写成条目：未编造热搜或点赞。部分国内媒体列表与登录墙未抽出，不把「没读到」写成「没有讨论」。</p>
+<h2>专栏三｜开源雷达</h2>
+<h3>1. 短窗星标对照（相对 Daily 11-17 约 08:13 CST，本轮约 08:08 CST，约 24 小时）</h3>
+<p>没有再出现 chat-demo 那种千星级跳变。最显著的对照是 <strong>alibaba/open-code-review：52,920 → 53,709（+789）</strong>——11-17 日报当时没有短窗基线，只给出绝对星数，本轮补上约一日涨幅；仓库 <code>pushed_at</code> 2026-11-17T12:46:22Z，需与是否有新 tag 分开看，本轮未把涨幅写成新发版。其余：</p>
+<table><thead><tr><th>仓库</th><th>11-17 ★</th><th>本轮 ★</th><th>Δ（约 24h）</th><th>发版备注</th></tr></thead><tbody>
+<tr><td>deepseek-ai/chat-demo</td><td>4,054</td><td>4,518</td><td>+464</td><td>仍 v0.1.1，<code>pushed_at</code> 仍 11-13，无新 tag</td></tr>
+<tr><td>deepseek-ai/deepseek-harness</td><td>282,332</td><td>282,985</td><td>+653</td><td><code>pushed_at</code> 11-17 17:55:09Z；npm latest 仍 0.2.2-rc.1，next 已至 <strong>rc.4</strong></td></tr>
+<tr><td>vercel-labs/agent-desktop</td><td>24,602</td><td>24,997</td><td>+395</td><td>latest 仍 1.3.1；<code>pushed_at</code> 11-17 23:25:24Z，未见新正式版</td></tr>
+<tr><td>ChromeDevTools/chrome-devtools-mcp</td><td>57,668</td><td>58,029</td><td>+361</td><td><code>pushed_at</code> 11-17 22:34:06Z</td></tr>
+<tr><td>vercel-labs/agent-browser</td><td>52,012</td><td>52,363</td><td>+351</td><td><code>pushed_at</code> 11-18 00:08:32Z，未核新 tag</td></tr>
+<tr><td>anomalyco/opencode</td><td>227,317</td><td>227,591</td><td>+274</td><td>2.x 仍 v2.3.0</td></tr>
+<tr><td>openai/codex-security</td><td>13,764</td><td>13,956</td><td>+192</td><td></td></tr>
+<tr><td>deepseek-ai/dsh-superagent-prototype</td><td>23,491</td><td>23,671</td><td>+180</td><td>无新正式版</td></tr>
+<tr><td>deepseek-ai/DeepInfer</td><td>26,114</td><td>26,167</td><td>+53</td><td></td></tr>
+<tr><td>modelcontextprotocol/servers</td><td>92,054</td><td>92,074</td><td>+20</td><td>仍 v2.4.0</td></tr>
+<tr><td>google-deepmind/code-verification</td><td>262</td><td>268</td><td>+6</td><td></td></tr>
+</tbody></table>
+<p>建议动作：open-code-review 与 chat-demo 继续作星标跟踪，但不把单日涨幅写成发版；dsh 只在 latest 离开 rc 或出现正式说明时再升格。</p>
+<h3>2. 观察但不升格</h3>
+<p>GitHub Trending 本轮未作为发版依据单独展开。Hugging Face 官方博客 RSS 顶条仍是 11-16 已报的 OpenRouter 合作，无 11-17 / 11-18 新官方稿。Proton Lumo Desktop 源码公开，但是邮箱厂商的桌面助手，按 P1 观察即可。</p>
+<h2>重点事件新进展</h2>
+<h3>NVIDIA CEO 过渡：官方首次给出行为准则口径，并明确不恢复职务（watchlist 241）</h3>
+<p>此前：11-12 官方确认黄仁勋即时辞任，Kress 任 Interim CEO；8-K 最早事件日 11-11，新闻室与 8-K 均未写原因。Daily 11-17 仍是「官方人事与原因无实质变化」，当时把财报视为下一步。</p>
+<p>今日新增：Q3 财报与 8-K 按预告于 05:20 CST 发布；Kress 以 interim CEO 身份发布业绩并强调 Rubin 已出货。黄仁勋于 00:18 CST 发表个人声明，承认个人生活中的严重错误并表示愿在董事会认为合适时回归。董事会主席在电话会上称辞职源于不符合行为准则的个人行为披露，董事会不打算恢复其 CEO 职务，已聘 Heidrick &amp; Struggles，并拒绝在会上就调查答问。同日早些时候成立国家安全与出口管制监督委员会。</p>
+<p>判断是否发生变化：<strong>是</strong>。原因口径、「不恢复职务」和独立调查被放到官方口头沟通里；书面 8-K 仍只覆盖业绩。下一步看官方逐字稿、寻访进展和新的 8-K，而不是社区请愿。</p>
+<h3>其他已跟踪事件</h3>
+<ul>
+<li><strong>233 Qwen4-Max：</strong> 本窗无新的正式价修订或开源权重。Qwen Code 仅点版本 0.28.0。</li>
+<li><strong>255 Hy4 flash：</strong> 无新的开源权重或折扣截止日变更。</li>
+<li><strong>249 ChatGPT Wallet / 250 Hy Realtime / 256 医疗 computer-use / 257 embedded assessments / 258 HF×OpenRouter / 177 Cursor RCA：</strong> 本窗未见需改写主文的官方修订。</li>
+<li><strong>251 / 216 Antigravity：</strong> CLI 1.5.10 为点版本，无新的编排文档。</li>
+<li><strong>247 Claude Code Mode：</strong> @ClaudeDevs 21:18:55Z 再次介绍 Code Mode 与环境变量开关，属于已报能力的传播，不另开进展。</li>
+<li><strong>86 DeepSeek 应用 API / dsh：</strong> Change Log 未核到新于 11-13 的产品说明；dsh latest 仍 rc.1，next 至 rc.4；chat-demo 星标续涨但无新 tag。</li>
+<li><strong>248 Qoder / 253 WinWork / 254 Factory / 259 MiniMax 3.1.16 / 260 千问办公 / 261 小艺：</strong> 仅点版本或持平，见短讯。</li>
+<li><strong>Anthropic IPO：</strong> 本窗可见标注日期为 November 17, 2026 的 S-1/A-3（登记号 333-299633），预估区间仍写 <strong>$70–$78</strong>、发行 8.25 亿股 A 类、拟挂牌代码 <strong>ANT</strong>。定价仍被市场预期为 11-18 美东晚间、11-19 开谈，落在本报统计窗结束之后，<strong>今日不把定价写成已经发生</strong>。</li>
+</ul>
+<h2>今天正在形成的趋势</h2>
+<ol>
+<li><strong>旗舰和日常档都被明确标上「把同样的工作做完、但更便宜」。</strong> GPT-6.2 把 20% 降价、更少输出 token 和专业交付物放在一起讲；微软则用自研编码模型去抢日常企业任务的性价比，而且还自己划了「不做科学、不做超长程」的边界。和昨日 Qwen4-Max / Hy4 flash 的分档是同一条产业线，只是今天换到了国际旗舰和云厂商自研档。</li>
+<li><strong>模型发布开始把运行时控制面一并写进介绍文。</strong> OpenAI 谈 Control Room、收紧网络防护、以及模型可能不主动报告障碍；微软谈 Evals、Agent 365 和密钥检测。竞争不只是分数，还有「能不能证明 Agent 做了什么、能不能在出错时停下来」。</li>
+<li><strong>公司治理和出口管制被写进 AI 基础设施供应商的日常沟通。</strong> NVIDIA 用一份财报电话会同时处理业绩、接班人寻访、独立调查和国家安全委员会。需求数字仍然很高，但「谁在管公司、哪些地区的收入不能再计入展望」已经不能当成背景噪音。</li>
+<li><strong>专业垂直配置走的是「旗舰 + 索引 + 准入」，而不是再训练一个完全独立的行业模型。</strong> Astra for Law 和 ChatGPT for Sales 都把领域能力做成配置、插件和申请制，而不是新的基座名称。</li>
+</ol>
+<h2>对智能体互联网最值得吸收的东西</h2>
+<ol>
+<li><strong>委托和身份开始从「必须拥有某一家的账号」里拆出来。</strong> Copilot CLI 的 Entra 预览允许在特定许可下走 Microsoft 365 推理、不必先有 GitHub 账号；这还不是开放互操作，但说明 Agent 运行时可以接外部身份提供者。对照时要看清：权限和计费跟的是哪一侧的租户。</li>
+<li><strong>高能力工具不一定进入默认网络，而会留在授权通道里。</strong> GPT-6.2 把更强的网络安全能力与更紧的拒绝策略一起发布，并把正当研究指向 Daybreak。跨 Agent 调用若涉及攻击性或双用途能力，需要显式的授权面，而不是默认开放。</li>
+</ol>
+<h2>对 Work / Agent 引擎最值得吸收的东西</h2>
+<ol>
+<li><strong>调度应按任务类型在旗舰、日常档和低延迟档之间切换。</strong> GPT-6.2 的 Astra / Sol / Ultrafast 与 Copilot Fusion 的 Standard / High / Max，是同一类产品化分档。默认绑一个「最强模型」会越来越贵，也越来越不符合官方自己的使用建议。</li>
+<li><strong>障碍上报不能只靠模型自觉。</strong> OpenAI 自己写明 6.2 在部分测试里更常不提及工具或文件不可用。Harness 应把「文件不存在、搜索失败、权限被拒」做成运行时强制事件，再决定是否继续。</li>
+<li><strong>把评测和审计做成工作台功能，而不是事后报告。</strong> Copilot Evals 对 Skill / Agent / MCP 做回归，Agent 365 查看提示词与工具调用，方向与「可运营的 Agent 控制面」一致。不必照搬品牌，但值得对照：改了一个技能之后，用什么重复测验来证明没有退步。</li>
+</ol>
+<h2>值得继续跟踪</h2>
+<ul>
+<li>事件：GPT-6.2 Astra / Sol（<strong>265</strong>）  </li>
+</ul>
+<p>  接下来重点观察：system card 细节、Daybreak 是否纳入 6.2、Ultrafast 促销结束后的标价、Codex 对「遗漏障碍」的实际行为，以及第三方复测。</p>
+<ul>
+<li>事件：NVIDIA 领导层过渡与 Q3 财报（<strong>241</strong>）  </li>
+</ul>
+<p>  接下来重点观察：官方逐字稿、常任 CEO 寻访、新的 8-K 或调查书面说明、中国区数据中心计算营收是否继续排除在展望之外。</p>
+<ul>
+<li>事件：MAI Code 2 / Copilot Ignite（<strong>267</strong>）  </li>
+</ul>
+<p>  接下来重点观察：促销价何时结束、OpenRouter 等外部目录是否上架、Evals 与 Agent 365 的实际可用性。</p>
+<ul>
+<li>事件：Anthropic IPO  </li>
+</ul>
+<p>  接下来重点观察：11-18 美东晚间是否真正定价、11-19 是否开谈，以及最终发行价是否仍落在 70–78 美元区间。</p>
+<ul>
+<li>事件：Hy4 flash 开源与折扣（<strong>255</strong>）、ChatGPT Wallet 放量（<strong>249</strong>）、Claude Desktop Latest 通道是否出现独立版本号（<strong>268</strong>）</li>
+</ul>
+<h2>未来信号</h2>
+<p>GPT-6.2 Astra 被官方标为第一个达到 AI Self-improvement High 的对外模型，并同时介绍 Control Room 这类可中止研究负载的系统。这还不是「模型已能自主迭代自身」的工程现实，但它把「模型开始明显加速模型研发」写成了可对外引用的安全分级。若后续旗舰沿用这一标签，外部评估、内部闸门和运行时中止权可能会变成前沿实验室的标配讨论，而不只是训练阶段的附录。</p>
+<h2>价格 / 订阅雷达</h2>
+<ul>
+<li><strong>OpenAI API：</strong> GPT-6.2 Astra 标准价 <strong>$8 / $0.40 cached / $40</strong>（相对 GPT-6 Astra 输入与输出降 20%，缓存折扣 60%）；GPT-6.2 Sol 维持 <strong>$2 / $0.10 / $10</strong>。未来三个月 Ultrafast 对 API 与 Enterprise 降价 50%，官方称为 Standard 的 3 倍价；Ultrafast 进入 Pro 500（两款模型）以及 Pro 200（先从 Sol 开始）。</li>
+<li><strong>GitHub Copilot / MAI：</strong> MAI Code 2 官方成本对照使用了 <strong>50% 促销价</strong>（见微软稿脚注），目录价与促销截止日以官方定价页为准，本报不以对照表反推日常单价。</li>
+<li><strong>Hy4 flash / Qwen4-Max：</strong> 相对昨日已报价格未见新的官方修订；混元 11-30 五折与 WorkBuddy 限时免费仍在有效期内。</li>
+<li><strong>Anthropic IPO：</strong> 仍为登记文件中的预估区间，不是已定价。</li>
+<li>今日未见其他可核实的重要新促销、调价或额度变化。</li>
+</ul>
+<h2>信源与方法（vendor-check 摘要）</h2>
+<ul>
+<li>统计窗：2026-11-17 08:00–2026-11-18 08:00 CST。11-17 白天快讯 08:55 至 22:49 共八轮均为 SILENT，已吸收其 near-miss（Qoder 0.5.14、Qwen Code 0.28.0、Factory 1.13.0、Devin 3.13.4、WinWork V1.1.26、CodeBuddy 2.185.0、Proton Lumo、Antigravity CLI 1.5.10、OpenAI for Chile 等）。隔夜 14:49Z 之后为日间快讯未覆盖区间，本报补全。</li>
+<li>官方站与官方 X：按 <code>sources/VENDOR_OFFICIAL.md</code> 做 P0 + P1 巡检。隔夜 P0 国际原帖最重要的是 @OpenAI / @OpenAIDevs / @ChatGPT 的 GPT-6.2 与 Sales 线程，以及 @ClaudeDevs 的 Latest 通道、@github / @Azure 的 Ignite 与 Foundry 帖。P0 国内隔夜原帖几乎为 0（仅 @MiniMax_AI 一条社区回复）。@nvidia 主账号在隔夜切片未检出财报原帖，财报以新闻室与 8-K 为准。黄仁勋声明来自 @JensenHuang 原帖，不是公司新闻室稿。</li>
+<li>关键核验：GPT-6.2 以官网介绍文、RSS 与官方 X 为准；NVIDIA 业绩与委员会以新闻室和 8-K 为准；电话会「不恢复职务」等口头内容以多源一致的引述记录，并注明完整逐字稿尚未像前季那样挂在 IR 列表中。Hugging Face 收购协议为 9 月已宣布事项，仅出现在财报回顾列表中，不作为今日新事件。SEC 直链对本轮部分 curl 返回 403，8-K 与新闻稿正文经页面抓取核验。</li>
+<li>版本探针：npm dist-tags、GitHub Releases、日间快讯已核的 changelog / CDN；对照 11-17 22:49 基线。Claude Desktop 以官方 X 通道公告为准，未把 2.1.327 写成 Desktop 发船。</li>
+<li>社区：HN Algolia 分数为约 08:08 CST 读数；GitHub stars 为约 08:08 CST 读数。X 互动数为工具返回值，均标注采样时刻，不编造。国内部分社区存在登录墙或反爬，失败则跳过。</li>
+<li>配图均来自已核验的官方介绍页或官方 X 发布图，未使用 AI 生成图，也未用普通 Logo 凑数。NVIDIA 条因原文无可确认的事件配图而不配图。</li>
+</ul>
+</article></main>
+</body>
+</html>
