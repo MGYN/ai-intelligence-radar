@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-18T08:40:00+08:00",
+  "updatedAt": "2026-11-19T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-19",
+      "date": "2026-11-19",
+      "title": "AI Intelligence Daily · 2026-11-19",
+      "summary": "Anthropic 将 IPO 定价为每股 83 美元，预计今日以 ANT 在纳斯达克开谈；Google 发布 Gemini 4 Neon（API 3/15 美元，Antigravity 可将 Neon 与 Hydrogen 组成 Orchestrator）；MCP 参考服务器 v2.5.0 续补 git 高危路径；微软官方 agent-framework 包曾出现凭证窃取版本；混元 Hy4 flash 开源权重；Devin Bots 补写入日报。",
+      "href": "reports/2026-11-19.html"
+    },
     {
       "id": "2026-11-18",
       "date": "2026-11-18",
