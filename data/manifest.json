@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-19T08:20:00+08:00",
+  "updatedAt": "2026-11-20T08:25:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-20",
+      "date": "2026-11-20",
+      "title": "AI Intelligence Daily · 2026-11-20",
+      "summary": "Anthropic（ANT）完成首日交易：纳斯达克官方开盘 111.50 美元，CNBC 记录收盘 97.17 美元（较发行价 83 美元约 +17%）；Google 发布 Gemini API Tool Retrieval，并在 Mac 版 Gemini 应用开放 computer use；Kimi Code Desktop 1.4.0 可交接 Claude Code / Codex / Cursor 会话；GPT-Live-1.1 进入 API。",
+      "href": "reports/2026-11-20.html"
+    },
     {
       "id": "2026-11-19",
       "date": "2026-11-19",
