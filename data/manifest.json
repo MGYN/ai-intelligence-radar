@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-20T08:25:00+08:00",
+  "updatedAt": "2026-11-21T08:40:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-21",
+      "date": "2026-11-21",
+      "title": "AI Intelligence Daily · 2026-11-21",
+      "summary": "Anthropic 宣布 ANT 完成 IPO 交割：超额配售全部行使后 A 类合计 11.27 亿股、毛所得约 935 亿美元，并向 AMD、Broadcom、Google、Micron、Microsoft、NVIDIA、TSMC Partners 私募约 260 亿美元；混元 Hy4 旗舰权重与 System Card 开源；补收 Replit Missions；OpenAI 发布对抗性蒸馏防御；ChatGPT Space 向 Plus 开放；Qoder 0.5.16 支持跨网远程控制。",
+      "href": "reports/2026-11-21.html"
+    },
     {
       "id": "2026-11-20",
       "date": "2026-11-20",
