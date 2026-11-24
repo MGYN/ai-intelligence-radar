@@ -3,6 +3,13 @@
   "title": "AI Intelligence Radar",
   "dailies": [
     {
+      "id": "2026-11-24",
+      "date": "2026-11-24",
+      "title": "AI Intelligence Daily · 2026-11-24",
+      "summary": "因 11-22/11-23 日报与此后快讯未出站，本报补收 11-21 08:00 之后发船。NVIDIA 董事会立即恢复黄仁勋总裁与 CEO 职务（调查仍继续）；Anthropic 发布 Claude Ship；OpenAI 与 Cisco 开源 Shirudo；OpenRouter 下架三家推理提供商并撤销 125 个 ZDR 端点，Vercel 推出 Audited ZDR；智谱发布 GLM-5.4（Loop Transformer，Coding Plan 已开放）。另有 EFS 公开测试、Claude Plugins 统一、OpenCode 2.4.0 与 Replit 并入 Resonate。",
+      "href": "reports/2026-11-24.html"
+    },
+    {
       "id": "2026-11-21",
       "date": "2026-11-21",
       "title": "AI Intelligence Daily · 2026-11-21",
