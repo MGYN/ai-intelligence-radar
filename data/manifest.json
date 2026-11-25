@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-21T08:40:00+08:00",
+  "updatedAt": "2026-11-25T08:40:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-25",
+      "date": "2026-11-25",
+      "title": "AI Intelligence Daily · 2026-11-25",
+      "summary": "今天真正往前推的，是协议和桌面同时把委托、执行位置和沙箱选择写得更清楚。Claude 让 MCP 服务器可随工具发布 Skills（beta），并把 Tasks / Elicitation 升为正式可用；同晚把 Artifact 做成可安装的 Mac/Windows 应用。MiniMax Code Desktop 官方说明追上已登录 Chrome 操控（3.1.17~3.1.19，18:58 已推送）。另有 Siren、SWE-2.1、Antigravity MCP Apps、混元 Hy-MT3、GPT-6 蛋白质设计，以及 Bedrock Trusted Access API。",
+      "href": "reports/2026-11-25.html"
+    },
     {
       "id": "2026-11-24",
       "date": "2026-11-24",
