@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-25T08:40:00+08:00",
+  "updatedAt": "2026-11-26T08:23:51+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-26",
+      "date": "2026-11-26",
+      "title": "AI Intelligence Daily · 2026-11-26",
+      "summary": "企业把 Agent 接入办公数据的门口标准化了：补收 Google Workspace MCP 服务器与官方 CLI 一般可用，并给出人机确认、审计和 2027 年强制走 MCP 的时间表。国内一侧，Kimi Code Desktop 1.5.0 转入稳定通道并配对 CLI 2.8.0，CodeBuddy 2.187.0 写上会话分支、常驻 Agent Home 和企微闭环（21:05 已推送）。隔夜 Factory 对个人开发者开放免费 BYOI。另有 VS Code 1.148.0、Qoder CLI CodeMode 官宣、Hugging Face Nightwatch，以及 Anthropic 用 Agent 团队把 Messages API 迁到 Rust。",
+      "href": "reports/2026-11-26.html"
+    },
     {
       "id": "2026-11-25",
       "date": "2026-11-25",
