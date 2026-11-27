@@ -3,6 +3,13 @@
   "title": "AI Intelligence Radar",
   "dailies": [
     {
+      "id": "2026-11-27",
+      "date": "2026-11-27",
+      "title": "AI Intelligence Daily · 2026-11-27",
+      "summary": "国内工作端把跨端任务、会话停放和托管 Harness 接管写成可安装能力：Qwen Code 同日连发 0.28.6 / 0.28.7，千问办公更新到 2.2.0 / 2.2.1。国际大厂因感恩节几乎没有新产品发船，但 OpenAI 帮助中心写明 12 月起 Plus / Pro / Business 将在 ChatGPT 与 Codex 之间共享额度。混元开源 DFly2 / AngelSpec，JetBrains 放大 Mellum2.1 Instruct，OpenRouter 用付费流量数据指出 Jevons 悖论仍在但已明显变弱。",
+      "href": "reports/2026-11-27.html"
+    },
+    {
       "id": "2026-11-26",
       "date": "2026-11-26",
       "title": "AI Intelligence Daily · 2026-11-26",
