@@ -1,7 +1,14 @@
 {
-  "updatedAt": "2026-11-26T08:23:51+08:00",
+  "updatedAt": "2026-11-28T08:20:00+08:00",
   "title": "AI Intelligence Radar",
   "dailies": [
+    {
+      "id": "2026-11-28",
+      "date": "2026-11-28",
+      "title": "AI Intelligence Daily · 2026-11-28",
+      "summary": "MCP 官方参考服务器发布 v2.6.0，v2.5.0 加固后仍留下 Git LFS 配置执行面（19:02 已推送）。同一天，OpenCode 宣布可试用非 Electron 的下一代桌面 Rune（early/dev）；Antigravity App v2.36.0 把 Auto mode 扩大到当前项目外的安全编辑；千问办公更新到 2.3.0 / 2.3.1 / 2.3.2，Qoder 把本机 AppHub 连接器同步到云端。社区则核出 Convex 官方 Skill 会把用户想法送到远程主机，并写明如何拆命令以避开 harness 分类器。",
+      "href": "reports/2026-11-28.html"
+    },
     {
       "id": "2026-11-27",
       "date": "2026-11-27",
